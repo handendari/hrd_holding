@@ -113,7 +113,7 @@ namespace hrd_holding.Repositories
 
         }
 
-        public ResponseModel getEmployeeList(int pCompanyCode, int? pStartRow=0, int? pRows=0, string pSortField = "", string pSortDir = "", string pWhere = "")
+        public ResponseModel getEmployeeList_Lama(int pCompanyCode, int? pStartRow=0, int? pRows=0, string pSortField = "", string pSortDir = "", string pWhere = "")
         {
             
             var vLimit = "ORDER BY " + pSortField + " " + pSortDir + " LIMIT " + pStartRow + "," + pRows;
@@ -285,6 +285,185 @@ namespace hrd_holding.Repositories
             vRes.total_record = vJmlRecord;
             vRes.objResult = vList;
             
+            return vRes;
+        }
+
+        public ResponseModel getEmployeeList(int pCompanyCode, int? pStartRow = 0, int? pRows = 0, string pWhere = "", string pOrderBy = "")
+        {
+
+            var vLimit = pWhere + pOrderBy + " LIMIT " + pStartRow + "," + pRows;
+
+            var vJmlRecord = 0;
+            var vList = new List<mEmployeeModel>();
+
+            var strSQLCount = @"SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode " + pWhere;
+            
+            Log.Debug(DateTime.Now + " strSQLCount : " + strSQLCount);
+
+            var strSQL = @"SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode " + vLimit;
+
+            Log.Debug(DateTime.Now + " strSQL : " + strSQL);
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQLCount, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@pCompanyCode", pCompanyCode);
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vJmlRecord = aa.GetInt32("jml_record");
+                                }
+                            }
+                        }
+                    }
+
+                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@pCompanyCode", pCompanyCode);
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    var m = new mEmployeeModel
+                                    {
+                                        employee_code = aa.GetString("employee_code"),
+                                        seq_no = aa.GetInt16("seq_no"),
+                                        nik = aa.GetString("nik"),
+                                        nip = aa.GetString("nip"),
+                                        employee_name = aa.GetString("employee_name"),
+                                        employee_nick_name = aa.GetString("employee_nick_name"),
+                                        company_code = aa.GetString("company_code"),
+                                        company_name = aa.GetString("company_name"),
+                                        branch_code = aa.GetString("branch_code"),
+                                        branch_name = aa.GetString("branch_name"),
+                                        department_code = aa.GetString("department_code"),
+                                        department_name = aa.GetString("department_name"),
+                                        division_code = aa.GetString("division_code"),
+                                        title_code = aa.GetString("title_code"),
+                                        title_name = aa.GetString("title_name"),
+                                        subtitle_code = aa.GetString("subtitle_code"),
+                                        subtitle_name = aa.GetString("subtitle_name"),
+                                        level_code = aa.GetString("level_code"),
+                                        level_name = aa.GetString("level_name"),
+                                        status_code = aa.GetString("status_code"),
+                                        status_name = aa.GetString("status_name"),
+                                        flag_shiftable = aa.GetInt16("flag_shiftable"),
+                                        flag_transport = aa.GetInt16("flag_transport"),
+                                        place_birth = aa.GetString("place_birth"),
+                                        date_birth = (aa["date_birth"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["date_birth"]),
+                                        sex = aa.GetInt16("sex"),
+                                        religion = aa.GetInt16("religion"),
+                                        marital_status = aa.GetInt16("marital_status"),
+                                        no_of_children = aa.GetInt16("no_of_children"),
+                                        emp_address = aa.GetString("emp_address"),
+                                        npwp = aa.GetString("npwp"),
+                                        kode_pajak = aa.GetString("kode_pajak"),
+                                        npwp_method = aa.GetInt16("npwp_method"),
+                                        npwp_registered_date = (aa["npwp_registered_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["npwp_registered_date"]),
+                                        npwp_address = aa.GetString("npwp_address"),
+                                        no_jamsostek = aa.GetString("no_jamsostek"),
+                                        jstk_registered_date = (aa["jstk_registered_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["jstk_registered_date"]),
+                                        bank_code = aa.GetString("bank_code"),
+                                        bank_account = aa.GetString("bank_account"),
+                                        bank_acc_name = aa.GetString("bank_acc_name"),
+                                        start_working = (aa["start_working"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["start_working"]),
+                                        appointment_date = (aa["appointment_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["appointment_date"]),
+                                        phone_number = aa.GetString("phone_number"),
+                                        hp_number = aa.GetString("hp_number"),
+                                        email = aa.GetString("email"),
+                                        country_code = aa.GetString("country_code"),
+                                        country_name = aa.GetString("country_name"),
+                                        identity_number = aa.GetString("identity_number"),
+                                        last_education = aa.GetString("last_education"),
+                                        last_employment = aa.GetString("last_employment"),
+                                        description = aa.GetString("description"),
+                                        flag_active = aa.GetInt16("flag_active"),
+                                        end_working = (aa["end_working"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["end_working"]),
+                                        reason = aa.GetString("reason"),
+                                        picture = aa.GetString("picture"),
+                                        salary_type = aa.GetInt16("salary_type"),
+                                        tgl_mutasi = (aa["tgl_mutasi"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["tgl_mutasi"]),
+                                        flag_managerial = aa.GetInt16("flag_managerial"),
+                                        spv_code = aa.GetString("spv_code"),
+                                        ////spv_name = aa.GetString("spv_name"),
+                                        note1 = aa.GetString("note1"),
+                                        note2 = aa.GetString("note2"),
+                                        note3 = aa.GetString("note3"),
+                                        entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
+                                        entry_user = aa.GetString("entry_user"),
+                                        edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
+                                        edit_user = aa.GetString("edit_user")
+                                    };
+                                    vList.Add(m);
+                                }
+                            }
+                        }
+                    }
+                }
+                Log.Debug(DateTime.Now + " Jumlah Data Employee : " + vList.Count());
+            }
+            catch (Exception ex)
+            {
+                Log.Error(DateTime.Now + " GetEmployeeList FAILED... ", ex);
+            }
+
+            var vRes = new ResponseModel();
+            vRes.total_record = vJmlRecord;
+            vRes.objResult = vList;
+
             return vRes;
         }
 

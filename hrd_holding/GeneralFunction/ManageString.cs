@@ -188,13 +188,14 @@ namespace hrd_holding.GeneralFunction
             return strWhere;
         }
 
-        public string ConstructWhere(int pFilterCount, List<string> pFilterValue, List<string> pFilterCondition,
+        public string ConstructWhere(Boolean pWithWhere, int pFilterCount, List<string> pFilterValue, List<string> pFilterCondition,
             List<string> pFilterDataField, List<string> pFilterOperator)
         {
             var where = "";
             if (pFilterCount > 0)
             {
-                where = " WHERE (";
+
+                where = pWithWhere ? " WHERE (" : " AND (";
 
                 String tmpdatafield = "";
                 String tmpfilteroperator = "";
@@ -303,7 +304,7 @@ namespace hrd_holding.GeneralFunction
             {
                 sortdatafield = sortdatafield.Replace("([^A-Za-z0-9])", "");
 
-                orderby = "ORDER BY " + sortdatafield + " " + sortorder;
+                orderby = " ORDER BY " + sortdatafield + " " + sortorder;
             }
 
             return orderby;

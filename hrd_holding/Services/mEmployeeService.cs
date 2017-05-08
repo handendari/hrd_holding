@@ -33,26 +33,48 @@ namespace hrd_holding.Services
             return mCode;
         }
 
-        public ResponseModel GetEmployeeList(int pCompany, string pSearch, int? pPage=0, int? pRows=0, string pSortField = "", string pSortDir = "", string pFilter = "")
+        //public ResponseModel GetEmployeeList_lama(int pCompany, string pSearch, int? pPage=0, int? pRows=0, string pSortField = "", string pSortDir = "", string pFilter = "")
+        //{
+        //    // Construct where statement
+        //    string strWhere = "";
+        //    if (pSearch.Equals("true"))
+        //    {
+        //        strWhere = ManageString.ConstructWhere(pFilter);
+        //    }
+
+        //    Log.Debug(DateTime.Now + " pPage : " + pPage + " pRows : " + pRows);
+
+        //    var vRows = pRows == 0 ? 10 : pRows;
+        //    var vStart = (pPage) * vRows;
+
+        //    Log.Debug(DateTime.Now + " vRows : " + vRows + " vStart : " + vStart);
+
+        //    var vModel = new ResponseModel(); ;
+        //    try
+        //    {
+        //        vModel = _repoEmp.getEmployeeList(pCompany,vStart,vRows,pSortField, pSortDir, strWhere);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        //Log.Error("GetEmployeeList Failed, UserId:" + AccountModels.GetUserId() + ", CompanyId:" + AccountModels.GetCompanyId(), ex);
+        //    }
+
+        //    return vModel;
+        //}
+
+        public ResponseModel GetEmployeeList(int pCompany, int? pPageNum = 0, int? pPageSize = 0, string pWhere="",string pOrderBy="")
         {
-            // Construct where statement
-            string strWhere = "";
-            if (pSearch.Equals("true"))
-            {
-                strWhere = ManageString.ConstructWhere(pFilter);
-            }
+            Log.Debug(DateTime.Now + " pPage : " + pPageNum + " pRows : " + pPageSize);
 
-            Log.Debug(DateTime.Now + " pPage : " + pPage + " pRows : " + pRows);
-
-            var vRows = pRows == 0 ? 10 : pRows;
-            var vStart = (pPage) * vRows;
+            var vRows = pPageSize == 0 ? 10 : pPageSize;
+            var vStart = (pPageNum) * vRows;
 
             Log.Debug(DateTime.Now + " vRows : " + vRows + " vStart : " + vStart);
 
             var vModel = new ResponseModel(); ;
             try
             {
-                vModel = _repoEmp.getEmployeeList(pCompany,vStart,vRows,pSortField, pSortDir, strWhere);
+                vModel = _repoEmp.getEmployeeList(pCompany, vStart, vRows, pWhere,pOrderBy);
             }
             catch (Exception ex)
             {

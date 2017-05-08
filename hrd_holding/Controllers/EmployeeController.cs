@@ -26,46 +26,47 @@ namespace hrd_holding.Controllers
         }
 
         
-        public dynamic GetEmployeeList(int pCompanyCode, string _search, long nd, int rows, int page, string sidx, string sord = "ASC", string filters = "")
-        {
-            // Get Data
-            var vRes = _empService.GetEmployeeList(pCompanyCode,_search, page, rows, sidx, sord, filters);
-            var vList = vRes.objResult as IEnumerable<mEmployeeModel>;
+        //public dynamic GetEmployeeList(int pCompanyCode, string _search, long nd, int rows, int page, string sidx, string sord = "ASC", string filters = "")
+        //{
+        //    // Get Data
+        //    var vRes = _empService.GetEmployeeList(pCompanyCode,_search, page, rows, sidx, sord, filters);
+        //    var vList = vRes.objResult as IEnumerable<mEmployeeModel>;
 
-            var pageIndex = page;
-            var pageSize = rows;
-            var totalRecords = vRes.total_record;
-            var totalPages = (int)Math.Ceiling((float)totalRecords / (float)pageSize);
+        //    var pageIndex = page;
+        //    var pageSize = rows;
+        //    var totalRecords = vRes.total_record;
+        //    var totalPages = (int)Math.Ceiling((float)totalRecords / (float)pageSize);
 
-            //vList = vList.Skip(pageIndex * pageSize).Take(pageSize);
+        //    //vList = vList.Skip(pageIndex * pageSize).Take(pageSize);
 
-            return Json(new
-            {
-                total = totalPages,
-                page = page,
-                records = totalRecords,
-                rows = (
-                    from vItem in vList
-                    select new
-                    {
-                        id = vItem.employee_code,
-                        cell = new object[] {
-                            vItem.employee_code,
-                            vItem.employee_name,
-                            vItem.emp_address,
-                            vItem.company_name,
-                            vItem.department_name,
-                            vItem.division_name,
-                            vItem.level_name,
-                            vItem.entry_date
-                      }
-                    }).ToArray()
-            }, JsonRequestBehavior.AllowGet);
-        }
+        //    return Json(new
+        //    {
+        //        total = totalPages,
+        //        page = page,
+        //        records = totalRecords,
+        //        rows = (
+        //            from vItem in vList
+        //            select new
+        //            {
+        //                id = vItem.employee_code,
+        //                cell = new object[] {
+        //                    vItem.employee_code,
+        //                    vItem.employee_name,
+        //                    vItem.emp_address,
+        //                    vItem.company_name,
+        //                    vItem.department_name,
+        //                    vItem.division_name,
+        //                    vItem.level_name,
+        //                    vItem.entry_date
+        //              }
+        //            }).ToArray()
+        //    }, JsonRequestBehavior.AllowGet);
+        //}
 
         //public dynamic GetEmployeeList_Lama(int pCompanyCode,int? filterscount=0,int? groupscount=0,int? pagenum=0,
         //    int pagesize=10,int? recordstartindex=0, int? recordendindex=16,_=14940)
         //{
+       
         [HttpPost]
        public dynamic GetEmployeeList_Lama(int pCompanyCode)
        {
@@ -85,8 +86,6 @@ namespace hrd_holding.Controllers
            }
            if (filterscount > 0)
            {
-               where = " WHERE (";
-
                var filtervalue = new List<string>();
                var filtercondition = new List<string>(); ;
                var filterdatafield = new List<string>(); ;
@@ -99,7 +98,7 @@ namespace hrd_holding.Controllers
                    filterdatafield.Add(Request["filterdatafield" + i]);
                    filteroperator.Add(Request["filteroperator" + i]);
                }
-               where = _mString.ConstructWhere(filterscount, filtervalue, filtercondition, filterdatafield, filteroperator);
+               where = _mString.ConstructWhere(false,filterscount, filtervalue, filtercondition, filterdatafield, filteroperator);
            }
 
            var orderby = _mString.ConstructOrderBy(Request["sortdatafield"],Request["sortorder"]);
@@ -110,7 +109,7 @@ namespace hrd_holding.Controllers
            LOG.Debug(DateTime.Now + " ORDER BY : " + orderby);
 
             // Get Data
-            var vObjRes = _empService.GetEmployeeList(pCompanyCode,"false", pagenum, pagesize, "employee_code", "asc", where);
+            var vObjRes = _empService.GetEmployeeList(pCompanyCode,pagenum, pagesize,where,orderby);
             var vList = vObjRes.objResult as IEnumerable<mEmployeeModel>;
 
             var totalRecords = vObjRes.total_record;
