@@ -30,7 +30,7 @@ namespace hrd_holding
 
             bundles.Add(new StyleBundle("~/Content/jqwidgets").Include(
                         "~/Content/jqwidgets/jqx.base.css",
-                        "~/Content/jqwidgets/jqx.bootstrap.css"));
+                        "~/Content/jqwidgets/jqx.custom.merah.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

@@ -490,6 +490,7 @@
     <Content Include="Content\jqwidgets\jqx.blackberry.css" />
     <Content Include="Content\jqwidgets\jqx.bootstrap.css" />
     <Content Include="Content\jqwidgets\jqx.classic.css" />
+    <Content Include="Content\jqwidgets\jqx.custom.merah.css" />
     <Content Include="Content\jqwidgets\jqx.dark.css" />
     <Content Include="Content\jqwidgets\jqx.darkblue.css" />
     <Content Include="Content\jqwidgets\jqx.energyblue.css" />

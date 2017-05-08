@@ -23,7 +23,7 @@
                   url: base_url + "/Employee/GetEmployeeList_Lama?pCompanyCode=1",
                   datatype: "json",
                   type: "Post",
-                  datafields: [{ name: "employee_code",type: "string" },
+                  datafields: [{ name: "employee_code", type: "string" },
                                { name: "employee_name" },
                                { name: "emp_address" },
                                { name: "company_name" },
@@ -61,6 +61,7 @@
 
             $("#jqxgrid").jqxGrid(
               {
+                  theme: 'custom_merah',
                   source: dataAdapter,
                   width: 1200,
                   filterable: true,
@@ -78,11 +79,11 @@
                       return obj.data;
                   },
                   columns: [
-                    { text: 'emp. code', dataField: 'employee_code',width: 100, cellsalign: 'center' },
+                    { text: 'emp. code', dataField: 'employee_code', width: 100, cellsalign: 'center' },
                     { text: 'employee name', dataField: 'employee_name', width: 200 },
                     { text: 'address', dataField: 'emp_address', width: 450 },
-                    { text: 'company name', dataField: 'company_name', width: 150, cellsalign: 'right',hidden: 'true' },
-                    { text: 'division name', dataField: 'division_name', width: 90, cellsalign: 'right', hidden : 'true' },
+                    { text: 'company name', dataField: 'company_name', width: 150, cellsalign: 'right', hidden: 'true' },
+                    { text: 'division name', dataField: 'division_name', width: 90, cellsalign: 'right', hidden: 'true' },
                     { text: 'level name', dataField: 'level_name', minwidth: 200 },
                     { text: 'entry date', dataField: 'entry_date', filtertype: 'date', cellsalign: 'center', width: 100, cellsformat: 'dd-MMM-yy' }
                   ]
@@ -90,6 +91,18 @@
         });
     </script>
 </head>
+<body style="background-color:#F5F5F5">
+    <div style="background-color: #C30F42; width: 100%; height: 35px">
+        <label style="color:#F1C8D4">
+            <h4 style="padding-top:7px;padding-left:80px">Human Resource Development - FEI GROUP</h4>
+        </label>
+    </div>
+    <div style="background-color: #D71149; width: 100%; height: 50px;margin-bottom:15px">
+        <label style="color:#FFFFFF">
+            <h2 style="margin-top:0 !important; padding-left:80px;padding-top:8px">SOLUSI SENTRAL DATA</h2>
+        </label>
+    </div>
 
-<div id="jqxgrid"></div>
+    <div id="jqxgrid"></div>
+</body>
 </html>
