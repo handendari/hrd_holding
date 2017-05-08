@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+
+    @Styles.Render("~/Content/jqwidgets")
+
+    <!-- jQuery -->
+    @Scripts.Render("~/bundles/jquery")
+    <!-- jQWidgets -->
+    @Scripts.Render("~/bundles/jqwidgets")
+
+    <style type="”text/css”">
+        .jqx-grid-cell {
+            font-size: 10px !important;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // prepare the data
+
+            var base_url = '@String.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~/"))';
+
+            var source =
+              {
+                  url: base_url + "/Employee/GetEmployeeList_Lama?pCompanyCode=1",
+                  datatype: "json",
+                  type: "Post",
+                  datafields: [{ name: "employee_code",type: "string" },
+                               { name: "employee_name" },
+                               { name: "emp_address" },
+                               { name: "company_name" },
+                               { name: "departement_name" },
+                               { name: "division_name" },
+                               { name: "level_name" },
+                               { name: "entry_date", type: "date" }],
+                  cache: false,
+                  filter: function () {
+                      // update the grid and send a request to the server.
+                      $("#jqxgrid").jqxGrid('updatebounddata', 'filter');
+                  },
+                  sort: function () {
+                      // update the grid and send a request to the server.
+                      $("#jqxgrid").jqxGrid('updatebounddata', 'sort');
+                  },
+                  beforeprocessing: function (data) {
+                      //alert(JSON.stringify(data['TotalRows']));
+                      source.totalrecords = data["TotalRows"];
+                  },
+                  root: 'Rows'
+              }
+
+            var addfilter = function () {
+                var filtergroup = new $.jqx.filter();
+
+                var filter_or_operator = 1;
+                var filtervalue = '';
+                var filtercondition = 'contains';
+                var filter1 = filtergroup.createfilter('stringfilter', filtervalue, filtercondition);
+
+                filtervalue = '';
+                filtercondition = 'contains';
+                var filter2 = filtergroup.createfilter('stringfilter', filtervalue, filtercondition);
+
+                filtergroup.addfilter(filter_or_operator, filter1);
+                filtergroup.addfilter(filter_or_operator, filter2);
+                //// add the filters.
+                //$("#jqxgrid").jqxGrid('addfilter', 'employee_code', filtergroup);
+                //// apply the filters.
+                //$("#jqxgrid").jqxGrid('applyfilters');
+            }
+
+            //var dataAdapter = new $.jqx.dataAdapter(source,
+            //{
+            //    formatData: function (data) {
+            //        $.extend(data, {
+            //            filterscount:110,
+            //            groupscount:330,
+            //            pagenum:10,
+            //            pagesize:20,
+            //            recordstartindex:0,
+            //            recordendindex:16,
+            //            pCompanyCode:1
+            //            });
+            //            return data;
+            //        }
+            //    }
+            //);
+            var filterChanged = false;
+            var dataAdapter = new $.jqx.dataAdapter(source, {
+                /*
+				// remove the comment to debug
+                formatData: function(data) {
+					alert(JSON.stringify(data));
+                    return data;
+                },
+                */
+                downloadComplete: function (data, status, xhr) {
+                    if (!source.TotalRows) {
+                        source.TotalRows = data.length;
+                    }
+                },
+                loadError: function (xhr, status, error) {
+                    throw new Error(error);
+                }
+            });
+
+            $("#jqxgrid").jqxGrid(
+              {
+                  source: dataAdapter,
+                  width: 1200,
+                  filterable: true,
+                  sortable: true,
+                  pageable: true,
+                  pagesize: 10,
+                  pagesizeoptions: ['10', '20', '30'],
+                  //selectionmode: 'multiplecellsextended',
+                  autoheight: true,
+                  autorowheight: true,
+                  columnsresize: true,
+                  virtualmode: true,
+                  ready: function () {
+                      addfilter();
+                  },
+                  autoshowfiltericon: true,
+                  rendergridrows: function (obj) {
+                      //return dataAdapter.records;
+                      return obj.data;
+                  },
+                  columns: [
+                    { text: 'employee code', dataField: 'employee_code', width: 100, cellsalign: 'center' },
+                    { text: 'employee name', dataField: 'employee_name', width: 200 },
+                    { text: 'address', dataField: 'emp_address', width: 450 },
+                    { text: 'company name', dataField: 'company_name', width: 150, cellsalign: 'right',hidden: 'true' },
+                    { text: 'division name', dataField: 'division_name', width: 90, cellsalign: 'right', hidden : 'true' },
+                    { text: 'level name', dataField: 'level_name', minwidth: 200 },
+                    { text: 'entry date', dataField: 'entry_date', filtertype: 'date', cellsalign: 'center', width: 100, cellsformat: 'dd-MMM-yy' }
+                  ]
+              });
+        });
+    </script>
+</head>
+
+<div id="jqxgrid"></div>
+</html>
