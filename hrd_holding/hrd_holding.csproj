@@ -516,6 +516,8 @@
     <Content Include="Content\jqwidgets\jqx.ui-sunny.css" />
     <Content Include="Content\jqwidgets\jqx.web.css" />
     <Content Include="Content\jqwidgets\jqx.windowsphone.css" />
+    <Content Include="Content\megamenu\mainmegamenu.css" />
+    <Content Include="Content\megamenu\megamenu.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -706,6 +708,9 @@
     <Content Include="Scripts\jqwidgets\jqxwindow.js" />
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\mega_menu\jqueryMegaMenu.js" />
+    <Content Include="Scripts\mega_menu\mainMegaMenu.js" />
+    <Content Include="Scripts\mega_menu\source-sans-pro.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -722,6 +727,8 @@
     <Content Include="Views\Employee\Index_Custom_filter.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Employee\Copy of Index.cshtml" />
+    <Content Include="Views\Shared\_header.cshtml" />
+    <Content Include="Views\Shared\Copy of _header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
