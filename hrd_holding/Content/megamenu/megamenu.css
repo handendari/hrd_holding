@@ -19,7 +19,6 @@ limitations under the License.
     display:block;
     box-sizing: border-box;
     list-style: none;
-    margin: 0;
     padding: 0;
     height: 3.077em;
     color: #454545;
@@ -54,8 +53,8 @@ limitations under the License.
     color: #454545 !important;
     text-shadow: 0 1px 0 #fff;
     -moz-text-shadow: 0 1px 0 #fff;
-    border-right: 1px solid #b3b3b3;
-    border-right-color: rgba(0, 0, 0, 0.3);
+    /*border-right: 1px solid #b3b3b3;
+    border-right-color: rgba(0, 0, 0, 0.3);*/
 }
 
 .accessible-megamenu :focus {
@@ -72,7 +71,7 @@ limitations under the License.
     padding-right: 0.769em;
     color: #454545 !important;
     text-decoration: none;
-    box-shadow: inset 1px 1px 0 #fff;
+    /*box-shadow: inset 1px 1px 0 #fff;*/
     z-index: inherit;
 }
 
