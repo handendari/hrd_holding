@@ -66,3 +66,4 @@ D:\hrd_holding\hrd_holding\bin\System.Web.WebPages.Razor.xml
 D:\hrd_holding\hrd_holding\obj\Debug\hrd_holding.csprojResolveAssemblyReference.cache
 D:\hrd_holding\hrd_holding\obj\Debug\hrd_holding.dll
 D:\hrd_holding\hrd_holding\obj\Debug\hrd_holding.pdb
+D:\KANTOR\hrd_holding\hrd_holding\bin\MySql.Data.xml
