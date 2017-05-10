@@ -6,19 +6,28 @@
 
 <html>
 <head>
-
-   @* @Styles.Render("~/Content/jqwidgets")
-
-    <!-- jQuery -->
-    @Scripts.Render("~/bundles/jquery")
-    <!-- jQWidgets -->
-    @Scripts.Render("~/bundles/jqwidgets")*@
-
     <script type="text/javascript">
         $(document).ready(function () {
             // prepare the data
 
             var base_url = '@String.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~/"))';
+            var theme = 'sunny';
+
+            $("#jqxToolBar").jqxToolBar({
+                width: 800, height: 35, tools: 'custom | custom | custom',
+                initTools: function (type, index, tool, menuToolIninitialization) {
+                    if (type == "toggleButton") {
+                        var icon = $("<div class='jqx-editor-toolbar-icon jqx-editor-toolbar-icon-" + theme + " buttonIcon'></div>");
+                    }
+                    switch (index) {
+                        case 0:
+                            var button = $("<div>" + "<img src='../../images/administrator.png' title='Custom tool' />" + "</div>");
+                            tool.append(button);
+                            button.jqxButton({ height: 15 });
+                            break;
+                    }
+                }
+            });
 
             var source =
               {
@@ -69,8 +78,8 @@
                   filterable: true,
                   sortable: true,
                   pageable: true,
-                  pagesize: 10,
-                  pagesizeoptions: ['10', '20', '30'],
+                  pagesize: 15,
+                  pagesizeoptions: ['15', '20', '30'],
                   autoheight: true,
                   rowsheight: 20,
                   autorowheight: true,
@@ -93,18 +102,8 @@
         });
     </script>
 </head>
-<body style="background-color:#F5F5F5">
-@*    <div style="background-color: #C30F42; width: 100%; height: 35px">
-        <label style="color:#F1C8D4">
-            <h4 style="padding-top:7px;padding-left:80px">Human Resource Development - FEI GROUP</h4>
-        </label>
-    </div>
-    <div style="background-color: #D71149; width: 100%; height: 50px;margin-bottom:15px">
-        <label style="color:#FFFFFF">
-            <h2 style="margin-top:0 !important; padding-left:80px;padding-top:8px">SOLUSI SENTRAL DATA</h2>
-        </label>
-    </div>*@
-
+<body style="background-color: #F5F5F5">
+    <div id="jqxToolBar"></div>
     <div id="jqxgrid"></div>
 </body>
 </html>
