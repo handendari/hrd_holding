@@ -732,6 +732,7 @@
     <Content Include="Views\Employee\Copy of Index.cshtml" />
     <Content Include="Views\Shared\_header.cshtml" />
     <Content Include="Views\Shared\Copy of _header.cshtml" />
+    <Content Include="Views\Employee\EmployeeDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

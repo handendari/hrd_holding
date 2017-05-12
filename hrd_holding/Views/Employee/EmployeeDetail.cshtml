@@ -1,0 +1,191 @@
+﻿@{
+    ViewBag.Title = "EmployeeDetail";
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+
+<header>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#txtId").jqxInput();
+            $("#txtFullName").jqxInput();
+            $("#txtNickName").jqxInput();
+            $("#dtPob").jqxInput();
+            $("#dtDob").jqxInput();
+            $("#txtGender").jqxInput();
+            $("#txtReligion").jqxInput();
+            $("#txtChild").jqxInput();
+            $("#txtAddress").jqxInput();
+            $("#txtKdDepartement").jqxInput();
+            $("#btnKdDepartement").jqxButton();
+            $("#txtNmDepartement").jqxInput();
+            $("#txtKdJobTitle").jqxInput();
+            $("#btnKdJobTitle").jqxButton();
+            $("#txtNmJobTitle").jqxInput();
+            $("#txtKdGrade").jqxInput();
+            $("#btnKdGrade").jqxButton();
+            $("#txtNmGrade").jqxInput();
+            $("#txtKdLevel").jqxInput();
+            $("#btnKdLevel").jqxButton();
+            $("#txtNmLevel").jqxInput();
+            $("#dtStartWorking").jqxInput();
+            $("#tdtProbation").jqxInput();
+            $("#tdtWorkingAge").jqxInput();
+            $("#txtPhone").jqxInput();
+            $("#tdtEmail").jqxInput();
+            $("#txtKdCountry").jqxInput();
+            $("#btnKdCountry").jqxButton();
+            $("#txtNmCountry").jqxInput();
+            $("#txtNoKtp").jqxInput();
+            $("#txtLastEducation").jqxInput();
+            $("#txtLastEmployment").jqxInput();
+            $("#txtKdBank").jqxInput();
+            $("#btnKdBank").jqxButton();
+            $("#txtNmBank").jqxInput();
+            $("#txtBankAcc").jqxInput();
+            $("#txtBankAccName").jqxInput();
+            $("#txtKdStatus").jqxInput();
+            $("#btnKdStatus").jqxButton();
+            $("#txtNmStatus").jqxInput();
+            $("#txtKdAtasan").jqxInput();
+            $("#btnkdAtasan").jqxButton();
+            $("#txtNmAtasan").jqxInput();
+        });
+    </script>
+</header>
+
+<div>
+    <table>
+        <tr>
+            <td>Employee ID *</td>
+            <td>
+                <input type="text" id="txtId" /></td>
+        </tr>
+        <tr>
+            <td>Full Name *</td>
+            <td>
+                <input type="text" id="txtFullName" /></td>
+            <td style="padding-left:30px">Nick Name *</td>
+            <td>
+                <input type="text" id="txtNickName" /></td>
+        </tr>
+        <tr>
+            <td>Place Of Birth *</td>
+            <td>
+                <input type="text" id="dtPob" /></td>
+            <td style="padding-left:30px">Date Of Birth *</td>
+            <td>
+                <input type="text" id="dtDob" /></td>
+        </tr>
+        <tr>
+            <td>Gender *</td>
+            <td>
+                <input type="text" id="txtGender" /></td>
+            <td style="padding-left:30px">Religion *</td>
+            <td>
+                <input type="text" id="txtReligion" /></td>
+        </tr>
+        <tr>
+            <td>Children Nr *</td>
+            <td>
+                <input type="text" id="txtChild" /></td>
+            <td style="padding-left:30px">Employee Address *</td>
+            <td>
+                <input type="text" id="txtAddress" /></td>
+        </tr>
+        <tr>
+            <td>Departement *</td>
+            <td>
+                <input type="text" style="width: 60px" id="txtKdDepartement" />
+                <input type="button" id="btnKdDepartement" value="..." />
+                <input type="text" id="txtNmDepartement" />
+            </td>
+            <td style="padding-left:30px">Job Title *</td>
+            <td>
+                <input type="text" style="width: 60px" id="txtKdJobTitle" />
+                <input type="button" id="btnKdJobTitle" value="..." />
+                <input type="text" id="txtNmJobTitle" />
+            </td>
+        </tr>
+        <tr>
+            <td>Grade</td>
+            <td>
+                <input type="text" style="width:60px" id="txtKdGrade" />
+                <input type="button" id="btnKdGrade" value="..." />
+                <input type="text" id="txtNmGrade" />
+            </td>
+            <td style="padding-left:30px">Level *</td>
+            <td>
+                <input type="text" style="width:60px" id="txtKdLevel" />
+                <input type="button" id="btnKdLevel" value="..." />
+                <input type="text" id="txtNmLevel" />
+            </td>
+        </tr>
+        <tr>
+            <td>Start Working</td>
+            <td>
+                <input type="text" id="dtStartWorking" /></td>
+            <td style="padding-left:30px">Probation Date</td>
+            <td>
+                <input type="text" id="tdtProbation" /></td>
+            <td style="padding-left:30px">Working Age (Y)</td>
+            <td>
+                <input type="text" id="tdtWorkingAge" /></td>
+        </tr>
+        <tr>
+            <td>Phone Number</td>
+            <td>
+                <input type="text" id="txtPhone" /></td>
+            <td style="padding-left:30px">Email</td>
+            <td>
+                <input type="text" id="tdtEmail" /></td>
+        </tr>
+        <tr>
+            <td>Country *</td>
+            <td>
+                <input type="text" style="width:60px" id="txtKdCountry" />
+                <input type="button" id="btnKdCountry" value="..." />
+                <input type="text" id="txtNmCountry" />
+            </td>
+            <td style="padding-left:30px">Identity Card Nr</td>
+            <td>
+                <input type="text" id="txtNoKtp" /></td>
+        </tr>
+        <tr>
+            <td>Last Education</td>
+            <td>
+                <input type="text" id="txtLastEducation" /></td>
+            <td style="padding-left:30px">Last Employment</td>
+            <td>
+                <input type="text" id="txtLastEmployment" /></td>
+        </tr>
+        <tr>
+            <td>Bank Name</td>
+            <td>
+                <input type="text" style="width:60px" id="txtKdBank" />
+                <input type="button" id="btnKdBank" value="..." />
+                <input type="text" id="txtNmBank" /></td>
+            <td style="padding-left:30px">Bank Account</td>
+            <td>
+                <input type="text" id="txtBankAcc" /></td>
+            <td style="padding-left:30px">Bank Acc. Name</td>
+            <td>
+                <input type="text" id="txtBankAccName" /></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>
+                <input type="text" style="width:60px" id="txtKdStatus" />
+                <input type="button" id="btnKdStatus" value="..." />
+                <input type="text" id="txtNmStatus" />
+            </td>
+            <td style="padding-left:30px">Atasan</td>
+            <td>
+                <input type="text" style="width:60px" id="txtKdAtasan" />
+                <input type="button" id="btnkdAtasan" value="..." />
+                <input type="text" id="txtNmAtasan" />
+            </td>
+
+        </tr>
+
+    </table>
+</div>
