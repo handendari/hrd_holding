@@ -12694,3 +12694,50 @@ DEBUG 2017-05-10 15:04:54,325 76451ms EmployeeRepo           getEmployeeList    
                            LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
                            WHERE emp.company_code = @pCompanyCode  LIMIT 0,15
 DEBUG 2017-05-10 15:04:54,357 76483ms EmployeeRepo           getEmployeeList    - 5/10/2017 3:04:54 PM Jumlah Data Employee : 15
+DEBUG 2017-05-13 09:50:34,078 12716ms CountryController      tEmployeeList_Lama - 5/13/2017 9:50:34 AM WHERE : 
+DEBUG 2017-05-13 09:50:34,668 13306ms CountryController      tEmployeeList_Lama - 5/13/2017 9:50:34 AM ORDER BY : 
+DEBUG 2017-05-13 09:50:34,673 13311ms EmployeeService        GetEmployeeList    - 5/13/2017 9:50:34 AM pPage : 0 pRows : 15
+DEBUG 2017-05-13 09:50:34,675 13313ms EmployeeService        GetEmployeeList    - 5/13/2017 9:50:34 AM vRows : 15 vStart : 0
+DEBUG 2017-05-13 09:50:34,721 13360ms EmployeeRepo           getEmployeeList    - 5/13/2017 9:50:34 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode 
+DEBUG 2017-05-13 09:50:34,722 13361ms EmployeeRepo           getEmployeeList    - 5/13/2017 9:50:34 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode  LIMIT 0,15
+DEBUG 2017-05-13 09:50:42,294 20933ms EmployeeRepo           getEmployeeList    - 5/13/2017 9:50:42 AM Jumlah Data Employee : 15
