@@ -59,14 +59,15 @@ namespace hrd_holding.Repositories
 
         }
 
-        public List<mEmployeeEducationModel> getEmployeeEducationList(int pEmployeeCode)
+        public List<mEmployeeEducationModel> getEmployeeEducationList(string pEmployeeCode)
         {
             var vList = new List<mEmployeeEducationModel>();
             var strSQL = @"SELECT mee.employee_code,emp.employee_name,mee.seq_no,mee.start_year,mee.end_year,
-                                  mee.jenjang,mee.nm_jenjang,mee.jurusan,mee.school,mee.city,
+                                  IFNULL(mee.jenjang,'') jenjang,IFNULL(mee.nm_jenjang,'') nm_jenjang,IFNULL(mee.jurusan,'') jurusan,
+                                  IFNULL(mee.school,'') school,IFNULL(mee.city,'') city,
                                   mee.country_code,mc.country_name,
-                                  mee.entry_date,mee.entry_user,mee.edit_date,mee.edit_user
-                           FROM m_employee_edu mee JOIN m_empoloyee emp ON mee.employee_code = emp.employee_code
+                                  mee.entry_date,mee.entry_user,mee.edit_date,IFNULL(mee.edit_user,'') edit_user
+                           FROM m_employee_edu mee JOIN m_employee emp ON mee.employee_code = emp.employee_code
                            LEFT JOIN m_country mc ON mee.country_code = mc.country_code
                            WHERE mee.employee_code = @pEmployeeCode";
             try
@@ -90,8 +91,8 @@ namespace hrd_holding.Repositories
                                         employee_code = aa.GetString("employee_code"),
                                         employee_name = aa.GetString("employee_name"),
                                         seq_no = aa.GetInt16("seq_no"),
-                                        start_year = aa.GetDateTime("start_year"),
-                                        end_year = aa.GetDateTime("end_year"),
+                                        start_year = (aa["start_year"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["start_year"]),
+                                        end_year = (aa["end_year"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["end_year"]),
                                         jenjang = aa.GetInt16("jenjang"),
                                         nm_jenjang = aa.GetString("nm_jenjang"),
                                         jurusan = aa.GetString("jurusan"),
@@ -99,9 +100,9 @@ namespace hrd_holding.Repositories
                                         city = aa.GetString("city"),
                                         country_code = aa.GetString("country_code"),
                                         country_name = aa.GetString("country_name"),
-                                        entry_date = aa.GetDateTime("entry_date"),
+                                        entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
                                         entry_user = aa.GetString("entry_user"),
-                                        edit_date = aa.GetDateTime("edit_date"),
+                                        edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
                                         edit_user = aa.GetString("edit_user"),
                                     };
                                     vList.Add(m);
@@ -115,6 +116,8 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetEmployeeEducationList FAILED... ", ex);
             }
+
+            Log.Debug(DateTime.Now + " JML Employee EDUCATION List: " + vList.Count);
             return vList;
         }
 

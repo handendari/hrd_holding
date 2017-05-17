@@ -59,11 +59,15 @@ namespace hrd_holding.Repositories
 
         }
 
-        public List<mEmployeeTrainingModel> getEmployeeTrainingList(int pEmployeeCode)
+        public List<mEmployeeTrainingModel> getEmployeeTrainingList(string pEmployeeCode)
         {
             var vList = new List<mEmployeeTrainingModel>();
-            var strSQL = @"SELECT met.employee_code,emp.employee_name,met.seq_no,met.start_date,met.end_date,met.material,met.organizer,met.place,
-                                  met.company,met.chk_company,met.value,met.training_id,met.entry_date,met.entry_user,met.edit_date,met.edit_user
+            var strSQL = @"SELECT met.employee_code,emp.employee_name,met.seq_no,met.start_date,met.end_date,
+                                  IFNULL(met.material,'') material,IFNULL(met.organizer,'') organizer,IFNULL(met.place,'') place,
+                                  IFNULL(met.company,'') company,IFNULL(met.chk_company,0) chk_company,
+                                  IFNULL(met.`value`,'') value,IFNULL(met.training_id,0) training_id,
+                                  met.entry_date,IFNULL(met.entry_user,'') entry_user,
+                                  met.edit_date,IFNULL(met.edit_user,'') edit_user
                            FROM m_employee_training met JOIN m_employee emp ON met.employee_code = emp.employee_code
                            WHERE met.employee_code = @pEmployeeCode";
             try
@@ -74,6 +78,7 @@ namespace hrd_holding.Repositories
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@pEmployeeCode", pEmployeeCode);
 
                         using (MySqlDataReader aa = cmd.ExecuteReader())
                         {
@@ -86,8 +91,8 @@ namespace hrd_holding.Repositories
                                         employee_code = aa.GetString("employee_code"),
                                         employee_name = aa.GetString("employee_name"),
                                         seq_no = aa.GetInt16("seq_no"),
-                                        start_date = aa.GetDateTime("start_date"),
-                                        end_date = aa.GetDateTime("end_date"),
+                                        start_date = (aa["start_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["start_date"]),
+                                        end_date = (aa["end_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["end_date"]),
                                         material = aa.GetString("material"),
                                         organizer = aa.GetString("organizer"),
                                         place = aa.GetString("place"),
@@ -95,9 +100,9 @@ namespace hrd_holding.Repositories
                                         chk_company = aa.GetInt16("chk_company"),
                                         value = aa.GetString("value"),
                                         training_id = aa.GetInt16("training_id"),
-                                        entry_date = aa.GetDateTime("entry_date"),
+                                        entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
                                         entry_user = aa.GetString("entry_user"),
-                                        edit_date = aa.GetDateTime("edit_date"),
+                                        edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
                                         edit_user = aa.GetString("edit_user"),
                                     };
                                     vList.Add(m);
@@ -111,6 +116,8 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetEmployeeTrainingList FAILED... ", ex);
             }
+
+            Log.Debug(DateTime.Now + " JML Employee Training List: " + vList.Count);
             return vList;
         }
 

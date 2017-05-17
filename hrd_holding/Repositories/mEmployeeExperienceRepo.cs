@@ -62,13 +62,15 @@ namespace hrd_holding.Repositories
 
         }
 
-        public List<mEmployeeExperienceModel> getEmployeeExperienceList(int pEmployeeCode)
+        public List<mEmployeeExperienceModel> getEmployeeExperienceList(string pEmployeeCode)
         {
             var vList = new List<mEmployeeExperienceModel>();
-            var strSQL = @"SELECT mee.employee_code,emp.employee_name,mee.seq_no,mee.start_working,mee.end_working,mee.company_name,mee.usaha,
-                                  mee.department_name,mee.last_title,mee.last_salary,mee.reason_stop_working,mee.description,
-                                  mee.entry_date,mee.entry_user,mee.edit_date,mee.edit_user
-                           FROM m_employee_exp mee JOIN m_empoloyee emp ON mee.employee_code = emp.employee_code
+            var strSQL = @"SELECT mee.employee_code,emp.employee_name,mee.seq_no,mee.start_working,mee.end_working,
+                                  IFNULL(mee.company_name,'') company_name,IFNULL(mee.usaha,'') usaha,
+                                  IFNULL(mee.department_name,'') department_name,IFNULL(mee.last_title,'') last_title,
+                                  IFNULL(mee.last_salary,0) last_salary,IFNULL(mee.reason_stop_working,'') reason_stop_working,IFNULL(mee.description,'') description,
+                                  mee.entry_date,mee.entry_user,mee.edit_date,IFNULL(mee.edit_user,'') edit_user
+                           FROM m_employee_exp mee JOIN m_employee emp ON mee.employee_code = emp.employee_code
                            WHERE mee.employee_code = @pEmployeeCode";
             try
             {
@@ -91,8 +93,8 @@ namespace hrd_holding.Repositories
                                         employee_code = aa.GetString("employee_code"),
                                         employee_name = aa.GetString("employee_name"),
                                         seq_no = aa.GetInt16("seq_no"),
-                                        start_working = aa.GetDateTime("start_working"),
-                                        end_working = aa.GetDateTime("end_working"),
+                                        start_working = (aa["start_working"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["start_working"]),
+                                        end_working = (aa["end_working"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["end_working"]),
                                         company_name = aa.GetString("company_name"),
                                         usaha = aa.GetString("usaha"),
                                         department_name = aa.GetString("department_name"),
@@ -100,9 +102,9 @@ namespace hrd_holding.Repositories
                                         last_salary = aa.GetDecimal("last_salary"),
                                         reason_stop_working = aa.GetString("reason_stop_working"),
                                         description = aa.GetString("description"),
-                                        entry_date = aa.GetDateTime("entry_date"),
+                                        entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
                                         entry_user = aa.GetString("entry_user"),
-                                        edit_date = aa.GetDateTime("edit_date"),
+                                        edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
                                         edit_user = aa.GetString("edit_user")
                                     };
                                     vList.Add(m);
@@ -116,6 +118,7 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetEmployeeExperienceList FAILED... ", ex);
             }
+            Log.Debug(DateTime.Now + " JML Employee EXPERIENCE List: " + vList.Count);
             return vList;
         }
 

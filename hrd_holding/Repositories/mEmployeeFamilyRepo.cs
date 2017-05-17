@@ -60,13 +60,15 @@ namespace hrd_holding.Repositories
 
         }
 
-        public List<mEmployeeFamiliesModel> getEmployeeFamilyList(int pEmployeeCode)
+        public List<mEmployeeFamiliesModel> getEmployeeFamilyList(string pEmployeeCode)
         {
+            //Log.Debug(DateTime.Now + "=======>>>> MASUK REPO EMPLOYEE LIST, Emp Code : " + pEmployeeCode);
+
             var vList = new List<mEmployeeFamiliesModel>();
             var strSQL = @"SELECT mef.employee_code,emp.employee_name,mef.seq_no,mef.name,mef.relationship,
                                   mef.nm_rel,mef.date_birth,mef.sex,mef.education,mef.employment,mef.chk_address,
-                                  mef.address,mef.entry_date,mef.entry_user,mef.edit_date,mef.edit_user
-                           FROM m_employee_fams mef JOIN m_empoloyee emp ON mef.employee_code = emp.employee_code
+                                  mef.address,mef.entry_date,mef.entry_user,mef.edit_date,IFNULL(mef.edit_user,'') edit_user
+                           FROM m_employee_fams mef JOIN m_employee emp ON mef.employee_code = emp.employee_code
                            WHERE mef.employee_code = @pEmployeeCode";
             try
             {
@@ -80,10 +82,15 @@ namespace hrd_holding.Repositories
 
                         using (MySqlDataReader aa = cmd.ExecuteReader())
                         {
+
                             if (aa.HasRows)
                             {
+                                var i = 0;
                                 while (aa.Read())
                                 {
+                                    
+                                    //Log.Debug(DateTime.Now + "=======>>>> MASUK LOOPING HASIL QUERY EMP FAMILY KE : " + i++);
+
                                     var m = new mEmployeeFamiliesModel
                                     {
                                         employee_code = aa.GetString("employee_code"),
@@ -92,15 +99,15 @@ namespace hrd_holding.Repositories
                                         name = aa.GetString("name"),
                                         relationship = aa.GetInt16("relationship"),
                                         nm_rel = aa.GetString("nm_rel"),
-                                        date_birth = aa.GetDateTime("date_birth"),
+                                        date_birth = (aa["date_birth"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["date_birth"]),
                                         sex = aa.GetInt16("sex"),
                                         education = aa.GetString("education"),
                                         employment = aa.GetString("employment"),
                                         chk_address = aa.GetInt16("chk_address"),
                                         address = aa.GetString("address"),
-                                        entry_date = aa.GetDateTime("entry_date"),
+                                        entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
                                         entry_user = aa.GetString("entry_user"),
-                                        edit_date = aa.GetDateTime("edit_date"),
+                                        edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
                                         edit_user = aa.GetString("edit_user")
                                     };
                                     vList.Add(m);
@@ -114,6 +121,8 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetEmployeeFamilyList FAILED... ", ex);
             }
+
+            Log.Debug(DateTime.Now + "=======>>>> Jml DATA EMPLOYEE LIST : " + vList.Count);
             return vList;
         }
 

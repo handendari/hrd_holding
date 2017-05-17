@@ -57,14 +57,15 @@ namespace hrd_holding.Repositories
 
         }
 
-        public List<mEmployeeContractModel> getEmployeeContractList(int pEmployeeCode)
+        public List<mEmployeeContractModel> getEmployeeContractList(string pEmployeeCode)
         {
             var vList = new List<mEmployeeContractModel>();
             var strSQL = @"SELECT mec.employee_code,emp.employee_name,mec.seq_no,
-                                  mec.start_date,mec.end_date,mec.no_contract,
-                                  mec.company,mec.chk_company,mec.description,
-                                  mec.entry_date,mec.entry_user,mec.edit_date,mec.edit_user
-                           FROM m_employee_contract mec JOIN m_empoloyee emp ON mec.employee_code = emp.employee_code
+                                  mec.start_date,mec.end_date,IFNULL(mec.no_contract,'') no_contract,
+                                  IFNULL(mec.company,'') company,mec.chk_company,IFNULL(mec.description,'') description,
+                                  mec.entry_date,IFNULL(mec.entry_user,'') entry_user,
+                                  mec.edit_date,IFNULL(mec.edit_user,'') edit_user
+                           FROM m_employee_contract mec JOIN m_employee emp ON mec.employee_code = emp.employee_code
                            WHERE mec.employee_code = @pEmployeeCode";
             try
             {
@@ -87,15 +88,15 @@ namespace hrd_holding.Repositories
                                         employee_code = aa.GetString("employee_code"),
                                         employee_name = aa.GetString("employee_name"),
                                         seq_no = aa.GetInt16("seq_no"),
-                                        start_date = aa.GetDateTime("start_date"),
-                                        end_date = aa.GetDateTime("end_date"),
+                                        start_date = (aa["start_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["start_date"]),
+                                        end_date = (aa["end_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["end_date"]),
                                         no_contract = aa.GetString("no_contract"),
                                         company = aa.GetString("company"),
                                         chk_company = aa.GetInt16("chk_company"),
                                         description = aa.GetString("description"),
-                                        entry_date = aa.GetDateTime("entry_date"),
+                                        entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
                                         entry_user = aa.GetString("entry_user"),
-                                        edit_date = aa.GetDateTime("edit_date"),
+                                        edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
                                         edit_user = aa.GetString("edit_user")
                                     };
                                     vList.Add(m);
@@ -109,6 +110,8 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetEmployeeContractList FAILED... ", ex);
             }
+
+            Log.Debug(DateTime.Now + " JML Employee CONTRACT List: " + vList.Count);
             return vList;
         }
 

@@ -12,10 +12,23 @@ namespace hrd_holding.Services
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("EmployeeService");
         private readonly mEmployeeRepo _repoEmp;
+        private readonly mEmployeeFamilyRepo _repoFam;
+        private readonly mEmployeeSkillRepo _repoSkill;
+        private readonly mEmployeeEducationRepo _repoEdu;
+        private readonly mEmployeeExperienceRepo _repoExp;
+        private readonly mEmployeeContractRepo _repoCon;
+        private readonly mEmployeeTrainingRepo _repoTrain;
 
         public mEmployeeService()
         {
             _repoEmp = new mEmployeeRepo();
+            _repoFam = new mEmployeeFamilyRepo();
+            _repoSkill = new mEmployeeSkillRepo();
+            _repoEdu = new mEmployeeEducationRepo();
+            _repoExp = new mEmployeeExperienceRepo();
+            _repoCon = new mEmployeeContractRepo();
+            _repoTrain = new mEmployeeTrainingRepo();
+
         }
 
         private string GenerateMasterCode(int code)
@@ -62,7 +75,7 @@ namespace hrd_holding.Services
         //    return vModel;
         //}
 
-        public ResponseModel GetEmployeeList(int pCompany, int? pPageNum = 0, int? pPageSize = 0, string pWhere="",string pOrderBy="")
+        public ResponseModel GetEmployeeList(int pCompany, int? pPageNum = 0, int? pPageSize = 0, string pWhere = "", string pOrderBy = "")
         {
             Log.Debug(DateTime.Now + " pPage : " + pPageNum + " pRows : " + pPageSize);
 
@@ -74,7 +87,7 @@ namespace hrd_holding.Services
             var vModel = new ResponseModel(); ;
             try
             {
-                vModel = _repoEmp.getEmployeeList(pCompany, vStart, vRows, pWhere,pOrderBy);
+                vModel = _repoEmp.getEmployeeList(pCompany, vStart, vRows, pWhere, pOrderBy);
             }
             catch (Exception ex)
             {
@@ -84,12 +97,28 @@ namespace hrd_holding.Services
             return vModel;
         }
 
-        public mEmployeeModel GetEmployeeInfo(string pEmployeeCode,int pSeqNo)
+        public EmployeeModelAll GetEmployeeInfo(string pEmployeeCode, int pSeqNo)
         {
-            //var vModel = new mEmployeeModel();
-            var vModel= _repoEmp.getEmployeeInfo(pEmployeeCode,pSeqNo);
+            var vModel = _repoEmp.getEmployeeInfo(pEmployeeCode, pSeqNo);
+            var vtblFamily = _repoFam.getEmployeeFamilyList(pEmployeeCode);
+            var vtblContract = _repoCon.getEmployeeContractList(pEmployeeCode);
+            var vtblEducation = _repoEdu.getEmployeeEducationList(pEmployeeCode);
+            var vtblExperience = _repoExp.getEmployeeExperienceList(pEmployeeCode);
+            var vtblSkill = _repoSkill.getEmployeeSkillList(pEmployeeCode);
+            var vtblTrain = _repoTrain.getEmployeeTrainingList(pEmployeeCode);
 
-            return vModel;
+            var vEmpModel = new EmployeeModelAll
+            {
+                empModel = vModel,
+                listContract = vtblContract,
+                listEducation = vtblEducation,
+                listExperience = vtblExperience,
+                listFamily = vtblFamily,
+                listSkill = vtblSkill,
+                listTrain = vtblTrain
+            };
+
+            return vEmpModel;
         }
 
         public void InsertEmployee(mEmployeeModel pModel)
@@ -97,7 +126,7 @@ namespace hrd_holding.Services
             var vNewModel = new mEmployeeModel();
             vNewModel.employee_code = pModel.employee_code;
 
-            vNewModel.seq_no = _repoEmp.getEmployeeSeqNo(pModel.employee_code,pModel.company_code);
+            vNewModel.seq_no = _repoEmp.getEmployeeSeqNo(pModel.employee_code, pModel.company_code);
 
             vNewModel.nik = pModel.nik;
             vNewModel.nip = pModel.nip;
@@ -162,7 +191,7 @@ namespace hrd_holding.Services
             vNewModel.note3 = pModel.note3;
             vNewModel.entry_date = DateTime.Now;
             vNewModel.entry_user = ""; //aa.GetString("entry_user"),
-            
+
             _repoEmp.InsertEmployee(vNewModel);
 
         }

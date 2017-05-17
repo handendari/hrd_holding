@@ -1,7 +1,7 @@
 ﻿<html lang="en">
 <head>
 
-<!--
+    <!--
 
 Copyright © 2013 Adobe Systems Incorporated.
 
@@ -20,7 +20,7 @@ limitations under the License.
 -->
 
     @Styles.Render("~/Content/jqwidgets")
-    
+
     <!-- jQuery -->
     @*@Scripts.Render("~/bundles/jquery")*@
     <script src="~/scripts/jquery-3.1.1.min.js"></script>
@@ -34,6 +34,10 @@ limitations under the License.
     <script src="~/scripts/mega_menu/jqueryMegaMenu.js"></script>
     <script src="~/scripts/mega_menu/mainMegaMenu.js"></script>
 
+    <script type="text/javascript">
+        var base_url = '@String.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~/"))';
+        var vTheme = 'custom_merah';
+    </script>
 </head>
 
 <body class="init">
@@ -43,7 +47,7 @@ limitations under the License.
     <div class="LayoutGrid LayoutCenter PanelDiffuseShadow PanelFillExtraLight">
         <nav class="megamenu">
             <ol>
-                <li  style="margin-left: 30px">
+                <li style="margin-left: 30px">
                     <a role="button" href="#">
                         <img src="@Url.Content("~/content/images/ssd3.png")" style="float: left; margin-right: 3px" />
                     </a>

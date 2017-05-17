@@ -4,13 +4,12 @@
 }
 
 
-<html>
-<head>
+
+<header>
     <script type="text/javascript">
         $(document).ready(function () {
             // prepare the data
 
-            var base_url = '@String.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~/"))';
             var theme = 'sunny';
 
             $("#jqxToolBar").jqxToolBar({
@@ -31,7 +30,7 @@
 
             var source =
               {
-                  url: base_url + "/Employee/GetEmployeeList_Lama?pCompanyCode=1",
+                  url: base_url + "/Employee/GetEmployeeList?pCompanyCode=1",
                   datatype: "json",
                   type: "Post",
                   datafields: [{ name: "employee_code", type: "string" },
@@ -101,9 +100,9 @@
               });
         });
     </script>
-</head>
-<body style="background-color: #F5F5F5">
+</header>
+<div style="background-color: #F5F5F5">
     <div id="jqxToolBar"></div>
     <div id="jqxgrid"></div>
-</body>
-</html>
+</div>
+

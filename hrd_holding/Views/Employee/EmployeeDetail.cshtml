@@ -1,408 +1,246 @@
-﻿@{
+﻿@model hrd_holding.Models.mEmployeeModel
+
+@{
     ViewBag.Title = "EmployeeDetail";
     Layout = "~/Views/Shared/_header.cshtml";
 }
 
 <header>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var vTheme = 'custom_merah';
-            $("#txtId").jqxInput({ theme: vTheme });
-            $("#txtFullName").jqxInput({ theme: vTheme });
-            $("#txtNickName").jqxInput({ theme: vTheme });
-            $("#dtPob").jqxDateTimeInput({ theme: vTheme });
-            $("#dtDob").jqxDateTimeInput({ theme: vTheme });
-            $("#txtGender").jqxInput({ theme: vTheme });
-            $("#txtReligion").jqxInput({ theme: vTheme });
-            $("#txtChild").jqxInput({ theme: vTheme });
-            $("#txtAddress").jqxInput({ theme: vTheme });
-            $("#txtKdDepartement").jqxInput({ theme: vTheme });
-            $("#btnKdDepartement").jqxButton({ theme: vTheme });
-            $("#txtNmDepartement").jqxInput({ theme: vTheme });
-            $("#txtKdJobTitle").jqxInput({ theme: vTheme });
-            $("#btnKdJobTitle").jqxButton({ theme: vTheme });
-            $("#txtNmJobTitle").jqxInput({ theme: vTheme });
-            $("#txtKdGrade").jqxInput({ theme: vTheme });
-            $("#btnKdGrade").jqxButton({ theme: vTheme });
-            $("#txtNmGrade").jqxInput({ theme: vTheme });
-            $("#txtKdLevel").jqxInput({ theme: vTheme });
-            $("#btnKdLevel").jqxButton({ theme: vTheme });
-            $("#txtNmLevel").jqxInput({ theme: vTheme });
-            $("#dtStartWorking").jqxDateTimeInput({ theme: vTheme });
-            $("#dtProbation").jqxDateTimeInput({ theme: vTheme });
-            $("#txtWorkingAge").jqxInput({ theme: vTheme });
-            $("#txtPhone").jqxInput({ theme: vTheme });
-            $("#tdtEmail").jqxInput({ theme: vTheme });
-            $("#txtKdCountry").jqxInput({ theme: vTheme });
-            $("#btnKdCountry").jqxButton({ theme: vTheme });
-            $("#txtNmCountry").jqxInput({ theme: vTheme });
-            $("#txtNoKtp").jqxInput({ theme: vTheme });
-            $("#txtLastEducation").jqxInput({ theme: vTheme });
-            $("#txtLastEmployment").jqxInput({ theme: vTheme });
-            $("#txtKdBank").jqxInput({ theme: vTheme });
-            $("#btnKdBank").jqxButton({ theme: vTheme });
-            $("#txtNmBank").jqxInput({ theme: vTheme });
-            $("#txtBankAcc").jqxInput({ theme: vTheme });
-            $("#txtBankAccName").jqxInput({ theme: vTheme });
-            $("#txtKdStatus").jqxInput({ theme: vTheme });
-            $("#btnKdStatus").jqxButton({ theme: vTheme });
-            $("#txtNmStatus").jqxInput({ theme: vTheme });
-            $("#txtKdAtasan").jqxInput({ theme: vTheme });
-            $("#btnkdAtasan").jqxButton({ theme: vTheme });
-            $("#txtNmAtasan").jqxInput({ theme: vTheme });
-
-            //<li>FAMILY</li>
-            var initGridFamily = function () {
-                var source =
-               {
-                   datatype: "json",
-                   datafields: [
-                        { name: 'employment_code' },
-                        { name: 'name' },
-                        { name: 'nm_rel' },
-                        { name: 'date_birth' },
-                        { name: 'education' },
-                        { name: 'employment' }
-                   ]
-               };
-
-                var dataAdapter = new $.jqx.dataAdapter(source, {
-                    async: false,
-                    loadError: function (xhr, status, error) { alert('Error loading "' + source.url + '" : ' + error); }
-                });
-
-                $("#tblFamily").jqxGrid(
-                {
-                    width: '100%',
-                    height: 300,
-                    theme:vTheme,
-                    //                    source: dataAdapter,
-                    columns: [
-                        { text: 'Emp. Code', datafield: 'employee_code', hidden:true },
-                        { text: 'Name', datafield: 'name' },
-                        { text: 'Conn. With Emp', datafield: 'nm_rel' },
-                        { text: 'Date Of Birth', datafield: 'date_birth' },
-                        { text: 'Education', datafield: 'education' },
-                        { text: 'Employment', datafield: 'employment' }
-                    ]
-                });
-            }
-
-                //<li>SKILL</li>
-            var initGridSkill = function () {
-                var source =
-               {
-                   datatype: "json",
-                   datafields: [
-                        { name: 'employee_code' },
-                        { name: 'seq_no' },
-                        { name: 'skill' },
-                        { name: 'nm_level' }
-                   ]
-               };
-
-                var dataAdapter = new $.jqx.dataAdapter(source, {
-                    async: false,
-                    loadError: function (xhr, status, error) { alert('Error loading "' + source.url + '" : ' + error); }
-                });
-
-                $("#tblSkill").jqxGrid(
-                {
-                    width: '100%',
-                    height: 300,
-                    theme: vTheme,
-                    //                    source: dataAdapter,
-                    columns: [
-                        { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
-                        { text: 'sequence', datafield: 'seq_no', hidden: true },
-                        { text: 'Skill', datafield: 'skill' },
-                        { text: 'Level', datafield: 'nm_level' }
-                    ]
-                });
-            }
-
-            //<li>EXPERIENCE</li>
-            var initGridExperience = function () {
-                var source =
-               {
-                   datatype: "json",
-                   datafields: [
-                        { name: 'employee_code' },
-                        { name: 'seq_no' },
-                        { name: 'company_name' },
-                        { name: 'usaha' },
-                        { name: 'department_name' },
-                        { name: 'last_title' },
-                        { name: 'start_working' },
-                        { name: 'end_working' },
-                        { name: 'last_salary' },
-                        { name: 'reason_stop_working' },
-
-                   ]
-               };
-
-                var dataAdapter = new $.jqx.dataAdapter(source, {
-                    async: false,
-                    loadError: function (xhr, status, error) { alert('Error loading "' + source.url + '" : ' + error); }
-                });
-
-                $("#tblExperience").jqxGrid(
-                {
-                    width: '100%',
-                    height: 300,
-                    theme: vTheme,
-                    //                    source: dataAdapter,
-                    columns: [
-                        { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
-                        { text: 'sequence', datafield: 'seq_no', hidden: true },
-                        { text: 'Comp. Name', datafield: 'company_name' },
-                        { text: 'Usaha', datafield: 'usaha' },
-                        { text: 'Departement', datafield: 'department_name' },
-                        { text: 'Last Title', datafield: 'last_title' },
-                        { text: 'Start Working', datafield: 'start_working', filtertype: 'date', cellsalign: 'center', cellsformat: 'dd-MMM-yy' },
-                        { text: 'End Working', datafield: 'end_working', filtertype: 'date', cellsalign: 'center', cellsformat: 'dd-MMM-yy' },
-                        { text: 'Last Salary', datafield: 'last_salary' },
-                        { text: 'Reason', datafield: 'reason_stop_working' }
-                    ]
-                });
-            }
-
-            //<li>EDUCATION</li>
-            var initGridEducation = function () {
-                var source =
-               {
-                   datatype: "json",
-                   datafields: [
-                        { name: 'employee_code' },
-                        { name: 'seq_no' },
-                        { name: 'nm_jenjang' },
-                        { name: 'scholl' },
-                        { name: 'jurusan' },
-                        { name: 'city' },
-                        { name: 'start_date' },
-                        { name: 'end_date' }
-                   ]
-               };
-
-                var dataAdapter = new $.jqx.dataAdapter(source, {
-                    async: false,
-                    loadError: function (xhr, status, error) { alert('Error loading "' + source.url + '" : ' + error); }
-                });
-
-                $("#tblEducation").jqxGrid(
-                {
-                    width: '100%',
-                    height: 300,
-                    theme: vTheme,
-                    //                    source: dataAdapter,
-                    columns: [
-                        { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
-                        { text: 'sequence', datafield: 'seq_no', hidden: true },
-                        { text: 'Jenjang', datafield: 'nm_jenjang' },
-                        { text: 'Sekolah', datafield: 'scholl' },
-                        { text: 'Jurusan', datafield: 'jurusan' },
-                        { text: 'Kota', datafield: 'city' },
-                        { text: 'Start Date', datafield: 'start_date', filtertype: 'date', cellsalign: 'center', cellsformat: 'dd-MMM-yy' },
-                        { text: 'End Date', datafield: 'end_date',filtertype: 'date', cellsalign: 'center',cellsformat: 'dd-MMM-yy' }
-                    ]
-                });
-            }
-
-            //<li>TRAINING</li>
-            //<li>CONTRACT</li>
-
-
-            // init widgets.
-            var initWidgets = function (tab) {
-                switch (tab) {
-                    case 0:
-                        initGridFamily();
-                        break;
-                    case 1:
-                        initGridEducation();
-                        break;
-                    case 2:
-                        initGridSkill();
-                        break;
-                    case 3:
-                        initGridExperience();
-                        break;
-                }
-            }
-            $('#jqxTabs').jqxTabs({
-                width: '100%', height: 400, theme: vTheme,
-                position: 'top', selectionTracker: 1, animationType: 'fade',
-                initTabContent: initWidgets
-            });
-        });
-    </script>
+    <script src="~/scripts/mEmployee/m_employee_detail.js"></script>
 </header>
 
 <div>
-    <table>
-        <tr>
-            <td>Employee ID *</td>
-            <td>
-                <input type="text" id="txtId" /></td>
-        </tr>
-        <tr>
-            <td>Full Name *</td>
-            <td>
-                <input type="text" id="txtFullName" /></td>
-            <td style="padding-left: 30px">Nick Name *</td>
-            <td>
-                <input type="text" id="txtNickName" /></td>
-        </tr>
-        <tr>
-            <td>Place Of Birth *</td>
-            <td>
-                <input type="text" id="dtPob" /></td>
-            <td style="padding-left: 30px">Date Of Birth *</td>
-            <td>
-                <input type="text" id="dtDob" /></td>
-        </tr>
-        <tr>
-            <td>Gender *</td>
-            <td>
-                <input type="text" id="txtGender" /></td>
-            <td style="padding-left: 30px">Religion *</td>
-            <td>
-                <input type="text" id="txtReligion" /></td>
-        </tr>
-        <tr>
-            <td>Children Nr *</td>
-            <td>
-                <input type="text" id="txtChild" /></td>
-            <td style="padding-left: 30px">Employee Address *</td>
-            <td>
-                <input type="text" id="txtAddress" /></td>
-        </tr>
-        <tr>
-            <td>Departement *</td>
-            <td>
-                <input type="text" style="width: 60px" id="txtKdDepartement" />
-                <input type="button" id="btnKdDepartement" value="..." />
-                <input type="text" id="txtNmDepartement" />
-            </td>
-            <td style="padding-left: 30px">Job Title *</td>
-            <td>
-                <input type="text" style="width: 60px" id="txtKdJobTitle" />
-                <input type="button" id="btnKdJobTitle" value="..." />
-                <input type="text" id="txtNmJobTitle" />
-            </td>
-        </tr>
-        <tr>
-            <td>Grade</td>
-            <td>
-                <input type="text" style="width: 60px" id="txtKdGrade" />
-                <input type="button" id="btnKdGrade" value="..." />
-                <input type="text" id="txtNmGrade" />
-            </td>
-            <td style="padding-left: 30px">Level *</td>
-            <td>
-                <input type="text" style="width: 60px" id="txtKdLevel" />
-                <input type="button" id="btnKdLevel" value="..." />
-                <input type="text" id="txtNmLevel" />
-            </td>
-        </tr>
-        <tr>
-            <td>Start Working</td>
-            <td>
-                <input type="text" id="dtStartWorking" /></td>
-            <td style="padding-left: 30px">Probation Date</td>
-            <td>
-                <input type="text" id="dtProbation" /></td>
-            <td style="padding-left: 30px">Working Age (Y)</td>
-            <td>
-                <input type="text" id="txtWorkingAge" /></td>
-        </tr>
-        <tr>
-            <td>Phone Number</td>
-            <td>
-                <input type="text" id="txtPhone" /></td>
-            <td style="padding-left: 30px">Email</td>
-            <td>
-                <input type="text" id="tdtEmail" /></td>
-        </tr>
-        <tr>
-            <td>Country *</td>
-            <td>
-                <input type="text" style="width: 60px" id="txtKdCountry" />
-                <input type="button" id="btnKdCountry" value="..." />
-                <input type="text" id="txtNmCountry" />
-            </td>
-            <td style="padding-left: 30px">Identity Card Nr</td>
-            <td>
-                <input type="text" id="txtNoKtp" /></td>
-        </tr>
-        <tr>
-            <td>Last Education</td>
-            <td>
-                <input type="text" id="txtLastEducation" /></td>
-            <td style="padding-left: 30px">Last Employment</td>
-            <td>
-                <input type="text" id="txtLastEmployment" /></td>
-        </tr>
-        <tr>
-            <td>Bank Name</td>
-            <td>
-                <input type="text" style="width: 60px" id="txtKdBank" />
-                <input type="button" id="btnKdBank" value="..." />
-                <input type="text" id="txtNmBank" /></td>
-            <td style="padding-left: 30px">Bank Account</td>
-            <td>
-                <input type="text" id="txtBankAcc" /></td>
-            <td style="padding-left: 30px">Bank Acc. Name</td>
-            <td>
-                <input type="text" id="txtBankAccName" /></td>
-        </tr>
-        <tr>
-            <td>Status</td>
-            <td>
-                <input type="text" style="width: 60px" id="txtKdStatus" />
-                <input type="button" id="btnKdStatus" value="..." />
-                <input type="text" id="txtNmStatus" />
-            </td>
-            <td style="padding-left: 30px">Atasan</td>
-            <td>
-                <input type="text" style="width: 60px" id="txtKdAtasan" />
-                <input type="button" id="btnkdAtasan" value="..." />
-                <input type="text" id="txtNmAtasan" />
-            </td>
+    <div>
+        <table>
+            <tr>
+                <td>Employee ID *</td>
+                <td>
+                    <input type="text" id="txtId" /></td>
+            </tr>
+            <tr>
+                <td>Full Name *</td>
+                <td>
+                    <input type="text" id="txtFullName" /></td>
+                <td style="padding-left: 30px">Nick Name *</td>
+                <td>
+                    <input type="text" id="txtNickName" /></td>
+            </tr>
+            <tr>
+                <td>Place Of Birth *</td>
+                <td>
+                    <input type="text" id="txtPob" /></td>
+                <td style="padding-left: 30px">Date Of Birth *</td>
+                <td>
+                    <input type="text" id="dtDob" /></td>
+            </tr>
+            <tr>
+                <td>Gender *</td>
+                <td>
+                    <div id='cmbGender'></div>
+                </td>
+                <td style="padding-left: 30px">Religion *</td>
+                <td>
+                    <div id='cmbReligion'></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Children Nr *</td>
+                <td>
+                    <input type="text" id="txtChild" /></td>
+                <td style="padding-left: 30px">Employee Address *</td>
+                <td>
+                    <input type="text" id="txtAddress" /></td>
+            </tr>
+            <tr>
+                <td>Departement *</td>
+                <td>
+                    <input type="text" style="width: 60px" id="txtKdDepartement" />
+                    <input type="button" id="btnKdDepartement" value="..." />
+                    <input type="text" id="txtNmDepartement" />
+                </td>
+                <td style="padding-left: 30px">Job Title *</td>
+                <td>
+                    <input type="text" style="width: 60px" id="txtKdJobTitle" />
+                    <input type="button" id="btnKdJobTitle" value="..." />
+                    <input type="text" id="txtNmJobTitle" />
+                </td>
+            </tr>
+            <tr>
+                <td>Grade</td>
+                <td>
+                    <input type="text" style="width: 60px" id="txtKdGrade" />
+                    <input type="button" id="btnKdGrade" value="..." />
+                    <input type="text" id="txtNmGrade" />
+                </td>
+                <td style="padding-left: 30px">Level *</td>
+                <td>
+                    <input type="text" style="width: 60px" id="txtKdLevel" />
+                    <input type="button" id="btnKdLevel" value="..." />
+                    <input type="text" id="txtNmLevel" />
+                </td>
+            </tr>
+            <tr>
+                <td>Start Working</td>
+                <td>
+                    <input type="text" id="dtStartWorking" /></td>
+                <td style="padding-left: 30px">Probation Date</td>
+                <td>
+                    <input type="text" id="dtProbation" /></td>
+                <td style="padding-left: 30px">Working Age (Y)</td>
+                <td>
+                    <input type="text" id="txtWorkingAge" /></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td>
+                    <input type="text" id="txtPhone" /></td>
+                <td style="padding-left: 30px">Email</td>
+                <td>
+                    <input type="text" id="txtEmail" /></td>
+            </tr>
+            <tr>
+                <td>Country *</td>
+                <td>
+                    <input type="text" style="width: 60px" id="txtKdCountry" />
+                    <input type="button" id="btnKdCountry" value="..." />
+                    <input type="text" id="txtNmCountry" />
+                </td>
+                <td style="padding-left: 30px">Identity Card Nr</td>
+                <td>
+                    <input type="text" id="txtNoKtp" /></td>
+            </tr>
+            <tr>
+                <td>Last Education</td>
+                <td>
+                    <input type="text" id="txtLastEducation" /></td>
+                <td style="padding-left: 30px">Last Employment</td>
+                <td>
+                    <input type="text" id="txtLastEmployment" /></td>
+            </tr>
+            <tr>
+                <td>Bank Name</td>
+                <td>
+                    <input type="text" style="width: 60px" id="txtKdBank" />
+                    <input type="button" id="btnKdBank" value="..." />
+                    <input type="text" id="txtNmBank" /></td>
+                <td style="padding-left: 30px">Bank Account</td>
+                <td>
+                    <input type="text" id="txtBankAcc" /></td>
+                <td style="padding-left: 30px">Bank Acc. Name</td>
+                <td>
+                    <input type="text" id="txtBankAccName" /></td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>
+                    <input type="text" style="width: 60px" id="txtKdStatus" />
+                    <input type="button" id="btnKdStatus" value="..." />
+                    <input type="text" id="txtNmStatus" />
+                </td>
+                <td style="padding-left: 30px">Atasan</td>
+                <td>
+                    <input type="text" style="width: 60px" id="txtKdAtasan" />
+                    <input type="button" id="btnkdAtasan" value="..." />
+                    <input type="text" id="txtNmAtasan" />
+                </td>
 
-        </tr>
-    </table>
-    <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717; background-color: #eeece1;">
-        <legend style="margin-left: 20px; background-color: #6b1717; padding-left: 10px; padding-top: 5px; padding-right: 100px; padding-bottom: 5px; color: white; border-radius: 8px; border: 2px solid #eeece1; font-size: 13px;">
-            <b>Employee Detail </b>
-        </legend>
-        <div id='jqxTabs'>
-            <ul>
-                <li>FAMILY</li>
-                <li>EDUCATION</li>
-                <li>SKILL</li>
-                <li>EXPERIENCE</li>
-                <li>TRAINING</li>
-                <li>CONTRACT</li>
-            </ul>
-            <div id="pnlFamily" style="padding-left:10px;padding-right:10px;padding-top:5px">
-                <div id="tblFamily"></div>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding-left: 50px; padding-top: 10px">
+                    <div id='chkManagerial'>Managerial (No Att. Needed)</div>
+                </td>
+                <td rowspan="2" colspan="2" style="padding-left: 50px; padding-top: 10px">
+                    <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717; background-color: #eeece1;">
+                        <legend>Working Status Employment</legend>
+                        <table>
+                            <tr>
+                                <td style="padding-left:20px">
+                                    <div id='optProbation'>Probation</div>
+                                </td>
+                                <td style="padding-left:20px">
+                                    <div id='optActive'>Active</div>
+                                </td>
+                                <td style="padding-left:20px">
+                                    <div id='optNonActive'>Non Active</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="2" style="padding-left: 50px">
+                    <div id='chkSpecialLate'>Special Permission for Late</div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div style="margin-top: 10px">
+        <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717; background-color: #eeece1;">
+            <legend style="margin-left: 20px; background-color: #6b1717; padding-left: 10px; padding-top: 5px; padding-right: 100px; padding-bottom: 5px; color: white; border-radius: 8px; border: 2px solid #eeece1; font-size: 13px;">
+                <b>Employee Detail </b>
+            </legend>
+            <div id='jqxTabs'>
+                <ul>
+                    <li>FAMILY</li>
+                    <li>EDUCATION</li>
+                    <li>SKILL</li>
+                    <li>EXPERIENCE</li>
+                    <li>TRAINING</li>
+                    <li>CONTRACT</li>
+                </ul>
+                <div id="pnlFamily" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
+                    <div id="tblFamily"></div>
+                    <div style="margin-top: 10px; margin-left: 20px">
+                        <button id="btnFamilySave">SAVE</button>
+                        <button id="btnFamilyEdit">EDIT</button>
+                        <button style="margin-left: 50px" id="btnFamilyDelete">DELETE</button>
+                    </div>
+                </div>
+                <div id="pnlEducation" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
+                    <div id="tblEducation"></div>
+                    <div style="margin-top: 10px; margin-left: 20px">
+                        <button id="btnEduSave">SAVE</button>
+                        <button id="btnEduEdit">EDIT</button>
+                        <button style="margin-left: 50px" id="btnEduDelete">DELETE</button>
+                    </div>
+                </div>
+                <div id="pnlSkill" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
+                    <div id="tblSkill"></div>
+                    <div style="margin-top: 10px; margin-left: 20px">
+                        <button id="btnSkillSave">SAVE</button>
+                        <button id="btnSkillEdit">EDIT</button>
+                        <button style="margin-left: 50px" id="btnSkillDelete">DELETE</button>
+                    </div>
+                </div>
+                <div id="pnlExperience" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
+                    <div id="tblExperience"></div>
+                    <div style="margin-top: 10px; margin-left: 20px">
+                        <button id="btnExpSave">SAVE</button>
+                        <button id="btnExpEdit">EDIT</button>
+                        <button style="margin-left: 50px" id="btnExpDelete">DELETE</button>
+                    </div>
+                </div>
+                <div id="pnlTraining" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
+                    <div id="tblTraining"></div>
+                    <div style="margin-top: 10px; margin-left: 20px">
+                        <button id="btnTrainingSave">SAVE</button>
+                        <button id="btnTrainingEdit">EDIT</button>
+                        <button style="margin-left: 50px" id="btnTrainingDelete">DELETE</button>
+                    </div>
+                </div>
+                <div id="pnlContract" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
+                    <div id="tblContract"></div>
+                    <div style="margin-top: 10px; margin-left: 20px">
+                        <button id="btnContractSave">SAVE</button>
+                        <button id="btnContractEdit">EDIT</button>
+                        <button style="margin-left: 50px" id="btnContractDelete">DELETE</button>
+                    </div>
+
+                </div>
             </div>
-            <div id="pnlEducation" style="padding-left:10px;padding-right:10px;padding-top:5px">
-                <div id="tblEducation"></div>
-            </div>
-            <div id="pnlSkill" style="padding-left:10px;padding-right:10px;padding-top:5px">
-                <div id="tblSkill"></div>
-            </div>
-            <div id="pnlExperience" style="padding-left:10px;padding-right:10px;padding-top:5px">
-                <div id="tblExperience"></div>
-            </div>
-            <div id="pnlTraining" style="padding-left:10px;padding-right:10px;padding-top:5px">
-                <div id="tblTraining"></div>
-            </div>
-            <div id="pnlContract" style="padding-left:10px;padding-right:10px;padding-top:5px">
-                <div id="tblContract"></div>
-            </div>
-        </div>
-    </fieldset>
+        </fieldset>
+    </div>
 </div>

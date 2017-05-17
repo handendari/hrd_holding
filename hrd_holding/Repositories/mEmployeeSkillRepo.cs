@@ -56,12 +56,16 @@ namespace hrd_holding.Repositories
 
         }
 
-        public List<mEmployeeSkillModel> getEmployeeSkillList(int pEmployeeCode)
+        public List<mEmployeeSkillModel> getEmployeeSkillList(string pEmployeeCode)
         {
             var vList = new List<mEmployeeSkillModel>();
-            var strSQL = @"SELECT mes.employee_code,emp.employee_name,mes.seq_no,mes.skill,mes.level,mes.nm_level,mes.flag_skill,
-                                  mes.description,mes.entry_date,mes.entry_user,mes.edit_date,mes.edit_user
-                           FROM m_employee_skill mes JOIN m_empoloyee emp ON mes.employee_code = emp.employee_code
+            var strSQL = @"SELECT mes.employee_code,emp.employee_name,mes.seq_no,
+                                  IFNULL(mes.skill,'') skill,IFNULL(mes.level,'') level,
+                                  IFNULL(mes.nm_level,'') nm_level,IFNULL(mes.flag_skill,0) flag_skill,
+                                  IFNULL(mes.description,'') description,
+                                  mes.entry_date,IFNULL(mes.entry_user,'') entry_user,
+                                  mes.edit_date,IFNULL(mes.edit_user,'') edit_user
+                           FROM m_employee_skill mes JOIN m_employee emp ON mes.employee_code = emp.employee_code
                            WHERE mes.employee_code = @pEmployeeCode";
             try
             {
@@ -89,9 +93,9 @@ namespace hrd_holding.Repositories
                                         nm_level = aa.GetString("nm_level"),
                                         flag_skill = aa.GetInt16("flag_skill"),
                                         description = aa.GetString("description"),
-                                        entry_date = aa.GetDateTime("entry_date"),
+                                        entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
                                         entry_user = aa.GetString("entry_user"),
-                                        edit_date = aa.GetDateTime("edit_date"),
+                                        edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
                                         edit_user = aa.GetString("edit_user")
                                     };
                                     vList.Add(m);
@@ -105,6 +109,8 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetEmployeeSkillList FAILED... ", ex);
             }
+
+            Log.Debug(DateTime.Now + " JML Employee SKILL List: " + vList.Count);
             return vList;
         }
 

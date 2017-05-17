@@ -470,34 +470,37 @@ namespace hrd_holding.Repositories
         public mEmployeeModel getEmployeeInfo(string pEmployeeCode, int pSeqNo)
         {
             var vModel = new mEmployeeModel();
-            var strSQL = @"SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
-                                  emp.company_code,mc.company_name,
-                                  emp.branch_code,mbo.branch_name,
-                                  emp.department_code,md.department_name,
-                                  emp.division_code,
-                                  emp.title_code,mt.title_name,
-                                  emp.subtitle_code,ms.subtitle_name,
-                                  emp.level_code,ml.level_name,
-                                  emp.status_code,mes.status_name,
+            var strSQL = @"SELECT emp.employee_code,emp.seq_no,IFNULL(emp.nik,'') nik,IFNULL(emp.nip,'') nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.int_company,mc.company_name,
+                                  emp.branch_code,mbo.int_branch,mbo.branch_name,
+                                  emp.department_code,md.int_department,md.department_name,
+                                  IFNULL(emp.division_code,'') division_code,
+                                  emp.title_code,mt.int_title,mt.title_name,
+                                  IFNULL(emp.subtitle_code,'') subtitle_code,IFNULL(ms.int_subtitle,'') int_subtitle,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.int_level,ml.level_name,
+                                  emp.status_code,mes.int_status,mes.status_name,
                                   emp.flag_shiftable,
                                   emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
                                   emp.no_of_children,emp.emp_address,
-                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,0) npwp_method,
+                                  emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
                                   emp.jstk_registered_date,
                                   emp.bank_code,mba.bank_name,
                                   emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
                                   emp.phone_number,emp.hp_number,emp.email,
-                                  emp.country_code,mc.country_name,
-                                  emp.identity_number,emp.last_education,
-                                  emp.last_employment,emp.description,emp.flag_active,
-                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
-                                  emp.spv_code,
-                                  emp.note1,emp.note2,emp.note3,emp.entry_date,emp.entry_user,emp.edit_date,emp.edit_user
-                           FROM m_empoloyee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                                  emp.country_code,mco.int_country,mco.country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,emp.flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,
+                                  '' picture,emp.salary_type,
+                                  emp.tgl_mutasi,emp.flag_managerial,emp.spv_code,
+                                  emp.note1,emp.note2,emp.note3,emp.entry_date,emp.entry_user,emp.edit_date,
+                                  IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
                            JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
                            JOIN m_department md ON emp.department_code = md.department_code
                            JOIN m_title mt ON emp.title_code = mt.title_code
-                           JOIN m_country mc ON emp.country_code = mc.country_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
                            JOIN m_emp_status mes ON emp.status_code = mes.status_code
                            LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
                            LEFT JOIN m_level ml ON emp.level_code = ml.level_code
@@ -527,24 +530,31 @@ namespace hrd_holding.Repositories
                                     vModel.employee_name = aa.GetString("employee_name");
                                     vModel.employee_nick_name = aa.GetString("employee_nick_name");
                                     vModel.company_code = aa.GetString("company_code");
+                                    vModel.int_company = aa.GetString("int_company");
                                     vModel.company_name = aa.GetString("company_name");
                                     vModel.branch_code = aa.GetString("branch_code");
+                                    vModel.int_branch = aa.GetString("int_branch");
                                     vModel.branch_name = aa.GetString("branch_name");
                                     vModel.department_code = aa.GetString("department_code");
+                                    vModel.int_department = aa.GetString("int_department");
                                     vModel.department_name = aa.GetString("department_name");
                                     vModel.division_code = aa.GetString("division_code");
                                     vModel.title_code = aa.GetString("title_code");
+                                    vModel.int_title = aa.GetString("int_title");
                                     vModel.title_name = aa.GetString("title_name");
                                     vModel.subtitle_code = aa.GetString("subtitle_code");
+                                    vModel.int_subtitle = aa.GetString("int_subtitle");
                                     vModel.subtitle_name = aa.GetString("subtitle_name");
                                     vModel.level_code = aa.GetString("level_code");
+                                    vModel.int_level = aa.GetString("int_level");
                                     vModel.level_name = aa.GetString("level_name");
                                     vModel.status_code = aa.GetString("status_code");
+                                    vModel.int_status = aa.GetString("int_status");
                                     vModel.status_name = aa.GetString("status_name");
                                     vModel.flag_shiftable = aa.GetInt16("flag_shiftable");
                                     vModel.flag_transport = aa.GetInt16("flag_transport");
                                     vModel.place_birth = aa.GetString("place_birth");
-                                    vModel.date_birth = aa.GetDateTime("date_birth");
+                                    vModel.date_birth = (aa["date_birth"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["date_birth"]);
                                     vModel.sex = aa.GetInt16("sex");
                                     vModel.religion = aa.GetInt16("religion");
                                     vModel.marital_status = aa.GetInt16("marital_status");
@@ -553,40 +563,41 @@ namespace hrd_holding.Repositories
                                     vModel.npwp = aa.GetString("npwp");
                                     vModel.kode_pajak = aa.GetString("kode_pajak");
                                     vModel.npwp_method = aa.GetInt16("npwp_method");
-                                    vModel.npwp_registered_date = aa.GetDateTime("npwp_registered_date");
+                                    vModel.npwp_registered_date = (aa["npwp_registered_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["npwp_registered_date"]);
                                     vModel.npwp_address = aa.GetString("npwp_address");
                                     vModel.no_jamsostek = aa.GetString("no_jamsostek");
-                                    vModel.jstk_registered_date = aa.GetDateTime("jstk_registered_date");
+                                    vModel.jstk_registered_date = (aa["jstk_registered_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["jstk_registered_date"]);
                                     vModel.bank_code = aa.GetString("bank_code");
                                     vModel.bank_name = aa.GetString("bank_name");
                                     vModel.bank_account = aa.GetString("bank_account");
                                     vModel.bank_acc_name = aa.GetString("bank_acc_name");
-                                    vModel.start_working = aa.GetDateTime("start_working");
-                                    vModel.appointment_date = aa.GetDateTime("appointment_date");
+                                    vModel.start_working = (aa["start_working"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["start_working"]);
+                                    vModel.appointment_date = (aa["appointment_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["appointment_date"]);
                                     vModel.phone_number = aa.GetString("phone_number");
                                     vModel.hp_number = aa.GetString("hp_number");
                                     vModel.email = aa.GetString("email");
                                     vModel.country_code = aa.GetString("country_code");
+                                    vModel.int_country = aa.GetString("int_country");
                                     vModel.country_name = aa.GetString("country_name");
                                     vModel.identity_number = aa.GetString("identity_number");
                                     vModel.last_education = aa.GetString("last_education");
                                     vModel.last_employment = aa.GetString("last_employment");
                                     vModel.description = aa.GetString("description");
                                     vModel.flag_active = aa.GetInt16("flag_active");
-                                    vModel.end_working = aa.GetDateTime("end_working");
+                                    vModel.end_working = (aa["end_working"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["end_working"]);
                                     vModel.reason = aa.GetString("reason");
                                     vModel.picture = aa.GetString("picture");
                                     vModel.salary_type = aa.GetInt16("salary_type");
-                                    vModel.tgl_mutasi = aa.GetDateTime("tgl_mutasi");
+                                    vModel.tgl_mutasi = (aa["tgl_mutasi"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["tgl_mutasi"]);
                                     vModel.flag_managerial = aa.GetInt16("flag_managerial");
                                     vModel.spv_code = aa.GetString("spv_code");
                                     //vModel.spv_name = aa.GetString("spv_name");
                                     vModel.note1 = aa.GetString("note1");
                                     vModel.note2 = aa.GetString("note2");
                                     vModel.note3 = aa.GetString("note3");
-                                    vModel.entry_date = aa.GetDateTime("entry_date");
+                                    vModel.entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]);
                                     vModel.entry_user = aa.GetString("entry_user");
-                                    vModel.edit_date = aa.GetDateTime("edit_date");
+                                    vModel.edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]);
                                     vModel.edit_user = aa.GetString("edit_user");
                                 }
                             }
