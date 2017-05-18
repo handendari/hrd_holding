@@ -14,6 +14,7 @@
             "PEREMPUAN"
     ];
 
+    //#region DATASOURCE TABEL
     var vDataFamily = new Array();
     var vSrcFamily =
     {
@@ -21,6 +22,7 @@
         datatype: "array",
         datafields: [
              { name: 'employment_code' },
+             { name: 'seq_no' },
              { name: 'name' },
              { name: 'nm_rel' },
              { name: 'date_birth', type: "date" },
@@ -28,8 +30,13 @@
              { name: 'employment' }
         ]
     };
+    //#endregion
 
-    //#region INIT THEME
+    //GET WINDOW HEIGHT AND WIDTH
+    var winHeight = $(window).height();
+    var winWidth = $(window).width();
+
+    //#region INIT COMPONENT
     $("#txtId").jqxInput({ theme: vTheme });
     $("#txtFullName").jqxInput({ theme: vTheme });
     $("#txtNickName").jqxInput({ theme: vTheme });
@@ -74,29 +81,29 @@
     $("#btnkdAtasan").jqxButton({ theme: vTheme });
     $("#txtNmAtasan").jqxInput({ theme: vTheme });
 
-    $("#btnFamilySave").jqxButton({ theme: vTheme });
-    $("#btnFamilyEdit").jqxButton({ theme: vTheme });
-    $("#btnFamilyDelete").jqxButton({ theme: vTheme });
+    $("#btnFamilyNew").jqxButton({ theme: vTheme,height:30,width:100 });
+    $("#btnFamilyEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnFamilyDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
-    $("#btnSkillSave").jqxButton({ theme: vTheme });
-    $("#btnSkillEdit").jqxButton({ theme: vTheme });
-    $("#btnSkillDelete").jqxButton({ theme: vTheme });
+    $("#btnSkillNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnSkillEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnSkillDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
-    $("#btnExpSave").jqxButton({ theme: vTheme });
-    $("#btnExpEdit").jqxButton({ theme: vTheme });
-    $("#btnExpDelete").jqxButton({ theme: vTheme });
+    $("#btnExpNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnExpEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnExpDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
-    $("#btnEduSave").jqxButton({ theme: vTheme });
-    $("#btnEduEdit").jqxButton({ theme: vTheme });
-    $("#btnEduDelete").jqxButton({ theme: vTheme });
+    $("#btnEduNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnEduEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnEduDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
-    $("#btnTrainingSave").jqxButton({ theme: vTheme });
-    $("#btnTrainingEdit").jqxButton({ theme: vTheme });
-    $("#btnTrainingDelete").jqxButton({ theme: vTheme });
+    $("#btnTrainingNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnTrainingEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnTrainingDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
-    $("#btnContractSave").jqxButton({ theme: vTheme });
-    $("#btnContractEdit").jqxButton({ theme: vTheme });
-    $("#btnContractDelete").jqxButton({ theme: vTheme });
+    $("#btnContractNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnContractEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnContractDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
     $("#chkManagerial").jqxCheckBox({ theme: vTheme });
     $("#chkSpecialLate").jqxCheckBox({ theme: vTheme });
@@ -104,11 +111,67 @@
     $("#optProbation").jqxRadioButton({ theme: vTheme, groupName: "status" });
     $("#optActive").jqxRadioButton({ theme: vTheme, groupName: "status" });
     $("#optNonActive").jqxRadioButton({ theme: vTheme, groupName: "status" });
+
+    $('#jqxTabs').jqxTabs({
+        width: '100%', height: 300, theme: vTheme,
+        position: 'top', selectionTracker: 1, animationType: 'fade'
+    });
+
+    //#region MODAL FAMILY 
+    $("#txtFamName").jqxInput({theme:vTheme})
+    $("#txtFamRelation").jqxInput({ theme: vTheme })
+    $("#txtFamDob").jqxDateTimeInput({ theme: vTheme });
+    $("#txtFamEducation").jqxInput({ theme: vTheme })
+    $("#txtFamEmployment").jqxInput({ theme: vTheme })
+    $("#cmbFamGender").jqxComboBox({
+        theme: vTheme, width: 120,
+        source: vCmbGender, selectedIndex: 0
+    });
+    $("#chkFamAddress").jqxCheckBox({ theme: vTheme });
+    $('#txtFamAddress').jqxTextArea({
+        theme: vTheme, placeHolder: 'Masukkan Alamat Keluarga',
+        height: 50, width: 200, minLength: 1
+    });
+    $("#btnModFamSave").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnModFamCancel").jqxButton({ theme: vTheme, height: 30, width: 100 });
+
+    $("#modFamily").jqxWindow({
+        height: 250, width: 600,
+        theme: vTheme, isModal: true,
+        autoOpen: false,
+        resizable:false
+    });
     //#endregion
+    //#endregion
+
+    //#region UNTUK CENTER MODAL DIALOG
+    //KEEP CENTERED
+    var posX = (winWidth / 2) - ($('#modFamily').width() / 2) + $(window).scrollLeft();
+    var posY = (winHeight / 2) - ($('#modFamily').height() / 2) + $(window).scrollTop();
+    $('#modFamily').jqxWindow({ position: { x: posX, y: posY } });
+
+    //KEEP CENTERED WHEN SCROLLING
+    $(window).scroll(function () {
+        winHeight = $(window).height();
+        winWidth = $(window).width();
+        posX = (winWidth / 2) - ($('#modFamily').width() / 2) + $(window).scrollLeft();
+        posY = (winHeight / 2) - ($('#modFamily').height() / 2) + $(window).scrollTop();
+        $('#modFamily').jqxWindow({ position: { x: posX, y: posY } });
+    });
+
+    //KEEP CENTERED EVEN WHEN RESIZING
+    $(window).resize(function () {
+        winHeight = $(window).height();
+        winWidth = $(window).width();
+        posX = (winWidth / 2) - ($('#modFamily').width() / 2) + $(window).scrollLeft();
+        posY = (winHeight / 2) - ($('#modFamily').height() / 2) + $(window).scrollTop();
+        $('#modFamily').jqxWindow({ position: { x: posX, y: posY } });
+    });
+    //#endregion
+
 
     //#region Table FAMILY
     var initGridFamily = function () {
-
         var dataAdapter = new $.jqx.dataAdapter(vSrcFamily);
 
         $("#tblFamily").jqxGrid(
@@ -118,11 +181,16 @@
             theme: vTheme,
             source: dataAdapter,
             columnsresize: true,
+            rowsheight: 25,
             columns: [
                 { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
+                { text: 'Seq No', datafield: 'seq_no',width:50,cellsalign:'center' },
                 { text: 'Name', datafield: 'name', width: 300 },
                 { text: 'Conn. With Emp', datafield: 'nm_rel' },
-                { text: 'Date Of Birth', datafield: 'date_birth', width: 200, align: 'center', cellsalign: 'center', cellsformat: 'dd-MMM-yy' },
+                {
+                    text: 'Date Of Birth', datafield: 'date_birth', width: 200,
+                    align: 'center', cellsalign: 'center', cellsformat: 'dd-MMM-yy'
+                },
                 { text: 'Education', datafield: 'education' },
                 { text: 'Employment', datafield: 'employment' }
             ]
@@ -152,6 +220,7 @@
             theme: vTheme,
             source: new $.jqx.dataAdapter(source),
             columnsresize: true,
+            rowsheight: 25,
             columns: [
                 { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
                 { text: 'sequence', datafield: 'seq_no', hidden: true },
@@ -189,6 +258,7 @@
             height: 200,
             theme: vTheme,
             columnsresize: true,
+            rowsheight: 25,
             source: new $.jqx.dataAdapter(source),
             columns: [
                 { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
@@ -244,6 +314,7 @@
             theme: vTheme,
             source: dataAdapter,
             columnsresize: true,
+            rowsheight: 25,
             columns: [
                 { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
                 { text: 'sequence', datafield: 'seq_no', hidden: true },
@@ -292,6 +363,7 @@
             height: 200,
             theme: vTheme,
             columnsresize: true,
+            rowsheight: 25,
             source: new $.jqx.dataAdapter(source),
             columns: [
                 { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
@@ -333,6 +405,7 @@
             width: '100%',
             height: 200,
             theme: vTheme,
+            rowsheight: 25,
             columnsresize: true,
             columns: [
                 { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
@@ -354,10 +427,6 @@
     initGridTraining();
     initGridContract();
 
-    $('#jqxTabs').jqxTabs({
-        width: '100%', height: 300, theme: vTheme,
-        position: 'top', selectionTracker: 1, animationType: 'fade'
-    });
 
     Form_Load("35151269069300041", 1);
 
@@ -509,6 +578,7 @@
                         for (var i = 0; i < dt.listFamily.length; i++) {
                             var row = {};
                             row["employment_code"] = dt.listFamily[i].employee_code;
+                            row["seq_no"] = dt.listFamily[i].seq_no;
                             row["name"] = dt.listFamily[i].name;
                             row["nm_rel"] = dt.listFamily[i].nm_rel;
                             row["date_birth"] = new Date(parseInt(dt.listFamily[i].date_birth.substr(6)));
@@ -637,14 +707,45 @@
         });
     }
 
-    
-    $('#btnFamilyEdit').on('click', function (event) {
-        var selectedRowIndex = $("#tblFamily").jqxGrid('selectedrowindex');
-        alert('Index No : ' + selectedRowIndex);
-        vDataFamily.splice(selectedRowIndex, 1);
+    $('#btnFamilyNew').on('click', function (event) {
+        $("#modFamily").jqxWindow('open');
+    });
 
-        $("#tblFamily").jqxGrid({ source: new $.jqx.dataAdapter(vSrcFamily) });
-
+    $('#button_no').on('click', function (event) {
+        $("#modFamily").jqxWindow('close');
     });
     
+    $('#btnFamilyEdit').on('click', function (event) {
+        //var getselectedrowindexes = $('#tblFamily').jqxGrid('getselectedrowindexes');
+        //if (getselectedrowindexes.length > 0) {
+        //    // returns the selected row's data.
+        //    var selectedRowData = $('#tblFamily').jqxGrid('getrowdata', getselectedrowindexes[0]);
+        //    alert(JSON.stringify(selectedRowData));
+        //}
+
+        var rowindex = $('#tblFamily').jqxGrid('getselectedrowindex');
+        var rd = $('#tblFamily').jqxGrid('getrowdata', rowindex);
+        //alert(JSON.stringify(rd));
+
+        $("#txtFamName").val(rd.name);
+        $("#txtFamRelation").val(rd.nm_rel);
+        $("#txtFamDob").jqxDateTimeInput('setDate', rd.date_birth);
+        //$("#cmbFamGender")
+        $("#txtFamEducation").val(rd.education)
+        $("#txtFamEmployment").val(rd.employment)
+        //$("#txtFamAddress")
+
+        $("#modFamily").jqxWindow('open');
+    });
+
+    $('#btnFamilyDelete').on('click', function (event) {
+        var selectedRowIndex = $("#tblFamily").jqxGrid('selectedrowindex');
+        vDataFamily.splice(selectedRowIndex, 1);
+
+        $("#tblFamily").jqxGrid({
+            source: new $.jqx.dataAdapter(vSrcFamily)
+        });
+
+    });
+
 });

@@ -10,6 +10,7 @@
 </header>
 
 <div>
+    <!--#region DETAIL EMPLOYEE -->
     <div>
         <table>
             <tr>
@@ -154,13 +155,13 @@
                         <legend>Working Status Employment</legend>
                         <table>
                             <tr>
-                                <td style="padding-left:20px">
+                                <td style="padding-left: 20px">
                                     <div id='optProbation'>Probation</div>
                                 </td>
-                                <td style="padding-left:20px">
+                                <td style="padding-left: 20px">
                                     <div id='optActive'>Active</div>
                                 </td>
-                                <td style="padding-left:20px">
+                                <td style="padding-left: 20px">
                                     <div id='optNonActive'>Non Active</div>
                                 </td>
                             </tr>
@@ -175,8 +176,10 @@
                 </td>
             </tr>
         </table>
-
     </div>
+    <!--#endregion -->
+
+    <!--#region TABEL FAMILY, SKILL, EXP DLL -->
     <div style="margin-top: 10px">
         <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717; background-color: #eeece1;">
             <legend style="margin-left: 20px; background-color: #6b1717; padding-left: 10px; padding-top: 5px; padding-right: 100px; padding-bottom: 5px; color: white; border-radius: 8px; border: 2px solid #eeece1; font-size: 13px;">
@@ -194,7 +197,7 @@
                 <div id="pnlFamily" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
                     <div id="tblFamily"></div>
                     <div style="margin-top: 10px; margin-left: 20px">
-                        <button id="btnFamilySave">SAVE</button>
+                        <button id="btnFamilyNew">NEW DATA</button>
                         <button id="btnFamilyEdit">EDIT</button>
                         <button style="margin-left: 50px" id="btnFamilyDelete">DELETE</button>
                     </div>
@@ -202,7 +205,7 @@
                 <div id="pnlEducation" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
                     <div id="tblEducation"></div>
                     <div style="margin-top: 10px; margin-left: 20px">
-                        <button id="btnEduSave">SAVE</button>
+                        <button id="btnEduNew">NEW DATA</button>
                         <button id="btnEduEdit">EDIT</button>
                         <button style="margin-left: 50px" id="btnEduDelete">DELETE</button>
                     </div>
@@ -210,7 +213,7 @@
                 <div id="pnlSkill" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
                     <div id="tblSkill"></div>
                     <div style="margin-top: 10px; margin-left: 20px">
-                        <button id="btnSkillSave">SAVE</button>
+                        <button id="btnSkillNew">NEW DATA</button>
                         <button id="btnSkillEdit">EDIT</button>
                         <button style="margin-left: 50px" id="btnSkillDelete">DELETE</button>
                     </div>
@@ -218,7 +221,7 @@
                 <div id="pnlExperience" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
                     <div id="tblExperience"></div>
                     <div style="margin-top: 10px; margin-left: 20px">
-                        <button id="btnExpSave">SAVE</button>
+                        <button id="btnExpNew">NEW DATA</button>
                         <button id="btnExpEdit">EDIT</button>
                         <button style="margin-left: 50px" id="btnExpDelete">DELETE</button>
                     </div>
@@ -226,7 +229,7 @@
                 <div id="pnlTraining" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
                     <div id="tblTraining"></div>
                     <div style="margin-top: 10px; margin-left: 20px">
-                        <button id="btnTrainingSave">SAVE</button>
+                        <button id="btnTrainingNew">NEW DATA</button>
                         <button id="btnTrainingEdit">EDIT</button>
                         <button style="margin-left: 50px" id="btnTrainingDelete">DELETE</button>
                     </div>
@@ -234,13 +237,63 @@
                 <div id="pnlContract" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
                     <div id="tblContract"></div>
                     <div style="margin-top: 10px; margin-left: 20px">
-                        <button id="btnContractSave">SAVE</button>
+                        <button id="btnContractNew">NEW DATA</button>
                         <button id="btnContractEdit">EDIT</button>
                         <button style="margin-left: 50px" id="btnContractDelete">DELETE</button>
                     </div>
-
                 </div>
             </div>
         </fieldset>
     </div>
+    <!--#endregion -->
+
+    <div id='modFamily'>
+        <div id="windowHeader">
+            <span>FAMILY DETAIL</span>
+        </div>
+        <div style="margin-top:20px">
+            <table>
+                <tr>
+                    <td>NAME *</td>
+                    <td>
+                        <input type="text" id="txtFamName" /></td>
+                </tr>
+                <tr>
+                    <td>Relationship *</td>
+                    <td>
+                        <input type="text" id="txtFamRelation" /></td>
+                    <td style="padding-left: 30px">Date Of Birth</td>
+                    <td>
+                        <input type="text" id="txtFamDob" /></td>
+                </tr>
+                <tr>
+                    <td>Gender *</td>
+                    <td><div id="cmbFamGender"></div></td>
+                    <td style="padding-left: 30px">Education</td>
+                    <td>
+                        <input type="text" id="txtFamEducation" /></td>
+                </tr>
+                <tr>
+                    <td>Employment</td>
+                    <td>
+                        <input type="text" id="txtFamEmployment" /></td>
+                    <td style="padding-left: 30px">Address</td>
+                    <td rowspan="2">
+                        <textarea id="txtFamAddress"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox" id="chkFamAddress" />
+                        Same As Employee's</td>
+                </tr>
+            </table>
+            <div style="margin-top: 10px; margin-left: 20px">
+                <button id="btnModFamSave">SAVE</button>
+                <button id="btnModFamCancel">CANCEL</button>
+            </div>
+
+        </div>
+    </div>
 </div>
+
