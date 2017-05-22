@@ -9,6 +9,14 @@
             "OTHERS"
     ];
 
+    var vCmbRelation = [
+            "SUAMI",
+            "ISTRI",
+            "ANAK",
+            "ORANG TUA",
+            "SAUDARA"
+    ];
+
     var vCmbGender = [
             "LAKI LAKI",
             "PEREMPUAN"
@@ -24,6 +32,8 @@
              { name: 'employment_code' },
              { name: 'seq_no' },
              { name: 'name' },
+             { name: 'sex' },
+             { name: 'relationship' },
              { name: 'nm_rel' },
              { name: 'date_birth', type: "date" },
              { name: 'education' },
@@ -81,7 +91,7 @@
     $("#btnkdAtasan").jqxButton({ theme: vTheme });
     $("#txtNmAtasan").jqxInput({ theme: vTheme });
 
-    $("#btnFamilyNew").jqxButton({ theme: vTheme,height:30,width:100 });
+    $("#btnFamilyNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
     $("#btnFamilyEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
     $("#btnFamilyDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
@@ -118,14 +128,17 @@
     });
 
     //#region MODAL FAMILY 
-    $("#txtFamName").jqxInput({theme:vTheme})
-    $("#txtFamRelation").jqxInput({ theme: vTheme })
+    $("#txtFamName").jqxInput({ theme: vTheme })
     $("#txtFamDob").jqxDateTimeInput({ theme: vTheme });
     $("#txtFamEducation").jqxInput({ theme: vTheme })
     $("#txtFamEmployment").jqxInput({ theme: vTheme })
     $("#cmbFamGender").jqxComboBox({
         theme: vTheme, width: 120,
         source: vCmbGender, selectedIndex: 0
+    });
+    $("#cmbFamRelation").jqxComboBox({
+        theme: vTheme, width: 120,
+        source: vCmbRelation, selectedIndex: 0
     });
     $("#chkFamAddress").jqxCheckBox({ theme: vTheme });
     $('#txtFamAddress').jqxTextArea({
@@ -139,7 +152,7 @@
         height: 250, width: 600,
         theme: vTheme, isModal: true,
         autoOpen: false,
-        resizable:false
+        resizable: false
     });
     //#endregion
     //#endregion
@@ -184,8 +197,10 @@
             rowsheight: 25,
             columns: [
                 { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
-                { text: 'Seq No', datafield: 'seq_no',width:50,cellsalign:'center' },
+                { text: 'Seq No', datafield: 'seq_no', width: 50, cellsalign: 'center' },
                 { text: 'Name', datafield: 'name', width: 300 },
+                { text: 'Gender', datafield: 'sex', width: 50, hidden: true },
+                { text: 'Relationship', datafield: 'relationship', hidden: true },
                 { text: 'Conn. With Emp', datafield: 'nm_rel' },
                 {
                     text: 'Date Of Birth', datafield: 'date_birth', width: 200,
@@ -457,13 +472,13 @@
                     }
 
                     var vGender = dt.empModel.sex;
-                    $("#cmbGender").jqxComboBox({ selectedIndex: vReligion });
+                    $("#cmbGender").jqxComboBox({ selectedIndex: vGender });
 
                     var vReligion = dt.empModel.religion;
                     $("#cmbReligion").jqxComboBox({ selectedIndex: vReligion });
 
                     $("#txtChild").val(dt.empModel.no_of_children);
-                    $("#txtAddress").val(dt.empModel.address);
+                    $("#txtAddress").val(dt.empModel.emp_address);
                     $("#txtKdDepartement").val(dt.empModel.int_department);
                     $("#txtKdDepartement").data("department_code", dt.empModel.department_code);
 
@@ -580,6 +595,8 @@
                             row["employment_code"] = dt.listFamily[i].employee_code;
                             row["seq_no"] = dt.listFamily[i].seq_no;
                             row["name"] = dt.listFamily[i].name;
+                            row["sex"] = dt.listFamily[i].sex;
+                            row["relationship"] = dt.listFamily[i].relationship;
                             row["nm_rel"] = dt.listFamily[i].nm_rel;
                             row["date_birth"] = new Date(parseInt(dt.listFamily[i].date_birth.substr(6)));
                             row["education"] = dt.listFamily[i].education;
@@ -711,10 +728,10 @@
         $("#modFamily").jqxWindow('open');
     });
 
-    $('#button_no').on('click', function (event) {
+    $('#btnModFamCancel').on('click', function (event) {
         $("#modFamily").jqxWindow('close');
     });
-    
+
     $('#btnFamilyEdit').on('click', function (event) {
         //var getselectedrowindexes = $('#tblFamily').jqxGrid('getselectedrowindexes');
         //if (getselectedrowindexes.length > 0) {
@@ -728,12 +745,20 @@
         //alert(JSON.stringify(rd));
 
         $("#txtFamName").val(rd.name);
-        $("#txtFamRelation").val(rd.nm_rel);
+        $("#txtFamName").data("fam_seq_no", rd.seq_no);
+
         $("#txtFamDob").jqxDateTimeInput('setDate', rd.date_birth);
-        //$("#cmbFamGender")
+
+        var vFamGender = rd.sex;
+        $("#cmbFamGender").jqxComboBox({ selectedIndex: vFamGender });
+
+        var vFamRelation = rd.relationship;
+        $("#cmbFamRelation").jqxComboBox({ selectedIndex: vFamRelation });
+
         $("#txtFamEducation").val(rd.education)
         $("#txtFamEmployment").val(rd.employment)
-        //$("#txtFamAddress")
+
+        $("#txtFamAddress")
 
         $("#modFamily").jqxWindow('open');
     });
@@ -746,6 +771,48 @@
             source: new $.jqx.dataAdapter(vSrcFamily)
         });
 
+    });
+
+    $('#btnModFamSave').on('click', function (event) {
+        if ($("#txtId").data("employee_code") > 0
+            || $("#txtId").data("employee_code") != null
+            || $("#txtId").data("employee_code") != "") {
+
+            var vAlamat = "";
+            if ($("#chkFamAddress").jqxCheckBox('checked')) {
+                vAlamat = $("#txtAddress").val();
+            } else {
+                vAlamat = $("#txtFamAddress").val();
+            }
+
+            var vModel = JSON.stringify({
+                employee_code: $("#txtId").data("employee_code"),
+                employee_name: $("#txtFullName").val(),
+                seq_no: $("#txtFamName").data("fam_seq_no"),
+                name: $("#txtFamName").val(),
+                relationship: $("#cmbFamRelation").jqxComboBox('listBox').selectedIndex,
+                nm_rel: $("#cmbFamRelation").val(),
+                date_birth: $("#txtFamDob").jqxDateTimeInput('getDate'),
+                sex: $("#cmbFamGender").jqxComboBox('listBox').selectedIndex,
+                education: $("#txtFamEducation").val(),
+                employment: $("#txtFamEmployment").val(),
+                chk_address: $("#chkFamAddress").jqxCheckBox('checked'),
+                address: vAlamat
+            });
+
+            $.ajax({
+                url: base_url + "EmployeeFamily/UpdateEmployeeFamily",
+                type: "POST",
+                contentType: "application/json",
+                data: vModel,
+                success: function (d) {
+                    var isOke = d.vHasil['isValid'];
+
+                    alert(d.vHasil['message']);
+
+                }
+            });
+        }
     });
 
 });
