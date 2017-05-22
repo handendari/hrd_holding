@@ -145,7 +145,10 @@
     overflow: hidden !important;
 }
 /*jqxButton, jqxToggleButton, jqxRepeatButton Style*/
-.jqx-button{outline: none; border: 1px solid transparent; padding: 3px; text-align: center; vertical-align: central; margin: 0 0 0 0; cursor: default; }
+.jqx-button{outline: none; border: 1px solid transparent; 
+            padding: 0 3px 0 3px; text-align: center; 
+            vertical-align: central; 
+            margin: 0 0 0 0; cursor: default; }
 button.jqx-button, input[type=button].jqx-button,  input[type=submit].jqx-button {
     box-sizing: border-box !important; -moz-box-sizing: border-box !important; 
 }
@@ -524,7 +527,7 @@ button.jqx-button, input[type=button].jqx-button,  input[type=submit].jqx-button
     background: #fff;
     white-space: nowrap;
     font-weight: normal; 
-    font-size: inherit;
+    font-size: 11px;
     overflow: hidden; 
     position: absolute !important; 
     height: 100%; 
@@ -3796,12 +3799,12 @@ of the horizontal scrollbar.*/
     background: #59a0d5 !important;
 }
 /*applied to all widgets*/
-.jqx-widget{-moz-box-sizing: content-box; box-sizing: content-box; -ms-touch-action: none; zoom: 1 !important; color: #000000; -moz-background-clip: padding; background-clip: padding-box; -webkit-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-appearance: none; -webkit-background-clip: padding-box; direction: ltr !important; -webkit-tap-highlight-color: rgba(0,0,0,0); font-family: Verdana,Arial,sans-serif; font-style: normal; font-size: 13px;}
+.jqx-widget{-moz-box-sizing: content-box; box-sizing: content-box; -ms-touch-action: none; zoom: 1 !important; color: #000000; -moz-background-clip: padding; background-clip: padding-box; -webkit-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-appearance: none; -webkit-background-clip: padding-box; direction: ltr !important; -webkit-tap-highlight-color: rgba(0,0,0,0); font-family: Verdana,Arial,sans-serif; font-style: normal; font-size: 12px;}
 
 .jqx-item{-ms-touch-action: none; -moz-box-sizing: content-box; box-sizing: content-box;  color: inherit; -webkit-text-size-adjust: none;}
 
 /*applied to containers to set a background and border color. Tabs, NavigationBar, Calendar content.*/
-.jqx-widget-content {-moz-box-sizing: content-box; box-sizing: content-box; -ms-touch-action: none; -moz-background-clip: padding; -webkit-text-size-adjust: none; background-clip: padding-box; -webkit-background-clip: padding-box; -webkit-tap-highlight-color: rgba(0,0,0,0); font-family: Verdana,Arial,sans-serif; font-style: normal; font-size: 13px; border-color: #c7c7c7; background: #fff; }
+.jqx-widget-content {-moz-box-sizing: content-box; box-sizing: content-box; -ms-touch-action: none; -moz-background-clip: padding; -webkit-text-size-adjust: none; background-clip: padding-box; -webkit-background-clip: padding-box; -webkit-tap-highlight-color: rgba(0,0,0,0); font-family: Verdana,Arial,sans-serif; font-style: normal; font-size: 12px; border-color: #c7c7c7; background: #fff; }
 /*applied to header areas. Tabs, Menu, Window, Calendar.*/
 .jqx-widget-header {-moz-box-sizing: content-box; box-sizing: content-box; -ms-touch-action: none;-moz-background-clip: padding; -webkit-text-size-adjust: none; background-clip: padding-box; -webkit-background-clip: padding-box; -webkit-tap-highlight-color: rgba(0,0,0,0); border-color: #c5c5c5; background: #e8e8e8; }
 
@@ -3869,7 +3872,7 @@ input[type=text].jqx-input, input[type=password].jqx-input {
     margin: 0px;
     border-width: 1px;
     border-style: solid;
-    font-size: 13px;
+    font-size: 12px;
     padding: 0px;
     padding-left:3px;
     padding-right: 3px;

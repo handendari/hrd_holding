@@ -135,6 +135,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmployeeFamilyController.cs" />
     <Compile Include="GeneralFunction\ManageString.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -185,6 +186,7 @@
     <Compile Include="Repositories\mSubtitleRepo.cs" />
     <Compile Include="Repositories\mTitleRepo.cs" />
     <Compile Include="Services\mCountryService.cs" />
+    <Compile Include="Services\mEmployeeFamilyService.cs" />
     <Compile Include="Services\mEmployeeService.cs" />
   </ItemGroup>
   <ItemGroup>

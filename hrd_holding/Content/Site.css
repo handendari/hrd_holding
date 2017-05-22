@@ -1,10 +1,12 @@
 ﻿body {
-    font-size: .85em;
+    font-size: 12px;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     color: #232323;
     background-color: #fff;
 }
-
+table {
+    font-size: 12px;
+}
 header, footer, nav, section {
     display: block;
 }
@@ -12,12 +14,13 @@ header, footer, nav, section {
 
 /* Styles for basic forms
 -----------------------------------------------------------*/
+/*
 fieldset {
     border: 1px solid #ddd;
     padding: 0 1.4em 1.4em 1.4em;
     margin: 0 0 1.5em 0;
 }
-
+*/
 legend {
     font-size: 1.2em;
     font-weight: bold;

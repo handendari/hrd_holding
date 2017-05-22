@@ -12,7 +12,7 @@ namespace hrd_holding.Services
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("EmployeeService");
         private readonly mEmployeeRepo _repoEmp;
-        private readonly mEmployeeFamilyRepo _repoFam;
+        private readonly mEmployeeFamilyService _srvFam;
         private readonly mEmployeeSkillRepo _repoSkill;
         private readonly mEmployeeEducationRepo _repoEdu;
         private readonly mEmployeeExperienceRepo _repoExp;
@@ -22,7 +22,7 @@ namespace hrd_holding.Services
         public mEmployeeService()
         {
             _repoEmp = new mEmployeeRepo();
-            _repoFam = new mEmployeeFamilyRepo();
+            _srvFam = new mEmployeeFamilyService();
             _repoSkill = new mEmployeeSkillRepo();
             _repoEdu = new mEmployeeEducationRepo();
             _repoExp = new mEmployeeExperienceRepo();
@@ -100,7 +100,7 @@ namespace hrd_holding.Services
         public EmployeeModelAll GetEmployeeInfo(string pEmployeeCode, int pSeqNo)
         {
             var vModel = _repoEmp.getEmployeeInfo(pEmployeeCode, pSeqNo);
-            var vtblFamily = _repoFam.getEmployeeFamilyList(pEmployeeCode);
+            var vtblFamily = _srvFam.GetEmployeeFamList(pEmployeeCode);
             var vtblContract = _repoCon.getEmployeeContractList(pEmployeeCode);
             var vtblEducation = _repoEdu.getEmployeeEducationList(pEmployeeCode);
             var vtblExperience = _repoExp.getEmployeeExperienceList(pEmployeeCode);

@@ -14,6 +14,7 @@ namespace hrd_holding.Controllers
         private readonly static log4net.ILog LOG = log4net.LogManager.GetLogger("CountryController");
         private mEmployeeService _empService;
         private ManageString _mString;
+
         public EmployeeController()
         {
             _empService = new mEmployeeService();

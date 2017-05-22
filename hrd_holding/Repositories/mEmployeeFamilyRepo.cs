@@ -12,8 +12,11 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("EmployeeFamilyRepo");
 
-        public void InsertEmployeeFamily(mEmployeeFamiliesModel pModel)
+        public ResponseModel InsertEmployeeFamily(mEmployeeFamiliesModel pModel)
         {
+            var objHasil = new ResponseModel();
+            var vStatus = 0;
+
             string SqlString = @"INSERT INTO `m_employee_fams`
                                             (`employee_code`,`seq_no`,`name`,`relationship`,`nm_rel`,`date_birth`,`sex`,`education`,
                                              `employment`,`chk_address`,`address`,`entry_date`,`entry_user`,`edit_date`,`edit_user`)
@@ -47,17 +50,23 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditDate", pModel.edit_date);
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
-                        var status = cmd.ExecuteNonQuery();
+                        vStatus = cmd.ExecuteNonQuery();
                         Log.Debug(DateTime.Now + " INSERT EMPLOYEE FAMILY SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
+                        objHasil.isValid = Convert.ToBoolean(vStatus);
+                        objHasil.message = " INSERT EMPLOYEE FAMILY SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                     }
                 }
             }
             catch (Exception ex)
             {
+                objHasil.isValid = false;
+                objHasil.message = " INSERT EMPLOYEE FAMILY FAILED, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
+
                 Log.Error(DateTime.Now + " INSERT EMPLOYEE FAMILY FAILED", ex);
             }
 
+            return objHasil;
         }
 
         public List<mEmployeeFamiliesModel> getEmployeeFamilyList(string pEmployeeCode)
@@ -67,7 +76,8 @@ namespace hrd_holding.Repositories
             var vList = new List<mEmployeeFamiliesModel>();
             var strSQL = @"SELECT mef.employee_code,emp.employee_name,mef.seq_no,mef.name,mef.relationship,
                                   mef.nm_rel,mef.date_birth,mef.sex,mef.education,mef.employment,mef.chk_address,
-                                  mef.address,mef.entry_date,mef.entry_user,mef.edit_date,IFNULL(mef.edit_user,'') edit_user
+                                  IFNULL(mef.address,'') address,mef.entry_date,IFNULL(mef.entry_user,'') entry_user,
+                                  mef.edit_date,IFNULL(mef.edit_user,'') edit_user
                            FROM m_employee_fams mef JOIN m_employee emp ON mef.employee_code = emp.employee_code
                            WHERE mef.employee_code = @pEmployeeCode";
             try
@@ -88,7 +98,7 @@ namespace hrd_holding.Repositories
                                 var i = 0;
                                 while (aa.Read())
                                 {
-                                    
+
                                     //Log.Debug(DateTime.Now + "=======>>>> MASUK LOOPING HASIL QUERY EMP FAMILY KE : " + i++);
 
                                     var m = new mEmployeeFamiliesModel
@@ -180,8 +190,11 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateEmployeeFamily(mEmployeeFamiliesModel pModel)
+        public ResponseModel UpdateEmployeeFamily(mEmployeeFamiliesModel pModel)
         {
+            int vStatus = 0;
+            var objHasil = new ResponseModel();
+
             string SqlString = @"UPDATE `m_employee_fams`
                                     SET `name` = @pName,
                                         `relationship` = @pRelationship,
@@ -192,8 +205,6 @@ namespace hrd_holding.Repositories
                                         `employment` = @pEmployment,
                                         `chk_address` = @pChkAddress,
                                         `address` = @pAddress,
-                                        `entry_date` = @pEntryDate,
-                                        `entry_user` = @pEntryUser,
                                         `edit_date` = @pEditDate,
                                         `edit_user` = @pEditUser
                                 WHERE `employee_code` = @pEmployeeCode AND `seq_no` = @pSeqNo";
@@ -202,6 +213,8 @@ namespace hrd_holding.Repositories
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
                 {
                     conn.Open();
+                    Log.Debug(DateTime.Now + " SETELAH OPEN UPDATE EMPLOYEE FAMS... " + pModel.employee_code);
+
                     using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
                     {
 
@@ -218,27 +231,33 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEmployment", pModel.employment);
                         cmd.Parameters.AddWithValue("@pChkAddress", pModel.chk_address);
                         cmd.Parameters.AddWithValue("@pAddress", pModel.address);
-                        cmd.Parameters.AddWithValue("@pEntryDate", pModel.entry_date);
-                        cmd.Parameters.AddWithValue("@pEntryUser", pModel.entry_user);
-                        cmd.Parameters.AddWithValue("@pEditDate", pModel.edit_date);
-                        cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
+                        cmd.Parameters.AddWithValue("@pEditDate", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@pEditUser", " "); //pModel.edit_user);
 
-                        var status = cmd.ExecuteNonQuery();
+                        vStatus = cmd.ExecuteNonQuery();
                         Log.Debug(DateTime.Now + " UPDATE EMPLOYEE FAMILY SUCCESS ====>>>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
+                        objHasil.isValid = Convert.ToBoolean(vStatus);
+                        objHasil.message = " UPDATE EMPLOYEE FAMILY SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                     }
                 }
             }
             catch (Exception ex)
             {
+                objHasil.isValid = false;
+                objHasil.message = " UPDATE EMPLOYEE FAMILY FAILED, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
+
                 Log.Error(DateTime.Now + " UPDATE EMPLOYEE FAMILY FAILED", ex);
             }
 
+            return objHasil;
         }
 
-        public void DeleteEmployeeFamily(string pCode, int pSeqNo)
+        public ResponseModel DeleteEmployeeFamily(string pCode, int pSeqNo)
         {
-            string SqlString = @"DELETE m_employee_fams WHERE employee_code = @pCode AND seq_no = @pSeqNo";
+            var objHasil = new ResponseModel();
+
+            var SqlString = @"DELETE m_employee_fams WHERE employee_code = @pCode AND seq_no = @pSeqNo";
 
             try
             {
@@ -255,14 +274,20 @@ namespace hrd_holding.Repositories
                         var status = cmd.ExecuteNonQuery();
                         Log.Debug(DateTime.Now + " DELETE EMPLOYEE FAMILY SUCCESS ====>>>>>> Employee Code : " + pCode + " NoSeq : " + pSeqNo);
 
+                        objHasil.isValid = Convert.ToBoolean(status);
+                        objHasil.message = " DELETE EMPLOYEE FAMILY SUCCESS ====>>>>>> Employee Code : " + pCode + " NoSeq : " + pSeqNo;
                     }
                 }
             }
             catch (Exception ex)
             {
+                objHasil.isValid = false;
+                objHasil.message = "DELETE EMPLOYEE FAMILY FAILED, Employee Code : " + pCode + " NoSeq : " + pSeqNo;
+
                 Log.Error(DateTime.Now + " DELETE EMPLOYEE FAMILY FAILED", ex);
             }
 
+            return objHasil;
         }
 
     }
