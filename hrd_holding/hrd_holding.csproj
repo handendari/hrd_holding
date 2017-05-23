@@ -190,8 +190,11 @@
     <Compile Include="Services\mEmployeeService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\images\format-line-weight-24.png" />
     <Content Include="Content\images\Grid 3-36.png" />
+    <Content Include="Content\images\SSD.png" />
+    <Content Include="Content\images\ssd2.png" />
+    <Content Include="Content\images\ssd3.png" />
+    <Content Include="Content\images\Start Menu-24.png" />
     <Content Include="Content\images\User-36.png" />
     <Content Include="Content\jqwidgets\images\backgroundTop.png" />
     <Content Include="Content\jqwidgets\images\backImage.png" />

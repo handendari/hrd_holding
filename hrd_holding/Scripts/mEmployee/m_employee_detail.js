@@ -23,11 +23,13 @@
     ];
 
     //#region DATASOURCE TABEL
-    var vDataFamily = new Array();
+    var vDataFamily = [];
+    var vUrlFamily = "";
+
     var vSrcFamily =
     {
         localdata: vDataFamily,
-        datatype: "array",
+        datatype: "json",
         datafields: [
              { name: 'employment_code' },
              { name: 'seq_no' },
@@ -38,7 +40,8 @@
              { name: 'date_birth', type: "date" },
              { name: 'education' },
              { name: 'employment' }
-        ]
+        ],
+        url: vUrlFamily
     };
     //#endregion
 
@@ -602,7 +605,8 @@
                             row["education"] = dt.listFamily[i].education;
                             row["employment"] = dt.listFamily[i].employment;
 
-                            vDataFamily[i] = row;
+                            //vDataFamily[i] = row;
+                            vDataFamily.push(row);
                         }
                         var vAdapter = new $.jqx.dataAdapter(vSrcFamily);
                         $("#tblFamily").jqxGrid({ source: vAdapter });
@@ -808,11 +812,49 @@
                 success: function (d) {
                     var isOke = d.vHasil['isValid'];
 
-                    alert(d.vHasil['message']);
+                    if (isOke) {
+
+                    }
+                    //alert(d.vHasil['message']);
 
                 }
             });
         }
     });
 
+    function fUpdateTblFamily() {
+        $.ajax({
+            url: base_url + "EmployeeFamily/UpdateEmployeeFamily",
+            type: "POST",
+            contentType: "application/json",
+            data: vModel,
+            success: function (d) {
+                var isOke = d.vHasil['isValid'];
+
+                if (isOke) {
+                    if (dt.listFamily != null && dt.listFamily.length > 0) {
+                        for (var i = 0; i < dt.listFamily.length; i++) {
+                            var row = {};
+                            row["employment_code"] = dt.listFamily[i].employee_code;
+                            row["seq_no"] = dt.listFamily[i].seq_no;
+                            row["name"] = dt.listFamily[i].name;
+                            row["sex"] = dt.listFamily[i].sex;
+                            row["relationship"] = dt.listFamily[i].relationship;
+                            row["nm_rel"] = dt.listFamily[i].nm_rel;
+                            row["date_birth"] = new Date(parseInt(dt.listFamily[i].date_birth.substr(6)));
+                            row["education"] = dt.listFamily[i].education;
+                            row["employment"] = dt.listFamily[i].employment;
+
+                            //vDataFamily[i] = row;
+                            vDataFamily.push(row);
+                        }
+                        var vAdapter = new $.jqx.dataAdapter(vSrcFamily);
+                        $("#tblFamily").jqxGrid({ source: vAdapter });
+                    }
+
+                }
+                //alert(d.vHasil['message']);
+            }
+        });
+    }
 });

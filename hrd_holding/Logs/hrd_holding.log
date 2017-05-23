@@ -15252,3 +15252,27 @@ DEBUG 2017-05-22 17:00:22,593 3098458ms EmployeeTrainingRepo   ployeeTrainingLis
 DEBUG 2017-05-22 17:00:26,777 3102641ms ployeeFamilyController dateEmployeeFamily - 5/22/2017 5:00:26 PM Masuk Controller Emp Code : 35151269069300041, employee_name : VIVI YUNITA QUARTERINA
 DEBUG 2017-05-22 17:00:26,797 3102661ms EmployeeFamilyRepo     dateEmployeeFamily - 5/22/2017 5:00:26 PM SETELAH OPEN UPDATE EMPLOYEE FAMS... 35151269069300041
 DEBUG 2017-05-22 17:00:26,828 3102693ms EmployeeFamilyRepo     dateEmployeeFamily - 5/22/2017 5:00:26 PM UPDATE EMPLOYEE FAMILY SUCCESS ====>>>>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA
+DEBUG 2017-05-23 06:36:29,951 16629ms EmployeeFamilyRepo     EmployeeFamilyList - 5/23/2017 6:36:29 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-23 06:36:30,500 17178ms EmployeeContractRepo   ployeeContractList - 5/23/2017 6:36:30 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-23 06:36:30,832 17510ms EmployeeEducationRepo  loyeeEducationList - 5/23/2017 6:36:30 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-23 06:36:31,169 17847ms EmployeeExperienceRepo oyeeExperienceList - 5/23/2017 6:36:31 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-23 06:36:31,513 18191ms EmployeeSkillRepo      tEmployeeSkillList - 5/23/2017 6:36:31 AM JML Employee SKILL List: 1
+DEBUG 2017-05-23 06:36:31,854 18532ms EmployeeTrainingRepo   ployeeTrainingList - 5/23/2017 6:36:31 AM JML Employee Training List: 0
+DEBUG 2017-05-23 06:38:15,498 122176ms EmployeeFamilyRepo     EmployeeFamilyList - 5/23/2017 6:38:15 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-23 06:38:15,681 122359ms EmployeeContractRepo   ployeeContractList - 5/23/2017 6:38:15 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-23 06:38:15,833 122511ms EmployeeEducationRepo  loyeeEducationList - 5/23/2017 6:38:15 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-23 06:38:15,992 122670ms EmployeeExperienceRepo oyeeExperienceList - 5/23/2017 6:38:15 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-23 06:38:16,153 122831ms EmployeeSkillRepo      tEmployeeSkillList - 5/23/2017 6:38:16 AM JML Employee SKILL List: 1
+DEBUG 2017-05-23 06:38:16,326 123004ms EmployeeTrainingRepo   ployeeTrainingList - 5/23/2017 6:38:16 AM JML Employee Training List: 0
+DEBUG 2017-05-23 06:38:25,599 132277ms EmployeeFamilyRepo     EmployeeFamilyList - 5/23/2017 6:38:25 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-23 06:38:25,755 132433ms EmployeeContractRepo   ployeeContractList - 5/23/2017 6:38:25 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-23 06:38:25,931 132609ms EmployeeEducationRepo  loyeeEducationList - 5/23/2017 6:38:25 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-23 06:38:26,100 132778ms EmployeeExperienceRepo oyeeExperienceList - 5/23/2017 6:38:26 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-23 06:38:26,265 132943ms EmployeeSkillRepo      tEmployeeSkillList - 5/23/2017 6:38:26 AM JML Employee SKILL List: 1
+DEBUG 2017-05-23 06:38:26,423 133101ms EmployeeTrainingRepo   ployeeTrainingList - 5/23/2017 6:38:26 AM JML Employee Training List: 0
+DEBUG 2017-05-23 06:49:05,563 772241ms EmployeeFamilyRepo     EmployeeFamilyList - 5/23/2017 6:49:05 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-23 06:49:05,730 772408ms EmployeeContractRepo   ployeeContractList - 5/23/2017 6:49:05 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-23 06:49:05,898 772576ms EmployeeEducationRepo  loyeeEducationList - 5/23/2017 6:49:05 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-23 06:49:06,077 772755ms EmployeeExperienceRepo oyeeExperienceList - 5/23/2017 6:49:06 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-23 06:49:06,270 772949ms EmployeeSkillRepo      tEmployeeSkillList - 5/23/2017 6:49:06 AM JML Employee SKILL List: 1
+DEBUG 2017-05-23 06:49:06,438 773116ms EmployeeTrainingRepo   ployeeTrainingList - 5/23/2017 6:49:06 AM JML Employee Training List: 0
