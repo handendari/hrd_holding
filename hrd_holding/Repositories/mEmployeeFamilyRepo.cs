@@ -16,26 +16,49 @@ namespace hrd_holding.Repositories
         {
             var objHasil = new ResponseModel();
             var vStatus = 0;
-
-            string SqlString = @"INSERT INTO `m_employee_fams`
-                                            (`employee_code`,`seq_no`,`name`,`relationship`,`nm_rel`,`date_birth`,`sex`,`education`,
-                                             `employment`,`chk_address`,`address`,`entry_date`,`entry_user`,`edit_date`,`edit_user`)
-                                VALUES (@pEmployeeCode,@pSeqNo,@pName,@pRelationship,@pNmRel,@pDateBirth,@pSex,@pEducation,
-                                        @pEmployment,@pChkAddress,@pAddress,@pEntryDate,@pEntryUser,@pEditDate,@pEditUser)";
-
+            var vNo = 0;
 
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
                 {
                     conn.Open();
+
+                    var strSQL = @"SELECT max(mef.seq_no) seq_no
+                           FROM m_employee_fams mef JOIN m_employee emp ON mef.employee_code = emp.employee_code
+                           WHERE mef.employee_code = @pEmployeeCode";
+
+                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@pEmployeeCode", pModel.employee_code);
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vNo = aa.GetInt32("seq_no") + 1;
+                                }
+                            }
+                        }
+                    }
+
+                    string SqlString = @"INSERT INTO `m_employee_fams`
+                                            (`employee_code`,`seq_no`,`name`,`relationship`,`nm_rel`,`date_birth`,`sex`,`education`,
+                                             `employment`,`chk_address`,`address`,`entry_date`,`entry_user`)
+                                VALUES (@pEmployeeCode,@pSeqNo,@pName,@pRelationship,@pNmRel,@pDateBirth,@pSex,@pEducation,
+                                        @pEmployment,@pChkAddress,@pAddress,@pEntryDate,@pEntryUser)";
+
                     using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
                     {
 
                         cmd.CommandType = CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@pEmployeeCode", pModel.employee_code);
-                        cmd.Parameters.AddWithValue("@pSeqNo", pModel.seq_no);
+                        cmd.Parameters.AddWithValue("@pSeqNo", vNo);
                         cmd.Parameters.AddWithValue("@pName", pModel.name);
                         cmd.Parameters.AddWithValue("@pRelationship", pModel.relationship);
                         cmd.Parameters.AddWithValue("@pNmRel", pModel.nm_rel);
@@ -47,8 +70,6 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pAddress", pModel.address);
                         cmd.Parameters.AddWithValue("@pEntryDate", pModel.entry_date);
                         cmd.Parameters.AddWithValue("@pEntryUser", pModel.entry_user);
-                        cmd.Parameters.AddWithValue("@pEditDate", pModel.edit_date);
-                        cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         vStatus = cmd.ExecuteNonQuery();
                         Log.Debug(DateTime.Now + " INSERT EMPLOYEE FAMILY SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
@@ -192,6 +213,11 @@ namespace hrd_holding.Repositories
 
         public ResponseModel UpdateEmployeeFamily(mEmployeeFamiliesModel pModel)
         {
+
+            Log.Debug(DateTime.Now + " UPDATE EMPLOYEE FAMILY ===>>> Code : " + pModel.employee_code + 
+                " Name : " + pModel.employee_name + " Model USER : " + pModel.edit_user + 
+                " Model Edit Date : " + pModel.edit_date);
+
             int vStatus = 0;
             var objHasil = new ResponseModel();
 
@@ -213,8 +239,6 @@ namespace hrd_holding.Repositories
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
                 {
                     conn.Open();
-                    Log.Debug(DateTime.Now + " SETELAH OPEN UPDATE EMPLOYEE FAMS... " + pModel.employee_code);
-
                     using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
                     {
 
@@ -231,8 +255,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEmployment", pModel.employment);
                         cmd.Parameters.AddWithValue("@pChkAddress", pModel.chk_address);
                         cmd.Parameters.AddWithValue("@pAddress", pModel.address);
-                        cmd.Parameters.AddWithValue("@pEditDate", DateTime.Now);
-                        cmd.Parameters.AddWithValue("@pEditUser", " "); //pModel.edit_user);
+                        cmd.Parameters.AddWithValue("@pEditDate", pModel.edit_date);
+                        cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user); 
 
                         vStatus = cmd.ExecuteNonQuery();
                         Log.Debug(DateTime.Now + " UPDATE EMPLOYEE FAMILY SUCCESS ====>>>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
@@ -290,5 +314,44 @@ namespace hrd_holding.Repositories
             return objHasil;
         }
 
+        public int getEmployeeFamilySeqNo(string pEmployeeCode)
+        {
+            //Log.Debug(DateTime.Now + "=======>>>> MASUK REPO EMPLOYEE LIST, Emp Code : " + pEmployeeCode);
+
+            var vNo = 0;
+            var strSQL = @"SELECT max(mef.seq_no) seq_no
+                           FROM m_employee_fams mef JOIN m_employee emp ON mef.employee_code = emp.employee_code
+                           WHERE mef.employee_code = @pEmployeeCode";
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@pEmployeeCode", pEmployeeCode);
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vNo = aa.GetInt32("seq_no") + 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(DateTime.Now + " GetEmployeeFamilyList FAILED... ", ex);
+            }
+
+            return vNo;
+        }
     }
 }

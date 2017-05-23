@@ -33,22 +33,25 @@ namespace hrd_holding.Services
 
         public ResponseModel UpdateEmployeeFamily(mEmployeeFamiliesModel pModel )
         {
-            var vModel = new ResponseModel();
-            vModel = _repoFamEmp.UpdateEmployeeFamily(pModel);
+            pModel.edit_user = "it";
+            pModel.edit_date = DateTime.Now;
+
+            var vModel = _repoFamEmp.UpdateEmployeeFamily(pModel);
             return vModel;
         }
 
         public ResponseModel InsertEmployeeFamily(mEmployeeFamiliesModel pModel)
         {
-            var vModel = new ResponseModel();
-            vModel = _repoFamEmp.InsertEmployeeFamily(pModel);
+            pModel.entry_user = "it";
+            pModel.entry_date = DateTime.Now;
+
+            var vModel = _repoFamEmp.InsertEmployeeFamily(pModel);
             return vModel;
         }
 
         public ResponseModel DeleteEmployeeFamily(string pEmployeeCode,int pSeqNo)
         {
-            var vModel = new ResponseModel();
-            vModel = _repoFamEmp.DeleteEmployeeFamily(pEmployeeCode,pSeqNo);
+            var vModel = _repoFamEmp.DeleteEmployeeFamily(pEmployeeCode,pSeqNo);
             return vModel;
         }
 

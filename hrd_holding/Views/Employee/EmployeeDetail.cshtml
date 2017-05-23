@@ -248,50 +248,71 @@
     <!--#endregion -->
 
     <div id='modFamily'>
-        <div id="windowHeader">
+        <div>
             <span>FAMILY DETAIL</span>
         </div>
-        <div style="margin-top:20px">
-            <table>
-                <tr>
-                    <td>NAME *</td>
-                    <td>
-                        <input type="text" id="txtFamName" /></td>
-                </tr>
-                <tr>
-                    <td>Relationship *</td>
-                    <td><div id="cmbFamRelation"></div></td>
-                    <td style="padding-left: 30px">Date Of Birth</td>
-                    <td>
-                        <input type="text" id="txtFamDob" /></td>
-                </tr>
-                <tr>
-                    <td>Gender *</td>
-                    <td><div id="cmbFamGender"></div></td>
-                    <td style="padding-left: 30px">Education</td>
-                    <td>
-                        <input type="text" id="txtFamEducation" /></td>
-                </tr>
-                <tr>
-                    <td>Employment</td>
-                    <td>
-                        <input type="text" id="txtFamEmployment" /></td>
-                    <td style="padding-left: 30px">Address</td>
-                    <td rowspan="2">
-                        <textarea id="txtFamAddress"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="checkbox" id="chkFamAddress" />
-                        Same As Employee's</td>
-                </tr>
-            </table>
-            <div style="margin-top: 10px; margin-left: 20px">
-                <button id="btnModFamSave">SAVE</button>
-                <button id="btnModFamCancel">CANCEL</button>
+        <div>
+            <div id="container" style="height:40px"></div>
+            <div id="jqxNotification">
+                <div id="notificationContent"></div>
             </div>
-
+            <div>
+                <table>
+                    <tr>
+                        <td>NAME *</td>
+                        <td>
+                            <input type="text" id="txtFamName" /></td>
+                    </tr>
+                    <tr>
+                        <td>Relationship *</td>
+                        <td>
+                            <div id="cmbFamRelation"></div>
+                        </td>
+                        <td style="padding-left: 30px">Date Of Birth</td>
+                        <td>
+                            <input type="text" id="txtFamDob" /></td>
+                    </tr>
+                    <tr>
+                        <td>Gender *</td>
+                        <td>
+                            <div id="cmbFamGender"></div>
+                        </td>
+                        <td style="padding-left: 30px">Education</td>
+                        <td>
+                            <input type="text" id="txtFamEducation" /></td>
+                    </tr>
+                    <tr>
+                        <td>Employment</td>
+                        <td>
+                            <input type="text" id="txtFamEmployment" /></td>
+                        <td style="padding-left: 30px">Address</td>
+                        <td rowspan="2">
+                            <textarea id="txtFamAddress"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" id="chkFamAddress" />
+                            Same As Employee's</td>
+                    </tr>
+                </table>
+                <div style="margin-top: 15px; margin-left: 20px">
+                    <button id="btnModFamSave">SAVE</button>
+                    <button id="btnModFamCancel">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='modYesNo'>
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div style="margin-top: 10px; margin-left: 10px">
+                Delete Selected data?
+            </div>
+            <div style="margin-top: 40px; margin-left: 20px">
+                <button id="btnYes">YES</button>
+                <button id="btnNo">NO</button>
+            </div>
         </div>
     </div>
 </div>

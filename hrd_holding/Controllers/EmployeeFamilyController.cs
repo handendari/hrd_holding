@@ -25,20 +25,52 @@ namespace hrd_holding.Controllers
         }
 
         [HttpPost]
+        public dynamic InsertEmployeeFamily(mEmployeeFamiliesModel pModel)
+        {
+            LOG.Debug(DateTime.Now + "Emp Code : " + pModel.employee_code + ", employee_name : " + pModel.employee_name);
+
+            var vResp = _empFamService.InsertEmployeeFamily(pModel);
+
+
+            return Json(new{vResp}, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
         public dynamic UpdateEmployeeFamily(mEmployeeFamiliesModel pModel)
         {
             LOG.Debug(DateTime.Now + " Masuk Controller Emp Code : " + pModel.employee_code + ", employee_name : " + pModel.employee_name);
 
+            var vResp = new ResponseModel();
+            vResp = _empFamService.UpdateEmployeeFamily(pModel);
+
+
+            return Json(new{vResp}, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpPost]
+        public dynamic GetEmployeeFamilyList(string pEmployeeCode)
+        {
+
             //var vEmployeeCode = Request["employeecode"].ToString();
             //var vSeqNo = int.Parse(Request["seqno"]);
-            var vHasil = new ResponseModel();
-            vHasil = _empFamService.UpdateEmployeeFamily(pModel);
+
+            //LOG.Debug(DateTime.Now + " Emp FAMS Code : " + pEmployeeCode);
+
+            var listFamily = _empFamService.GetEmployeeFamList(pEmployeeCode);
+
+            return Json(new { listFamily },JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public dynamic DeleteEmployeeFamily(string pEmployeeCode,int pSeqNo)
+        {
+            //LOG.Debug(DateTime.Now + "Emp Code : " + pEmployeeCode + ", Seq No : " + pSeqNo);
+
+            var vResp = _empFamService.DeleteEmployeeFamily(pEmployeeCode,pSeqNo);
 
 
-            return Json(new
-            {
-                vHasil
-            }, JsonRequestBehavior.AllowGet);
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
         }
 
     }

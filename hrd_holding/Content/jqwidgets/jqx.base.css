@@ -4555,7 +4555,10 @@ ol li .jqx-listmenu-item-label:before
 /*jqxNotification*/
 .jqx-notification
 {
-    padding: 10px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-right:10px;
     border-width: 1px;
     border-style: solid;
     box-sizing: border-box;
@@ -4921,18 +4924,18 @@ ol li .jqx-listmenu-item-label:before
 .jqx-notification-close-button
 {
     position: relative;
-    top: -11px;
+    top: -9px;
     background-repeat: no-repeat;
     cursor: pointer;
 }
 .jqx-notification-close-button-ltr
 {
-    right: -11px;
+    right: -9px;
     background-position: right top;
 }
 .jqx-notification-close-button-rtl
 {
-    left: -11px;
+    left: -9px;
     background-position: left top;
 }
 .jqx-navbar {
