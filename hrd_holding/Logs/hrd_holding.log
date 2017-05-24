@@ -16136,3 +16136,14 @@ DEBUG 2017-05-23 18:05:35,603 3149193ms EmployeeEducationRepo  loyeeEducationLis
 DEBUG 2017-05-23 18:05:35,613 3149203ms EmployeeExperienceRepo oyeeExperienceList - 5/23/2017 6:05:35 PM JML Employee EXPERIENCE List: 1
 DEBUG 2017-05-23 18:05:35,636 3149226ms EmployeeSkillRepo      tEmployeeSkillList - 5/23/2017 6:05:35 PM JML Employee SKILL List: 1
 DEBUG 2017-05-23 18:05:35,642 3149232ms EmployeeTrainingRepo   ployeeTrainingList - 5/23/2017 6:05:35 PM JML Employee Training List: 0
+ERROR 2017-05-24 07:19:10,553 21537ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 7:19:10 AM GetEmployeeFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 125
+DEBUG 2017-05-24 07:19:10,851 21836ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 7:19:10 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 07:19:11,098 22082ms EmployeeContractRepo   ployeeContractList - 5/24/2017 7:19:11 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 07:19:11,344 22329ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 7:19:11 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 07:19:11,525 22510ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 7:19:11 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 07:19:11,698 22682ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 7:19:11 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 07:19:11,937 22922ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 7:19:11 AM JML Employee Training List: 0
