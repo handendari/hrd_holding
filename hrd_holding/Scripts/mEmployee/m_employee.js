@@ -265,4 +265,15 @@ $(document).ready(function () {
             }
         });
     }
+
+    $('#btnYes').on('click', function (event) {
+        var vEmpCode = $("#txtId").data("employee_code");
+
+        var selectedTab = $('#jqxTabs').jqxTabs('selectedItem');
+
+        if (selectedTab == 0) {
+            f_DeleteEmployeeFamily(vEmpCode);
+        }
+    });
+
 });

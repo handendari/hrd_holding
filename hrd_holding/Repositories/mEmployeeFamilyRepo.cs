@@ -95,9 +95,9 @@ namespace hrd_holding.Repositories
             //Log.Debug(DateTime.Now + "=======>>>> MASUK REPO EMPLOYEE LIST, Emp Code : " + pEmployeeCode);
 
             var vList = new List<mEmployeeFamiliesModel>();
-            var strSQL = @"SELECT mef.employee_code,emp.employee_name,mef.seq_no,mef.name,mef.relationship,
-                                  mef.nm_rel,mef.date_birth,mef.sex,mef.education,mef.employment,mef.chk_address,
-                                  IFNULL(mef.address,'') address,mef.entry_date,IFNULL(mef.entry_user,'') entry_user,
+            var strSQL = @"SELECT mef.employee_code,IFNULL(emp.employee_name,'') employee_name,mef.seq_no,IFNULL(mef.name,'') name,mef.relationship,
+                                  mef.nm_rel,mef.date_birth,mef.sex,IFNULL(mef.education,'') education,IFNULL(mef.employment,'') employment,
+                                  mef.chk_address,IFNULL(mef.address,'') address,mef.entry_date,IFNULL(mef.entry_user,'') entry_user,
                                   mef.edit_date,IFNULL(mef.edit_user,'') edit_user
                            FROM m_employee_fams mef JOIN m_employee emp ON mef.employee_code = emp.employee_code
                            WHERE mef.employee_code = @pEmployeeCode";
@@ -281,7 +281,7 @@ namespace hrd_holding.Repositories
         {
             var objHasil = new ResponseModel();
 
-            var SqlString = @"DELETE m_employee_fams WHERE employee_code = @pCode AND seq_no = @pSeqNo";
+            var SqlString = @"DELETE FROM m_employee_fams WHERE employee_code = @pCode AND seq_no = @pSeqNo";
 
             try
             {

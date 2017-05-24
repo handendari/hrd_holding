@@ -7,8 +7,9 @@
 
 <header>
     <script src="~/scripts/mEmployee/init_m_employee.js"></script>
-    <script src="~/scripts/mEmployee/m_employee_detail.js"></script>
+    <script src="~/scripts/mEmployee/m_employee.js"></script>
     <script src="~/scripts/mEmployee/m_employee_family.js"></script>
+    <script src="~/scripts/mEmployee/m_employee_education.js"></script>
 </header>
 
 <div>
@@ -249,12 +250,13 @@
     </div>
     <!--#endregion -->
 
+    <!--#region MODAL FAMILY-->
     <div id='modFamily'>
         <div>
             <span>FAMILY DETAIL</span>
         </div>
         <div>
-            <div id="container" style="height:40px"></div>
+            <div id="container" style="height: 40px"></div>
             <div id="jqxNotification">
                 <div id="notificationContent"></div>
             </div>
@@ -305,6 +307,65 @@
             </div>
         </div>
     </div>
+    <!--#endregion-->
+
+    <!--#region MODAL EDUCATION-->
+    <div id="modEducation">
+        <div>
+            <span>EDUCATION DETAIL</span>
+        </div>
+        <div>
+            <div id="psnEduContainer" style="height: 40px"></div>
+            <div id="psnEducation">
+                <div id="psnEduIsi"></div>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>Start Year *</td>
+                        <td>
+                            <div id="dtEduStartYear"></div>
+                        </td>
+                        <td style="padding-left: 30px">End Year *</td>
+                        <td>
+                            <input type="text" id="dtEduEndYear" /></td>
+                    </tr>
+                    <tr>
+                        <td>Level *</td>
+                        <td>
+                            <div id="cmbEduLevel"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Majors</td>
+                        <td>
+                            <input type="text" id="txtEduMajors" /></td>
+                        <td style="padding-left: 30px">School / University *</td>
+                        <td>
+                            <input type="text" id="txtEduSchool" /></td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>
+                            <input type="text" id="txtEduCity" /></td>
+                        <td style="padding-left: 30px">Country</td>
+                        <td>
+                            <input type="text" id="txtEduCountryCode" />
+                            <input type="button" id="btnEduCountry" value="..." />
+                            <input type="text" id="txtEduCountryName" />
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 15px; margin-left: 20px">
+                    <button id="btnEduSave">SAVE</button>
+                    <button id="btnEduCancel">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+
+
     <div id='modYesNo'>
         <div><span>Human Resource Development</span></div>
         <div>

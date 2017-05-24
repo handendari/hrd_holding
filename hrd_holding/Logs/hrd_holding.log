@@ -16147,3 +16147,554 @@ DEBUG 2017-05-24 07:19:11,344 22329ms EmployeeEducationRepo  loyeeEducationList 
 DEBUG 2017-05-24 07:19:11,525 22510ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 7:19:11 AM JML Employee EXPERIENCE List: 1
 DEBUG 2017-05-24 07:19:11,698 22682ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 7:19:11 AM JML Employee SKILL List: 1
 DEBUG 2017-05-24 07:19:11,937 22922ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 7:19:11 AM JML Employee Training List: 0
+ERROR 2017-05-24 09:13:06,695 14642ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:13:06 AM GetEmployeeFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 125
+DEBUG 2017-05-24 09:13:06,711 14657ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:13:06 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 09:13:06,757 14704ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:13:06 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 09:13:06,789 14736ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:13:06 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 09:13:06,836 14782ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:13:06 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 09:13:06,945 14892ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:13:06 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 09:13:06,961 14907ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:13:06 AM JML Employee Training List: 0
+ERROR 2017-05-24 09:13:16,381 24328ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:13:16 AM GetEmployeeFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 125
+DEBUG 2017-05-24 09:13:16,383 24330ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:13:16 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 09:13:16,391 24338ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:13:16 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 09:13:16,404 24351ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:13:16 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 09:13:16,410 24357ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:13:16 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 09:13:16,418 24365ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:13:16 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 09:13:16,445 24392ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:13:16 AM JML Employee Training List: 0
+ERROR 2017-05-24 09:14:13,044 80991ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:14:13 AM GetEmployeeFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 125
+DEBUG 2017-05-24 09:14:13,045 80992ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:14:13 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 09:14:13,084 81031ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:14:13 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 09:14:13,103 81050ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:14:13 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 09:14:13,131 81078ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:14:13 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 09:14:13,147 81094ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:14:13 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 09:14:13,267 81214ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:14:13 AM JML Employee Training List: 0
+ERROR 2017-05-24 09:15:19,040 146986ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:15:19 AM GetEmployeeFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 125
+DEBUG 2017-05-24 09:15:19,041 146987ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:15:19 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 09:15:19,054 147000ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:15:19 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 09:15:19,071 147017ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:15:19 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 09:15:19,098 147044ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:15:19 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 09:15:19,136 147083ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:15:19 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 09:15:19,150 147097ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:15:19 AM JML Employee Training List: 0
+ERROR 2017-05-24 09:20:30,597  6742ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:20:30 AM GetEmployeeFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 125
+DEBUG 2017-05-24 09:20:30,621  6765ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:20:30 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 09:20:30,636  6781ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:20:30 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 09:20:30,636  6781ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:20:30 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 09:20:30,683  6828ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:20:30 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 09:20:30,683  6828ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:20:30 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 09:20:30,736  6881ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:20:30 AM JML Employee Training List: 0
+ERROR 2017-05-24 09:26:42,047 378192ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:26:42 AM GetEmployeeFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 125
+DEBUG 2017-05-24 09:26:42,049 378194ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:26:42 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 09:26:42,061 378206ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:26:42 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 09:26:42,092 378237ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:26:42 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 09:26:42,137 378282ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:26:42 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 09:26:42,153 378297ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:26:42 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 09:26:42,193 378337ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:26:42 AM JML Employee Training List: 0
+ERROR 2017-05-24 09:33:38,386 794531ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:33:38 AM GetEmployeeFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 125
+DEBUG 2017-05-24 09:33:38,387 794532ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:33:38 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 09:33:38,400 794545ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:33:38 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 09:33:38,452 794597ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:33:38 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 09:33:38,474 794619ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:33:38 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 09:33:38,488 794632ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:33:38 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 09:33:38,495 794640ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:33:38 AM JML Employee Training List: 0
+ERROR 2017-05-24 09:47:23,791 1619936ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:47:23 AM GetEmployeeFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 125
+DEBUG 2017-05-24 09:47:23,791 1619936ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:47:23 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 09:47:23,810 1619954ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:47:23 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 09:47:23,823 1619968ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:47:23 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 09:47:23,834 1619978ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:47:23 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 09:47:23,841 1619986ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:47:23 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 09:47:23,874 1620018ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:47:23 AM JML Employee Training List: 0
+DEBUG 2017-05-24 09:48:02,910 1659055ms ployeeFamilyController sertEmployeeFamily - 5/24/2017 9:48:02 AMEmp Code : 35151269069300041, employee_name : VIVI YUNITA QUARTERINA
+DEBUG 2017-05-24 09:48:02,991 1659136ms EmployeeFamilyRepo     sertEmployeeFamily - 5/24/2017 9:48:02 AM INSERT EMPLOYEE FAMILY SUCCESS ====>>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA
+ERROR 2017-05-24 09:48:03,060 1659204ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:48:03 AM GetEmployeeFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 125
+DEBUG 2017-05-24 09:48:03,061 1659205ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:48:03 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+ERROR 2017-05-24 09:48:15,914 1672059ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:48:15 AM GetEmployeeFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 125
+DEBUG 2017-05-24 09:48:15,915 1672060ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:48:15 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 09:48:15,924 1672069ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:48:15 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 09:48:15,949 1672094ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:48:15 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 09:48:15,957 1672102ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:48:15 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 09:48:15,980 1672125ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:48:15 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 09:48:16,000 1672145ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:48:15 AM JML Employee Training List: 0
+ERROR 2017-05-24 09:52:46,908  6986ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:52:46 AM GetEmployeeFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 125
+DEBUG 2017-05-24 09:52:46,938  7016ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:52:46 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 09:52:46,946  7024ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:52:46 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 09:52:46,957  7035ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:52:46 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 09:52:46,967  7045ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:52:46 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 09:52:46,987  7065ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:52:46 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 09:52:46,996  7074ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:52:46 AM JML Employee Training List: 0
+ERROR 2017-05-24 09:56:02,560 21116ms EmployeeRepo           getEmployeeInfo    - 5/24/2017 9:56:02 AM GetEmployeeInfo Failed
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 513
+ERROR 2017-05-24 09:56:17,607 36164ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:56:17 AM GetEmployeeFamilyList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 108
+DEBUG 2017-05-24 09:56:17,611 36168ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:56:17 AM=======>>>> Jml DATA EMPLOYEE LIST : 0
+ERROR 2017-05-24 09:56:32,618 51174ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:56:32 AM GetEmployeeContractList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeContractRepo.getEmployeeContractList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeContractRepo.cs:line 74
+DEBUG 2017-05-24 09:56:32,619 51175ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:56:32 AM JML Employee CONTRACT List: 0
+ERROR 2017-05-24 09:56:45,332 63889ms EmployeeRepo           getEmployeeInfo    - 5/24/2017 9:56:45 AM GetEmployeeInfo Failed
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 513
+ERROR 2017-05-24 09:56:47,624 66180ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:56:47 AM GetEmployeeEducationList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeEducationRepo.getEmployeeEducationList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeEducationRepo.cs:line 77
+DEBUG 2017-05-24 09:56:47,624 66180ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:56:47 AM JML Employee EDUCATION List: 0
+ERROR 2017-05-24 09:57:00,332 78889ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:57:00 AM GetEmployeeFamilyList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 108
+DEBUG 2017-05-24 09:57:00,335 78892ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:57:00 AM=======>>>> Jml DATA EMPLOYEE LIST : 0
+ERROR 2017-05-24 09:57:02,625 81182ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:57:02 AM GetEmployeeExperienceList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeExperienceRepo.getEmployeeExperienceList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeExperienceRepo.cs:line 79
+DEBUG 2017-05-24 09:57:02,628 81185ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:57:02 AM JML Employee EXPERIENCE List: 0
+ERROR 2017-05-24 09:57:15,344 93901ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:57:15 AM GetEmployeeContractList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeContractRepo.getEmployeeContractList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeContractRepo.cs:line 74
+DEBUG 2017-05-24 09:57:15,346 93903ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:57:15 AM JML Employee CONTRACT List: 0
+ERROR 2017-05-24 09:57:17,634 96191ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:57:17 AM GetEmployeeSkillList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeSkillRepo.getEmployeeSkillList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeSkillRepo.cs:line 74
+DEBUG 2017-05-24 09:57:17,634 96191ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:57:17 AM JML Employee SKILL List: 0
+DEBUG 2017-05-24 09:57:27,026 105583ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:57:27 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 09:57:27,032 105589ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:57:27 AM JML Employee Training List: 0
+DEBUG 2017-05-24 09:57:27,136 105693ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:57:27 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 09:57:27,140 105697ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 9:57:27 AM=======>>>> Jml DATA EMPLOYEE LIST : 8
+DEBUG 2017-05-24 09:57:27,391 105948ms EmployeeContractRepo   ployeeContractList - 5/24/2017 9:57:27 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 09:57:27,394 105951ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:57:27 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 09:57:27,421 105977ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 9:57:27 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 09:57:27,423 105979ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:57:27 AM JML Employee Training List: 0
+DEBUG 2017-05-24 09:57:27,485 106041ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 9:57:27 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 09:57:27,494 106050ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 9:57:27 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 09:57:27,517 106073ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 9:57:27 AM JML Employee Training List: 0
+DEBUG 2017-05-24 09:57:29,332 107889ms CountryController      GetEmployeeList    - 5/24/2017 9:57:29 AM WHERE : 
+DEBUG 2017-05-24 09:57:29,333 107890ms CountryController      GetEmployeeList    - 5/24/2017 9:57:29 AM ORDER BY : 
+DEBUG 2017-05-24 09:57:29,334 107891ms EmployeeService        GetEmployeeList    - 5/24/2017 9:57:29 AM pPage : 0 pRows : 15
+DEBUG 2017-05-24 09:57:29,335 107892ms EmployeeService        GetEmployeeList    - 5/24/2017 9:57:29 AM vRows : 15 vStart : 0
+DEBUG 2017-05-24 09:57:29,338 107895ms EmployeeRepo           getEmployeeList    - 5/24/2017 9:57:29 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode 
+DEBUG 2017-05-24 09:57:29,339 107896ms EmployeeRepo           getEmployeeList    - 5/24/2017 9:57:29 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode  LIMIT 0,15
+DEBUG 2017-05-24 09:57:29,535 108092ms EmployeeRepo           getEmployeeList    - 5/24/2017 9:57:29 AM Jumlah Data Employee : 15
+DEBUG 2017-05-24 10:02:45,459 424016ms CountryController      GetEmployeeList    - 5/24/2017 10:02:45 AM WHERE : 
+DEBUG 2017-05-24 10:02:45,459 424016ms CountryController      GetEmployeeList    - 5/24/2017 10:02:45 AM ORDER BY : 
+DEBUG 2017-05-24 10:02:45,460 424017ms EmployeeService        GetEmployeeList    - 5/24/2017 10:02:45 AM pPage : 0 pRows : 15
+DEBUG 2017-05-24 10:02:45,460 424017ms EmployeeService        GetEmployeeList    - 5/24/2017 10:02:45 AM vRows : 15 vStart : 0
+DEBUG 2017-05-24 10:02:45,460 424017ms EmployeeRepo           getEmployeeList    - 5/24/2017 10:02:45 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode 
+DEBUG 2017-05-24 10:02:45,461 424018ms EmployeeRepo           getEmployeeList    - 5/24/2017 10:02:45 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode  LIMIT 0,15
+DEBUG 2017-05-24 10:02:45,674 424230ms EmployeeRepo           getEmployeeList    - 5/24/2017 10:02:45 AM Jumlah Data Employee : 15
+DEBUG 2017-05-24 10:03:16,215 454772ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 10:03:16 AM=======>>>> Jml DATA EMPLOYEE LIST : 8
+DEBUG 2017-05-24 10:03:16,237 454794ms EmployeeContractRepo   ployeeContractList - 5/24/2017 10:03:16 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 10:03:16,257 454813ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 10:03:16 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 10:03:16,270 454827ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 10:03:16 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 10:03:16,280 454837ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 10:03:16 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 10:03:16,290 454846ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 10:03:16 AM JML Employee Training List: 0
+DEBUG 2017-05-24 10:03:34,281 472837ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 10:03:34 AM=======>>>> Jml DATA EMPLOYEE LIST : 8
+DEBUG 2017-05-24 10:03:34,297 472853ms EmployeeContractRepo   ployeeContractList - 5/24/2017 10:03:34 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 10:03:34,312 472869ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 10:03:34 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 10:03:34,332 472889ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 10:03:34 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 10:03:34,343 472900ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 10:03:34 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 10:03:34,370 472927ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 10:03:34 AM JML Employee Training List: 0
+DEBUG 2017-05-24 10:22:44,092 62240ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 10:22:44 AM=======>>>> Jml DATA EMPLOYEE LIST : 8
+DEBUG 2017-05-24 10:22:44,187 62335ms EmployeeContractRepo   ployeeContractList - 5/24/2017 10:22:44 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 10:22:44,363 62511ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 10:22:44 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 10:22:44,392 62540ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 10:22:44 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 10:22:44,666 62814ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 10:22:44 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 10:22:44,758 62906ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 10:22:44 AM JML Employee Training List: 0
+DEBUG 2017-05-24 10:24:05,033 143181ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 10:24:05 AM=======>>>> Jml DATA EMPLOYEE LIST : 8
+DEBUG 2017-05-24 10:24:05,042 143190ms EmployeeContractRepo   ployeeContractList - 5/24/2017 10:24:05 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 10:24:05,051 143199ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 10:24:05 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 10:24:05,057 143205ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 10:24:05 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 10:24:05,065 143212ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 10:24:05 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 10:24:05,072 143219ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 10:24:05 AM JML Employee Training List: 0
+DEBUG 2017-05-24 10:25:31,501 229649ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 10:25:31 AM=======>>>> Jml DATA EMPLOYEE LIST : 8
+DEBUG 2017-05-24 10:25:31,509 229657ms EmployeeContractRepo   ployeeContractList - 5/24/2017 10:25:31 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 10:25:31,543 229691ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 10:25:31 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 10:25:31,550 229698ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 10:25:31 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 10:25:31,555 229703ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 10:25:31 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 10:25:31,561 229709ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 10:25:31 AM JML Employee Training List: 0
+DEBUG 2017-05-24 10:25:56,544 254692ms ployeeFamilyController leteEmployeeFamily - 5/24/2017 10:25:56 AMMASUK DELETE Emp Code : 35151269069300041, Seq No : 7
+ERROR 2017-05-24 10:25:56,585 254733ms EmployeeFamilyRepo     leteEmployeeFamily - 5/24/2017 10:25:56 AM DELETE EMPLOYEE FAMILY FAILED
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE employee_code = '35151269069300041' AND seq_no = 7' at line 1
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.DeleteEmployeeFamily(String pCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 298
+DEBUG 2017-05-24 10:27:36,678   162ms ployeeFamilyController leteEmployeeFamily - 5/24/2017 10:27:36 AMMASUK DELETE Emp Code : 35151269069300041, Seq No : 7
+DEBUG 2017-05-24 10:27:36,824   309ms EmployeeFamilyRepo     leteEmployeeFamily - 5/24/2017 10:27:36 AM DELETE EMPLOYEE FAMILY SUCCESS ====>>>>>> Employee Code : 35151269069300041 NoSeq : 7
+DEBUG 2017-05-24 10:27:36,866   350ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 10:27:36 AM=======>>>> Jml DATA EMPLOYEE LIST : 7
+DEBUG 2017-05-24 10:43:06,389 929874ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 10:43:06 AM=======>>>> Jml DATA EMPLOYEE LIST : 7
+DEBUG 2017-05-24 10:43:06,698 930182ms EmployeeContractRepo   ployeeContractList - 5/24/2017 10:43:06 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 10:43:07,022 930507ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 10:43:07 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 10:43:07,354 930838ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 10:43:07 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 10:43:07,668 931152ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 10:43:07 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 10:43:07,983 931468ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 10:43:07 AM JML Employee Training List: 0
+DEBUG 2017-05-24 10:45:26,470 1069954ms ployeeFamilyController leteEmployeeFamily - 5/24/2017 10:45:26 AMMASUK DELETE Emp Code : 35151269069300041, Seq No : 8
+DEBUG 2017-05-24 10:45:26,700 1070184ms EmployeeFamilyRepo     leteEmployeeFamily - 5/24/2017 10:45:26 AM DELETE EMPLOYEE FAMILY SUCCESS ====>>>>>> Employee Code : 35151269069300041 NoSeq : 8
+DEBUG 2017-05-24 10:45:27,040 1070524ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 10:45:27 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 10:52:51,806 1515290ms ployeeFamilyController leteEmployeeFamily - 5/24/2017 10:52:51 AMMASUK DELETE Emp Code : 35151269069300041, Seq No : 6
+DEBUG 2017-05-24 10:52:52,728 1516213ms EmployeeFamilyRepo     leteEmployeeFamily - 5/24/2017 10:52:52 AM DELETE EMPLOYEE FAMILY SUCCESS ====>>>>>> Employee Code : 35151269069300041 NoSeq : 6
+DEBUG 2017-05-24 10:52:52,977 1516462ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 10:52:52 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-24 10:53:34,776  6821ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 10:53:34 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 10:53:35,024  7069ms EmployeeContractRepo   ployeeContractList - 5/24/2017 10:53:35 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 10:53:35,257  7301ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 10:53:35 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 10:53:35,844  7888ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 10:53:35 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 10:53:36,176  8220ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 10:53:36 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 10:53:36,407  8451ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 10:53:36 AM JML Employee Training List: 0
+DEBUG 2017-05-24 11:09:25,428 957473ms ployeeFamilyController dateEmployeeFamily - 5/24/2017 11:09:25 AM Masuk Controller Emp Code : 35151269069300041, employee_name : VIVI YUNITA QUARTERINA
+DEBUG 2017-05-24 11:09:25,430 957475ms EmployeeFamilyRepo     dateEmployeeFamily - 5/24/2017 11:09:25 AM UPDATE EMPLOYEE FAMILY ===>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA Model USER : it Model Edit Date : 5/24/2017 11:09:25 AM
+DEBUG 2017-05-24 11:09:26,505 958549ms EmployeeFamilyRepo     dateEmployeeFamily - 5/24/2017 11:09:26 AM UPDATE EMPLOYEE FAMILY SUCCESS ====>>>>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA
+DEBUG 2017-05-24 11:09:26,744 958789ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 11:09:26 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 11:15:05,542 1297586ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 11:15:05 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 11:15:05,742 1297786ms EmployeeContractRepo   ployeeContractList - 5/24/2017 11:15:05 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 11:15:06,005 1298049ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 11:15:06 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 11:15:06,204 1298248ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 11:15:06 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 11:15:06,428 1298473ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 11:15:06 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 11:15:06,646 1298691ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 11:15:06 AM JML Employee Training List: 0
+DEBUG 2017-05-24 11:15:28,559 1320603ms ployeeFamilyController dateEmployeeFamily - 5/24/2017 11:15:28 AM Masuk Controller Emp Code : 35151269069300041, employee_name : VIVI YUNITA QUARTERINA
+DEBUG 2017-05-24 11:15:28,559 1320603ms EmployeeFamilyRepo     dateEmployeeFamily - 5/24/2017 11:15:28 AM UPDATE EMPLOYEE FAMILY ===>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA Model USER : it Model Edit Date : 5/24/2017 11:15:28 AM
+DEBUG 2017-05-24 11:15:28,843 1320887ms EmployeeFamilyRepo     dateEmployeeFamily - 5/24/2017 11:15:28 AM UPDATE EMPLOYEE FAMILY SUCCESS ====>>>>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA
+DEBUG 2017-05-24 11:15:29,085 1321129ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 11:15:29 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 11:51:34,034 12128ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 11:51:34 AM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 11:51:34,352 12447ms EmployeeContractRepo   ployeeContractList - 5/24/2017 11:51:34 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 11:51:34,620 12714ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 11:51:34 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 11:51:34,879 12974ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 11:51:34 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 11:51:35,174 13269ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 11:51:35 AM JML Employee SKILL List: 1
+DEBUG 2017-05-24 11:51:35,448 13542ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 11:51:35 AM JML Employee Training List: 0
+DEBUG 2017-05-24 13:08:00,953    72ms ployeeFamilyController dateEmployeeFamily - 5/24/2017 1:08:00 PM Masuk Controller Emp Code : 35151269069300041, employee_name : VIVI YUNITA QUARTERINA
+DEBUG 2017-05-24 13:08:00,987   106ms EmployeeFamilyRepo     dateEmployeeFamily - 5/24/2017 1:08:00 PM UPDATE EMPLOYEE FAMILY ===>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA Model USER : it Model Edit Date : 5/24/2017 1:08:00 PM
+DEBUG 2017-05-24 13:08:01,203   322ms EmployeeFamilyRepo     dateEmployeeFamily - 5/24/2017 1:08:01 PM UPDATE EMPLOYEE FAMILY SUCCESS ====>>>>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA
+DEBUG 2017-05-24 13:08:01,234   353ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 1:08:01 PM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 13:08:13,534 12652ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 1:08:13 PM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 13:08:13,545 12663ms EmployeeContractRepo   ployeeContractList - 5/24/2017 1:08:13 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 13:08:13,555 12673ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 1:08:13 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 13:08:13,568 12686ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 1:08:13 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 13:08:13,577 12695ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 1:08:13 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 13:08:13,607 12725ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 1:08:13 PM JML Employee Training List: 0
+DEBUG 2017-05-24 13:08:16,950 16069ms ployeeFamilyController dateEmployeeFamily - 5/24/2017 1:08:16 PM Masuk Controller Emp Code : 35151269069300041, employee_name : VIVI YUNITA QUARTERINA
+DEBUG 2017-05-24 13:08:16,950 16069ms EmployeeFamilyRepo     dateEmployeeFamily - 5/24/2017 1:08:16 PM UPDATE EMPLOYEE FAMILY ===>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA Model USER : it Model Edit Date : 5/24/2017 1:08:16 PM
+DEBUG 2017-05-24 13:08:16,974 16093ms EmployeeFamilyRepo     dateEmployeeFamily - 5/24/2017 1:08:16 PM UPDATE EMPLOYEE FAMILY SUCCESS ====>>>>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA
+DEBUG 2017-05-24 13:08:16,991 16110ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 1:08:16 PM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 13:08:22,220 21339ms ployeeFamilyController dateEmployeeFamily - 5/24/2017 1:08:22 PM Masuk Controller Emp Code : 35151269069300041, employee_name : VIVI YUNITA QUARTERINA
+DEBUG 2017-05-24 13:08:22,221 21340ms EmployeeFamilyRepo     dateEmployeeFamily - 5/24/2017 1:08:22 PM UPDATE EMPLOYEE FAMILY ===>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA Model USER : it Model Edit Date : 5/24/2017 1:08:22 PM
+DEBUG 2017-05-24 13:08:22,240 21359ms EmployeeFamilyRepo     dateEmployeeFamily - 5/24/2017 1:08:22 PM UPDATE EMPLOYEE FAMILY SUCCESS ====>>>>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA
+DEBUG 2017-05-24 13:08:22,263 21381ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 1:08:22 PM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 13:29:00,281 1259400ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 1:29:00 PM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 13:29:00,288 1259407ms EmployeeContractRepo   ployeeContractList - 5/24/2017 1:29:00 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 13:29:00,296 1259415ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 1:29:00 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 13:29:00,313 1259432ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 1:29:00 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 13:29:00,323 1259442ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 1:29:00 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 13:29:00,345 1259464ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 1:29:00 PM JML Employee Training List: 0
+DEBUG 2017-05-24 13:29:26,258 1285377ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 1:29:26 PM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 13:29:26,282 1285401ms EmployeeContractRepo   ployeeContractList - 5/24/2017 1:29:26 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 13:29:26,305 1285424ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 1:29:26 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 13:29:26,348 1285466ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 1:29:26 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 13:29:26,359 1285477ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 1:29:26 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 13:29:26,371 1285489ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 1:29:26 PM JML Employee Training List: 0
+DEBUG 2017-05-24 13:30:04,630 1323749ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 1:30:04 PM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 13:30:04,668 1323787ms EmployeeContractRepo   ployeeContractList - 5/24/2017 1:30:04 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 13:30:04,720 1323839ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 1:30:04 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 13:30:04,766 1323884ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 1:30:04 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 13:30:04,798 1323916ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 1:30:04 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 13:30:04,864 1323982ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 1:30:04 PM JML Employee Training List: 0
+DEBUG 2017-05-24 13:30:10,703 1329822ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 1:30:10 PM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 13:30:10,711 1329830ms EmployeeContractRepo   ployeeContractList - 5/24/2017 1:30:10 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 13:30:10,718 1329837ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 1:30:10 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 13:30:10,725 1329844ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 1:30:10 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 13:30:10,734 1329853ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 1:30:10 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 13:30:10,742 1329861ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 1:30:10 PM JML Employee Training List: 0
+DEBUG 2017-05-24 13:30:36,667 1355786ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 1:30:36 PM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 13:30:36,678 1355797ms EmployeeContractRepo   ployeeContractList - 5/24/2017 1:30:36 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 13:30:36,688 1355807ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 1:30:36 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 13:30:36,700 1355818ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 1:30:36 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 13:30:36,705 1355823ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 1:30:36 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 13:30:36,713 1355832ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 1:30:36 PM JML Employee Training List: 0
+DEBUG 2017-05-24 13:31:31,815 1410934ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 1:31:31 PM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 13:31:31,841 1410960ms EmployeeContractRepo   ployeeContractList - 5/24/2017 1:31:31 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 13:31:32,096 1411215ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 1:31:32 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 13:31:32,141 1411260ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 1:31:32 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 13:31:32,194 1411313ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 1:31:32 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 13:31:32,221 1411340ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 1:31:32 PM JML Employee Training List: 0
+DEBUG 2017-05-24 13:57:50,507  7845ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 1:57:50 PM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 13:57:50,535  7872ms EmployeeContractRepo   ployeeContractList - 5/24/2017 1:57:50 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 13:57:50,549  7887ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 1:57:50 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 13:57:50,568  7905ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 1:57:50 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 13:57:50,576  7913ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 1:57:50 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 13:57:50,584  7921ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 1:57:50 PM JML Employee Training List: 0
+DEBUG 2017-05-24 14:33:45,764  7099ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 2:33:45 PM=======>>>> Jml DATA EMPLOYEE LIST : 6
+DEBUG 2017-05-24 14:33:45,803  7137ms EmployeeContractRepo   ployeeContractList - 5/24/2017 2:33:45 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 14:33:45,833  7167ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 2:33:45 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 14:33:45,873  7208ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 2:33:45 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 14:33:45,885  7220ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 2:33:45 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 14:33:45,917  7251ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 2:33:45 PM JML Employee Training List: 0
+DEBUG 2017-05-24 14:34:46,455 67790ms ployeeFamilyController leteEmployeeFamily - 5/24/2017 2:34:46 PMMASUK DELETE Emp Code : 35151269069300041, Seq No : 6
+DEBUG 2017-05-24 14:34:46,489 67823ms EmployeeFamilyRepo     leteEmployeeFamily - 5/24/2017 2:34:46 PM DELETE EMPLOYEE FAMILY SUCCESS ====>>>>>> Employee Code : 35151269069300041 NoSeq : 6
+DEBUG 2017-05-24 14:34:46,525 67859ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 2:34:46 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-24 15:47:32,016  7353ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 3:47:32 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-24 15:47:32,049  7386ms EmployeeContractRepo   ployeeContractList - 5/24/2017 3:47:32 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 15:47:32,078  7415ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 3:47:32 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 15:47:32,104  7442ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 3:47:32 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 15:47:32,124  7462ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 3:47:32 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 15:47:32,134  7472ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 3:47:32 PM JML Employee Training List: 0
+DEBUG 2017-05-24 15:47:51,588 26925ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 3:47:51 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-24 15:47:51,602 26939ms EmployeeContractRepo   ployeeContractList - 5/24/2017 3:47:51 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 15:47:51,627 26964ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 3:47:51 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 15:47:51,678 27015ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 3:47:51 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 15:47:51,685 27022ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 3:47:51 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 15:47:51,691 27028ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 3:47:51 PM JML Employee Training List: 0
+DEBUG 2017-05-24 15:48:08,764 44101ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 3:48:08 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-24 15:48:08,770 44107ms EmployeeContractRepo   ployeeContractList - 5/24/2017 3:48:08 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 15:48:08,782 44119ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 3:48:08 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 15:48:08,790 44127ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 3:48:08 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 15:48:08,797 44134ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 3:48:08 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 15:48:08,804 44141ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 3:48:08 PM JML Employee Training List: 0
+DEBUG 2017-05-24 16:09:31,113  9237ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 4:09:31 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-24 16:09:31,164  9287ms EmployeeContractRepo   ployeeContractList - 5/24/2017 4:09:31 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 16:09:31,173  9296ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 4:09:31 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 16:09:31,186  9309ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 4:09:31 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 16:09:31,276  9399ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 4:09:31 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 16:09:31,341  9464ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 4:09:31 PM JML Employee Training List: 0
+DEBUG 2017-05-24 16:39:36,326  8787ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 4:39:36 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-24 16:39:36,356  8817ms EmployeeContractRepo   ployeeContractList - 5/24/2017 4:39:36 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 16:39:36,368  8829ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 4:39:36 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 16:39:36,377  8838ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 4:39:36 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 16:39:36,385  8846ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 4:39:36 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 16:39:36,393  8854ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 4:39:36 PM JML Employee Training List: 0
+DEBUG 2017-05-24 16:41:25,624 118084ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 4:41:25 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-24 16:41:25,633 118093ms EmployeeContractRepo   ployeeContractList - 5/24/2017 4:41:25 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 16:41:25,639 118099ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 4:41:25 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 16:41:25,646 118106ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 4:41:25 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 16:41:25,653 118113ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 4:41:25 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 16:41:25,672 118132ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 4:41:25 PM JML Employee Training List: 0
+DEBUG 2017-05-24 16:42:04,252 156712ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 4:42:04 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-24 16:42:04,259 156719ms EmployeeContractRepo   ployeeContractList - 5/24/2017 4:42:04 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 16:42:04,275 156735ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 4:42:04 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 16:42:04,281 156741ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 4:42:04 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 16:42:04,288 156748ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 4:42:04 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 16:42:04,295 156755ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 4:42:04 PM JML Employee Training List: 0
+DEBUG 2017-05-24 17:34:33,112  5901ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 5:34:33 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-24 17:34:33,145  5934ms EmployeeContractRepo   ployeeContractList - 5/24/2017 5:34:33 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 17:34:33,161  5950ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 5:34:33 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 17:34:33,173  5962ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 5:34:33 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 17:34:33,183  5972ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 5:34:33 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 17:34:33,192  5980ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 5:34:33 PM JML Employee Training List: 0
+DEBUG 2017-05-24 17:38:02,044 214833ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 5:38:02 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-24 17:38:02,054 214843ms EmployeeContractRepo   ployeeContractList - 5/24/2017 5:38:02 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 17:38:02,060 214849ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 5:38:02 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 17:38:02,065 214854ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 5:38:02 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 17:38:02,072 214861ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 5:38:02 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 17:38:02,080 214869ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 5:38:02 PM JML Employee Training List: 0
+DEBUG 2017-05-24 17:41:05,232 398021ms EmployeeFamilyRepo     EmployeeFamilyList - 5/24/2017 5:41:05 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-24 17:41:05,238 398027ms EmployeeContractRepo   ployeeContractList - 5/24/2017 5:41:05 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-24 17:41:05,251 398040ms EmployeeEducationRepo  loyeeEducationList - 5/24/2017 5:41:05 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-24 17:41:05,265 398054ms EmployeeExperienceRepo oyeeExperienceList - 5/24/2017 5:41:05 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-24 17:41:05,275 398064ms EmployeeSkillRepo      tEmployeeSkillList - 5/24/2017 5:41:05 PM JML Employee SKILL List: 1
+DEBUG 2017-05-24 17:41:05,281 398070ms EmployeeTrainingRepo   ployeeTrainingList - 5/24/2017 5:41:05 PM JML Employee Training List: 0

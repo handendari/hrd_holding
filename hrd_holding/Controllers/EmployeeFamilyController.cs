@@ -65,12 +65,12 @@ namespace hrd_holding.Controllers
         [HttpPost]
         public dynamic DeleteEmployeeFamily(string pEmployeeCode,int pSeqNo)
         {
-            //LOG.Debug(DateTime.Now + "Emp Code : " + pEmployeeCode + ", Seq No : " + pSeqNo);
+            LOG.Debug(DateTime.Now + "MASUK DELETE Emp Code : " + pEmployeeCode + ", Seq No : " + pSeqNo);
 
             var vResp = _empFamService.DeleteEmployeeFamily(pEmployeeCode,pSeqNo);
 
 
-            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+            return Json(new { vResp });
         }
 
     }

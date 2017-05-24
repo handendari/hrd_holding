@@ -1,53 +1,6 @@
 ﻿var vDataTbl = {};
-var vCmbReligion = [
-        "ISLAM",
-        "KRISTEN",
-        "KATOLIK",
-        "HINDU",
-        "BUDHA",
-        "OTHERS"
-];
-
-var vCmbRelation = [
-        "SUAMI",
-        "ISTRI",
-        "ANAK",
-        "ORANG TUA",
-        "SAUDARA"
-];
-
-var vCmbGender = [
-        "LAKI LAKI",
-        "PEREMPUAN"
-];
-
-//#region DATASOURCE TABEL
-var vDataFamily = [];
-var vSrcFamily =
-{
-    localdata: vDataFamily,
-    datatype: "json",
-    datafields: [
-            { name: 'employment_code' },
-            { name: 'seq_no' },
-            { name: 'name' },
-            { name: 'sex' },
-            { name: 'relationship' },
-            { name: 'nm_rel' },
-            { name: 'date_birth', type: "date" },
-            { name: 'education' },
-            { name: 'employment' },
-            { name: 'address' },
-            { name: 'chk_address' }
-    ]
-};
-//#endregion
-
 
 $(document).ready(function () {
-    //GET WINDOW HEIGHT AND WIDTH
-    var winHeight = $(window).height();
-    var winWidth = $(window).width();
 
     //#region INIT COMPONENT
     $("#txtId").jqxInput({ theme: vTheme });
@@ -94,10 +47,6 @@ $(document).ready(function () {
     $("#btnkdAtasan").jqxButton({ theme: vTheme });
     $("#txtNmAtasan").jqxInput({ theme: vTheme });
 
-    $("#btnFamilyNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnFamilyEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnFamilyDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
-
     $("#btnSkillNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
     $("#btnSkillEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
     $("#btnSkillDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
@@ -130,119 +79,29 @@ $(document).ready(function () {
         position: 'top', selectionTracker: 1, animationType: 'fade'
     });
 
-    //#region MODAL FAMILY 
-    var vPesanFam = "";
-
-    $("#jqxNotification").jqxNotification({
-        width: "100%",height:"40px",theme:vTheme,
-        appendContainer: "#container",
-        opacity: 0.9, autoClose: true, template: "error"
-    });
-
-    $("#txtFamName").jqxInput({ theme: vTheme })
-    $("#txtFamDob").jqxDateTimeInput({ theme: vTheme });
-    $("#txtFamEducation").jqxInput({ theme: vTheme })
-    $("#txtFamEmployment").jqxInput({ theme: vTheme })
-    $("#cmbFamGender").jqxComboBox({
-        theme: vTheme, width: 120,
-        source: vCmbGender, selectedIndex: 0
-    });
-    $("#cmbFamRelation").jqxComboBox({
-        theme: vTheme, width: 120,
-        source: vCmbRelation, selectedIndex: 0
-    });
-    $("#chkFamAddress").jqxCheckBox({ theme: vTheme });
-    $('#txtFamAddress').jqxTextArea({
-        theme: vTheme, placeHolder: 'Masukkan Alamat Keluarga',
-        height: 50, width: 200, minLength: 1
-    });
-    $("#btnModFamSave").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnModFamCancel").jqxButton({ theme: vTheme, height: 30, width: 100 });
-
-    $("#modFamily").jqxWindow({
-        height: 280, width: 600,
-        theme: vTheme, isModal: true,
-        autoOpen: false,
-        resizable: false
-    });
-
-    $("#btnYes").jqxButton({ theme: vTheme, height: 30, width: 60 });
-    $("#btnNo").jqxButton({ theme: vTheme, height: 30, width: 60 });
-
     $("#modYesNo").jqxWindow({
         height: 150, width: 300,
         theme: vTheme, isModal: true,
         autoOpen: false,
         resizable: false
     });
-
-    //#endregion MODAL FAMILY
-
-
-
+    
     //#endregion
 
     //#region UNTUK CENTER MODAL DIALOG
-    //KEEP CENTERED
-
-    function f_PosX(pLebar) {
-        winWidth = $(window).width();
-        var posX = (winWidth / 2) - ((pLebar).width() / 2) + $(window).scrollLeft();
-        return posX;
-    }
-
-    function f_PosY(pTinggi) {
-        winHeight = $(window).height();
-        var posY = (winHeight / 2) - ((pTinggi).height() / 2) + $(window).scrollTop();
-        return posY;
-    }
-
-    $('#modFamily').jqxWindow({ position: { x: f_PosX($('#modFamily')), y: f_PosY($('#modFamily')) } });
-    $('#modYesNo').jqxWindow({ position: { x: f_PosX($('#modYesNo')), y: f_PosY($('#modYesNo')) } });
-
     //KEEP CENTERED WHEN SCROLLING
     $(window).scroll(function () {
         $('#modFamily').jqxWindow({ position: { x: f_PosX($('#modFamily')), y: f_PosY($('#modFamily')) } });
+        $('#modEducation').jqxWindow({ position: { x: f_PosX($('#modEducation')), y: f_PosY($('#modEducation')) } });
         $('#modYesNo').jqxWindow({ position: { x: f_PosX($('#modYesNo')), y: f_PosY($('#modYesNo')) } });
     });
 
     //KEEP CENTERED EVEN WHEN RESIZING
     $(window).resize(function () {
         $('#modFamily').jqxWindow({ position: { x: f_PosX($('#modFamily')), y: f_PosY($('#modFamily')) } });
+        $('#modEducation').jqxWindow({ position: { x: f_PosX($('#modEducation')), y: f_PosY($('#modEducation')) } });
         $('#modYesNo').jqxWindow({ position: { x: f_PosX($('#modYesNo')), y: f_PosY($('#modYesNo')) } });
     });
-    //#endregion
-
-    //#region Table FAMILY
-    var initGridFamily = function () {
-        var dataAdapter = new $.jqx.dataAdapter(vSrcFamily);
-
-        $("#tblFamily").jqxGrid(
-        {
-            width: '100%',
-            height: 200,
-            theme: vTheme,
-            source: dataAdapter,
-            columnsresize: true,
-            rowsheight: 25,
-            columns: [
-                { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
-                { text: 'Seq No', datafield: 'seq_no', width: 50, cellsalign: 'center' },
-                { text: 'Name', datafield: 'name', width: 300 },
-                { text: 'Gender', datafield: 'sex', width: 50, hidden: true },
-                { text: 'Relationship', datafield: 'relationship', hidden: true },
-                { text: 'Conn. With Emp', datafield: 'nm_rel', width: 130 },
-                {
-                    text: 'Date Of Birth', datafield: 'date_birth', width: 200,
-                    align: 'center', cellsalign: 'center', cellsformat: 'dd-MMM-yy'
-                },
-                { text: 'Education', datafield: 'education' },
-                { text: 'Employment', datafield: 'employment' },
-                { text: 'Address', datafield: 'address', hidden: true },
-                { text: 'chk_address', datafield: 'chk_address', hidden: true }
-            ]
-        });
-    }
     //#endregion
 
     //#region Table SKILL
@@ -335,56 +194,6 @@ $(document).ready(function () {
     }
     //#endregion
 
-    //#region Table EDUCATION
-    var initGridEducation = function () {
-        var source =
-       {
-           localdata: vDataTbl,
-           datatype: "local",
-           datafields: [
-                { name: 'employee_code' },
-                { name: 'seq_no' },
-                { name: 'nm_jenjang' },
-                { name: 'school' },
-                { name: 'jurusan' },
-                { name: 'city' },
-                { name: 'start_year', type: "date" },
-                { name: 'end_year', type: "date" }
-           ]
-       };
-        var dataAdapter = new $.jqx.dataAdapter(source);
-
-        $("#tblEducation").jqxGrid(
-        {
-            width: '100%',
-            height: 200,
-            theme: vTheme,
-            source: dataAdapter,
-            columnsresize: true,
-            rowsheight: 25,
-            columns: [
-                { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
-                { text: 'sequence', datafield: 'seq_no', hidden: true },
-                { text: 'Jenjang', datafield: 'nm_jenjang' },
-                { text: 'Sekolah', datafield: 'school' },
-                { text: 'Jurusan', datafield: 'jurusan' },
-                { text: 'Kota', datafield: 'city' },
-                {
-                    text: 'Start Date', datafield: 'start_year',
-                    filtertype: 'date', cellsformat: 'dd-MMM-yy',
-                    cellsalign: 'center', align: 'center', width: 150
-                },
-                {
-                    text: 'End Date', datafield: 'end_year',
-                    filtertype: 'date', cellsformat: 'dd-MMM-yy',
-                    cellsalign: 'center', align: 'center', width: 150
-                }
-            ]
-        });
-    }
-
-    //#endregion
-
     //#region Table TRAINING
     var initGridTraining = function () {
         var source =
@@ -467,10 +276,12 @@ $(document).ready(function () {
     }
     //#endregion
 
-    initGridFamily();
-    initGridEducation();
     initGridSkill();
     initGridExperience();
     initGridTraining();
     initGridContract();
+
+    $("#btnYes").jqxButton({ theme: vTheme, height: 30, width: 60 });
+    $("#btnNo").jqxButton({ theme: vTheme, height: 30, width: 60 });
+
 });

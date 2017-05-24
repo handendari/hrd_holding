@@ -36,11 +36,101 @@ limitations under the License.
     <script src="~/scripts/mega_menu/mainMegaMenu.js"></script>
 
     <script type="text/javascript">
+
         var base_url = '@String.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~/"))';
         var vTheme = 'custom_merah';
 
+        var winHeight = 0;
+        var winWidth = 0;
+
+        var vCmbReligion = [
+                "ISLAM",
+                "KRISTEN",
+                "KATOLIK",
+                "HINDU",
+                "BUDHA",
+                "OTHERS"
+        ];
+
+        var vCmbRelation = [
+                "SUAMI",
+                "ISTRI",
+                "ANAK",
+                "ORANG TUA",
+                "SAUDARA"
+        ];
+
+        var vCmbGender = [
+                "LAKI LAKI",
+                "PEREMPUAN"
+        ];
+
+        var vCmbEducation = [
+                "PRA TK",
+                "TK",
+                "SD",
+                "SLTP",
+                "SLTA",
+                "D1",
+                "D2",
+                "D3",
+                "D4",
+                "S1",
+                "S2",
+                "S3"
+        ];
+
+        function f_PosX(pLebar) {
+            winWidth = $(window).width();
+            var posX = (winWidth / 2) - ((pLebar).width() / 2) + $(window).scrollLeft();
+            return posX;
+        }
+
+        function f_PosY(pTinggi) {
+            winHeight = $(window).height();
+            var posY = (winHeight / 2) - ((pTinggi).height() / 2) + $(window).scrollTop();
+            return posY;
+        }
+
+        function f_MessageBoxShow(pText) {
+            $("#modInfoText").html(pText);
+            $("#modInfo").jqxWindow("open");
+
+        }
+
+        function f_NotificationShow(pJxNotif,pNotifContent,pText) {
+            (pNotifContent).html(pText);
+            (pJxNotif).jqxNotification("open");
+        }
+
         $(document).ready(function () {
+            winHeight = $(window).height();
+            winWidth = $(window).width();
+
+            //KEEP CENTERED WHEN SCROLLING
+            $(window).scroll(function () {
+                $('#modInfo').jqxWindow({ position: { x: f_PosX($('#modInfo')), y: f_PosY($('#modInfo')) } });
+            });
+
+            //KEEP CENTERED EVEN WHEN RESIZING
+            $(window).resize(function () {
+                $('#modInfo').jqxWindow({ position: { x: f_PosX($('#modInfo')), y: f_PosY($('#modInfo')) } });
+            });
+
             $("#jqxLoader").jqxLoader({ isModal: true, width: 100, height: 60, imagePosition: 'top' });
+            $("#btnInfoOke").jqxButton({ theme: vTheme, height: 30, width: 100 });
+
+            $("#modInfo").jqxWindow({
+                height: 150, width: 300,
+                theme: vTheme, isModal: true,
+                autoOpen: false,
+                resizable: false
+            });
+
+            $('#btnInfoOke').on('click', function (event) {
+                $("#modInfo").jqxWindow('close');
+            });
+
         });
     </script>
 </head>
@@ -114,7 +204,17 @@ limitations under the License.
         @RenderBody()
 
     </div>
-    <div id="jqxLoader"></div>
+
+    <div id="jqxLoader" style="z-index: 1000000000;"></div>
+    <div id="modInfo">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="modInfoText" style="margin-top: 10px; margin-left: 10px"></div>
+            <div style="margin-top: 40px; text-align: center;">
+                <button id="btnInfoOke">OK</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
