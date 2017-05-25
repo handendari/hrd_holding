@@ -10,6 +10,7 @@
     <script src="~/scripts/mEmployee/m_employee.js"></script>
     <script src="~/scripts/mEmployee/m_employee_family.js"></script>
     <script src="~/scripts/mEmployee/m_employee_education.js"></script>
+    <script src="~/scripts/mEmployee/m_employee_skill.js"></script>
 </header>
 
 <div>
@@ -182,7 +183,7 @@
     </div>
     <!--#endregion -->
 
-    <!--#region TABEL FAMILY, SKILL, EXP DLL -->
+    <!--#region TABS FAMILY, SKILL, EXP DLL -->
     <div style="margin-top: 10px">
         <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717; background-color: #eeece1;">
             <legend style="margin-left: 20px; background-color: #6b1717; padding-left: 10px; padding-top: 5px; padding-right: 100px; padding-bottom: 5px; color: white; border-radius: 8px; border: 2px solid #eeece1; font-size: 13px;">
@@ -319,7 +320,7 @@
             <div id="psnEducation">
                 <div id="psnEduIsi"></div>
             </div>
-            <div>
+            <div style="margin-left:20px">
                 <table>
                     <tr>
                         <td>Start Year *</td>
@@ -327,8 +328,8 @@
                             <div id="dtEduStartYear"></div>
                         </td>
                         <td style="padding-left: 30px">End Year *</td>
-                        <td>
-                            <input type="text" id="dtEduEndYear" /></td>
+                        <div>
+                            <div id="dtEduEndYear" /></div>
                     </tr>
                     <tr>
                         <td>Level *</td>
@@ -350,13 +351,13 @@
                             <input type="text" id="txtEduCity" /></td>
                         <td style="padding-left: 30px">Country</td>
                         <td>
-                            <input type="text" id="txtEduCountryCode" />
+                            <input type="text" id="txtEduCountryCode" style="width: 40px" />
                             <input type="button" id="btnEduCountry" value="..." />
                             <input type="text" id="txtEduCountryName" />
                         </td>
                     </tr>
                 </table>
-                <div style="margin-top: 15px; margin-left: 20px">
+                <div style="margin-top: 20px; margin-left: 20px">
                     <button id="btnEduSave">SAVE</button>
                     <button id="btnEduCancel">CANCEL</button>
                 </div>
@@ -365,6 +366,43 @@
     </div>
     <!--#endregion-->
 
+    <!--#region MODAL SKILL-->
+    <div id="modSkill">
+        <div>
+            <span>SKILL DETAIL</span>
+        </div>
+        <div>
+            <div id="psnSkillContainer" style="height: 40px"></div>
+            <div id="psnSkill">
+                <div id="psnSkillIsi"></div>
+            </div>
+            <div style="margin-left:20px">
+                <table>
+                    <tr>
+                        <td>Skill Name *</td>
+                        <td><input type="text" id="txtSkillName" /></td>
+                    </tr>
+                    <tr>
+                        <td>Level *</td>
+                        <td>
+                            <div id="cmbSkillLevel"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td rowspan="2">
+                            <textarea id="txtSkillDesc"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 20px; margin-left: 20px">
+                    <button id="btnSkillSave">SAVE</button>
+                    <button id="btnSkillCancel">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
 
     <div id='modYesNo'>
         <div><span>Human Resource Development</span></div>

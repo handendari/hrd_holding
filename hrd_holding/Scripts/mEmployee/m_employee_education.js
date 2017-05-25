@@ -142,8 +142,8 @@ $(document).ready(function () {
         opacity: 0.9, autoClose: true, template: "error"
     });
 
-    $("#dtEduStartYear").jqxDateTimeInput({ theme: vTheme });
-    $("#dtEduEndYear").jqxDateTimeInput({ theme: vTheme });
+    $("#dtEduStartYear").jqxDateTimeInput({ theme: vTheme , width:150});
+    $("#dtEduEndYear").jqxDateTimeInput({ theme: vTheme, width:150 });
 
     $("#cmbEduLevel").jqxComboBox({
         theme: vTheme, width: 120,
@@ -162,7 +162,7 @@ $(document).ready(function () {
     $("#btnEduCancel").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
     $("#modEducation").jqxWindow({
-        height: 280, width: 600,
+        height: 280, width: 800,
         theme: vTheme, isModal: true,
         autoOpen: false,
         resizable: false

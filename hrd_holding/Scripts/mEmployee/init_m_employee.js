@@ -47,10 +47,6 @@ $(document).ready(function () {
     $("#btnkdAtasan").jqxButton({ theme: vTheme });
     $("#txtNmAtasan").jqxInput({ theme: vTheme });
 
-    $("#btnSkillNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnSkillEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnSkillDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
-
     $("#btnExpNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
     $("#btnExpEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
     $("#btnExpDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
@@ -94,6 +90,7 @@ $(document).ready(function () {
         $('#modFamily').jqxWindow({ position: { x: f_PosX($('#modFamily')), y: f_PosY($('#modFamily')) } });
         $('#modEducation').jqxWindow({ position: { x: f_PosX($('#modEducation')), y: f_PosY($('#modEducation')) } });
         $('#modYesNo').jqxWindow({ position: { x: f_PosX($('#modYesNo')), y: f_PosY($('#modYesNo')) } });
+        $('#modSkill').jqxWindow({ position: { x: f_PosX($('#modSkill')), y: f_PosY($('#modSkill')) } });
     });
 
     //KEEP CENTERED EVEN WHEN RESIZING
@@ -101,42 +98,10 @@ $(document).ready(function () {
         $('#modFamily').jqxWindow({ position: { x: f_PosX($('#modFamily')), y: f_PosY($('#modFamily')) } });
         $('#modEducation').jqxWindow({ position: { x: f_PosX($('#modEducation')), y: f_PosY($('#modEducation')) } });
         $('#modYesNo').jqxWindow({ position: { x: f_PosX($('#modYesNo')), y: f_PosY($('#modYesNo')) } });
+        $('#modSkill').jqxWindow({ position: { x: f_PosX($('#modSkill')), y: f_PosY($('#modSkill')) } });
     });
     //#endregion
 
-    //#region Table SKILL
-    var initGridSkill = function () {
-        var source =
-       {
-           localdata: vDataTbl,
-           datatype: "local",
-           datafields: [
-                { name: 'employee_code' },
-                { name: 'seq_no' },
-                { name: 'skill' },
-                { name: 'nm_level' },
-                { name: 'description' }
-           ]
-       };
-
-        $("#tblSkill").jqxGrid(
-        {
-            width: '100%',
-            height: 200,
-            theme: vTheme,
-            source: new $.jqx.dataAdapter(source),
-            columnsresize: true,
-            rowsheight: 25,
-            columns: [
-                { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
-                { text: 'sequence', datafield: 'seq_no', hidden: true },
-                { text: 'Skill', datafield: 'skill' },
-                { text: 'Level', datafield: 'nm_level' },
-                { text: 'Description', datafield: 'description' }
-            ]
-        });
-    }
-    //#endregion
 
     //#region Table EXPERIENCE
     var initGridExperience = function () {
@@ -276,7 +241,6 @@ $(document).ready(function () {
     }
     //#endregion
 
-    initGridSkill();
     initGridExperience();
     initGridTraining();
     initGridContract();

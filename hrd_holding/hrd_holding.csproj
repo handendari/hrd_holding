@@ -719,6 +719,7 @@
     <Content Include="Scripts\mega_menu\jqueryMegaMenu.js" />
     <Content Include="Scripts\mega_menu\mainMegaMenu.js" />
     <Content Include="Scripts\mega_menu\source-sans-pro.js" />
+    <Content Include="Scripts\mEmployee\m_employee_skill.js" />
     <Content Include="Scripts\mEmployee\m_employee_education.js" />
     <Content Include="Scripts\mEmployee\init_m_employee.js" />
     <Content Include="Scripts\mEmployee\m_employee.js" />
