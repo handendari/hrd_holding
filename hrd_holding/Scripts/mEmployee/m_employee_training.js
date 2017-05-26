@@ -1,31 +1,28 @@
 ﻿
 //#region DATASOURCE TABEL
-var vDataFamily = [];
-var vSrcFamily =
+var vDataTrn = [];
+var vSrcTrn =
 {
-    localdata: vDataFamily,
+    localdata: vDataTrn,
     datatype: "json",
     datafields: [
-            { name: 'employment_code' },
-            { name: 'seq_no' },
-            { name: 'name' },
-            { name: 'sex' },
-            { name: 'relationship' },
-            { name: 'nm_rel' },
-            { name: 'date_birth', type: "date" },
-            { name: 'education' },
-            { name: 'employment' },
-            { name: 'address' },
-            { name: 'chk_address' }
+         { name: 'employee_code' },
+         { name: 'seq_no' },
+         { name: 'orginizer' },
+         { name: 'material' },
+         { name: 'place' },
+         { name: 'start_date' },
+         { name: 'end_date' }
     ]
 };
+
 //#endregion
 
-function f_UpdateTblFamily() {
+function f_UpdateTblTrn() {
     var vEmpCode = $("#txtId").data("employee_code");
 
     $.ajax({
-        url: base_url + "EmployeeFamily/GetEmployeeFamilyList",
+        url: base_url + "EmployeeTraining/GetEmployeeTrainingList",
         type: "POST",
         dataType: "json",
         data: jQuery.param({ pEmployeeCode: vEmpCode }),
@@ -37,30 +34,26 @@ function f_UpdateTblFamily() {
     });
 }
 
-function f_FillTableFamily(listFamily) {
-    vDataFamily.length = 0;
-    for (var i = 0; i < listFamily.length; i++) {
+function f_FillTableTrn(listTrn) {
+    vDataTrn.length = 0;
+    for (var i = 0; i < listTrn.length; i++) {
         var row = {};
-        row["employment_code"] = listFamily[i].employee_code;
-        row["seq_no"] = listFamily[i].seq_no;
-        row["name"] = listFamily[i].name;
-        row["sex"] = listFamily[i].sex;
-        row["relationship"] = listFamily[i].relationship;
-        row["nm_rel"] = listFamily[i].nm_rel;
-        row["date_birth"] = new Date(parseInt(listFamily[i].date_birth.substr(6)));
-        row["education"] = listFamily[i].education;
-        row["employment"] = listFamily[i].employment;
-        row["address"] = listFamily[i].address;
-        row["chk_address"] = listFamily[i].chk_address;
+        row["employment_code"] = listTrn[i].employee_code;
+        row["seq_no"] = listTrn[i].seq_no;
+        row["orginizer"] = listTrn[i].orginizer;
+        row["material"] = listTrn[i].material;
+        row["place"] = listTrn[i].place;
+        row["start_date"] = new Date(parseInt(listTrn[i].start_date.substr(6)));
+        row["end_date"] = new Date(parseInt(listTrn[i].end_date.substr(6)));
 
-        vDataFamily.push(row);
+        vDataTrn.push(row);
     }
 
-    var vAdapter = new $.jqx.dataAdapter(vSrcFamily);
-    $("#tblFamily").jqxGrid({ source: vAdapter });
+    var vAdapter = new $.jqx.dataAdapter(vSrcTrn);
+    $("#tblTraining").jqxGrid({ source: vAdapter });
 }
 
-function f_EmptyFamilyDetail() {
+function f_EmptyTrnDetail() {
     $("#txtFamName").val("");
     $("#txtFamName").data("fam_seq_no", 0);
 
@@ -73,16 +66,16 @@ function f_EmptyFamilyDetail() {
     $("#chkFamAddress").jqxCheckBox('uncheck');
 }
 
-function f_DeleteEmployeeFamily(pEmpCode) {
+function f_DeleteEmployeeTrn(pEmpCode) {
     $('#jqxLoader').jqxLoader('open');
 
-    var selectedRowIndex = $("#tblFamily").jqxGrid('selectedrowindex');
-    var vSeqNo = $('#tblFamily').jqxGrid('getcellvalue', selectedRowIndex, "seq_no");
+    var selectedRowIndex = $("#tblTraining").jqxGrid('selectedrowindex');
+    var vSeqNo = $('#tblTraining').jqxGrid('getcellvalue', selectedRowIndex, "seq_no");
 
 
     if (vSeqNo > 0) {
         $.ajax({
-            url: base_url + "EmployeeFamily/DeleteEmployeeFamily",
+            url: base_url + "EmployeeTraining/DeleteEmployeeTraining",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({ pEmployeeCode: pEmpCode, pSeqNo: vSeqNo }),
@@ -103,44 +96,39 @@ function f_DeleteEmployeeFamily(pEmpCode) {
 
 $(document).ready(function () {
     //#region INIT FAMILY
-    $("#btnFamilyNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnFamilyEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnFamilyDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnTrainingNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnTrainingEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnTrainingDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
-    function initGridFamily() {
-        $("#tblFamily").jqxGrid(
+    //#region Table TRAINING
+    function initGridTraining() {
+        $("#tblTraining").jqxGrid(
         {
             width: '100%',
             height: 200,
             theme: vTheme,
-            source: new $.jqx.dataAdapter(vSrcFamily),
             columnsresize: true,
             rowsheight: 25,
+            source: new $.jqx.dataAdapter(vSrcTrn),
             columns: [
                 { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
-                { text: 'Seq No', datafield: 'seq_no', width: 50, cellsalign: 'center' },
-                { text: 'Name', datafield: 'name', width: 300 },
-                { text: 'Gender', datafield: 'sex', width: 50, hidden: true },
-                { text: 'Relationship', datafield: 'relationship', hidden: true },
-                { text: 'Conn. With Emp', datafield: 'nm_rel', width: 130 },
-                {
-                    text: 'Date Of Birth', datafield: 'date_birth', width: 200,
-                    align: 'center', cellsalign: 'center', cellsformat: 'dd-MMM-yy'
-                },
-                { text: 'Education', datafield: 'education' },
-                { text: 'Employment', datafield: 'employment' },
-                { text: 'Address', datafield: 'address', hidden: true },
-                { text: 'chk_address', datafield: 'chk_address', hidden: true }
+                { text: 'sequence', datafield: 'seq_no', hidden: true },
+                { text: 'Orginizer', datafield: 'orginizer' },
+                { text: 'Material', datafield: 'material' },
+                { text: 'Place', datafield: 'place' },
+                { text: 'Start Date', datafield: 'start_date', filtertype: 'date', cellsalign: 'center', cellsformat: 'dd-MMM-yy' },
+                { text: 'End Date', datafield: 'end_date', filtertype: 'date', cellsalign: 'center', cellsformat: 'dd-MMM-yy' }
             ]
         });
     }
+    //#endregion
 
-    initGridFamily();
+    initGridTraining();
 
     //#region MODAL FAMILY 
-    $("#jqxNotification").jqxNotification({
+    $("#psnTrn").jqxNotification({
         width: "100%", height: "40px", theme: vTheme,
-        appendContainer: "#container",
+        appendContainer: "#psnTrnCont",
         opacity: 0.9, autoClose: true, template: "error"
     });
 
@@ -156,48 +144,38 @@ $(document).ready(function () {
         theme: vTheme, width: 120,
         source: vCmbRelation, selectedIndex: 0
     });
-    $("#chkFamAddress").jqxCheckBox({ theme: vTheme });
-    $('#txtFamAddress').jqxTextArea({
-        theme: vTheme, placeHolder: 'Masukkan Alamat Keluarga',
-        height: 50, width: 200, minLength: 1
-    });
-    $("#btnModFamSave").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnModFamCancel").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#chkTrnCompany").jqxCheckBox({ theme: vTheme });
 
-    $("#modFamily").jqxWindow({
+    $("#btnTrnSave").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnTrnCancel").jqxButton({ theme: vTheme, height: 30, width: 100 });
+
+    $("#modTraining").jqxWindow({
         height: 280, width: 600,
         theme: vTheme, isModal: true,
         autoOpen: false,
         resizable: false
     });
-    //#endregion MODAL FAMILY
+    //#endregion MODAL TRAINING
 
     //#endregion
 
-    $('#btnFamilyNew').on('click', function (event) {
-        f_EmptyFamilyDetail();
-        $("#modFamily").jqxWindow('open');
+    $('#btnTrainingNew').on('click', function (event) {
+        f_EmptyTrnDetail();
+        $("#modTraining").jqxWindow('open');
     });
 
-    $('#btnModFamCancel').on('click', function (event) {
-        f_EmptyFamilyDetail();
-        $("#modFamily").jqxWindow('close');
+    $('#btnTrnCancel').on('click', function (event) {
+        f_EmptyTrnDetail();
+        $("#modTraining").jqxWindow('close');
     });
 
-    $("#chkFamAddress").bind('change', function (event) {
-        var checked = event.args.checked;
-        if (checked) {
-            $("#txtFamAddress").val($("#txtAddress").val());
-        }
-    });
+    $('#btnTrnEdit').on('click', function (event) {
+        f_EmptyTrnDetail();
 
-    $('#btnFamilyEdit').on('click', function (event) {
-        f_EmptyFamilyDetail();
-
-        var rowindex = $('#tblFamily').jqxGrid('getselectedrowindex');
+        var rowindex = $('#tblTraining').jqxGrid('getselectedrowindex');
 
         if (rowindex > 0) {
-            var rd = $('#tblFamily').jqxGrid('getrowdata', rowindex);
+            var rd = $('#tblTraining').jqxGrid('getrowdata', rowindex);
 
             //alert(JSON.stringify(rd));
 
@@ -228,8 +206,8 @@ $(document).ready(function () {
         }
     });
 
-    $('#btnFamilyDelete').on('click', function (event) {
-        var rowindex = $('#tblFamily').jqxGrid('getselectedrowindex');
+    $('#btnTrnDelete').on('click', function (event) {
+        var rowindex = $('#tblTraining').jqxGrid('getselectedrowindex');
 
         if (rowindex > 0) {
             $("#modYesNo").jqxWindow('open');
@@ -238,21 +216,15 @@ $(document).ready(function () {
         }
     });
 
-    $('#btnModFamSave').on('click', function (event) {
+    $('#btnTrnSave').on('click', function (event) {
         if ($("#txtFamName").val() == "") {
-            f_NotificationShow($("#jqxNotification"), $("#notificationContent"), "NAMA FAMILY TIDAK BOLEH KOSONG...");
+            f_NotificationShow($("#psnTrn"), $("#psnTrnContent"), "NAMA FAMILY TIDAK BOLEH KOSONG...");
 
         } else {
             $('#btnModFamSave').jqxButton({ disabled: true });
             $('#jqxLoader').jqxLoader('open');
 
             var vAlamat = "";
-
-            if ($("#chkFamAddress").jqxCheckBox('checked')) {
-                vAlamat = $("#txtAddress").val();
-            } else {
-                vAlamat = $("#txtFamAddress").val();
-            }
 
             var vModel = JSON.stringify({
                 employee_code: $("#txtId").data("employee_code"),
@@ -275,7 +247,7 @@ $(document).ready(function () {
             if (vSeqNo > 0) {
 
                 $.ajax({
-                    url: base_url + "EmployeeFamily/UpdateEmployeeFamily",
+                    url: base_url + "EmployeeTraining/UpdateEmployeeTraining",
                     type: "POST",
                     contentType: "application/json",
                     data: vModel,
@@ -284,17 +256,17 @@ $(document).ready(function () {
 
                         if (isOke) {
                             f_UpdateTblFamily();
-                            $("#modFamily").jqxWindow('close');
+                            $("#modTraining").jqxWindow('close');
                         } else {
                             alert(d.vResp['message']);
                         }
-                        $('#btnModFamSave').jqxButton({ disabled: false });
+                        $('#btnTrnSave').jqxButton({ disabled: false });
                         $('#jqxLoader').jqxLoader('close');
                     }
                 });
             } else {
                 $.ajax({
-                    url: base_url + "EmployeeFamily/InsertEmployeeFamily",
+                    url: base_url + "EmployeeTraining/InsertEmployeeTraining",
                     type: "POST",
                     contentType: "application/json",
                     data: vModel,

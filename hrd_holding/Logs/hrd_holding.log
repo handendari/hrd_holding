@@ -16812,3 +16812,237 @@ DEBUG 2017-05-25 14:01:11,183 238444ms EmployeeEducationRepo  loyeeEducationList
 DEBUG 2017-05-25 14:01:11,566 238827ms EmployeeExperienceRepo oyeeExperienceList - 5/25/2017 2:01:11 PM JML Employee EXPERIENCE List: 1
 DEBUG 2017-05-25 14:01:11,784 239045ms EmployeeSkillRepo      tEmployeeSkillList - 5/25/2017 2:01:11 PM JML Employee SKILL List: 1
 DEBUG 2017-05-25 14:01:11,959 239220ms EmployeeTrainingRepo   ployeeTrainingList - 5/25/2017 2:01:11 PM JML Employee Training List: 0
+DEBUG 2017-05-26 09:01:29,576  7306ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 9:01:29 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 09:01:29,616  7346ms EmployeeContractRepo   ployeeContractList - 5/26/2017 9:01:29 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 09:01:29,630  7360ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 9:01:29 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 09:01:29,653  7383ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 9:01:29 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 09:01:29,684  7414ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 9:01:29 AM JML Employee SKILL List: 1
+DEBUG 2017-05-26 09:01:29,700  7430ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 9:01:29 AM JML Employee Training List: 0
+DEBUG 2017-05-26 14:08:51,488  9130ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:08:51 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:08:51,531  9173ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:08:51 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:08:51,568  9210ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:08:51 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:08:51,709  9351ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:08:51 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:08:51,815  9457ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:08:51 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:08:51,952  9594ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:08:51 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:11:23,805 161447ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:11:23 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:11:23,845 161487ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:11:23 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:11:23,866 161508ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:11:23 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:11:23,892 161534ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:11:23 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:11:23,902 161544ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:11:23 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:11:23,920 161562ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:11:23 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:12:04,833 202475ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:12:04 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:12:04,842 202484ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:12:04 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:12:04,848 202490ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:12:04 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:12:04,857 202499ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:12:04 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:12:04,864 202506ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:12:04 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:12:04,878 202520ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:12:04 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:16:14,998  7388ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:16:14 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:16:15,038  7428ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:16:15 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:16:15,051  7441ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:16:15 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:16:15,069  7459ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:16:15 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:16:15,076  7466ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:16:15 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:16:15,086  7476ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:16:15 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:16:32,788 25178ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:16:32 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:16:32,797 25187ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:16:32 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:16:32,818 25208ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:16:32 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:16:32,829 25219ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:16:32 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:16:32,846 25236ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:16:32 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:16:32,852 25242ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:16:32 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:17:57,400 109790ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:17:57 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:17:57,409 109799ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:17:57 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:17:57,431 109821ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:17:57 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:17:57,437 109827ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:17:57 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:17:57,498 109888ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:17:57 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:17:57,525 109915ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:17:57 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:22:49,421 401811ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:22:49 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:22:49,449 401839ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:22:49 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:22:49,461 401851ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:22:49 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:22:49,471 401861ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:22:49 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:22:49,478 401868ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:22:49 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:22:49,516 401906ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:22:49 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:26:55,594 647984ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:26:55 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:26:55,605 647995ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:26:55 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:26:55,613 648003ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:26:55 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:26:55,649 648039ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:26:55 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:26:55,692 648082ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:26:55 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:26:55,700 648090ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:26:55 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:29:41,617 814007ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:29:41 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:29:41,642 814032ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:29:41 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:29:41,664 814054ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:29:41 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:29:41,671 814061ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:29:41 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:29:41,681 814071ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:29:41 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:29:41,689 814079ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:29:41 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:29:57,357 829747ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:29:57 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:29:57,369 829759ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:29:57 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:29:57,384 829774ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:29:57 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:29:57,392 829782ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:29:57 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:29:57,399 829789ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:29:57 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:29:57,411 829801ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:29:57 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:33:58,518 1070909ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:33:58 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:33:58,529 1070920ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:33:58 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:33:58,536 1070927ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:33:58 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:33:58,545 1070936ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:33:58 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:33:58,552 1070943ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:33:58 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:33:58,588 1070979ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:33:58 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:46:53,304 1845694ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:46:53 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:46:53,349 1845739ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:46:53 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:46:53,382 1845772ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:46:53 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:46:53,396 1845786ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:46:53 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:46:53,458 1845848ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:46:53 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:46:53,488 1845878ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:46:53 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:48:04,930 1917320ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:48:04 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:48:04,938 1917328ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:48:04 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:48:04,944 1917334ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:48:04 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:48:04,954 1917344ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:48:04 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:48:04,965 1917355ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:48:04 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:48:04,971 1917361ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:48:04 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:48:41,594 1953985ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:48:41 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:48:41,612 1954003ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:48:41 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:48:41,618 1954009ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:48:41 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:48:41,625 1954016ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:48:41 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:48:41,633 1954024ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:48:41 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:48:41,642 1954033ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:48:41 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:49:18,643 1991033ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:49:18 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:49:18,686 1991076ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:49:18 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:49:18,694 1991084ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:49:18 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:49:18,706 1991096ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:49:18 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:49:18,740 1991130ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:49:18 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:49:18,749 1991139ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:49:18 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:50:40,642 2073032ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:50:40 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:50:40,650 2073040ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:50:40 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:50:40,674 2073064ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:50:40 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:50:40,686 2073076ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:50:40 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:50:40,693 2073083ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:50:40 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:50:40,708 2073098ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:50:40 PM JML Employee Training List: 0
+DEBUG 2017-05-26 14:59:40,439 2612829ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 2:59:40 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 14:59:40,455 2612845ms EmployeeContractRepo   ployeeContractList - 5/26/2017 2:59:40 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 14:59:40,464 2612854ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 2:59:40 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 14:59:40,471 2612861ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 2:59:40 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 14:59:40,507 2612897ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 2:59:40 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 14:59:40,594 2612984ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 2:59:40 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:00:23,282 2655673ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:00:23 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:00:23,297 2655688ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:00:23 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:00:23,324 2655715ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:00:23 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:00:23,338 2655729ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:00:23 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:00:23,368 2655759ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:00:23 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:00:23,388 2655779ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:00:23 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:04:41,495 2913886ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:04:41 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:04:41,515 2913906ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:04:41 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:04:41,522 2913913ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:04:41 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:04:41,529 2913920ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:04:41 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:04:41,539 2913930ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:04:41 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:04:41,545 2913936ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:04:41 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:04:50,553 2922943ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:04:50 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:04:50,622 2923012ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:04:50 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:04:50,704 2923094ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:04:50 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:04:50,890 2923280ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:04:50 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:04:50,999 2923390ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:04:50 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:04:51,019 2923409ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:04:51 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:06:18,034 3010424ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:06:18 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:06:18,044 3010435ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:06:18 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:06:18,061 3010452ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:06:18 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:06:18,071 3010462ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:06:18 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:06:18,078 3010469ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:06:18 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:06:18,085 3010476ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:06:18 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:06:35,471 3027862ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:06:35 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:06:35,483 3027874ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:06:35 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:06:35,537 3027928ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:06:35 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:06:35,545 3027936ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:06:35 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:06:35,558 3027948ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:06:35 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:06:35,565 3027955ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:06:35 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:06:46,986 3039376ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:06:46 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:06:47,066 3039456ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:06:47 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:06:47,073 3039463ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:06:47 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:06:47,089 3039479ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:06:47 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:06:47,137 3039527ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:06:47 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:06:47,145 3039535ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:06:47 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:07:40,325 3092716ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:07:40 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:07:40,407 3092798ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:07:40 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:07:40,429 3092820ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:07:40 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:07:40,466 3092857ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:07:40 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:07:40,481 3092872ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:07:40 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:07:40,503 3092894ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:07:40 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:09:15,554 3187944ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:09:15 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:09:15,572 3187962ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:09:15 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:09:15,590 3187980ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:09:15 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:09:15,609 3187999ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:09:15 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:09:15,616 3188006ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:09:15 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:09:15,627 3188017ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:09:15 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:09:42,877 3215267ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:09:42 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:09:43,041 3215431ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:09:43 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:09:43,272 3215662ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:09:43 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:09:43,288 3215678ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:09:43 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:09:43,376 3215766ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:09:43 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:09:43,912 3216303ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:09:43 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:09:58,230 3230620ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:09:58 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:09:58,559 3230949ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:09:58 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:09:58,609 3230999ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:09:58 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:09:58,898 3231288ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:09:58 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:09:58,932 3231323ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:09:58 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:09:58,958 3231348ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:09:58 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:10:27,480 3259870ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:10:27 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:10:27,489 3259879ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:10:27 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:10:27,497 3259887ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:10:27 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:10:27,511 3259901ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:10:27 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:10:27,537 3259927ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:10:27 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:10:27,547 3259937ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:10:27 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:11:28,213 3320603ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:11:28 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:11:28,323 3320714ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:11:28 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:11:28,557 3320947ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:11:28 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:11:28,790 3321181ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:11:28 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:11:30,062 3322452ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:11:30 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:11:30,523 3322913ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:11:30 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:12:20,603 3372993ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:12:20 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:12:20,653 3373043ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:12:20 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:12:20,661 3373051ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:12:20 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:12:20,676 3373066ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:12:20 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:12:20,686 3373076ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:12:20 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:12:20,701 3373091ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:12:20 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:12:50,104 3402494ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:12:50 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:12:50,128 3402518ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:12:50 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:12:50,139 3402529ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:12:50 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:12:50,150 3402540ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:12:50 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:12:50,156 3402546ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:12:50 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:12:50,171 3402561ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:12:50 PM JML Employee Training List: 0
+DEBUG 2017-05-26 15:15:51,991 3584381ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 3:15:51 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 15:15:52,008 3584398ms EmployeeContractRepo   ployeeContractList - 5/26/2017 3:15:52 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 15:15:52,058 3584448ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 3:15:52 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 15:15:52,109 3584499ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 3:15:52 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 15:15:52,126 3584516ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 3:15:52 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 15:15:52,140 3584530ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 3:15:52 PM JML Employee Training List: 0
+DEBUG 2017-05-26 16:54:05,627 61845ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 4:54:05 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 16:54:05,797 62015ms EmployeeContractRepo   ployeeContractList - 5/26/2017 4:54:05 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 16:54:05,832 62050ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 4:54:05 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 16:54:05,856 62074ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 4:54:05 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 16:54:05,866 62084ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 4:54:05 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 16:54:05,896 62114ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 4:54:05 PM JML Employee Training List: 0
+DEBUG 2017-05-26 16:54:18,476 74694ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 4:54:18 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 16:54:18,627 74845ms EmployeeContractRepo   ployeeContractList - 5/26/2017 4:54:18 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 16:54:18,712 74930ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 4:54:18 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 16:54:18,734 74952ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 4:54:18 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 16:54:18,743 74961ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 4:54:18 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 16:54:18,757 74975ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 4:54:18 PM JML Employee Training List: 0
+DEBUG 2017-05-26 16:55:48,879 165097ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 4:55:48 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 16:55:49,038 165256ms EmployeeContractRepo   ployeeContractList - 5/26/2017 4:55:49 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 16:55:49,836 166054ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 4:55:49 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 16:55:50,186 166404ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 4:55:50 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 16:55:51,013 167231ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 4:55:51 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 16:55:51,541 167759ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 4:55:51 PM JML Employee Training List: 0
+DEBUG 2017-05-26 16:56:58,488 234706ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 4:56:58 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 16:56:58,504 234722ms EmployeeContractRepo   ployeeContractList - 5/26/2017 4:56:58 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 16:56:58,515 234733ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 4:56:58 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 16:56:58,533 234751ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 4:56:58 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 16:56:58,553 234771ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 4:56:58 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 16:56:58,559 234777ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 4:56:58 PM JML Employee Training List: 0
+DEBUG 2017-05-26 16:58:22,620 318838ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 4:58:22 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 16:58:22,628 318846ms EmployeeContractRepo   ployeeContractList - 5/26/2017 4:58:22 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 16:58:22,634 318852ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 4:58:22 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 16:58:22,643 318861ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 4:58:22 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 16:58:22,655 318873ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 4:58:22 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 16:58:22,667 318885ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 4:58:22 PM JML Employee Training List: 0
+DEBUG 2017-05-26 16:59:14,057 370275ms EmployeeFamilyRepo     EmployeeFamilyList - 5/26/2017 4:59:14 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-26 16:59:14,064 370282ms EmployeeContractRepo   ployeeContractList - 5/26/2017 4:59:14 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-26 16:59:14,087 370305ms EmployeeEducationRepo  loyeeEducationList - 5/26/2017 4:59:14 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-26 16:59:14,152 370370ms EmployeeExperienceRepo oyeeExperienceList - 5/26/2017 4:59:14 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-26 16:59:14,214 370432ms EmployeeSkillRepo      tEmployeeSkillList - 5/26/2017 4:59:14 PM JML Employee SKILL List: 1
+DEBUG 2017-05-26 16:59:14,266 370484ms EmployeeTrainingRepo   ployeeTrainingList - 5/26/2017 4:59:14 PM JML Employee Training List: 0

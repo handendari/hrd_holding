@@ -35,21 +35,14 @@ function f_FillTableSkill(listSkill) {
     vDataSkill.length = 0;
     for (var i = 0; i < listSkill.length; i++) {
         var row = {};
-        row["employment_code"] = listFamily[i].employee_code;
-        row["seq_no"] = listFamily[i].seq_no;
-        row["name"] = listFamily[i].name;
-        row["sex"] = listFamily[i].sex;
-        row["relationship"] = listFamily[i].relationship;
-        row["nm_rel"] = listFamily[i].nm_rel;
-        row["date_birth"] = new Date(parseInt(listFamily[i].date_birth.substr(6)));
-        row["education"] = listFamily[i].education;
-        row["employment"] = listFamily[i].employment;
-        row["address"] = listFamily[i].address;
-        row["chk_address"] = listFamily[i].chk_address;
+        row["employment_code"] = listSkill[i].employee_code;
+        row["seq_no"] = listSkill[i].seq_no;
+        row["skill"] = listSkill[i].skill;
+        row["nm_level"] = listSkill[i].nm_level;
+        row["description"] = listSkill[i].description;
 
         vDataSkill.push(row);
     }
-
     var vAdapter = new $.jqx.dataAdapter(vSrcSkill);
     $("#tblSkill").jqxGrid({ source: vAdapter });
 }
@@ -128,7 +121,7 @@ $(document).ready(function () {
     $("#txtSkillName").jqxInput({ theme: vTheme })
     $("#cmbSkillLevel").jqxComboBox({
         theme: vTheme, width: 120,
-        source: vCmbGender, selectedIndex: 0
+        source: vCmbSkillLevel, selectedIndex: 0
     });
     $('#txtSkillDesc').jqxTextArea({
         theme: vTheme, placeHolder: 'Keterangan',

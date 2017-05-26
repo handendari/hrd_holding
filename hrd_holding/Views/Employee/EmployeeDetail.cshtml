@@ -6,11 +6,12 @@
 }
 
 <header>
-    <script src="~/scripts/mEmployee/init_m_employee.js"></script>
     <script src="~/scripts/mEmployee/m_employee.js"></script>
     <script src="~/scripts/mEmployee/m_employee_family.js"></script>
     <script src="~/scripts/mEmployee/m_employee_education.js"></script>
     <script src="~/scripts/mEmployee/m_employee_skill.js"></script>
+    <script src="~/scripts/mEmployee/m_employee_experience.js"></script>
+    <script src="~/scripts/mEmployee/m_employee_training.js"></script>
 </header>
 
 <div>
@@ -298,7 +299,8 @@
                     <tr>
                         <td colspan="2">
                             <input type="checkbox" id="chkFamAddress" />
-                            Same As Employee's</td>
+                            Same As Employee's
+                        </td>
                     </tr>
                 </table>
                 <div style="margin-top: 15px; margin-left: 20px">
@@ -404,11 +406,128 @@
     </div>
     <!--#endregion-->
 
+    <!--#region MODAL EXPERIENCE-->
+    <div id='modExperience'>
+        <div>
+            <span>EXPERIENCE DETAIL</span>
+        </div>
+        <div>
+            <div id="psnExpCont" style="height: 40px"></div>
+            <div id="psnExp">
+                <div id="psnExpContent"></div>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>Emp. Code *</td>
+                        <td>
+                            <input type="text" id="txtExpCode" /></td>
+                    </tr>
+                    <tr>
+                        <td>Start Working *</td>
+                        <td><div id="dtExpStart"></div></td>
+                        <td style="padding-left: 30px">End Working *</td>
+                        <td><div id="dtExpEnd"> </div></td>
+                    </tr>
+                    <tr>
+                        <td>CompanyName *</td>
+                        <td>
+                            <input type="text" id="txtExpCompanyName" />
+                        </td>
+                        <td style="padding-left: 30px">Line Of Bussiness</td>
+                        <td>
+                            <input type="text" id="txtExpBussiness" /></td>
+                    </tr>
+                    <tr>
+                        <td>Department</td>
+                        <td><input type="text" id="txtExpDepartment" /></td>
+                        <td style="padding-left: 30px">Last Job Title</td>
+                        <td><input type="text" id="txtExpLastTitle" /></td>
+                    </tr>
+                    <tr>
+                        <td>Last Salary</td>
+                        <td><input type="text" id="txtExpSalary" /></td>
+                        <td style="padding-left: 30px">End Working Reason</td>
+                        <td><input type="text" id="txtExpReason" /></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align:top">Description</td>
+                        <td colspan="2"">
+                            <textarea id="txtExpDesc"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 15px; margin-left: 20px">
+                    <button id="btnExpSave">SAVE</button>
+                    <button id="btnExpCancel">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+
+    <!--#region MODAL TRAINING-->
+    <div id='modTraining'>
+        <div>
+            <span>TRAINING DETAIL</span>
+        </div>
+        <div>
+            <div id="psnTrnCont" style="height: 40px"></div>
+            <div id="psnTrn">
+                <div id="psnTrnContent"></div>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>Emp. Code *</td>
+                        <td>
+                            <input type="text" id="txtTrnCode" /></td>
+                    </tr>
+                    <tr>
+                        <td>Start Working *</td>
+                        <td><div id="dtTrnStart"></div></td>
+                        <td style="padding-left: 30px">End Working *</td>
+                        <td><div id="dtTrnEnd"> </div></td>
+                    </tr>
+                    <tr>
+                        <td>Training Subject *</td>
+                        <td>
+                            <input type="text" id="txtTrnSubject" />
+                        </td>
+                        <td style="padding-left: 30px">Organizer By *</td>
+                        <td>
+                            <input type="text" id="txtTrnOrganizer" /></td>
+                    </tr>
+                    <tr>
+                        <td>Training Place *</td>
+                        <td><input type="text" id="txtTrnPlace" /></td>
+                        <td style="padding-left: 30px">Company</td>
+                        <td><input type="text" id="txtTrnCompany" /></td>
+                    </tr>
+                    <tr>
+                        <td>Value</td>
+                        <td><input type="text" id="txtTrnValue" /></td>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" id="chkTrnCompany" />
+                            Same As Employee's
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 15px; margin-left: 20px">
+                    <button id="btnTrnSave">SAVE</button>
+                    <button id="btnTrnCancel">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+
     <div id='modYesNo'>
         <div><span>Human Resource Development</span></div>
         <div>
             <div style="margin-top: 10px; margin-left: 10px">
-                Delete Selected data?
+                Are You Sure To Delete Selected data ?
             </div>
             <div style="margin-top: 40px; margin-left: 20px">
                 <button id="btnYes">YES</button>

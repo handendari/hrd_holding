@@ -1,88 +1,89 @@
 ﻿
 //#region DATASOURCE TABEL
-var vDataFamily = [];
-var vSrcFamily =
+var vDataExp = [];
+var vSrcExp =
 {
-    localdata: vDataFamily,
+    localdata: vDataExp,
     datatype: "json",
     datafields: [
-            { name: 'employment_code' },
-            { name: 'seq_no' },
-            { name: 'name' },
-            { name: 'sex' },
-            { name: 'relationship' },
-            { name: 'nm_rel' },
-            { name: 'date_birth', type: "date" },
-            { name: 'education' },
-            { name: 'employment' },
-            { name: 'address' },
-            { name: 'chk_address' }
+         { name: 'employee_code' },
+         { name: 'seq_no' },
+         { name: 'company_name' },
+         { name: 'usaha' },
+         { name: 'department_name' },
+         { name: 'last_title' },
+         { name: 'start_working', type: 'date' },
+         { name: 'end_working', type: 'date' },
+         { name: 'last_salary' },
+         { name: 'reason_stop_working' }
     ]
 };
+
 //#endregion
 
-function f_UpdateTblFamily() {
+function f_UpdateTblExp() {
     var vEmpCode = $("#txtId").data("employee_code");
 
     $.ajax({
-        url: base_url + "EmployeeFamily/GetEmployeeFamilyList",
+        url: base_url + "EmployeeExperience/GetEmployeeExperienceList",
         type: "POST",
         dataType: "json",
         data: jQuery.param({ pEmployeeCode: vEmpCode }),
         success: function (dt) {
-            if (dt.listFamily != null && dt.listFamily.length > 0) {
-                f_FillTableFamily(dt.listFamily);
+            if (dt.listExp != null && dt.listExp.length > 0) {
+                f_FillTableExp(dt.listExp);
             }
         }
     });
 }
 
-function f_FillTableFamily(listFamily) {
-    vDataFamily.length = 0;
-    for (var i = 0; i < listFamily.length; i++) {
+function f_FillTableExp(listExp) {
+    vDataExp.length = 0;
+    for (var i = 0; i < listExp.length; i++) {
         var row = {};
-        row["employment_code"] = listFamily[i].employee_code;
-        row["seq_no"] = listFamily[i].seq_no;
-        row["name"] = listFamily[i].name;
-        row["sex"] = listFamily[i].sex;
-        row["relationship"] = listFamily[i].relationship;
-        row["nm_rel"] = listFamily[i].nm_rel;
-        row["date_birth"] = new Date(parseInt(listFamily[i].date_birth.substr(6)));
-        row["education"] = listFamily[i].education;
-        row["employment"] = listFamily[i].employment;
-        row["address"] = listFamily[i].address;
-        row["chk_address"] = listFamily[i].chk_address;
+        row["employment_code"] = listExp[i].employee_code;
+        row["seq_no"] = listExp[i].seq_no;
+        row["company_name"] = listExp[i].company_name;
+        row["usaha"] = listExp[i].usaha;
+        row["department_name"] = listExp[i].department_name;
+        row["last_title"] = listExp[i].last_title;
+        row["start_working"] = new Date(parseInt(listExp[i].start_working.substr(6)));
+        row["end_working"] = new Date(parseInt(listExp[i].end_working.substr(6)));
+        row["last_salary"] = listExp[i].last_salary;
+        row["reason_stop_working"] = listExp[i].reason_stop_working;
 
-        vDataFamily.push(row);
+        vDataExp.push(row);
     }
-
-    var vAdapter = new $.jqx.dataAdapter(vSrcFamily);
-    $("#tblFamily").jqxGrid({ source: vAdapter });
+    var vAdapter = new $.jqx.dataAdapter(vSrcExp);
+    $("#tblExperience").jqxGrid({ source: vAdapter });
 }
 
-function f_EmptyFamilyDetail() {
-    $("#txtFamName").val("");
-    $("#txtFamName").data("fam_seq_no", 0);
+function f_EmptyExpDetail() {
+    $("#txtExpCode").val($("#txtId").val());
+    $("#txtExpCode").data("exp_seq_no", 0);
 
-    $("#txtFamDob").jqxDateTimeInput('setDate', new Date());
-    $("#cmbFamGender").jqxComboBox({ selectedIndex: 0 });
-    $("#cmbFamRelation").jqxComboBox({ selectedIndex: 0 });
-    $("#txtFamEducation").val("");
-    $("#txtFamEmployment").val("");
-    $("#txtFamAddress").val("");
-    $("#chkFamAddress").jqxCheckBox('uncheck');
+    $("#dtExpStart").jqxDateTimeInput('setDate', new Date());
+    $("#dtExpEnd").jqxDateTimeInput('setDate', new Date());
+
+    $("#txtExpCompanyName").val("");
+    $("#txtExpBussiness").val("");
+    $("#txtExpDepartment").val("");
+    $("#txtExpLastTitle").val("");
+    $("#txtExpSalary").val("0");
+    $("#txtExpReason").val("");
+    $("#txtExpDesc").val("");
 }
 
-function f_DeleteEmployeeFamily(pEmpCode) {
+function f_DeleteEmployeeExp(pEmpCode) {
     $('#jqxLoader').jqxLoader('open');
 
-    var selectedRowIndex = $("#tblFamily").jqxGrid('selectedrowindex');
-    var vSeqNo = $('#tblFamily').jqxGrid('getcellvalue', selectedRowIndex, "seq_no");
+    var selectedRowIndex = $("#tblExperience").jqxGrid('selectedrowindex');
+    var vSeqNo = $('#tblExperience').jqxGrid('getcellvalue', selectedRowIndex, "seq_no");
 
 
     if (vSeqNo > 0) {
         $.ajax({
-            url: base_url + "EmployeeFamily/DeleteEmployeeFamily",
+            url: base_url + "EmployeeExperience/DeleteEmployeeExperience",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({ pEmployeeCode: pEmpCode, pSeqNo: vSeqNo }),
@@ -90,7 +91,7 @@ function f_DeleteEmployeeFamily(pEmpCode) {
                 var isOke = d.vResp['isValid'];
 
                 if (isOke) {
-                    f_UpdateTblFamily();
+                    f_UpdateTblExp();
                     $("#modYesNo").jqxWindow('close');
                 } else {
                     alert(d.vResp['message']);
@@ -103,69 +104,78 @@ function f_DeleteEmployeeFamily(pEmpCode) {
 
 $(document).ready(function () {
     //#region INIT FAMILY
-    $("#btnFamilyNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnFamilyEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnFamilyDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnExpNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnExpEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnExpDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
-    function initGridFamily() {
-        $("#tblFamily").jqxGrid(
+    //#region Table EXPERIENCE
+
+    function initGridExperience() {
+        $("#tblExperience").jqxGrid(
         {
             width: '100%',
             height: 200,
             theme: vTheme,
-            source: new $.jqx.dataAdapter(vSrcFamily),
             columnsresize: true,
             rowsheight: 25,
+            source: new $.jqx.dataAdapter(vSrcExp),
             columns: [
                 { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
-                { text: 'Seq No', datafield: 'seq_no', width: 50, cellsalign: 'center' },
-                { text: 'Name', datafield: 'name', width: 300 },
-                { text: 'Gender', datafield: 'sex', width: 50, hidden: true },
-                { text: 'Relationship', datafield: 'relationship', hidden: true },
-                { text: 'Conn. With Emp', datafield: 'nm_rel', width: 130 },
+                { text: 'sequence', datafield: 'seq_no', hidden: true },
+                { text: 'Company Name', datafield: 'company_name', width: 200 },
+                { text: 'Usaha', datafield: 'usaha', width: 200 },
+                { text: 'Departement', datafield: 'department_name', width: 200 },
+                { text: 'Last Title', datafield: 'last_title', width: 200 },
                 {
-                    text: 'Date Of Birth', datafield: 'date_birth', width: 200,
-                    align: 'center', cellsalign: 'center', cellsformat: 'dd-MMM-yy'
+                    text: 'Start Working', datafield: 'start_working',
+                    filtertype: 'date', cellsalign: 'center',
+                    cellsformat: 'dd-MMM-yy', width: 100
                 },
-                { text: 'Education', datafield: 'education' },
-                { text: 'Employment', datafield: 'employment' },
-                { text: 'Address', datafield: 'address', hidden: true },
-                { text: 'chk_address', datafield: 'chk_address', hidden: true }
+                {
+                    text: 'End Working', datafield: 'end_working',
+                    filtertype: 'date', cellsalign: 'center',
+                    cellsformat: 'dd-MMM-yy', width: 100
+                },
+                {
+                    text: 'Last Salary', datafield: 'last_salary',
+                    cellsalign: 'right', align: 'center',
+                    cellsformat: 'd2', width: 150
+                },
+                { text: 'Reason', datafield: 'reason_stop_working', width: 300 }
             ]
         });
     }
+    //#endregion
 
-    initGridFamily();
+    initGridExperience();
 
     //#region MODAL FAMILY 
-    $("#jqxNotification").jqxNotification({
+    $("#psnExp").jqxNotification({
         width: "100%", height: "40px", theme: vTheme,
-        appendContainer: "#container",
+        appendContainer: "#psnExpCont",
         opacity: 0.9, autoClose: true, template: "error"
     });
 
-    $("#txtFamName").jqxInput({ theme: vTheme })
-    $("#txtFamDob").jqxDateTimeInput({ theme: vTheme });
-    $("#txtFamEducation").jqxInput({ theme: vTheme })
-    $("#txtFamEmployment").jqxInput({ theme: vTheme })
-    $("#cmbFamGender").jqxComboBox({
-        theme: vTheme, width: 120,
-        source: vCmbGender, selectedIndex: 0
-    });
-    $("#cmbFamRelation").jqxComboBox({
-        theme: vTheme, width: 120,
-        source: vCmbRelation, selectedIndex: 0
-    });
-    $("#chkFamAddress").jqxCheckBox({ theme: vTheme });
-    $('#txtFamAddress').jqxTextArea({
-        theme: vTheme, placeHolder: 'Masukkan Alamat Keluarga',
-        height: 50, width: 200, minLength: 1
-    });
-    $("#btnModFamSave").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnModFamCancel").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#txtExpCode").jqxInput({ theme: vTheme,disabled:true })
+    $("#dtExpStart").jqxDateTimeInput({ theme: vTheme });
+    $("#dtExpEnd").jqxDateTimeInput({ theme: vTheme });
 
-    $("#modFamily").jqxWindow({
-        height: 280, width: 600,
+    $("#txtExpCompanyName").jqxInput({ theme: vTheme })
+    $("#txtExpBussiness").jqxInput({ theme: vTheme })
+    $("#txtExpDepartment").jqxInput({ theme: vTheme })
+    $("#txtExpLastTitle").jqxInput({ theme: vTheme })
+    $("#txtExpSalary").jqxInput({ theme: vTheme })
+    $("#txtExpReason").jqxInput({ theme: vTheme })
+
+    $('#txtExpDesc').jqxTextArea({
+        theme: vTheme, placeHolder: 'Masukkan Keterangan',
+        height: 50, width: 300, minLength: 1
+    });
+    $("#btnExpSave").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnExpCancel").jqxButton({ theme: vTheme, height: 30, width: 100 });
+
+    $("#modExperience").jqxWindow({
+        height: 320, width: 700,
         theme: vTheme, isModal: true,
         autoOpen: false,
         resizable: false
@@ -174,30 +184,23 @@ $(document).ready(function () {
 
     //#endregion
 
-    $('#btnFamilyNew').on('click', function (event) {
-        f_EmptyFamilyDetail();
-        $("#modFamily").jqxWindow('open');
+    $('#btnExpNew').on('click', function (event) {
+        f_EmptyExpDetail();
+        $("#modExperience").jqxWindow('open');
     });
 
-    $('#btnModFamCancel').on('click', function (event) {
-        f_EmptyFamilyDetail();
-        $("#modFamily").jqxWindow('close');
+    $('#btnExpCancel').on('click', function (event) {
+        f_EmptyExpDetail();
+        $("#modExperience").jqxWindow('close');
     });
 
-    $("#chkFamAddress").bind('change', function (event) {
-        var checked = event.args.checked;
-        if (checked) {
-            $("#txtFamAddress").val($("#txtAddress").val());
-        }
-    });
-
-    $('#btnFamilyEdit').on('click', function (event) {
-        f_EmptyFamilyDetail();
+    $('#btnExpEdit').on('click', function (event) {
+        f_EmptyExpDetail();
 
         var rowindex = $('#tblFamily').jqxGrid('getselectedrowindex');
 
         if (rowindex > 0) {
-            var rd = $('#tblFamily').jqxGrid('getrowdata', rowindex);
+            var rd = $('#tblExperience').jqxGrid('getrowdata', rowindex);
 
             //alert(JSON.stringify(rd));
 
@@ -228,8 +231,8 @@ $(document).ready(function () {
         }
     });
 
-    $('#btnFamilyDelete').on('click', function (event) {
-        var rowindex = $('#tblFamily').jqxGrid('getselectedrowindex');
+    $('#btnExpDelete').on('click', function (event) {
+        var rowindex = $('#tblExperience').jqxGrid('getselectedrowindex');
 
         if (rowindex > 0) {
             $("#modYesNo").jqxWindow('open');
@@ -238,7 +241,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#btnModFamSave').on('click', function (event) {
+    $('#btnExpSave').on('click', function (event) {
         if ($("#txtFamName").val() == "") {
             f_NotificationShow($("#jqxNotification"), $("#notificationContent"), "NAMA FAMILY TIDAK BOLEH KOSONG...");
 

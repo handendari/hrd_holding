@@ -1,5 +1,145 @@
-﻿
+﻿var vDataTbl = {};
+
 $(document).ready(function () {
+    //#region INIT COMPONENT
+    $("#txtId").jqxInput({ theme: vTheme });
+    $("#txtFullName").jqxInput({ theme: vTheme });
+    $("#txtNickName").jqxInput({ theme: vTheme });
+    $("#txtPob").jqxInput({ theme: vTheme });
+    $("#dtDob").jqxDateTimeInput({ theme: vTheme });
+    $("#cmbGender").jqxComboBox({ theme: vTheme, source: vCmbGender, selectedIndex: 0 });
+    $("#cmbReligion").jqxComboBox({ theme: vTheme, source: vCmbReligion, selectedIndex: 0 });
+    $("#txtChild").jqxInput({ theme: vTheme });
+    $("#txtAddress").jqxInput({ theme: vTheme });
+    $("#txtKdDepartement").jqxInput({ theme: vTheme });
+    $("#btnKdDepartement").jqxButton({ theme: vTheme });
+    $("#txtNmDepartement").jqxInput({ theme: vTheme });
+    $("#txtKdJobTitle").jqxInput({ theme: vTheme });
+    $("#btnKdJobTitle").jqxButton({ theme: vTheme });
+    $("#txtNmJobTitle").jqxInput({ theme: vTheme });
+    $("#txtKdGrade").jqxInput({ theme: vTheme });
+    $("#btnKdGrade").jqxButton({ theme: vTheme });
+    $("#txtNmGrade").jqxInput({ theme: vTheme });
+    $("#txtKdLevel").jqxInput({ theme: vTheme });
+    $("#btnKdLevel").jqxButton({ theme: vTheme });
+    $("#txtNmLevel").jqxInput({ theme: vTheme });
+    $("#dtStartWorking").jqxDateTimeInput({ theme: vTheme });
+    $("#dtProbation").jqxDateTimeInput({ theme: vTheme });
+    $("#txtWorkingAge").jqxInput({ theme: vTheme });
+    $("#txtPhone").jqxInput({ theme: vTheme });
+    $("#txtEmail").jqxInput({ theme: vTheme });
+    $("#txtKdCountry").jqxInput({ theme: vTheme });
+    $("#btnKdCountry").jqxButton({ theme: vTheme });
+    $("#txtNmCountry").jqxInput({ theme: vTheme });
+    $("#txtNoKtp").jqxInput({ theme: vTheme });
+    $("#txtLastEducation").jqxInput({ theme: vTheme });
+    $("#txtLastEmployment").jqxInput({ theme: vTheme });
+    $("#txtKdBank").jqxInput({ theme: vTheme });
+    $("#btnKdBank").jqxButton({ theme: vTheme });
+    $("#txtNmBank").jqxInput({ theme: vTheme });
+    $("#txtBankAcc").jqxInput({ theme: vTheme });
+    $("#txtBankAccName").jqxInput({ theme: vTheme });
+    $("#txtKdStatus").jqxInput({ theme: vTheme });
+    $("#btnKdStatus").jqxButton({ theme: vTheme });
+    $("#txtNmStatus").jqxInput({ theme: vTheme });
+    $("#txtKdAtasan").jqxInput({ theme: vTheme });
+    $("#btnkdAtasan").jqxButton({ theme: vTheme });
+    $("#txtNmAtasan").jqxInput({ theme: vTheme });
+
+    $("#btnContractNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnContractEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnContractDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
+
+    $("#chkManagerial").jqxCheckBox({ theme: vTheme });
+    $("#chkSpecialLate").jqxCheckBox({ theme: vTheme });
+
+    $("#optProbation").jqxRadioButton({ theme: vTheme, groupName: "status" });
+    $("#optActive").jqxRadioButton({ theme: vTheme, groupName: "status" });
+    $("#optNonActive").jqxRadioButton({ theme: vTheme, groupName: "status" });
+
+    $('#jqxTabs').jqxTabs({
+        width: '100%', height: 300, theme: vTheme,
+        position: 'top', selectionTracker: 1, animationType: 'fade'
+    });
+
+    $("#modYesNo").jqxWindow({
+        height: 150, width: 300,
+        theme: vTheme, isModal: true,
+        autoOpen: false,
+        resizable: false
+    });
+
+    //#endregion
+
+    //#region UNTUK CENTER MODAL DIALOG
+    function f_PosisiModalDialog() {
+        $('#modFamily').jqxWindow({ position: { x: f_PosX($('#modFamily')), y: f_PosY($('#modFamily')) } });
+        $('#modEducation').jqxWindow({ position: { x: f_PosX($('#modEducation')), y: f_PosY($('#modEducation')) } });
+        $('#modYesNo').jqxWindow({ position: { x: f_PosX($('#modYesNo')), y: f_PosY($('#modYesNo')) } });
+        $('#modSkill').jqxWindow({ position: { x: f_PosX($('#modSkill')), y: f_PosY($('#modSkill')) } });
+        $('#modExperience').jqxWindow({ position: { x: f_PosX($('#modExperience')), y: f_PosY($('#modExperience')) } });
+        $('#modTraining').jqxWindow({ position: { x: f_PosX($('#modTraining')), y: f_PosY($('#modTraining')) } });
+    }
+
+    //KEEP CENTERED WHEN SCROLLING
+    $(window).scroll(function () {
+        f_PosisiModalDialog();
+    });
+
+    //KEEP CENTERED EVEN WHEN RESIZING
+    $(window).resize(function () {
+        f_PosisiModalDialog();
+    });
+    //#endregion
+
+    //#region Table CONTRACT
+    var initGridContract = function () {
+        var source =
+       {
+           localdata: vDataTbl,
+           datatype: "local",
+           datafields: [
+                { name: 'employee_code' },
+                { name: 'seq_no' },
+                { name: 'start_date' },
+                { name: 'end_date' },
+                { name: 'no_contract' },
+                { name: 'company' },
+                { name: 'description' }
+           ]
+       };
+
+        var dataAdapter = new $.jqx.dataAdapter(source, {
+            async: false,
+            loadError: function (xhr, status, error) { alert('Error loading "' + source.url + '" : ' + error); }
+        });
+
+        $("#tblContract").jqxGrid(
+        {
+            width: '100%',
+            height: 200,
+            theme: vTheme,
+            rowsheight: 25,
+            columnsresize: true,
+            columns: [
+                { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
+                { text: 'sequence', datafield: 'seq_no', hidden: true },
+                { text: 'Start Date', datafield: 'start_date', filtertype: 'date', cellsalign: 'center', cellsformat: 'dd-MMM-yy' },
+                { text: 'End Date', datafield: 'end_date', filtertype: 'date', cellsalign: 'center', cellsformat: 'dd-MMM-yy' },
+                { text: 'No Contract', datafield: 'no_contract' },
+                { text: 'Company', datafield: 'company' },
+                { text: 'Description', datafield: 'description' }
+            ]
+        });
+    }
+    //#endregion
+
+    initGridContract();
+
+    $("#btnYes").jqxButton({ theme: vTheme, height: 30, width: 60 });
+    $("#btnNo").jqxButton({ theme: vTheme, height: 30, width: 60 });
+
+
     Form_Load("35151269069300041", 1);
 
     function Form_Load(pEmployeeCode, pSeqNo) {
@@ -153,90 +293,26 @@ $(document).ready(function () {
                     //#endregion
 
                     //#region ListEducation
-                    if (dt.listEducation != null) {
-                        if (dt.listEducation.length > 0) {
-                            for (var i = 0; i < dt.listEducation.length; i++) {
-                                $("#tblEducation").jqxGrid('beginupdate');
-
-                                var row = {};
-                                row["employment_code"] = dt.listEducation[i].employee_code;
-                                row["seq_no"] = dt.listEducation[i].seq_no;
-                                row["nm_jenjang"] = dt.listEducation[i].nm_jenjang;
-                                row["school"] = dt.listEducation[i].school;
-                                row["jurusan"] = dt.listEducation[i].jurusan;
-                                row["city"] = dt.listEducation[i].city;
-                                row["start_year"] = new Date(parseInt(dt.listEducation[i].start_year.substr(6)));
-                                row["end_year"] = new Date(parseInt(dt.listEducation[i].end_year.substr(6)));
-
-                                var commit = $("#tblEducation").jqxGrid('addrow', null, row);
-
-                                $("#tblEducation").jqxGrid('endupdate');
-                            }
-                        }
+                    if (dt.listEducation != null && dt.listEducation.length > 0) {
+                        f_FillTableEducation(dt.listEducation);
                     }
                     //#endregion
 
                     //#region ListSkill
                     if (dt.listSkill != null && dt.listSkill.length > 0) {
-                        for (var i = 0; i < dt.listSkill.length; i++) {
-                            $("#tblSkill").jqxGrid('beginupdate');
-
-                            var row = {};
-                            row["employment_code"] = dt.listSkill[i].employee_code;
-                            row["seq_no"] = dt.listSkill[i].seq_no;
-                            row["skill"] = dt.listSkill[i].skill;
-                            row["nm_level"] = dt.listSkill[i].nm_level;
-                            row["description"] = dt.listSkill[i].description;
-
-                            var commit = $("#tblSkill").jqxGrid('addrow', null, row);
-
-                            $("#tblSkill").jqxGrid('endupdate');
-                        }
+                        f_FillTableSkill(dt.listSkill);
                     }
                     //#endregion
 
                     //#region ListExperience
                     if (dt.listExperience != null && dt.listExperience.length > 0) {
-                        for (var i = 0; i < dt.listExperience.length; i++) {
-                            $("#tblExperience").jqxGrid('beginupdate');
-
-                            var row = {};
-                            row["employment_code"] = dt.listSkill[i].employee_code;
-                            row["seq_no"] = dt.listExperience[i].seq_no;
-                            row["company_name"] = dt.listExperience[i].company_name;
-                            row["usaha"] = dt.listExperience[i].usaha;
-                            row["department_name"] = dt.listExperience[i].department_name;
-                            row["last_title"] = dt.listExperience[i].last_title;
-                            row["start_working"] = new Date(parseInt(dt.listExperience[i].start_working.substr(6)));
-                            row["end_working"] = new Date(parseInt(dt.listExperience[i].end_working.substr(6)));
-                            row["last_salary"] = dt.listExperience[i].last_salary;
-                            row["reason_stop_working"] = dt.listExperience[i].reason_stop_working;
-
-                            var commit = $("#tblExperience").jqxGrid('addrow', null, row);
-
-                            $("#tblExperience").jqxGrid('endupdate');
-                        }
+                        f_FillTableExp(dt.listExperience);
                     }
                     //#endregion
 
                     //#region ListTraining
                     if (dt.listTraining != null && dt.listTraining.length > 0) {
-                        for (var i = 0; i < dt.listTraining.length; i++) {
-                            $("#tblTraining").jqxGrid('beginupdate');
-
-                            var row = {};
-                            row["employment_code"] = dt.listExperience[i].employee_code;
-                            row["seq_no"] = dt.listExperience[i].seq_no;
-                            row["orginizer"] = dt.listExperience[i].orginizer;
-                            row["material"] = dt.listExperience[i].material;
-                            row["place"] = dt.listExperience[i].place;
-                            row["start_date"] = new Date(parseInt(dt.listExperience[i].start_date.substr(6)));
-                            row["end_date"] = new Date(parseInt(dt.listExperience[i].end_date.substr(6)));
-
-                            var commit = $("#tblTraining").jqxGrid('addrow', null, row);
-
-                            $("#tblTraining").jqxGrid('endupdate');
-                        }
+                        f_FIllTableTrn(dt.listTraining);
                     }
                     //#endregion
 

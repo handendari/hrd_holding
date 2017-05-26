@@ -1,4 +1,21 @@
-﻿function f_UpdateTblFamily() {
+﻿var vDataEdu = [];
+var vSrcEdu =
+{
+    localdata: vDataEdu,
+    datatype: "json",
+    datafields: [
+         { name: 'employee_code' },
+         { name: 'seq_no' },
+         { name: 'nm_jenjang' },
+         { name: 'school' },
+         { name: 'jurusan' },
+         { name: 'city' },
+         { name: 'start_year', type: "date" },
+         { name: 'end_year', type: "date" }
+    ]
+};
+
+function f_UpdateTblFamily() {
     var vEmpCode = $("#txtId").data("employee_code");
 
     $.ajax({
@@ -18,21 +35,17 @@ function f_FillTableEducation(listEdu) {
     vDataEdu.length = 0;
     for (var i = 0; i < listEdu.length; i++) {
         var row = {};
-        row["employment_code"] = listFamily[i].employee_code;
-        row["seq_no"] = listFamily[i].seq_no;
-        row["name"] = listFamily[i].name;
-        row["sex"] = listFamily[i].sex;
-        row["relationship"] = listFamily[i].relationship;
-        row["nm_rel"] = listFamily[i].nm_rel;
-        row["date_birth"] = new Date(parseInt(listFamily[i].date_birth.substr(6)));
-        row["education"] = listFamily[i].education;
-        row["employment"] = listFamily[i].employment;
-        row["address"] = listFamily[i].address;
-        row["chk_address"] = listFamily[i].chk_address;
+        row["employment_code"] = listEdu[i].employee_code;
+        row["seq_no"] = listEdu[i].seq_no;
+        row["nm_jenjang"] = listEdu[i].nm_jenjang;
+        row["school"] = listEdu[i].school;
+        row["jurusan"] = listEdu[i].jurusan;
+        row["city"] = listEdu[i].city;
+        row["start_year"] = new Date(parseInt(listEdu[i].start_year.substr(6)));
+        row["end_year"] = new Date(parseInt(listEdu[i].end_year.substr(6)));
 
         vDataEdu.push(row);
     }
-
     var vAdapter = new $.jqx.dataAdapter(vSrcEdu);
     $("#tblEducation").jqxGrid({ source: vAdapter });
 }
@@ -84,31 +97,18 @@ function f_DeleteEmployeeEdu(pEmpCode) {
 $(document).ready(function () {
 
     //#region INIT EDUCATION
+    $("#btnEduNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnEduEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnEduDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
+
     //#region Table EDUCATION
     function initGridEducation() {
-        var source =
-       {
-           localdata: vDataTbl,
-           datatype: "local",
-           datafields: [
-                { name: 'employee_code' },
-                { name: 'seq_no' },
-                { name: 'nm_jenjang' },
-                { name: 'school' },
-                { name: 'jurusan' },
-                { name: 'city' },
-                { name: 'start_year', type: "date" },
-                { name: 'end_year', type: "date" }
-           ]
-       };
-        var dataAdapter = new $.jqx.dataAdapter(source);
-
         $("#tblEducation").jqxGrid(
         {
             width: '100%',
             height: 200,
             theme: vTheme,
-            source: dataAdapter,
+            source: new $.jqx.dataAdapter(vSrcEdu),
             columnsresize: true,
             rowsheight: 25,
             columns: [
