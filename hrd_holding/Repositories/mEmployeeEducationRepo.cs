@@ -12,8 +12,9 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("EmployeeEducationRepo");
 
-        public void InsertEmployeeEducation(mEmployeeEducationModel pModel)
+        public ResponseModel InsertEmployeeEducation(mEmployeeEducationModel pModel)
         {
+            var vResp = new ResponseModel();
             string SqlString = @"INSERT INTO `m_employee_edu`
                                             (`employee_code`,`seq_no`,`start_year`,`end_year`,`jenjang`,`nm_jenjang`,`jurusan`,`school`,
                                              `city`,`country_code`,`entry_date`,`entry_user`,`edit_date`,`edit_user`)
@@ -47,6 +48,9 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+
+                        vResp.isValid = true;
+                        vResp.message = "INSERT EMPLOYEE EDUCATION SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " INSERT EMPLOYEE EDUCATION SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -54,9 +58,12 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT EMPLOYEE EDUCATION FAILED....";
                 Log.Error(DateTime.Now + " INSERT EMPLOYEE EDUCATION FAILED", ex);
             }
 
+            return vResp;
         }
 
         public List<mEmployeeEducationModel> getEmployeeEducationList(string pEmployeeCode)
@@ -177,8 +184,10 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateEmployeeEducation(mEmployeeEducationModel pModel)
+        public ResponseModel UpdateEmployeeEducation(mEmployeeEducationModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"UPDATE `m_employee_edu`
                                     SET `start_year` = @pStartYear,
                                         `end_year` = @pEndYear,
@@ -219,6 +228,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " UPDATE EMPLOYEE EDUCATION SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " UPDATE EMPLOYEE EDUCATION SUCCESS ====>>>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -226,14 +237,18 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " UPDATE EMPLOYEE EDUCATION FAILED....";
                 Log.Error(DateTime.Now + " UPDATE EMPLOYEE EDUCATION FAILED", ex);
             }
 
         }
 
-        public void DeleteEmployeeEducation(string pCode, int pSeqNo)
+        public ResponseModel DeleteEmployeeEducation(string pCode, int pSeqNo)
         {
-            string SqlString = @"DELETE m_employee_education WHERE employee_code = @pCode AND seq_no = @pSeqNo";
+            var vResp = new ResponseModel();
+
+            string SqlString = @"DELETE FROM m_employee_education WHERE employee_code = @pCode AND seq_no = @pSeqNo";
 
             try
             {
@@ -248,6 +263,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pSeqNo", pSeqNo);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " DELETE EMPLOYEE EDUCATION SUCCESS ,Code : " + pCode + " NoSeq : " + pSeqNo;
                         Log.Debug(DateTime.Now + " DELETE EMPLOYEE EDUCATION SUCCESS ====>>>>>> Code : " + pCode + " NoSeq : " + pSeqNo);
 
                     }
@@ -255,9 +272,12 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " DELETE EMPLOYEE EDUCATION FAILED....";
                 Log.Error(DateTime.Now + " DELETE EMPLOYEE EDUCATION FAILED", ex);
             }
 
+            return vResp;
         }
     }
 }
