@@ -135,7 +135,7 @@ $(document).ready(function () {
     initGridEducation();
     //#endregion
 
-
+    $("#txtEduCode").jqxInput({ theme: vTheme,disabled:true })
     $("#psnEducation").jqxNotification({
         width: "100%", height: "40px", theme: vTheme,
         appendContainer: "#psnEduContainer",
@@ -162,7 +162,7 @@ $(document).ready(function () {
     $("#btnEduCancel").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
     $("#modEducation").jqxWindow({
-        height: 280, width: 800,
+        height: 280, width: 750,
         theme: vTheme, isModal: true,
         autoOpen: false,
         resizable: false

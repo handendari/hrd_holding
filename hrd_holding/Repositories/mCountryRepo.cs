@@ -45,16 +45,37 @@ namespace hrd_holding.Repositories
             }
         }
 
-        public List<mCountryModel> getCountryList()
+        public ResponseModel getCountryList(int? pStartRow = 0, int? pRows = 0, string pWhere = "", string pOrderBy = "")
         {
+            var vLimit = pWhere + pOrderBy + " LIMIT " + pStartRow + "," + pRows;
+
+            var vJmlRecord = 0;
             var vList = new List<mCountryModel>();
+
+            var strSQLCount = @"SELECT COUNT(country_code) jml_record
+                                FROM m_country " + pWhere;
+
             var strSQL = @"SELECT country_code,int_country, int_code,country_name,description
-                            FROM m_country";
+                            FROM m_country " + vLimit;
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
                 {
                     conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQLCount, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vJmlRecord = aa.GetInt32("jml_record");
+                                }
+                            }
+                        }
+                    }
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
@@ -83,7 +104,12 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetCountryList Failed",ex);
             }
-            return vList;
+
+            var vRes = new ResponseModel();
+            vRes.total_record = vJmlRecord;
+            vRes.objResult = vList;
+
+            return vRes;
         }
 
         public mCountryModel getCountryInfo(string pCountryCode)

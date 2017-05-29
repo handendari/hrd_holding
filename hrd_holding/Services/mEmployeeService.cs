@@ -84,7 +84,7 @@ namespace hrd_holding.Services
 
             Log.Debug(DateTime.Now + " vRows : " + vRows + " vStart : " + vStart);
 
-            var vModel = new ResponseModel(); ;
+            var vModel = new ResponseModel();
             try
             {
                 vModel = _repoEmp.getEmployeeList(pCompany, vStart, vRows, pWhere, pOrderBy);

@@ -134,6 +134,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\EmployeeEducationController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmployeeFamilyController.cs" />
     <Compile Include="GeneralFunction\ManageString.cs" />
@@ -185,6 +187,7 @@
     <Compile Include="Repositories\mLevelRepo.cs" />
     <Compile Include="Repositories\mSubtitleRepo.cs" />
     <Compile Include="Repositories\mTitleRepo.cs" />
+    <Compile Include="Services\mEmployeeEducationService.cs" />
     <Compile Include="Services\mCountryService.cs" />
     <Compile Include="Services\mEmployeeFamilyService.cs" />
     <Compile Include="Services\mEmployeeService.cs" />
@@ -723,7 +726,6 @@
     <Content Include="Scripts\mEmployee\m_employee_experience.js" />
     <Content Include="Scripts\mEmployee\m_employee_skill.js" />
     <Content Include="Scripts\mEmployee\m_employee_education.js" />
-    <Content Include="Scripts\mEmployee\init_m_employee.js" />
     <Content Include="Scripts\mEmployee\m_employee.js" />
     <Content Include="Scripts\mEmployee\m_employee_family.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
