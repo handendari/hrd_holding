@@ -72,7 +72,8 @@ namespace hrd_holding.Repositories
             var strSQL = @"SELECT mee.employee_code,emp.employee_name,mee.seq_no,mee.start_year,mee.end_year,
                                   IFNULL(mee.jenjang,'') jenjang,IFNULL(mee.nm_jenjang,'') nm_jenjang,IFNULL(mee.jurusan,'') jurusan,
                                   IFNULL(mee.school,'') school,IFNULL(mee.city,'') city,
-                                  mee.country_code,mc.country_name,
+                                  IFNULL(mee.country_code,0) country_code,IFNULL(mc.country_name,'') country_name,
+                                  IFNULL(mc.int_country,'') int_country,
                                   mee.entry_date,mee.entry_user,mee.edit_date,IFNULL(mee.edit_user,'') edit_user
                            FROM m_employee_edu mee JOIN m_employee emp ON mee.employee_code = emp.employee_code
                            LEFT JOIN m_country mc ON mee.country_code = mc.country_code
@@ -106,6 +107,7 @@ namespace hrd_holding.Repositories
                                         school = aa.GetString("school"),
                                         city = aa.GetString("city"),
                                         country_code = aa.GetString("country_code"),
+                                        int_country = aa.GetString("int_country"),
                                         country_name = aa.GetString("country_name"),
                                         entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
                                         entry_user = aa.GetString("entry_user"),
@@ -241,6 +243,7 @@ namespace hrd_holding.Repositories
                 vResp.message = " UPDATE EMPLOYEE EDUCATION FAILED....";
                 Log.Error(DateTime.Now + " UPDATE EMPLOYEE EDUCATION FAILED", ex);
             }
+            return vResp;
 
         }
 

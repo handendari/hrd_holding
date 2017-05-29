@@ -53,7 +53,7 @@ namespace hrd_holding.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
+        //[HttpPost]
         public dynamic GetEmployeeList(int pCompanyCode)
         {
             //LOG.Debug(DateTime.Now + " ---- PageNum : " + pagenum + " PageSize : " + pagesize);

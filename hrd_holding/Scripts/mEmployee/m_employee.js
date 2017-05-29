@@ -79,6 +79,7 @@ $(document).ready(function () {
         $('#modSkill').jqxWindow({ position: { x: f_PosX($('#modSkill')), y: f_PosY($('#modSkill')) } });
         $('#modExperience').jqxWindow({ position: { x: f_PosX($('#modExperience')), y: f_PosY($('#modExperience')) } });
         $('#modTraining').jqxWindow({ position: { x: f_PosX($('#modTraining')), y: f_PosY($('#modTraining')) } });
+        $('#modLookUp').jqxWindow({ position: { x: f_PosX($('#modLookUp')), y: f_PosY($('#modLookUp')) } });
     }
 
     //KEEP CENTERED WHEN SCROLLING
@@ -138,6 +139,51 @@ $(document).ready(function () {
 
     $("#btnYes").jqxButton({ theme: vTheme, height: 30, width: 60 });
     $("#btnNo").jqxButton({ theme: vTheme, height: 30, width: 60 });
+
+    $("#modLookUp").jqxWindow({
+        height: 500, width: 430,
+        theme: vTheme, isModal: true,
+        autoOpen: false,
+        resizable: false
+    });
+
+    $("#jqxToolBar").jqxToolBar({theme:vTheme,
+        width: '100%', height: 35, tools: 'button | button',
+        initTools: function (type, index, tool, menuToolIninitialization) {
+            switch (index) {
+                case 0:
+                    //var button = $("<div>" + "<img src='../../images/administrator.png' title='Custom tool' />" + "</div>");
+                    tool.text("Select Data");
+                    tool.height("25px");
+                    tool.width("80px");
+                    tool.on("click", function () {
+                        var rowindex = $('#tblLookUp').jqxGrid('getselectedrowindex');
+                        if (rowindex > 0) {
+                            var rd = $('#tblLookUp').jqxGrid('getrowdata', rowindex);
+
+                            $("#txtEduCountryCode").val(rd.int_country);
+                            $("#txtEduCountryCode").data("edu_country_code", rd.country_code);
+
+                            $("#txtEduCountryName").val(rd.country_name);
+
+                            $("#modLookUp").jqxWindow('close');
+                        } else {
+                            f_MessageBoxShow("Please Select Data...");
+                        }
+                    });
+                    break;
+                case 1:
+                    //var button = $("<div>" + "<img src='../../images/administrator.png' title='Custom tool' />" + "</div>");
+                    tool.text("Cancel");
+                    tool.height("25px");
+                    tool.width("50px");
+                    tool.on("click", function () {
+                        $("#modLookUp").jqxWindow('close');
+                    });
+                    break;
+            }
+        }
+    });
 
 
     Form_Load("35151269069300041", 1);

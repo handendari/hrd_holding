@@ -6,10 +6,14 @@ var vSrcEdu =
     datafields: [
          { name: 'employee_code' },
          { name: 'seq_no' },
+         { name: 'jenjang' },
          { name: 'nm_jenjang' },
          { name: 'school' },
          { name: 'jurusan' },
          { name: 'city' },
+         { name: 'country_code' },
+         { name: 'int_country' },
+         { name: 'country_name' },
          { name: 'start_year', type: "date" },
          { name: 'end_year', type: "date" }
     ]
@@ -37,10 +41,14 @@ function f_FillTableEducation(listEdu) {
         var row = {};
         row["employment_code"] = listEdu[i].employee_code;
         row["seq_no"] = listEdu[i].seq_no;
+        row["jenjang"] = listEdu[i].jenjang;
         row["nm_jenjang"] = listEdu[i].nm_jenjang;
         row["school"] = listEdu[i].school;
         row["jurusan"] = listEdu[i].jurusan;
         row["city"] = listEdu[i].city;
+        row["country_code"] = listEdu[i].country_code;
+        row["int_country"] = listEdu[i].int_country,
+        row["country_name"] = listEdu[i].country_name;
         row["start_year"] = new Date(parseInt(listEdu[i].start_year.substr(6)));
         row["end_year"] = new Date(parseInt(listEdu[i].end_year.substr(6)));
 
@@ -51,6 +59,7 @@ function f_FillTableEducation(listEdu) {
 }
 
 function f_EmptyEduDetail() {
+    $('#txtEduCode').val($('#txtId').val());
     $("#dtEduStartYear").jqxDateTimeInput('setDate', new Date());
     $("#dtEduStartYear").data("edu_seq_no", 0);
 
@@ -94,6 +103,51 @@ function f_DeleteEmployeeEdu(pEmpCode) {
     }
 }
 
+var vUrl = "";
+var SrcLookUp = {
+    url: vUrl,
+    datatype: "json",
+    type: "Post",
+    datafields: [{ name: "country_code" },
+                 { name: "int_code" },
+                 { name: "int_country" },
+                 { name: "country_name" }],
+    cache: false,
+    filter: function () { $("#tblLookUp").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblLookUp").jqxGrid('updatebounddata', 'sort'); },
+    beforeprocessing: function (data) { SrcLookUp.totalrecords = data["TotalRows"]; },
+    root: 'Rows'
+}
+
+function initGridLookUp() {
+    $("#tblLookUp").jqxGrid(
+      {
+          theme: vTheme,
+          //source: dataAdapter,
+          width: '100%',
+          height: 420,
+          filterable: true,
+          sortable: true,
+          pageable: true,
+          pagesize: 15,
+          pagesizeoptions: ['15', '20', '30'],
+          rowsheight: 20,
+          autorowheight: true,
+          columnsresize: true,
+          virtualmode: true,
+          autoshowfiltericon: true,
+          rendergridrows: function (obj) {
+              return obj.data;
+          },
+          columns: [
+              { text: 'Code', dataField: 'country_code', cellsalign: 'center' },
+              { text: 'Int Code', dataField: 'int_code', hidden: true },
+              { text: 'Int Code', dataField: 'int_country', cellsalign: 'center' },
+              { text: 'Country Name', dataField: 'country_name' }
+          ]
+      });
+}
+
 $(document).ready(function () {
 
     //#region INIT EDUCATION
@@ -114,10 +168,15 @@ $(document).ready(function () {
             columns: [
                 { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
                 { text: 'sequence', datafield: 'seq_no', hidden: true },
+                { text: 'jenjang Code', datafield: 'jenjang', hidden: true },
                 { text: 'Jenjang', datafield: 'nm_jenjang' },
                 { text: 'Sekolah', datafield: 'school' },
                 { text: 'Jurusan', datafield: 'jurusan' },
                 { text: 'Kota', datafield: 'city' },
+                { text: 'country_code', datafield: 'country_code', hidden: true },
+                { text: 'int_country', datafield: 'int_country',hidden:true},
+                { text: 'Country', datafield: 'country_name' },
+
                 {
                     text: 'Start Date', datafield: 'start_year',
                     filtertype: 'date', cellsformat: 'dd-MMM-yy',
@@ -135,15 +194,15 @@ $(document).ready(function () {
     initGridEducation();
     //#endregion
 
-    $("#txtEduCode").jqxInput({ theme: vTheme,disabled:true })
+    $("#txtEduCode").jqxInput({ theme: vTheme, disabled: true })
     $("#psnEducation").jqxNotification({
         width: "100%", height: "40px", theme: vTheme,
         appendContainer: "#psnEduContainer",
         opacity: 0.9, autoClose: true, template: "error"
     });
 
-    $("#dtEduStartYear").jqxDateTimeInput({ theme: vTheme , width:150});
-    $("#dtEduEndYear").jqxDateTimeInput({ theme: vTheme, width:150 });
+    $("#dtEduStartYear").jqxDateTimeInput({ theme: vTheme, width: 150 });
+    $("#dtEduEndYear").jqxDateTimeInput({ theme: vTheme, width: 150 });
 
     $("#cmbEduLevel").jqxComboBox({
         theme: vTheme, width: 120,
@@ -161,9 +220,12 @@ $(document).ready(function () {
     $("#btnEduSave").jqxButton({ theme: vTheme, height: 30, width: 100 });
     $("#btnEduCancel").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
+    initGridLookUp();
+
     $("#modEducation").jqxWindow({
         height: 280, width: 750,
-        theme: vTheme, isModal: true,
+        theme: vTheme,
+        isModal: true,
         autoOpen: false,
         resizable: false
     });
@@ -184,23 +246,26 @@ $(document).ready(function () {
         f_EmptyEduDetail();
 
         var rowindex = $('#tblEducation').jqxGrid('getselectedrowindex');
-        if (rowindex > 0) {
+        if (rowindex >= 0) {
             var rd = $('#tblEducation').jqxGrid('getrowdata', rowindex);
 
-            //$("#txtFamName").val(rd.name);
-            //$("#txtFamName").data("fam_seq_no", rd.seq_no);
+            $("#txtEduCode").data("edu_seq_no", rd.seq_no);
 
-            //$("#txtFamDob").jqxDateTimeInput('setDate', rd.date_birth);
+            $("#dtEduStartYear").jqxDateTimeInput('setDate', rd.start_year);
+            $("#dtEduEndYear").jqxDateTimeInput('setDate', rd.end_year);
 
-            //var vFamGender = rd.sex;
-            //$("#cmbFamGender").jqxComboBox({ selectedIndex: vFamGender });
+            var vEduLevel = rd.jenjang;
+            $("#cmbEduLevel").jqxComboBox({ selectedIndex: vEduLevel });
 
             //var vFamRelation = rd.relationship;
             //$("#cmbFamRelation").jqxComboBox({ selectedIndex: vFamRelation });
 
-            //$("#txtFamEducation").val(rd.education);
-            //$("#txtFamEmployment").val(rd.employment);
-            //$("#txtFamAddress").val(rd.address);
+            $("#txtEduMajors").val(rd.jurusan);
+            $("#txtEduSchool").val(rd.school);
+            $("#txtEduCity").val(rd.city);
+            $("#txtcountryCode").val(rd.int_country);
+            $("#txtcountryCode").data("edu_country_code", rd.country_code);
+            $("#txtcountryName").val(rd.country_name);
 
             $("#modEducation").jqxWindow('open');
         } else {
@@ -289,5 +354,25 @@ $(document).ready(function () {
             });
         }
     });
+
+    $('#btnEduCountry').on('click', function (event) {
+        SrcLookUp.url = base_url + "/Country/GetCountryList";
+
+        var vAdapter = new $.jqx.dataAdapter(SrcLookUp, {
+            downloadComplete: function (data, status, xhr) {
+                if (!SrcLookUp.TotalRows) {
+                    SrcLookUp.TotalRows = data.length;
+                }
+            }
+        });
+
+        $('#tblLookUp').jqxGrid({ source: vAdapter })
+
+        $('#tblLookUp').jqxGrid('gotopage', 0);
+
+        $("#modLookUp").jqxWindow('open');
+    });
+
+
 
 });

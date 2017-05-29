@@ -322,7 +322,7 @@
             <div id="psnEducation">
                 <div id="psnEduIsi"></div>
             </div>
-            <div style="margin-left:20px">
+            <div style="margin-left: 20px">
                 <table>
                     <tr>
                         <td>Emp. Code *</td>
@@ -336,7 +336,7 @@
                         </td>
                         <td style="padding-left: 30px">End Year *</td>
                         <td>
-                            <div id="dtEduEndYear" ></div>
+                            <div id="dtEduEndYear"></div>
                         </td>
                     </tr>
                     <tr>
@@ -384,11 +384,12 @@
             <div id="psnSkill">
                 <div id="psnSkillIsi"></div>
             </div>
-            <div style="margin-left:20px">
+            <div style="margin-left: 20px">
                 <table>
                     <tr>
                         <td>Skill Name *</td>
-                        <td><input type="text" id="txtSkillName" /></td>
+                        <td>
+                            <input type="text" id="txtSkillName" /></td>
                     </tr>
                     <tr>
                         <td>Level *</td>
@@ -431,9 +432,13 @@
                     </tr>
                     <tr>
                         <td>Start Working *</td>
-                        <td><div id="dtExpStart"></div></td>
+                        <td>
+                            <div id="dtExpStart"></div>
+                        </td>
                         <td style="padding-left: 30px">End Working *</td>
-                        <td><div id="dtExpEnd"> </div></td>
+                        <td>
+                            <div id="dtExpEnd"></div>
+                        </td>
                     </tr>
                     <tr>
                         <td>CompanyName *</td>
@@ -446,19 +451,23 @@
                     </tr>
                     <tr>
                         <td>Department</td>
-                        <td><input type="text" id="txtExpDepartment" /></td>
+                        <td>
+                            <input type="text" id="txtExpDepartment" /></td>
                         <td style="padding-left: 30px">Last Job Title</td>
-                        <td><input type="text" id="txtExpLastTitle" /></td>
+                        <td>
+                            <input type="text" id="txtExpLastTitle" /></td>
                     </tr>
                     <tr>
                         <td>Last Salary</td>
-                        <td><input type="text" id="txtExpSalary" /></td>
+                        <td>
+                            <input type="text" id="txtExpSalary" /></td>
                         <td style="padding-left: 30px">End Working Reason</td>
-                        <td><input type="text" id="txtExpReason" /></td>
+                        <td>
+                            <input type="text" id="txtExpReason" /></td>
                     </tr>
                     <tr>
-                        <td style="vertical-align:top">Description</td>
-                        <td colspan="2"">
+                        <td style="vertical-align: top">Description</td>
+                        <td colspan="2">
                             <textarea id="txtExpDesc"></textarea>
                         </td>
                     </tr>
@@ -491,9 +500,13 @@
                     </tr>
                     <tr>
                         <td>Start Working *</td>
-                        <td><div id="dtTrnStart"></div></td>
+                        <td>
+                            <div id="dtTrnStart"></div>
+                        </td>
                         <td style="padding-left: 30px">End Working *</td>
-                        <td><div id="dtTrnEnd"> </div></td>
+                        <td>
+                            <div id="dtTrnEnd"></div>
+                        </td>
                     </tr>
                     <tr>
                         <td>Training Subject *</td>
@@ -506,13 +519,16 @@
                     </tr>
                     <tr>
                         <td>Training Place *</td>
-                        <td><input type="text" id="txtTrnPlace" /></td>
+                        <td>
+                            <input type="text" id="txtTrnPlace" /></td>
                         <td style="padding-left: 30px">Company</td>
-                        <td><input type="text" id="txtTrnCompany" /></td>
+                        <td>
+                            <input type="text" id="txtTrnCompany" /></td>
                     </tr>
                     <tr>
                         <td>Value</td>
-                        <td><input type="text" id="txtTrnValue" /></td>
+                        <td>
+                            <input type="text" id="txtTrnValue" /></td>
                         <td></td>
                         <td>
                             <input type="checkbox" id="chkTrnCompany" />
@@ -539,6 +555,13 @@
                 <button id="btnYes">YES</button>
                 <button id="btnNo">NO</button>
             </div>
+        </div>
+    </div>
+    <div id="modLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="jqxToolBar" style="margin-bottom:1px"></div>
+            <div id="tblLookUp"></div>
         </div>
     </div>
 </div>

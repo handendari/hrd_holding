@@ -10,7 +10,7 @@
         $(document).ready(function () {
             // prepare the data
 
-            var theme = 'sunny';
+            var theme = vTheme;
 
             $("#jqxToolBar").jqxToolBar({
                 width: 800, height: 35, tools: 'custom | custom | custom',
@@ -71,7 +71,7 @@
 
             $("#jqxgrid").jqxGrid(
               {
-                  theme: 'custom_merah',
+                  theme: vTheme,
                   source: dataAdapter,
                   width: '100%',
                   filterable: true,

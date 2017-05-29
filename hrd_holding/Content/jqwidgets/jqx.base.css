@@ -5370,7 +5370,8 @@ ol li .jqx-listmenu-item-label:before
 }
 .jqx-toolbar, .jqx-toolbar-minimized-popup
 {
-    padding: 5px;
+    padding-left: 5px;
+    padding-top:3px;
 }
 .jqx-toolbar
 {

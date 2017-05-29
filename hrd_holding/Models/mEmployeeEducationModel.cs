@@ -18,6 +18,7 @@ namespace hrd_holding.Models
         public string school { get; set; }
         public string city { get; set; }
         public string country_code { get; set; }
+        public string int_country { get; set; }
         public string country_name { get; set; }
         public DateTime? entry_date { get; set; }
         public string entry_user { get; set; }

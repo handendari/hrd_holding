@@ -17088,3 +17088,1388 @@ DEBUG 2017-05-27 11:17:36,547 203444ms EmployeeEducationRepo  loyeeEducationList
 DEBUG 2017-05-27 11:17:36,804 203701ms EmployeeExperienceRepo oyeeExperienceList - 5/27/2017 11:17:36 AM JML Employee EXPERIENCE List: 1
 DEBUG 2017-05-27 11:17:37,009 203906ms EmployeeSkillRepo      tEmployeeSkillList - 5/27/2017 11:17:37 AM JML Employee SKILL List: 1
 DEBUG 2017-05-27 11:17:37,272 204169ms EmployeeTrainingRepo   ployeeTrainingList - 5/27/2017 11:17:37 AM JML Employee Training List: 0
+DEBUG 2017-05-29 08:36:02,470  7721ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 8:36:02 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 08:36:02,523  7774ms EmployeeContractRepo   ployeeContractList - 5/29/2017 8:36:02 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 08:36:02,532  7783ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 8:36:02 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 08:36:02,543  7794ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 8:36:02 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 08:36:02,554  7805ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 8:36:02 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 08:36:02,564  7815ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 8:36:02 AM JML Employee Training List: 0
+DEBUG 2017-05-29 09:15:41,449   146ms EmployeeController     GetEmployeeList    - 5/29/2017 9:15:41 AM WHERE : 
+DEBUG 2017-05-29 09:15:41,470   167ms EmployeeController     GetEmployeeList    - 5/29/2017 9:15:41 AM ORDER BY : 
+DEBUG 2017-05-29 09:15:41,471   168ms EmployeeService        GetEmployeeList    - 5/29/2017 9:15:41 AM pPage : 0 pRows : 0
+DEBUG 2017-05-29 09:15:41,472   169ms EmployeeService        GetEmployeeList    - 5/29/2017 9:15:41 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:15:41,476   173ms EmployeeRepo           getEmployeeList    - 5/29/2017 9:15:41 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode 
+DEBUG 2017-05-29 09:15:41,477   174ms EmployeeRepo           getEmployeeList    - 5/29/2017 9:15:41 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode  LIMIT 0,10
+DEBUG 2017-05-29 09:15:41,697   393ms EmployeeRepo           getEmployeeList    - 5/29/2017 9:15:41 AM Jumlah Data Employee : 10
+DEBUG 2017-05-29 09:19:52,712   103ms mCountryService        GetCountryList     - 5/29/2017 9:19:52 AM vRows : 10 vStart : 0
+ERROR 2017-05-29 09:19:52,830   220ms CountryRepo            getCountryList     - 5/29/2017 9:19:52 AM GetCountryList Failed
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCountryRepo.getCountryList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCountryRepo.cs:line 88
+DEBUG 2017-05-29 09:20:20,246 27637ms mCountryService        GetCountryList     - 5/29/2017 9:20:20 AM vRows : 10 vStart : 0
+ERROR 2017-05-29 09:20:20,261 27651ms CountryRepo            getCountryList     - 5/29/2017 9:20:20 AM GetCountryList Failed
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCountryRepo.getCountryList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCountryRepo.cs:line 88
+DEBUG 2017-05-29 09:22:55,648   106ms CountryController      GetCountryList     - 5/29/2017 9:22:55 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:22:55,667   126ms mCountryService        GetCountryList     - 5/29/2017 9:22:55 AM vRows : 10 vStart : 0
+ERROR 2017-05-29 09:22:55,786   244ms CountryRepo            getCountryList     - 5/29/2017 9:22:55 AM GetCountryList Failed
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCountryRepo.getCountryList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCountryRepo.cs:line 88
+DEBUG 2017-05-29 09:24:57,979   115ms CountryController      GetCountryList     - 5/29/2017 9:24:57 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:24:58,003   139ms mCountryService        GetCountryList     - 5/29/2017 9:24:58 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:25:10,335 12471ms CountryController      GetCountryList     - 5/29/2017 9:25:10 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:25:10,336 12472ms mCountryService        GetCountryList     - 5/29/2017 9:25:10 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:25:13,790 15926ms CountryController      GetCountryList     - 5/29/2017 9:25:13 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:25:13,791 15927ms mCountryService        GetCountryList     - 5/29/2017 9:25:13 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:25:22,428 24564ms CountryController      GetCountryList     - 5/29/2017 9:25:22 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:25:22,429 24565ms mCountryService        GetCountryList     - 5/29/2017 9:25:22 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:25:27,271 29407ms CountryController      GetCountryList     - 5/29/2017 9:25:27 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:25:27,272 29408ms mCountryService        GetCountryList     - 5/29/2017 9:25:27 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:25:38,012 40148ms CountryController      GetCountryList     - 5/29/2017 9:25:38 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:25:38,012 40148ms mCountryService        GetCountryList     - 5/29/2017 9:25:38 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:25:41,746 43882ms CountryController      GetCountryList     - 5/29/2017 9:25:41 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:25:41,747 43883ms mCountryService        GetCountryList     - 5/29/2017 9:25:41 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:26:52,156 114292ms CountryController      GetCountryList     - 5/29/2017 9:26:52 AM Page Num : 1 Page Size : 10
+DEBUG 2017-05-29 09:26:52,157 114293ms mCountryService        GetCountryList     - 5/29/2017 9:26:52 AM vRows : 10 vStart : 10
+DEBUG 2017-05-29 09:27:17,535 139671ms CountryController      GetCountryList     - 5/29/2017 9:27:17 AM Page Num : 1 Page Size : 20
+DEBUG 2017-05-29 09:27:17,536 139672ms mCountryService        GetCountryList     - 5/29/2017 9:27:17 AM vRows : 20 vStart : 20
+ERROR 2017-05-29 09:27:17,636 139772ms CountryRepo            getCountryList     - 5/29/2017 9:27:17 AM GetCountryList Failed
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt16(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at MySql.Data.MySqlClient.MySqlDataReader.ChangeType(IMySqlValue value, Int32 fieldIndex, Type newType)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt16(Int32 i)
+   at hrd_holding.Repositories.mCountryRepo.getCountryList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCountryRepo.cs:line 89
+DEBUG 2017-05-29 09:28:05,072   113ms CountryController      GetCountryList     - 5/29/2017 9:28:05 AM Page Num : 1 Page Size : 20
+DEBUG 2017-05-29 09:28:05,104   145ms mCountryService        GetCountryList     - 5/29/2017 9:28:05 AM vRows : 20 vStart : 20
+DEBUG 2017-05-29 09:48:13,795 1208835ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 9:48:13 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 09:48:13,813 1208853ms EmployeeContractRepo   ployeeContractList - 5/29/2017 9:48:13 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 09:48:13,836 1208876ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 9:48:13 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 09:48:13,854 1208894ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 9:48:13 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 09:48:13,876 1208916ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 9:48:13 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 09:48:13,891 1208931ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 9:48:13 AM JML Employee Training List: 0
+DEBUG 2017-05-29 09:49:51,498 1306539ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 9:49:51 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 09:49:51,511 1306552ms EmployeeContractRepo   ployeeContractList - 5/29/2017 9:49:51 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 09:49:51,523 1306564ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 9:49:51 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 09:49:51,545 1306586ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 9:49:51 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 09:49:51,560 1306601ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 9:49:51 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 09:49:51,580 1306621ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 9:49:51 AM JML Employee Training List: 0
+DEBUG 2017-05-29 09:49:57,703 1312743ms CountryController      GetCountryList     - 5/29/2017 9:49:57 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:49:57,703 1312743ms mCountryService        GetCountryList     - 5/29/2017 9:49:57 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:50:12,719 1327760ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 9:50:12 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 09:50:12,734 1327775ms EmployeeContractRepo   ployeeContractList - 5/29/2017 9:50:12 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 09:50:12,756 1327797ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 9:50:12 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 09:50:12,771 1327812ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 9:50:12 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 09:50:12,788 1327829ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 9:50:12 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 09:50:12,796 1327837ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 9:50:12 AM JML Employee Training List: 0
+DEBUG 2017-05-29 09:50:19,022 1334062ms CountryController      GetCountryList     - 5/29/2017 9:50:19 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:50:19,023 1334063ms mCountryService        GetCountryList     - 5/29/2017 9:50:19 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:52:33,521 1468561ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 9:52:33 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 09:52:33,536 1468576ms EmployeeContractRepo   ployeeContractList - 5/29/2017 9:52:33 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 09:52:33,555 1468595ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 9:52:33 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 09:52:33,574 1468614ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 9:52:33 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 09:52:33,582 1468622ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 9:52:33 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 09:52:33,590 1468630ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 9:52:33 AM JML Employee Training List: 0
+DEBUG 2017-05-29 09:52:42,894 1477934ms CountryController      GetCountryList     - 5/29/2017 9:52:42 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:52:42,895 1477935ms mCountryService        GetCountryList     - 5/29/2017 9:52:42 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:53:09,574 1504614ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 9:53:09 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 09:53:09,588 1504628ms EmployeeContractRepo   ployeeContractList - 5/29/2017 9:53:09 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 09:53:09,593 1504633ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 9:53:09 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 09:53:09,613 1504653ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 9:53:09 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 09:53:09,619 1504659ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 9:53:09 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 09:53:09,626 1504666ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 9:53:09 AM JML Employee Training List: 0
+DEBUG 2017-05-29 09:53:16,605 1511645ms CountryController      GetCountryList     - 5/29/2017 9:53:16 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:53:16,606 1511646ms mCountryService        GetCountryList     - 5/29/2017 9:53:16 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:53:31,651 1526691ms CountryController      GetCountryList     - 5/29/2017 9:53:31 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:53:31,652 1526692ms mCountryService        GetCountryList     - 5/29/2017 9:53:31 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:55:33,701 1648742ms CountryController      GetCountryList     - 5/29/2017 9:55:33 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:55:33,702 1648743ms mCountryService        GetCountryList     - 5/29/2017 9:55:33 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:57:52,054 1787095ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 9:57:52 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 09:57:52,088 1787128ms EmployeeContractRepo   ployeeContractList - 5/29/2017 9:57:52 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 09:57:52,124 1787164ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 9:57:52 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 09:57:52,172 1787212ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 9:57:52 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 09:57:52,186 1787226ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 9:57:52 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 09:57:52,231 1787271ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 9:57:52 AM JML Employee Training List: 0
+DEBUG 2017-05-29 09:58:00,275 1795316ms CountryController      GetCountryList     - 5/29/2017 9:58:00 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 09:58:00,276 1795317ms mCountryService        GetCountryList     - 5/29/2017 9:58:00 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 09:59:45,806 1900847ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 9:59:45 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 09:59:45,834 1900875ms EmployeeContractRepo   ployeeContractList - 5/29/2017 9:59:45 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 09:59:45,904 1900945ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 9:59:45 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 09:59:45,934 1900975ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 9:59:45 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 09:59:45,962 1901003ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 9:59:45 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 09:59:45,972 1901013ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 9:59:45 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:00:54,348 1969389ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:00:54 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:00:54,394 1969435ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:00:54 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:00:54,413 1969454ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:00:54 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:00:54,430 1969471ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:00:54 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:00:54,437 1969478ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:00:54 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:00:54,443 1969484ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:00:54 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:00:54,590 1969631ms CountryController      GetCountryList     - 5/29/2017 10:00:54 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:00:54,591 1969632ms mCountryService        GetCountryList     - 5/29/2017 10:00:54 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:01:30,029 2005070ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:01:30 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:01:30,038 2005079ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:01:30 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:01:30,063 2005104ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:01:30 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:01:30,073 2005114ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:01:30 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:01:30,117 2005158ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:01:30 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:01:30,124 2005165ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:01:30 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:01:30,336 2005377ms CountryController      GetCountryList     - 5/29/2017 10:01:30 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:01:30,336 2005377ms mCountryService        GetCountryList     - 5/29/2017 10:01:30 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:01:49,405 2024446ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:01:49 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:01:49,420 2024461ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:01:49 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:01:49,432 2024473ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:01:49 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:01:49,443 2024484ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:01:49 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:01:49,450 2024491ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:01:49 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:01:49,480 2024521ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:01:49 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:01:49,801 2024841ms CountryController      GetCountryList     - 5/29/2017 10:01:49 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:01:49,802 2024842ms mCountryService        GetCountryList     - 5/29/2017 10:01:49 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:03:21,793 2116833ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:03:21 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:03:21,940 2116980ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:03:21 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:03:22,010 2117050ms CountryController      GetCountryList     - 5/29/2017 10:03:22 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:03:22,011 2117051ms mCountryService        GetCountryList     - 5/29/2017 10:03:22 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:03:22,360 2117400ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:03:22 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:03:23,237 2118278ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:03:23 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:03:23,281 2118322ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:03:23 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:03:23,414 2118454ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:03:23 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:04:33,830 2188871ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:04:33 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:04:33,836 2188877ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:04:33 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:04:33,843 2188884ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:04:33 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:04:33,850 2188891ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:04:33 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:04:33,856 2188897ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:04:33 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:04:33,862 2188903ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:04:33 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:04:34,123 2189164ms CountryController      GetCountryList     - 5/29/2017 10:04:34 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:04:34,123 2189164ms mCountryService        GetCountryList     - 5/29/2017 10:04:34 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:05:08,868 2223909ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:05:08 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:05:08,889 2223930ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:05:08 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:05:08,937 2223978ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:05:08 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:05:08,977 2224018ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:05:08 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:05:09,049 2224090ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:05:09 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:05:09,078 2224119ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:05:09 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:05:09,167 2224208ms CountryController      GetCountryList     - 5/29/2017 10:05:09 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:05:09,168 2224209ms mCountryService        GetCountryList     - 5/29/2017 10:05:09 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:06:37,063 2312103ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:06:37 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:06:37,069 2312109ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:06:37 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:06:37,075 2312115ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:06:37 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:06:37,082 2312122ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:06:37 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:06:37,088 2312128ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:06:37 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:06:37,112 2312152ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:06:37 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:06:37,384 2312424ms CountryController      GetCountryList     - 5/29/2017 10:06:37 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:06:37,385 2312425ms mCountryService        GetCountryList     - 5/29/2017 10:06:37 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:07:24,499 2359540ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:07:24 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:07:24,523 2359564ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:07:24 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:07:24,539 2359580ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:07:24 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:07:24,562 2359603ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:07:24 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:07:24,573 2359614ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:07:24 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:07:24,581 2359622ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:07:24 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:07:24,746 2359787ms CountryController      GetCountryList     - 5/29/2017 10:07:24 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:07:24,747 2359788ms mCountryService        GetCountryList     - 5/29/2017 10:07:24 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:08:03,401 2398441ms CountryController      GetCountryList     - 5/29/2017 10:08:03 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 10:08:03,401 2398441ms mCountryService        GetCountryList     - 5/29/2017 10:08:03 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 10:08:45,096 2440137ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:08:45 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:08:45,116 2440157ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:08:45 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:08:45,124 2440165ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:08:45 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:08:45,130 2440171ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:08:45 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:08:45,138 2440179ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:08:45 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:08:45,144 2440185ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:08:45 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:08:45,328 2440368ms CountryController      GetCountryList     - 5/29/2017 10:08:45 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:08:45,329 2440369ms mCountryService        GetCountryList     - 5/29/2017 10:08:45 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:13:03,731 2698771ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:13:03 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:13:03,743 2698783ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:13:03 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:13:03,750 2698790ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:13:03 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:13:03,799 2698839ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:13:03 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:13:03,819 2698859ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:13:03 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:13:03,828 2698868ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:13:03 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:13:17,515 2712555ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:13:17 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:13:17,523 2712563ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:13:17 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:13:17,530 2712570ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:13:17 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:13:17,538 2712578ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:13:17 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:13:17,545 2712585ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:13:17 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:13:17,551 2712591ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:13:17 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:13:40,119 2735160ms CountryController      GetCountryList     - 5/29/2017 10:13:40 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 10:13:40,120 2735161ms mCountryService        GetCountryList     - 5/29/2017 10:13:40 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 10:14:37,716 2792757ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:14:37 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:14:37,735 2792776ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:14:37 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:14:37,745 2792786ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:14:37 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:14:37,753 2792794ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:14:37 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:14:37,770 2792811ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:14:37 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:14:37,777 2792818ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:14:37 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:14:38,057 2793098ms CountryController      GetCountryList     - 5/29/2017 10:14:38 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:14:38,058 2793099ms mCountryService        GetCountryList     - 5/29/2017 10:14:38 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:14:44,530 2799570ms CountryController      GetCountryList     - 5/29/2017 10:14:44 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 10:14:44,531 2799571ms mCountryService        GetCountryList     - 5/29/2017 10:14:44 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 10:15:45,849 2860889ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:15:45 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:15:45,899 2860939ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:15:45 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:15:45,906 2860946ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:15:45 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:15:45,923 2860963ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:15:45 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:15:45,933 2860973ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:15:45 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:15:45,942 2860982ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:15:45 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:15:46,257 2861298ms CountryController      GetCountryList     - 5/29/2017 10:15:46 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:15:46,258 2861299ms mCountryService        GetCountryList     - 5/29/2017 10:15:46 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:15:52,185 2867226ms CountryController      GetCountryList     - 5/29/2017 10:15:52 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 10:15:52,186 2867227ms mCountryService        GetCountryList     - 5/29/2017 10:15:52 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 10:16:17,667 2892708ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:16:17 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:16:17,680 2892721ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:16:17 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:16:17,686 2892727ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:16:17 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:16:17,716 2892757ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:16:17 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:16:17,728 2892769ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:16:17 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:16:17,734 2892775ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:16:17 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:16:17,877 2892918ms CountryController      GetCountryList     - 5/29/2017 10:16:17 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:16:17,877 2892918ms mCountryService        GetCountryList     - 5/29/2017 10:16:17 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:19:30,031 3085071ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:19:30 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:19:30,041 3085081ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:19:30 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:19:30,051 3085091ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:19:30 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:19:30,059 3085099ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:19:30 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:19:30,069 3085109ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:19:30 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:19:30,075 3085115ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:19:30 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:28:28,569 3623609ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:28:28 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:28:28,583 3623623ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:28:28 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:28:28,589 3623629ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:28:28 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:28:28,595 3623635ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:28:28 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:28:28,601 3623641ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:28:28 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:28:28,608 3623648ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:28:28 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:33:40,117 3935158ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:33:40 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:33:40,143 3935184ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:33:40 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:33:40,159 3935200ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:33:40 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:33:40,164 3935205ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:33:40 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:33:40,186 3935227ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:33:40 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:33:40,193 3935234ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:33:40 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:33:52,985 3948025ms CountryController      GetCountryList     - 5/29/2017 10:33:52 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 10:33:52,986 3948026ms mCountryService        GetCountryList     - 5/29/2017 10:33:52 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 10:38:48,130 4243170ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:38:48 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:38:48,139 4243179ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:38:48 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:38:48,149 4243189ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:38:48 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:38:48,155 4243195ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:38:48 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:38:48,161 4243201ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:38:48 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:38:48,171 4243211ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:38:48 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:38:48,434 4243474ms CountryController      GetCountryList     - 5/29/2017 10:38:48 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:38:48,434 4243474ms mCountryService        GetCountryList     - 5/29/2017 10:38:48 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:39:12,481 4267522ms CountryController      GetCountryList     - 5/29/2017 10:39:12 AM Page Num : 0 Page Size : 0
+DEBUG 2017-05-29 10:39:12,482 4267523ms mCountryService        GetCountryList     - 5/29/2017 10:39:12 AM vRows : 10 vStart : 0
+DEBUG 2017-05-29 10:43:10,196 4505236ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:43:10 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:43:10,207 4505247ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:43:10 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:43:10,221 4505261ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:43:10 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:43:10,229 4505269ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:43:10 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:43:10,238 4505278ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:43:10 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:43:10,245 4505285ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:43:10 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:43:10,568 4505608ms CountryController      GetCountryList     - 5/29/2017 10:43:10 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:43:10,569 4505609ms mCountryService        GetCountryList     - 5/29/2017 10:43:10 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:43:17,311 4512351ms CountryController      GetCountryList     - 5/29/2017 10:43:17 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:43:17,312 4512352ms mCountryService        GetCountryList     - 5/29/2017 10:43:17 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:44:28,989 4584030ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:44:28 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:44:29,000 4584041ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:44:29 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:44:29,007 4584048ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:44:29 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:44:29,020 4584061ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:44:29 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:44:29,052 4584093ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:44:29 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:44:29,059 4584100ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:44:29 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:44:34,841 4589881ms CountryController      GetCountryList     - 5/29/2017 10:44:34 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:44:34,841 4589881ms mCountryService        GetCountryList     - 5/29/2017 10:44:34 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:55:56,306 5271346ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:55:56 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:55:56,315 5271355ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:55:56 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:55:56,322 5271362ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:55:56 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:55:56,354 5271394ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:55:56 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:55:56,360 5271400ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:55:56 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:55:56,370 5271410ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:55:56 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:56:02,467 5277508ms CountryController      GetCountryList     - 5/29/2017 10:56:02 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:56:02,468 5277509ms mCountryService        GetCountryList     - 5/29/2017 10:56:02 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:58:09,679 5404720ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 10:58:09 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 10:58:09,684 5404725ms EmployeeContractRepo   ployeeContractList - 5/29/2017 10:58:09 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 10:58:09,691 5404732ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 10:58:09 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 10:58:09,697 5404738ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 10:58:09 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 10:58:09,703 5404744ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 10:58:09 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 10:58:09,708 5404749ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 10:58:09 AM JML Employee Training List: 0
+DEBUG 2017-05-29 10:58:14,514 5409555ms CountryController      GetCountryList     - 5/29/2017 10:58:14 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 10:58:14,515 5409556ms mCountryService        GetCountryList     - 5/29/2017 10:58:14 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 10:58:29,995 5425035ms CountryController      GetCountryList     - 5/29/2017 10:58:29 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 10:58:29,996 5425036ms mCountryService        GetCountryList     - 5/29/2017 10:58:29 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 10:58:33,233 5428274ms CountryController      GetCountryList     - 5/29/2017 10:58:33 AM Page Num : 2 Page Size : 15
+DEBUG 2017-05-29 10:58:33,233 5428274ms mCountryService        GetCountryList     - 5/29/2017 10:58:33 AM vRows : 15 vStart : 30
+DEBUG 2017-05-29 11:06:47,237 5922277ms EmployeeController     GetEmployeeList    - 5/29/2017 11:06:47 AM WHERE : 
+DEBUG 2017-05-29 11:06:47,238 5922278ms EmployeeController     GetEmployeeList    - 5/29/2017 11:06:47 AM ORDER BY : 
+DEBUG 2017-05-29 11:06:47,239 5922279ms EmployeeService        GetEmployeeList    - 5/29/2017 11:06:47 AM pPage : 0 pRows : 15
+DEBUG 2017-05-29 11:06:47,239 5922279ms EmployeeService        GetEmployeeList    - 5/29/2017 11:06:47 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:06:47,243 5922283ms EmployeeRepo           getEmployeeList    - 5/29/2017 11:06:47 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode 
+DEBUG 2017-05-29 11:06:47,244 5922284ms EmployeeRepo           getEmployeeList    - 5/29/2017 11:06:47 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode  LIMIT 0,15
+DEBUG 2017-05-29 11:06:47,362 5922402ms EmployeeRepo           getEmployeeList    - 5/29/2017 11:06:47 AM Jumlah Data Employee : 15
+DEBUG 2017-05-29 11:11:35,440 6210481ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 11:11:35 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 11:11:35,458 6210499ms EmployeeContractRepo   ployeeContractList - 5/29/2017 11:11:35 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 11:11:35,465 6210506ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 11:11:35 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 11:11:35,473 6210514ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 11:11:35 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 11:11:35,479 6210520ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 11:11:35 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 11:11:35,485 6210526ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 11:11:35 AM JML Employee Training List: 0
+DEBUG 2017-05-29 11:12:07,630 6242671ms CountryController      GetCountryList     - 5/29/2017 11:12:07 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:12:07,631 6242672ms mCountryService        GetCountryList     - 5/29/2017 11:12:07 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:12:20,513 6255554ms CountryController      GetCountryList     - 5/29/2017 11:12:20 AM Page Num : 0 Page Size : 30
+DEBUG 2017-05-29 11:12:20,514 6255555ms mCountryService        GetCountryList     - 5/29/2017 11:12:20 AM vRows : 30 vStart : 0
+DEBUG 2017-05-29 11:12:25,360 6260400ms CountryController      GetCountryList     - 5/29/2017 11:12:25 AM Page Num : 0 Page Size : 20
+DEBUG 2017-05-29 11:12:25,361 6260401ms mCountryService        GetCountryList     - 5/29/2017 11:12:25 AM vRows : 20 vStart : 0
+DEBUG 2017-05-29 11:19:25,843 6680883ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 11:19:25 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 11:19:25,849 6680889ms EmployeeContractRepo   ployeeContractList - 5/29/2017 11:19:25 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 11:19:25,858 6680898ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 11:19:25 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 11:19:25,874 6680914ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 11:19:25 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 11:19:25,880 6680920ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 11:19:25 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 11:19:25,885 6680925ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 11:19:25 AM JML Employee Training List: 0
+DEBUG 2017-05-29 11:19:32,906 6687947ms CountryController      GetCountryList     - 5/29/2017 11:19:32 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:19:32,906 6687947ms mCountryService        GetCountryList     - 5/29/2017 11:19:32 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:20:08,454 6723494ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 11:20:08 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 11:20:08,464 6723504ms EmployeeContractRepo   ployeeContractList - 5/29/2017 11:20:08 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 11:20:08,499 6723539ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 11:20:08 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 11:20:08,505 6723545ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 11:20:08 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 11:20:08,521 6723561ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 11:20:08 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 11:20:08,534 6723574ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 11:20:08 AM JML Employee Training List: 0
+DEBUG 2017-05-29 11:20:14,625 6729666ms CountryController      GetCountryList     - 5/29/2017 11:20:14 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:20:14,625 6729666ms mCountryService        GetCountryList     - 5/29/2017 11:20:14 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:36:35,863 7710903ms CountryController      GetCountryList     - 5/29/2017 11:36:35 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:36:35,864 7710904ms mCountryService        GetCountryList     - 5/29/2017 11:36:35 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:36:38,828 7713869ms CountryController      GetCountryList     - 5/29/2017 11:36:38 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:36:38,828 7713869ms mCountryService        GetCountryList     - 5/29/2017 11:36:38 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:37:20,976 7756016ms CountryController      GetCountryList     - 5/29/2017 11:37:20 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:37:20,977 7756017ms mCountryService        GetCountryList     - 5/29/2017 11:37:20 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:37:26,688 7761729ms CountryController      GetCountryList     - 5/29/2017 11:37:26 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:37:26,688 7761729ms mCountryService        GetCountryList     - 5/29/2017 11:37:26 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:37:31,443 7766483ms CountryController      GetCountryList     - 5/29/2017 11:37:31 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:37:31,443 7766483ms mCountryService        GetCountryList     - 5/29/2017 11:37:31 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:37:34,935 7769975ms CountryController      GetCountryList     - 5/29/2017 11:37:34 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:37:34,936 7769976ms mCountryService        GetCountryList     - 5/29/2017 11:37:34 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:37:42,113 7777153ms CountryController      GetCountryList     - 5/29/2017 11:37:42 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:37:42,114 7777154ms mCountryService        GetCountryList     - 5/29/2017 11:37:42 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:37:54,904 7789945ms CountryController      GetCountryList     - 5/29/2017 11:37:54 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:37:54,905 7789946ms mCountryService        GetCountryList     - 5/29/2017 11:37:54 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:37:55,337 7790377ms CountryController      GetCountryList     - 5/29/2017 11:37:55 AM Page Num : 2 Page Size : 15
+DEBUG 2017-05-29 11:37:55,337 7790377ms mCountryService        GetCountryList     - 5/29/2017 11:37:55 AM vRows : 15 vStart : 30
+DEBUG 2017-05-29 11:37:55,776 7790817ms CountryController      GetCountryList     - 5/29/2017 11:37:55 AM Page Num : 3 Page Size : 15
+DEBUG 2017-05-29 11:37:55,776 7790817ms mCountryService        GetCountryList     - 5/29/2017 11:37:55 AM vRows : 15 vStart : 45
+DEBUG 2017-05-29 11:37:56,160 7791200ms CountryController      GetCountryList     - 5/29/2017 11:37:56 AM Page Num : 4 Page Size : 15
+DEBUG 2017-05-29 11:37:56,161 7791201ms mCountryService        GetCountryList     - 5/29/2017 11:37:56 AM vRows : 15 vStart : 60
+DEBUG 2017-05-29 11:37:56,487 7791528ms CountryController      GetCountryList     - 5/29/2017 11:37:56 AM Page Num : 5 Page Size : 15
+DEBUG 2017-05-29 11:37:56,488 7791529ms mCountryService        GetCountryList     - 5/29/2017 11:37:56 AM vRows : 15 vStart : 75
+DEBUG 2017-05-29 11:37:56,967 7792008ms CountryController      GetCountryList     - 5/29/2017 11:37:56 AM Page Num : 6 Page Size : 15
+DEBUG 2017-05-29 11:37:56,968 7792009ms mCountryService        GetCountryList     - 5/29/2017 11:37:56 AM vRows : 15 vStart : 90
+DEBUG 2017-05-29 11:38:05,527 7800567ms CountryController      GetCountryList     - 5/29/2017 11:38:05 AM Page Num : 6 Page Size : 15
+DEBUG 2017-05-29 11:38:05,528 7800568ms mCountryService        GetCountryList     - 5/29/2017 11:38:05 AM vRows : 15 vStart : 90
+DEBUG 2017-05-29 11:45:04,984 8220024ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 11:45:04 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 11:45:05,010 8220050ms EmployeeContractRepo   ployeeContractList - 5/29/2017 11:45:05 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 11:45:05,050 8220090ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 11:45:05 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 11:45:05,072 8220112ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 11:45:05 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 11:45:05,083 8220123ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 11:45:05 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 11:45:05,090 8220130ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 11:45:05 AM JML Employee Training List: 0
+DEBUG 2017-05-29 11:45:10,959 8226000ms CountryController      GetCountryList     - 5/29/2017 11:45:10 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:45:10,960 8226001ms mCountryService        GetCountryList     - 5/29/2017 11:45:10 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:45:13,486 8228527ms CountryController      GetCountryList     - 5/29/2017 11:45:13 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:45:13,487 8228528ms mCountryService        GetCountryList     - 5/29/2017 11:45:13 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:45:14,326 8229366ms CountryController      GetCountryList     - 5/29/2017 11:45:14 AM Page Num : 2 Page Size : 15
+DEBUG 2017-05-29 11:45:14,327 8229367ms mCountryService        GetCountryList     - 5/29/2017 11:45:14 AM vRows : 15 vStart : 30
+DEBUG 2017-05-29 11:45:14,877 8229918ms CountryController      GetCountryList     - 5/29/2017 11:45:14 AM Page Num : 3 Page Size : 15
+DEBUG 2017-05-29 11:45:14,877 8229918ms mCountryService        GetCountryList     - 5/29/2017 11:45:14 AM vRows : 15 vStart : 45
+DEBUG 2017-05-29 11:45:15,556 8230596ms CountryController      GetCountryList     - 5/29/2017 11:45:15 AM Page Num : 4 Page Size : 15
+DEBUG 2017-05-29 11:45:15,557 8230597ms mCountryService        GetCountryList     - 5/29/2017 11:45:15 AM vRows : 15 vStart : 60
+DEBUG 2017-05-29 11:45:16,349 8231390ms CountryController      GetCountryList     - 5/29/2017 11:45:16 AM Page Num : 5 Page Size : 15
+DEBUG 2017-05-29 11:45:16,350 8231391ms mCountryService        GetCountryList     - 5/29/2017 11:45:16 AM vRows : 15 vStart : 75
+DEBUG 2017-05-29 11:46:38,000 8313040ms CountryController      GetCountryList     - 5/29/2017 11:46:38 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:46:38,001 8313041ms mCountryService        GetCountryList     - 5/29/2017 11:46:38 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:46:40,092 8315132ms CountryController      GetCountryList     - 5/29/2017 11:46:40 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:46:40,093 8315133ms mCountryService        GetCountryList     - 5/29/2017 11:46:40 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:48:50,751 8445792ms CountryController      GetCountryList     - 5/29/2017 11:48:50 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:48:50,752 8445793ms mCountryService        GetCountryList     - 5/29/2017 11:48:50 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:49:20,384 8475424ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 11:49:20 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 11:49:20,394 8475434ms EmployeeContractRepo   ployeeContractList - 5/29/2017 11:49:20 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 11:49:20,404 8475444ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 11:49:20 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 11:49:20,410 8475450ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 11:49:20 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 11:49:20,420 8475460ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 11:49:20 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 11:49:20,431 8475471ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 11:49:20 AM JML Employee Training List: 0
+DEBUG 2017-05-29 11:49:31,367 8486407ms CountryController      GetCountryList     - 5/29/2017 11:49:31 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:49:31,411 8486451ms mCountryService        GetCountryList     - 5/29/2017 11:49:31 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:49:36,341 8491381ms CountryController      GetCountryList     - 5/29/2017 11:49:36 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:49:36,341 8491381ms mCountryService        GetCountryList     - 5/29/2017 11:49:36 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:49:36,586 8491627ms CountryController      GetCountryList     - 5/29/2017 11:49:36 AM Page Num : 2 Page Size : 15
+DEBUG 2017-05-29 11:49:36,587 8491628ms mCountryService        GetCountryList     - 5/29/2017 11:49:36 AM vRows : 15 vStart : 30
+DEBUG 2017-05-29 11:49:36,812 8491853ms CountryController      GetCountryList     - 5/29/2017 11:49:36 AM Page Num : 3 Page Size : 15
+DEBUG 2017-05-29 11:49:36,812 8491853ms mCountryService        GetCountryList     - 5/29/2017 11:49:36 AM vRows : 15 vStart : 45
+DEBUG 2017-05-29 11:49:37,003 8492044ms CountryController      GetCountryList     - 5/29/2017 11:49:37 AM Page Num : 4 Page Size : 15
+DEBUG 2017-05-29 11:49:37,004 8492045ms mCountryService        GetCountryList     - 5/29/2017 11:49:37 AM vRows : 15 vStart : 60
+DEBUG 2017-05-29 11:49:37,178 8492219ms CountryController      GetCountryList     - 5/29/2017 11:49:37 AM Page Num : 5 Page Size : 15
+DEBUG 2017-05-29 11:49:37,178 8492219ms mCountryService        GetCountryList     - 5/29/2017 11:49:37 AM vRows : 15 vStart : 75
+DEBUG 2017-05-29 11:49:37,355 8492396ms CountryController      GetCountryList     - 5/29/2017 11:49:37 AM Page Num : 6 Page Size : 15
+DEBUG 2017-05-29 11:49:37,356 8492397ms mCountryService        GetCountryList     - 5/29/2017 11:49:37 AM vRows : 15 vStart : 90
+DEBUG 2017-05-29 11:49:37,547 8492588ms CountryController      GetCountryList     - 5/29/2017 11:49:37 AM Page Num : 7 Page Size : 15
+DEBUG 2017-05-29 11:49:37,547 8492588ms mCountryService        GetCountryList     - 5/29/2017 11:49:37 AM vRows : 15 vStart : 105
+DEBUG 2017-05-29 11:49:37,891 8492931ms CountryController      GetCountryList     - 5/29/2017 11:49:37 AM Page Num : 8 Page Size : 15
+DEBUG 2017-05-29 11:49:37,892 8492932ms mCountryService        GetCountryList     - 5/29/2017 11:49:37 AM vRows : 15 vStart : 120
+DEBUG 2017-05-29 11:50:16,492 8531532ms CountryController      GetCountryList     - 5/29/2017 11:50:16 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:50:16,493 8531533ms mCountryService        GetCountryList     - 5/29/2017 11:50:16 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:50:30,394 8545435ms CountryController      GetCountryList     - 5/29/2017 11:50:30 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:50:30,395 8545436ms mCountryService        GetCountryList     - 5/29/2017 11:50:30 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:53:19,170 8714211ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 11:53:19 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 11:53:19,176 8714217ms EmployeeContractRepo   ployeeContractList - 5/29/2017 11:53:19 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 11:53:19,183 8714224ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 11:53:19 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 11:53:19,190 8714231ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 11:53:19 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 11:53:19,228 8714269ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 11:53:19 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 11:53:19,234 8714275ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 11:53:19 AM JML Employee Training List: 0
+DEBUG 2017-05-29 11:53:25,036 8720077ms CountryController      GetCountryList     - 5/29/2017 11:53:25 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:53:25,036 8720077ms mCountryService        GetCountryList     - 5/29/2017 11:53:25 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:53:41,179 8736219ms CountryController      GetCountryList     - 5/29/2017 11:53:41 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:53:41,180 8736220ms mCountryService        GetCountryList     - 5/29/2017 11:53:41 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:53:41,386 8736426ms CountryController      GetCountryList     - 5/29/2017 11:53:41 AM Page Num : 2 Page Size : 15
+DEBUG 2017-05-29 11:53:41,386 8736426ms mCountryService        GetCountryList     - 5/29/2017 11:53:41 AM vRows : 15 vStart : 30
+DEBUG 2017-05-29 11:53:41,642 8736682ms CountryController      GetCountryList     - 5/29/2017 11:53:41 AM Page Num : 3 Page Size : 15
+DEBUG 2017-05-29 11:53:41,643 8736683ms mCountryService        GetCountryList     - 5/29/2017 11:53:41 AM vRows : 15 vStart : 45
+DEBUG 2017-05-29 11:53:41,874 8736914ms CountryController      GetCountryList     - 5/29/2017 11:53:41 AM Page Num : 4 Page Size : 15
+DEBUG 2017-05-29 11:53:41,874 8736914ms mCountryService        GetCountryList     - 5/29/2017 11:53:41 AM vRows : 15 vStart : 60
+DEBUG 2017-05-29 11:53:42,066 8737107ms CountryController      GetCountryList     - 5/29/2017 11:53:42 AM Page Num : 5 Page Size : 15
+DEBUG 2017-05-29 11:53:42,067 8737108ms mCountryService        GetCountryList     - 5/29/2017 11:53:42 AM vRows : 15 vStart : 75
+DEBUG 2017-05-29 11:53:42,289 8737329ms CountryController      GetCountryList     - 5/29/2017 11:53:42 AM Page Num : 6 Page Size : 15
+DEBUG 2017-05-29 11:53:42,290 8737330ms mCountryService        GetCountryList     - 5/29/2017 11:53:42 AM vRows : 15 vStart : 90
+DEBUG 2017-05-29 11:53:42,474 8737515ms CountryController      GetCountryList     - 5/29/2017 11:53:42 AM Page Num : 7 Page Size : 15
+DEBUG 2017-05-29 11:53:42,475 8737516ms mCountryService        GetCountryList     - 5/29/2017 11:53:42 AM vRows : 15 vStart : 105
+DEBUG 2017-05-29 11:53:42,657 8737698ms CountryController      GetCountryList     - 5/29/2017 11:53:42 AM Page Num : 8 Page Size : 15
+DEBUG 2017-05-29 11:53:42,657 8737698ms mCountryService        GetCountryList     - 5/29/2017 11:53:42 AM vRows : 15 vStart : 120
+DEBUG 2017-05-29 11:53:42,834 8737875ms CountryController      GetCountryList     - 5/29/2017 11:53:42 AM Page Num : 9 Page Size : 15
+DEBUG 2017-05-29 11:53:42,834 8737875ms mCountryService        GetCountryList     - 5/29/2017 11:53:42 AM vRows : 15 vStart : 135
+DEBUG 2017-05-29 11:53:43,001 8738042ms CountryController      GetCountryList     - 5/29/2017 11:53:43 AM Page Num : 10 Page Size : 15
+DEBUG 2017-05-29 11:53:43,001 8738042ms mCountryService        GetCountryList     - 5/29/2017 11:53:43 AM vRows : 15 vStart : 150
+DEBUG 2017-05-29 11:53:43,194 8738234ms CountryController      GetCountryList     - 5/29/2017 11:53:43 AM Page Num : 11 Page Size : 15
+DEBUG 2017-05-29 11:53:43,195 8738235ms mCountryService        GetCountryList     - 5/29/2017 11:53:43 AM vRows : 15 vStart : 165
+DEBUG 2017-05-29 11:53:43,370 8738410ms CountryController      GetCountryList     - 5/29/2017 11:53:43 AM Page Num : 12 Page Size : 15
+DEBUG 2017-05-29 11:53:43,371 8738411ms mCountryService        GetCountryList     - 5/29/2017 11:53:43 AM vRows : 15 vStart : 180
+DEBUG 2017-05-29 11:53:43,544 8738585ms CountryController      GetCountryList     - 5/29/2017 11:53:43 AM Page Num : 13 Page Size : 15
+DEBUG 2017-05-29 11:53:43,544 8738585ms mCountryService        GetCountryList     - 5/29/2017 11:53:43 AM vRows : 15 vStart : 195
+DEBUG 2017-05-29 11:54:27,777 8782817ms CountryController      GetCountryList     - 5/29/2017 11:54:27 AM Page Num : 13 Page Size : 15
+DEBUG 2017-05-29 11:54:27,778 8782818ms mCountryService        GetCountryList     - 5/29/2017 11:54:27 AM vRows : 15 vStart : 195
+DEBUG 2017-05-29 11:54:27,781 8782821ms CountryController      GetCountryList     - 5/29/2017 11:54:27 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:54:27,782 8782822ms mCountryService        GetCountryList     - 5/29/2017 11:54:27 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:55:38,058 8853099ms CountryController      GetCountryList     - 5/29/2017 11:55:38 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:55:38,059 8853100ms mCountryService        GetCountryList     - 5/29/2017 11:55:38 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:55:39,088 8854128ms CountryController      GetCountryList     - 5/29/2017 11:55:39 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:55:39,089 8854129ms mCountryService        GetCountryList     - 5/29/2017 11:55:39 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:55:45,264 8860305ms CountryController      GetCountryList     - 5/29/2017 11:55:45 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:55:45,264 8860305ms mCountryService        GetCountryList     - 5/29/2017 11:55:45 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:55:46,863 8861904ms CountryController      GetCountryList     - 5/29/2017 11:55:46 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:55:46,864 8861905ms mCountryService        GetCountryList     - 5/29/2017 11:55:46 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:55:47,992 8863032ms CountryController      GetCountryList     - 5/29/2017 11:55:47 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:55:47,993 8863033ms mCountryService        GetCountryList     - 5/29/2017 11:55:47 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:55:49,063 8864103ms CountryController      GetCountryList     - 5/29/2017 11:55:49 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:55:49,064 8864104ms mCountryService        GetCountryList     - 5/29/2017 11:55:49 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:58:05,177 9000217ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 11:58:05 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 11:58:05,257 9000297ms EmployeeContractRepo   ployeeContractList - 5/29/2017 11:58:05 AM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 11:58:05,276 9000316ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 11:58:05 AM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 11:58:05,298 9000338ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 11:58:05 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 11:58:05,305 9000345ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 11:58:05 AM JML Employee SKILL List: 1
+DEBUG 2017-05-29 11:58:05,311 9000351ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 11:58:05 AM JML Employee Training List: 0
+DEBUG 2017-05-29 11:58:11,754 9006795ms CountryController      GetCountryList     - 5/29/2017 11:58:11 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:58:11,755 9006796ms mCountryService        GetCountryList     - 5/29/2017 11:58:11 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 11:58:19,721 9014761ms CountryController      GetCountryList     - 5/29/2017 11:58:19 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:58:19,722 9014762ms mCountryService        GetCountryList     - 5/29/2017 11:58:19 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:58:23,383 9018424ms CountryController      GetCountryList     - 5/29/2017 11:58:23 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:58:23,384 9018425ms mCountryService        GetCountryList     - 5/29/2017 11:58:23 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:58:24,934 9019974ms CountryController      GetCountryList     - 5/29/2017 11:58:24 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:58:24,935 9019975ms mCountryService        GetCountryList     - 5/29/2017 11:58:24 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:58:30,031 9025072ms CountryController      GetCountryList     - 5/29/2017 11:58:30 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:58:30,032 9025073ms mCountryService        GetCountryList     - 5/29/2017 11:58:30 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:58:30,034 9025075ms CountryController      GetCountryList     - 5/29/2017 11:58:30 AM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 11:58:30,035 9025076ms mCountryService        GetCountryList     - 5/29/2017 11:58:30 AM vRows : 15 vStart : 15
+DEBUG 2017-05-29 11:58:35,937 9030977ms CountryController      GetCountryList     - 5/29/2017 11:58:35 AM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 11:58:35,937 9030977ms mCountryService        GetCountryList     - 5/29/2017 11:58:35 AM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:04:29,059 9384100ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:04:29 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:04:29,065 9384106ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:04:29 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:04:29,071 9384112ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:04:29 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:04:29,078 9384119ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:04:29 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:04:29,089 9384130ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:04:29 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:04:29,095 9384136ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:04:29 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:04:37,049 9392090ms CountryController      GetCountryList     - 5/29/2017 12:04:37 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:04:37,050 9392091ms mCountryService        GetCountryList     - 5/29/2017 12:04:37 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:04:43,488 9398529ms CountryController      GetCountryList     - 5/29/2017 12:04:43 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:04:43,489 9398530ms mCountryService        GetCountryList     - 5/29/2017 12:04:43 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:04:49,132 9404172ms CountryController      GetCountryList     - 5/29/2017 12:04:49 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:04:49,132 9404172ms mCountryService        GetCountryList     - 5/29/2017 12:04:49 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:04:49,158 9404198ms CountryController      GetCountryList     - 5/29/2017 12:04:49 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:04:49,159 9404199ms mCountryService        GetCountryList     - 5/29/2017 12:04:49 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:04:49,161 9404201ms CountryController      GetCountryList     - 5/29/2017 12:04:49 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:04:49,161 9404201ms mCountryService        GetCountryList     - 5/29/2017 12:04:49 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:05:41,622 9456662ms CountryController      GetCountryList     - 5/29/2017 12:05:41 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:05:41,623 9456663ms mCountryService        GetCountryList     - 5/29/2017 12:05:41 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:05:41,652 9456692ms CountryController      GetCountryList     - 5/29/2017 12:05:41 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:05:41,652 9456692ms mCountryService        GetCountryList     - 5/29/2017 12:05:41 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:05:41,654 9456694ms CountryController      GetCountryList     - 5/29/2017 12:05:41 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:05:41,655 9456695ms mCountryService        GetCountryList     - 5/29/2017 12:05:41 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:05:41,656 9456696ms CountryController      GetCountryList     - 5/29/2017 12:05:41 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:05:41,657 9456697ms mCountryService        GetCountryList     - 5/29/2017 12:05:41 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:05:52,899 9467940ms CountryController      GetCountryList     - 5/29/2017 12:05:52 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:05:52,900 9467941ms mCountryService        GetCountryList     - 5/29/2017 12:05:52 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:05:52,925 9467966ms CountryController      GetCountryList     - 5/29/2017 12:05:52 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:05:52,926 9467967ms mCountryService        GetCountryList     - 5/29/2017 12:05:52 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:05:52,926 9467967ms CountryController      GetCountryList     - 5/29/2017 12:05:52 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:05:52,927 9467968ms mCountryService        GetCountryList     - 5/29/2017 12:05:52 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:05:54,883 9469923ms CountryController      GetCountryList     - 5/29/2017 12:05:54 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:05:54,884 9469924ms mCountryService        GetCountryList     - 5/29/2017 12:05:54 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:05:54,908 9469948ms CountryController      GetCountryList     - 5/29/2017 12:05:54 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:05:54,909 9469949ms mCountryService        GetCountryList     - 5/29/2017 12:05:54 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:05:54,910 9469950ms CountryController      GetCountryList     - 5/29/2017 12:05:54 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:05:54,910 9469950ms mCountryService        GetCountryList     - 5/29/2017 12:05:54 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:05:54,912 9469952ms CountryController      GetCountryList     - 5/29/2017 12:05:54 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:05:54,912 9469952ms mCountryService        GetCountryList     - 5/29/2017 12:05:54 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:07:19,199 9554240ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:07:19 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:07:19,222 9554263ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:07:19 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:07:19,228 9554269ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:07:19 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:07:19,235 9554276ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:07:19 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:07:19,257 9554298ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:07:19 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:07:19,262 9554303ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:07:19 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:07:46,373 9581414ms CountryController      GetCountryList     - 5/29/2017 12:07:46 PM Page Num : 0 Page Size : 10
+DEBUG 2017-05-29 12:07:46,373 9581414ms mCountryService        GetCountryList     - 5/29/2017 12:07:46 PM vRows : 10 vStart : 0
+DEBUG 2017-05-29 12:07:53,429 9588470ms CountryController      GetCountryList     - 5/29/2017 12:07:53 PM Page Num : 0 Page Size : 10
+DEBUG 2017-05-29 12:07:53,429 9588470ms mCountryService        GetCountryList     - 5/29/2017 12:07:53 PM vRows : 10 vStart : 0
+DEBUG 2017-05-29 12:12:19,129 9854170ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:12:19 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:12:19,141 9854182ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:12:19 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:12:19,148 9854189ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:12:19 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:12:19,155 9854196ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:12:19 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:12:19,161 9854202ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:12:19 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:12:19,166 9854207ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:12:19 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:12:38,461 9873501ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:12:38 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:12:38,469 9873509ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:12:38 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:12:38,475 9873515ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:12:38 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:12:38,482 9873522ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:12:38 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:12:38,496 9873536ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:12:38 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:12:38,510 9873550ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:12:38 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:12:43,053 9878093ms CountryController      GetCountryList     - 5/29/2017 12:12:43 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:12:43,053 9878093ms mCountryService        GetCountryList     - 5/29/2017 12:12:43 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:12:45,652 9880692ms CountryController      GetCountryList     - 5/29/2017 12:12:45 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:12:45,652 9880692ms mCountryService        GetCountryList     - 5/29/2017 12:12:45 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:12:49,936 9884977ms CountryController      GetCountryList     - 5/29/2017 12:12:49 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:12:49,937 9884978ms mCountryService        GetCountryList     - 5/29/2017 12:12:49 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:17:12,910 10147951ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:17:12 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:17:12,922 10147963ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:17:12 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:17:12,928 10147969ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:17:12 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:17:12,934 10147975ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:17:12 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:17:12,940 10147981ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:17:12 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:17:12,946 10147987ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:17:12 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:17:17,927 10152968ms CountryController      GetCountryList     - 5/29/2017 12:17:17 PM Page Num : 0 Page Size : 10
+DEBUG 2017-05-29 12:17:17,927 10152968ms mCountryService        GetCountryList     - 5/29/2017 12:17:17 PM vRows : 10 vStart : 0
+DEBUG 2017-05-29 12:17:29,128 10164169ms CountryController      GetCountryList     - 5/29/2017 12:17:29 PM Page Num : 0 Page Size : 10
+DEBUG 2017-05-29 12:17:29,129 10164170ms mCountryService        GetCountryList     - 5/29/2017 12:17:29 PM vRows : 10 vStart : 0
+DEBUG 2017-05-29 12:17:34,343 10169383ms CountryController      GetCountryList     - 5/29/2017 12:17:34 PM Page Num : 0 Page Size : 10
+DEBUG 2017-05-29 12:17:34,343 10169383ms mCountryService        GetCountryList     - 5/29/2017 12:17:34 PM vRows : 10 vStart : 0
+DEBUG 2017-05-29 12:17:39,423 10174463ms CountryController      GetCountryList     - 5/29/2017 12:17:39 PM Page Num : 0 Page Size : 10
+DEBUG 2017-05-29 12:17:39,424 10174464ms mCountryService        GetCountryList     - 5/29/2017 12:17:39 PM vRows : 10 vStart : 0
+DEBUG 2017-05-29 12:18:40,087 10235127ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:18:40 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:18:40,094 10235134ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:18:40 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:18:40,104 10235144ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:18:40 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:18:40,110 10235150ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:18:40 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:18:40,116 10235156ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:18:40 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:18:40,122 10235162ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:18:40 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:20:01,116 10316157ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:20:01 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:20:01,127 10316168ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:20:01 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:20:01,135 10316176ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:20:01 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:20:01,148 10316189ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:20:01 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:20:01,173 10316214ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:20:01 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:20:01,180 10316221ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:20:01 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:20:08,799 10323839ms CountryController      GetCountryList     - 5/29/2017 12:20:08 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:20:08,799 10323839ms mCountryService        GetCountryList     - 5/29/2017 12:20:08 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:20:13,497 10328537ms CountryController      GetCountryList     - 5/29/2017 12:20:13 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:20:13,498 10328538ms mCountryService        GetCountryList     - 5/29/2017 12:20:13 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:20:16,391 10331431ms CountryController      GetCountryList     - 5/29/2017 12:20:16 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:20:16,391 10331431ms mCountryService        GetCountryList     - 5/29/2017 12:20:16 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:20:16,416 10331456ms CountryController      GetCountryList     - 5/29/2017 12:20:16 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:20:16,416 10331456ms mCountryService        GetCountryList     - 5/29/2017 12:20:16 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:20:16,418 10331458ms CountryController      GetCountryList     - 5/29/2017 12:20:16 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:20:16,419 10331459ms mCountryService        GetCountryList     - 5/29/2017 12:20:16 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:20:21,860 10336901ms CountryController      GetCountryList     - 5/29/2017 12:20:21 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:20:21,861 10336902ms mCountryService        GetCountryList     - 5/29/2017 12:20:21 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:20:21,887 10336928ms CountryController      GetCountryList     - 5/29/2017 12:20:21 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:20:21,888 10336929ms mCountryService        GetCountryList     - 5/29/2017 12:20:21 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:20:21,889 10336930ms CountryController      GetCountryList     - 5/29/2017 12:20:21 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:20:21,889 10336930ms mCountryService        GetCountryList     - 5/29/2017 12:20:21 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:20:21,891 10336932ms CountryController      GetCountryList     - 5/29/2017 12:20:21 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:20:21,891 10336932ms mCountryService        GetCountryList     - 5/29/2017 12:20:21 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:20:48,327 10363368ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:20:48 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:20:48,342 10363383ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:20:48 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:20:48,359 10363400ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:20:48 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:20:48,379 10363420ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:20:48 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:20:48,385 10363426ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:20:48 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:20:48,390 10363431ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:20:48 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:20:54,927 10369967ms CountryController      GetCountryList     - 5/29/2017 12:20:54 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:20:54,928 10369968ms mCountryService        GetCountryList     - 5/29/2017 12:20:54 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:20:57,800 10372841ms CountryController      GetCountryList     - 5/29/2017 12:20:57 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:20:57,801 10372842ms mCountryService        GetCountryList     - 5/29/2017 12:20:57 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:21:01,021 10376062ms CountryController      GetCountryList     - 5/29/2017 12:21:01 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:01,022 10376063ms mCountryService        GetCountryList     - 5/29/2017 12:21:01 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:01,047 10376088ms CountryController      GetCountryList     - 5/29/2017 12:21:01 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:01,048 10376089ms mCountryService        GetCountryList     - 5/29/2017 12:21:01 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:01,049 10376090ms CountryController      GetCountryList     - 5/29/2017 12:21:01 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:01,050 10376091ms mCountryService        GetCountryList     - 5/29/2017 12:21:01 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:08,085 10383125ms CountryController      GetCountryList     - 5/29/2017 12:21:08 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:08,086 10383126ms mCountryService        GetCountryList     - 5/29/2017 12:21:08 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:08,109 10383149ms CountryController      GetCountryList     - 5/29/2017 12:21:08 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:08,109 10383149ms mCountryService        GetCountryList     - 5/29/2017 12:21:08 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:08,110 10383150ms CountryController      GetCountryList     - 5/29/2017 12:21:08 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:08,111 10383151ms mCountryService        GetCountryList     - 5/29/2017 12:21:08 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:08,111 10383151ms CountryController      GetCountryList     - 5/29/2017 12:21:08 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:08,112 10383152ms mCountryService        GetCountryList     - 5/29/2017 12:21:08 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:51,704 10426744ms CountryController      GetCountryList     - 5/29/2017 12:21:51 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:51,704 10426744ms mCountryService        GetCountryList     - 5/29/2017 12:21:51 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:51,752 10426792ms CountryController      GetCountryList     - 5/29/2017 12:21:51 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:51,753 10426793ms mCountryService        GetCountryList     - 5/29/2017 12:21:51 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:51,754 10426794ms CountryController      GetCountryList     - 5/29/2017 12:21:51 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:51,755 10426795ms mCountryService        GetCountryList     - 5/29/2017 12:21:51 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:58,453 10433493ms CountryController      GetCountryList     - 5/29/2017 12:21:58 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:58,453 10433493ms mCountryService        GetCountryList     - 5/29/2017 12:21:58 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:58,479 10433519ms CountryController      GetCountryList     - 5/29/2017 12:21:58 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:58,479 10433519ms mCountryService        GetCountryList     - 5/29/2017 12:21:58 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:58,481 10433521ms CountryController      GetCountryList     - 5/29/2017 12:21:58 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:58,482 10433522ms mCountryService        GetCountryList     - 5/29/2017 12:21:58 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:21:58,484 10433524ms CountryController      GetCountryList     - 5/29/2017 12:21:58 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:21:58,484 10433524ms mCountryService        GetCountryList     - 5/29/2017 12:21:58 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:22:10,950 10445990ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:22:10 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:22:10,956 10445996ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:22:10 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:22:10,962 10446002ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:22:10 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:22:10,970 10446010ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:22:10 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:22:10,976 10446016ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:22:10 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:22:10,982 10446022ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:22:10 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:22:27,920 10462960ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:22:27 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:22:27,925 10462965ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:22:27 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:22:27,931 10462971ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:22:27 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:22:27,937 10462977ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:22:27 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:22:27,943 10462983ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:22:27 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:22:27,948 10462988ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:22:27 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:22:47,229 10482269ms CountryController      GetCountryList     - 5/29/2017 12:22:47 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:22:47,230 10482270ms mCountryService        GetCountryList     - 5/29/2017 12:22:47 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:22:49,056 10484097ms CountryController      GetCountryList     - 5/29/2017 12:22:49 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:22:49,056 10484097ms mCountryService        GetCountryList     - 5/29/2017 12:22:49 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:23:17,904 10512944ms CountryController      GetCountryList     - 5/29/2017 12:23:17 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:23:17,905 10512945ms mCountryService        GetCountryList     - 5/29/2017 12:23:17 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:23:17,942 10512982ms CountryController      GetCountryList     - 5/29/2017 12:23:17 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:23:17,943 10512983ms mCountryService        GetCountryList     - 5/29/2017 12:23:17 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:23:17,945 10512985ms CountryController      GetCountryList     - 5/29/2017 12:23:17 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:23:17,946 10512986ms mCountryService        GetCountryList     - 5/29/2017 12:23:17 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:24:25,991 10581032ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:24:25 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:24:25,997 10581038ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:24:25 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:24:26,003 10581044ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:24:26 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:24:26,009 10581050ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:24:26 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:24:26,015 10581056ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:24:26 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:24:26,021 10581062ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:24:26 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:24:33,958 10588998ms CountryController      GetCountryList     - 5/29/2017 12:24:33 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:24:33,959 10588999ms mCountryService        GetCountryList     - 5/29/2017 12:24:33 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:24:41,850 10596891ms CountryController      GetCountryList     - 5/29/2017 12:24:41 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:24:41,851 10596892ms mCountryService        GetCountryList     - 5/29/2017 12:24:41 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:24:41,877 10596918ms CountryController      GetCountryList     - 5/29/2017 12:24:41 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:24:41,878 10596919ms mCountryService        GetCountryList     - 5/29/2017 12:24:41 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:24:41,880 10596921ms CountryController      GetCountryList     - 5/29/2017 12:24:41 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:24:41,881 10596922ms mCountryService        GetCountryList     - 5/29/2017 12:24:41 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:24:41,882 10596923ms CountryController      GetCountryList     - 5/29/2017 12:24:41 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:24:41,883 10596924ms mCountryService        GetCountryList     - 5/29/2017 12:24:41 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:24:53,566 10608607ms CountryController      GetCountryList     - 5/29/2017 12:24:53 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:24:53,567 10608608ms mCountryService        GetCountryList     - 5/29/2017 12:24:53 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:25:05,313 10620353ms CountryController      GetCountryList     - 5/29/2017 12:25:05 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:25:05,316 10620356ms mCountryService        GetCountryList     - 5/29/2017 12:25:05 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:25:05,352 10620392ms CountryController      GetCountryList     - 5/29/2017 12:25:05 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:25:05,353 10620393ms mCountryService        GetCountryList     - 5/29/2017 12:25:05 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:25:05,355 10620395ms CountryController      GetCountryList     - 5/29/2017 12:25:05 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:25:05,356 10620396ms mCountryService        GetCountryList     - 5/29/2017 12:25:05 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:25:13,872 10628913ms CountryController      GetCountryList     - 5/29/2017 12:25:13 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:25:13,874 10628915ms mCountryService        GetCountryList     - 5/29/2017 12:25:13 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:25:48,581 10663622ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:25:48 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:25:48,590 10663631ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:25:48 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:25:48,596 10663637ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:25:48 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:25:48,618 10663659ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:25:48 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:25:48,624 10663665ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:25:48 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:25:48,629 10663670ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:25:48 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:25:54,707 10669747ms CountryController      GetCountryList     - 5/29/2017 12:25:54 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:25:54,708 10669748ms mCountryService        GetCountryList     - 5/29/2017 12:25:54 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:25:56,086 10671127ms CountryController      GetCountryList     - 5/29/2017 12:25:56 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:25:56,086 10671127ms mCountryService        GetCountryList     - 5/29/2017 12:25:56 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:26:03,010 10678051ms CountryController      GetCountryList     - 5/29/2017 12:26:03 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:26:03,011 10678052ms mCountryService        GetCountryList     - 5/29/2017 12:26:03 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:26:03,046 10678087ms CountryController      GetCountryList     - 5/29/2017 12:26:03 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:26:03,047 10678088ms mCountryService        GetCountryList     - 5/29/2017 12:26:03 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:26:03,048 10678089ms CountryController      GetCountryList     - 5/29/2017 12:26:03 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:26:03,048 10678089ms mCountryService        GetCountryList     - 5/29/2017 12:26:03 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:29:36,355 10891395ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:29:36 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:29:36,363 10891403ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:29:36 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:29:36,370 10891410ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:29:36 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:29:36,378 10891418ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:29:36 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:29:36,385 10891425ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:29:36 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:29:36,392 10891432ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:29:36 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:29:43,406 10898447ms CountryController      GetCountryList     - 5/29/2017 12:29:43 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:29:43,407 10898448ms mCountryService        GetCountryList     - 5/29/2017 12:29:43 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:29:46,333 10901373ms CountryController      GetCountryList     - 5/29/2017 12:29:46 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:29:46,333 10901373ms mCountryService        GetCountryList     - 5/29/2017 12:29:46 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:29:58,497 10913538ms CountryController      GetCountryList     - 5/29/2017 12:29:58 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:29:58,498 10913539ms mCountryService        GetCountryList     - 5/29/2017 12:29:58 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:29:58,522 10913563ms CountryController      GetCountryList     - 5/29/2017 12:29:58 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:29:58,524 10913564ms mCountryService        GetCountryList     - 5/29/2017 12:29:58 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:29:58,526 10913566ms CountryController      GetCountryList     - 5/29/2017 12:29:58 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:29:58,527 10913567ms mCountryService        GetCountryList     - 5/29/2017 12:29:58 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:30:19,642 10934682ms CountryController      GetCountryList     - 5/29/2017 12:30:19 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:30:19,643 10934683ms mCountryService        GetCountryList     - 5/29/2017 12:30:19 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:30:19,700 10934740ms CountryController      GetCountryList     - 5/29/2017 12:30:19 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:30:19,701 10934741ms mCountryService        GetCountryList     - 5/29/2017 12:30:19 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:30:19,704 10934744ms CountryController      GetCountryList     - 5/29/2017 12:30:19 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:30:19,705 10934745ms mCountryService        GetCountryList     - 5/29/2017 12:30:19 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:30:19,705 10934745ms CountryController      GetCountryList     - 5/29/2017 12:30:19 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:30:19,706 10934746ms mCountryService        GetCountryList     - 5/29/2017 12:30:19 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:30:21,643 10936684ms CountryController      GetCountryList     - 5/29/2017 12:30:21 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:30:21,644 10936685ms mCountryService        GetCountryList     - 5/29/2017 12:30:21 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:30:30,768 10945808ms CountryController      GetCountryList     - 5/29/2017 12:30:30 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:30:30,770 10945810ms mCountryService        GetCountryList     - 5/29/2017 12:30:30 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:30:30,805 10945845ms CountryController      GetCountryList     - 5/29/2017 12:30:30 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:30:30,806 10945846ms mCountryService        GetCountryList     - 5/29/2017 12:30:30 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:30:30,807 10945847ms CountryController      GetCountryList     - 5/29/2017 12:30:30 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:30:30,808 10945848ms mCountryService        GetCountryList     - 5/29/2017 12:30:30 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:31:24,876 10999917ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:31:24 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:31:24,897 10999938ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:31:24 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:31:24,903 10999944ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:31:24 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:31:24,909 10999950ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:31:24 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:31:24,915 10999956ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:31:24 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:31:24,922 10999963ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:31:24 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:31:31,455 11006495ms CountryController      GetCountryList     - 5/29/2017 12:31:31 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:31:31,455 11006495ms mCountryService        GetCountryList     - 5/29/2017 12:31:31 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:31:33,420 11008461ms CountryController      GetCountryList     - 5/29/2017 12:31:33 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:31:33,421 11008462ms mCountryService        GetCountryList     - 5/29/2017 12:31:33 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:31:55,696 11030736ms CountryController      GetCountryList     - 5/29/2017 12:31:55 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:31:55,697 11030737ms mCountryService        GetCountryList     - 5/29/2017 12:31:55 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:31:55,740 11030780ms CountryController      GetCountryList     - 5/29/2017 12:31:55 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:31:55,741 11030781ms mCountryService        GetCountryList     - 5/29/2017 12:31:55 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:31:55,743 11030783ms CountryController      GetCountryList     - 5/29/2017 12:31:55 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:31:55,744 11030784ms mCountryService        GetCountryList     - 5/29/2017 12:31:55 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:31:57,083 11032124ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:31:57 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:31:57,089 11032130ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:31:57 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:31:57,095 11032136ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:31:57 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:31:57,106 11032147ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:31:57 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:31:57,112 11032153ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:31:57 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:31:57,118 11032159ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:31:57 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:32:25,867 11060907ms CountryController      GetCountryList     - 5/29/2017 12:32:25 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:32:25,868 11060908ms mCountryService        GetCountryList     - 5/29/2017 12:32:25 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:32:29,612 11064652ms CountryController      GetCountryList     - 5/29/2017 12:32:29 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:32:29,613 11064653ms mCountryService        GetCountryList     - 5/29/2017 12:32:29 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:32:36,321 11071361ms CountryController      GetCountryList     - 5/29/2017 12:32:36 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:32:36,322 11071362ms mCountryService        GetCountryList     - 5/29/2017 12:32:36 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:32:36,360 11071400ms CountryController      GetCountryList     - 5/29/2017 12:32:36 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:32:36,361 11071401ms mCountryService        GetCountryList     - 5/29/2017 12:32:36 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:32:36,362 11071402ms CountryController      GetCountryList     - 5/29/2017 12:32:36 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:32:36,363 11071403ms mCountryService        GetCountryList     - 5/29/2017 12:32:36 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:57:14,702  6678ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:57:14 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:57:14,850  6826ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:57:14 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:57:14,861  6837ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:57:14 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:57:14,875  6851ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:57:14 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:57:14,906  6882ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:57:14 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:57:14,915  6891ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:57:14 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:57:23,446 15422ms CountryController      GetCountryList     - 5/29/2017 12:57:23 PM Page Num : 0 Page Size : 10
+DEBUG 2017-05-29 12:57:23,502 15478ms mCountryService        GetCountryList     - 5/29/2017 12:57:23 PM vRows : 10 vStart : 0
+DEBUG 2017-05-29 12:57:58,472 50449ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 12:57:58 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 12:57:58,480 50457ms EmployeeContractRepo   ployeeContractList - 5/29/2017 12:57:58 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 12:57:58,509 50485ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 12:57:58 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 12:57:58,519 50495ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 12:57:58 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 12:57:58,527 50503ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 12:57:58 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 12:57:58,540 50516ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 12:57:58 PM JML Employee Training List: 0
+DEBUG 2017-05-29 12:58:05,099 57075ms CountryController      GetCountryList     - 5/29/2017 12:58:05 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:58:05,099 57075ms mCountryService        GetCountryList     - 5/29/2017 12:58:05 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:58:10,331 62307ms CountryController      GetCountryList     - 5/29/2017 12:58:10 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:58:10,332 62308ms mCountryService        GetCountryList     - 5/29/2017 12:58:10 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:58:14,400 66376ms CountryController      GetCountryList     - 5/29/2017 12:58:14 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:58:14,400 66376ms mCountryService        GetCountryList     - 5/29/2017 12:58:14 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:58:17,616 69592ms CountryController      GetCountryList     - 5/29/2017 12:58:17 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:58:17,616 69592ms mCountryService        GetCountryList     - 5/29/2017 12:58:17 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:58:22,568 74544ms CountryController      GetCountryList     - 5/29/2017 12:58:22 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:58:22,569 74545ms mCountryService        GetCountryList     - 5/29/2017 12:58:22 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 12:58:32,208 84184ms CountryController      GetCountryList     - 5/29/2017 12:58:32 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 12:58:32,209 84185ms mCountryService        GetCountryList     - 5/29/2017 12:58:32 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 12:58:33,343 85319ms CountryController      GetCountryList     - 5/29/2017 12:58:33 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 12:58:33,343 85319ms mCountryService        GetCountryList     - 5/29/2017 12:58:33 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:00:10,040 182016ms CountryController      GetCountryList     - 5/29/2017 1:00:10 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:00:10,041 182017ms mCountryService        GetCountryList     - 5/29/2017 1:00:10 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:00:14,270 186246ms CountryController      GetCountryList     - 5/29/2017 1:00:14 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 13:00:14,271 186247ms mCountryService        GetCountryList     - 5/29/2017 1:00:14 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 13:00:18,478 190454ms CountryController      GetCountryList     - 5/29/2017 1:00:18 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 13:00:18,479 190455ms mCountryService        GetCountryList     - 5/29/2017 1:00:18 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 13:03:24,748 376724ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 1:03:24 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 13:03:24,754 376730ms EmployeeContractRepo   ployeeContractList - 5/29/2017 1:03:24 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 13:03:24,761 376737ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 1:03:24 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 13:03:24,767 376743ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 1:03:24 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 13:03:24,773 376749ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 1:03:24 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 13:03:24,785 376761ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 1:03:24 PM JML Employee Training List: 0
+DEBUG 2017-05-29 13:03:30,150 382126ms CountryController      GetCountryList     - 5/29/2017 1:03:30 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:03:30,151 382127ms mCountryService        GetCountryList     - 5/29/2017 1:03:30 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:03:32,527 384503ms CountryController      GetCountryList     - 5/29/2017 1:03:32 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:03:32,528 384504ms mCountryService        GetCountryList     - 5/29/2017 1:03:32 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:03:33,955 385931ms CountryController      GetCountryList     - 5/29/2017 1:03:33 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:03:33,956 385932ms mCountryService        GetCountryList     - 5/29/2017 1:03:33 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:03:36,035 388011ms CountryController      GetCountryList     - 5/29/2017 1:03:36 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:03:36,036 388012ms mCountryService        GetCountryList     - 5/29/2017 1:03:36 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:03:36,757 388733ms CountryController      GetCountryList     - 5/29/2017 1:03:36 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:03:36,758 388734ms mCountryService        GetCountryList     - 5/29/2017 1:03:36 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:03:37,482 389458ms CountryController      GetCountryList     - 5/29/2017 1:03:37 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:03:37,483 389459ms mCountryService        GetCountryList     - 5/29/2017 1:03:37 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:03:39,812 391788ms CountryController      GetCountryList     - 5/29/2017 1:03:39 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 13:03:39,813 391789ms mCountryService        GetCountryList     - 5/29/2017 1:03:39 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 13:03:40,220 392196ms CountryController      GetCountryList     - 5/29/2017 1:03:40 PM Page Num : 2 Page Size : 15
+DEBUG 2017-05-29 13:03:40,221 392197ms mCountryService        GetCountryList     - 5/29/2017 1:03:40 PM vRows : 15 vStart : 30
+DEBUG 2017-05-29 13:03:44,588 396564ms CountryController      GetCountryList     - 5/29/2017 1:03:44 PM Page Num : 2 Page Size : 15
+DEBUG 2017-05-29 13:03:44,589 396565ms mCountryService        GetCountryList     - 5/29/2017 1:03:44 PM vRows : 15 vStart : 30
+DEBUG 2017-05-29 13:03:44,591 396567ms CountryController      GetCountryList     - 5/29/2017 1:03:44 PM Page Num : 2 Page Size : 15
+DEBUG 2017-05-29 13:03:44,591 396567ms mCountryService        GetCountryList     - 5/29/2017 1:03:44 PM vRows : 15 vStart : 30
+DEBUG 2017-05-29 13:03:44,594 396570ms CountryController      GetCountryList     - 5/29/2017 1:03:44 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:03:44,595 396571ms mCountryService        GetCountryList     - 5/29/2017 1:03:44 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:03:52,061 404037ms CountryController      GetCountryList     - 5/29/2017 1:03:52 PM Page Num : 15 Page Size : 15
+DEBUG 2017-05-29 13:03:52,062 404038ms mCountryService        GetCountryList     - 5/29/2017 1:03:52 PM vRows : 15 vStart : 225
+DEBUG 2017-05-29 13:03:54,348 406324ms CountryController      GetCountryList     - 5/29/2017 1:03:54 PM Page Num : 14 Page Size : 15
+DEBUG 2017-05-29 13:03:54,349 406325ms mCountryService        GetCountryList     - 5/29/2017 1:03:54 PM vRows : 15 vStart : 210
+DEBUG 2017-05-29 13:03:54,860 406836ms CountryController      GetCountryList     - 5/29/2017 1:03:54 PM Page Num : 13 Page Size : 15
+DEBUG 2017-05-29 13:03:54,861 406837ms mCountryService        GetCountryList     - 5/29/2017 1:03:54 PM vRows : 15 vStart : 195
+DEBUG 2017-05-29 13:03:55,237 407213ms CountryController      GetCountryList     - 5/29/2017 1:03:55 PM Page Num : 12 Page Size : 15
+DEBUG 2017-05-29 13:03:55,237 407213ms mCountryService        GetCountryList     - 5/29/2017 1:03:55 PM vRows : 15 vStart : 180
+DEBUG 2017-05-29 13:03:55,469 407445ms CountryController      GetCountryList     - 5/29/2017 1:03:55 PM Page Num : 11 Page Size : 15
+DEBUG 2017-05-29 13:03:55,470 407446ms mCountryService        GetCountryList     - 5/29/2017 1:03:55 PM vRows : 15 vStart : 165
+DEBUG 2017-05-29 13:03:55,693 407669ms CountryController      GetCountryList     - 5/29/2017 1:03:55 PM Page Num : 10 Page Size : 15
+DEBUG 2017-05-29 13:03:55,694 407670ms mCountryService        GetCountryList     - 5/29/2017 1:03:55 PM vRows : 15 vStart : 150
+DEBUG 2017-05-29 13:03:55,892 407868ms CountryController      GetCountryList     - 5/29/2017 1:03:55 PM Page Num : 9 Page Size : 15
+DEBUG 2017-05-29 13:03:55,893 407869ms mCountryService        GetCountryList     - 5/29/2017 1:03:55 PM vRows : 15 vStart : 135
+DEBUG 2017-05-29 13:03:56,110 408086ms CountryController      GetCountryList     - 5/29/2017 1:03:56 PM Page Num : 8 Page Size : 15
+DEBUG 2017-05-29 13:03:56,111 408087ms mCountryService        GetCountryList     - 5/29/2017 1:03:56 PM vRows : 15 vStart : 120
+DEBUG 2017-05-29 13:03:56,315 408291ms CountryController      GetCountryList     - 5/29/2017 1:03:56 PM Page Num : 7 Page Size : 15
+DEBUG 2017-05-29 13:03:56,316 408292ms mCountryService        GetCountryList     - 5/29/2017 1:03:56 PM vRows : 15 vStart : 105
+DEBUG 2017-05-29 13:03:56,516 408492ms CountryController      GetCountryList     - 5/29/2017 1:03:56 PM Page Num : 6 Page Size : 15
+DEBUG 2017-05-29 13:03:56,517 408493ms mCountryService        GetCountryList     - 5/29/2017 1:03:56 PM vRows : 15 vStart : 90
+DEBUG 2017-05-29 13:03:56,765 408741ms CountryController      GetCountryList     - 5/29/2017 1:03:56 PM Page Num : 5 Page Size : 15
+DEBUG 2017-05-29 13:03:56,765 408741ms mCountryService        GetCountryList     - 5/29/2017 1:03:56 PM vRows : 15 vStart : 75
+DEBUG 2017-05-29 13:03:57,054 409030ms CountryController      GetCountryList     - 5/29/2017 1:03:57 PM Page Num : 4 Page Size : 15
+DEBUG 2017-05-29 13:03:57,055 409031ms mCountryService        GetCountryList     - 5/29/2017 1:03:57 PM vRows : 15 vStart : 60
+DEBUG 2017-05-29 13:03:57,276 409252ms CountryController      GetCountryList     - 5/29/2017 1:03:57 PM Page Num : 3 Page Size : 15
+DEBUG 2017-05-29 13:03:57,277 409253ms mCountryService        GetCountryList     - 5/29/2017 1:03:57 PM vRows : 15 vStart : 45
+DEBUG 2017-05-29 13:03:57,475 409451ms CountryController      GetCountryList     - 5/29/2017 1:03:57 PM Page Num : 2 Page Size : 15
+DEBUG 2017-05-29 13:03:57,476 409452ms mCountryService        GetCountryList     - 5/29/2017 1:03:57 PM vRows : 15 vStart : 30
+DEBUG 2017-05-29 13:03:57,708 409684ms CountryController      GetCountryList     - 5/29/2017 1:03:57 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 13:03:57,709 409685ms mCountryService        GetCountryList     - 5/29/2017 1:03:57 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 13:03:58,108 410084ms CountryController      GetCountryList     - 5/29/2017 1:03:58 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:03:58,109 410085ms mCountryService        GetCountryList     - 5/29/2017 1:03:58 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:03:58,916 410892ms CountryController      GetCountryList     - 5/29/2017 1:03:58 PM Page Num : 15 Page Size : 15
+DEBUG 2017-05-29 13:03:58,916 410892ms mCountryService        GetCountryList     - 5/29/2017 1:03:58 PM vRows : 15 vStart : 225
+DEBUG 2017-05-29 13:03:59,796 411772ms CountryController      GetCountryList     - 5/29/2017 1:03:59 PM Page Num : 14 Page Size : 15
+DEBUG 2017-05-29 13:03:59,796 411772ms mCountryService        GetCountryList     - 5/29/2017 1:03:59 PM vRows : 15 vStart : 210
+DEBUG 2017-05-29 13:04:00,742 412718ms CountryController      GetCountryList     - 5/29/2017 1:04:00 PM Page Num : 15 Page Size : 15
+DEBUG 2017-05-29 13:04:00,743 412719ms mCountryService        GetCountryList     - 5/29/2017 1:04:00 PM vRows : 15 vStart : 225
+DEBUG 2017-05-29 13:04:01,516 413492ms CountryController      GetCountryList     - 5/29/2017 1:04:01 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:04:01,516 413492ms mCountryService        GetCountryList     - 5/29/2017 1:04:01 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:04:04,156 416132ms CountryController      GetCountryList     - 5/29/2017 1:04:04 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 13:04:04,156 416132ms mCountryService        GetCountryList     - 5/29/2017 1:04:04 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 13:04:07,867 419843ms CountryController      GetCountryList     - 5/29/2017 1:04:07 PM Page Num : 1 Page Size : 15
+DEBUG 2017-05-29 13:04:07,869 419845ms mCountryService        GetCountryList     - 5/29/2017 1:04:07 PM vRows : 15 vStart : 15
+DEBUG 2017-05-29 13:04:07,870 419846ms CountryController      GetCountryList     - 5/29/2017 1:04:07 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:04:07,870 419846ms mCountryService        GetCountryList     - 5/29/2017 1:04:07 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:07:09,099 601075ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 1:07:09 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 13:07:09,106 601082ms EmployeeContractRepo   ployeeContractList - 5/29/2017 1:07:09 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 13:07:09,114 601090ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 1:07:09 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 13:07:09,121 601097ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 1:07:09 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 13:07:09,128 601104ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 1:07:09 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 13:07:09,148 601124ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 1:07:09 PM JML Employee Training List: 0
+DEBUG 2017-05-29 13:07:14,212 606188ms CountryController      GetCountryList     - 5/29/2017 1:07:14 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:07:14,213 606189ms mCountryService        GetCountryList     - 5/29/2017 1:07:14 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:07:28,945 620922ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 1:07:28 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 13:07:28,968 620944ms EmployeeContractRepo   ployeeContractList - 5/29/2017 1:07:28 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 13:07:28,974 620950ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 1:07:28 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 13:07:28,981 620957ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 1:07:28 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 13:07:28,988 620964ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 1:07:28 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 13:07:28,995 620971ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 1:07:28 PM JML Employee Training List: 0
+DEBUG 2017-05-29 13:07:34,196 626172ms CountryController      GetCountryList     - 5/29/2017 1:07:34 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:07:34,196 626172ms mCountryService        GetCountryList     - 5/29/2017 1:07:34 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:21:55,327 1487303ms CountryController      GetCountryList     - 5/29/2017 1:21:55 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:21:55,328 1487304ms mCountryService        GetCountryList     - 5/29/2017 1:21:55 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:31:19,081 2051057ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 1:31:19 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 13:31:19,091 2051067ms EmployeeContractRepo   ployeeContractList - 5/29/2017 1:31:19 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 13:31:19,098 2051074ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 1:31:19 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 13:31:19,107 2051083ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 1:31:19 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 13:31:19,122 2051098ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 1:31:19 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 13:31:19,130 2051106ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 1:31:19 PM JML Employee Training List: 0
+DEBUG 2017-05-29 13:31:28,275 2060251ms CountryController      GetCountryList     - 5/29/2017 1:31:28 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:31:28,275 2060251ms mCountryService        GetCountryList     - 5/29/2017 1:31:28 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:32:02,223 2094199ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 1:32:02 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 13:32:02,235 2094211ms EmployeeContractRepo   ployeeContractList - 5/29/2017 1:32:02 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 13:32:02,241 2094217ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 1:32:02 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 13:32:02,248 2094224ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 1:32:02 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 13:32:02,254 2094230ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 1:32:02 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 13:32:02,260 2094236ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 1:32:02 PM JML Employee Training List: 0
+DEBUG 2017-05-29 13:32:10,266 2102242ms CountryController      GetCountryList     - 5/29/2017 1:32:10 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:32:10,267 2102243ms mCountryService        GetCountryList     - 5/29/2017 1:32:10 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:32:56,404 2148380ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 1:32:56 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 13:32:56,413 2148389ms EmployeeContractRepo   ployeeContractList - 5/29/2017 1:32:56 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 13:32:56,419 2148395ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 1:32:56 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 13:32:56,426 2148402ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 1:32:56 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 13:32:56,433 2148409ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 1:32:56 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 13:32:56,440 2148416ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 1:32:56 PM JML Employee Training List: 0
+DEBUG 2017-05-29 13:33:14,500 2166476ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 1:33:14 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 13:33:14,507 2166483ms EmployeeContractRepo   ployeeContractList - 5/29/2017 1:33:14 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 13:33:14,513 2166490ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 1:33:14 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 13:33:14,532 2166509ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 1:33:14 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 13:33:14,538 2166515ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 1:33:14 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 13:33:14,549 2166526ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 1:33:14 PM JML Employee Training List: 0
+DEBUG 2017-05-29 13:33:19,370 2171346ms CountryController      GetCountryList     - 5/29/2017 1:33:19 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:33:19,371 2171347ms mCountryService        GetCountryList     - 5/29/2017 1:33:19 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:39:13,999 2525975ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 1:39:13 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 13:39:14,008 2525984ms EmployeeContractRepo   ployeeContractList - 5/29/2017 1:39:14 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 13:39:14,014 2525990ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 1:39:14 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 13:39:14,020 2525996ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 1:39:14 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 13:39:14,026 2526002ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 1:39:14 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 13:39:14,032 2526008ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 1:39:14 PM JML Employee Training List: 0
+DEBUG 2017-05-29 13:39:19,063 2531039ms CountryController      GetCountryList     - 5/29/2017 1:39:19 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:39:19,064 2531040ms mCountryService        GetCountryList     - 5/29/2017 1:39:19 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 13:39:41,229 2553205ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 1:39:41 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 13:39:41,247 2553223ms EmployeeContractRepo   ployeeContractList - 5/29/2017 1:39:41 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 13:39:41,272 2553248ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 1:39:41 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 13:39:41,278 2553254ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 1:39:41 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 13:39:41,314 2553290ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 1:39:41 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 13:39:41,342 2553318ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 1:39:41 PM JML Employee Training List: 0
+DEBUG 2017-05-29 13:39:46,471 2558447ms CountryController      GetCountryList     - 5/29/2017 1:39:46 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 13:39:46,471 2558447ms mCountryService        GetCountryList     - 5/29/2017 1:39:46 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:01:07,812  4792ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:01:07 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:01:07,858  4838ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:01:07 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:01:07,875  4855ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:01:07 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:01:07,896  4875ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:01:07 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:01:07,904  4883ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:01:07 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:01:07,912  4891ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:01:07 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:01:28,570 25549ms CountryController      GetCountryList     - 5/29/2017 2:01:28 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:01:28,572 25551ms mCountryService        GetCountryList     - 5/29/2017 2:01:28 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:02:06,197 63177ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:02:06 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:02:06,209 63189ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:02:06 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:02:06,216 63196ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:02:06 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:02:06,225 63205ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:02:06 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:02:06,230 63210ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:02:06 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:02:06,237 63217ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:02:06 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:02:12,734 69714ms CountryController      GetCountryList     - 5/29/2017 2:02:12 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:02:12,735 69715ms mCountryService        GetCountryList     - 5/29/2017 2:02:12 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:02:38,276 95256ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:02:38 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:02:38,283 95263ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:02:38 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:02:38,297 95277ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:02:38 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:02:38,307 95287ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:02:38 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:02:38,314 95294ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:02:38 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:02:38,321 95301ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:02:38 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:02:44,270 101250ms CountryController      GetCountryList     - 5/29/2017 2:02:44 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:02:44,271 101251ms mCountryService        GetCountryList     - 5/29/2017 2:02:44 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:03:15,019 131999ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:03:15 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:03:15,028 132008ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:03:15 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:03:15,036 132016ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:03:15 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:03:15,042 132022ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:03:15 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:03:15,049 132029ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:03:15 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:03:15,058 132038ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:03:15 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:03:19,373 136353ms CountryController      GetCountryList     - 5/29/2017 2:03:19 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:03:19,374 136354ms mCountryService        GetCountryList     - 5/29/2017 2:03:19 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:03:50,171 167151ms CountryController      GetCountryList     - 5/29/2017 2:03:50 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:03:50,172 167152ms mCountryService        GetCountryList     - 5/29/2017 2:03:50 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:03:51,274 168254ms CountryController      GetCountryList     - 5/29/2017 2:03:51 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:03:51,274 168254ms mCountryService        GetCountryList     - 5/29/2017 2:03:51 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:03:52,202 169182ms CountryController      GetCountryList     - 5/29/2017 2:03:52 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:03:52,203 169183ms mCountryService        GetCountryList     - 5/29/2017 2:03:52 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:04:31,867 208847ms CountryController      GetCountryList     - 5/29/2017 2:04:31 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:04:31,867 208847ms mCountryService        GetCountryList     - 5/29/2017 2:04:31 PM vRows : 15 vStart : 0
+ERROR 2017-05-29 14:04:31,874 208854ms CountryRepo            getCountryList     - 5/29/2017 2:04:31 PM GetCountryList Failed
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND ( country_name LIKE '%in%')' at line 2
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mCountryRepo.getCountryList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCountryRepo.cs:line 69
+DEBUG 2017-05-29 14:04:46,538 223518ms CountryController      GetCountryList     - 5/29/2017 2:04:46 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:04:46,539 223519ms mCountryService        GetCountryList     - 5/29/2017 2:04:46 PM vRows : 15 vStart : 0
+ERROR 2017-05-29 14:04:46,545 223525ms CountryRepo            getCountryList     - 5/29/2017 2:04:46 PM GetCountryList Failed
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND ( country_name LIKE '%aus%')' at line 2
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mCountryRepo.getCountryList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCountryRepo.cs:line 69
+DEBUG 2017-05-29 14:04:52,891 229871ms CountryController      GetCountryList     - 5/29/2017 2:04:52 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:04:52,892 229872ms mCountryService        GetCountryList     - 5/29/2017 2:04:52 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:05:17,918 254898ms CountryController      GetCountryList     - 5/29/2017 2:05:17 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:05:17,919 254899ms mCountryService        GetCountryList     - 5/29/2017 2:05:17 PM vRows : 15 vStart : 0
+ERROR 2017-05-29 14:05:17,935 254915ms CountryRepo            getCountryList     - 5/29/2017 2:05:17 PM GetCountryList Failed
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND ( country_name LIKE '%ame%')' at line 2
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mCountryRepo.getCountryList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCountryRepo.cs:line 69
+DEBUG 2017-05-29 14:08:08,301  7962ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:08:08 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:08:08,359  8020ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:08:08 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:08:08,369  8030ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:08:08 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:08:08,381  8042ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:08:08 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:08:08,396  8057ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:08:08 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:08:08,404  8065ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:08:08 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:08:13,313 12974ms CountryController      GetCountryList     - 5/29/2017 2:08:13 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:08:13,315 12976ms mCountryService        GetCountryList     - 5/29/2017 2:08:13 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:08:13,318 12979ms CountryRepo            getCountryList     - 5/29/2017 2:08:13 PM pWHERE : 
+DEBUG 2017-05-29 14:09:18,451 78112ms CountryController      GetCountryList     - 5/29/2017 2:09:18 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:09:18,452 78113ms mCountryService        GetCountryList     - 5/29/2017 2:09:18 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:09:18,452 78113ms CountryRepo            getCountryList     - 5/29/2017 2:09:18 PM pWHERE :  AND ( country_name LIKE '%ind%')
+ERROR 2017-05-29 14:09:18,488 78150ms CountryRepo            getCountryList     - 5/29/2017 2:09:18 PM GetCountryList Failed
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND ( country_name LIKE '%ind%')' at line 2
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mCountryRepo.getCountryList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCountryRepo.cs:line 71
+DEBUG 2017-05-29 14:12:04,873    55ms CountryController      GetCountryList     - 5/29/2017 2:12:04 PM WHERE :  WHERE ( country_name LIKE '%ind%')
+DEBUG 2017-05-29 14:12:04,897    79ms CountryController      GetCountryList     - 5/29/2017 2:12:04 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:12:04,898    80ms mCountryService        GetCountryList     - 5/29/2017 2:12:04 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:12:04,905    87ms CountryRepo            getCountryList     - 5/29/2017 2:12:04 PM pWHERE :  WHERE ( country_name LIKE '%ind%')
+DEBUG 2017-05-29 14:12:19,819 15001ms CountryController      GetCountryList     - 5/29/2017 2:12:19 PM WHERE :  WHERE ( country_name LIKE '%ameri%')
+DEBUG 2017-05-29 14:12:19,819 15001ms CountryController      GetCountryList     - 5/29/2017 2:12:19 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:12:19,820 15002ms mCountryService        GetCountryList     - 5/29/2017 2:12:19 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:12:19,820 15002ms CountryRepo            getCountryList     - 5/29/2017 2:12:19 PM pWHERE :  WHERE ( country_name LIKE '%ameri%')
+DEBUG 2017-05-29 14:12:26,935 22117ms CountryController      GetCountryList     - 5/29/2017 2:12:26 PM WHERE :  WHERE ( country_name = 'am')
+DEBUG 2017-05-29 14:12:26,935 22117ms CountryController      GetCountryList     - 5/29/2017 2:12:26 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:12:26,936 22118ms mCountryService        GetCountryList     - 5/29/2017 2:12:26 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:12:26,936 22118ms CountryRepo            getCountryList     - 5/29/2017 2:12:26 PM pWHERE :  WHERE ( country_name = 'am')
+DEBUG 2017-05-29 14:12:39,767 34949ms CountryController      GetCountryList     - 5/29/2017 2:12:39 PM WHERE :  WHERE ( country_name LIKE '%am%')
+DEBUG 2017-05-29 14:12:39,768 34950ms CountryController      GetCountryList     - 5/29/2017 2:12:39 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:12:39,768 34950ms mCountryService        GetCountryList     - 5/29/2017 2:12:39 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:12:39,769 34951ms CountryRepo            getCountryList     - 5/29/2017 2:12:39 PM pWHERE :  WHERE ( country_name LIKE '%am%')
+DEBUG 2017-05-29 14:13:34,976 90158ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:13:34 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:13:34,985 90167ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:13:34 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:13:34,998 90180ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:13:34 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:13:35,007 90189ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:13:35 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:13:35,028 90210ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:13:35 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:13:35,058 90240ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:13:35 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:13:40,385 95567ms CountryController      GetCountryList     - 5/29/2017 2:13:40 PM WHERE : 
+DEBUG 2017-05-29 14:13:40,386 95568ms CountryController      GetCountryList     - 5/29/2017 2:13:40 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:13:40,386 95568ms mCountryService        GetCountryList     - 5/29/2017 2:13:40 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:13:40,387 95569ms CountryRepo            getCountryList     - 5/29/2017 2:13:40 PM pWHERE : 
+DEBUG 2017-05-29 14:14:54,735 169917ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:14:54 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:14:54,741 169923ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:14:54 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:14:54,754 169936ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:14:54 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:14:54,770 169952ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:14:54 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:14:54,785 169967ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:14:54 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:14:54,801 169983ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:14:54 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:14:59,561 174743ms CountryController      GetCountryList     - 5/29/2017 2:14:59 PM WHERE : 
+DEBUG 2017-05-29 14:14:59,561 174743ms CountryController      GetCountryList     - 5/29/2017 2:14:59 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:14:59,562 174744ms mCountryService        GetCountryList     - 5/29/2017 2:14:59 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:14:59,562 174744ms CountryRepo            getCountryList     - 5/29/2017 2:14:59 PM pWHERE : 
+DEBUG 2017-05-29 14:15:24,294 199476ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:15:24 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:15:24,301 199483ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:15:24 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:15:24,317 199499ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:15:24 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:15:24,324 199506ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:15:24 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:15:24,336 199518ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:15:24 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:15:24,348 199530ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:15:24 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:15:29,024 204206ms CountryController      GetCountryList     - 5/29/2017 2:15:29 PM WHERE : 
+DEBUG 2017-05-29 14:15:29,025 204207ms CountryController      GetCountryList     - 5/29/2017 2:15:29 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:15:29,026 204208ms mCountryService        GetCountryList     - 5/29/2017 2:15:29 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:15:29,026 204208ms CountryRepo            getCountryList     - 5/29/2017 2:15:29 PM pWHERE : 
+DEBUG 2017-05-29 14:15:39,541 214723ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:15:39 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:15:39,551 214733ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:15:39 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:15:39,558 214740ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:15:39 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:15:39,571 214753ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:15:39 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:15:39,576 214758ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:15:39 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:15:39,582 214764ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:15:39 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:15:44,431 219613ms CountryController      GetCountryList     - 5/29/2017 2:15:44 PM WHERE : 
+DEBUG 2017-05-29 14:15:44,432 219614ms CountryController      GetCountryList     - 5/29/2017 2:15:44 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:15:44,432 219614ms mCountryService        GetCountryList     - 5/29/2017 2:15:44 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:15:44,433 219615ms CountryRepo            getCountryList     - 5/29/2017 2:15:44 PM pWHERE : 
+DEBUG 2017-05-29 14:16:11,293 246475ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:16:11 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:16:11,303 246485ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:16:11 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:16:11,328 246510ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:16:11 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:16:11,334 246516ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:16:11 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:16:11,346 246528ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:16:11 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:16:11,361 246543ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:16:11 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:16:19,136 254318ms CountryController      GetCountryList     - 5/29/2017 2:16:19 PM WHERE : 
+DEBUG 2017-05-29 14:16:19,137 254319ms CountryController      GetCountryList     - 5/29/2017 2:16:19 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:16:19,137 254319ms mCountryService        GetCountryList     - 5/29/2017 2:16:19 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:16:19,138 254320ms CountryRepo            getCountryList     - 5/29/2017 2:16:19 PM pWHERE : 
+DEBUG 2017-05-29 14:18:18,770 373952ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:18:18 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:18:18,777 373959ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:18:18 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:18:18,784 373966ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:18:18 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:18:18,790 373972ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:18:18 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:18:18,798 373980ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:18:18 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:18:18,803 373985ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:18:18 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:18:24,951 380133ms CountryController      GetCountryList     - 5/29/2017 2:18:24 PM WHERE : 
+DEBUG 2017-05-29 14:18:24,952 380134ms CountryController      GetCountryList     - 5/29/2017 2:18:24 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:18:24,952 380134ms mCountryService        GetCountryList     - 5/29/2017 2:18:24 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:18:24,953 380135ms CountryRepo            getCountryList     - 5/29/2017 2:18:24 PM pWHERE : 
+DEBUG 2017-05-29 14:18:33,745 388927ms CountryController      GetCountryList     - 5/29/2017 2:18:33 PM WHERE : 
+DEBUG 2017-05-29 14:18:33,746 388928ms CountryController      GetCountryList     - 5/29/2017 2:18:33 PM Page Num : 0 Page Size : 20
+DEBUG 2017-05-29 14:18:33,746 388928ms mCountryService        GetCountryList     - 5/29/2017 2:18:33 PM vRows : 20 vStart : 0
+DEBUG 2017-05-29 14:18:33,747 388929ms CountryRepo            getCountryList     - 5/29/2017 2:18:33 PM pWHERE : 
+DEBUG 2017-05-29 14:18:37,891 393073ms CountryController      GetCountryList     - 5/29/2017 2:18:37 PM WHERE : 
+DEBUG 2017-05-29 14:18:37,892 393074ms CountryController      GetCountryList     - 5/29/2017 2:18:37 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:18:37,893 393075ms mCountryService        GetCountryList     - 5/29/2017 2:18:37 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:18:37,894 393076ms CountryRepo            getCountryList     - 5/29/2017 2:18:37 PM pWHERE : 
+DEBUG 2017-05-29 14:19:49,192 464374ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:19:49 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:19:49,198 464380ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:19:49 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:19:49,204 464386ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:19:49 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:19:49,210 464392ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:19:49 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:19:49,218 464400ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:19:49 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:19:49,224 464406ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:19:49 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:19:54,718 469900ms CountryController      GetCountryList     - 5/29/2017 2:19:54 PM WHERE : 
+DEBUG 2017-05-29 14:19:54,719 469901ms CountryController      GetCountryList     - 5/29/2017 2:19:54 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:19:54,719 469901ms mCountryService        GetCountryList     - 5/29/2017 2:19:54 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:19:54,720 469902ms CountryRepo            getCountryList     - 5/29/2017 2:19:54 PM pWHERE : 
+DEBUG 2017-05-29 14:20:19,998 495180ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:20:19 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:20:20,005 495187ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:20:20 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:20:20,013 495195ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:20:20 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:20:20,021 495203ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:20:20 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:20:20,026 495208ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:20:20 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:20:20,033 495215ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:20:20 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:20:28,301 503483ms CountryController      GetCountryList     - 5/29/2017 2:20:28 PM WHERE : 
+DEBUG 2017-05-29 14:20:28,302 503484ms CountryController      GetCountryList     - 5/29/2017 2:20:28 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:20:28,303 503485ms mCountryService        GetCountryList     - 5/29/2017 2:20:28 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:20:28,303 503485ms CountryRepo            getCountryList     - 5/29/2017 2:20:28 PM pWHERE : 
+DEBUG 2017-05-29 14:23:37,516 692698ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:23:37 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:23:37,539 692721ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:23:37 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:23:37,585 692767ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:23:37 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:23:37,627 692809ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:23:37 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:23:37,693 692875ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:23:37 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:23:37,768 692949ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:23:37 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:23:47,317 702499ms CountryController      GetCountryList     - 5/29/2017 2:23:47 PM WHERE : 
+DEBUG 2017-05-29 14:23:47,318 702500ms CountryController      GetCountryList     - 5/29/2017 2:23:47 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:23:47,318 702500ms mCountryService        GetCountryList     - 5/29/2017 2:23:47 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:23:47,319 702501ms CountryRepo            getCountryList     - 5/29/2017 2:23:47 PM pWHERE : 
+DEBUG 2017-05-29 14:24:53,848 769030ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:24:53 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:24:53,861 769043ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:24:53 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:24:53,869 769051ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:24:53 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:24:53,876 769058ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:24:53 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:24:53,888 769070ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:24:53 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:24:53,894 769076ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:24:53 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:25:01,123 776305ms CountryController      GetCountryList     - 5/29/2017 2:25:01 PM WHERE : 
+DEBUG 2017-05-29 14:25:01,124 776306ms CountryController      GetCountryList     - 5/29/2017 2:25:01 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:25:01,124 776306ms mCountryService        GetCountryList     - 5/29/2017 2:25:01 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:25:01,125 776307ms CountryRepo            getCountryList     - 5/29/2017 2:25:01 PM pWHERE : 
+DEBUG 2017-05-29 14:25:11,595 786777ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:25:11 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:25:11,630 786812ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:25:11 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:25:11,639 786821ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:25:11 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:25:11,645 786827ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:25:11 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:25:11,651 786833ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:25:11 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:25:11,659 786841ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:25:11 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:25:19,395 794577ms CountryController      GetCountryList     - 5/29/2017 2:25:19 PM WHERE : 
+DEBUG 2017-05-29 14:25:19,396 794578ms CountryController      GetCountryList     - 5/29/2017 2:25:19 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:25:19,397 794579ms mCountryService        GetCountryList     - 5/29/2017 2:25:19 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:25:19,397 794579ms CountryRepo            getCountryList     - 5/29/2017 2:25:19 PM pWHERE : 
+DEBUG 2017-05-29 14:26:02,968 838150ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:26:02 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:26:03,030 838212ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:26:03 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:26:03,037 838219ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:26:03 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:26:03,046 838228ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:26:03 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:26:03,053 838235ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:26:03 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:26:03,060 838242ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:26:03 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:26:07,972 843154ms CountryController      GetCountryList     - 5/29/2017 2:26:07 PM WHERE : 
+DEBUG 2017-05-29 14:26:07,973 843155ms CountryController      GetCountryList     - 5/29/2017 2:26:07 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:26:07,973 843155ms mCountryService        GetCountryList     - 5/29/2017 2:26:07 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:26:07,974 843156ms CountryRepo            getCountryList     - 5/29/2017 2:26:07 PM pWHERE : 
+DEBUG 2017-05-29 14:26:20,301 855483ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:26:20 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:26:20,309 855491ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:26:20 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:26:20,316 855498ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:26:20 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:26:20,322 855504ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:26:20 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:26:20,330 855512ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:26:20 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:26:20,336 855518ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:26:20 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:26:25,260 860442ms CountryController      GetCountryList     - 5/29/2017 2:26:25 PM WHERE : 
+DEBUG 2017-05-29 14:26:25,260 860442ms CountryController      GetCountryList     - 5/29/2017 2:26:25 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:26:25,260 860442ms mCountryService        GetCountryList     - 5/29/2017 2:26:25 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:26:25,261 860443ms CountryRepo            getCountryList     - 5/29/2017 2:26:25 PM pWHERE : 
+DEBUG 2017-05-29 14:53:01,457  5016ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 2:53:01 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 14:53:01,491  5050ms EmployeeContractRepo   ployeeContractList - 5/29/2017 2:53:01 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 14:53:01,500  5059ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 2:53:01 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 14:53:01,513  5072ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 2:53:01 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 14:53:01,521  5080ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 2:53:01 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 14:53:01,542  5101ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 2:53:01 PM JML Employee Training List: 0
+DEBUG 2017-05-29 14:53:09,195 12754ms CountryController      GetCountryList     - 5/29/2017 2:53:09 PM WHERE : 
+DEBUG 2017-05-29 14:53:09,196 12755ms CountryController      GetCountryList     - 5/29/2017 2:53:09 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:53:09,197 12756ms mCountryService        GetCountryList     - 5/29/2017 2:53:09 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:53:09,200 12759ms CountryRepo            getCountryList     - 5/29/2017 2:53:09 PM pWHERE : 
+DEBUG 2017-05-29 14:53:12,439 15998ms CountryController      GetCountryList     - 5/29/2017 2:53:12 PM WHERE : 
+DEBUG 2017-05-29 14:53:12,440 15999ms CountryController      GetCountryList     - 5/29/2017 2:53:12 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:53:12,440 15999ms mCountryService        GetCountryList     - 5/29/2017 2:53:12 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:53:12,441 16000ms CountryRepo            getCountryList     - 5/29/2017 2:53:12 PM pWHERE : 
+DEBUG 2017-05-29 14:58:47,405 350964ms CountryController      GetCountryList     - 5/29/2017 2:58:47 PM WHERE : 
+DEBUG 2017-05-29 14:58:47,405 350964ms CountryController      GetCountryList     - 5/29/2017 2:58:47 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 14:58:47,406 350965ms mCountryService        GetCountryList     - 5/29/2017 2:58:47 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 14:58:47,406 350965ms CountryRepo            getCountryList     - 5/29/2017 2:58:47 PM pWHERE : 
+DEBUG 2017-05-29 15:08:54,331 957889ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:08:54 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:08:54,345 957903ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:08:54 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:08:54,352 957910ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:08:54 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:08:54,358 957916ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:08:54 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:08:54,366 957924ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:08:54 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:08:54,373 957931ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:08:54 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:09:05,330 968888ms CountryController      GetCountryList     - 5/29/2017 3:09:05 PM WHERE : 
+DEBUG 2017-05-29 15:09:05,331 968889ms CountryController      GetCountryList     - 5/29/2017 3:09:05 PM Page Num : 0 Page Size : 15
+DEBUG 2017-05-29 15:09:05,331 968889ms mCountryService        GetCountryList     - 5/29/2017 3:09:05 PM vRows : 15 vStart : 0
+DEBUG 2017-05-29 15:09:05,332 968890ms CountryRepo            getCountryList     - 5/29/2017 3:09:05 PM pWHERE : 
+DEBUG 2017-05-29 15:13:59,530 1263089ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:13:59 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:13:59,538 1263097ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:13:59 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:13:59,547 1263106ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:13:59 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:13:59,554 1263113ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:13:59 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:13:59,561 1263120ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:13:59 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:13:59,567 1263126ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:13:59 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:44:32,595  4281ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:44:32 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:44:32,614  4300ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:44:32 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:44:32,622  4308ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:44:32 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:44:32,630  4316ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:44:32 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:44:32,637  4323ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:44:32 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:44:32,660  4346ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:44:32 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:46:42,274  7701ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:46:42 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:46:42,304  7731ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:46:42 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:46:42,313  7740ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:46:42 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:46:42,321  7748ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:46:42 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:46:42,330  7757ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:46:42 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:46:42,338  7765ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:46:42 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:47:00,799 26225ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:47:00 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:47:00,805 26231ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:47:00 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:47:00,811 26237ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:47:00 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:47:00,829 26256ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:47:00 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:47:00,837 26264ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:47:00 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:47:00,843 26270ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:47:00 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:47:25,925 51352ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:47:25 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:47:25,934 51361ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:47:25 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:47:25,941 51368ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:47:25 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:47:25,947 51374ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:47:25 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:47:25,953 51380ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:47:25 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:47:25,964 51391ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:47:25 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:51:02,662 268089ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:51:02 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:51:02,668 268095ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:51:02 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:51:02,674 268101ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:51:02 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:51:02,681 268108ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:51:02 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:51:02,715 268142ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:51:02 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:51:02,721 268148ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:51:02 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:52:05,722 331149ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:52:05 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:52:05,729 331156ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:52:05 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:52:05,736 331163ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:52:05 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:52:05,742 331169ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:52:05 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:52:05,750 331177ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:52:05 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:52:05,756 331183ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:52:05 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:53:44,703 430130ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:53:44 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:53:44,709 430136ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:53:44 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:53:44,715 430142ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:53:44 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:53:44,722 430148ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:53:44 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:53:44,728 430154ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:53:44 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:53:44,734 430160ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:53:44 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:54:03,519 448946ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:54:03 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:54:03,557 448984ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:54:03 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:54:03,575 449002ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:54:03 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:54:03,581 449008ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:54:03 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:54:03,588 449015ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:54:03 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:54:03,599 449026ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:54:03 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:54:09,197 454624ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:54:09 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:54:09,207 454634ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:54:09 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:54:09,214 454641ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:54:09 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:54:09,222 454649ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:54:09 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:54:09,228 454655ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:54:09 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:54:09,234 454661ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:54:09 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:55:48,861 554288ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:55:48 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:55:48,868 554295ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:55:48 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:55:48,874 554301ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:55:48 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:55:48,881 554308ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:55:48 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:55:48,899 554326ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:55:48 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:55:48,907 554334ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:55:48 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:57:41,525 666952ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:57:41 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:57:41,546 666973ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:57:41 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:57:41,553 666980ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:57:41 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:57:41,562 666989ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:57:41 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:57:41,569 666996ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:57:41 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:57:41,575 667002ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:57:41 PM JML Employee Training List: 0
+DEBUG 2017-05-29 15:59:39,958  6764ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 3:59:39 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 15:59:39,988  6794ms EmployeeContractRepo   ployeeContractList - 5/29/2017 3:59:39 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 15:59:39,998  6804ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 3:59:39 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 15:59:40,007  6813ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 3:59:40 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 15:59:40,071  6877ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 3:59:40 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 15:59:40,103  6909ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 3:59:40 PM JML Employee Training List: 0
+DEBUG 2017-05-29 16:00:09,803 36609ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 4:00:09 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 16:00:09,840 36646ms EmployeeContractRepo   ployeeContractList - 5/29/2017 4:00:09 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 16:00:09,847 36653ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 4:00:09 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 16:00:09,852 36658ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 4:00:09 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 16:00:09,857 36663ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 4:00:09 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 16:00:09,863 36669ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 4:00:09 PM JML Employee Training List: 0
+DEBUG 2017-05-29 16:00:36,190 62996ms EmployeeFamilyRepo     EmployeeFamilyList - 5/29/2017 4:00:36 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-29 16:00:36,197 63003ms EmployeeContractRepo   ployeeContractList - 5/29/2017 4:00:36 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-29 16:00:36,204 63010ms EmployeeEducationRepo  loyeeEducationList - 5/29/2017 4:00:36 PM JML Employee EDUCATION List: 1
+DEBUG 2017-05-29 16:00:36,211 63017ms EmployeeExperienceRepo oyeeExperienceList - 5/29/2017 4:00:36 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-29 16:00:36,218 63024ms EmployeeSkillRepo      tEmployeeSkillList - 5/29/2017 4:00:36 PM JML Employee SKILL List: 1
+DEBUG 2017-05-29 16:00:36,560 63365ms EmployeeTrainingRepo   ployeeTrainingList - 5/29/2017 4:00:36 PM JML Employee Training List: 0

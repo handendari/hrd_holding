@@ -15,12 +15,18 @@ namespace hrd_holding.Controllers
         private mCountryService _countryService;
         private ManageString _mString;
 
+        public CountryController()
+        {
+            _countryService = new mCountryService();
+            _mString = new ManageString();
+        }
+
         public ActionResult Index()
         {
             return View();
         }
 
-        [HttpPost]
+        //[HttpPost]
         public dynamic GetCountryList()
         {
             //LOG.Debug(DateTime.Now + " ---- PageNum : " + pagenum + " PageSize : " + pagesize);
@@ -51,17 +57,19 @@ namespace hrd_holding.Controllers
                     filterdatafield.Add(Request["filterdatafield" + i]);
                     filteroperator.Add(Request["filteroperator" + i]);
                 }
-                where = _mString.ConstructWhere(false, filterscount, filtervalue, filtercondition, filterdatafield, filteroperator);
+                where = _mString.ConstructWhere(true, filterscount, filtervalue, filtercondition, filterdatafield, filteroperator);
             }
 
             var orderby = _mString.ConstructOrderBy(Request["sortdatafield"], Request["sortorder"]);
             var pagenum = _mString.ConstructPageNum(Request["pagenum"]);
             var pagesize = _mString.ConstructPageNum(Request["pagesize"]);
 
-            //LOG.Debug(DateTime.Now + " WHERE : " + where);
+            LOG.Debug(DateTime.Now + " WHERE : " + where);
             //LOG.Debug(DateTime.Now + " ORDER BY : " + orderby);
 
             // Get Data
+            LOG.Debug(DateTime.Now + " Page Num : " + pagenum + " Page Size : " + pagesize);
+
             var vObjRes = _countryService.GetCountryList(pagenum, pagesize, where, orderby);
             var vList = vObjRes.objResult as IEnumerable<mCountryModel>;
 

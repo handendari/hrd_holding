@@ -196,7 +196,7 @@ $(document).ready(function () {
 
         var rowindex = $('#tblFamily').jqxGrid('getselectedrowindex');
 
-        if (rowindex > 0) {
+        if (rowindex >= 0) {
             var rd = $('#tblFamily').jqxGrid('getrowdata', rowindex);
 
             //alert(JSON.stringify(rd));

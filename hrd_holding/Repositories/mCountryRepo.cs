@@ -54,9 +54,12 @@ namespace hrd_holding.Repositories
 
             var strSQLCount = @"SELECT COUNT(country_code) jml_record
                                 FROM m_country " + pWhere;
+            
+            Log.Debug(DateTime.Now + " pWHERE : " + pWhere);
 
-            var strSQL = @"SELECT country_code,int_country, int_code,country_name,description
-                            FROM m_country " + vLimit;
+            var strSQL = @"SELECT country_code,IFNULL(int_country,'') int_country, 
+                                 IFNULL(int_code,0) int_code,country_name,IFNULL(description,'') description
+                           FROM m_country " + vLimit;
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
