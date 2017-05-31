@@ -19,7 +19,7 @@ function f_UpdateTblFamily() {
     var vEmpCode = $("#txtId").data("employee_code");
 
     $.ajax({
-        url: base_url + "EmployeeSkill/GetEmployeeSkillList",
+        //url: base_url + "EmployeeSkill/GetEmployeeSkillList",
         type: "POST",
         dataType: "json",
         data: jQuery.param({ pEmployeeCode: vEmpCode }),
@@ -64,7 +64,7 @@ function f_DeleteEmployeeSkill(pEmpCode) {
 
     if (vSeqNo > 0) {
         $.ajax({
-            url: base_url + "EmployeeFamily/DeleteEmployeeSkill",
+            //url: base_url + "EmployeeFamily/DeleteEmployeeSkill",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({ pEmployeeCode: pEmpCode, pSeqNo: vSeqNo }),
@@ -208,7 +208,7 @@ $(document).ready(function () {
             if (vSeqNo > 0) {
 
                 $.ajax({
-                    url: base_url + "EmployeeSkill/UpdateEmployeeSkill",
+                    //url: base_url + "EmployeeSkill/UpdateEmployeeSkill",
                     type: "POST",
                     contentType: "application/json",
                     data: vModel,
@@ -227,7 +227,7 @@ $(document).ready(function () {
                 });
             } else {
                 $.ajax({
-                    url: base_url + "EmployeeSkill/InsertEmployeeSkill",
+                    //url: base_url + "EmployeeSkill/InsertEmployeeSkill",
                     type: "POST",
                     contentType: "application/json",
                     data: vModel,

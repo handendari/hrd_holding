@@ -19,7 +19,7 @@ var vSrcEdu =
     ]
 };
 
-function f_UpdateTblFamily() {
+function f_UpdateTblEducation() {
     var vEmpCode = $("#txtId").data("employee_code");
 
     $.ajax({
@@ -29,7 +29,7 @@ function f_UpdateTblFamily() {
         data: jQuery.param({ pEmployeeCode: vEmpCode }),
         success: function (dt) {
             if (dt.listEdu != null && dt.listEdu.length > 0) {
-                f_FillTableEdu(dt.listEdu);
+                f_FillTableEducation(dt.listEdu);
             }
         }
     });
@@ -75,14 +75,15 @@ function f_EmptyEduDetail() {
 
 }
 
-function f_DeleteEmployeeEdu(pEmpCode) {
+function f_DeleteEmployeeEducation(pEmpCode) {
     $('#jqxLoader').jqxLoader('open');
 
     var selectedRowIndex = $("#tblEducation").jqxGrid('selectedrowindex');
     var vSeqNo = $('#tblEducation').jqxGrid('getcellvalue', selectedRowIndex, "seq_no");
 
 
-    if (vSeqNo > 0) {
+    if (vSeqNo >= 0) {
+        $("#modYesNo").jqxWindow('close');
         $.ajax({
             url: base_url + "EmployeeEducation/DeleteEmployeeEducation",
             type: "POST",
@@ -92,10 +93,9 @@ function f_DeleteEmployeeEdu(pEmpCode) {
                 var isOke = d.vResp['isValid'];
 
                 if (isOke) {
-                    f_UpdateTblFamily();
-                    $("#modYesNo").jqxWindow('close');
+                    f_UpdateTblEducation();
                 } else {
-                    alert(d.vResp['message']);
+                    f_MessageBoxShow(d.vResp['message']); //alert(d.vResp['message']);
                 }
                 $('#jqxLoader').jqxLoader('close');
             }
@@ -229,6 +229,52 @@ $(document).ready(function () {
         autoOpen: false,
         resizable: false
     });
+
+    $("#modLookUp").jqxWindow({
+        height: 500, width: 430,
+        theme: vTheme, isModal: true,
+        autoOpen: false,
+        resizable: false
+    });
+
+    $("#jqxToolBar").jqxToolBar({
+        theme: vTheme,
+        width: '100%', height: 35, tools: 'button | button',
+        initTools: function (type, index, tool, menuToolIninitialization) {
+            switch (index) {
+                case 0:
+                    //var button = $("<div>" + "<img src='../../images/administrator.png' title='Custom tool' />" + "</div>");
+                    tool.text("Select Data");
+                    tool.height("25px");
+                    tool.width("80px");
+                    tool.on("click", function () {
+                        var rowindex = $('#tblLookUp').jqxGrid('getselectedrowindex');
+                        if (rowindex >= 0) {
+                            var rd = $('#tblLookUp').jqxGrid('getrowdata', rowindex);
+
+                            $("#txtEduCountryCode").val(rd.int_country);
+                            $("#txtEduCountryCode").data("edu_country_code", rd.country_code);
+
+                            $("#txtEduCountryName").val(rd.country_name);
+
+                            $("#modLookUp").jqxWindow('close');
+                        } else {
+                            f_MessageBoxShow("Please Select Data...");
+                        }
+                    });
+                    break;
+                case 1:
+                    //var button = $("<div>" + "<img src='../../images/administrator.png' title='Custom tool' />" + "</div>");
+                    tool.text("Cancel");
+                    tool.height("25px");
+                    tool.width("50px");
+                    tool.on("click", function () {
+                        $("#modLookUp").jqxWindow('close');
+                    });
+                    break;
+            }
+        }
+    });
     //#endregion INIT EDUCATION
 
     $('#btnEduNew').on('click', function (event) {
@@ -263,9 +309,9 @@ $(document).ready(function () {
             $("#txtEduMajors").val(rd.jurusan);
             $("#txtEduSchool").val(rd.school);
             $("#txtEduCity").val(rd.city);
-            $("#txtcountryCode").val(rd.int_country);
-            $("#txtcountryCode").data("edu_country_code", rd.country_code);
-            $("#txtcountryName").val(rd.country_name);
+            $("#txtEduCountryCode").val(rd.int_country);
+            $("#txtEduCountryCode").data("edu_country_code", rd.country_code);
+            $("#txtEduCountryName").val(rd.country_name);
 
             $("#modEducation").jqxWindow('open');
         } else {
@@ -276,7 +322,7 @@ $(document).ready(function () {
     $('#btnEduDelete').on('click', function (event) {
         var rowindex = $('#tblEducation').jqxGrid('getselectedrowindex');
 
-        if (rowindex > 0) {
+        if (rowindex >= 0) {
             $("#modYesNo").jqxWindow('open');
         } else {
             f_MessageBoxShow("Please Select Data...");
@@ -287,36 +333,29 @@ $(document).ready(function () {
         $('#btnEduSave').jqxButton({ disabled: true });
         $('#jqxLoader').jqxLoader('open');
 
-        var vAlamat = "";
-
-        if ($("#chkFamAddress").jqxCheckBox('checked')) {
-            vAlamat = $("#txtAddress").val();
-        } else {
-            vAlamat = $("#txtFamAddress").val();
-        }
-
         var vModel = JSON.stringify({
             employee_code: $("#txtId").data("employee_code"),
             employee_name: $("#txtFullName").val(),
-            seq_no: $("#txtFamName").data("fam_seq_no"),
-            name: $("#txtFamName").val(),
-            relationship: $("#cmbFamRelation").jqxComboBox('listBox').selectedIndex,
-            nm_rel: $("#cmbFamRelation").val(),
-            date_birth: $("#txtFamDob").jqxDateTimeInput('getDate'),
-            sex: $("#cmbFamGender").jqxComboBox('listBox').selectedIndex,
-            education: $("#txtFamEducation").val(),
-            employment: $("#txtFamEmployment").val(),
-            chk_address: $("#chkFamAddress").jqxCheckBox('checked'),
-            address: vAlamat
+            seq_no: $("#txtEduCode").data("edu_seq_no"),
+            start_year : $("#dtEduStartYear").jqxDateTimeInput('getDate'),
+            end_year :$("#dtEduEndYear").jqxDateTimeInput('getDate'),
+            jenjang : $("#cmbEduLevel").jqxComboBox('listBox').selectedIndex,
+            nm_jenjang : $("#cmbEduLevel").val(),
+            jurusan : $("#txtEduMajors").val(),
+            school : $("#txtEduSchool").val(),
+            city : $("#txtEduCity").val(),
+            country_code : $("#txtEduCountryCode").data("edu_country_code"),
+            int_country : $("#txtEduCountryCode").val(),
+            country_name : $("#txtEduCountryName").val()
         });
 
-        var vSeqNo = ($("#txtFamName").data("fam_seq_no") == null
-                   || $("#txtFamName").data("fam_seq_no") == "") ? 0 : $("#txtFamName").data("fam_seq_no");
+        var vSeqNo = ($("#txtEduCode").data("edu_seq_no") == null
+                   || $("#txtEduCode").data("edu_seq_no") == "") ? 0 : $("#txtEduCode").data("edu_seq_no");
 
         if (vSeqNo > 0) {
 
             $.ajax({
-                url: base_url + "EmployeeFamily/UpdateEmployeeFamily",
+                url: base_url + "EmployeeEducation/UpdateEmployeeEducation",
                 type: "POST",
                 contentType: "application/json",
                 data: vModel,
@@ -324,18 +363,18 @@ $(document).ready(function () {
                     var isOke = d.vResp['isValid'];
 
                     if (isOke) {
-                        f_UpdateTblFamily();
-                        $("#modFamily").jqxWindow('close');
+                        f_UpdateTblEducation();
+                        $("#modEducation").jqxWindow('close');
                     } else {
                         alert(d.vResp['message']);
                     }
-                    $('#btnModFamSave').jqxButton({ disabled: false });
+                    $('#btnEduSave').jqxButton({ disabled: false });
                     $('#jqxLoader').jqxLoader('close');
                 }
             });
         } else {
             $.ajax({
-                url: base_url + "EmployeeFamily/InsertEmployeeFamily",
+                url: base_url + "EmployeeEducation/InsertEmployeeEducation",
                 type: "POST",
                 contentType: "application/json",
                 data: vModel,
@@ -343,12 +382,12 @@ $(document).ready(function () {
                     var isOke = d.vResp['isValid'];
 
                     if (isOke) {
-                        f_UpdateTblFamily();
-                        $("#modFamily").jqxWindow('close');
+                        f_UpdateTblEducation();
+                        $("#modEducation").jqxWindow('close');
                     } else {
                         alert(d.vResp['message']);
                     }
-                    $('#btnModFamSave').jqxButton({ disabled: false });
+                    $('#btnEduSave').jqxButton({ disabled: false });
                     $('#jqxLoader').jqxLoader('close');
                 }
             });
