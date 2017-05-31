@@ -74,7 +74,8 @@ namespace hrd_holding.Repositories
                                   IFNULL(mee.school,'') school,IFNULL(mee.city,'') city,
                                   IFNULL(mee.country_code,0) country_code,IFNULL(mc.country_name,'') country_name,
                                   IFNULL(mc.int_country,'') int_country,
-                                  mee.entry_date,mee.entry_user,mee.edit_date,IFNULL(mee.edit_user,'') edit_user
+                                  mee.entry_date,IFNULL(mee.entry_user,'') entry_user,
+                                  mee.edit_date,IFNULL(mee.edit_user,'') edit_user
                            FROM m_employee_edu mee JOIN m_employee emp ON mee.employee_code = emp.employee_code
                            LEFT JOIN m_country mc ON mee.country_code = mc.country_code
                            WHERE mee.employee_code = @pEmployeeCode";
@@ -112,7 +113,7 @@ namespace hrd_holding.Repositories
                                         entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
                                         entry_user = aa.GetString("entry_user"),
                                         edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
-                                        edit_user = aa.GetString("edit_user"),
+                                        edit_user = aa.GetString("edit_user")
                                     };
                                     vList.Add(m);
                                 }

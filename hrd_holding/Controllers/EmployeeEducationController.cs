@@ -24,28 +24,28 @@ namespace hrd_holding.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public dynamic InsertEmployeeFamily(mEmployeeFamiliesModel pModel)
-        //{
-        //    LOG.Debug(DateTime.Now + "Emp Code : " + pModel.employee_code + ", employee_name : " + pModel.employee_name);
+        [HttpPost]
+        public dynamic InsertEmployeeEducation(mEmployeeEducationModel pModel)
+        {
+            LOG.Debug(DateTime.Now + "Emp Code : " + pModel.employee_code + ", employee_name : " + pModel.employee_name);
 
-        //    var vResp = _empFamService.InsertEmployeeFamily(pModel);
-
-
-        //    return Json(new{vResp}, JsonRequestBehavior.AllowGet);
-        //}
-
-        //[HttpPost]
-        //public dynamic UpdateEmployeeFamily(mEmployeeFamiliesModel pModel)
-        //{
-        //    LOG.Debug(DateTime.Now + " Masuk Controller Emp Code : " + pModel.employee_code + ", employee_name : " + pModel.employee_name);
-
-        //    var vResp = new ResponseModel();
-        //    vResp = _empFamService.UpdateEmployeeFamily(pModel);
+            var vResp = _empEduService.InsertEmployeeEducation(pModel);
 
 
-        //    return Json(new{vResp}, JsonRequestBehavior.AllowGet);
-        //}
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public dynamic UpdateEmployeeEducation(mEmployeeEducationModel pModel)
+        {
+            LOG.Debug(DateTime.Now + " Masuk Controller Emp Code : " + pModel.employee_code + ", employee_name : " + pModel.employee_name);
+
+            var vResp = new ResponseModel();
+            vResp = _empEduService.UpdateEmployeeEducation(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
 
 
         [HttpPost]
@@ -62,16 +62,16 @@ namespace hrd_holding.Controllers
             return Json(new { listEdu },JsonRequestBehavior.AllowGet);
         }
 
-        //[HttpPost]
-        //public dynamic DeleteEmployeeFamily(string pEmployeeCode,int pSeqNo)
-        //{
-        //    LOG.Debug(DateTime.Now + "MASUK DELETE Emp Code : " + pEmployeeCode + ", Seq No : " + pSeqNo);
+        [HttpPost]
+        public dynamic DeleteEmployeeEducation(string pEmployeeCode, int pSeqNo)
+        {
+            LOG.Debug(DateTime.Now + "MASUK DELETE Emp Code : " + pEmployeeCode + ", Seq No : " + pSeqNo);
 
-        //    var vResp = _empEduService.DeleteEmployeeFamily(pEmployeeCode,pSeqNo);
+            var vResp = _empEduService.DeleteEmployeeEducation(pEmployeeCode, pSeqNo);
 
 
-        //    return Json(new { vResp });
-        //}
+            return Json(new { vResp });
+        }
 
     }
 }

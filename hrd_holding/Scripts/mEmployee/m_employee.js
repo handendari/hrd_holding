@@ -66,7 +66,8 @@ $(document).ready(function () {
         height: 150, width: 300,
         theme: vTheme, isModal: true,
         autoOpen: false,
-        resizable: false
+        resizable: false,
+        modalZIndex: 999
     });
 
     //#endregion
@@ -139,53 +140,7 @@ $(document).ready(function () {
 
     $("#btnYes").jqxButton({ theme: vTheme, height: 30, width: 60 });
     $("#btnNo").jqxButton({ theme: vTheme, height: 30, width: 60 });
-
-    $("#modLookUp").jqxWindow({
-        height: 500, width: 430,
-        theme: vTheme, isModal: true,
-        autoOpen: false,
-        resizable: false
-    });
-
-    $("#jqxToolBar").jqxToolBar({theme:vTheme,
-        width: '100%', height: 35, tools: 'button | button',
-        initTools: function (type, index, tool, menuToolIninitialization) {
-            switch (index) {
-                case 0:
-                    //var button = $("<div>" + "<img src='../../images/administrator.png' title='Custom tool' />" + "</div>");
-                    tool.text("Select Data");
-                    tool.height("25px");
-                    tool.width("80px");
-                    tool.on("click", function () {
-                        var rowindex = $('#tblLookUp').jqxGrid('getselectedrowindex');
-                        if (rowindex > 0) {
-                            var rd = $('#tblLookUp').jqxGrid('getrowdata', rowindex);
-
-                            $("#txtEduCountryCode").val(rd.int_country);
-                            $("#txtEduCountryCode").data("edu_country_code", rd.country_code);
-
-                            $("#txtEduCountryName").val(rd.country_name);
-
-                            $("#modLookUp").jqxWindow('close');
-                        } else {
-                            f_MessageBoxShow("Please Select Data...");
-                        }
-                    });
-                    break;
-                case 1:
-                    //var button = $("<div>" + "<img src='../../images/administrator.png' title='Custom tool' />" + "</div>");
-                    tool.text("Cancel");
-                    tool.height("25px");
-                    tool.width("50px");
-                    tool.on("click", function () {
-                        $("#modLookUp").jqxWindow('close');
-                    });
-                    break;
-            }
-        }
-    });
-
-
+    
     Form_Load("35151269069300041", 1);
 
     function Form_Load(pEmployeeCode, pSeqNo) {
@@ -393,9 +348,18 @@ $(document).ready(function () {
 
         var selectedTab = $('#jqxTabs').jqxTabs('selectedItem');
 
-        if (selectedTab == 0) {
-            f_DeleteEmployeeFamily(vEmpCode);
+        switch (selectedTab) {
+            case 0:
+                f_DeleteEmployeeFamily(vEmpCode);
+                break;
+            case 1:
+                f_DeleteEmployeeEducation(vEmpCode);
+                break;
+
         }
     });
 
+    $('#btnNo').on('click', function (event) {
+        $("#modYesNo").jqxWindow("close");
+    });
 });
