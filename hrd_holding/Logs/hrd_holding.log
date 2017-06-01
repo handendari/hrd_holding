@@ -18763,3 +18763,317 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'db_fegroup_web.m_empl
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
    at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
    at hrd_holding.Repositories.mEmployeeEducationRepo.DeleteEmployeeEducation(String pCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeEducationRepo.cs:line 269
+DEBUG 2017-05-31 18:57:14,204 14004ms EmployeeFamilyRepo     EmployeeFamilyList - 5/31/2017 6:57:14 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-31 18:57:14,553 14353ms EmployeeContractRepo   ployeeContractList - 5/31/2017 6:57:14 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-31 18:57:14,804 14604ms EmployeeEducationRepo  loyeeEducationList - 5/31/2017 6:57:14 PM JML Employee EDUCATION List: 2
+DEBUG 2017-05-31 18:57:15,033 14832ms EmployeeExperienceRepo oyeeExperienceList - 5/31/2017 6:57:15 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-31 18:57:15,264 15063ms EmployeeSkillRepo      tEmployeeSkillList - 5/31/2017 6:57:15 PM JML Employee SKILL List: 1
+DEBUG 2017-05-31 18:57:15,444 15244ms EmployeeTrainingRepo   ployeeTrainingList - 5/31/2017 6:57:15 PM JML Employee Training List: 0
+DEBUG 2017-05-31 18:58:20,010 79810ms EmployeeFamilyRepo     EmployeeFamilyList - 5/31/2017 6:58:20 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-31 18:58:20,335 80134ms EmployeeContractRepo   ployeeContractList - 5/31/2017 6:58:20 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-31 18:58:20,675 80475ms EmployeeEducationRepo  loyeeEducationList - 5/31/2017 6:58:20 PM JML Employee EDUCATION List: 2
+DEBUG 2017-05-31 18:58:20,984 80784ms EmployeeExperienceRepo oyeeExperienceList - 5/31/2017 6:58:20 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-31 18:58:21,269 81068ms EmployeeSkillRepo      tEmployeeSkillList - 5/31/2017 6:58:21 PM JML Employee SKILL List: 1
+DEBUG 2017-05-31 18:58:21,582 81382ms EmployeeTrainingRepo   ployeeTrainingList - 5/31/2017 6:58:21 PM JML Employee Training List: 0
+DEBUG 2017-05-31 18:59:03,652 123452ms EmployeeFamilyRepo     EmployeeFamilyList - 5/31/2017 6:59:03 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-31 18:59:03,924 123723ms EmployeeContractRepo   ployeeContractList - 5/31/2017 6:59:03 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-31 18:59:04,335 124134ms EmployeeEducationRepo  loyeeEducationList - 5/31/2017 6:59:04 PM JML Employee EDUCATION List: 2
+DEBUG 2017-05-31 18:59:04,630 124429ms EmployeeExperienceRepo oyeeExperienceList - 5/31/2017 6:59:04 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-31 18:59:04,963 124762ms EmployeeSkillRepo      tEmployeeSkillList - 5/31/2017 6:59:04 PM JML Employee SKILL List: 1
+DEBUG 2017-05-31 18:59:05,315 125114ms EmployeeTrainingRepo   ployeeTrainingList - 5/31/2017 6:59:05 PM JML Employee Training List: 0
+DEBUG 2017-05-31 19:02:33,255 333054ms EmployeeFamilyRepo     EmployeeFamilyList - 5/31/2017 7:02:33 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-31 19:02:34,624 334423ms EmployeeContractRepo   ployeeContractList - 5/31/2017 7:02:34 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-31 19:02:35,809 335609ms EmployeeEducationRepo  loyeeEducationList - 5/31/2017 7:02:35 PM JML Employee EDUCATION List: 2
+DEBUG 2017-05-31 19:02:36,719 336519ms EmployeeExperienceRepo oyeeExperienceList - 5/31/2017 7:02:36 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-31 19:02:38,117 337917ms EmployeeSkillRepo      tEmployeeSkillList - 5/31/2017 7:02:38 PM JML Employee SKILL List: 1
+DEBUG 2017-05-31 19:02:38,971 338770ms EmployeeTrainingRepo   ployeeTrainingList - 5/31/2017 7:02:38 PM JML Employee Training List: 0
+DEBUG 2017-05-31 19:05:03,769 483568ms EmployeeFamilyRepo     EmployeeFamilyList - 5/31/2017 7:05:03 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-31 19:05:04,073 483872ms EmployeeContractRepo   ployeeContractList - 5/31/2017 7:05:04 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-31 19:05:04,441 484241ms EmployeeEducationRepo  loyeeEducationList - 5/31/2017 7:05:04 PM JML Employee EDUCATION List: 2
+DEBUG 2017-05-31 19:05:04,784 484583ms EmployeeExperienceRepo oyeeExperienceList - 5/31/2017 7:05:04 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-31 19:05:05,111 484911ms EmployeeSkillRepo      tEmployeeSkillList - 5/31/2017 7:05:05 PM JML Employee SKILL List: 1
+DEBUG 2017-05-31 19:05:05,462 485261ms EmployeeTrainingRepo   ployeeTrainingList - 5/31/2017 7:05:05 PM JML Employee Training List: 0
+DEBUG 2017-05-31 19:15:53,107 1132906ms EmployeeFamilyRepo     EmployeeFamilyList - 5/31/2017 7:15:53 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-31 19:15:54,006 1133806ms EmployeeContractRepo   ployeeContractList - 5/31/2017 7:15:54 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-31 19:15:54,654 1134453ms EmployeeEducationRepo  loyeeEducationList - 5/31/2017 7:15:54 PM JML Employee EDUCATION List: 2
+DEBUG 2017-05-31 19:15:55,227 1135027ms EmployeeExperienceRepo oyeeExperienceList - 5/31/2017 7:15:55 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-31 19:15:55,607 1135406ms EmployeeSkillRepo      tEmployeeSkillList - 5/31/2017 7:15:55 PM JML Employee SKILL List: 1
+DEBUG 2017-05-31 19:15:55,953 1135752ms EmployeeTrainingRepo   ployeeTrainingList - 5/31/2017 7:15:55 PM JML Employee Training List: 0
+DEBUG 2017-05-31 19:17:44,453 1244252ms EmployeeFamilyRepo     EmployeeFamilyList - 5/31/2017 7:17:44 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-31 19:17:44,831 1244631ms EmployeeContractRepo   ployeeContractList - 5/31/2017 7:17:44 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-31 19:17:45,215 1245014ms EmployeeEducationRepo  loyeeEducationList - 5/31/2017 7:17:45 PM JML Employee EDUCATION List: 2
+DEBUG 2017-05-31 19:17:45,754 1245553ms EmployeeExperienceRepo oyeeExperienceList - 5/31/2017 7:17:45 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-31 19:17:46,121 1245920ms EmployeeSkillRepo      tEmployeeSkillList - 5/31/2017 7:17:46 PM JML Employee SKILL List: 1
+DEBUG 2017-05-31 19:17:46,536 1246336ms EmployeeTrainingRepo   ployeeTrainingList - 5/31/2017 7:17:46 PM JML Employee Training List: 0
+DEBUG 2017-05-31 19:18:18,652 1278451ms EmployeeFamilyRepo     EmployeeFamilyList - 5/31/2017 7:18:18 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-05-31 19:18:18,950 1278749ms EmployeeContractRepo   ployeeContractList - 5/31/2017 7:18:18 PM JML Employee CONTRACT List: 0
+DEBUG 2017-05-31 19:18:19,308 1279107ms EmployeeEducationRepo  loyeeEducationList - 5/31/2017 7:18:19 PM JML Employee EDUCATION List: 2
+DEBUG 2017-05-31 19:18:19,623 1279423ms EmployeeExperienceRepo oyeeExperienceList - 5/31/2017 7:18:19 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-05-31 19:18:20,016 1279815ms EmployeeSkillRepo      tEmployeeSkillList - 5/31/2017 7:18:20 PM JML Employee SKILL List: 1
+DEBUG 2017-05-31 19:18:20,338 1280137ms EmployeeTrainingRepo   ployeeTrainingList - 5/31/2017 7:18:20 PM JML Employee Training List: 0
+DEBUG 2017-06-01 15:15:23,735 92345ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:15:23 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 15:15:24,148 92758ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:15:24 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 15:15:24,403 93013ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:15:24 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 15:15:24,606 93216ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:15:24 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:15:24,905 93515ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:15:24 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:15:25,127 93736ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:15:25 PM JML Employee Training List: 0
+DEBUG 2017-06-01 15:17:15,951 204561ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:17:15 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 15:17:16,093 204703ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:17:16 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 15:17:16,228 204838ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:17:16 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 15:17:16,363 204973ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:17:16 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:17:16,504 205114ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:17:16 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:17:16,640 205250ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:17:16 PM JML Employee Training List: 0
+DEBUG 2017-06-01 15:17:43,277 231887ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:17:43 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 15:17:43,421 232031ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:17:43 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 15:17:43,574 232184ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:17:43 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 15:17:43,708 232318ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:17:43 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:17:43,853 232463ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:17:43 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:17:43,992 232602ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:17:43 PM JML Employee Training List: 0
+DEBUG 2017-06-01 15:17:49,331 237941ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:17:49 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 15:17:49,480 238090ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:17:49 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 15:17:49,624 238234ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:17:49 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 15:17:49,761 238371ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:17:49 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:17:49,930 238540ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:17:49 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:17:50,078 238688ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:17:50 PM JML Employee Training List: 0
+ERROR 2017-06-01 15:21:54,087 35750ms EmployeeRepo           getEmployeeInfo    - 6/1/2017 3:21:54 PM GetEmployeeInfo Failed
+System.TimeoutException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at MySql.Data.Common.MyNetworkStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   --- End of inner exception stack trace ---
+   at MySql.Data.Common.MyNetworkStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 513
+ERROR 2017-06-01 15:22:27,373 69036ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:22:27 PM GetEmployeeFamilyList FAILED... 
+System.TimeoutException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at MySql.Data.Common.MyNetworkStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   --- End of inner exception stack trace ---
+   at MySql.Data.Common.MyNetworkStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 108
+DEBUG 2017-06-01 15:22:27,376 69039ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:22:27 PM=======>>>> Jml DATA EMPLOYEE LIST : 0
+ERROR 2017-06-01 15:22:42,400 84063ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:22:42 PM GetEmployeeContractList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeContractRepo.getEmployeeContractList(String pEmployeeCode) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mEmployeeContractRepo.cs:line 74
+DEBUG 2017-06-01 15:22:42,403 84066ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:22:42 PM JML Employee CONTRACT List: 0
+ERROR 2017-06-01 15:23:09,534 111197ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:23:09 PM GetEmployeeEducationList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.TimeoutException: Timeout in IO operation
+   at MySql.Data.MySqlClient.TimedStream.StopTimer()
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.HandleTimeoutOrThreadAbort(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.Driver.LoadServerProperties(MySqlConnection connection)
+   at MySql.Data.MySqlClient.Driver.Configure(MySqlConnection connection)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeEducationRepo.getEmployeeEducationList(String pEmployeeCode) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mEmployeeEducationRepo.cs:line 86
+DEBUG 2017-06-01 15:23:09,537 111200ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:23:09 PM JML Employee EDUCATION List: 0
+ERROR 2017-06-01 15:23:14,756 116419ms EmployeeRepo           getEmployeeInfo    - 6/1/2017 3:23:14 PM GetEmployeeInfo Failed
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'svn.freightexpressindo.com' for user 'root' using method 'mysql_native_password' failed with message: Reading from the stream has failed. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Reading from the stream has failed. ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   at MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(Boolean reset)
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 513
+DEBUG 2017-06-01 15:23:16,028 117691ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:23:16 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 15:23:16,174 117837ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:23:16 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 15:23:16,331 117994ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:23:16 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 15:23:16,479 118142ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:23:16 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:23:16,641 118303ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:23:16 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:23:16,816 118479ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:23:16 PM JML Employee Training List: 0
+DEBUG 2017-06-01 15:23:18,396 120059ms EmployeeController     GetEmployeeList    - 6/1/2017 3:23:18 PM WHERE : 
+DEBUG 2017-06-01 15:23:18,397 120060ms EmployeeController     GetEmployeeList    - 6/1/2017 3:23:18 PM ORDER BY : 
+DEBUG 2017-06-01 15:23:18,399 120062ms EmployeeService        GetEmployeeList    - 6/1/2017 3:23:18 PM pPage : 0 pRows : 15
+DEBUG 2017-06-01 15:23:18,400 120063ms EmployeeService        GetEmployeeList    - 6/1/2017 3:23:18 PM vRows : 15 vStart : 0
+DEBUG 2017-06-01 15:23:18,428 120090ms EmployeeRepo           getEmployeeList    - 6/1/2017 3:23:18 PM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode 
+DEBUG 2017-06-01 15:23:18,430 120092ms EmployeeRepo           getEmployeeList    - 6/1/2017 3:23:18 PM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode  LIMIT 0,15
+DEBUG 2017-06-01 15:23:18,887 120550ms EmployeeRepo           getEmployeeList    - 6/1/2017 3:23:18 PM Jumlah Data Employee : 15
+DEBUG 2017-06-01 15:23:19,681 121344ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:23:19 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:23:19,830 121493ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:23:19 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:23:19,982 121645ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:23:19 PM JML Employee Training List: 0
+ERROR 2017-06-01 15:23:23,343 125006ms EmployeeRepo           getEmployeeInfo    - 6/1/2017 3:23:23 PM GetEmployeeInfo Failed
+MySql.Data.MySqlClient.MySqlException (0x80004005): Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. ---> System.TimeoutException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.IO.IOException: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at MySql.Data.Common.MyNetworkStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   --- End of inner exception stack trace ---
+   at MySql.Data.Common.MyNetworkStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.FetchDataRow(Int32 statementId, Int32 columns)
+   at MySql.Data.MySqlClient.ResultSet.GetNextRow()
+   at MySql.Data.MySqlClient.ResultSet.NextRow(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlDataReader.Read()
+   at MySql.Data.MySqlClient.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.HandleTimeoutOrThreadAbort(Exception ex)
+   at MySql.Data.MySqlClient.MySqlDataReader.Read()
+   at MySql.Data.MySqlClient.Driver.LoadServerProperties(MySqlConnection connection)
+   at MySql.Data.MySqlClient.Driver.Configure(MySqlConnection connection)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 513
+DEBUG 2017-06-01 15:23:23,515 125178ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:23:23 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 15:23:23,671 125334ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:23:23 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 15:23:23,812 125475ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:23:23 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 15:23:23,953 125615ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:23:23 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:23:24,093 125756ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:23:24 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:23:24,218 125881ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:23:24 PM JML Employee Training List: 0
+DEBUG 2017-06-01 15:23:34,893 136556ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:23:34 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 15:23:35,026 136689ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:23:35 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 15:23:35,164 136827ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:23:35 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 15:23:35,308 136971ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:23:35 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:23:35,440 137103ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:23:35 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:23:35,578 137241ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:23:35 PM JML Employee Training List: 0
+DEBUG 2017-06-01 15:44:55,456  6288ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:44:55 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 15:44:55,656  6488ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:44:55 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 15:44:55,804  6636ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:44:55 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 15:44:55,957  6789ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:44:55 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:44:56,109  6941ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:44:56 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:44:56,257  7088ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:44:56 PM JML Employee Training List: 0
+DEBUG 2017-06-01 15:45:04,263 15095ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:45:04 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 15:45:04,407 15239ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:45:04 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 15:45:04,543 15375ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:45:04 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 15:45:04,680 15512ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:45:04 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:45:04,813 15645ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:45:04 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:45:04,944 15776ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:45:04 PM JML Employee Training List: 0
+DEBUG 2017-06-01 15:46:47,939 118771ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:46:47 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 15:46:48,076 118908ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:46:48 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 15:46:48,211 119043ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:46:48 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 15:46:48,353 119185ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:46:48 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:46:48,496 119327ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:46:48 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:46:48,635 119467ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:46:48 PM JML Employee Training List: 0
+DEBUG 2017-06-01 15:52:08,276 439108ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:52:08 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 15:52:08,430 439262ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:52:08 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 15:52:08,565 439397ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:52:08 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 15:52:08,714 439545ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:52:08 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:52:08,873 439705ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:52:08 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:52:09,035 439867ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:52:09 PM JML Employee Training List: 0
+DEBUG 2017-06-01 15:54:31,570 582401ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 3:54:31 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 15:54:31,710 582542ms EmployeeContractRepo   ployeeContractList - 6/1/2017 3:54:31 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 15:54:31,857 582689ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 3:54:31 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 15:54:32,005 582837ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 3:54:32 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 15:54:32,144 582976ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 3:54:32 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 15:54:32,292 583123ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 3:54:32 PM JML Employee Training List: 0
+DEBUG 2017-06-01 21:13:01,631 10188ms EmployeeFamilyRepo     EmployeeFamilyList - 6/1/2017 9:13:01 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-01 21:13:01,986 10543ms EmployeeContractRepo   ployeeContractList - 6/1/2017 9:13:01 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-01 21:13:02,184 10741ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 9:13:02 PM JML Employee EDUCATION List: 2
+DEBUG 2017-06-01 21:13:02,362 10919ms EmployeeExperienceRepo oyeeExperienceList - 6/1/2017 9:13:02 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-01 21:13:02,566 11123ms EmployeeSkillRepo      tEmployeeSkillList - 6/1/2017 9:13:02 PM JML Employee SKILL List: 1
+DEBUG 2017-06-01 21:13:02,774 11331ms EmployeeTrainingRepo   ployeeTrainingList - 6/1/2017 9:13:02 PM JML Employee Training List: 0
+DEBUG 2017-06-01 21:13:10,216 18773ms yeeEducationController eEmployeeEducation - 6/1/2017 9:13:10 PMMASUK DELETE Emp Code : 35151269069300041, Seq No : 0
+ERROR 2017-06-01 21:13:10,376 18933ms EmployeeEducationRepo  eEmployeeEducation - 6/1/2017 9:13:10 PM DELETE EMPLOYEE EDUCATION FAILED
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'db_fegroup_web.m_employee_education' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at hrd_holding.Repositories.mEmployeeEducationRepo.DeleteEmployeeEducation(String pCode, Int32 pSeqNo) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mEmployeeEducationRepo.cs:line 269
+DEBUG 2017-06-01 21:14:54,438   313ms yeeEducationController eEmployeeEducation - 6/1/2017 9:14:54 PMMASUK DELETE Emp Code : 35151269069300041, Seq No : 0
+DEBUG 2017-06-01 21:14:55,504  1380ms EmployeeEducationRepo  eEmployeeEducation - 6/1/2017 9:14:55 PM DELETE EMPLOYEE EDUCATION SUCCESS ====>>>>>> Code : 35151269069300041 NoSeq : 0
+DEBUG 2017-06-01 21:14:55,766  1642ms EmployeeEducationRepo  loyeeEducationList - 6/1/2017 9:14:55 PM JML Employee EDUCATION List: 1

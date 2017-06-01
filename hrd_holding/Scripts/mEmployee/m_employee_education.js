@@ -76,14 +76,14 @@ function f_EmptyEduDetail() {
 }
 
 function f_DeleteEmployeeEducation(pEmpCode) {
-    $('#jqxLoader').jqxLoader('open');
+    $("#modYesNo").jqxWindow('close');
+    f_ShowLoaderModal();
 
     var selectedRowIndex = $("#tblEducation").jqxGrid('selectedrowindex');
     var vSeqNo = $('#tblEducation').jqxGrid('getcellvalue', selectedRowIndex, "seq_no");
 
 
     if (vSeqNo >= 0) {
-        $("#modYesNo").jqxWindow('close');
         $.ajax({
             url: base_url + "EmployeeEducation/DeleteEmployeeEducation",
             type: "POST",
@@ -97,7 +97,7 @@ function f_DeleteEmployeeEducation(pEmpCode) {
                 } else {
                     f_MessageBoxShow(d.vResp['message']); //alert(d.vResp['message']);
                 }
-                $('#jqxLoader').jqxLoader('close');
+                $('body').loadingModal('hide');
             }
         });
     }

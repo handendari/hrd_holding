@@ -9,17 +9,17 @@ namespace hrd_holding
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-3.1.1.min.js"));
+                        "~/Scripts/jquery/jquery-3.1.1.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqwidgets").Include(
                         "~/Scripts/jqwidgets/jqx-all.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/jquery-ui-1.12.1.min.js"));
+                        "~/Scripts/jquery/jquery-ui-1.12.1.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.unobtrusive.ajax.min.js",
-                        "~/Scripts/jquery.validate.js"));
+                        "~/Scripts/jquery/jquery.unobtrusive.ajax.min.js",
+                        "~/Scripts/jquery/jquery.validate.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

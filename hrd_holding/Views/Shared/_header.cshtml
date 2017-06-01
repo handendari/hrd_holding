@@ -20,20 +20,21 @@ limitations under the License.
 -->
 
     @Styles.Render("~/Content/jqwidgets")
-
-    <!-- jQuery -->
-    @*@Scripts.Render("~/bundles/jquery")*@
-    <script src="~/scripts/jquery-3.1.1.min.js"></script>
-    <!-- jQWidgets -->
-    @Scripts.Render("~/bundles/jqwidgets")
-
-    <script src="~/scripts/mega_menu/source-sans-pro.js"></script>
-    
     <link rel="stylesheet" type="text/css" href="~/content/Site.css">
     <link rel="stylesheet" type="text/css" href="~/content/megamenu/mainmegamenu.css">
     <link rel="stylesheet" type="text/css" href="~/content/megamenu/megamenu.css">
+    <link rel="stylesheet" type="text/css" href="~/content/loader_modal/jquery.loadingModal.min.css">
+
+    <!-- jQuery -->
+    @*@Scripts.Render("~/bundles/jquery")*@
+
+    <script src="~/scripts/jquery/jquery-3.1.1.min.js"></script>
+    <!-- jQWidgets -->
+    @Scripts.Render("~/bundles/jqwidgets")
+    <script src="~/scripts/mega_menu/source-sans-pro.js"></script>
     <script src="~/scripts/mega_menu/jqueryMegaMenu.js"></script>
     <script src="~/scripts/mega_menu/mainMegaMenu.js"></script>
+    <script src="~/scripts/loader_modal/jquery.loadingModal.min.js"></script>
 
     <script type="text/javascript">
 
@@ -111,6 +112,26 @@ limitations under the License.
             (pJxNotif).jqxNotification("open");
         }
 
+        function f_ShowLoaderModal() {
+            $('body').loadingModal({ text: 'Loading Data, Please Wait...' });
+            $('body').loadingModal('animation', 'rotatingPlane').loadingModal('backgroundColor', 'red');
+
+
+            //delay(time)
+            //        .then(function() { $('body').loadingModal('animation', 'rotatingPlane').loadingModal('backgroundColor', 'red'); return delay(time);})
+            //        .then(function() { $('body').loadingModal('animation', 'wave'); return delay(time);})
+            //        .then(function() { $('body').loadingModal('animation', 'wanderingCubes').loadingModal('backgroundColor', 'green'); return delay(time);})
+            //        .then(function() { $('body').loadingModal('animation', 'spinner'); return delay(time);})
+            //        .then(function() { $('body').loadingModal('animation', 'chasingDots').loadingModal('backgroundColor', 'blue'); return delay(time);})
+            //        .then(function() { $('body').loadingModal('animation', 'threeBounce'); return delay(time);})
+            //        .then(function() { $('body').loadingModal('animation', 'circle').loadingModal('backgroundColor', 'black'); return delay(time);})
+            //        .then(function() { $('body').loadingModal('animation', 'cubeGrid'); return delay(time);})
+            //        .then(function() { $('body').loadingModal('animation', 'fadingCircle').loadingModal('backgroundColor', 'gray'); return delay(time);})
+            //        .then(function() { $('body').loadingModal('animation', 'foldingCube'); return delay(time); } )
+            //        .then(function() { $('body').loadingModal('color', 'black').loadingModal('text', 'Done :-)').loadingModal('backgroundColor', 'yellow');  return delay(time); } )
+            //        .then(function() { $('body').loadingModal('hide'); return delay(time); } )
+            //        .then(function() { $('body').loadingModal('destroy') ;} );
+        }
         $(document).ready(function () {
             winHeight = $(window).height();
             winWidth = $(window).width();
@@ -143,7 +164,7 @@ limitations under the License.
     </script>
 </head>
 
-<body class="init">
+<body>
     <div class="LayoutGrid LayoutCenter PanelDiffuseShadow PanelFillExtraLight">
         <nav class="megamenu">
             <ol>
@@ -219,7 +240,7 @@ limitations under the License.
             </div>
         </div>
     </div>
-    <div id="jqxLoader" style="z-index: 99999 !important;position:relative;"></div>
+    <div id="jqxLoader"></div>
 </body>
 
 </html>

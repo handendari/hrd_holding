@@ -67,7 +67,7 @@ $(document).ready(function () {
         theme: vTheme, isModal: true,
         autoOpen: false,
         resizable: false,
-        modalZIndex: 999
+        modalZIndex:999
     });
 
     //#endregion

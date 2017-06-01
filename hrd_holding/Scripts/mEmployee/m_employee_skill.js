@@ -48,9 +48,10 @@ function f_FillTableSkill(listSkill) {
 }
 
 function f_EmptyFamilySkill() {
-    $("#txtSkillName").val("");
-    $("#txtSkillName").data("skill_seq_no", 0);
+    $("#txtSkillCode").val($("#txtId").val());
+    $("#txtSkillCode").data("skill_seq_no", 0);
 
+    $("#txtSkillName").val("");
     $("#cmbSkillLevel").jqxComboBox({ selectedIndex: 0 });
     $("#txtSkillDesc").val("");
 }
@@ -118,6 +119,7 @@ $(document).ready(function () {
         opacity: 0.9, autoClose: true, template: "error"
     });
 
+    $("#txtSkillCode").jqxInput({ theme: vTheme, disabled: true })
     $("#txtSkillName").jqxInput({ theme: vTheme })
     $("#cmbSkillLevel").jqxComboBox({
         theme: vTheme, width: 120,
@@ -141,7 +143,7 @@ $(document).ready(function () {
     //#endregion
 
     $('#btnSkillNew').on('click', function (event) {
-        f_EmptyFamilyDetail();
+        f_EmptyFamilySkill();
         $("#modSkill").jqxWindow('open');
     });
 

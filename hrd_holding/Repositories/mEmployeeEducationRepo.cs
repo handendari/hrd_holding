@@ -252,7 +252,7 @@ namespace hrd_holding.Repositories
         {
             var vResp = new ResponseModel();
 
-            string SqlString = @"DELETE FROM m_employee_education WHERE employee_code = @pCode AND seq_no = @pSeqNo";
+            string SqlString = @"DELETE FROM m_employee_edu WHERE employee_code = @pCode AND seq_no = @pSeqNo";
 
             try
             {
