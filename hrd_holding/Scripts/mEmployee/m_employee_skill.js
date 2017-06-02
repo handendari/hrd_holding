@@ -9,17 +9,18 @@ var vSrcSkill =
          { name: 'employee_code' },
          { name: 'seq_no' },
          { name: 'skill' },
+         { name: 'level' },
          { name: 'nm_level' },
          { name: 'description' }
     ]
 };
 //#endregion
 
-function f_UpdateTblFamily() {
+function f_UpdateTblSkill() {
     var vEmpCode = $("#txtId").data("employee_code");
 
     $.ajax({
-        //url: base_url + "EmployeeSkill/GetEmployeeSkillList",
+        url: base_url + "EmployeeSkill/GetEmployeeSkillList",
         type: "POST",
         dataType: "json",
         data: jQuery.param({ pEmployeeCode: vEmpCode }),
@@ -38,6 +39,7 @@ function f_FillTableSkill(listSkill) {
         row["employment_code"] = listSkill[i].employee_code;
         row["seq_no"] = listSkill[i].seq_no;
         row["skill"] = listSkill[i].skill;
+        row["level"] = listSkill[i].level;
         row["nm_level"] = listSkill[i].nm_level;
         row["description"] = listSkill[i].description;
 
@@ -57,15 +59,16 @@ function f_EmptyFamilySkill() {
 }
 
 function f_DeleteEmployeeSkill(pEmpCode) {
-    $('#jqxLoader').jqxLoader('open');
+    $("#modYesNo").jqxWindow('close');
+    f_ShowLoaderModal();
 
     var selectedRowIndex = $("#tblSkill").jqxGrid('selectedrowindex');
     var vSeqNo = $('#tblSkill').jqxGrid('getcellvalue', selectedRowIndex, "seq_no");
 
 
-    if (vSeqNo > 0) {
+    if (vSeqNo >= 0) {
         $.ajax({
-            //url: base_url + "EmployeeFamily/DeleteEmployeeSkill",
+            url: base_url + "EmployeeSkill/DeleteEmployeeSkill",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({ pEmployeeCode: pEmpCode, pSeqNo: vSeqNo }),
@@ -74,11 +77,10 @@ function f_DeleteEmployeeSkill(pEmpCode) {
 
                 if (isOke) {
                     f_UpdateTblSkill();
-                    $("#modYesNo").jqxWindow('close');
                 } else {
-                    alert(d.vResp['message']);
+                    f_MessageBoxShow(d.vResp['message']);
                 }
-                $('#jqxLoader').jqxLoader('close');
+                f_HideLoaderModal();
             }
         });
     }
@@ -103,6 +105,7 @@ $(document).ready(function () {
                 { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
                 { text: 'sequence', datafield: 'seq_no', hidden: true },
                 { text: 'Skill', datafield: 'skill' },
+                { text: 'Level', datafield: 'level', hidden: true },
                 { text: 'Level', datafield: 'nm_level' },
                 { text: 'Description', datafield: 'description' }
             ]
@@ -133,7 +136,7 @@ $(document).ready(function () {
     $("#btnSkillCancel").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
     $("#modSkill").jqxWindow({
-        height: 250, width: 350,
+        height: 280, width: 350,
         theme: vTheme, isModal: true,
         autoOpen: false,
         resizable: false
@@ -153,17 +156,17 @@ $(document).ready(function () {
     });
 
     $('#btnSkillEdit').on('click', function (event) {
-        f_EmptyFamilyDetail();
+        f_EmptyFamilySkill();
 
         var rowindex = $('#tblSkill').jqxGrid('getselectedrowindex');
 
-        if (rowindex > 0) {
+        if (rowindex >= 0) {
             var rd = $('#tblSkill').jqxGrid('getrowdata', rowindex);
 
             //alert(JSON.stringify(rd));
+            $("#txtSkillCode").data("skill_seq_no", rd.seq_no);
 
-            $("#txtSkillName").val(rd.name);
-            $("#txtSkillName").data("skill_seq_no", rd.seq_no);
+            $("#txtSkillName").val(rd.skill);
 
             var vSkillLevel = rd.level;
             $("#cmbSkillLevel").jqxComboBox({ selectedIndex: vSkillLevel });
@@ -179,38 +182,39 @@ $(document).ready(function () {
     $('#btnSkillDelete').on('click', function (event) {
         var rowindex = $('#tblSkill').jqxGrid('getselectedrowindex');
 
-        if (rowindex > 0) {
+        if (rowindex >= 0) {
             $("#modYesNo").jqxWindow('open');
         } else {
             f_MessageBoxShow("Please Select Data...");
         }
     });
 
-    $('#btnSKillSave').on('click', function (event) {
+    $('#btnSkillSave').on('click', function (event) {
         if ($("#txtSkillName").val() == "") {
-            f_NotificationShow($("#psnSkill"), $("#psnSkillIsi"), "NAMA FAMILY TIDAK BOLEH KOSONG...");
+            f_NotificationShow($("#psnSkill"), $("#psnSkillIsi"), "Nama Skill Tidak Boleh Kosong...");
 
         } else {
-            $('#btnSkillSave').jqxButton({ disabled: true });
-            $('#jqxLoader').jqxLoader('open');
+            //$('#btnSkillSave').jqxButton({ disabled: true });
+            $("#modSkill").jqxWindow('close');
+            f_ShowLoaderModal();
 
 
             var vModel = JSON.stringify({
                 employee_code: $("#txtId").data("employee_code"),
                 employee_name: $("#txtFullName").val(),
-                seq_no: $("#txtSkillName").data("skill_seq_no"),
-                name: $("#txtSkillName").val(),
+                seq_no: $("#txtSkillCode").data("skill_seq_no"),
+                skill: $("#txtSkillName").val(),
                 level: $("#cmbSkillLevel").jqxComboBox('listBox').selectedIndex,
+                nm_level: $("#cmbSkillLevel").val(),
                 description: $("#txtSkillDesc").val()
             });
 
-            var vSeqNo = ($("#txtSkillName").data("skill_seq_no") == null
-                       || $("#txtSkillName").data("skill_seq_no") == "") ? 0 : $("#txtSkillName").data("skill_seq_no");
+            var vSeqNo = ($("#txtSkillCode").data("skill_seq_no") == "") ? 0 : $("#txtSkillCode").data("skill_seq_no");
 
-            if (vSeqNo > 0) {
+            if (vSeqNo >= 0) {
 
                 $.ajax({
-                    //url: base_url + "EmployeeSkill/UpdateEmployeeSkill",
+                    url: base_url + "EmployeeSkill/UpdateEmployeeSkill",
                     type: "POST",
                     contentType: "application/json",
                     data: vModel,
@@ -218,18 +222,17 @@ $(document).ready(function () {
                         var isOke = d.vResp['isValid'];
 
                         if (isOke) {
-                            f_UpdateTblFamily();
-                            $("#modSkill").jqxWindow('close');
+                            f_UpdateTblSkill();
                         } else {
-                            alert(d.vResp['message']);
+                            f_MessageBoxShow(d.vResp['message']);
                         }
-                        $('#btnSkillSave').jqxButton({ disabled: false });
-                        $('#jqxLoader').jqxLoader('close');
+                        //$('#btnSkillSave').jqxButton({ disabled: false });
+                        f_HideLoaderModal();
                     }
                 });
             } else {
                 $.ajax({
-                    //url: base_url + "EmployeeSkill/InsertEmployeeSkill",
+                    url: base_url + "EmployeeSkill/InsertEmployeeSkill",
                     type: "POST",
                     contentType: "application/json",
                     data: vModel,
@@ -237,13 +240,12 @@ $(document).ready(function () {
                         var isOke = d.vResp['isValid'];
 
                         if (isOke) {
-                            f_UpdateTblFamily();
-                            $("#modSkill").jqxWindow('close');
+                            f_UpdateTblSkill();
                         } else {
-                            alert(d.vResp['message']);
+                            f_MessageBoxShow(d.vResp['message']);
                         }
-                        $('#btnSkillSave').jqxButton({ disabled: false });
-                        $('#jqxLoader').jqxLoader('close');
+                        //$('#btnSkillSave').jqxButton({ disabled: false });
+                        f_HideLoaderModal();
                     }
                 });
             }

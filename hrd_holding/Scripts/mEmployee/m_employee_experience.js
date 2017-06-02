@@ -15,7 +15,8 @@ var vSrcExp =
          { name: 'start_working', type: 'date' },
          { name: 'end_working', type: 'date' },
          { name: 'last_salary' },
-         { name: 'reason_stop_working' }
+         { name: 'reason_stop_working' },
+         { name: 'description' }
     ]
 };
 
@@ -51,6 +52,7 @@ function f_FillTableExp(listExp) {
         row["end_working"] = new Date(parseInt(listExp[i].end_working.substr(6)));
         row["last_salary"] = listExp[i].last_salary;
         row["reason_stop_working"] = listExp[i].reason_stop_working;
+        row["description"] = listExp[i].description;
 
         vDataExp.push(row);
     }
@@ -75,7 +77,8 @@ function f_EmptyExpDetail() {
 }
 
 function f_DeleteEmployeeExp(pEmpCode) {
-    $('#jqxLoader').jqxLoader('open');
+    $("#modYesNo").jqxWindow('close');
+    f_ShowLoaderModal();
 
     var selectedRowIndex = $("#tblExperience").jqxGrid('selectedrowindex');
     var vSeqNo = $('#tblExperience').jqxGrid('getcellvalue', selectedRowIndex, "seq_no");
@@ -92,11 +95,10 @@ function f_DeleteEmployeeExp(pEmpCode) {
 
                 if (isOke) {
                     f_UpdateTblExp();
-                    $("#modYesNo").jqxWindow('close');
                 } else {
-                    alert(d.vResp['message']);
+                    f_MessageBoxShow(d.vResp['message']);
                 }
-                $('#jqxLoader').jqxLoader('close');
+                f_HideLoaderModal();
             }
         });
     }
@@ -141,7 +143,8 @@ $(document).ready(function () {
                     cellsalign: 'right', align: 'center',
                     cellsformat: 'd2', width: 150
                 },
-                { text: 'Reason', datafield: 'reason_stop_working', width: 300 }
+                { text: 'Reason', datafield: 'reason_stop_working', width: 300 },
+                { text: 'Description', datafield: 'description', hidden: true }
             ]
         });
     }
@@ -156,7 +159,7 @@ $(document).ready(function () {
         opacity: 0.9, autoClose: true, template: "error"
     });
 
-    $("#txtExpCode").jqxInput({ theme: vTheme,disabled:true })
+    $("#txtExpCode").jqxInput({ theme: vTheme, disabled: true })
     $("#dtExpStart").jqxDateTimeInput({ theme: vTheme });
     $("#dtExpEnd").jqxDateTimeInput({ theme: vTheme });
 
@@ -197,35 +200,23 @@ $(document).ready(function () {
     $('#btnExpEdit').on('click', function (event) {
         f_EmptyExpDetail();
 
-        var rowindex = $('#tblFamily').jqxGrid('getselectedrowindex');
+        var rowindex = $('#tblExperience').jqxGrid('getselectedrowindex');
 
-        if (rowindex > 0) {
+        if (rowindex >= 0) {
             var rd = $('#tblExperience').jqxGrid('getrowdata', rowindex);
 
-            //alert(JSON.stringify(rd));
+            $("#txtExpCode").data("exp_seq_no", rd.seq_no);
+            $("#dtExpStart").jqxDateTimeInput('setDate',rd.start_working);
+            $("#dtExpEnd").jqxDateTimeInput('setDate',rd.end_working);
+            $("#txtExpCompanyName").val(rd.company_name);
+            $("txtExpBussiness").val(rd.usaha);
+            $("txtExpDepartment").val(rd.department_name);
+            $("txtExpLastTitle").val(rd.last_title);
+            $("txtExpSalary").val(rd.last_salary);
+            $("txtExpReason").val(rd.reason_stop_working);
+            $("txtExpDesc").val(rd.description);
 
-            $("#txtFamName").val(rd.name);
-            $("#txtFamName").data("fam_seq_no", rd.seq_no);
-
-            $("#txtFamDob").jqxDateTimeInput('setDate', rd.date_birth);
-
-            var vFamGender = rd.sex;
-            $("#cmbFamGender").jqxComboBox({ selectedIndex: vFamGender });
-
-            var vFamRelation = rd.relationship;
-            $("#cmbFamRelation").jqxComboBox({ selectedIndex: vFamRelation });
-
-            $("#txtFamEducation").val(rd.education);
-            $("#txtFamEmployment").val(rd.employment);
-            $("#txtFamAddress").val(rd.address);
-
-            if (rd.chk_address == 1) {
-                $("#chkFamAddress").jqxCheckBox('check');
-            } else {
-                $("#chkFamAddress").jqxCheckBox('uncheck');
-            }
-
-            $("#modFamily").jqxWindow('open');
+            $("#modExperience").jqxWindow('open');
         } else {
             f_MessageBoxShow("Please Select Data...");
         }
@@ -247,38 +238,33 @@ $(document).ready(function () {
 
         } else {
             $('#btnModFamSave').jqxButton({ disabled: true });
-            $('#jqxLoader').jqxLoader('open');
+            $("#modExperience").jqxWindow('close');
+
+            f_ShowLoaderModal();
 
             var vAlamat = "";
-
-            if ($("#chkFamAddress").jqxCheckBox('checked')) {
-                vAlamat = $("#txtAddress").val();
-            } else {
-                vAlamat = $("#txtFamAddress").val();
-            }
 
             var vModel = JSON.stringify({
                 employee_code: $("#txtId").data("employee_code"),
                 employee_name: $("#txtFullName").val(),
-                seq_no: $("#txtFamName").data("fam_seq_no"),
-                name: $("#txtFamName").val(),
-                relationship: $("#cmbFamRelation").jqxComboBox('listBox').selectedIndex,
-                nm_rel: $("#cmbFamRelation").val(),
-                date_birth: $("#txtFamDob").jqxDateTimeInput('getDate'),
-                sex: $("#cmbFamGender").jqxComboBox('listBox').selectedIndex,
-                education: $("#txtFamEducation").val(),
-                employment: $("#txtFamEmployment").val(),
-                chk_address: $("#chkFamAddress").jqxCheckBox('checked'),
-                address: vAlamat
+                seq_no: $("#txtExpCode").data("exp_seq_no"),
+                start_working : $("#dtExpStart").jqxDateTimeInput('getDate'),
+                end_working : $("#dtExpEnd").jqxDateTimeInput('getDate'),
+                company_name : $("#txtExpCompanyName").val(),
+                usaha : $("txtExpBussiness").val(),
+                department_name: $("txtExpDepartment").val(),
+                last_title: $("txtExpLastTitle").val(),
+                last_salary: $("txtExpSalary").val(),
+                reason_stop_working: $("txtExpReason").val(),
+                description: $("txtExpDesc").val()
             });
 
-            var vSeqNo = ($("#txtFamName").data("fam_seq_no") == null
-                       || $("#txtFamName").data("fam_seq_no") == "") ? 0 : $("#txtFamName").data("fam_seq_no");
+            var vSeqNo = ($("#txtExpCode").data("exp_seq_no") == "") ? 0 : $("#txtExpCode").data("exp_seq_no");
 
             if (vSeqNo > 0) {
 
                 $.ajax({
-                    url: base_url + "EmployeeFamily/UpdateEmployeeFamily",
+                    url: base_url + "EmployeeExperience/UpdateEmployeeExperience",
                     type: "POST",
                     contentType: "application/json",
                     data: vModel,
@@ -287,17 +273,16 @@ $(document).ready(function () {
 
                         if (isOke) {
                             f_UpdateTblFamily();
-                            $("#modFamily").jqxWindow('close');
                         } else {
-                            alert(d.vResp['message']);
+                            f_MessageBoxShow(d.vResp['message']);
                         }
                         $('#btnModFamSave').jqxButton({ disabled: false });
-                        $('#jqxLoader').jqxLoader('close');
+                        f_HideLoaderModal();
                     }
                 });
             } else {
                 $.ajax({
-                    url: base_url + "EmployeeFamily/InsertEmployeeFamily",
+                    url: base_url + "EmployeeExperience/InsertEmployeeExperience",
                     type: "POST",
                     contentType: "application/json",
                     data: vModel,
@@ -306,12 +291,11 @@ $(document).ready(function () {
 
                         if (isOke) {
                             f_UpdateTblFamily();
-                            $("#modFamily").jqxWindow('close');
                         } else {
-                            alert(d.vResp['message']);
+                            f_MessageBoxShow(d.vResp['message']);
                         }
                         $('#btnModFamSave').jqxButton({ disabled: false });
-                        $('#jqxLoader').jqxLoader('close');
+                        f_HideLoaderModal();
                     }
                 });
             }

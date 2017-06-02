@@ -132,6 +132,11 @@ limitations under the License.
             //        .then(function() { $('body').loadingModal('hide'); return delay(time); } )
             //        .then(function() { $('body').loadingModal('destroy') ;} );
         }
+
+        function f_HideLoaderModal() {
+            $('body').loadingModal('hide');
+        }
+
         $(document).ready(function () {
             winHeight = $(window).height();
             winWidth = $(window).width();

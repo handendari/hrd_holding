@@ -794,8 +794,8 @@ namespace hrd_holding.Repositories
         public int getEmployeeSeqNo(string pEmployeeCode,string pCompanyCode)
         {
             var vSeqNo = 0;
-            var strSQL = @"SELECT MAX(seqno) seqno
-                           FROM m_empoloyee emp
+            var strSQL = @"SELECT IFNULL(MAX(seq_no),0) seqno
+                           FROM m_employee emp
                            WHERE emp.employee_code = @pEmployeeCode AND emp.company_code = @pCompanyCode";
             try
             {

@@ -283,5 +283,42 @@ namespace hrd_holding.Repositories
 
             return vResp;
         }
+
+        public int getEmployeeEducationSeqNo(string pEmployeeCode)
+        {
+            var vSeqNo = 0;
+            var strSQL = @"SELECT IFNULL(MAX(seq_no),0) seq_no
+                           FROM m_employee_edu emp
+                           WHERE emp.employee_code = @pEmployeeCode";
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@pEmployeeCode", pEmployeeCode);
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vSeqNo = aa.GetInt16("seq_no") + 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(DateTime.Now + " GetEmployeeSeqNo Failed", ex);
+            }
+            return vSeqNo;
+        }
+
     }
 }

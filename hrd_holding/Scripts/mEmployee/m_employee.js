@@ -355,7 +355,12 @@ $(document).ready(function () {
             case 1:
                 f_DeleteEmployeeEducation(vEmpCode);
                 break;
-
+            case 2:
+                f_DeleteEmployeeSkill(vEmpCode);
+                break;
+            case 2:
+                f_DeleteEmployeeExp(vEmpCode);
+                break;
         }
     });
 

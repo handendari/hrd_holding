@@ -12,8 +12,10 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("EmployeeSkillRepo");
 
-        public void InsertEmployeeSkill(mEmployeeSkillModel pModel)
+        public ResponseModel InsertEmployeeSkill(mEmployeeSkillModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"INSERT INTO `m_employee_skill`
                                             (`employee_code`,`seq_no`,`skill`,`level`,`nm_level`,`flag_skill`,`description`,`entry_date`,
                                              `entry_user`,`edit_date`,`edit_user`)
@@ -44,6 +46,9 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+
+                        vResp.isValid = true;
+                        vResp.message = " INSERT EMPLOYEE SKILL ====>>>> Code : " + pModel.employee_code;
                         Log.Debug(DateTime.Now + " INSERT EMPLOYEE SKILL ====>>>> Code : " + pModel.employee_code);
 
                     }
@@ -51,9 +56,12 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT EMPLOYEE SKILL FAILED....";
                 Log.Error(DateTime.Now + " INSERT EMPLOYEE SKILL FAILED", ex);
             }
 
+            return vResp;
         }
 
         public List<mEmployeeSkillModel> getEmployeeSkillList(string pEmployeeCode)
@@ -163,8 +171,10 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateEmployeeSkill(mEmployeeSkillModel pModel)
+        public ResponseModel UpdateEmployeeSkill(mEmployeeSkillModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"UPDATE `m_employee_skill`
                                       SET `skill` = @pSkill,
                                           `level` = @pLevel,
@@ -199,6 +209,9 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+
+                        vResp.isValid=true;
+                        vResp.message = " UPDATE EMPLOYEE SKILL SUCCESS ====>>>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " UPDATE EMPLOYEE SKILL SUCCESS ====>>>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -206,14 +219,19 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid=false;
+                vResp.message= "UPDATE EMPLOYEE BRANCH FAILED...";
                 Log.Error(DateTime.Now + " UPDATE EMPLOYEE BRANCH FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public void DeleteEmployeeSkill(string pCode, int pSeqNo)
+        public ResponseModel DeleteEmployeeSkill(string pCode, int pSeqNo)
         {
-            string SqlString = @"DELETE m_employee_Skill WHERE employee_code = @pCode AND seq_no = @pSeqNo";
+            var vResp = new ResponseModel();
+
+            string SqlString = @"DELETE FROM m_employee_Skill WHERE employee_code = @pCode AND seq_no = @pSeqNo";
 
             try
             {
@@ -228,6 +246,9 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pSeqNo", pSeqNo);
 
                         var status = cmd.ExecuteNonQuery();
+
+                        vResp.isValid = true;
+                        vResp.message = " DELETE EMPLOYEE SKILL SUCCESS ====>>>>>> Code : " + pCode + " SeqNo : " + pSeqNo;
                         Log.Debug(DateTime.Now + " DELETE EMPLOYEE SKILL SUCCESS ====>>>>>> Code : " + pCode + " SeqNo : " + pSeqNo);
 
                     }
@@ -235,9 +256,48 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = "DELETE EMPLOYEE SKILL FAILED...";
                 Log.Error(DateTime.Now + " DELETE EMPLOYEE SKILL FAILED", ex);
             }
 
+            return vResp;
+        }
+
+        public int getEmployeeSkillSeqNo(string pEmployeeCode)
+        {
+            var vSeqNo = 0;
+            var strSQL = @"SELECT IFNULL(MAX(seq_no),0) seq_no
+                           FROM m_employee_skill emp
+                           WHERE emp.employee_code = @pEmployeeCode";
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@pEmployeeCode", pEmployeeCode);
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vSeqNo = aa.GetInt16("seq_no") + 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(DateTime.Now + " GetEmployeeSeqNo Failed", ex);
+            }
+            return vSeqNo;
         }
 
     }

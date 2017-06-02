@@ -12,8 +12,10 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("EmployeeExperienceRepo");
 
-        public void InsertEmployeeExperience(mEmployeeExperienceModel pModel)
+        public ResponseModel InsertEmployeeExperience(mEmployeeExperienceModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"INSERT INTO `m_employee_exp`
                                             (`employee_code`,`seq_no`,`start_working`,`end_working`,`company_name`,`usaha`,
                                              `department_name`,`last_title`,`last_salary`,`reason_stop_working`,`description`,
@@ -50,6 +52,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " INSERT EMPLOYEE EXPERIENCE SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " INSERT EMPLOYEE EXPERIENCE SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -57,9 +61,12 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = "INSERT EMPLOYEE EXPERIENCE FAILED....";
                 Log.Error(DateTime.Now + " INSERT EMPLOYEE EXPERIENCE FAILED", ex);
             }
 
+            return vResp;
         }
 
         public List<mEmployeeExperienceModel> getEmployeeExperienceList(string pEmployeeCode)
@@ -176,8 +183,10 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateEmployeeExperience(mEmployeeExperienceModel pModel)
+        public ResponseModel UpdateEmployeeExperience(mEmployeeExperienceModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"UPDATE `m_employee_exp`
                                     SET `start_working` = @pStartWorking,
                                         `end_working` = @pEndWorking,
@@ -220,6 +229,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " UPDATE EMPLOYEE EXPERIENCE SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " UPDATE EMPLOYEE EXPERIENCE SUCCESS ====>>>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -227,14 +238,19 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = "UPDATE EMPLOYEE EXPERIENCE FAILED.....";
                 Log.Error(DateTime.Now + " UPDATE EMPLOYEE EXPERIENCE FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public void DeleteEmployeeExperience(string pCode, int pSeqNo)
+        public ResponseModel DeleteEmployeeExperience(string pCode, int pSeqNo)
         {
-            string SqlString = @"DELETE m_employee_exp WHERE employee_code = @pCode AND seq_no = @pSeqNo";
+            var vResp = new ResponseModel();
+
+            string SqlString = @"DELETE FROM m_employee_exp WHERE employee_code = @pCode AND seq_no = @pSeqNo";
 
             try
             {
@@ -249,6 +265,9 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pSeqNo", pSeqNo);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " DELETE EMPLOYEE EXPERIENCE SUCCESS, Employee Code : " + pCode + " NoSeq : " + pSeqNo;
+
                         Log.Debug(DateTime.Now + " DELETE EMPLOYEE EXPERIENCE SUCCESS ====>>>>>> Employee Code : " + pCode + " NoSeq : " + pSeqNo);
 
                     }
@@ -256,10 +275,48 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = "DELETE EMPLOYEE EXPERIENCE FAILED.....";
                 Log.Error(DateTime.Now + " DELETE EMPLOYEE EXPERIENCE FAILED", ex);
             }
 
+            return vResp;
         }
 
+        public int getEmployeeExperienceSeqNo(string pEmployeeCode)
+        {
+            var vSeqNo = 0;
+            var strSQL = @"SELECT IFNULL(MAX(seq_no),0) seq_no
+                           FROM m_employee_exp emp
+                           WHERE emp.employee_code = @pEmployeeCode";
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@pEmployeeCode", pEmployeeCode);
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vSeqNo = aa.GetInt16("seq_no") + 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(DateTime.Now + " GetEmployeeSeqNo Failed", ex);
+            }
+            return vSeqNo;
+        }
     }
 }

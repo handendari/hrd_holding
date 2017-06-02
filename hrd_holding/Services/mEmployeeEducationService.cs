@@ -44,6 +44,9 @@ namespace hrd_holding.Services
         {
             pModel.entry_user = "it";
             pModel.entry_date = DateTime.Now;
+            pModel.seq_no = _repoEdu.getEmployeeEducationSeqNo(pModel.employee_code);
+
+            Log.Debug(DateTime.Now + " =====>>>>>>   Seq No Edu : " + pModel.seq_no);
 
             var vModel = _repoEdu.InsertEmployeeEducation(pModel);
             return vModel;

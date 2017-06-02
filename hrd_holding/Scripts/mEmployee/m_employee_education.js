@@ -60,9 +60,9 @@ function f_FillTableEducation(listEdu) {
 
 function f_EmptyEduDetail() {
     $('#txtEduCode').val($('#txtId').val());
-    $("#dtEduStartYear").jqxDateTimeInput('setDate', new Date());
-    $("#dtEduStartYear").data("edu_seq_no", 0);
+    $("#dtEduCode").data("edu_seq_no", 0);
 
+    $("#dtEduStartYear").jqxDateTimeInput('setDate', new Date());
     $("#dtEduEndYear").jqxDateTimeInput('setDate', new Date());
 
     $("#cmbEduLevel").jqxComboBox({ selectedIndex: 0 });
@@ -97,7 +97,7 @@ function f_DeleteEmployeeEducation(pEmpCode) {
                 } else {
                     f_MessageBoxShow(d.vResp['message']); //alert(d.vResp['message']);
                 }
-                $('body').loadingModal('hide');
+                f_HideLoaderModal();
             }
         });
     }
@@ -331,7 +331,7 @@ $(document).ready(function () {
 
     $('#btnEduSave').on('click', function (event) {
         $('#btnEduSave').jqxButton({ disabled: true });
-        $('#jqxLoader').jqxLoader('open');
+        f_ShowLoaderModal();
 
         var vModel = JSON.stringify({
             employee_code: $("#txtId").data("employee_code"),
@@ -349,10 +349,9 @@ $(document).ready(function () {
             country_name : $("#txtEduCountryName").val()
         });
 
-        var vSeqNo = ($("#txtEduCode").data("edu_seq_no") == null
-                   || $("#txtEduCode").data("edu_seq_no") == "") ? 0 : $("#txtEduCode").data("edu_seq_no");
+        var vSeqNo = ($("#txtEduCode").data("edu_seq_no") == "") ? 0 : $("#txtEduCode").data("edu_seq_no");
 
-        if (vSeqNo > 0) {
+        if (vSeqNo >= 0) {
 
             $.ajax({
                 url: base_url + "EmployeeEducation/UpdateEmployeeEducation",
@@ -366,10 +365,10 @@ $(document).ready(function () {
                         f_UpdateTblEducation();
                         $("#modEducation").jqxWindow('close');
                     } else {
-                        alert(d.vResp['message']);
+                        f_MessageBoxShow(d.vResp['message']);
                     }
                     $('#btnEduSave').jqxButton({ disabled: false });
-                    $('#jqxLoader').jqxLoader('close');
+                    f_HideLoaderModal();
                 }
             });
         } else {
@@ -385,10 +384,10 @@ $(document).ready(function () {
                         f_UpdateTblEducation();
                         $("#modEducation").jqxWindow('close');
                     } else {
-                        alert(d.vResp['message']);
+                        f_MessageBoxShow(d.vResp['message']);
                     }
                     $('#btnEduSave').jqxButton({ disabled: false });
-                    $('#jqxLoader').jqxLoader('close');
+                    f_HideLoaderModal();
                 }
             });
         }
