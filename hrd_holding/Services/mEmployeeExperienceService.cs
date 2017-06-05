@@ -46,7 +46,7 @@ namespace hrd_holding.Services
             pModel.entry_date = DateTime.Now;
             pModel.seq_no = _repoExp.getEmployeeExperienceSeqNo(pModel.employee_code);
 
-            Log.Debug(DateTime.Now + " =====>>>>>>   Seq No Edu : " + pModel.seq_no);
+            Log.Debug(DateTime.Now + " =====>>>>>>   Seq No Exp : " + pModel.seq_no);
 
             var vModel = _repoExp.InsertEmployeeExperience(pModel);
             return vModel;

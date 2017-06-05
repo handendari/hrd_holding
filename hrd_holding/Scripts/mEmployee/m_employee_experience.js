@@ -22,7 +22,7 @@ var vSrcExp =
 
 //#endregion
 
-function f_UpdateTblExp() {
+function f_UpdateTblExperience() {
     var vEmpCode = $("#txtId").data("employee_code");
 
     $.ajax({
@@ -167,7 +167,8 @@ $(document).ready(function () {
     $("#txtExpBussiness").jqxInput({ theme: vTheme })
     $("#txtExpDepartment").jqxInput({ theme: vTheme })
     $("#txtExpLastTitle").jqxInput({ theme: vTheme })
-    $("#txtExpSalary").jqxInput({ theme: vTheme })
+    //$("#txtExpSalary").jqxInput({ theme: vTheme })
+    $("#txtExpSalary").jqxNumberInput({ theme: vTheme, spinButtons: true });
     $("#txtExpReason").jqxInput({ theme: vTheme })
 
     $('#txtExpDesc').jqxTextArea({
@@ -209,12 +210,12 @@ $(document).ready(function () {
             $("#dtExpStart").jqxDateTimeInput('setDate',rd.start_working);
             $("#dtExpEnd").jqxDateTimeInput('setDate',rd.end_working);
             $("#txtExpCompanyName").val(rd.company_name);
-            $("txtExpBussiness").val(rd.usaha);
-            $("txtExpDepartment").val(rd.department_name);
-            $("txtExpLastTitle").val(rd.last_title);
-            $("txtExpSalary").val(rd.last_salary);
-            $("txtExpReason").val(rd.reason_stop_working);
-            $("txtExpDesc").val(rd.description);
+            $("#txtExpBussiness").val(rd.usaha);
+            $("#txtExpDepartment").val(rd.department_name);
+            $("#txtExpLastTitle").val(rd.last_title);
+            $("#txtExpSalary").val(rd.last_salary);
+            $("#txtExpReason").val(rd.reason_stop_working);
+            $("#txtExpDesc").val(rd.description);
 
             $("#modExperience").jqxWindow('open');
         } else {
@@ -233,11 +234,11 @@ $(document).ready(function () {
     });
 
     $('#btnExpSave').on('click', function (event) {
-        if ($("#txtFamName").val() == "") {
-            f_NotificationShow($("#jqxNotification"), $("#notificationContent"), "NAMA FAMILY TIDAK BOLEH KOSONG...");
+        if ($("#txtExpCompanyName").val() == "") {
+            f_NotificationShow($("#jqxNotification"), $("#notificationContent"), "Company Name Tidak Boleh Kosong...");
 
         } else {
-            $('#btnModFamSave').jqxButton({ disabled: true });
+            $('#btnExpSave').jqxButton({ disabled: true });
             $("#modExperience").jqxWindow('close');
 
             f_ShowLoaderModal();
@@ -251,12 +252,12 @@ $(document).ready(function () {
                 start_working : $("#dtExpStart").jqxDateTimeInput('getDate'),
                 end_working : $("#dtExpEnd").jqxDateTimeInput('getDate'),
                 company_name : $("#txtExpCompanyName").val(),
-                usaha : $("txtExpBussiness").val(),
-                department_name: $("txtExpDepartment").val(),
-                last_title: $("txtExpLastTitle").val(),
-                last_salary: $("txtExpSalary").val(),
-                reason_stop_working: $("txtExpReason").val(),
-                description: $("txtExpDesc").val()
+                usaha : $("#txtExpBussiness").val(),
+                department_name: $("#txtExpDepartment").val(),
+                last_title: $("#txtExpLastTitle").val(),
+                last_salary: $("#txtExpSalary").val(),
+                reason_stop_working: $("#txtExpReason").val(),
+                description: $("#txtExpDesc").val()
             });
 
             var vSeqNo = ($("#txtExpCode").data("exp_seq_no") == "") ? 0 : $("#txtExpCode").data("exp_seq_no");
@@ -272,11 +273,11 @@ $(document).ready(function () {
                         var isOke = d.vResp['isValid'];
 
                         if (isOke) {
-                            f_UpdateTblFamily();
+                            f_UpdateTblExperience();
                         } else {
                             f_MessageBoxShow(d.vResp['message']);
                         }
-                        $('#btnModFamSave').jqxButton({ disabled: false });
+                        $('#btnExpSave').jqxButton({ disabled: false });
                         f_HideLoaderModal();
                     }
                 });
@@ -290,11 +291,11 @@ $(document).ready(function () {
                         var isOke = d.vResp['isValid'];
 
                         if (isOke) {
-                            f_UpdateTblFamily();
+                            f_UpdateTblExperience();
                         } else {
                             f_MessageBoxShow(d.vResp['message']);
                         }
-                        $('#btnModFamSave').jqxButton({ disabled: false });
+                        $('#btnExpave').jqxButton({ disabled: false });
                         f_HideLoaderModal();
                     }
                 });

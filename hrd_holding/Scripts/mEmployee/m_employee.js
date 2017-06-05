@@ -1,4 +1,5 @@
 ﻿var vDataTbl = {};
+f_ShowLoaderModal();
 
 $(document).ready(function () {
     //#region INIT COMPONENT
@@ -339,6 +340,8 @@ $(document).ready(function () {
                     //#endregion
 
                 }
+
+                f_HideLoaderModal();
             }
         });
     }

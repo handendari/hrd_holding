@@ -53,7 +53,7 @@ namespace hrd_holding.Repositories
 
                         var status = cmd.ExecuteNonQuery();
                         vResp.isValid = true;
-                        vResp.message = " INSERT EMPLOYEE EXPERIENCE SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
+                        vResp.message = " INSERT EMPLOYEE EXPERIENCE SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " INSERT EMPLOYEE EXPERIENCE SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -75,8 +75,10 @@ namespace hrd_holding.Repositories
             var strSQL = @"SELECT mee.employee_code,emp.employee_name,mee.seq_no,mee.start_working,mee.end_working,
                                   IFNULL(mee.company_name,'') company_name,IFNULL(mee.usaha,'') usaha,
                                   IFNULL(mee.department_name,'') department_name,IFNULL(mee.last_title,'') last_title,
-                                  IFNULL(mee.last_salary,0) last_salary,IFNULL(mee.reason_stop_working,'') reason_stop_working,IFNULL(mee.description,'') description,
-                                  mee.entry_date,mee.entry_user,mee.edit_date,IFNULL(mee.edit_user,'') edit_user
+                                  IFNULL(mee.last_salary,0) last_salary,IFNULL(mee.reason_stop_working,'') reason_stop_working,
+                                  IFNULL(mee.description,'') description,
+                                  mee.entry_date,IFNULL(mee.entry_user,'') entry_user,
+                                  mee.edit_date,IFNULL(mee.edit_user,'') edit_user
                            FROM m_employee_exp mee JOIN m_employee emp ON mee.employee_code = emp.employee_code
                            WHERE mee.employee_code = @pEmployeeCode";
             try
