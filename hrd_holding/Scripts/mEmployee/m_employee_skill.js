@@ -25,9 +25,9 @@ function f_UpdateTblSkill() {
         dataType: "json",
         data: jQuery.param({ pEmployeeCode: vEmpCode }),
         success: function (dt) {
-            if (dt.listSkill != null && dt.listSkill.length > 0) {
+           // if (dt.listSkill != null && dt.listSkill.length > 0) {
                 f_FillTableSkill(dt.listSkill);
-            }
+           // }
         }
     });
 }
@@ -50,7 +50,7 @@ function f_FillTableSkill(listSkill) {
 }
 
 function f_EmptyFamilySkill() {
-    $("#txtSkillCode").val($("#txtId").val());
+    $("#txtSkillCode").val($("#txtId").data("employee_code"));
     $("#txtSkillCode").data("skill_seq_no", 0);
 
     $("#txtSkillName").val("");

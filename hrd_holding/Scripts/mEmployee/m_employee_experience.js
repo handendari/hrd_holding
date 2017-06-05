@@ -31,9 +31,9 @@ function f_UpdateTblExperience() {
         dataType: "json",
         data: jQuery.param({ pEmployeeCode: vEmpCode }),
         success: function (dt) {
-            if (dt.listExp != null && dt.listExp.length > 0) {
+          //  if (dt.listExp != null && dt.listExp.length > 0) {
                 f_FillTableExp(dt.listExp);
-            }
+          //  }
         }
     });
 }
@@ -61,7 +61,9 @@ function f_FillTableExp(listExp) {
 }
 
 function f_EmptyExpDetail() {
-    $("#txtExpCode").val($("#txtId").val());
+    $('#btnExpSave').jqxButton({ disabled: false });
+
+    $("#txtExpCode").val($("#txtId").data("employee_code"));
     $("#txtExpCode").data("exp_seq_no", 0);
 
     $("#dtExpStart").jqxDateTimeInput('setDate', new Date());
@@ -94,7 +96,7 @@ function f_DeleteEmployeeExp(pEmpCode) {
                 var isOke = d.vResp['isValid'];
 
                 if (isOke) {
-                    f_UpdateTblExp();
+                    f_UpdateTblExperience();
                 } else {
                     f_MessageBoxShow(d.vResp['message']);
                 }

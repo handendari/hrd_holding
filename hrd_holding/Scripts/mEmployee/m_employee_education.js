@@ -28,9 +28,9 @@ function f_UpdateTblEducation() {
         dataType: "json",
         data: jQuery.param({ pEmployeeCode: vEmpCode }),
         success: function (dt) {
-            if (dt.listEdu != null && dt.listEdu.length > 0) {
+           // if (dt.listEdu != null && dt.listEdu.length > 0) {
                 f_FillTableEducation(dt.listEdu);
-            }
+           // }
         }
     });
 }
@@ -59,7 +59,7 @@ function f_FillTableEducation(listEdu) {
 }
 
 function f_EmptyEduDetail() {
-    $('#txtEduCode').val($('#txtId').val());
+    $('#txtEduCode').val($('#txtId').data("employee_code"));
     $("#dtEduCode").data("edu_seq_no", 0);
 
     $("#dtEduStartYear").jqxDateTimeInput('setDate', new Date());
@@ -101,51 +101,6 @@ function f_DeleteEmployeeEducation(pEmpCode) {
             }
         });
     }
-}
-
-var vUrl = "";
-var SrcLookUp = {
-    url: vUrl,
-    datatype: "json",
-    type: "Post",
-    datafields: [{ name: "country_code" },
-                 { name: "int_code" },
-                 { name: "int_country" },
-                 { name: "country_name" }],
-    cache: false,
-    filter: function () { $("#tblLookUp").jqxGrid('updatebounddata', 'filter'); },
-    sort: function () { $("#tblLookUp").jqxGrid('updatebounddata', 'sort'); },
-    beforeprocessing: function (data) { SrcLookUp.totalrecords = data["TotalRows"]; },
-    root: 'Rows'
-}
-
-function initGridLookUp() {
-    $("#tblLookUp").jqxGrid(
-      {
-          theme: vTheme,
-          //source: dataAdapter,
-          width: '100%',
-          height: 420,
-          filterable: true,
-          sortable: true,
-          pageable: true,
-          pagesize: 15,
-          pagesizeoptions: ['15', '20', '30'],
-          rowsheight: 20,
-          autorowheight: true,
-          columnsresize: true,
-          virtualmode: true,
-          autoshowfiltericon: true,
-          rendergridrows: function (obj) {
-              return obj.data;
-          },
-          columns: [
-              { text: 'Code', dataField: 'country_code', cellsalign: 'center' },
-              { text: 'Int Code', dataField: 'int_code', hidden: true },
-              { text: 'Int Code', dataField: 'int_country', cellsalign: 'center' },
-              { text: 'Country Name', dataField: 'country_name' }
-          ]
-      });
 }
 
 $(document).ready(function () {
@@ -220,60 +175,12 @@ $(document).ready(function () {
     $("#btnEduSave").jqxButton({ theme: vTheme, height: 30, width: 100 });
     $("#btnEduCancel").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
-    initGridLookUp();
-
     $("#modEducation").jqxWindow({
         height: 280, width: 750,
         theme: vTheme,
         isModal: true,
         autoOpen: false,
         resizable: false
-    });
-
-    $("#modLookUp").jqxWindow({
-        height: 500, width: 430,
-        theme: vTheme, isModal: true,
-        autoOpen: false,
-        resizable: false
-    });
-
-    $("#jqxToolBar").jqxToolBar({
-        theme: vTheme,
-        width: '100%', height: 35, tools: 'button | button',
-        initTools: function (type, index, tool, menuToolIninitialization) {
-            switch (index) {
-                case 0:
-                    //var button = $("<div>" + "<img src='../../images/administrator.png' title='Custom tool' />" + "</div>");
-                    tool.text("Select Data");
-                    tool.height("25px");
-                    tool.width("80px");
-                    tool.on("click", function () {
-                        var rowindex = $('#tblLookUp').jqxGrid('getselectedrowindex');
-                        if (rowindex >= 0) {
-                            var rd = $('#tblLookUp').jqxGrid('getrowdata', rowindex);
-
-                            $("#txtEduCountryCode").val(rd.int_country);
-                            $("#txtEduCountryCode").data("edu_country_code", rd.country_code);
-
-                            $("#txtEduCountryName").val(rd.country_name);
-
-                            $("#modLookUp").jqxWindow('close');
-                        } else {
-                            f_MessageBoxShow("Please Select Data...");
-                        }
-                    });
-                    break;
-                case 1:
-                    //var button = $("<div>" + "<img src='../../images/administrator.png' title='Custom tool' />" + "</div>");
-                    tool.text("Cancel");
-                    tool.height("25px");
-                    tool.width("50px");
-                    tool.on("click", function () {
-                        $("#modLookUp").jqxWindow('close');
-                    });
-                    break;
-            }
-        }
     });
     //#endregion INIT EDUCATION
 
@@ -394,23 +301,22 @@ $(document).ready(function () {
     });
 
     $('#btnEduCountry').on('click', function (event) {
-        SrcLookUp.url = base_url + "/Country/GetCountryList";
+        SrcCountryLookUp.url = base_url + "/Country/GetCountryList";
+        vCountry = "edu";
 
-        var vAdapter = new $.jqx.dataAdapter(SrcLookUp, {
+        var vAdapter = new $.jqx.dataAdapter(SrcCountryLookUp, {
             downloadComplete: function (data, status, xhr) {
-                if (!SrcLookUp.TotalRows) {
-                    SrcLookUp.TotalRows = data.length;
+                if (!SrcCountryLookUp.TotalRows) {
+                    SrcCountryLookUp.TotalRows = data.length;
                 }
             }
         });
 
-        $('#tblLookUp').jqxGrid({ source: vAdapter })
+        $('#tblCountryLookUp').jqxGrid({ source: vAdapter })
 
-        $('#tblLookUp').jqxGrid('gotopage', 0);
+        $('#tblCountryLookUp').jqxGrid('gotopage', 0);
 
-        $("#modLookUp").jqxWindow('open');
+        $("#modCountryLookUp").jqxWindow('open');
     });
-
-
 
 });

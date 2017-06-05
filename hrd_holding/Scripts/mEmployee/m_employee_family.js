@@ -30,9 +30,9 @@ function f_UpdateTblFamily() {
         dataType: "json",
         data: jQuery.param({ pEmployeeCode: vEmpCode }),
         success: function (dt) {
-            if (dt.listFamily != null && dt.listFamily.length > 0) {
+          //  if (dt.listFamily != null && dt.listFamily.length > 0) {
                 f_FillTableFamily(dt.listFamily);
-            }
+          //  }
         }
     });
 }

@@ -1,5 +1,52 @@
 ﻿var vDataTbl = {};
+var vCountry = "";
+
 f_ShowLoaderModal();
+
+
+var SrcCountryLookUp = {
+    //url: vUrlCountry,
+    datatype: "json",
+    type: "Post",
+    datafields: [{ name: "country_code" },
+                 { name: "int_code" },
+                 { name: "int_country" },
+                 { name: "country_name" }],
+    cache: false,
+    filter: function () { $("#tblCountryLookUp").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblCountryLookUp").jqxGrid('updatebounddata', 'sort'); },
+    beforeprocessing: function (data) { SrcCountryLookUp.totalrecords = data["TotalRows"]; },
+    root: 'Rows'
+}
+
+function initGridCountryLookUp() {
+    $("#tblCountryLookUp").jqxGrid(
+      {
+          theme: vTheme,
+          //source: dataAdapter,
+          width: '100%',
+          height: 420,
+          filterable: true,
+          sortable: true,
+          pageable: true,
+          pagesize: 15,
+          pagesizeoptions: ['15', '20', '30'],
+          rowsheight: 20,
+          autorowheight: true,
+          columnsresize: true,
+          virtualmode: true,
+          autoshowfiltericon: true,
+          rendergridrows: function (obj) {
+              return obj.data;
+          },
+          columns: [
+              { text: 'Code', dataField: 'country_code', cellsalign: 'center' },
+              { text: 'Int Code', dataField: 'int_code', hidden: true },
+              { text: 'Int Code', dataField: 'int_country', cellsalign: 'center' },
+              { text: 'Country Name', dataField: 'country_name' }
+          ]
+      });
+}
 
 $(document).ready(function () {
     //#region INIT COMPONENT
@@ -73,6 +120,58 @@ $(document).ready(function () {
 
     //#endregion
 
+    $("#modCountryLookUp").jqxWindow({
+        height: 500, width: 430,
+        theme: vTheme, isModal: true,
+        autoOpen: false,
+        resizable: false
+    });
+
+    $("#CountryLookUpToolBar").jqxToolBar({
+        theme: vTheme,
+        width: '100%', height: 35, tools: 'button | button',
+        initTools: function (type, index, tool, menuToolIninitialization) {
+            switch (index) {
+                case 0:
+                    //var button = $("<div>" + "<img src='../../images/administrator.png' title='Custom tool' />" + "</div>");
+                    tool.text("Select Data");
+                    tool.height("25px");
+                    tool.width("80px");
+                    tool.on("click", function () {
+                        var rowindex = $('#tblCountryLookUp').jqxGrid('getselectedrowindex');
+                        if (rowindex >= 0) {
+                            var rd = $('#tblCountryLookUp').jqxGrid('getrowdata', rowindex);
+                            if (vCountry == "edu") {
+                                $("#txtEduCountryCode").val(rd.int_country);
+                                $("#txtEduCountryCode").data("edu_country_code", rd.country_code);
+
+                                $("#txtEduCountryName").val(rd.country_name);
+                            } else {
+                                $("#txtKdCountry").val(rd.int_country);
+                                $("#txtKdCountry").data("emp_country_code", rd.country_code);
+
+                                $("#txtNmCountry").val(rd.country_name);
+                            }
+                            $("#modCountryLookUp").jqxWindow('close');
+                        } else {
+                            f_MessageBoxShow("Please Select Data...");
+                        }
+                    });
+                    break;
+                case 1:
+                    //var button = $("<div>" + "<img src='../../images/administrator.png' title='Custom tool' />" + "</div>");
+                    tool.text("Cancel");
+                    tool.height("25px");
+                    tool.width("50px");
+                    tool.on("click", function () {
+                        $("#modLookUp").jqxWindow('close');
+                    });
+                    break;
+            }
+        }
+    });
+
+
     //#region UNTUK CENTER MODAL DIALOG
     function f_PosisiModalDialog() {
         $('#modFamily').jqxWindow({ position: { x: f_PosX($('#modFamily')), y: f_PosY($('#modFamily')) } });
@@ -81,7 +180,7 @@ $(document).ready(function () {
         $('#modSkill').jqxWindow({ position: { x: f_PosX($('#modSkill')), y: f_PosY($('#modSkill')) } });
         $('#modExperience').jqxWindow({ position: { x: f_PosX($('#modExperience')), y: f_PosY($('#modExperience')) } });
         $('#modTraining').jqxWindow({ position: { x: f_PosX($('#modTraining')), y: f_PosY($('#modTraining')) } });
-        $('#modLookUp').jqxWindow({ position: { x: f_PosX($('#modLookUp')), y: f_PosY($('#modLookUp')) } });
+        $('#modCountryLookUp').jqxWindow({ position: { x: f_PosX($('#modCountryLookUp')), y: f_PosY($('#modCountryLookUp')) } });
     }
 
     //KEEP CENTERED WHEN SCROLLING
@@ -138,6 +237,7 @@ $(document).ready(function () {
     //#endregion
 
     initGridContract();
+    initGridCountryLookUp();
 
     $("#btnYes").jqxButton({ theme: vTheme, height: 30, width: 60 });
     $("#btnNo").jqxButton({ theme: vTheme, height: 30, width: 60 });
@@ -313,8 +413,8 @@ $(document).ready(function () {
                     //#endregion
 
                     //#region ListTraining
-                    if (dt.listTraining != null && dt.listTraining.length > 0) {
-                        f_FIllTableTrn(dt.listTraining);
+                    if (dt.listTrain != null && dt.listTrain.length > 0) {
+                        f_FillTableTrn(dt.listTrain);
                     }
                     //#endregion
 
@@ -361,8 +461,11 @@ $(document).ready(function () {
             case 2:
                 f_DeleteEmployeeSkill(vEmpCode);
                 break;
-            case 2:
+            case 3:
                 f_DeleteEmployeeExp(vEmpCode);
+                break;
+            case 4:
+                f_DeleteEmployeeTrn(vEmpCode);
                 break;
         }
     });
@@ -370,4 +473,22 @@ $(document).ready(function () {
     $('#btnNo').on('click', function (event) {
         $("#modYesNo").jqxWindow("close");
     });
+
+    $('#btnKdCountry').on('click', function (event) {
+        SrcCountryLookUp.url = base_url + "/Country/GetCountryList";
+        vCountry = "emp";
+
+        var vAdapter = new $.jqx.dataAdapter(SrcCountryLookUp, {
+            downloadComplete: function (data, status, xhr) {
+                if (!SrcCountryLookUp.TotalRows) {
+                    SrcCountryLookUp.TotalRows = data.length;
+                }
+            }
+        });
+
+        $('#tblCountryLookUp').jqxGrid({ source: vAdapter })
+        $('#tblCountryLookUp').jqxGrid('gotopage', 0);
+        $("#modCountryLookUp").jqxWindow('open');
+    });
+
 });

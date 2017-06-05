@@ -12,8 +12,10 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("EmployeeTrainingRepo");
 
-        public void InsertEmployeeTraining(mEmployeeTrainingModel pModel)
+        public ResponseModel InsertEmployeeTraining(mEmployeeTrainingModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"INSERT INTO `m_employee_training`
                                          (`employee_code`,`seq_no`,`start_date`,`end_date`,`material`,`organizer`,`place`,`company`,
                                           `chk_company`,`value`,`training_id`,`entry_date`,`entry_user`,`edit_date`,`edit_user`)
@@ -47,6 +49,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " INSERT EMPLOYEE TRAINING, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " INSERT EMPLOYEE TRAINING ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -54,9 +58,12 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT EMPLOYEE TRAINING FAILED.....";
                 Log.Error(DateTime.Now + " INSERT EMPLOYEE TRAINING FAILED", ex);
             }
 
+            return vResp;
         }
 
         public List<mEmployeeTrainingModel> getEmployeeTrainingList(string pEmployeeCode)
@@ -174,8 +181,9 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateEmployeeTraining(mEmployeeTrainingModel pModel)
+        public ResponseModel UpdateEmployeeTraining(mEmployeeTrainingModel pModel)
         {
+            var vResp = new ResponseModel();
             string SqlString = @"UPDATE `m_employee_training`
                                       SET `start_date` = @pStartDate,
                                           `end_date` = @pEndDate,
@@ -218,6 +226,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " UPDATE EMPLOYEE TRAINING SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " UPDATE EMPLOYEE TRAINING SUCCESS ====>>>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -225,14 +235,19 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " UPDATE EMPLOYEE TRAINING FAILED.....";
                 Log.Error(DateTime.Now + " UPDATE EMPLOYEE TRAINING FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public void DeleteEmployeeTraining(string pCode, int pSeqNo)
+        public ResponseModel DeleteEmployeeTraining(string pCode, int pSeqNo)
         {
-            string SqlString = @"DELETE m_employee_training WHERE employee_code = @pCode AND seq_no = @pSeqNo";
+            var vResp = new ResponseModel();
+
+            string SqlString = @"DELETE FROM m_employee_training WHERE employee_code = @pCode AND seq_no = @pSeqNo";
 
             try
             {
@@ -247,6 +262,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pSeqNo", pSeqNo);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " DELETE EMPLOYEE TRAINING SUCCESS, Code : " + pCode;
                         Log.Debug(DateTime.Now + " DELETE EMPLOYEE TRAINING SUCCESS ====>>>>>> Code : " + pCode);
 
                     }
@@ -254,10 +271,48 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " DELETE EMPLOYEE TRAINING FAILED.....";
                 Log.Error(DateTime.Now + " DELETE EMPLOYEE TRAINING FAILED", ex);
             }
 
+            return vResp;
         }
 
+        public int getEmployeeTrainingSeqNo(string pEmployeeCode)
+        {
+            var vSeqNo = 0;
+            var strSQL = @"SELECT IFNULL(MAX(seq_no),0) seq_no
+                           FROM m_employee_training emp
+                           WHERE emp.employee_code = @pEmployeeCode";
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@pEmployeeCode", pEmployeeCode);
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vSeqNo = aa.GetInt16("seq_no") + 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(DateTime.Now + " GetEmployeeTrainingSeqNo Failed", ex);
+            }
+            return vSeqNo;
+        }
     }
 }
