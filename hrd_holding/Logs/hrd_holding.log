@@ -19899,3 +19899,412 @@ DEBUG 2017-06-05 15:59:07,000  9195ms CountryController      GetCountryList     
 DEBUG 2017-06-05 15:59:07,001  9196ms CountryController      GetCountryList     - 6/5/2017 3:59:07 PM Page Num : 0 Page Size : 15
 DEBUG 2017-06-05 15:59:07,002  9197ms mCountryService        GetCountryList     - 6/5/2017 3:59:07 PM vRows : 15 vStart : 0
 DEBUG 2017-06-05 15:59:07,004  9199ms CountryRepo            getCountryList     - 6/5/2017 3:59:07 PM pWHERE : 
+DEBUG 2017-06-06 08:41:50,472  5428ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:41:50 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:41:50,601  5558ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:41:50 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:41:50,620  5577ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:41:50 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:41:50,638  5595ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:41:50 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:41:50,647  5604ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:41:50 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:41:50,664  5621ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:41:50 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:42:08,904 23860ms CountryController      GetCountryList     - 6/6/2017 8:42:08 AM WHERE : 
+DEBUG 2017-06-06 08:42:08,905 23861ms CountryController      GetCountryList     - 6/6/2017 8:42:08 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-06 08:42:08,905 23861ms mCountryService        GetCountryList     - 6/6/2017 8:42:08 AM vRows : 15 vStart : 0
+DEBUG 2017-06-06 08:42:08,906 23862ms CountryRepo            getCountryList     - 6/6/2017 8:42:08 AM pWHERE : 
+DEBUG 2017-06-06 08:45:57,762 252718ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:45:57 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:45:57,769 252725ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:45:57 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:45:57,776 252732ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:45:57 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:45:57,792 252748ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:45:57 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:45:57,801 252757ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:45:57 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:45:57,808 252764ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:45:57 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:48:31,306 406262ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:48:31 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:48:31,316 406272ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:48:31 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:48:31,325 406281ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:48:31 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:48:31,332 406288ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:48:31 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:48:31,340 406296ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:48:31 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:48:31,350 406306ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:48:31 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:50:15,311 510267ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:50:15 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:50:15,320 510276ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:50:15 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:50:15,328 510284ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:50:15 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:50:15,334 510290ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:50:15 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:50:15,359 510315ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:50:15 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:50:15,364 510320ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:50:15 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:50:47,698 542655ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:50:47 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:50:47,725 542682ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:50:47 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:50:47,733 542690ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:50:47 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:50:47,739 542696ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:50:47 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:50:47,746 542703ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:50:47 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:50:47,753 542710ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:50:47 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:51:10,251 565207ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:51:10 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:51:10,258 565214ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:51:10 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:51:10,264 565220ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:51:10 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:51:10,270 565226ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:51:10 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:51:10,276 565232ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:51:10 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:51:10,282 565238ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:51:10 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:51:40,980 595936ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:51:40 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:51:40,988 595944ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:51:40 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:51:40,995 595951ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:51:40 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:51:41,007 595963ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:51:41 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:51:41,014 595970ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:51:41 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:51:41,023 595979ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:51:41 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:51:52,253 607209ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:51:52 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:51:52,276 607232ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:51:52 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:51:52,306 607262ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:51:52 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:51:52,316 607272ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:51:52 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:51:52,324 607280ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:51:52 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:51:52,338 607294ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:51:52 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:52:14,647 629603ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:52:14 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:52:14,653 629609ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:52:14 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:52:14,660 629616ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:52:14 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:52:14,666 629622ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:52:14 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:52:14,672 629628ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:52:14 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:52:14,679 629635ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:52:14 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:52:28,256 643212ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:52:28 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:52:28,263 643219ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:52:28 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:52:28,275 643231ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:52:28 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:52:28,282 643238ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:52:28 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:52:28,289 643245ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:52:28 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:52:28,296 643252ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:52:28 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:52:58,262 673219ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:52:58 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:52:58,270 673227ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:52:58 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:52:58,277 673234ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:52:58 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:52:58,284 673241ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:52:58 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:52:58,318 673275ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:52:58 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:52:58,324 673281ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:52:58 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:58:47,004  4596ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:58:47 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:58:47,035  4627ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:58:47 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:58:47,045  4637ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:58:47 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:58:47,053  4645ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:58:47 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:58:47,063  4655ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:58:47 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:58:47,071  4663ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:58:47 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:58:59,810 17402ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:58:59 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:58:59,816 17408ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:58:59 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:58:59,828 17420ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:58:59 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:58:59,836 17428ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:58:59 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:58:59,843 17435ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:58:59 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:58:59,849 17441ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:58:59 AM JML Employee Training List: 0
+DEBUG 2017-06-06 08:59:57,785 75377ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 8:59:57 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 08:59:57,812 75404ms EmployeeContractRepo   ployeeContractList - 6/6/2017 8:59:57 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 08:59:57,819 75411ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 8:59:57 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 08:59:57,825 75417ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 8:59:57 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 08:59:57,832 75424ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 8:59:57 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 08:59:57,838 75430ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 8:59:57 AM JML Employee Training List: 0
+DEBUG 2017-06-06 09:00:12,468 90060ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 9:00:12 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 09:00:12,475 90067ms EmployeeContractRepo   ployeeContractList - 6/6/2017 9:00:12 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 09:00:12,482 90074ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 9:00:12 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 09:00:12,488 90080ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 9:00:12 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 09:00:12,494 90086ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 9:00:12 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 09:00:12,500 90092ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 9:00:12 AM JML Employee Training List: 0
+DEBUG 2017-06-06 09:00:48,938 126530ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 9:00:48 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 09:00:48,945 126536ms EmployeeContractRepo   ployeeContractList - 6/6/2017 9:00:48 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 09:00:48,969 126560ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 9:00:48 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 09:00:48,976 126567ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 9:00:48 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 09:00:48,990 126581ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 9:00:48 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 09:00:49,007 126599ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 9:00:49 AM JML Employee Training List: 0
+DEBUG 2017-06-06 09:04:26,401 343993ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 9:04:26 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 09:04:26,408 344000ms EmployeeContractRepo   ployeeContractList - 6/6/2017 9:04:26 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 09:04:26,419 344011ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 9:04:26 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 09:04:26,429 344021ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 9:04:26 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 09:04:26,437 344029ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 9:04:26 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 09:04:26,443 344035ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 9:04:26 AM JML Employee Training List: 0
+DEBUG 2017-06-06 09:05:31,926 409518ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 9:05:31 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 09:05:31,933 409525ms EmployeeContractRepo   ployeeContractList - 6/6/2017 9:05:31 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 09:05:31,941 409533ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 9:05:31 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 09:05:31,948 409540ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 9:05:31 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 09:05:31,955 409547ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 9:05:31 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 09:05:31,961 409553ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 9:05:31 AM JML Employee Training List: 0
+DEBUG 2017-06-06 09:05:47,464 425056ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 9:05:47 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 09:05:47,475 425067ms EmployeeContractRepo   ployeeContractList - 6/6/2017 9:05:47 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 09:05:47,481 425073ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 9:05:47 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 09:05:47,487 425079ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 9:05:47 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 09:05:47,493 425085ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 9:05:47 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 09:05:47,499 425091ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 9:05:47 AM JML Employee Training List: 0
+DEBUG 2017-06-06 09:52:56,822    61ms DepartmentController   GetDepartmentList  - 6/6/2017 9:52:56 AM WHERE : 
+DEBUG 2017-06-06 09:52:56,846    84ms DepartmentController   GetDepartmentList  - 6/6/2017 9:52:56 AM Page Num : 0 Page Size : 0
+DEBUG 2017-06-06 09:52:56,847    85ms DepartmentService      GetDepartmentList  - 6/6/2017 9:52:56 AM vRows : 10 vStart : 0
+ERROR 2017-06-06 09:53:01,975  5213ms DepartmentRepo         getDepartmentList  - 6/6/2017 9:53:01 AM GetDepartmentList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'db_fegroup_web.m_brach_office' doesn't exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mDepartmentRepo.getDepartmentList(Int32 pCompanyCode, Int32 pBranchCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mDepartmentRepo.cs:line 111
+DEBUG 2017-06-06 09:55:10,927   136ms DepartmentController   GetDepartmentList  - 6/6/2017 9:55:10 AM WHERE : 
+DEBUG 2017-06-06 09:55:10,947   156ms DepartmentController   GetDepartmentList  - 6/6/2017 9:55:10 AM Page Num : 0 Page Size : 0
+DEBUG 2017-06-06 09:55:10,948   157ms DepartmentService      GetDepartmentList  - 6/6/2017 9:55:10 AM vRows : 10 vStart : 0
+DEBUG 2017-06-06 09:58:24,731   138ms DepartmentController   GetDepartmentList  - 6/6/2017 9:58:24 AM WHERE : 
+DEBUG 2017-06-06 09:58:24,752   159ms DepartmentController   GetDepartmentList  - 6/6/2017 9:58:24 AM Page Num : 0 Page Size : 0
+DEBUG 2017-06-06 09:58:24,753   160ms DepartmentService      GetDepartmentList  - 6/6/2017 9:58:24 AM vRows : 10 vStart : 0
+DEBUG 2017-06-06 09:58:24,761   168ms DepartmentRepo         getDepartmentList  - 6/6/2017 9:58:24 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,md.entry_user,md.edit_date,md.edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,0
+DEBUG 2017-06-06 10:00:50,635 146042ms EmployeeController     GetEmployeeList    - 6/6/2017 10:00:50 AM WHERE : 
+DEBUG 2017-06-06 10:00:50,636 146043ms EmployeeController     GetEmployeeList    - 6/6/2017 10:00:50 AM ORDER BY : 
+DEBUG 2017-06-06 10:00:50,637 146044ms EmployeeService        GetEmployeeList    - 6/6/2017 10:00:50 AM pPage : 0 pRows : 0
+DEBUG 2017-06-06 10:00:50,638 146045ms EmployeeService        GetEmployeeList    - 6/6/2017 10:00:50 AM vRows : 10 vStart : 0
+DEBUG 2017-06-06 10:00:50,642 146049ms EmployeeRepo           getEmployeeList    - 6/6/2017 10:00:50 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode 
+DEBUG 2017-06-06 10:00:50,643 146050ms EmployeeRepo           getEmployeeList    - 6/6/2017 10:00:50 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode  LIMIT 0,10
+DEBUG 2017-06-06 10:00:50,820 146227ms EmployeeRepo           getEmployeeList    - 6/6/2017 10:00:50 AM Jumlah Data Employee : 10
+DEBUG 2017-06-06 10:01:00,927 156334ms DepartmentController   GetDepartmentList  - 6/6/2017 10:01:00 AM WHERE : 
+DEBUG 2017-06-06 10:01:00,928 156335ms DepartmentController   GetDepartmentList  - 6/6/2017 10:01:00 AM Page Num : 0 Page Size : 0
+DEBUG 2017-06-06 10:01:00,929 156336ms DepartmentService      GetDepartmentList  - 6/6/2017 10:01:00 AM vRows : 10 vStart : 0
+DEBUG 2017-06-06 10:01:00,930 156337ms DepartmentRepo         getDepartmentList  - 6/6/2017 10:01:00 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,md.entry_user,md.edit_date,md.edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,0
+DEBUG 2017-06-06 10:01:05,803 161210ms DepartmentController   GetDepartmentList  - 6/6/2017 10:01:05 AM WHERE : 
+DEBUG 2017-06-06 10:01:05,804 161211ms DepartmentController   GetDepartmentList  - 6/6/2017 10:01:05 AM Page Num : 0 Page Size : 0
+DEBUG 2017-06-06 10:01:05,805 161212ms DepartmentService      GetDepartmentList  - 6/6/2017 10:01:05 AM vRows : 10 vStart : 0
+DEBUG 2017-06-06 10:01:05,805 161212ms DepartmentRepo         getDepartmentList  - 6/6/2017 10:01:05 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,md.entry_user,md.edit_date,md.edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,0
+DEBUG 2017-06-06 10:04:30,090 365497ms DepartmentController   GetDepartmentList  - 6/6/2017 10:04:30 AM WHERE : 
+DEBUG 2017-06-06 10:04:30,091 365498ms DepartmentController   GetDepartmentList  - 6/6/2017 10:04:30 AM Page Num : 0 Page Size : 0
+DEBUG 2017-06-06 10:04:30,091 365498ms DepartmentService      GetDepartmentList  - 6/6/2017 10:04:30 AM vRows : 10 vStart : 0
+DEBUG 2017-06-06 10:04:30,092 365499ms DepartmentRepo         getDepartmentList  - 6/6/2017 10:04:30 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,md.entry_user,md.edit_date,md.edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,0
+DEBUG 2017-06-06 10:06:02,021   135ms DepartmentController   GetDepartmentList  - 6/6/2017 10:06:02 AM WHERE : 
+DEBUG 2017-06-06 10:06:02,042   155ms DepartmentController   GetDepartmentList  - 6/6/2017 10:06:02 AM ORDER BY : 
+DEBUG 2017-06-06 10:06:02,042   155ms DepartmentController   GetDepartmentList  - 6/6/2017 10:06:02 AM Page Num : 0 Page Size : 0
+DEBUG 2017-06-06 10:06:02,043   156ms DepartmentService      GetDepartmentList  - 6/6/2017 10:06:02 AM vRows : 10 vStart : 0
+DEBUG 2017-06-06 10:06:02,050   163ms DepartmentRepo         getDepartmentList  - 6/6/2017 10:06:02 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,md.entry_user,md.edit_date,md.edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,10
+ERROR 2017-06-06 10:06:04,649  2762ms DepartmentRepo         getDepartmentList  - 6/6/2017 10:06:04 AM GetDepartmentList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(String column)
+   at hrd_holding.Repositories.mDepartmentRepo.getDepartmentList(Int32 pCompanyCode, Int32 pBranchCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mDepartmentRepo.cs:line 120
+DEBUG 2017-06-06 10:09:56,937   137ms DepartmentController   GetDepartmentList  - 6/6/2017 10:09:56 AM WHERE : 
+DEBUG 2017-06-06 10:09:56,957   157ms DepartmentController   GetDepartmentList  - 6/6/2017 10:09:56 AM ORDER BY : 
+DEBUG 2017-06-06 10:09:56,957   157ms DepartmentController   GetDepartmentList  - 6/6/2017 10:09:56 AM Page Num : 0 Page Size : 0
+DEBUG 2017-06-06 10:09:56,958   158ms DepartmentService      GetDepartmentList  - 6/6/2017 10:09:56 AM vRows : 10 vStart : 0
+DEBUG 2017-06-06 10:09:56,966   166ms DepartmentRepo         getDepartmentList  - 6/6/2017 10:09:56 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,10
+ERROR 2017-06-06 10:09:57,768   968ms DepartmentRepo         getDepartmentList  - 6/6/2017 10:09:57 AM GetDepartmentList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetDateTime(String column)
+   at hrd_holding.Repositories.mDepartmentRepo.getDepartmentList(Int32 pCompanyCode, Int32 pBranchCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mDepartmentRepo.cs:line 121
+DEBUG 2017-06-06 10:12:38,045   139ms DepartmentController   GetDepartmentList  - 6/6/2017 10:12:38 AM WHERE : 
+DEBUG 2017-06-06 10:12:38,064   158ms DepartmentController   GetDepartmentList  - 6/6/2017 10:12:38 AM ORDER BY : 
+DEBUG 2017-06-06 10:12:38,065   159ms DepartmentController   GetDepartmentList  - 6/6/2017 10:12:38 AM Page Num : 0 Page Size : 0
+DEBUG 2017-06-06 10:12:38,066   160ms DepartmentService      GetDepartmentList  - 6/6/2017 10:12:38 AM vRows : 10 vStart : 0
+DEBUG 2017-06-06 10:12:38,073   167ms DepartmentRepo         getDepartmentList  - 6/6/2017 10:12:38 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,10
+DEBUG 2017-06-06 11:34:15,915 25611ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 11:34:15 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 11:34:16,783 26479ms EmployeeContractRepo   ployeeContractList - 6/6/2017 11:34:16 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 11:34:16,798 26494ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 11:34:16 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 11:34:16,832 26528ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 11:34:16 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 11:34:16,861 26557ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 11:34:16 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 11:34:16,873 26569ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 11:34:16 AM JML Employee Training List: 0
+DEBUG 2017-06-06 11:44:06,643 616339ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 11:44:06 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 11:44:06,649 616345ms EmployeeContractRepo   ployeeContractList - 6/6/2017 11:44:06 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 11:44:06,655 616351ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 11:44:06 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 11:44:06,661 616357ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 11:44:06 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 11:44:06,680 616376ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 11:44:06 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 11:44:06,686 616382ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 11:44:06 AM JML Employee Training List: 0
+DEBUG 2017-06-06 11:45:52,050 721746ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 11:45:52 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 11:45:52,056 721752ms EmployeeContractRepo   ployeeContractList - 6/6/2017 11:45:52 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 11:45:52,067 721763ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 11:45:52 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 11:45:52,077 721773ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 11:45:52 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 11:45:52,084 721780ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 11:45:52 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 11:45:52,095 721791ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 11:45:52 AM JML Employee Training List: 0
+DEBUG 2017-06-06 11:46:03,410 733106ms DepartmentController   GetDepartmentList  - 6/6/2017 11:46:03 AM WHERE : 
+DEBUG 2017-06-06 11:46:03,411 733107ms DepartmentController   GetDepartmentList  - 6/6/2017 11:46:03 AM ORDER BY : 
+DEBUG 2017-06-06 11:46:03,411 733107ms DepartmentController   GetDepartmentList  - 6/6/2017 11:46:03 AM Page Num : 0 Page Size : 10
+DEBUG 2017-06-06 11:46:03,412 733108ms DepartmentService      GetDepartmentList  - 6/6/2017 11:46:03 AM vRows : 10 vStart : 0
+DEBUG 2017-06-06 11:46:03,414 733110ms DepartmentRepo         getDepartmentList  - 6/6/2017 11:46:03 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,10
+DEBUG 2017-06-06 11:47:38,097 827793ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 11:47:38 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 11:47:38,108 827804ms EmployeeContractRepo   ployeeContractList - 6/6/2017 11:47:38 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 11:47:38,138 827834ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 11:47:38 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 11:47:38,146 827842ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 11:47:38 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 11:47:38,153 827849ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 11:47:38 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 11:47:38,159 827855ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 11:47:38 AM JML Employee Training List: 0
+DEBUG 2017-06-06 11:47:42,055 831752ms DepartmentController   GetDepartmentList  - 6/6/2017 11:47:42 AM WHERE : 
+DEBUG 2017-06-06 11:47:42,056 831753ms DepartmentController   GetDepartmentList  - 6/6/2017 11:47:42 AM ORDER BY : 
+DEBUG 2017-06-06 11:47:42,056 831753ms DepartmentController   GetDepartmentList  - 6/6/2017 11:47:42 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-06 11:47:42,056 831753ms DepartmentService      GetDepartmentList  - 6/6/2017 11:47:42 AM vRows : 15 vStart : 0
+DEBUG 2017-06-06 11:47:42,057 831754ms DepartmentRepo         getDepartmentList  - 6/6/2017 11:47:42 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,15
+DEBUG 2017-06-06 11:49:41,132 950828ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 11:49:41 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 11:49:41,150 950846ms EmployeeContractRepo   ployeeContractList - 6/6/2017 11:49:41 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 11:49:41,175 950871ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 11:49:41 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 11:49:41,195 950891ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 11:49:41 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 11:49:41,261 950957ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 11:49:41 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 11:49:41,336 951032ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 11:49:41 AM JML Employee Training List: 0
+DEBUG 2017-06-06 11:49:43,959 953656ms DepartmentController   GetDepartmentList  - 6/6/2017 11:49:43 AM WHERE : 
+DEBUG 2017-06-06 11:49:43,959 953656ms DepartmentController   GetDepartmentList  - 6/6/2017 11:49:43 AM ORDER BY : 
+DEBUG 2017-06-06 11:49:43,960 953657ms DepartmentController   GetDepartmentList  - 6/6/2017 11:49:43 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-06 11:49:43,960 953657ms DepartmentService      GetDepartmentList  - 6/6/2017 11:49:43 AM vRows : 15 vStart : 0
+DEBUG 2017-06-06 11:49:43,960 953657ms DepartmentRepo         getDepartmentList  - 6/6/2017 11:49:43 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,15
+DEBUG 2017-06-06 11:49:59,528 969225ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 11:49:59 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 11:49:59,546 969242ms EmployeeContractRepo   ployeeContractList - 6/6/2017 11:49:59 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 11:49:59,565 969261ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 11:49:59 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 11:49:59,573 969269ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 11:49:59 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 11:49:59,580 969276ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 11:49:59 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 11:49:59,588 969284ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 11:49:59 AM JML Employee Training List: 0
+DEBUG 2017-06-06 11:50:04,190 973886ms DepartmentController   GetDepartmentList  - 6/6/2017 11:50:04 AM WHERE : 
+DEBUG 2017-06-06 11:50:04,191 973887ms DepartmentController   GetDepartmentList  - 6/6/2017 11:50:04 AM ORDER BY : 
+DEBUG 2017-06-06 11:50:04,191 973887ms DepartmentController   GetDepartmentList  - 6/6/2017 11:50:04 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-06 11:50:04,192 973888ms DepartmentService      GetDepartmentList  - 6/6/2017 11:50:04 AM vRows : 15 vStart : 0
+DEBUG 2017-06-06 11:50:04,192 973888ms DepartmentRepo         getDepartmentList  - 6/6/2017 11:50:04 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,15
+DEBUG 2017-06-06 11:50:56,781 1026477ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 11:50:56 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 11:50:56,946 1026642ms EmployeeContractRepo   ployeeContractList - 6/6/2017 11:50:56 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 11:50:56,969 1026665ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 11:50:56 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 11:50:57,024 1026720ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 11:50:57 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 11:50:57,043 1026739ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 11:50:57 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 11:50:57,059 1026755ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 11:50:57 AM JML Employee Training List: 0
+DEBUG 2017-06-06 11:50:59,085 1028782ms DepartmentController   GetDepartmentList  - 6/6/2017 11:50:59 AM WHERE : 
+DEBUG 2017-06-06 11:50:59,086 1028783ms DepartmentController   GetDepartmentList  - 6/6/2017 11:50:59 AM ORDER BY : 
+DEBUG 2017-06-06 11:50:59,086 1028783ms DepartmentController   GetDepartmentList  - 6/6/2017 11:50:59 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-06 11:50:59,087 1028784ms DepartmentService      GetDepartmentList  - 6/6/2017 11:50:59 AM vRows : 15 vStart : 0
+DEBUG 2017-06-06 11:50:59,087 1028784ms DepartmentRepo         getDepartmentList  - 6/6/2017 11:50:59 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,15
+DEBUG 2017-06-06 11:51:10,835 1040531ms DepartmentController   GetDepartmentList  - 6/6/2017 11:51:10 AM WHERE : 
+DEBUG 2017-06-06 11:51:10,835 1040531ms DepartmentController   GetDepartmentList  - 6/6/2017 11:51:10 AM ORDER BY : 
+DEBUG 2017-06-06 11:51:10,836 1040532ms DepartmentController   GetDepartmentList  - 6/6/2017 11:51:10 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-06 11:51:10,836 1040532ms DepartmentService      GetDepartmentList  - 6/6/2017 11:51:10 AM vRows : 15 vStart : 0
+DEBUG 2017-06-06 11:51:10,837 1040533ms DepartmentRepo         getDepartmentList  - 6/6/2017 11:51:10 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,15
+DEBUG 2017-06-06 11:55:30,955 1300652ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 11:55:30 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 11:55:30,981 1300678ms EmployeeContractRepo   ployeeContractList - 6/6/2017 11:55:30 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 11:55:30,990 1300687ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 11:55:30 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 11:55:31,007 1300704ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 11:55:31 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 11:55:31,018 1300715ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 11:55:31 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 11:55:31,033 1300730ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 11:55:31 AM JML Employee Training List: 0
+DEBUG 2017-06-06 11:57:00,782 1390478ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 11:57:00 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 11:57:00,790 1390486ms EmployeeContractRepo   ployeeContractList - 6/6/2017 11:57:00 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 11:57:00,797 1390494ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 11:57:00 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 11:57:00,817 1390514ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 11:57:00 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 11:57:00,823 1390519ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 11:57:00 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 11:57:00,829 1390525ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 11:57:00 AM JML Employee Training List: 0
+DEBUG 2017-06-06 11:59:34,389 1544086ms EmployeeFamilyRepo     EmployeeFamilyList - 6/6/2017 11:59:34 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-06 11:59:34,413 1544110ms EmployeeContractRepo   ployeeContractList - 6/6/2017 11:59:34 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-06 11:59:34,428 1544125ms EmployeeEducationRepo  loyeeEducationList - 6/6/2017 11:59:34 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-06 11:59:34,435 1544132ms EmployeeExperienceRepo oyeeExperienceList - 6/6/2017 11:59:34 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-06 11:59:34,496 1544193ms EmployeeSkillRepo      tEmployeeSkillList - 6/6/2017 11:59:34 AM JML Employee SKILL List: 1
+DEBUG 2017-06-06 11:59:34,511 1544208ms EmployeeTrainingRepo   ployeeTrainingList - 6/6/2017 11:59:34 AM JML Employee Training List: 0
+DEBUG 2017-06-06 11:59:50,115 1559811ms DepartmentController   GetDepartmentList  - 6/6/2017 11:59:50 AM WHERE : 
+DEBUG 2017-06-06 11:59:50,116 1559812ms DepartmentController   GetDepartmentList  - 6/6/2017 11:59:50 AM ORDER BY : 
+DEBUG 2017-06-06 11:59:50,116 1559812ms DepartmentController   GetDepartmentList  - 6/6/2017 11:59:50 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-06 11:59:50,117 1559813ms DepartmentService      GetDepartmentList  - 6/6/2017 11:59:50 AM vRows : 15 vStart : 0
+DEBUG 2017-06-06 11:59:50,117 1559813ms DepartmentRepo         getDepartmentList  - 6/6/2017 11:59:50 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,15
+DEBUG 2017-06-06 14:01:06,536    62ms DepartmentController   GetDepartmentList  - 6/6/2017 2:01:06 PM WHERE : 
+DEBUG 2017-06-06 14:01:06,555    81ms DepartmentController   GetDepartmentList  - 6/6/2017 2:01:06 PM ORDER BY : 
+DEBUG 2017-06-06 14:01:06,555    81ms DepartmentController   GetDepartmentList  - 6/6/2017 2:01:06 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-06 14:01:06,556    82ms DepartmentService      GetDepartmentList  - 6/6/2017 2:01:06 PM vRows : 15 vStart : 0
+DEBUG 2017-06-06 14:01:06,574   100ms DepartmentRepo         getDepartmentList  - 6/6/2017 2:01:06 PM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.company_name,
+                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,15

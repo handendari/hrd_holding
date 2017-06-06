@@ -79,6 +79,7 @@ namespace hrd_holding.Repositories
                             }
                         }
                     }
+
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
