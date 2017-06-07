@@ -93,6 +93,181 @@ function initGridDeptLookUp() {
       });
 }
 
+var SrcTitleLookUp = {
+    //url: vUrlCountry,
+    datatype: "json",
+    type: "Post",
+    datafields: [{ name: "title_code" },
+                 { name: "int_title" },
+                 { name: "title_name" },
+                 { name: "description" }],
+    cache: false,
+    filter: function () { $("#tblTitleLookUp").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblTitleLookUp").jqxGrid('updatebounddata', 'sort'); },
+    beforeprocessing: function (data) { SrcTitleLookUp.totalrecords = data["TotalRows"]; },
+    sortcolumn: "title_code",
+    root: 'Rows'
+}
+
+function initGridTitleLookUp() {
+    $("#tblTitleLookUp").jqxGrid(
+      {
+          theme: vTheme,
+          //source: dataAdapter,
+          width: '100%',
+          height: 420,
+          filterable: true,
+          sortable: true,
+          pageable: true,
+          pagesize: 15,
+          pagesizeoptions: ['15', '20', '30'],
+          rowsheight: 20,
+          autorowheight: true,
+          columnsresize: true,
+          virtualmode: true,
+          autoshowfiltericon: true,
+          rendergridrows: function (obj) {
+              return obj.data;
+          },
+          columns: [
+              { text: 'Code', dataField: 'title_code', hidden: true },
+              { text: 'Int Code', dataField: 'int_title', width: 80, cellsalign: 'center', align: 'center' },
+              { text: 'Name', dataField: 'title_name', width: 200 },
+              { text: 'Description', dataField: 'description' }
+          ]
+      });
+}
+
+var SrcLvlLookUp = {
+    //url: vUrlCountry,
+    datatype: "json",
+    type: "Post",
+    datafields: [{ name: "level_code" },
+                 { name: "int_level" },
+                 { name: "level_name" },
+                 { name: "description" }],
+    cache: false,
+    filter: function () { $("#tblLvlLookUp").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblLvlLookUp").jqxGrid('updatebounddata', 'sort'); },
+    beforeprocessing: function (data) { SrcLvlLookUp.totalrecords = data["TotalRows"]; },
+    sortcolumn: "title_code",
+    root: 'Rows'
+}
+
+function initGridLvlLookUp() {
+    $("#tblLvlLookUp").jqxGrid(
+      {
+          theme: vTheme,
+          //source: dataAdapter,
+          width: '100%',
+          height: 420,
+          filterable: true,
+          sortable: true,
+          pageable: true,
+          pagesize: 15,
+          pagesizeoptions: ['15', '20', '30'],
+          rowsheight: 20,
+          autorowheight: true,
+          columnsresize: true,
+          virtualmode: true,
+          autoshowfiltericon: true,
+          rendergridrows: function (obj) {
+              return obj.data;
+          },
+          columns: [
+              { text: 'Code', dataField: 'level_code', hidden: true },
+              { text: 'Int Code', dataField: 'int_level', width: 80, cellsalign: 'center', align: 'center' },
+              { text: 'Name', dataField: 'level_name', width: 200 },
+              { text: 'Description', dataField: 'description' }
+          ]
+      });
+}
+
+var SrcBankLookUp = {
+    datatype: "json",
+    type: "Post",
+    datafields: [{ name: "bank_code" },
+                 { name: "bank_name" },
+                 { name: "description" }],
+    cache: false,
+    filter: function () { $("#tblBankLookUp").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblBankLookUp").jqxGrid('updatebounddata', 'sort'); },
+    beforeprocessing: function (data) { SrcBankLookUp.totalrecords = data["TotalRows"]; },
+    sortcolumn: "bank_code",
+    root: 'Rows'
+}
+
+function initGridBankLookUp() {
+    $("#tblBankLookUp").jqxGrid(
+      {
+          theme: vTheme,
+          width: '100%',
+          height: 420,
+          filterable: true,
+          sortable: true,
+          pageable: true,
+          pagesize: 15,
+          pagesizeoptions: ['15', '20', '30'],
+          rowsheight: 20,
+          autorowheight: true,
+          columnsresize: true,
+          virtualmode: true,
+          autoshowfiltericon: true,
+          rendergridrows: function (obj) {
+              return obj.data;
+          },
+          columns: [
+              { text: 'Code', dataField: 'bank_code', width: 80, cellsalign: 'center', align: 'center' },
+              { text: 'Name', dataField: 'bank_name', width: 200 },
+              { text: 'Description', dataField: 'description' }
+          ]
+      });
+}
+
+var SrcStatusLookUp = {
+    datatype: "json",
+    type: "Post",
+    datafields: [{ name: "status_code" },
+                 { name: "int_status" },
+                 { name: "status_name" },
+                 { name: "description" }],
+    cache: false,
+    filter: function () { $("#tblStatusLookUp").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblStatusLookUp").jqxGrid('updatebounddata', 'sort'); },
+    beforeprocessing: function (data) { SrcStatusLookUp.totalrecords = data["TotalRows"]; },
+    sortcolumn: "status_code",
+    root: 'Rows'
+}
+
+function initGridStatusLookUp() {
+    $("#tblStatusLookUp").jqxGrid(
+      {
+          theme: vTheme,
+          width: '100%',
+          height: 420,
+          filterable: true,
+          sortable: true,
+          pageable: true,
+          pagesize: 15,
+          pagesizeoptions: ['15', '20', '30'],
+          rowsheight: 20,
+          autorowheight: true,
+          columnsresize: true,
+          virtualmode: true,
+          autoshowfiltericon: true,
+          rendergridrows: function (obj) {
+              return obj.data;
+          },
+          columns: [
+              { text: 'Code', dataField: 'status_code', hidden: true },
+              { text: 'Code', dataField: 'int_status', width: 80, cellsalign: 'center', align: 'center' },
+              { text: 'Name', dataField: 'status_name', width: 200 },
+              { text: 'Description', dataField: 'description' }
+          ]
+      });
+}
+
+
 $(document).ready(function () {
     //#region INIT COMPONENT
     $("#txtIntBranch").jqxInput({ theme: vTheme, disabled: true, width: 50 });
@@ -103,7 +278,7 @@ $(document).ready(function () {
     $("#txtFullName").jqxInput({ theme: vTheme, width: 250 });
     $("#txtNickName").jqxInput({ theme: vTheme });
     $("#txtPob").jqxInput({ theme: vTheme });
-    $("#dtDob").jqxDateTimeInput({ theme: vTheme });
+    $("#dtDob").jqxDateTimeInput({ theme: vTheme,width:150 });
     $("#cmbGender").jqxComboBox({ theme: vTheme, source: vCmbGender, selectedIndex: 0 });
     $("#cmbReligion").jqxComboBox({ theme: vTheme, source: vCmbReligion, selectedIndex: 0 });
     $("#txtChild").jqxInput({ theme: vTheme });
@@ -120,8 +295,8 @@ $(document).ready(function () {
     $("#txtKdLevel").jqxInput({ theme: vTheme, disabled: true });
     $("#btnKdLevel").jqxButton({ theme: vTheme });
     $("#txtNmLevel").jqxInput({ theme: vTheme, width: 250, disabled: true });
-    $("#dtStartWorking").jqxDateTimeInput({ theme: vTheme });
-    $("#dtProbation").jqxDateTimeInput({ theme: vTheme });
+    $("#dtStartWorking").jqxDateTimeInput({ theme: vTheme, width: 150 });
+    $("#dtProbation").jqxDateTimeInput({ theme: vTheme, width: 150 });
     $("#txtWorkingAge").jqxInput({ theme: vTheme, width: 50 });
     $("#txtPhone").jqxInput({ theme: vTheme });
     $("#txtEmail").jqxInput({ theme: vTheme, width: 250 });
@@ -139,9 +314,9 @@ $(document).ready(function () {
     $("#txtKdStatus").jqxInput({ theme: vTheme, disabled: true });
     $("#btnKdStatus").jqxButton({ theme: vTheme });
     $("#txtNmStatus").jqxInput({ theme: vTheme, disabled: true });
-    $("#txtKdAtasan").jqxInput({ theme: vTheme, disabled: true });
+    $("#txtKdAtasan").jqxInput({ theme: vTheme,width:150, disabled: true });
     $("#btnkdAtasan").jqxButton({ theme: vTheme });
-    $("#txtNmAtasan").jqxInput({ theme: vTheme, width: 250, disabled: true });
+    $("#txtNmAtasan").jqxInput({ theme: vTheme, width: 300, disabled: true });
 
     $("#btnContractNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
     $("#btnContractEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
@@ -181,6 +356,59 @@ $(document).ready(function () {
         theme: vTheme, isModal: true,
         autoOpen: false,
         resizable: false
+    });
+
+    $("#modTitleLookUp").jqxWindow({
+        height: 500, width: 430,
+        theme: vTheme, isModal: true,
+        autoOpen: false,
+        resizable: false
+    });
+
+    $("#modLvlLookUp").jqxWindow({
+        height: 500, width: 430,
+        theme: vTheme, isModal: true,
+        autoOpen: false,
+        resizable: false
+    });
+
+    $("#modBankLookUp").jqxWindow({
+        height: 500, width: 430,
+        theme: vTheme, isModal: true,
+        autoOpen: false,
+        resizable: false
+    });
+
+    $("#modStatusLookUp").jqxWindow({
+        height: 500, width: 430,
+        theme: vTheme, isModal: true,
+        autoOpen: false,
+        resizable: false
+    });
+
+    $("#EmpToolBar").jqxToolBar({
+        theme: vTheme,
+        width: '100%', height: 35, tools: 'button | button',
+        initTools: function (type, index, tool, menuToolIninitialization) {
+            switch (index) {
+                case 0:
+                    tool.text("SAVE DATA");
+                    tool.height("25px");
+                    tool.width("80px");
+                    tool.on("click", function () {
+                        f_MessageBoxShow("Simpan Data...");
+                    });
+                    break;
+                case 1:
+                    tool.text("NEW DATA");
+                    tool.height("25px");
+                    tool.width("80px");
+                    tool.on("click", function () {
+                        f_MessageBoxShow("NEW Data...");
+                    });
+                    break;
+            }
+        }
     });
 
     $("#CountryLookUpToolBar").jqxToolBar({
@@ -235,7 +463,7 @@ $(document).ready(function () {
                         if (rowindex >= 0) {
                             var rd = $('#tblDeptLookUp').jqxGrid('getrowdata', rowindex);
                             $("#txtKdDepartement").val(rd.int_department);
-                            $("#txtKdDepartement").data("Dept_code", rd.department_code);
+                            $("#txtKdDepartement").data("dept_code", rd.department_code);
 
                             $("#txtNmDepartement").val(rd.department_name);
                             $("#modDeptLookUp").jqxWindow('close');
@@ -256,6 +484,145 @@ $(document).ready(function () {
         }
     });
 
+    $("#TitleLookUpToolBar").jqxToolBar({
+        theme: vTheme,
+        width: '100%', height: 35, tools: 'button | button',
+        initTools: function (type, index, tool, menuToolIninitialization) {
+            switch (index) {
+                case 0:
+                    tool.text("Select Data");
+                    tool.height("25px");
+                    tool.width("80px");
+                    tool.on("click", function () {
+                        var rowindex = $('#tblTitleLookUp').jqxGrid('getselectedrowindex');
+                        if (rowindex >= 0) {
+                            var rd = $('#tblTitleLookUp').jqxGrid('getrowdata', rowindex);
+                            $("#txtKdJobTitle").val(rd.int_title);
+                            $("#txtKdJobTitle").data("title_code", rd.title_code);
+
+                            $("#txtNmJobTitle").val(rd.title_name);
+                            $("#modTitleLookUp").jqxWindow('close');
+                        } else {
+                            f_MessageBoxShow("Please Select Data...");
+                        }
+                    });
+                    break;
+                case 1:
+                    tool.text("Cancel");
+                    tool.height("25px");
+                    tool.width("50px");
+                    tool.on("click", function () {
+                        $("#modTitleLookUp").jqxWindow('close');
+                    });
+                    break;
+            }
+        }
+    });
+
+    $("#LvlLookUpToolBar").jqxToolBar({
+        theme: vTheme,
+        width: '100%', height: 35, tools: 'button | button',
+        initTools: function (type, index, tool, menuToolIninitialization) {
+            switch (index) {
+                case 0:
+                    tool.text("Select Data");
+                    tool.height("25px");
+                    tool.width("80px");
+                    tool.on("click", function () {
+                        var rowindex = $('#tblLvlLookUp').jqxGrid('getselectedrowindex');
+                        if (rowindex >= 0) {
+                            var rd = $('#tblLvlLookUp').jqxGrid('getrowdata', rowindex);
+                            $("#txtKdLevel").val(rd.int_level);
+                            $("#txtKdLevel").data("level_code", rd.level_code);
+
+                            $("#txtNmLevel").val(rd.level_name);
+                            $("#modLvlLookUp").jqxWindow('close');
+                        } else {
+                            f_MessageBoxShow("Please Select Data...");
+                        }
+                    });
+                    break;
+                case 1:
+                    tool.text("Cancel");
+                    tool.height("25px");
+                    tool.width("50px");
+                    tool.on("click", function () {
+                        $("#modLvlLookUp").jqxWindow('close');
+                    });
+                    break;
+            }
+        }
+    });
+
+    $("#BankLookUpToolBar").jqxToolBar({
+        theme: vTheme,
+        width: '100%', height: 35, tools: 'button | button',
+        initTools: function (type, index, tool, menuToolIninitialization) {
+            switch (index) {
+                case 0:
+                    tool.text("Select Data");
+                    tool.height("25px");
+                    tool.width("80px");
+                    tool.on("click", function () {
+                        var rowindex = $('#tblBankLookUp').jqxGrid('getselectedrowindex');
+                        if (rowindex >= 0) {
+                            var rd = $('#tblBankLookUp').jqxGrid('getrowdata', rowindex);
+                            $("#txtKdBank").val(rd.bank_code);
+
+                            $("#txtNmBank").val(rd.bank_name);
+                            $("#modBankLookUp").jqxWindow('close');
+                        } else {
+                            f_MessageBoxShow("Please Select Data...");
+                        }
+                    });
+                    break;
+                case 1:
+                    tool.text("Cancel");
+                    tool.height("25px");
+                    tool.width("50px");
+                    tool.on("click", function () {
+                        $("#modBankLookUp").jqxWindow('close');
+                    });
+                    break;
+            }
+        }
+    });
+
+    $("#StatusLookUpToolBar").jqxToolBar({
+        theme: vTheme,
+        width: '100%', height: 35, tools: 'button | button',
+        initTools: function (type, index, tool, menuToolIninitialization) {
+            switch (index) {
+                case 0:
+                    tool.text("Select Data");
+                    tool.height("25px");
+                    tool.width("80px");
+                    tool.on("click", function () {
+                        var rowindex = $('#tblStatusLookUp').jqxGrid('getselectedrowindex');
+                        if (rowindex >= 0) {
+                            var rd = $('#tblStatusLookUp').jqxGrid('getrowdata', rowindex);
+                            $("#txtKdStatus").val(rd.int_status);
+                            $("#txtKdStatus").data("status_code",rd.status_code);
+
+                            $("#txtNmStatus").val(rd.bank_name);
+                            $("#modStatusLookUp").jqxWindow('close');
+                        } else {
+                            f_MessageBoxShow("Please Select Data...");
+                        }
+                    });
+                    break;
+                case 1:
+                    tool.text("Cancel");
+                    tool.height("25px");
+                    tool.width("50px");
+                    tool.on("click", function () {
+                        $("#modStatusLookUp").jqxWindow('close');
+                    });
+                    break;
+            }
+        }
+    });
+
     //#region UNTUK CENTER MODAL DIALOG
     function f_PosisiModalDialog() {
         $('#modFamily').jqxWindow({ position: { x: f_PosX($('#modFamily')), y: f_PosY($('#modFamily')) } });
@@ -265,6 +632,11 @@ $(document).ready(function () {
         $('#modExperience').jqxWindow({ position: { x: f_PosX($('#modExperience')), y: f_PosY($('#modExperience')) } });
         $('#modTraining').jqxWindow({ position: { x: f_PosX($('#modTraining')), y: f_PosY($('#modTraining')) } });
         $('#modCountryLookUp').jqxWindow({ position: { x: f_PosX($('#modCountryLookUp')), y: f_PosY($('#modCountryLookUp')) } });
+        $('#modDeptLookUp').jqxWindow({ position: { x: f_PosX($('#modDeptLookUp')), y: f_PosY($('#modDeptLookUp')) } });
+        $('#modTitleLookUp').jqxWindow({ position: { x: f_PosX($('#modTitleLookUp')), y: f_PosY($('#modTitleLookUp')) } });
+        $('#modLvlLookUp').jqxWindow({ position: { x: f_PosX($('#modLvlLookUp')), y: f_PosY($('#modLvlLookUp')) } });
+        $('#modBankLookUp').jqxWindow({ position: { x: f_PosX($('#modBankLookUp')), y: f_PosY($('#modBankLookUp')) } });
+        $('#modStatusLookUp').jqxWindow({ position: { x: f_PosX($('#modStatusLookUp')), y: f_PosY($('#modStatusLookUp')) } });
     }
 
     //KEEP CENTERED WHEN SCROLLING
@@ -323,6 +695,10 @@ $(document).ready(function () {
     initGridContract();
     initGridCountryLookUp();
     initGridDeptLookUp();
+    initGridTitleLookUp();
+    initGridLvlLookUp();
+    initGridBankLookUp();
+    initGridStatusLookUp();
 
     $("#btnYes").jqxButton({ theme: vTheme, height: 30, width: 60 });
     $("#btnNo").jqxButton({ theme: vTheme, height: 30, width: 60 });
@@ -421,7 +797,8 @@ $(document).ready(function () {
                     $("#txtNmBank").val(dt.empModel.bank_name);
                     $("#txtBankAcc").val(dt.empModel.bank_account);
                     $("#txtBankAccName").val(dt.empModel.bank_acc_name);
-                    $("#txtKdStatus").val(dt.empModel.status_code);
+                    $("#txtKdStatus").val(dt.empModel.int_status);
+                    $("#txtKdStatus").data("status_code",dt.empModel.status_code);
                     //$("#btnKdStatus").jqxButton({ theme: vTheme });
                     $("#txtNmStatus").val(dt.empModel.status_name);
                     $("#txtKdAtasan").val(dt.empModel.spv_code);
@@ -603,4 +980,67 @@ $(document).ready(function () {
         $("#modDeptLookUp").jqxWindow('open');
     });
 
+    $('#btnKdJobTitle').on('click', function (event) {
+        SrcTitleLookUp.url = base_url + "/Title/GetTitleList";
+
+        var vAdapter = new $.jqx.dataAdapter(SrcTitleLookUp, {
+            downloadComplete: function (data, status, xhr) {
+                if (!SrcTitleLookUp.TotalRows) {
+                    SrcTitleLookUp.TotalRows = data.length;
+                }
+            }
+        });
+
+        $('#tblTitleLookUp').jqxGrid({ source: vAdapter })
+        $('#tblTitleLookUp').jqxGrid('gotopage', 0);
+        $("#modTitleLookUp").jqxWindow('open');
+    });
+
+    $('#btnKdLevel').on('click', function (event) {
+        SrcLvlLookUp.url = base_url + "/Level/GetLevelLookUp";
+
+        var vAdapter = new $.jqx.dataAdapter(SrcLvlLookUp, {
+            downloadComplete: function (data, status, xhr) {
+                if (!SrcLvlLookUp.TotalRows) {
+                    SrcLvlLookUp.TotalRows = data.length;
+                }
+            }
+        });
+
+        $('#tblLvlLookUp').jqxGrid({ source: vAdapter })
+        $('#tblLvlLookUp').jqxGrid('gotopage', 0);
+        $("#modLvlLookUp").jqxWindow('open');
+    });
+
+    $('#btnKdBank').on('click', function (event) {
+        SrcBankLookUp.url = base_url + "/Bank/GetBankList";
+
+        var vAdapter = new $.jqx.dataAdapter(SrcBankLookUp, {
+            downloadComplete: function (data, status, xhr) {
+                if (!SrcBankLookUp.TotalRows) {
+                    SrcBankLookUp.TotalRows = data.length;
+                }
+            }
+        });
+
+        $('#tblBankLookUp').jqxGrid({ source: vAdapter })
+        $('#tblBankLookUp').jqxGrid('gotopage', 0);
+        $("#modBankLookUp").jqxWindow('open');
+    });
+
+    $('#btnKdStatus').on('click', function (event) {
+        SrcStatusLookUp.url = base_url + "/Status/GetStatusLookUp";
+
+        var vAdapter = new $.jqx.dataAdapter(SrcStatusLookUp, {
+            downloadComplete: function (data, status, xhr) {
+                if (!SrcStatusLookUp.TotalRows) {
+                    SrcStatusLookUp.TotalRows = data.length;
+                }
+            }
+        });
+
+        $('#tblStatusLookUp').jqxGrid({ source: vAdapter })
+        $('#tblStatusLookUp').jqxGrid('gotopage', 0);
+        $("#modStatusLookUp").jqxWindow('open');
+    });
 });

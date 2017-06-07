@@ -17,12 +17,17 @@
 <div>
     <!--#region DETAIL EMPLOYEE -->
     <div>
-        <table>
+        <table style="width:100%">
             <tr>
                 <td>Company</td>
                 <td>
                     <input type="text" id="txtIntCompany" />
-                    <input type="text" id="txtCompany" /></td>
+                    <input type="text" id="txtCompany" />
+                </td>
+                <td></td>
+                <td rowspan="2" colspan="3">
+                    <div id="EmpToolBar" style="margin-bottom:1px"></div>
+                </td>
             </tr>
             <tr>
                 <td>Branch</td>
@@ -156,7 +161,7 @@
                     <input type="text" id="txtNmStatus" />
                 </td>
                 <td style="padding-left: 30px">Atasan</td>
-                <td>
+                <td colspan="3">
                     <input type="text" style="width: 60px" id="txtKdAtasan" />
                     <input type="button" id="btnkdAtasan" value="..." />
                     <input type="text" id="txtNmAtasan" />
@@ -593,5 +598,36 @@
         </div>
     </div>
 
+    <div id="modTitleLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="TitleLookUpToolBar" style="margin-bottom:1px"></div>
+            <div id="tblTitleLookUp"></div>
+        </div>
+    </div>
+
+    <div id="modLvlLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="LvlLookUpToolBar" style="margin-bottom:1px"></div>
+            <div id="tblLvlLookUp"></div>
+        </div>
+    </div>
+
+    <div id="modBankLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="BankLookUpToolBar" style="margin-bottom:1px"></div>
+            <div id="tblBankLookUp"></div>
+        </div>
+    </div>
+
+    <div id="modStatusLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="StatusLookUpToolBar" style="margin-bottom:1px"></div>
+            <div id="tblStatusLookUp"></div>
+        </div>
+    </div>
 </div>
 

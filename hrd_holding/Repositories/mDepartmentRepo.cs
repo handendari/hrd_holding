@@ -61,7 +61,7 @@ namespace hrd_holding.Repositories
         }
 
         public ResponseModel getDepartmentList(int pCompanyCode, int pBranchCode, 
-                                                        int? pStartRow = 0, int? pRows = 0, string pWhere = "", string pOrderBy = "")
+                                               int? pStartRow = 0, int? pRows = 0, string pWhere = "", string pOrderBy = "")
         {
             var vLimit = pOrderBy + " LIMIT " + pStartRow + "," + pRows;
 

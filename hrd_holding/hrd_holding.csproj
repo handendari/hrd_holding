@@ -134,6 +134,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BankController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\LevelController.cs" />
+    <Compile Include="Controllers\TitleController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeeTrainingController.cs" />
     <Compile Include="Controllers\EmployeeExperienceController.cs" />
@@ -191,6 +195,10 @@
     <Compile Include="Repositories\mLevelRepo.cs" />
     <Compile Include="Repositories\mSubtitleRepo.cs" />
     <Compile Include="Repositories\mTitleRepo.cs" />
+    <Compile Include="Services\mStatusService.cs" />
+    <Compile Include="Services\mBankService.cs" />
+    <Compile Include="Services\mLevelService.cs" />
+    <Compile Include="Services\mTitleService.cs" />
     <Compile Include="Services\mDepartmentService.cs" />
     <Compile Include="Services\mEmployeeTrainingService.cs" />
     <Compile Include="Services\mEmployeeExperienceService.cs" />

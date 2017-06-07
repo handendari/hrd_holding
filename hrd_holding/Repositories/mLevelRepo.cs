@@ -12,8 +12,10 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("LevelRepo");
 
-        public void InsertLevel(mLevelModel pModel)
+        public ResponseModel InsertLevel(mLevelModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"INSERT INTO `m_level`
                                         (`level_code`,`int_level`,`date_entry`,`date_edit`,`description`,`user_entry`,`user_edit`,`level_name`)
                                  VALUES (@pLevelCode,@pIntLevel,@pDateEntry,@pDateEdit,@pDescription,@pUserEntry,@pUserEdit,@pLevelName)";
@@ -38,6 +40,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pLevelName", pModel.level_name);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " INSERT LEVEL, Code : " + pModel.level_code + " Name : " + pModel.level_name;
                         Log.Debug(DateTime.Now + " INSERT LEVEL ====>>>> Code : " + pModel.level_code + " Name : " + pModel.level_name);
 
                     }
@@ -45,21 +49,47 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT LEVEL FAILED......";
                 Log.Error(DateTime.Now + " INSERT LEVEL FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public List<mLevelModel> getLevelList()
+        public ResponseModel getLevelList(int? pStartRow = 0, int? pRows = 0, string pWhere = "", string pOrderBy = "")
         {
             var vList = new List<mLevelModel>();
-            var strSQL = @"SELECT `level_code`,`int_level`,`level_name` ,`description`,`date_entry`,`user_entry`,`date_edit`,`user_edit`
-                           FROM m_level";
+            var vLimit = pOrderBy + " LIMIT " + pStartRow + "," + pRows;
+            var vJmlRecord = 0;
+
+            var strSQLCount = @"SELECT COUNT(level_code) jml_record
+                                FROM m_level " + pWhere;
+
+            var strSQL = @"SELECT `level_code`,`int_level`,`level_name`,IFNULL(description,'') description,
+                                  `date_entry`,IFNULL(user_entry,'') user_entry,
+                                  `date_edit`,IFNULL(user_edit,'') user_edit
+                           FROM m_level " + pWhere + " " + vLimit;
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
                 {
                     conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQLCount, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vJmlRecord = aa.GetInt32("jml_record");
+                                }
+                            }
+                        }
+                    }
+
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
@@ -76,9 +106,9 @@ namespace hrd_holding.Repositories
                                         int_level = aa.GetString("int_level"),
                                         level_name = aa.GetString("level_name"),
                                         description = aa.GetString("description"),
-                                        date_entry = aa.GetDateTime("date_entry"),
+                                        date_entry = (aa["date_entry"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["date_entry"]),
                                         user_entry = aa.GetString("user_entry"),
-                                        date_edit = aa.GetDateTime("date_edit"),
+                                        date_edit = (aa["date_edit"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["date_edit"]),
                                         user_edit = aa.GetString("user_edit")
                                     };
                                     vList.Add(m);
@@ -92,10 +122,15 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetLevelList FAILED... ", ex);
             }
-            return vList;
+
+            var vResp = new ResponseModel();
+            vResp.total_record = vJmlRecord;
+            vResp.objResult = vList;
+
+            return vResp;
         }
 
-        public mLevelModel getLevelInfo(string pLevelCode)
+        public mLevelModel getLevelInfo(int pLevelCode)
         {
             var vModel = new mLevelModel();
             var strSQL = @"SELECT `level_code`,`int_level`,`level_name` ,`description`,`date_entry`,`user_entry`,`date_edit`,`user_edit`
@@ -138,8 +173,9 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateLevel(mLevelModel pModel)
+        public ResponseModel UpdateLevel(mLevelModel pModel)
         {
+            var vResp = new ResponseModel();
             string SqlString = @"UPDATE `m_level`
                                        SET `int_level` = @pIntLevel,
                                            `date_entry` = @pDateEntry,
@@ -169,6 +205,9 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pLevelName", pModel.level_name);
 
                         var status = cmd.ExecuteNonQuery();
+
+                        vResp.isValid = true;
+                        vResp.message = " UPDATE LEVEL SUCCESS, Code : " + pModel.level_code + " Name : " + pModel.level_name;
                         Log.Debug(DateTime.Now + " UPDATE LEVEL SUCCESS ====>>>>>> Code : " + pModel.level_code + " Name : " + pModel.level_name);
 
                     }
@@ -176,14 +215,20 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " UPDATE LEVEL FAILED.....";
+
                 Log.Error(DateTime.Now + " UPDATE LEVEL FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public void DeleteLevel(string pCode)
+        public ResponseModel DeleteLevel(int pCode)
         {
-            string SqlString = @"DELETE m_level WHERE level_code = @pCode";
+            var vResp = new ResponseModel();
+
+            string SqlString = @"DELETE FROM m_level WHERE level_code = @pCode";
 
             try
             {
@@ -197,6 +242,9 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pCode", pCode);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " DELETE LEVEL SUCCESS, Code : " + pCode;
+
                         Log.Debug(DateTime.Now + " DELETE LEVEL SUCCESS ====>>>>>> Code : " + pCode);
 
                     }
@@ -204,9 +252,13 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " DELETE LEVEL FAILED.......";
+
                 Log.Error(DateTime.Now + " DELETE LEVEL FAILED", ex);
             }
 
+            return vResp;
         }
     }
 }

@@ -12,8 +12,10 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("BankRepo");
 
-        public void InsertBank(mBankModel pModel)
+        public ResponseModel InsertBank(mBankModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"INSERT INTO `m_bank`
                                         (`bank_code`,`bank_name`,`description`)
                                  VALUES (@pBankCode,@pBankName,@pDescription)";
@@ -33,6 +35,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pDescription", pModel.description);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " INSERT BANK, Code : " + pModel.bank_code + " Name : " + pModel.bank_name;
                         Log.Debug(DateTime.Now + " INSERT BANK ====>>>> Code : " + pModel.bank_code + " Name : " + pModel.bank_name);
 
                     }
@@ -40,20 +44,47 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT BANK FAILED.....";
+
                 Log.Error(DateTime.Now + " INSERT BANK FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public List<mBankModel> getBankList()
+        public ResponseModel getBankList(int? pStartRow = 0, int? pRows = 0, string pWhere = "", string pOrderBy = "")
         {
             var vList = new List<mBankModel>();
-            var strSQL = @"SELECT `bank_code`,`bank_name`,`description` FROM m_bank";
+            var vLimit = pOrderBy + " LIMIT " + pStartRow + "," + pRows;
+
+            var vJmlRecord = 0;
+
+            var strSQLCount = @"SELECT COUNT(bank_code) jml_record
+                                FROM m_bank " + pWhere;
+
+            var strSQL = @"SELECT `bank_code`,`bank_name`,IFNULL(description,'') description
+                           FROM m_bank " + pWhere + " " + vLimit;
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
                 {
                     conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQLCount, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vJmlRecord = aa.GetInt32("jml_record");
+                                }
+                            }
+                        }
+                    }
+
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
@@ -81,13 +112,18 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetBankList FAILED... ", ex);
             }
-            return vList;
+
+            var vResp = new ResponseModel();
+            vResp.total_record = vJmlRecord;
+            vResp.objResult = vList;
+
+            return vResp;
         }
 
         public mBankModel getBankInfo(string pBankCode)
         {
             var vModel = new mBankModel();
-            var strSQL = @"SELECT `bank_code`,`bank_name`,`description` 
+            var strSQL = @"SELECT `bank_code`,`bank_name`,IFNULL(description,'') description 
                            FROM m_bank
                            WHERE bank_code = @pBankCode";
             try
@@ -122,8 +158,9 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateBank(mBankModel pModel)
+        public ResponseModel UpdateBank(mBankModel pModel)
         {
+            var vResp = new ResponseModel();
             string SqlString = @"UPDATE `m_bank`
                                       SET `bank_name` = @pBankName,
                                           `description`= @pDescription
@@ -143,6 +180,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pDescription", pModel.description);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " UPDATE BANK SUCCESS, Code : " + pModel.bank_code + " Name : " + pModel.bank_name;
                         Log.Debug(DateTime.Now + " UPDATE BANK SUCCESS ====>>>>>> Code : " + pModel.bank_code + " Name : " + pModel.bank_name);
 
                     }
@@ -150,13 +189,18 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " UPDATE BANK FAILED.....";
+
                 Log.Error(DateTime.Now + " UPDATE BANK FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public void DeleteBank(string pCode)
+        public ResponseModel DeleteBank(string pCode)
         {
+            var vResp = new ResponseModel();
             string SqlString = @"DELETE m_bank WHERE bank_code = @pCode";
 
             try
@@ -171,6 +215,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pCode", pCode);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " DELETE BANK SUCCESS, Code : " + pCode;
                         Log.Debug(DateTime.Now + " DELETE BANK SUCCESS ====>>>>>> Code : " + pCode);
 
                     }
@@ -178,9 +224,12 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " DELETE BANK FAILED......";
+
                 Log.Error(DateTime.Now + " DELETE BANK FAILED", ex);
             }
-
+            return vResp;
         }
 
     }
