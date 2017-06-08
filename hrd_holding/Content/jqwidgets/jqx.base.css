@@ -4198,8 +4198,10 @@ ol li .jqx-listmenu-item-label:before
     border-top-color: transparent !important;
     border-bottom-color: transparent !important;
 }
-/*Sets the text-alignment to right.*/
+/*Sets the text-alignment to right.
 .jqx-rtl{text-align: right !important;}
+*/
+
 .jqx-shadow{
     -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.15)!important;
     -moz-box-shadow   : 0 2px 3px rgba(0,0,0,.15)!important;

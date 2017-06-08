@@ -3,7 +3,6 @@ var vCountry = "";
 
 f_ShowLoaderModal();
 
-
 var SrcCountryLookUp = {
     //url: vUrlCountry,
     datatype: "json",
@@ -274,6 +273,7 @@ $(document).ready(function () {
     $("#txtBranch").jqxInput({ theme: vTheme, disabled: true, width: 300 });
     $("#txtIntCompany").jqxInput({ theme: vTheme, disabled: true, width: 50 });
     $("#txtCompany").jqxInput({ theme: vTheme, disabled: true, width: 200 });
+    $("#btnChangeComp").jqxButton({ theme: vTheme,height:20 });
     $("#txtId").jqxInput({ theme: vTheme });
     $("#txtFullName").jqxInput({ theme: vTheme, width: 250 });
     $("#txtNickName").jqxInput({ theme: vTheme });
@@ -388,21 +388,29 @@ $(document).ready(function () {
 
     $("#EmpToolBar").jqxToolBar({
         theme: vTheme,
-        width: '100%', height: 35, tools: 'button | button',
+        width: '100%', height: 35, tools: 'button | button',rtl:true,
         initTools: function (type, index, tool, menuToolIninitialization) {
+            if (type == "button") {
+                tool.height("25px");
+                tool.width("110px");
+            }
             switch (index) {
                 case 0:
-                    tool.text("SAVE DATA");
-                    tool.height("25px");
-                    tool.width("80px");
+                    var button = $("<div>" +
+                                        "<img style='vertical-align:middle' src='../content/images/Save as_24_grey.png'/>" +
+                                        "<span>SAVE DATA</span> " +
+                                   "</div>");
+                    tool.append(button);
                     tool.on("click", function () {
                         f_MessageBoxShow("Simpan Data...");
                     });
                     break;
                 case 1:
-                    tool.text("NEW DATA");
-                    tool.height("25px");
-                    tool.width("80px");
+                    var button = $("<div>" + 
+                                        "<img style='vertical-align:middle' src='../content/images/add property_24_grey.png'/>" +
+                                        "<span>NEW DATA</span> " +
+                                   "</div>");
+                    tool.append(button);
                     tool.on("click", function () {
                         f_MessageBoxShow("NEW Data...");
                     });
@@ -1042,5 +1050,9 @@ $(document).ready(function () {
         $('#tblStatusLookUp').jqxGrid({ source: vAdapter })
         $('#tblStatusLookUp').jqxGrid('gotopage', 0);
         $("#modStatusLookUp").jqxWindow('open');
+    });
+
+    $('#btnChangeComp').on('click', function (event) {
+        $("#modCompanyList").jqxWindow('open');
     });
 });

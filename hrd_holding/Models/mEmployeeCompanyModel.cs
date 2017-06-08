@@ -12,14 +12,19 @@ namespace hrd_holding.Models
         public int seq_no { get; set; }
         public DateTime? date_company { get; set; }
         public int company_code { get; set; }
+        public string int_company { get; set; }
         public string company_name { get; set; }
         public int branch_code { get; set; }
+        public string int_branch { get; set; }
         public string branch_name { get; set; }
         public int department_code { get; set; }
+        public string int_department { get; set; }
         public string department_name { get; set; }
         public int title_code { get; set; }
+        public string int_title { get; set; }
         public string title_name { get; set; }
         public int subtitle_code { get; set; }
+        public string int_subtitle { get; set; }
         public string subtitle_name { get; set; }
         public string description { get; set; }
         public DateTime? entry_date { get; set; }

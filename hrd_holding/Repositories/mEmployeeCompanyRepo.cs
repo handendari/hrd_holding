@@ -12,8 +12,10 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("EmployeeCompanyRepo");
 
-        public void InsertEmployeeCompany(mEmployeeCompanyModel pModel)
+        public ResponseModel InsertEmployeeCompany(mEmployeeCompanyModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"INSERT INTO `m_employee_company`
                                         (`employee_code`,`seq_no`,`date_company`,`company_code`,`branch_code`,`department_code`,`title_code`,
                                          `subtitle_code`,`description`,`entry_date`,`entry_user`,`edit_date`,`edit_user`)
@@ -46,92 +48,35 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " INSERT EMPLOYEE COMPANY SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " INSERT EMPLOYEE COMPANY SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
                     }
                 }
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT EMPLOYEE COMPANY FAILED.....";
                 Log.Error(DateTime.Now + " INSERT EMPLOYEE COMPANY FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public List<mEmployeeCompanyModel> getEmployeeCompanyList(int pDepartmentCode)
+        public List<mEmployeeCompanyModel> getEmployeeCompanyList(string pEmployeeCode)
         {
             var vList = new List<mEmployeeCompanyModel>();
             var strSQL = @"SELECT mec.employee_code,emp.employee_name,
-                                  mec.seq_no,mec.date_company,mec.company_code,mc.company_name,mec.branch_code,mbc.branch_name,
-                                  mec.department_code,md.department_name,mec.title_code,mt.title_name,
-                                  mec.subtitle_code,mst.substitle_name,mec.description,mec.entry_date,mec.entry_user,
-                                  mec.edit_date,mec.edit_user
-                           FROM m_employee_company mec JOIN m_empoloyee emp ON mec.employee_code = emp.employee_code
-                           JOIN m_company mc ON md.company_code = mc.company_code
-                           JOIN m_brach_office mbo ON md.branch_code = mbo.branch_code
-                           JOIN m_department md mec.department_code = md.department_code
-                           JOIN m_title mt ON mec.title_code = mt.title_code
-                           LEFT JOIN m_substitle mst ON mec.subtitle_code = mst.subtitle_code
-                           WHERE mec.department_code = @pDepartmentCode";
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
-                {
-                    conn.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
-                    {
-                        cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("@pDepartmentCode", pDepartmentCode);
-
-                        using (MySqlDataReader aa = cmd.ExecuteReader())
-                        {
-                            if (aa.HasRows)
-                            {
-                                while (aa.Read())
-                                {
-                                    var m = new mEmployeeCompanyModel
-                                    {
-                                        employee_code = aa.GetString("employee_code"),
-                                        employee_name = aa.GetString("employee_name"),
-                                        seq_no = aa.GetInt16("seq_no"),
-                                        date_company = aa.GetDateTime("date_company"),
-                                        company_code = aa.GetInt16("company_code"),
-                                        company_name = aa.GetString("company_name"),
-                                        branch_code = aa.GetInt16("branch_code"),
-                                        branch_name = aa.GetString("branch_name"),
-                                        department_code = aa.GetInt16("department_code"),
-                                        department_name = aa.GetString("department_name"),
-                                        title_code = aa.GetInt16("title_code"),
-                                        title_name = aa.GetString("title_name"),
-                                        subtitle_code = aa.GetInt16("subtitle_code"),
-                                        subtitle_name = aa.GetString("subtitle_name"),
-                                        description = aa.GetString("description"),
-                                        entry_date = aa.GetDateTime("entry_date"),
-                                        entry_user = aa.GetString("nik"),
-                                        edit_date = aa.GetDateTime("edit_date"),
-                                        edit_user = aa.GetString("edit_user")
-                                    };
-                                    vList.Add(m);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error(DateTime.Now + " GetEmployeeCompanyList FAILED... ", ex);
-            }
-            return vList;
-        }
-
-        public mEmployeeCompanyModel getEmployeeCompanyInfo(string pEmployeeCode)
-        {
-            var vModel = new mEmployeeCompanyModel();
-            var strSQL = @"SELECT mec.employee_code,emp.employee_name,
-                                  mec.seq_no,mec.date_company,mec.company_code,mc.company_name,mec.branch_code,mbc.branch_name,
-                                  mec.department_code,md.department_name,mec.title_code,mt.title_name,
-                                  mec.subtitle_code,mst.substitle_name,mec.description,mec.entry_date,mec.entry_user,
-                                  mec.edit_date,mec.edit_user
+                                  mec.seq_no,mec.date_company,
+                                  mec.company_code,mc.int_company,mc.company_name,
+                                  mec.branch_code,mbc.int_branch,mbc.branch_name,
+                                  mec.department_code,md.int_department,md.department_name,
+                                  mec.title_code,mt.int_title,mt.title_name,
+                                  IFNULL(mec.subtitle_code,'') subtitle_code,IFNULL(mst.int_subtitle,'') int_subtitle,IFNULL(mst.substitle_name,'') substitle_name,
+                                  IFNULL(mec.description,'') description,
+                                  mec.entry_date,IFNULL(mec.entry_user,'') entry_user,
+                                  mec.edit_date,IFNULL(mec.edit_user,'') edit_user
                            FROM m_employee_company mec JOIN m_empoloyee emp ON mec.employee_code = emp.employee_code
                            JOIN m_company mc ON md.company_code = mc.company_code
                            JOIN m_brach_office mbo ON md.branch_code = mbo.branch_code
@@ -155,24 +100,107 @@ namespace hrd_holding.Repositories
                             {
                                 while (aa.Read())
                                 {
+                                    var m = new mEmployeeCompanyModel
+                                    {
+                                        employee_code = aa.GetString("employee_code"),
+                                        employee_name = aa.GetString("employee_name"),
+                                        seq_no = aa.GetInt16("seq_no"),
+                                        date_company = (aa["date_company"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["date_company"]),
+                                        company_code = aa.GetInt16("company_code"),
+                                        int_company = aa.GetString("int_company"),
+                                        company_name = aa.GetString("company_name"),
+                                        branch_code = aa.GetInt16("branch_code"),
+                                        int_branch = aa.GetString("int_branch"),
+                                        branch_name = aa.GetString("branch_name"),
+                                        department_code = aa.GetInt16("department_code"),
+                                        int_department = aa.GetString("int_department"),
+                                        department_name = aa.GetString("department_name"),
+                                        title_code = aa.GetInt16("title_code"),
+                                        int_title = aa.GetString("int_title"),
+                                        title_name = aa.GetString("title_name"),
+                                        subtitle_code = aa.GetInt16("subtitle_code"),
+                                        int_subtitle = aa.GetString("int_subtitle"),
+                                        subtitle_name = aa.GetString("subtitle_name"),
+                                        description = aa.GetString("description"),
+                                        entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
+                                        entry_user = aa.GetString("nik"),
+                                        edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
+                                        edit_user = aa.GetString("edit_user")
+                                    };
+                                    vList.Add(m);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(DateTime.Now + " GetEmployeeCompanyList FAILED... ", ex);
+            }
+            return vList;
+        }
+
+        public mEmployeeCompanyModel getEmployeeCompanyInfo(string pEmployeeCode,int pSeqNo)
+        {
+            var vModel = new mEmployeeCompanyModel();
+            var strSQL = @"SELECT mec.employee_code,emp.employee_name,
+                                  mec.seq_no,mec.date_company,
+                                  mec.company_code,mc.int_company,mc.company_name,
+                                  mec.branch_code,mbc.int_branch,mbc.branch_name,
+                                  mec.department_code,md.int_department,md.department_name,
+                                  mec.title_code,mt.int_title,mt.title_name,
+                                  mec.subtitle_code,mst.int_subtitle,mst.substitle_name,
+                                  mec.description,
+                                  mec.entry_date,mec.entry_user,
+                                  mec.edit_date,mec.edit_user
+                           FROM m_employee_company mec JOIN m_empoloyee emp ON mec.employee_code = emp.employee_code
+                           JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_brach_office mbo ON md.branch_code = mbo.branch_code
+                           JOIN m_department md mec.department_code = md.department_code
+                           JOIN m_title mt ON mec.title_code = mt.title_code
+                           LEFT JOIN m_substitle mst ON mec.subtitle_code = mst.subtitle_code
+                           WHERE mec.employee_code = @pEmployeeCode AND mec.seq_no = @pSeqNo";
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@pEmployeeCode", pEmployeeCode);
+                        cmd.Parameters.AddWithValue("@pSeqNo", pSeqNo);
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
                                     vModel.employee_code = aa.GetString("employee_code");
                                     vModel.employee_name = aa.GetString("employee_name");
                                     vModel.seq_no = aa.GetInt16("seq_no");
-                                    vModel.date_company = aa.GetDateTime("date_company");
+                                    vModel.date_company = (aa["date_company"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["date_company"]);
                                     vModel.company_code = aa.GetInt16("company_code");
+                                    vModel.int_company = aa.GetString("int_company");
                                     vModel.company_name = aa.GetString("company_name");
                                     vModel.branch_code = aa.GetInt16("branch_code");
+                                    vModel.int_branch = aa.GetString("int_branch");
                                     vModel.branch_name = aa.GetString("branch_name");
                                     vModel.department_code = aa.GetInt16("department_code");
+                                    vModel.int_department = aa.GetString("int_department");
                                     vModel.department_name = aa.GetString("department_name");
                                     vModel.title_code = aa.GetInt16("title_code");
+                                    vModel.int_title = aa.GetString("int_title");
                                     vModel.title_name = aa.GetString("title_name");
                                     vModel.subtitle_code = aa.GetInt16("subtitle_code");
+                                    vModel.int_subtitle = aa.GetString("int_subtitle");
                                     vModel.subtitle_name = aa.GetString("subtitle_name");
                                     vModel.description = aa.GetString("description");
-                                    vModel.entry_date = aa.GetDateTime("entry_date");
+                                    vModel.entry_date = (aa["entry_edit"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_edit"]);
                                     vModel.entry_user = aa.GetString("nik");
-                                    vModel.edit_date = aa.GetDateTime("edit_date");
+                                    vModel.edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]);
                                     vModel.edit_user = aa.GetString("edit_user");
                                 }
                             }
@@ -187,8 +215,9 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateEmployeeCompany(mEmployeeCompanyModel pModel)
+        public ResponseModel UpdateEmployeeCompany(mEmployeeCompanyModel pModel)
         {
+            var vResp = new ResponseModel();
             string SqlString = @"UPDATE `m_employee_company`
                                     SET `seq_no` = @pSeqNo,
                                         `date_company` = @pDateCompany,
@@ -228,6 +257,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " UPDATE EMPLOYEE COMPANY SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " UPDATE EMPLOYEE COMPANY SUCCESS ====>>>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -235,14 +266,19 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " UPDATE EMPLOYEE COMPANY FAILED......";
+
                 Log.Error(DateTime.Now + " UPDATE EMPLOYEE COMPANY FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public void DeleteEmployeeCompany(string pCode,int pSeqNo)
+        public ResponseModel DeleteEmployeeCompany(string pCode,int pSeqNo)
         {
-            string SqlString = @"DELETE m_employee_company WHERE employee_code = @pCode AND seq_no = @pSeqNo";
+            var vResp = new ResponseModel();
+            string SqlString = @"DELETE FROM m_employee_company WHERE employee_code = @pCode AND seq_no = @pSeqNo";
 
             try
             {
@@ -257,6 +293,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pSeqNo", pSeqNo);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " DELETE EMPLOYEE COMPANY SUCCESS, Code : " + pCode + " seq no : " + pSeqNo;
                         Log.Debug(DateTime.Now + " DELETE EMPLOYEE COMPANY SUCCESS ====>>>>>> Code : " + pCode + " seq no : " + pSeqNo);
 
                     }
@@ -264,9 +302,50 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " DELETE EMPLOYEE COMPANY FAILED.......";
+
                 Log.Error(DateTime.Now + " DELETE EMPLOYEE COMPANY FAILED", ex);
             }
 
+            return vResp;
         }
+
+        public int getEmployeeCompanySeqNo(string pEmployeeCode)
+        {
+            var vSeqNo = 0;
+            var strSQL = @"SELECT IFNULL(MAX(seq_no),0) seq_no
+                           FROM m_employee_company emp
+                           WHERE emp.employee_code = @pEmployeeCode";
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@pEmployeeCode", pEmployeeCode);
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vSeqNo = aa.GetInt16("seq_no") + 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(DateTime.Now + " GetEmployeeCompanySeqNo Failed", ex);
+            }
+            return vSeqNo;
+        }
+
     }
 }

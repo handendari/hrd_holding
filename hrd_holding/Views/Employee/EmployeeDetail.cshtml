@@ -7,6 +7,7 @@
 
 <header>
     <script src="~/scripts/mEmployee/m_employee.js"></script>
+    <script src="~/scripts/mEmployee/m_employee_company.js"></script>
     <script src="~/scripts/mEmployee/m_employee_family.js"></script>
     <script src="~/scripts/mEmployee/m_employee_education.js"></script>
     <script src="~/scripts/mEmployee/m_employee_skill.js"></script>
@@ -17,16 +18,17 @@
 <div>
     <!--#region DETAIL EMPLOYEE -->
     <div>
-        <table style="width:100%">
+        <table style="width: 100%">
             <tr>
                 <td>Company</td>
                 <td>
                     <input type="text" id="txtIntCompany" />
                     <input type="text" id="txtCompany" />
+                    <button id="btnChangeComp">Change</button>
                 </td>
                 <td></td>
                 <td rowspan="2" colspan="3">
-                    <div id="EmpToolBar" style="margin-bottom:1px"></div>
+                    <div id="EmpToolBar" style="margin-bottom: 1px; padding-right: 20px"></div>
                 </td>
             </tr>
             <tr>
@@ -204,9 +206,7 @@
     <!--#region TABS FAMILY, SKILL, EXP DLL -->
     <div style="margin-top: 10px">
         <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717; background-color: #eeece1;">
-            <legend style="margin-left: 20px; background-color: #6b1717; 
-                           padding-left: 10px; padding-top: 5px; padding-right: 100px; padding-bottom: 5px; 
-                           color: white; border-radius: 8px; border: 2px solid #eeece1; font-size: 13px;">
+            <legend style="margin-left: 20px; background-color: #6b1717; padding-left: 10px; padding-top: 5px; padding-right: 100px; padding-bottom: 5px; color: white; border-radius: 8px; border: 2px solid #eeece1; font-size: 13px;">
                 <b>Employee Detail </b>
             </legend>
             <div id='jqxTabs'>
@@ -485,7 +485,7 @@
                         <td>Last Salary</td>
                         <td>
                             <div id="txtExpSalary"></div>
-                         </td>
+                        </td>
                         <td style="padding-left: 30px">End Working Reason</td>
                         <td>
                             <input type="text" id="txtExpReason" /></td>
@@ -585,7 +585,7 @@
     <div id="modCountryLookUp">
         <div><span>Human Resource Development</span></div>
         <div>
-            <div id="CountryLookUpToolBar" style="margin-bottom:1px"></div>
+            <div id="CountryLookUpToolBar" style="margin-bottom: 1px"></div>
             <div id="tblCountryLookUp"></div>
         </div>
     </div>
@@ -593,7 +593,7 @@
     <div id="modDeptLookUp">
         <div><span>Human Resource Development</span></div>
         <div>
-            <div id="DeptLookUpToolBar" style="margin-bottom:1px"></div>
+            <div id="DeptLookUpToolBar" style="margin-bottom: 1px"></div>
             <div id="tblDeptLookUp"></div>
         </div>
     </div>
@@ -601,7 +601,7 @@
     <div id="modTitleLookUp">
         <div><span>Human Resource Development</span></div>
         <div>
-            <div id="TitleLookUpToolBar" style="margin-bottom:1px"></div>
+            <div id="TitleLookUpToolBar" style="margin-bottom: 1px"></div>
             <div id="tblTitleLookUp"></div>
         </div>
     </div>
@@ -609,7 +609,7 @@
     <div id="modLvlLookUp">
         <div><span>Human Resource Development</span></div>
         <div>
-            <div id="LvlLookUpToolBar" style="margin-bottom:1px"></div>
+            <div id="LvlLookUpToolBar" style="margin-bottom: 1px"></div>
             <div id="tblLvlLookUp"></div>
         </div>
     </div>
@@ -617,7 +617,7 @@
     <div id="modBankLookUp">
         <div><span>Human Resource Development</span></div>
         <div>
-            <div id="BankLookUpToolBar" style="margin-bottom:1px"></div>
+            <div id="BankLookUpToolBar" style="margin-bottom: 1px"></div>
             <div id="tblBankLookUp"></div>
         </div>
     </div>
@@ -625,8 +625,93 @@
     <div id="modStatusLookUp">
         <div><span>Human Resource Development</span></div>
         <div>
-            <div id="StatusLookUpToolBar" style="margin-bottom:1px"></div>
+            <div id="StatusLookUpToolBar" style="margin-bottom: 1px"></div>
             <div id="tblStatusLookUp"></div>
+        </div>
+    </div>
+
+    <div id="modCompanyList">
+        <div><span>COMPANY DETAIL</span></div>
+        <div>
+            <div id="tblCompany"></div>
+            <div style="margin-top: 10px; margin-left: 20px">
+                <button id="btnNew_Company">NEW DATA</button>
+                <button id="btnEdit_Company">EDIT</button>
+                <button style="margin-left: 50px" id="btnDelete_Company">DELETE</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modCompany">
+        <div>
+            <span>COMPANY DETAIL</span>
+        </div>
+        <div>
+            <div id="psnCompCont" style="height: 40px"></div>
+            <div id="psnComp">
+                <div id="psnCompContent"></div>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>Emp. Code *</td>
+                        <td>
+                            <input type="text" id="txtCompCode" /></td>
+                    </tr>
+                    <tr>
+                        <td>Date *</td>
+                        <td>
+                            <div id="dtTgl_Company"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Company *</td>
+                        <td>
+                            <input type="text" id="txtCompanyCode_Company" />
+                            <input type="button" id="btnCompanyCode_Company" value="..." />
+                            <input type="text" id="txtCompanyName_Company" />
+                        </td>
+                        <td style="padding-left: 30px">Branch Office *</td>
+                        <td>
+                            <input type="text" id="txtBranchCode_Company" />
+                            <input type="button" id="btnBranchCode_Company" value="..." />
+                            <input type="text" id="txtBranchName_Company" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Department</td>
+                        <td>
+                            <input type="text" id="txtDeptCode_Company" />
+                            <input type="button" id="btnDeptCode_Company" value="..." />
+                            <input type="text" id="txtDeptName_Company" />
+                        </td>
+                        <td style="padding-left: 30px">Job Title</td>
+                        <td>
+                            <input type="text" id="txtTitleCode_Company" />
+                            <input type="button" id="btnTitleCode_Company" value="..." />
+                            <input type="text" id="txtTitleName_Company" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Grade</td>
+                        <td>
+                            <input type="text" id="txtGradeCode_Company" />
+                            <input type="button" id="btnGradeCode_Company" value="..." />
+                            <input type="text" id="txtGradeName_Company" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top">Description</td>
+                        <td colspan="2">
+                            <textarea id="txtDesc_Company"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 15px; margin-left: 20px">
+                    <button id="btnSave_Company">SAVE</button>
+                    <button id="btnCancel_Company">CANCEL</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
