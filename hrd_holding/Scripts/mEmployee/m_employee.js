@@ -1,5 +1,5 @@
 ﻿var vDataTbl = {};
-var vCountry = "";
+var vLookUp = "";
 
 f_ShowLoaderModal();
 
@@ -430,7 +430,7 @@ $(document).ready(function () {
                         var rowindex = $('#tblCountryLookUp').jqxGrid('getselectedrowindex');
                         if (rowindex >= 0) {
                             var rd = $('#tblCountryLookUp').jqxGrid('getrowdata', rowindex);
-                            if (vCountry == "edu") {
+                            if (vLookUp == "edu") {
                                 $("#txtEduCountryCode").val(rd.int_country);
                                 $("#txtEduCountryCode").data("edu_country_code", rd.country_code);
 
@@ -645,6 +645,8 @@ $(document).ready(function () {
         $('#modLvlLookUp').jqxWindow({ position: { x: f_PosX($('#modLvlLookUp')), y: f_PosY($('#modLvlLookUp')) } });
         $('#modBankLookUp').jqxWindow({ position: { x: f_PosX($('#modBankLookUp')), y: f_PosY($('#modBankLookUp')) } });
         $('#modStatusLookUp').jqxWindow({ position: { x: f_PosX($('#modStatusLookUp')), y: f_PosY($('#modStatusLookUp')) } });
+        $('#modCompanyList').jqxWindow({ position: { x: f_PosX($('#modCompanyList')), y: f_PosY($('#modCompanyList')) } });
+        $('#modCompany').jqxWindow({ position: { x: f_PosX($('#modCompany')), y: f_PosY($('#modCompany')) } });
     }
 
     //KEEP CENTERED WHEN SCROLLING
@@ -897,6 +899,12 @@ $(document).ready(function () {
                     }
                     //#endregion
 
+                    //#region ListEducation
+                    if (dt.listCompany != null && dt.listCompany.length > 0) {
+                        f_FillTableCompany(dt.listCompany);
+                    }
+                    //#endregion
+
                     //#region ListContract
                     if (dt.listContract != null && dt.listContract.length > 0) {
                         for (var i = 0; i < dt.listContract.length; i++) {
@@ -955,7 +963,7 @@ $(document).ready(function () {
 
     $('#btnKdCountry').on('click', function (event) {
         SrcCountryLookUp.url = base_url + "/Country/GetCountryList";
-        vCountry = "emp";
+        vLookUp = "emp";
 
         var vAdapter = new $.jqx.dataAdapter(SrcCountryLookUp, {
             downloadComplete: function (data, status, xhr) {

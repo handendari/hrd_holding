@@ -26,9 +26,9 @@ namespace hrd_holding.Controllers
             return View();
         }
 
-        public ActionResult EmpDetail()
+        public ActionResult EmployeeDetail()
         {
-            return View("EmployeeDetail");
+            return View();
         }
 
         //[HttpPost]
@@ -49,7 +49,8 @@ namespace hrd_holding.Controllers
                 vModel.listSkill,
                 vModel.listExperience,
                 vModel.listTrain,
-                vModel.listContract
+                vModel.listContract,
+                vModel.listCompany
             }, JsonRequestBehavior.AllowGet);
         }
 

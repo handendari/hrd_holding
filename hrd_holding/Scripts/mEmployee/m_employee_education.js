@@ -302,7 +302,7 @@ $(document).ready(function () {
 
     $('#btnEduCountry').on('click', function (event) {
         SrcCountryLookUp.url = base_url + "/Country/GetCountryList";
-        vCountry = "edu";
+        vLookUp = "edu";
 
         var vAdapter = new $.jqx.dataAdapter(SrcCountryLookUp, {
             downloadComplete: function (data, status, xhr) {

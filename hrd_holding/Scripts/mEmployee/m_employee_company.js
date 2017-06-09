@@ -135,19 +135,19 @@ $(document).ready(function () {
             columns: [
                 { text: 'Emp. Code', datafield: 'employee_code', hidden: true },
                 { text: 'sequence', datafield: 'seq_no', hidden: true },
-                { text: 'Date', datafield: 'date_company',width:150, filtertype: 'date', cellsalign: 'center', cellsformat: 'dd-MMM-yy' },
+                { text: 'Date', datafield: 'date_company',width:100, filtertype: 'date', cellsalign: 'center', cellsformat: 'dd-MMM-yy' },
                 { text: 'company_code', datafield: 'company_code', hidden: true },
                 { text: 'int_company', datafield: 'int_company', hidden: true },
-                { text: 'Company', datafield: 'company_name'},
+                { text: 'Company', datafield: 'company_name', width: 250},
                 { text: 'branch_code', datafield: 'branch_code', hidden: true },
                 { text: 'int_branch', datafield: 'int_branch', hidden: true },
-                { text: 'Branch', datafield: 'branch_name'},
+                { text: 'Branch', datafield: 'branch_name', width: 300},
                 { text: 'department_code', datafield: 'department_code', hidden: true },
                 { text: 'int_department', datafield: 'int_department', hidden: true },
                 { text: 'Department', datafield: 'department_name'},
                 { text: 'title_code', datafield: 'title_code', hidden: true },
                 { text: 'int_title', datafield: 'int_title', hidden: true },
-                { text: 'Title', datafield: 'title_name'},
+                { text: 'Title', datafield: 'title_name', width: 200},
                 { text: 'subtitle_code', datafield: 'subtitle_code', hidden: true },
                 { text: 'Description', datafield: 'description'}
             ]
@@ -281,26 +281,22 @@ $(document).ready(function () {
         f_ShowLoaderModal();
 
         var vModel = JSON.stringify({
-            employee_code: $("#txtId").data("employee_code"),
-            employee_name: $("#txtFullName").val(),
-            seq_no: $("#txtTrnCode").data("trn_seq_no"),
-            start_date: $("#dtTrnStart").jqxDateTimeInput('getDate'),
-            end_date: $("#dtTrnEnd").jqxDateTimeInput('getDate'),
-            material: $("#txtTrnSubject").val(),
-            organizer: $("#txtTrnOrganizer").val(),
-            place: $("#txtTrnPlace").val(),
-            company: $("#txtTrnCompany").val(),
-            value: $("#txtTrnValue").val(),
-            chk_company: $("#chkTrnCompany").jqxCheckBox('checked')
-
+            employee_code: $("#txtCompCode").val(),
+            seq_no: $("#txtCompCode").data("comp_seq_no"),
+            date_company: $("#dtTgl_Company").jqxDateTimeInput('getDate'),
+            company_code: $("#txtCompanyCode_Company").data("comp_code"),
+            branch_code: $("#txtBranchCode_Company").data("branch_code"),
+            department_code: $("#txtDeptCode_Company").data("dept_code"),
+            title_code: $("#txtTitleCode_Company").data("title_code"),
+            subtitle_code: $("#txtGradeCode_Company").data("grade_code"),
+            description: $("#txtDesc_Company").val()
         });
 
-        var vSeqNo = ($("#txtTrnCode").data("trn_seq_no") == "") ? 0 : $("#txtTrnCode").data("trn_seq_no");
+        var vSeqNo = ($("#txtCompCode").data("comp_seq_no") == "") ? 0 : $("#txtCompCode").data("comp_seq_no");
 
         if (vSeqNo > 0) {
-
             $.ajax({
-                url: base_url + "EmployeeTraining/UpdateEmployeeTraining",
+                url: base_url + "EmployeeCompany/UpdateEmployeeCompany",
                 type: "POST",
                 contentType: "application/json",
                 data: vModel,
@@ -308,7 +304,7 @@ $(document).ready(function () {
                     var isOke = d.vResp['isValid'];
 
                     if (isOke) {
-                        f_UpdateTblTrn();
+                        f_UpdateTblEmployeeCompany();
                     } else {
                         f_MessageBoxShow(d.vResp['message']);
                     }
@@ -317,7 +313,7 @@ $(document).ready(function () {
             });
         } else {
             $.ajax({
-                url: base_url + "EmployeeTraining/InsertEmployeeTraining",
+                url: base_url + "EmployeeCompany/InsertEmployeeCompany",
                 type: "POST",
                 contentType: "application/json",
                 data: vModel,
@@ -325,7 +321,7 @@ $(document).ready(function () {
                     var isOke = d.vResp['isValid'];
 
                     if (isOke) {
-                        f_UpdateTblTrn();
+                        f_UpdateTblEmployeeCompany();
                     } else {
                         f_MessageBoxShow(d.vResp['message']);
                     }
@@ -334,6 +330,56 @@ $(document).ready(function () {
             });
         }
 
+    });
+
+    $('#btnCompanyCode_Company').on('click', function (event) {
+    });
+
+    $('#btnBranchCode_Company').on('click', function (event) {
+    });
+
+    $('#btnDeptCode_Company').on('click', function (event) {
+        var vCompanyCode = $("#txtIntCompany").data("company_code");
+        var vBranchCode = $("#btnBranchCode_Company").data("branch_code");
+
+        if (vBranchCode == "") {
+            f_MessageBoxShow("Please Select Branch Office....");
+            return;
+        }
+
+        vLookUp = "Comp";
+        SrcDeptLookUp.url = base_url + "/Department/GetDepartmentList?pCompanyCode=" + vCompanyCode + "&pBranchCode=" + vBranchCode;
+        var vAdapter = new $.jqx.dataAdapter(SrcDeptLookUp, {
+            downloadComplete: function (data, status, xhr) {
+                if (!SrcDeptLookUp.TotalRows) {
+                    SrcDeptLookUp.TotalRows = data.length;
+                }
+            }
+        });
+
+        $('#tblDeptLookUp').jqxGrid({ source: vAdapter })
+        $('#tblDeptLookUp').jqxGrid('gotopage', 0);
+        $("#modDeptLookUp").jqxWindow('open');
+    });
+
+    $('#btnTitleCode_Company').on('click', function (event) {
+        vLookUp = "Comp";
+        SrcTitleLookUp.url = base_url + "/Title/GetTitleList";
+
+        var vAdapter = new $.jqx.dataAdapter(SrcTitleLookUp, {
+            downloadComplete: function (data, status, xhr) {
+                if (!SrcTitleLookUp.TotalRows) {
+                    SrcTitleLookUp.TotalRows = data.length;
+                }
+            }
+        });
+
+        $('#tblTitleLookUp').jqxGrid({ source: vAdapter })
+        $('#tblTitleLookUp').jqxGrid('gotopage', 0);
+        $("#modTitleLookUp").jqxWindow('open');
+    });
+
+    $('#btnGradeCode_Company').on('click', function (event) {
     });
 
 });
