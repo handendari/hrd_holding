@@ -20973,3 +20973,161 @@ DEBUG 2017-06-08 15:00:25,086 2230910ms EmployeeEducationRepo  loyeeEducationLis
 DEBUG 2017-06-08 15:00:25,105 2230929ms EmployeeExperienceRepo oyeeExperienceList - 6/8/2017 3:00:25 PM JML Employee EXPERIENCE List: 1
 DEBUG 2017-06-08 15:00:25,115 2230939ms EmployeeSkillRepo      tEmployeeSkillList - 6/8/2017 3:00:25 PM JML Employee SKILL List: 1
 DEBUG 2017-06-08 15:00:25,130 2230954ms EmployeeTrainingRepo   ployeeTrainingList - 6/8/2017 3:00:25 PM JML Employee Training List: 0
+ERROR 2017-06-09 09:37:24,395   527ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 9:37:24 AM GetEmployeeCompanyList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'mec.department_code = md.department_code
+                           JOIN m_titl' at line 14
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mEmployeeCompanyRepo.getEmployeeCompanyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeCompanyRepo.cs:line 97
+ERROR 2017-06-09 10:09:35,707  2601ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:09:35 AM GetEmployeeCompanyList JmlData : 0
+ERROR 2017-06-09 10:10:41,399   511ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:10:41 AM GetEmployeeCompanyList JmlData : 0
+ERROR 2017-06-09 10:11:38,431   723ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:11:38 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 10:11:38,477   769ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:11:38 AM GetEmployeeCompanyList FAILED... 
+System.IndexOutOfRangeException: Could not find specified column in results: nik
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeCompanyRepo.getEmployeeCompanyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeCompanyRepo.cs:line 105
+ERROR 2017-06-09 10:11:38,481   773ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:11:38 AM GetEmployeeCompanyList JmlData : 0
+ERROR 2017-06-09 10:12:34,017  2142ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:12:34 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 10:12:34,059  2184ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:12:34 AM GetEmployeeCompanyList JmlData : 1
+ERROR 2017-06-09 10:20:53,528   141ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:20:53 AM EMPLOYEE CODE : 
+ERROR 2017-06-09 10:20:53,919   531ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:20:53 AM GetEmployeeCompanyList JmlData : 0
+DEBUG 2017-06-09 10:21:45,459    59ms loyeeCompanyController mployeeCompanyList - 6/9/2017 10:21:45 AM Employee Code : 
+ERROR 2017-06-09 10:21:45,488    88ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:21:45 AM EMPLOYEE CODE : 
+ERROR 2017-06-09 10:21:46,545  1145ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:21:46 AM GetEmployeeCompanyList JmlData : 0
+DEBUG 2017-06-09 10:22:09,786 24385ms loyeeCompanyController mployeeCompanyList - 6/9/2017 10:22:09 AM Employee Code : 35151269069300041
+ERROR 2017-06-09 10:22:09,787 24386ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:22:09 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 10:22:10,363 24962ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:22:10 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 10:22:10,368 24967ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 10:22:10 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 11:06:26,892   527ms EmployeeFamilyRepo     EmployeeFamilyList - 6/9/2017 11:06:26 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-09 11:06:26,945   580ms EmployeeContractRepo   ployeeContractList - 6/9/2017 11:06:26 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-09 11:06:26,976   611ms EmployeeEducationRepo  loyeeEducationList - 6/9/2017 11:06:26 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-09 11:06:27,002   636ms EmployeeExperienceRepo oyeeExperienceList - 6/9/2017 11:06:27 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-09 11:06:27,053   687ms EmployeeSkillRepo      tEmployeeSkillList - 6/9/2017 11:06:27 AM JML Employee SKILL List: 1
+DEBUG 2017-06-09 11:06:27,067   701ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 11:06:27 AM JML Employee Training List: 0
+ERROR 2017-06-09 11:06:27,069   703ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:06:27 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 11:06:27,082   717ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:06:27 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 11:06:27,084   719ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:06:27 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 11:07:31,716 65350ms EmployeeFamilyRepo     EmployeeFamilyList - 6/9/2017 11:07:31 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-09 11:07:31,750 65384ms EmployeeContractRepo   ployeeContractList - 6/9/2017 11:07:31 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-09 11:07:31,799 65433ms EmployeeEducationRepo  loyeeEducationList - 6/9/2017 11:07:31 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-09 11:07:31,818 65452ms EmployeeExperienceRepo oyeeExperienceList - 6/9/2017 11:07:31 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-09 11:07:31,896 65530ms EmployeeSkillRepo      tEmployeeSkillList - 6/9/2017 11:07:31 AM JML Employee SKILL List: 1
+DEBUG 2017-06-09 11:07:31,908 65542ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 11:07:31 AM JML Employee Training List: 0
+ERROR 2017-06-09 11:07:31,910 65544ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:07:31 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 11:07:31,944 65578ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:07:31 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 11:07:31,944 65578ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:07:31 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 11:13:01,935 395569ms EmployeeFamilyRepo     EmployeeFamilyList - 6/9/2017 11:13:01 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-09 11:13:01,952 395586ms EmployeeContractRepo   ployeeContractList - 6/9/2017 11:13:01 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-09 11:13:02,141 395775ms EmployeeEducationRepo  loyeeEducationList - 6/9/2017 11:13:02 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-09 11:13:02,246 395880ms EmployeeExperienceRepo oyeeExperienceList - 6/9/2017 11:13:02 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-09 11:13:02,271 395905ms EmployeeSkillRepo      tEmployeeSkillList - 6/9/2017 11:13:02 AM JML Employee SKILL List: 1
+DEBUG 2017-06-09 11:13:02,325 395959ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 11:13:02 AM JML Employee Training List: 0
+ERROR 2017-06-09 11:13:02,326 395960ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:13:02 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 11:13:02,432 396066ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:13:02 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 11:13:02,432 396066ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:13:02 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 11:13:48,406 442040ms EmployeeFamilyRepo     EmployeeFamilyList - 6/9/2017 11:13:48 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-09 11:13:48,413 442047ms EmployeeContractRepo   ployeeContractList - 6/9/2017 11:13:48 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-09 11:13:48,437 442071ms EmployeeEducationRepo  loyeeEducationList - 6/9/2017 11:13:48 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-09 11:13:48,443 442077ms EmployeeExperienceRepo oyeeExperienceList - 6/9/2017 11:13:48 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-09 11:13:48,449 442083ms EmployeeSkillRepo      tEmployeeSkillList - 6/9/2017 11:13:48 AM JML Employee SKILL List: 1
+DEBUG 2017-06-09 11:13:48,503 442137ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 11:13:48 AM JML Employee Training List: 0
+ERROR 2017-06-09 11:13:48,504 442138ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:13:48 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 11:13:48,526 442160ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:13:48 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 11:13:48,527 442161ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:13:48 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 11:14:09,540 463174ms EmployeeFamilyRepo     EmployeeFamilyList - 6/9/2017 11:14:09 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-09 11:14:09,564 463198ms EmployeeContractRepo   ployeeContractList - 6/9/2017 11:14:09 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-09 11:14:09,581 463215ms EmployeeEducationRepo  loyeeEducationList - 6/9/2017 11:14:09 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-09 11:14:09,610 463244ms EmployeeExperienceRepo oyeeExperienceList - 6/9/2017 11:14:09 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-09 11:14:09,619 463253ms EmployeeSkillRepo      tEmployeeSkillList - 6/9/2017 11:14:09 AM JML Employee SKILL List: 1
+DEBUG 2017-06-09 11:14:09,645 463279ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 11:14:09 AM JML Employee Training List: 0
+ERROR 2017-06-09 11:14:09,646 463280ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:14:09 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 11:14:09,724 463358ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:14:09 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 11:14:09,724 463358ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:14:09 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 11:14:43,117 496751ms EmployeeFamilyRepo     EmployeeFamilyList - 6/9/2017 11:14:43 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-09 11:14:43,130 496764ms EmployeeContractRepo   ployeeContractList - 6/9/2017 11:14:43 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-09 11:14:43,696 497330ms EmployeeEducationRepo  loyeeEducationList - 6/9/2017 11:14:43 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-09 11:14:43,716 497350ms EmployeeExperienceRepo oyeeExperienceList - 6/9/2017 11:14:43 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-09 11:14:43,722 497356ms EmployeeSkillRepo      tEmployeeSkillList - 6/9/2017 11:14:43 AM JML Employee SKILL List: 1
+DEBUG 2017-06-09 11:14:43,730 497364ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 11:14:43 AM JML Employee Training List: 0
+ERROR 2017-06-09 11:14:43,731 497365ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:14:43 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 11:14:43,774 497408ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:14:43 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 11:14:43,775 497409ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 11:14:43 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 13:38:34,866  5847ms EmployeeFamilyRepo     EmployeeFamilyList - 6/9/2017 1:38:34 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-09 13:38:35,041  6021ms EmployeeContractRepo   ployeeContractList - 6/9/2017 1:38:35 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-09 13:38:35,081  6061ms EmployeeEducationRepo  loyeeEducationList - 6/9/2017 1:38:35 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-09 13:38:35,361  6341ms EmployeeExperienceRepo oyeeExperienceList - 6/9/2017 1:38:35 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-09 13:38:35,449  6429ms EmployeeSkillRepo      tEmployeeSkillList - 6/9/2017 1:38:35 PM JML Employee SKILL List: 1
+DEBUG 2017-06-09 13:38:35,564  6544ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 1:38:35 PM JML Employee Training List: 0
+ERROR 2017-06-09 13:38:35,567  6547ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:38:35 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 13:38:35,680  6660ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:38:35 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 13:38:35,682  6662ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:38:35 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 13:44:58,405  9383ms EmployeeFamilyRepo     EmployeeFamilyList - 6/9/2017 1:44:58 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-09 13:44:58,449  9427ms EmployeeContractRepo   ployeeContractList - 6/9/2017 1:44:58 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-09 13:44:58,478  9456ms EmployeeEducationRepo  loyeeEducationList - 6/9/2017 1:44:58 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-09 13:44:58,508  9486ms EmployeeExperienceRepo oyeeExperienceList - 6/9/2017 1:44:58 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-09 13:44:58,541  9519ms EmployeeSkillRepo      tEmployeeSkillList - 6/9/2017 1:44:58 PM JML Employee SKILL List: 1
+DEBUG 2017-06-09 13:44:58,570  9548ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 1:44:58 PM JML Employee Training List: 0
+ERROR 2017-06-09 13:44:58,574  9552ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:44:58 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 13:44:58,650  9628ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:44:58 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 13:44:58,653  9631ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:44:58 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 13:45:37,631 48609ms loyeeCompanyController ateEmployeeCompany - 6/9/2017 1:45:37 PM Masuk Controller Emp Code : 35151269069300041, employee_name : 
+DEBUG 2017-06-09 13:45:37,668 48646ms EmployeeCompanyRepo    ateEmployeeCompany - 6/9/2017 1:45:37 PM UPDATE EMPLOYEE COMPANY SUCCESS ====>>>>>> Code : 35151269069300041 Name : 
+DEBUG 2017-06-09 13:45:37,800 48779ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 1:45:37 PM JML Employee Training List: 0
+DEBUG 2017-06-09 13:47:06,509 137487ms loyeeCompanyController ateEmployeeCompany - 6/9/2017 1:47:06 PM Masuk Controller Emp Code : 35151269069300041, employee_name : 
+DEBUG 2017-06-09 13:47:06,689 137667ms EmployeeCompanyRepo    ateEmployeeCompany - 6/9/2017 1:47:06 PM UPDATE EMPLOYEE COMPANY SUCCESS ====>>>>>> Code : 35151269069300041 Name : 
+DEBUG 2017-06-09 13:47:24,023 155001ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 1:47:24 PM JML Employee Training List: 0
+DEBUG 2017-06-09 13:52:29,908 460886ms loyeeCompanyController ateEmployeeCompany - 6/9/2017 1:52:29 PM Masuk Controller Emp Code : 35151269069300041, employee_name : 
+DEBUG 2017-06-09 13:52:30,238 461216ms EmployeeCompanyRepo    ateEmployeeCompany - 6/9/2017 1:52:30 PM UPDATE EMPLOYEE COMPANY SUCCESS ====>>>>>> Code : 35151269069300041 Name : 
+DEBUG 2017-06-09 13:52:36,949 467928ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 1:52:36 PM JML Employee Training List: 0
+DEBUG 2017-06-09 13:52:48,853 479831ms loyeeCompanyController ateEmployeeCompany - 6/9/2017 1:52:48 PM Masuk Controller Emp Code : 35151269069300041, employee_name : 
+DEBUG 2017-06-09 13:52:48,931 479909ms EmployeeCompanyRepo    ateEmployeeCompany - 6/9/2017 1:52:48 PM UPDATE EMPLOYEE COMPANY SUCCESS ====>>>>>> Code : 35151269069300041 Name : 
+DEBUG 2017-06-09 13:52:48,967 479945ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 1:52:48 PM JML Employee Training List: 0
+DEBUG 2017-06-09 13:52:53,640 484618ms EmployeeFamilyRepo     EmployeeFamilyList - 6/9/2017 1:52:53 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-09 13:52:53,661 484639ms EmployeeContractRepo   ployeeContractList - 6/9/2017 1:52:53 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-09 13:52:53,681 484659ms EmployeeEducationRepo  loyeeEducationList - 6/9/2017 1:52:53 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-09 13:52:53,689 484667ms EmployeeExperienceRepo oyeeExperienceList - 6/9/2017 1:52:53 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-09 13:52:53,701 484679ms EmployeeSkillRepo      tEmployeeSkillList - 6/9/2017 1:52:53 PM JML Employee SKILL List: 1
+DEBUG 2017-06-09 13:52:53,710 484688ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 1:52:53 PM JML Employee Training List: 0
+ERROR 2017-06-09 13:52:53,711 484689ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:52:53 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 13:52:53,738 484716ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:52:53 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 13:52:53,739 484717ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:52:53 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 13:53:04,797 495775ms EmployeeFamilyRepo     EmployeeFamilyList - 6/9/2017 1:53:04 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-09 13:53:04,813 495791ms EmployeeContractRepo   ployeeContractList - 6/9/2017 1:53:04 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-09 13:53:04,822 495800ms EmployeeEducationRepo  loyeeEducationList - 6/9/2017 1:53:04 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-09 13:53:04,831 495809ms EmployeeExperienceRepo oyeeExperienceList - 6/9/2017 1:53:04 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-09 13:53:04,839 495817ms EmployeeSkillRepo      tEmployeeSkillList - 6/9/2017 1:53:04 PM JML Employee SKILL List: 1
+DEBUG 2017-06-09 13:53:04,846 495824ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 1:53:04 PM JML Employee Training List: 0
+ERROR 2017-06-09 13:53:04,846 495824ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:53:04 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 13:53:04,928 495906ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:53:04 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 13:53:04,928 495906ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:53:04 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 13:53:10,951 501929ms EmployeeFamilyRepo     EmployeeFamilyList - 6/9/2017 1:53:10 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-09 13:53:10,959 501937ms EmployeeContractRepo   ployeeContractList - 6/9/2017 1:53:10 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-09 13:53:10,967 501945ms EmployeeEducationRepo  loyeeEducationList - 6/9/2017 1:53:10 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-09 13:53:11,316 502294ms EmployeeExperienceRepo oyeeExperienceList - 6/9/2017 1:53:11 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-09 13:53:11,354 502332ms EmployeeSkillRepo      tEmployeeSkillList - 6/9/2017 1:53:11 PM JML Employee SKILL List: 1
+DEBUG 2017-06-09 13:53:11,373 502351ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 1:53:11 PM JML Employee Training List: 0
+ERROR 2017-06-09 13:53:11,374 502352ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:53:11 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 13:53:11,391 502369ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:53:11 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 13:53:11,392 502370ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:53:11 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 13:54:40,856 591835ms EmployeeFamilyRepo     EmployeeFamilyList - 6/9/2017 1:54:40 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-09 13:54:40,920 591899ms EmployeeContractRepo   ployeeContractList - 6/9/2017 1:54:40 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-09 13:54:41,015 591993ms EmployeeEducationRepo  loyeeEducationList - 6/9/2017 1:54:41 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-09 13:54:41,044 592022ms EmployeeExperienceRepo oyeeExperienceList - 6/9/2017 1:54:41 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-09 13:54:41,077 592055ms EmployeeSkillRepo      tEmployeeSkillList - 6/9/2017 1:54:41 PM JML Employee SKILL List: 1
+DEBUG 2017-06-09 13:54:41,135 592113ms EmployeeTrainingRepo   ployeeTrainingList - 6/9/2017 1:54:41 PM JML Employee Training List: 0
+ERROR 2017-06-09 13:54:41,136 592114ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:54:41 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 13:54:41,240 592218ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:54:41 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 13:54:41,241 592219ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:54:41 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-09 13:56:10,934 681912ms loyeeCompanyController ateEmployeeCompany - 6/9/2017 1:56:10 PM Masuk Controller Emp Code : 35151269069300041, employee_name : 
+DEBUG 2017-06-09 13:56:11,033 682011ms EmployeeCompanyRepo    ateEmployeeCompany - 6/9/2017 1:56:11 PM UPDATE EMPLOYEE COMPANY SUCCESS ====>>>>>> Code : 35151269069300041 Name : 
+DEBUG 2017-06-09 13:56:11,043 682021ms loyeeCompanyController mployeeCompanyList - 6/9/2017 1:56:11 PM Employee Code : 35151269069300041
+ERROR 2017-06-09 13:56:11,044 682022ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:56:11 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-09 13:56:11,233 682212ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:56:11 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-09 13:56:11,234 682213ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:56:11 PM GetEmployeeCompanyList JmlData : 1

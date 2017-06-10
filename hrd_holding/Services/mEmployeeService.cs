@@ -18,6 +18,7 @@ namespace hrd_holding.Services
         private readonly mEmployeeExperienceRepo _repoExp;
         private readonly mEmployeeContractRepo _repoCon;
         private readonly mEmployeeTrainingRepo _repoTrain;
+        private readonly mEmployeeCompanyRepo _repoCompany;
 
         public mEmployeeService()
         {
@@ -28,7 +29,7 @@ namespace hrd_holding.Services
             _repoExp = new mEmployeeExperienceRepo();
             _repoCon = new mEmployeeContractRepo();
             _repoTrain = new mEmployeeTrainingRepo();
-
+            _repoCompany = new mEmployeeCompanyRepo();
         }
 
         private string GenerateMasterCode(int code)
@@ -106,6 +107,7 @@ namespace hrd_holding.Services
             var vtblExperience = _repoExp.getEmployeeExperienceList(pEmployeeCode);
             var vtblSkill = _repoSkill.getEmployeeSkillList(pEmployeeCode);
             var vtblTrain = _repoTrain.getEmployeeTrainingList(pEmployeeCode);
+            var vtblCompany = _repoCompany.getEmployeeCompanyList(pEmployeeCode);
 
             var vEmpModel = new EmployeeModelAll
             {
@@ -115,7 +117,8 @@ namespace hrd_holding.Services
                 listExperience = vtblExperience,
                 listFamily = vtblFamily,
                 listSkill = vtblSkill,
-                listTrain = vtblTrain
+                listTrain = vtblTrain,
+                listCompany = vtblCompany
             };
 
             return vEmpModel;

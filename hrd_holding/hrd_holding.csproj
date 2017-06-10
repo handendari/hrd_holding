@@ -135,6 +135,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BankController.cs" />
+    <Compile Include="Controllers\EmployeeCompanyController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\LevelController.cs" />
     <Compile Include="Controllers\TitleController.cs" />
@@ -195,6 +196,8 @@
     <Compile Include="Repositories\mLevelRepo.cs" />
     <Compile Include="Repositories\mSubtitleRepo.cs" />
     <Compile Include="Repositories\mTitleRepo.cs" />
+    <Compile Include="Services\mBranchOfficeService.cs" />
+    <Compile Include="Services\mEmployeeCompanyService.cs" />
     <Compile Include="Services\mStatusService.cs" />
     <Compile Include="Services\mBankService.cs" />
     <Compile Include="Services\mLevelService.cs" />

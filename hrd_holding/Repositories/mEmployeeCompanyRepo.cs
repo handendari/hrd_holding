@@ -16,49 +16,78 @@ namespace hrd_holding.Repositories
         {
             var vResp = new ResponseModel();
 
-            string SqlString = @"INSERT INTO `m_employee_company`
-                                        (`employee_code`,`seq_no`,`date_company`,`company_code`,`branch_code`,`department_code`,`title_code`,
-                                         `subtitle_code`,`description`,`entry_date`,`entry_user`,`edit_date`,`edit_user`)
-                                VALUES (@pEmployeeCode,@pSeqNo,@pDateCompany,@pCompanyCode,@pBranchCode,@pDepartmentCode,@pTitleCode,
-                                        @pSubtitleCode,@pDescription,@pEntryDate,@pEntryUser,@pEditDate,@pEditUser)";
-
+            MySqlTransaction myTrans = null;
+            var conn = new MySqlConnection(ConfigModel.mConn);
 
             try
             {
-                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
-                {
-                    conn.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
-                    {
+                conn.Open();
+                myTrans = conn.BeginTransaction();
 
-                        cmd.CommandType = CommandType.Text;
+                var cmd = new MySqlCommand();
+                var SqlString = "";
 
-                        cmd.Parameters.AddWithValue("@pEmployeeCode", pModel.employee_code);
-                        cmd.Parameters.AddWithValue("@pSeqNo", pModel.seq_no);
-                        cmd.Parameters.AddWithValue("@pDateCompany", pModel.date_company);
-                        cmd.Parameters.AddWithValue("@pCompanyCode", pModel.company_code);
-                        cmd.Parameters.AddWithValue("@pBranchCode", pModel.branch_code);
-                        cmd.Parameters.AddWithValue("@pDepartmentCode", pModel.department_code);
-                        cmd.Parameters.AddWithValue("@pTitleCode", pModel.title_code);
-                        cmd.Parameters.AddWithValue("@pSubtitleCode", pModel.subtitle_code);
-                        cmd.Parameters.AddWithValue("@pDescription", pModel.description);
-                        cmd.Parameters.AddWithValue("@pEntryDate", pModel.entry_date);
-                        cmd.Parameters.AddWithValue("@pEntryUser", pModel.entry_user);
-                        cmd.Parameters.AddWithValue("@pEditDate", pModel.edit_date);
-                        cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
+                #region INSERT EMPLOYEE COMPANY +++++++++++++++
+                SqlString = @"INSERT INTO `m_employee_company`
+                                    (`employee_code`,`seq_no`,`date_company`,`company_code`,`branch_code`,`department_code`,`title_code`,
+                                        `subtitle_code`,`description`,`entry_date`,`entry_user`,`edit_date`,`edit_user`)
+                            VALUES (@pEmployeeCode,@pSeqNo,@pDateCompany,@pCompanyCode,@pBranchCode,@pDepartmentCode,@pTitleCode,
+                                    @pSubtitleCode,@pDescription,@pEntryDate,@pEntryUser,@pEditDate,@pEditUser)";
 
-                        var status = cmd.ExecuteNonQuery();
-                        vResp.isValid = true;
-                        vResp.message = " INSERT EMPLOYEE COMPANY SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
-                        Log.Debug(DateTime.Now + " INSERT EMPLOYEE COMPANY SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
-                    }
-                }
+                cmd = new MySqlCommand(SqlString, conn, myTrans);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@pEmployeeCode", pModel.employee_code);
+                cmd.Parameters.AddWithValue("@pSeqNo", pModel.seq_no);
+                cmd.Parameters.AddWithValue("@pDateCompany", pModel.date_company);
+                cmd.Parameters.AddWithValue("@pCompanyCode", pModel.company_code);
+                cmd.Parameters.AddWithValue("@pBranchCode", pModel.branch_code);
+                cmd.Parameters.AddWithValue("@pDepartmentCode", pModel.department_code);
+                cmd.Parameters.AddWithValue("@pTitleCode", pModel.title_code);
+                cmd.Parameters.AddWithValue("@pSubtitleCode", pModel.subtitle_code);
+                cmd.Parameters.AddWithValue("@pDescription", pModel.description);
+                cmd.Parameters.AddWithValue("@pEntryDate", pModel.entry_date);
+                cmd.Parameters.AddWithValue("@pEntryUser", pModel.entry_user);
+                cmd.Parameters.AddWithValue("@pEditDate", pModel.edit_date);
+                cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
+                cmd.ExecuteNonQuery();
+                #endregion
+
+                #region UPDATE EMPLOYEE +++++++++++++++
+                SqlString = @"UPDATE m_employee set company_code = @pCompanyCode,
+                                                    branch_code = @pBranchCode,
+                                                    department_code = @pDepartmentCode,
+                                                    title_code = @pTitleCode,
+                                                    subtitle_code = @pSubtitleCode
+                                  WHERE employee_code = @pEmployeeCode";
+                cmd = new MySqlCommand(SqlString, conn, myTrans);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@pEmployeeCode", pModel.employee_code);
+                cmd.Parameters.AddWithValue("@pCompanyCode", pModel.company_code);
+                cmd.Parameters.AddWithValue("@pBranchCode", pModel.branch_code);
+                cmd.Parameters.AddWithValue("@pDepartmentCode", pModel.department_code);
+                cmd.Parameters.AddWithValue("@pTitleCode", pModel.title_code);
+                cmd.Parameters.AddWithValue("@pSubtitleCode", pModel.subtitle_code);
+                cmd.ExecuteNonQuery();
+                #endregion
+
+                myTrans.Commit();
+                cmd.Dispose();
+
+                vResp.isValid = true;
+                vResp.message = " INSERT EMPLOYEE COMPANY SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
+                Log.Debug(DateTime.Now + " INSERT EMPLOYEE COMPANY SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
             }
             catch (Exception ex)
             {
+                myTrans.Rollback();
+
                 vResp.isValid = false;
                 vResp.message = " INSERT EMPLOYEE COMPANY FAILED.....";
                 Log.Error(DateTime.Now + " INSERT EMPLOYEE COMPANY FAILED", ex);
+            }
+            finally
+            {
+                conn.Close();
             }
 
             return vResp;
@@ -66,23 +95,25 @@ namespace hrd_holding.Repositories
 
         public List<mEmployeeCompanyModel> getEmployeeCompanyList(string pEmployeeCode)
         {
+            Log.Error(DateTime.Now + " EMPLOYEE CODE : " + pEmployeeCode);
+
             var vList = new List<mEmployeeCompanyModel>();
             var strSQL = @"SELECT mec.employee_code,emp.employee_name,
                                   mec.seq_no,mec.date_company,
                                   mec.company_code,mc.int_company,mc.company_name,
-                                  mec.branch_code,mbc.int_branch,mbc.branch_name,
+                                  mec.branch_code,mbo.int_branch,mbo.branch_name,
                                   mec.department_code,md.int_department,md.department_name,
                                   mec.title_code,mt.int_title,mt.title_name,
-                                  IFNULL(mec.subtitle_code,'') subtitle_code,IFNULL(mst.int_subtitle,'') int_subtitle,IFNULL(mst.substitle_name,'') substitle_name,
+                                  IFNULL(mec.subtitle_code,'') subtitle_code,IFNULL(mst.int_subtitle,'') int_subtitle,IFNULL(mst.subtitle_name,'') subtitle_name,
                                   IFNULL(mec.description,'') description,
                                   mec.entry_date,IFNULL(mec.entry_user,'') entry_user,
                                   mec.edit_date,IFNULL(mec.edit_user,'') edit_user
-                           FROM m_employee_company mec JOIN m_empoloyee emp ON mec.employee_code = emp.employee_code
-                           JOIN m_company mc ON md.company_code = mc.company_code
-                           JOIN m_brach_office mbo ON md.branch_code = mbo.branch_code
-                           JOIN m_department md mec.department_code = md.department_code
+                           FROM m_employee_company mec JOIN m_employee emp ON mec.employee_code = emp.employee_code
+                           JOIN m_company mc ON mec.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON mec.branch_code = mbo.branch_code
+                           JOIN m_department md ON mec.department_code = md.department_code
                            JOIN m_title mt ON mec.title_code = mt.title_code
-                           LEFT JOIN m_substitle mst ON mec.subtitle_code = mst.subtitle_code
+                           LEFT JOIN m_subtitle mst ON mec.subtitle_code = mst.subtitle_code
                            WHERE mec.employee_code = @pEmployeeCode";
             try
             {
@@ -100,6 +131,8 @@ namespace hrd_holding.Repositories
                             {
                                 while (aa.Read())
                                 {
+                                    Log.Error(DateTime.Now + " MASUK LOOPING ADD DATA..... ");
+
                                     var m = new mEmployeeCompanyModel
                                     {
                                         employee_code = aa.GetString("employee_code"),
@@ -123,7 +156,7 @@ namespace hrd_holding.Repositories
                                         subtitle_name = aa.GetString("subtitle_name"),
                                         description = aa.GetString("description"),
                                         entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
-                                        entry_user = aa.GetString("nik"),
+                                        entry_user = aa.GetString("entry_user"),
                                         edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
                                         edit_user = aa.GetString("edit_user")
                                     };
@@ -138,28 +171,29 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetEmployeeCompanyList FAILED... ", ex);
             }
+            Log.Error(DateTime.Now + " GetEmployeeCompanyList JmlData : " + vList.Count);
             return vList;
         }
 
-        public mEmployeeCompanyModel getEmployeeCompanyInfo(string pEmployeeCode,int pSeqNo)
+        public mEmployeeCompanyModel getEmployeeCompanyInfo(string pEmployeeCode, int pSeqNo)
         {
             var vModel = new mEmployeeCompanyModel();
             var strSQL = @"SELECT mec.employee_code,emp.employee_name,
                                   mec.seq_no,mec.date_company,
                                   mec.company_code,mc.int_company,mc.company_name,
-                                  mec.branch_code,mbc.int_branch,mbc.branch_name,
+                                  mec.branch_code,mbo.int_branch,mbo.branch_name,
                                   mec.department_code,md.int_department,md.department_name,
                                   mec.title_code,mt.int_title,mt.title_name,
-                                  mec.subtitle_code,mst.int_subtitle,mst.substitle_name,
-                                  mec.description,
-                                  mec.entry_date,mec.entry_user,
-                                  mec.edit_date,mec.edit_user
-                           FROM m_employee_company mec JOIN m_empoloyee emp ON mec.employee_code = emp.employee_code
-                           JOIN m_company mc ON md.company_code = mc.company_code
-                           JOIN m_brach_office mbo ON md.branch_code = mbo.branch_code
-                           JOIN m_department md mec.department_code = md.department_code
+                                  IFNULL(mec.subtitle_code,'') subtitle_code,IFNULL(mst.int_subtitle,'') int_subtitle,IFNULL(mst.subtitle_name,'') subtitle_name,
+                                  IFNULL(mec.description,'') description,
+                                  mec.entry_date,IFNULL(mec.entry_user,'') entry_user,
+                                  mec.edit_date,IFNULL(mec.edit_user,'') edit_user
+                           FROM m_employee_company mec JOIN m_employee emp ON mec.employee_code = emp.employee_code
+                           JOIN m_company mc ON mec.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON mec.branch_code = mbo.branch_code
+                           JOIN m_department md ON mec.department_code = md.department_code
                            JOIN m_title mt ON mec.title_code = mt.title_code
-                           LEFT JOIN m_substitle mst ON mec.subtitle_code = mst.subtitle_code
+                           LEFT JOIN m_subtitle mst ON mec.subtitle_code = mst.subtitle_code
                            WHERE mec.employee_code = @pEmployeeCode AND mec.seq_no = @pSeqNo";
             try
             {
@@ -275,37 +309,70 @@ namespace hrd_holding.Repositories
             return vResp;
         }
 
-        public ResponseModel DeleteEmployeeCompany(string pCode,int pSeqNo)
+        public ResponseModel DeleteEmployeeCompany(string pEmployeeCode, int pSeqNo)
         {
             var vResp = new ResponseModel();
-            string SqlString = @"DELETE FROM m_employee_company WHERE employee_code = @pCode AND seq_no = @pSeqNo";
+
+            var conn = new MySqlConnection(ConfigModel.mConn);
+            MySqlTransaction myTrans = null;
+            var cmd = new MySqlCommand();
 
             try
             {
-                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
-                {
-                    conn.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
-                    {
+                conn.Open();
+                myTrans = conn.BeginTransaction();
 
-                        cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("@pCode", pCode);
-                        cmd.Parameters.AddWithValue("@pSeqNo", pSeqNo);
+                #region DELETE EMPLOYEE COMPANY++++++++++++++
+                string SqlString = @"DELETE FROM m_employee_company WHERE employee_code = @pCode AND seq_no = @pSeqNo";
+                cmd = new MySqlCommand(SqlString, conn, myTrans);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@pCode", pEmployeeCode);
+                cmd.Parameters.AddWithValue("@pSeqNo", pSeqNo);
+                cmd.ExecuteNonQuery();
+                #endregion
 
-                        var status = cmd.ExecuteNonQuery();
-                        vResp.isValid = true;
-                        vResp.message = " DELETE EMPLOYEE COMPANY SUCCESS, Code : " + pCode + " seq no : " + pSeqNo;
-                        Log.Debug(DateTime.Now + " DELETE EMPLOYEE COMPANY SUCCESS ====>>>>>> Code : " + pCode + " seq no : " + pSeqNo);
+                #region UPDATE EMPLOYEE +++++++++++++++
+                var vSeqNo = getEmployeeCompanySeqNo(pEmployeeCode);
+                var vModel = getEmployeeCompanyInfo(pEmployeeCode, vSeqNo);
 
-                    }
-                }
+                SqlString = @"UPDATE m_employee set company_code = @pCompanyCode,
+                                                    branch_code = @pBranchCode,
+                                                    department_code = @pDepartmentCode,
+                                                    title_code = @pTitleCode,
+                                                    subtitle_code = @pSubtitleCode
+                                  WHERE employee_code = @pEmployeeCode";
+                cmd = new MySqlCommand(SqlString, conn, myTrans);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@pEmployeeCode", pEmployeeCode);
+                cmd.Parameters.AddWithValue("@pCompanyCode", vModel.company_code);
+                cmd.Parameters.AddWithValue("@pBranchCode", vModel.branch_code);
+                cmd.Parameters.AddWithValue("@pDepartmentCode", vModel.department_code);
+                cmd.Parameters.AddWithValue("@pTitleCode", vModel.title_code);
+                cmd.Parameters.AddWithValue("@pSubtitleCode", vModel.subtitle_code);
+                cmd.ExecuteNonQuery();
+                #endregion
+
+                myTrans.Commit();
+                cmd.Dispose();
+
+                vResp.isValid = true;
+                vResp.message = " DELETE EMPLOYEE COMPANY SUCCESS, Code : " + pEmployeeCode + " seq no : " + pSeqNo;
+                Log.Debug(DateTime.Now + " DELETE EMPLOYEE COMPANY SUCCESS ====>>>>>> Code : " + pEmployeeCode + " seq no : " + pSeqNo);
+
+
             }
             catch (Exception ex)
             {
+                myTrans.Rollback();
+
                 vResp.isValid = false;
                 vResp.message = " DELETE EMPLOYEE COMPANY FAILED.......";
 
                 Log.Error(DateTime.Now + " DELETE EMPLOYEE COMPANY FAILED", ex);
+            }
+            finally
+            {
+                conn.Close();
             }
 
             return vResp;

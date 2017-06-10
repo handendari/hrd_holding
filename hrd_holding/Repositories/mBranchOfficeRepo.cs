@@ -12,8 +12,10 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("BranchOfficeRepo");
 
-        public void InsertCountry(mBranchOfficeModel pModel)
+        public ResponseModel InsertBranchOffice(mBranchOfficeModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"INSERT INTO m_branch_office (branch_code,company_code,int_branch,country_code,branch_name,address,
                                                         postal_code,city_name,state,phone_number,fax_number,web_address,
                                                         email_address,picture,npwp,pimpinan,pimpinan_npwp,npp,jhk,
@@ -58,6 +60,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pedit_user", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " INSERT BRANCH OFFICE SUCCESS, Code : " + pModel.branch_code + " Name : " + pModel.branch_name;
                         Log.Debug(DateTime.Now + " INSERT BRANCH OFFICE SUCCESS ====>>>> Code : " + pModel.branch_code + " Name : " + pModel.branch_name);
 
                     }
@@ -65,23 +69,54 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT BRANCH OFFICE FAILED.......";
+
                 Log.Error(DateTime.Now + " INSERT BRANCH OFFICE FAILED", ex);
             }
+
+            return vResp;
         }
 
-        public List<mBranchOfficeModel> getBranchOfficeList(string pCompanyCode)
+        public ResponseModel getBranchOfficeList(int pCompanyCode, int? pStartRow = 0, int? pRows = 0, 
+            string pWhere = "", string pOrderBy = "")
         {
+            var vLimit = pOrderBy + " LIMIT " + pStartRow + "," + pRows;
+
+            var vJmlRecord = 0;
             var vList = new List<mBranchOfficeModel>();
+
+            var strSQLCount = @"SELECT COUNT(branch_code) jml_record
+                                FROM m_branch_office 
+                                WHERE company_code = @pCompanyCode " + pWhere;
+
             var strSQL = @"SELECT branch_code,company_code,company_name,int_branch,country_code,country_name,branch_name,address,
                                 postal_code,city_name,state,phone_number,fax_number,web_address,
                                 email_address,picture,npwp,pimpinan,pimpinan_npwp,npp,jhk,
                                 entry_date,entry_user,edit_date,edit_user
-                            FROM m_branch_office WHERE company_code = @pCompanyCode";
+                            FROM m_branch_office WHERE company_code = @pCompanyCode " + pWhere + " " + vLimit;
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
                 {
                     conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQLCount, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        cmd.Parameters.AddWithValue("@pCompanyCode", pCompanyCode);
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vJmlRecord = aa.GetInt32("jml_record");
+                                }
+                            }
+                        }
+                    }
+
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
@@ -95,31 +130,31 @@ namespace hrd_holding.Repositories
                                 {
                                     var m = new mBranchOfficeModel
                                     {
-                                        branch_code = aa.GetInt16(0),
-                                        company_code = aa.GetInt16(1),
-                                        company_name = aa.GetString(2),
-                                        int_branch = aa.GetString(3),
-                                        country_code = aa.GetString(4),
-                                        country_name = aa.GetString(5),
-                                        branch_name = aa.GetString(6),
-                                        address = aa.GetString(7),
-                                        postal_code = aa.GetString(8),
-                                        city_name = aa.GetString(9),
-                                        state = aa.GetString(10),
-                                        phone_number = aa.GetString(11),
-                                        fax_number = aa.GetString(12),
-                                        web_address = aa.GetString(13),
-                                        email_address = aa.GetString(14),
-                                        picture = aa.GetString(15),
-                                        npwp = aa.GetString(16),
-                                        pimpinan = aa.GetString(17),
-                                        pimpinan_npwp = aa.GetString(18),
-                                        npp = aa.GetString(19),
-                                        jhk = aa.GetDecimal(20),
-                                        entry_date = aa.GetDateTime(21),
-                                        entry_user = aa.GetString(22),
-                                        edit_date = aa.GetDateTime(23),
-                                        edit_user = aa.GetString(24)
+                                        branch_code = aa.GetInt16("branch_code"),
+                                        company_code = aa.GetInt16("company_code"),
+                                        company_name = aa.GetString("company_name"),
+                                        int_branch = aa.GetString("int_branch"),
+                                        country_code = aa.GetString("country_code"),
+                                        country_name = aa.GetString("country_name"),
+                                        branch_name = aa.GetString("branch_name"),
+                                        address = aa.GetString("address"),
+                                        postal_code = aa.GetString("postal_code"),
+                                        city_name = aa.GetString("city_name"),
+                                        state = aa.GetString("state"),
+                                        phone_number = aa.GetString("phone_number"),
+                                        fax_number = aa.GetString("fax_number"),
+                                        web_address = aa.GetString("web_address"),
+                                        email_address = aa.GetString("email_address"),
+                                        picture = aa.GetString("picture"),
+                                        npwp = aa.GetString("npwp"),
+                                        pimpinan = aa.GetString("pimpinan"),
+                                        pimpinan_npwp = aa.GetString("pimpinan_npwp"),
+                                        npp = aa.GetString("npp"),
+                                        jhk = aa.GetDecimal("jhk"),
+                                        entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
+                                        entry_user = aa.GetString("entry_user"),
+                                        edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
+                                        edit_user = aa.GetString("edit_user")
                                     };
                                     vList.Add(m);
                                 }
@@ -132,10 +167,15 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetBranchOfficeList Failed", ex);
             }
-            return vList;
+
+            var vResp = new ResponseModel();
+            vResp.total_record = vJmlRecord;
+            vResp.objResult = vList;
+
+            return vResp;
         }
 
-        public mBranchOfficeModel getBranchOfficeInfo(string pBranchCode)
+        public mBranchOfficeModel getBranchOfficeInfo(int pBranchCode)
         {
             var vModel = new mBranchOfficeModel();
             var strSQL = @"SELECT branch_code,company_code,company_name,int_branch,country_code,country_name,branch_name,address,
@@ -159,31 +199,31 @@ namespace hrd_holding.Repositories
                             {
                                 while (aa.Read())
                                 {
-                                    vModel.branch_code = aa.GetInt16(0);
-                                    vModel.company_code = aa.GetInt16(1);
-                                    vModel.company_name = aa.GetString(2);
-                                    vModel.int_branch = aa.GetString(3);
-                                    vModel.country_code = aa.GetString(4);
-                                    vModel.country_name = aa.GetString(5);
-                                    vModel.branch_name = aa.GetString(6);
-                                    vModel.address = aa.GetString(7);
-                                    vModel.postal_code = aa.GetString(8);
-                                    vModel.city_name = aa.GetString(9);
-                                    vModel.state = aa.GetString(10);
-                                    vModel.phone_number = aa.GetString(11);
-                                    vModel.fax_number = aa.GetString(12);
-                                    vModel.web_address = aa.GetString(13);
-                                    vModel.email_address = aa.GetString(14);
-                                    vModel.picture = aa.GetString(15);
-                                    vModel.npwp = aa.GetString(16);
-                                    vModel.pimpinan = aa.GetString(17);
-                                    vModel.pimpinan_npwp = aa.GetString(18);
-                                    vModel.npp = aa.GetString(19);
-                                    vModel.jhk = aa.GetDecimal(20);
-                                    vModel.entry_date = aa.GetDateTime(21);
-                                    vModel.entry_user = aa.GetString(22);
-                                    vModel.edit_date = aa.GetDateTime(23);
-                                    vModel.edit_user = aa.GetString(24);
+                                    vModel.branch_code = aa.GetInt16("branch_code");
+                                    vModel.company_code = aa.GetInt16("company_code");
+                                    vModel.company_name = aa.GetString("company_name");
+                                    vModel.int_branch = aa.GetString("int_branch");
+                                    vModel.country_code = aa.GetString("country_code");
+                                    vModel.country_name = aa.GetString("country_name");
+                                    vModel.branch_name = aa.GetString("branch_name");
+                                    vModel.address = aa.GetString("address");
+                                    vModel.postal_code = aa.GetString("postal_code");
+                                    vModel.city_name = aa.GetString("city_name");
+                                    vModel.state = aa.GetString("state");
+                                    vModel.phone_number = aa.GetString("phone_number");
+                                    vModel.fax_number = aa.GetString("fax_number");
+                                    vModel.web_address = aa.GetString("web_address");
+                                    vModel.email_address = aa.GetString("email_address");
+                                    vModel.picture = aa.GetString("picture");
+                                    vModel.npwp = aa.GetString("npwp");
+                                    vModel.pimpinan = aa.GetString("pimpinan");
+                                    vModel.pimpinan_npwp = aa.GetString("pimpinan_npwp");
+                                    vModel.npp = aa.GetString("npp");
+                                    vModel.jhk = aa.GetDecimal("jhk");
+                                    vModel.entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]);
+                                    vModel.entry_user = aa.GetString("entry_user");
+                                    vModel.edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]);
+                                    vModel.edit_user = aa.GetString("edit_user");
                                 }
                             }
                         }
@@ -197,8 +237,9 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateBranchOffice(mBranchOfficeModel pModel)
+        public ResponseModel UpdateBranchOffice(mBranchOfficeModel pModel)
         {
+            var vResp = new ResponseModel();
             string SqlString = @"UPDATE m_branch_office 
                                  SET company_code = @pcompany_code,
                                     int_branch = @pint_branch,
@@ -258,6 +299,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pedit_user", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " UPDATE BRANCH OFFICE SUCCESS, Code : " + pModel.branch_code + " Name : " + pModel.branch_name;
                         Log.Debug(DateTime.Now + " UPDATE BRANCH OFFICE SUCCESS ====>>>>>> Code : " + pModel.branch_code + " Name : " + pModel.branch_name);
 
                     }
@@ -265,12 +308,19 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT BRANCH OFFICE FAILED........";
+
                 Log.Error(DateTime.Now + " INSERT BRANCH OFFICE FAILED", ex);
             }
+
+            return vResp;
         }
 
-        public void DeleteBranchOffice(string pBranchCode)
+        public ResponseModel DeleteBranchOffice(int pBranchCode)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"DELETE m_branch_office WHERE branch_code = @pBranchCode";
 
             try
@@ -285,6 +335,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pBranchCode", pBranchCode);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " DELETE BRANCH OFFICE SUCCESS, Code : " + pBranchCode;
                         Log.Debug(DateTime.Now + " DELETE BRANCH OFFICE SUCCESS ====>>>>>> Code : " + pBranchCode);
 
                     }
@@ -292,8 +344,48 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " DELETE BRANCH OFFICE FAILED........";
+
                 Log.Error(DateTime.Now + " DELETE BRANCH OFFICE FAILED", ex);
             }
+
+            return vResp;
         }
+
+        public int getBranchOfficeSeqNo()
+        {
+            var vSeqNo = 0;
+            var strSQL = @"SELECT IFNULL(MAX(branch_code),0) seq_no
+                           FROM m_branch_office md";
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vSeqNo = aa.GetInt16("seq_no") + 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(DateTime.Now + " GetBranchOfficeSeqNo Failed", ex);
+            }
+            return vSeqNo;
+        }
+
     }
 }

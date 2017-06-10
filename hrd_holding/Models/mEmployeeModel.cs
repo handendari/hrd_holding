@@ -97,5 +97,6 @@ namespace hrd_holding.Models
         public List<mEmployeeFamiliesModel> listFamily { get; set; }
         public List<mEmployeeSkillModel> listSkill { get; set; }
         public List<mEmployeeTrainingModel> listTrain { get; set; }
+        public List<mEmployeeCompanyModel> listCompany { get; set; }
     }
 }
