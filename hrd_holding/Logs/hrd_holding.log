@@ -21131,3 +21131,128 @@ DEBUG 2017-06-09 13:56:11,043 682021ms loyeeCompanyController mployeeCompanyList
 ERROR 2017-06-09 13:56:11,044 682022ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:56:11 PM EMPLOYEE CODE : 35151269069300041
 ERROR 2017-06-09 13:56:11,233 682212ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:56:11 PM MASUK LOOPING ADD DATA..... 
 ERROR 2017-06-09 13:56:11,234 682213ms EmployeeCompanyRepo    mployeeCompanyList - 6/9/2017 1:56:11 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-12 09:52:28,972 12045ms EmployeeFamilyRepo     EmployeeFamilyList - 6/12/2017 9:52:28 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-12 09:52:29,059 12131ms EmployeeContractRepo   ployeeContractList - 6/12/2017 9:52:29 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-12 09:52:29,085 12158ms EmployeeEducationRepo  loyeeEducationList - 6/12/2017 9:52:29 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-12 09:52:29,098 12171ms EmployeeExperienceRepo oyeeExperienceList - 6/12/2017 9:52:29 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-12 09:52:29,114 12186ms EmployeeSkillRepo      tEmployeeSkillList - 6/12/2017 9:52:29 AM JML Employee SKILL List: 1
+DEBUG 2017-06-12 09:52:29,134 12206ms EmployeeTrainingRepo   ployeeTrainingList - 6/12/2017 9:52:29 AM JML Employee Training List: 0
+ERROR 2017-06-12 09:52:29,141 12213ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 9:52:29 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-12 09:52:29,168 12241ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 9:52:29 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-12 09:52:29,172 12245ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 9:52:29 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-12 09:53:02,914 45986ms mTitleService          GetTitleList       - 6/12/2017 9:53:02 AM vRows : 15 vStart : 0
+DEBUG 2017-06-12 09:53:10,980 54053ms mTitleService          GetTitleList       - 6/12/2017 9:53:10 AM vRows : 15 vStart : 0
+DEBUG 2017-06-12 09:55:26,379 189452ms EmployeeFamilyRepo     EmployeeFamilyList - 6/12/2017 9:55:26 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-12 09:55:26,392 189465ms EmployeeContractRepo   ployeeContractList - 6/12/2017 9:55:26 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-12 09:55:26,399 189472ms EmployeeEducationRepo  loyeeEducationList - 6/12/2017 9:55:26 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-12 09:55:26,407 189480ms EmployeeExperienceRepo oyeeExperienceList - 6/12/2017 9:55:26 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-12 09:55:26,418 189491ms EmployeeSkillRepo      tEmployeeSkillList - 6/12/2017 9:55:26 AM JML Employee SKILL List: 1
+DEBUG 2017-06-12 09:55:26,436 189509ms EmployeeTrainingRepo   ployeeTrainingList - 6/12/2017 9:55:26 AM JML Employee Training List: 0
+ERROR 2017-06-12 09:55:26,437 189510ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 9:55:26 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-12 09:55:26,444 189517ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 9:55:26 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-12 09:55:26,445 189518ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 9:55:26 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-12 09:58:19,488 362560ms EmployeeFamilyRepo     EmployeeFamilyList - 6/12/2017 9:58:19 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-12 09:58:19,569 362641ms EmployeeContractRepo   ployeeContractList - 6/12/2017 9:58:19 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-12 09:58:19,650 362723ms EmployeeEducationRepo  loyeeEducationList - 6/12/2017 9:58:19 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-12 09:58:19,659 362732ms EmployeeExperienceRepo oyeeExperienceList - 6/12/2017 9:58:19 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-12 09:58:19,664 362737ms EmployeeSkillRepo      tEmployeeSkillList - 6/12/2017 9:58:19 AM JML Employee SKILL List: 1
+DEBUG 2017-06-12 09:58:19,721 362794ms EmployeeTrainingRepo   ployeeTrainingList - 6/12/2017 9:58:19 AM JML Employee Training List: 0
+ERROR 2017-06-12 09:58:19,721 362794ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 9:58:19 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-12 09:58:19,731 362804ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 9:58:19 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-12 09:58:19,732 362805ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 9:58:19 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-12 10:00:21,769 484842ms EmployeeFamilyRepo     EmployeeFamilyList - 6/12/2017 10:00:21 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-12 10:00:21,786 484859ms EmployeeContractRepo   ployeeContractList - 6/12/2017 10:00:21 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-12 10:00:21,805 484878ms EmployeeEducationRepo  loyeeEducationList - 6/12/2017 10:00:21 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-12 10:00:21,814 484887ms EmployeeExperienceRepo oyeeExperienceList - 6/12/2017 10:00:21 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-12 10:00:21,821 484894ms EmployeeSkillRepo      tEmployeeSkillList - 6/12/2017 10:00:21 AM JML Employee SKILL List: 1
+DEBUG 2017-06-12 10:00:21,865 484938ms EmployeeTrainingRepo   ployeeTrainingList - 6/12/2017 10:00:21 AM JML Employee Training List: 0
+ERROR 2017-06-12 10:00:21,866 484939ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 10:00:21 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-12 10:00:21,912 484984ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 10:00:21 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-12 10:00:21,913 484985ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 10:00:21 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-12 10:41:34,806    63ms BranchOfficeService    etBranchOfficeList - 6/12/2017 10:41:34 AM vRows : 10 vStart : 0
+ERROR 2017-06-12 10:41:35,144   401ms BranchOfficeRepo       etBranchOfficeList - 6/12/2017 10:41:35 AM GetBranchOfficeList Failed
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'company_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mBranchOfficeRepo.getBranchOfficeList(Int32 pCompanyCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mBranchOfficeRepo.cs:line 125
+DEBUG 2017-06-12 11:23:58,942    64ms BranchOfficeService    etBranchOfficeList - 6/12/2017 11:23:58 AM vRows : 10 vStart : 0
+ERROR 2017-06-12 11:23:59,179   301ms BranchOfficeRepo       etBranchOfficeList - 6/12/2017 11:23:59 AM GetBranchOfficeList Failed
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetDecimal(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetDecimal(String column)
+   at hrd_holding.Repositories.mBranchOfficeRepo.getBranchOfficeList(Int32 pCompanyCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mBranchOfficeRepo.cs:line 134
+DEBUG 2017-06-12 13:30:36,938  9027ms EmployeeFamilyRepo     EmployeeFamilyList - 6/12/2017 1:30:36 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-12 13:30:36,982  9071ms EmployeeContractRepo   ployeeContractList - 6/12/2017 1:30:36 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-12 13:30:37,003  9092ms EmployeeEducationRepo  loyeeEducationList - 6/12/2017 1:30:37 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-12 13:30:37,015  9104ms EmployeeExperienceRepo oyeeExperienceList - 6/12/2017 1:30:37 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-12 13:30:37,032  9121ms EmployeeSkillRepo      tEmployeeSkillList - 6/12/2017 1:30:37 PM JML Employee SKILL List: 1
+DEBUG 2017-06-12 13:30:37,057  9146ms EmployeeTrainingRepo   ployeeTrainingList - 6/12/2017 1:30:37 PM JML Employee Training List: 0
+ERROR 2017-06-12 13:30:37,061  9150ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 1:30:37 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-12 13:30:37,083  9172ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 1:30:37 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-12 13:30:37,085  9174ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 1:30:37 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-12 15:03:32,061    55ms CompanyController      GetCompanyLookUp   - 6/12/2017 3:03:32 PM WHERE : 
+DEBUG 2017-06-12 15:03:32,084    78ms CompanyController      GetCompanyLookUp   - 6/12/2017 3:03:32 PM Page Num : 0 Page Size : 0
+DEBUG 2017-06-12 15:03:32,085    79ms mCompanyService        GetCompanyList     - 6/12/2017 3:03:32 PM vRows : 10 vStart : 0
+ERROR 2017-06-12 15:03:33,101  1095ms CompanyRepo            getCompanyList     - 6/12/2017 3:03:33 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 117
+DEBUG 2017-06-12 15:05:06,775   135ms CompanyController      GetCompanyLookUp   - 6/12/2017 3:05:06 PM WHERE : 
+DEBUG 2017-06-12 15:05:06,795   155ms CompanyController      GetCompanyLookUp   - 6/12/2017 3:05:06 PM Page Num : 0 Page Size : 0
+DEBUG 2017-06-12 15:05:06,796   156ms mCompanyService        GetCompanyList     - 6/12/2017 3:05:06 PM vRows : 10 vStart : 0
+ERROR 2017-06-12 15:05:07,080   440ms CompanyRepo            getCompanyList     - 6/12/2017 3:05:07 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 117
+DEBUG 2017-06-12 15:09:12,553   103ms CompanyController      GetCompanyLookUp   - 6/12/2017 3:09:12 PM WHERE : 
+DEBUG 2017-06-12 15:09:12,573   122ms CompanyController      GetCompanyLookUp   - 6/12/2017 3:09:12 PM Page Num : 0 Page Size : 0
+DEBUG 2017-06-12 15:09:12,574   123ms mCompanyService        GetCompanyList     - 6/12/2017 3:09:12 PM vRows : 10 vStart : 0
+ERROR 2017-06-12 15:09:16,497  4046ms CompanyRepo            getCompanyList     - 6/12/2017 3:09:16 PM GetCompanyList FAILED... 
+System.IndexOutOfRangeException: Could not find specified column in results: picture
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-12 15:09:40,452   101ms CompanyController      GetCompanyLookUp   - 6/12/2017 3:09:40 PM WHERE : 
+DEBUG 2017-06-12 15:09:40,473   122ms CompanyController      GetCompanyLookUp   - 6/12/2017 3:09:40 PM Page Num : 0 Page Size : 0
+DEBUG 2017-06-12 15:09:40,474   123ms mCompanyService        GetCompanyList     - 6/12/2017 3:09:40 PM vRows : 10 vStart : 0
+DEBUG 2017-06-12 16:00:36,520 10669ms EmployeeFamilyRepo     EmployeeFamilyList - 6/12/2017 4:00:36 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-12 16:00:36,570 10719ms EmployeeContractRepo   ployeeContractList - 6/12/2017 4:00:36 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-12 16:00:36,578 10727ms EmployeeEducationRepo  loyeeEducationList - 6/12/2017 4:00:36 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-12 16:00:36,589 10738ms EmployeeExperienceRepo oyeeExperienceList - 6/12/2017 4:00:36 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-12 16:00:36,607 10756ms EmployeeSkillRepo      tEmployeeSkillList - 6/12/2017 4:00:36 PM JML Employee SKILL List: 1
+DEBUG 2017-06-12 16:00:36,627 10776ms EmployeeTrainingRepo   ployeeTrainingList - 6/12/2017 4:00:36 PM JML Employee Training List: 0
+ERROR 2017-06-12 16:00:36,631 10780ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 4:00:36 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-12 16:00:36,642 10791ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 4:00:36 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-12 16:00:36,645 10794ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 4:00:36 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-12 16:00:48,591 22740ms CompanyController      GetCompanyLookUp   - 6/12/2017 4:00:48 PM WHERE : 
+DEBUG 2017-06-12 16:00:48,592 22741ms CompanyController      GetCompanyLookUp   - 6/12/2017 4:00:48 PM Page Num : 0 Page Size : 10
+DEBUG 2017-06-12 16:00:48,593 22742ms mCompanyService        GetCompanyList     - 6/12/2017 4:00:48 PM vRows : 10 vStart : 0
+DEBUG 2017-06-12 16:01:32,647 66796ms EmployeeFamilyRepo     EmployeeFamilyList - 6/12/2017 4:01:32 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-12 16:01:32,655 66804ms EmployeeContractRepo   ployeeContractList - 6/12/2017 4:01:32 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-12 16:01:32,660 66809ms EmployeeEducationRepo  loyeeEducationList - 6/12/2017 4:01:32 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-12 16:01:32,668 66817ms EmployeeExperienceRepo oyeeExperienceList - 6/12/2017 4:01:32 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-12 16:01:32,674 66823ms EmployeeSkillRepo      tEmployeeSkillList - 6/12/2017 4:01:32 PM JML Employee SKILL List: 1
+DEBUG 2017-06-12 16:01:32,681 66830ms EmployeeTrainingRepo   ployeeTrainingList - 6/12/2017 4:01:32 PM JML Employee Training List: 0
+ERROR 2017-06-12 16:01:32,682 66831ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 4:01:32 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-12 16:01:32,688 66837ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 4:01:32 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-12 16:01:32,689 66838ms EmployeeCompanyRepo    mployeeCompanyList - 6/12/2017 4:01:32 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-12 16:01:38,245 72395ms CompanyController      GetCompanyLookUp   - 6/12/2017 4:01:38 PM WHERE : 
+DEBUG 2017-06-12 16:01:38,245 72395ms CompanyController      GetCompanyLookUp   - 6/12/2017 4:01:38 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-12 16:01:38,246 72396ms mCompanyService        GetCompanyList     - 6/12/2017 4:01:38 PM vRows : 15 vStart : 0
+ERROR 2017-06-12 16:01:38,258 72408ms CompanyRepo            getCompanyList     - 6/12/2017 4:01:38 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118

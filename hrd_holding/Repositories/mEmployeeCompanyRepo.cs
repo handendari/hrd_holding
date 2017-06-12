@@ -400,7 +400,7 @@ namespace hrd_holding.Repositories
                             {
                                 while (aa.Read())
                                 {
-                                    vSeqNo = aa.GetInt16("seq_no") + 1;
+                                    vSeqNo = aa.GetInt16("seq_no");
                                 }
                             }
                         }

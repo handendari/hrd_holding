@@ -44,8 +44,10 @@ namespace hrd_holding.Services
         {
             pModel.entry_user = "it";
             pModel.entry_date = DateTime.Now;
-            pModel.seq_no = _repoComp.getEmployeeCompanySeqNo(pModel.employee_code);
 
+            var seqno = _repoComp.getEmployeeCompanySeqNo(pModel.employee_code);
+
+            pModel.seq_no = seqno + 1;
             Log.Debug(DateTime.Now + " =====>>>>>>   Seq No Edu : " + pModel.seq_no);
 
             var vModel = _repoComp.InsertEmployeeCompany(pModel);
@@ -54,8 +56,25 @@ namespace hrd_holding.Services
 
         public ResponseModel DeleteEmployeeCompany(string pEmployeeCode, int pSeqNo)
         {
-            var vModel = _repoComp.DeleteEmployeeCompany(pEmployeeCode, pSeqNo);
-            return vModel;
+            var vResp = new ResponseModel();
+            var seqno = _repoComp.getEmployeeCompanySeqNo(pEmployeeCode);
+            if (pSeqNo < seqno || pSeqNo == 1)
+            {
+                vResp.isValid = false;
+                if (pSeqNo == 1)
+                {
+                    vResp.message = "Transaksi Yang Terakhir Tidak Boleh Di Hapus....";
+                }
+                else
+                {
+                    vResp.message = "Hanya Boleh Menghapus Transaksi Yang Terakhir Saja....";
+                }
+            }
+            else
+            {
+                vResp = _repoComp.DeleteEmployeeCompany(pEmployeeCode, pSeqNo);
+            }
+            return vResp;
         }
 
     }

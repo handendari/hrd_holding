@@ -67,18 +67,45 @@ namespace hrd_holding.Repositories
 
         }
 
-        public List<mCompanyModel> getCompanyList()
+        public ResponseModel getCompanyList(int? pStartRow = 0, int? pRows = 0, string pWhere = "", string pOrderBy = "")
         {
+            var vLimit = pOrderBy + " LIMIT " + pStartRow + "," + pRows;
+
+            var vJmlRecord = 0;
+
+            var strSQLCount = @"SELECT COUNT(company_code) jml_record
+                                FROM m_company " + pWhere;
+
             var vList = new List<mCompanyModel>();
-            var strSQL = @"SELECT company_code,int_company,country_code,company_name,address,postal_code,
-                                city_name,state,phone_number,fax_number,web_address,email_address,picture,
-                                npwp,pimpinan,pimpinan_npwp,npp,jhk,entry_date,entry_user,edit_date,edit_user
-                            FROM m_company";
+            var strSQL = @"SELECT mco.company_code,mco.int_company,
+                                mco.country_code,mcu.country_name,mcu.int_country,
+                                mco.company_name,mco.address,mco.postal_code,
+                                mco.city_name,mco.state,mco.phone_number,mco.fax_number,mco.web_address,
+                                IFNULL(mco.email_address,'') email_address,IFNULL(mco.npwp,'') npwp,IFNULL(mco.pimpinan,'') pimpinan,IFNULL(mco.pimpinan_npwp,'') pimpinan_npwp,
+                                IFNULL(mco.npp,'') npp,IFNULL(mco.jhk,0) jhk,mco.entry_date,IFNULL(mco.entry_user,'') entry_user,mco.edit_date,IFNULL(mco.edit_user,'') edit_user
+                            FROM m_company mco JOIN m_country mcu ON mco.country_code = mcu.country_code " +
+                            pWhere + " " + vLimit;
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
                 {
                     conn.Open();
+
+                    using (MySqlCommand cmd = new MySqlCommand(strSQLCount, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vJmlRecord = aa.GetInt32("jml_record");
+                                }
+                            }
+                        }
+                    }
+
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
@@ -102,15 +129,15 @@ namespace hrd_holding.Repositories
                                         fax_number = aa.GetString("fax_number"),
                                         web_address = aa.GetString("web_address"),
                                         email_address = aa.GetString("email_address"),
-                                        picture = aa.GetString("picture"),
+                                        //picture = aa.GetString("picture"),
                                         npwp = aa.GetString("npwp"),
                                         pimpinan = aa.GetString("pimpinan"),
                                         pimpinan_npwp = aa.GetString("pimpinan_npwp"),
                                         npp = aa.GetString("npp"),
                                         jhk = aa.GetDecimal("jhk"),
-                                        entry_date = aa.GetDateTime("entry_date"),
+                                        entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
                                         entry_user = aa.GetString("entry_user"),
-                                        edit_date = aa.GetDateTime("edit_date"),
+                                        edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
                                         edit_user = aa.GetString("edit_user")
                                     };
                                     vList.Add(m);
@@ -124,7 +151,12 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetCompanyList FAILED... ", ex);
             }
-            return vList;
+
+            var vResp = new ResponseModel();
+            vResp.total_record = vJmlRecord;
+            vResp.objResult = vList;
+
+            return vResp;
         }
 
         public mCompanyModel getCompanyInfo(string pCompanyCode)
