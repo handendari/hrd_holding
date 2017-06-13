@@ -93,8 +93,8 @@ namespace hrd_holding.Repositories
             var strSQL = @"SELECT mbo.branch_code,mbo.company_code,mco.company_name,
                                   mbo.int_branch,mbo.country_code,mcu.country_name,mbo.branch_name,mbo.address,
                                 mbo.postal_code,mbo.city_name,mbo.state,mbo.phone_number,mbo.fax_number,mbo.web_address,
-                                mbo.email_address,mbo.picture,mbo.npwp,mbo.pimpinan,mbo.pimpinan_npwp,mbo.npp,mbo.jhk,
-                                mbo.entry_date,mbo.entry_user,mbo.edit_date,mbo.edit_user
+                                mbo.email_address,mbo.picture,mbo.npwp,mbo.pimpinan,mbo.pimpinan_npwp,mbo.npp,IFNULL(mbo.jhk,0) jhk,
+                                mbo.entry_date,mbo.entry_user,mbo.edit_date,IFNULL(mbo.edit_user,'') edit_user
                             FROM m_branch_office mbo JOIN m_Company mco ON mbo.company_code = mco.company_code
                             JOIN m_country mcu ON mbo.country_code = mcu.country_code
                             WHERE mbo.company_code = @pCompanyCode " + pWhere + " " + vLimit;

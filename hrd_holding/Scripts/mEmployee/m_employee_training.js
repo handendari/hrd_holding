@@ -104,9 +104,9 @@ function f_DeleteEmployeeTrn(pEmpCode) {
 
 $(document).ready(function () {
     //#region INIT FAMILY
-    $("#btnTrainingNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnTrainingEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnTrainingDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnTrainingNew").jqxButton({theme: vTheme});
+    $("#btnTrainingEdit").jqxButton({theme: vTheme});
+    $("#btnTrainingDelete").jqxButton({theme: vTheme});
 
     //#region Table TRAINING
     function initGridTraining() {
@@ -208,6 +208,7 @@ $(document).ready(function () {
 
     $('#btnTrainingDelete').on('click', function (event) {
         var rowindex = $('#tblTraining').jqxGrid('getselectedrowindex');
+        vLookUp = "Emp";
 
         if (rowindex >= 0) {
             $("#modYesNo").jqxWindow('open');

@@ -25,7 +25,7 @@ namespace hrd_holding.Controllers
         }
 
         [HttpPost]
-        public dynamic InsertCompanyCompany(mEmployeeCompanyModel pModel)
+        public dynamic InsertEmployeeCompany(mEmployeeCompanyModel pModel)
         {
             LOG.Debug(DateTime.Now + "Emp Code : " + pModel.employee_code + ", employee_name : " + pModel.employee_name);
 

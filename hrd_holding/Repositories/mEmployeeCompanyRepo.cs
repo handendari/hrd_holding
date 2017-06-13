@@ -232,8 +232,8 @@ namespace hrd_holding.Repositories
                                     vModel.int_subtitle = aa.GetString("int_subtitle");
                                     vModel.subtitle_name = aa.GetString("subtitle_name");
                                     vModel.description = aa.GetString("description");
-                                    vModel.entry_date = (aa["entry_edit"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_edit"]);
-                                    vModel.entry_user = aa.GetString("nik");
+                                    vModel.entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]);
+                                    vModel.entry_user = aa.GetString("entry_user");
                                     vModel.edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]);
                                     vModel.edit_user = aa.GetString("edit_user");
                                 }
@@ -252,54 +252,83 @@ namespace hrd_holding.Repositories
         public ResponseModel UpdateEmployeeCompany(mEmployeeCompanyModel pModel)
         {
             var vResp = new ResponseModel();
-            string SqlString = @"UPDATE `m_employee_company`
-                                    SET `seq_no` = @pSeqNo,
-                                        `date_company` = @pDateCompany,
-                                        `company_code` = @pCompanyCode,
-                                        `branch_code` = @pBranchCode,
-                                        `department_code` = @pDepartmentCode,
-                                        `title_code` = @pTitleCode,
-                                        `subtitle_code` = @pSubtitleCode,
-                                        `description` = @pDescription,
-                                        `entry_date` = @pEntryDate,
-                                        `entry_user` = @pEntryUser,
-                                        `edit_date` = @pEditDate,
-                                        `edit_user` = @pEditUser
-                                WHERE `employee_code` = @pEmployeeCode AND `seq_no` = @pSeqNo";
+
+            var conn = new MySqlConnection(ConfigModel.mConn);
+            MySqlTransaction myTrans = null;
+            var cmd = new MySqlCommand();
+            
+            var sqlString = "";
+
             try
             {
-                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
-                {
-                    conn.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
-                    {
+                conn.Open();
+                myTrans = conn.BeginTransaction();
 
-                        cmd.CommandType = CommandType.Text;
+                sqlString = @"UPDATE `m_employee_company`
+                                SET `seq_no` = @pSeqNo,
+                                    `date_company` = @pDateCompany,
+                                    `company_code` = @pCompanyCode,
+                                    `branch_code` = @pBranchCode,
+                                    `department_code` = @pDepartmentCode,
+                                    `title_code` = @pTitleCode,
+                                    `subtitle_code` = @pSubtitleCode,
+                                    `description` = @pDescription,
+                                    `entry_date` = @pEntryDate,
+                                    `entry_user` = @pEntryUser,
+                                    `edit_date` = @pEditDate,
+                                    `edit_user` = @pEditUser
+                                WHERE `employee_code` = @pEmployeeCode AND `seq_no` = @pSeqNo";
+                cmd = new MySqlCommand(sqlString, conn, myTrans);
+                cmd.CommandType = CommandType.Text;
 
-                        cmd.Parameters.AddWithValue("@pEmployeeCode", pModel.employee_code);
-                        cmd.Parameters.AddWithValue("@pSeqNo", pModel.seq_no);
-                        cmd.Parameters.AddWithValue("@pDateCompany", pModel.date_company);
-                        cmd.Parameters.AddWithValue("@pCompanyCode", pModel.company_code);
-                        cmd.Parameters.AddWithValue("@pBranchCode", pModel.branch_code);
-                        cmd.Parameters.AddWithValue("@pDepartmentCode", pModel.department_code);
-                        cmd.Parameters.AddWithValue("@pTitleCode", pModel.title_code);
-                        cmd.Parameters.AddWithValue("@pSubtitleCode", pModel.subtitle_code);
-                        cmd.Parameters.AddWithValue("@pDescription", pModel.description);
-                        cmd.Parameters.AddWithValue("@pEntryDate", pModel.entry_date);
-                        cmd.Parameters.AddWithValue("@pEntryUser", pModel.entry_user);
-                        cmd.Parameters.AddWithValue("@pEditDate", pModel.edit_date);
-                        cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
+                cmd.Parameters.AddWithValue("@pEmployeeCode", pModel.employee_code);
+                cmd.Parameters.AddWithValue("@pSeqNo", pModel.seq_no);
+                cmd.Parameters.AddWithValue("@pDateCompany", pModel.date_company);
+                cmd.Parameters.AddWithValue("@pCompanyCode", pModel.company_code);
+                cmd.Parameters.AddWithValue("@pBranchCode", pModel.branch_code);
+                cmd.Parameters.AddWithValue("@pDepartmentCode", pModel.department_code);
+                cmd.Parameters.AddWithValue("@pTitleCode", pModel.title_code);
+                cmd.Parameters.AddWithValue("@pSubtitleCode", pModel.subtitle_code);
+                cmd.Parameters.AddWithValue("@pDescription", pModel.description);
+                cmd.Parameters.AddWithValue("@pEntryDate", pModel.entry_date);
+                cmd.Parameters.AddWithValue("@pEntryUser", pModel.entry_user);
+                cmd.Parameters.AddWithValue("@pEditDate", pModel.edit_date);
+                cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
-                        var status = cmd.ExecuteNonQuery();
-                        vResp.isValid = true;
-                        vResp.message = " UPDATE EMPLOYEE COMPANY SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
-                        Log.Debug(DateTime.Now + " UPDATE EMPLOYEE COMPANY SUCCESS ====>>>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
+                var status = cmd.ExecuteNonQuery();
 
-                    }
-                }
+
+                #region UPDATE EMPLOYEE +++++++++++++++
+                sqlString = @"UPDATE m_employee set company_code = @pCompanyCode,
+                                            branch_code = @pBranchCode,
+                                            department_code = @pDepartmentCode,
+                                            title_code = @pTitleCode,
+                                            subtitle_code = @pSubtitleCode
+                            WHERE employee_code = @pEmployeeCode";
+
+                cmd = new MySqlCommand(sqlString, conn, myTrans);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@pEmployeeCode", pModel.employee_code);
+                cmd.Parameters.AddWithValue("@pCompanyCode", pModel.company_code);
+                cmd.Parameters.AddWithValue("@pBranchCode", pModel.branch_code);
+                cmd.Parameters.AddWithValue("@pDepartmentCode", pModel.department_code);
+                cmd.Parameters.AddWithValue("@pTitleCode", pModel.title_code);
+                cmd.Parameters.AddWithValue("@pSubtitleCode", pModel.subtitle_code);
+                cmd.ExecuteNonQuery();
+                #endregion
+
+                myTrans.Commit();
+                cmd.Dispose();
+
+                vResp.isValid = true;
+                vResp.message = " UPDATE EMPLOYEE COMPANY SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
+                Log.Debug(DateTime.Now + " UPDATE EMPLOYEE COMPANY SUCCESS ====>>>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
+
             }
             catch (Exception ex)
             {
+                myTrans.Rollback();
+
                 vResp.isValid = false;
                 vResp.message = " UPDATE EMPLOYEE COMPANY FAILED......";
 
@@ -316,6 +345,7 @@ namespace hrd_holding.Repositories
             var conn = new MySqlConnection(ConfigModel.mConn);
             MySqlTransaction myTrans = null;
             var cmd = new MySqlCommand();
+            var sqlString = "";
 
             try
             {
@@ -323,8 +353,9 @@ namespace hrd_holding.Repositories
                 myTrans = conn.BeginTransaction();
 
                 #region DELETE EMPLOYEE COMPANY++++++++++++++
-                string SqlString = @"DELETE FROM m_employee_company WHERE employee_code = @pCode AND seq_no = @pSeqNo";
-                cmd = new MySqlCommand(SqlString, conn, myTrans);
+
+                sqlString = @"DELETE FROM m_employee_company WHERE employee_code = @pCode AND seq_no = @pSeqNo";
+                cmd = new MySqlCommand(sqlString, conn, myTrans);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@pCode", pEmployeeCode);
                 cmd.Parameters.AddWithValue("@pSeqNo", pSeqNo);
@@ -332,16 +363,38 @@ namespace hrd_holding.Repositories
                 #endregion
 
                 #region UPDATE EMPLOYEE +++++++++++++++
-                var vSeqNo = getEmployeeCompanySeqNo(pEmployeeCode);
+                var vSeqNo = 0; //getEmployeeCompanySeqNo(pEmployeeCode);
+
+                sqlString = @"SELECT IFNULL(MAX(seq_no),0) seq_no
+                            FROM m_employee_company emp
+                            WHERE emp.employee_code = @pEmployeeCode";
+
+                cmd = new MySqlCommand(sqlString, conn, myTrans);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@pEmployeeCode", pEmployeeCode);
+                using (MySqlDataReader aa = cmd.ExecuteReader())
+                {
+                    if (aa.HasRows)
+                    {
+                        while (aa.Read())
+                        {
+                            vSeqNo = aa.GetInt16("seq_no");
+                        }
+                    }
+                }
+
+
                 var vModel = getEmployeeCompanyInfo(pEmployeeCode, vSeqNo);
 
-                SqlString = @"UPDATE m_employee set company_code = @pCompanyCode,
+                Log.Debug(DateTime.Now + " ===>>> SETELAH DELETE SEQ NO : " + vSeqNo + " COmpany Akhir : " + vModel.company_code);
+
+                sqlString = @"UPDATE m_employee set company_code = @pCompanyCode,
                                                     branch_code = @pBranchCode,
                                                     department_code = @pDepartmentCode,
                                                     title_code = @pTitleCode,
                                                     subtitle_code = @pSubtitleCode
                                   WHERE employee_code = @pEmployeeCode";
-                cmd = new MySqlCommand(SqlString, conn, myTrans);
+                cmd = new MySqlCommand(sqlString, conn, myTrans);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@pEmployeeCode", pEmployeeCode);
                 cmd.Parameters.AddWithValue("@pCompanyCode", vModel.company_code);
