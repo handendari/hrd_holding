@@ -108,9 +108,9 @@ function f_DeleteEmployeeExp(pEmpCode) {
 
 $(document).ready(function () {
     //#region INIT FAMILY
-    $("#btnExpNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnExpEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnExpDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnExpNew").jqxButton({theme: vTheme});
+    $("#btnExpEdit").jqxButton({theme: vTheme});
+    $("#btnExpDelete").jqxButton({theme: vTheme});
 
     //#region Table EXPERIENCE
 
@@ -227,6 +227,7 @@ $(document).ready(function () {
 
     $('#btnExpDelete').on('click', function (event) {
         var rowindex = $('#tblExperience').jqxGrid('getselectedrowindex');
+        vLookUp = "Emp";
 
         if (rowindex > 0) {
             $("#modYesNo").jqxWindow('open');

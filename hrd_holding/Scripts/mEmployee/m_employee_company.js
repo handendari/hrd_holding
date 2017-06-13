@@ -106,22 +106,108 @@ function f_DeleteEmployeeCompany(pEmpCode) {
                 var isOke = d.vResp['isValid'];
 
                 if (isOke) {
+                    Form_Load($("#txtCompCode").val(), 1);
+
                     f_UpdateTblEmployeeCompany();
+                    f_HideLoaderModal();
                 } else {
                     f_MessageBoxShow(d.vResp['message']);
                 }
-                f_HideLoaderModal();
             }
         });
     }
 }
 
-$(document).ready(function () {
-    //#region INIT FAMILY
-    $("#btnNew_Company").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnEdit_Company").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnDelete_Company").jqxButton({ theme: vTheme, height: 30, width: 100 });
+var SrcBranchLookUp = {
+    //url: vUrlCountry,
+    datatype: "json",
+    type: "Post",
+    datafields: [{ name: "branch_code" },
+                 { name: "int_branch" },
+                 { name: "branch_name" },
+                 { name: "address" }],
+    cache: false,
+    filter: function () { $("#tblBranchLookUp").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblBranchLookUp").jqxGrid('updatebounddata', 'sort'); },
+    beforeprocessing: function (data) { SrcBranchLookUp.totalrecords = data["TotalRows"]; },
+    sortcolumn: "branch_code",
+    root: 'Rows'
+}
 
+function initGridBranchLookUp() {
+    $("#tblBranchLookUp").jqxGrid(
+      {
+          theme: vTheme,
+          //source: dataAdapter,
+          width: '100%',
+          height: 420,
+          filterable: true,
+          sortable: true,
+          pageable: true,
+          pagesize: 15,
+          pagesizeoptions: ['15', '20', '30'],
+          rowsheight: 20,
+          autorowheight: true,
+          columnsresize: true,
+          virtualmode: true,
+          autoshowfiltericon: true,
+          rendergridrows: function (obj) {
+              return obj.data;
+          },
+          columns: [
+              { text: 'Code', dataField: 'branch_code', hidden: true },
+              { text: 'Int Code', dataField: 'int_branch', width: 80, cellsalign: 'center', align: 'center' },
+              { text: 'Name', dataField: 'branch_name', width: 200 },
+              { text: 'Address', dataField: 'address' }
+          ]
+      });
+}
+
+var SrcCompanyLookUp = {
+    //url: vUrlCountry,
+    datatype: "json",
+    type: "Post",
+    datafields: [{ name: "company_code" },
+                 { name: "int_company" },
+                 { name: "company_name" },
+                 { name: "city_name" }],
+    cache: false,
+    filter: function () { $("#tblCompanyLookUp").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblCompanyLookUp").jqxGrid('updatebounddata', 'sort'); },
+    beforeprocessing: function (data) { SrcCompanyLookUp.totalrecords = data["TotalRows"]; },
+    sortcolumn: "company_code",
+    root: 'Rows'
+}
+
+function initGridCompanyLookUp() {
+    $("#tblCompanyLookUp").jqxGrid(
+      {
+          theme: vTheme,
+          //source: dataAdapter,
+          width: '100%',
+          height: 420,
+          filterable: true,
+          sortable: true,
+          pageable: true,
+          pagesize: 15,
+          pagesizeoptions: ['15', '20', '30'],
+          rowsheight: 20,
+          autorowheight: true,
+          columnsresize: true,
+          virtualmode: true,
+          autoshowfiltericon: true,
+          rendergridrows: function (obj) {
+              return obj.data;
+          },
+          columns: [
+              { text: 'Code', dataField: 'company_code', hidden: true },
+              { text: 'Int Code', dataField: 'int_company', width: 80, cellsalign: 'center', align: 'center' },
+              { text: 'Name', dataField: 'company_name', width: 200 },
+              { text: 'City', dataField: 'city_name' }
+          ]
+      });
+}
+$(document).ready(function () {
     //#region Table TRAINING
     function initGridCompany() {
         $("#tblCompany").jqxGrid(
@@ -156,6 +242,8 @@ $(document).ready(function () {
     //#endregion
 
     initGridCompany();
+    initGridCompanyLookUp();
+    initGridBranchLookUp();
 
     //#region MODAL COMPANY
     $("#psnTrn").jqxNotification({
@@ -187,6 +275,11 @@ $(document).ready(function () {
     $("#btnSave_Company").jqxButton({ theme: vTheme, height: 30, width: 100 });
     $("#btnCancel_Company").jqxButton({ theme: vTheme, height: 30, width: 100 });
 
+    $("#btnNew_Company").jqxButton({theme: vTheme});
+    $("#btnEdit_Company").jqxButton({theme: vTheme});
+    $("#btnDelete_Company").jqxButton({theme: vTheme});
+    $("#btnClose_Company").jqxButton({theme: vTheme});
+
     $("#modCompany").jqxWindow({
         height: 330, width: 1000,
         theme: vTheme, isModal: true,
@@ -202,9 +295,91 @@ $(document).ready(function () {
         resizable: false
     });
 
+    $("#modBranchLookUp").jqxWindow({
+        height: 500, width: 430,
+        theme: vTheme, isModal: true,
+        autoOpen: false,
+        resizable: false
+    });
+
+    $("#modCompanyLookUp").jqxWindow({
+        height: 500, width: 430,
+        theme: vTheme, isModal: true,
+        autoOpen: false,
+        resizable: false
+    });
+
+    $("#BranchLookUpToolBar").jqxToolBar({
+        theme: vTheme,
+        width: '100%', height: 35, tools: 'button | button',
+        initTools: function (type, index, tool, menuToolIninitialization) {
+            switch (index) {
+                case 0:
+                    tool.text("Select Data");
+                    tool.height("25px");
+                    tool.width("80px");
+                    tool.on("click", function () {
+                        var rowindex = $('#tblBranchLookUp').jqxGrid('getselectedrowindex');
+                        if (rowindex >= 0) {
+                            var rd = $('#tblBranchLookUp').jqxGrid('getrowdata', rowindex);
+                            $("#txtBranchCode_Company").val(rd.int_branch);
+                            $("#txtBranchCode_Company").data("branch_code", rd.branch_code);
+
+                            $("#txtBranchName_Company").val(rd.branch_name);
+                            $("#modBranchLookUp").jqxWindow('close');
+                        } else {
+                            f_MessageBoxShow("Please Select Data...");
+                        }
+                    });
+                    break;
+                case 1:
+                    tool.text("Cancel");
+                    tool.height("25px");
+                    tool.width("50px");
+                    tool.on("click", function () {
+                        $("#modBranchLookUp").jqxWindow('close');
+                    });
+                    break;
+            }
+        }
+    });
+
+    $("#CompanyLookUpToolBar").jqxToolBar({
+        theme: vTheme,
+        width: '100%', height: 35, tools: 'button | button',
+        initTools: function (type, index, tool, menuToolIninitialization) {
+            switch (index) {
+                case 0:
+                    tool.text("Select Data");
+                    tool.height("25px");
+                    tool.width("80px");
+                    tool.on("click", function () {
+                        var rowindex = $('#tblCompanyLookUp').jqxGrid('getselectedrowindex');
+                        if (rowindex >= 0) {
+                            var rd = $('#tblCompanyLookUp').jqxGrid('getrowdata', rowindex);
+                            $("#txtCompanyCode_Company").val(rd.int_company);
+                            $("#txtCompanyCode_Company").data("company_code", rd.company_code);
+
+                            $("#txtCompanyName_Company").val(rd.company_name);
+                            $("#modCompanyLookUp").jqxWindow('close');
+                        } else {
+                            f_MessageBoxShow("Please Select Data...");
+                        }
+                    });
+                    break;
+                case 1:
+                    tool.text("Cancel");
+                    tool.height("25px");
+                    tool.width("50px");
+                    tool.on("click", function () {
+                        $("#modCompanyLookUp").jqxWindow('close');
+                    });
+                    break;
+            }
+        }
+    });
     //#endregion MODAL COMPANY
 
-    //#endregion
 
     $('#btnNew_Company').on('click', function (event) {
         f_EmptyCompanyDetail();
@@ -228,7 +403,7 @@ $(document).ready(function () {
             $("#txtCompCode").data("comp_seq_no", rd.seq_no);
             $("#dtTgl_Company").jqxDateTimeInput('setDate', rd.date_company);
             $("#txtCompanyCode_Company").val(rd.int_company);
-            $("#txtCompanyCode_Company").data("comp_code",rd.company_code);
+            $("#txtCompanyCode_Company").data("company_code",rd.company_code);
             $("#txtCompanyName_Company").val(rd.company_name);
             $("#txtBranchCode_Company").val(rd.int_branch);
             $("#txtBranchCode_Company").data("branch_code",rd.branch_code);
@@ -255,7 +430,7 @@ $(document).ready(function () {
 
         if (rowindex >= 0) {
             $("#modYesNo").jqxWindow('open');
-            vCountry = "Comp";
+            vLookUp = "Comp";
         } else {
             f_MessageBoxShow("Please Select Data...");
         }
@@ -284,7 +459,7 @@ $(document).ready(function () {
             employee_code: $("#txtCompCode").val(),
             seq_no: $("#txtCompCode").data("comp_seq_no"),
             date_company: $("#dtTgl_Company").jqxDateTimeInput('getDate'),
-            company_code: $("#txtCompanyCode_Company").data("comp_code"),
+            company_code: $("#txtCompanyCode_Company").data("company_code"),
             branch_code: $("#txtBranchCode_Company").data("branch_code"),
             department_code: $("#txtDeptCode_Company").data("dept_code"),
             title_code: $("#txtTitleCode_Company").data("title_code"),
@@ -305,10 +480,14 @@ $(document).ready(function () {
 
                     if (isOke) {
                         f_UpdateTblEmployeeCompany();
+
+                        Form_Load($("#txtCompCode").val(), 1);
+                        f_HideLoaderModal();
+
                     } else {
+                        f_HideLoaderModal();
                         f_MessageBoxShow(d.vResp['message']);
                     }
-                    f_HideLoaderModal();
                 }
             });
         } else {
@@ -322,6 +501,8 @@ $(document).ready(function () {
 
                     if (isOke) {
                         f_UpdateTblEmployeeCompany();
+
+                        Form_Load($("#txtCompCode").val(), 1);
                     } else {
                         f_MessageBoxShow(d.vResp['message']);
                     }
@@ -333,16 +514,51 @@ $(document).ready(function () {
     });
 
     $('#btnCompanyCode_Company').on('click', function (event) {
+        SrcCompanyLookUp.url = base_url + "/Company/GetCompanyLookUp";
+        var vAdapter = new $.jqx.dataAdapter(SrcCompanyLookUp, {
+            downloadComplete: function (data, status, xhr) {
+                if (!SrcCompanyLookUp.TotalRows) {
+                    SrcCompanyLookUp.TotalRows = data.length;
+                }
+            }
+        });
+
+        $('#tblCompanyLookUp').jqxGrid({ source: vAdapter })
+        $('#tblCompanyLookUp').jqxGrid('gotopage', 0);
+        $("#modCompanyLookUp").jqxWindow('open');
+
     });
 
     $('#btnBranchCode_Company').on('click', function (event) {
+        var vCompanyCode = $("#txtCompanyCode_Company").data("company_code");
+
+
+        if (vCompanyCode == "" || vCompanyCode == undefined) {
+            f_MessageBoxShow("Please Select Company....");
+            return;
+        }
+
+        //vLookUp = "Comp";
+        SrcBranchLookUp.url = base_url + "/BranchOffice/GetBranchOfficeLookUp?pCompanyCode=" + vCompanyCode;
+        var vAdapter = new $.jqx.dataAdapter(SrcBranchLookUp, {
+            downloadComplete: function (data, status, xhr) {
+                if (!SrcBranchLookUp.TotalRows) {
+                    SrcBranchLookUp.TotalRows = data.length;
+                }
+            }
+        });
+
+        $('#tblBranchLookUp').jqxGrid({ source: vAdapter })
+        $('#tblBranchLookUp').jqxGrid('gotopage', 0);
+        $("#modBranchLookUp").jqxWindow('open');
     });
 
     $('#btnDeptCode_Company').on('click', function (event) {
-        var vCompanyCode = $("#txtIntCompany").data("company_code");
-        var vBranchCode = $("#btnBranchCode_Company").data("branch_code");
+        var vCompanyCode = $("#txtCompanyCode_Company").data("company_code");
+        var vBranchCode = $("#txtBranchCode_Company").data("branch_code");
 
-        if (vBranchCode == "") {
+
+        if (vBranchCode == "" || vBranchCode == undefined) {
             f_MessageBoxShow("Please Select Branch Office....");
             return;
         }
@@ -382,4 +598,8 @@ $(document).ready(function () {
     $('#btnGradeCode_Company').on('click', function (event) {
     });
 
+    $('#btnClose_Company').on('click', function (event) {
+        $("#modCompanyList").jqxWindow('close');
+    });
+    
 });

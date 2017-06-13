@@ -30,9 +30,9 @@ function f_UpdateTblFamily() {
         dataType: "json",
         data: jQuery.param({ pEmployeeCode: vEmpCode }),
         success: function (dt) {
-          //  if (dt.listFamily != null && dt.listFamily.length > 0) {
-                f_FillTableFamily(dt.listFamily);
-          //  }
+            //  if (dt.listFamily != null && dt.listFamily.length > 0) {
+            f_FillTableFamily(dt.listFamily);
+            //  }
         }
     });
 }
@@ -103,9 +103,9 @@ function f_DeleteEmployeeFamily(pEmpCode) {
 
 $(document).ready(function () {
     //#region INIT FAMILY
-    $("#btnFamilyNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnFamilyEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnFamilyDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnFamilyNew").jqxButton({ theme: vTheme });
+    $("#btnFamilyEdit").jqxButton({ theme: vTheme });
+    $("#btnFamilyDelete").jqxButton({ theme: vTheme });
 
     function initGridFamily() {
         $("#tblFamily").jqxGrid(
@@ -230,6 +230,7 @@ $(document).ready(function () {
 
     $('#btnFamilyDelete').on('click', function (event) {
         var rowindex = $('#tblFamily').jqxGrid('getselectedrowindex');
+        vLookUp = "Emp";
 
         if (rowindex > 0) {
             $("#modYesNo").jqxWindow('open');

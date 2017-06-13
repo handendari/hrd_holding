@@ -87,9 +87,9 @@ function f_DeleteEmployeeSkill(pEmpCode) {
 }
 
 $(document).ready(function () {
-    $("#btnSkillNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnSkillEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnSkillDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnSkillNew").jqxButton({theme: vTheme});
+    $("#btnSkillEdit").jqxButton({theme: vTheme});
+    $("#btnSkillDelete").jqxButton({theme: vTheme});
 
     //#region Table SKILL
     function initGridSkill() {
@@ -181,6 +181,7 @@ $(document).ready(function () {
 
     $('#btnSkillDelete').on('click', function (event) {
         var rowindex = $('#tblSkill').jqxGrid('getselectedrowindex');
+        vLookUp = "Emp";
 
         if (rowindex >= 0) {
             $("#modYesNo").jqxWindow('open');

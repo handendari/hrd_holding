@@ -90,11 +90,14 @@ namespace hrd_holding.Repositories
                                 FROM m_branch_office 
                                 WHERE company_code = @pCompanyCode " + pWhere;
 
-            var strSQL = @"SELECT branch_code,company_code,company_name,int_branch,country_code,country_name,branch_name,address,
-                                postal_code,city_name,state,phone_number,fax_number,web_address,
-                                email_address,picture,npwp,pimpinan,pimpinan_npwp,npp,jhk,
-                                entry_date,entry_user,edit_date,edit_user
-                            FROM m_branch_office WHERE company_code = @pCompanyCode " + pWhere + " " + vLimit;
+            var strSQL = @"SELECT mbo.branch_code,mbo.company_code,mco.company_name,
+                                  mbo.int_branch,mbo.country_code,mcu.country_name,mbo.branch_name,mbo.address,
+                                mbo.postal_code,mbo.city_name,mbo.state,mbo.phone_number,mbo.fax_number,mbo.web_address,
+                                mbo.email_address,mbo.picture,mbo.npwp,mbo.pimpinan,mbo.pimpinan_npwp,mbo.npp,IFNULL(mbo.jhk,0) jhk,
+                                mbo.entry_date,mbo.entry_user,mbo.edit_date,IFNULL(mbo.edit_user,'') edit_user
+                            FROM m_branch_office mbo JOIN m_Company mco ON mbo.company_code = mco.company_code
+                            JOIN m_country mcu ON mbo.country_code = mcu.country_code
+                            WHERE mbo.company_code = @pCompanyCode " + pWhere + " " + vLimit;
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))

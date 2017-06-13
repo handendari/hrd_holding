@@ -101,6 +101,9 @@ namespace hrd_holding.Services
         public EmployeeModelAll GetEmployeeInfo(string pEmployeeCode, int pSeqNo)
         {
             var vModel = _repoEmp.getEmployeeInfo(pEmployeeCode, pSeqNo);
+
+            Log.Debug(DateTime.Now + " SERVICE EMP CODE : " + vModel.employee_code);
+
             var vtblFamily = _srvFam.GetEmployeeFamList(pEmployeeCode);
             var vtblContract = _repoCon.getEmployeeContractList(pEmployeeCode);
             var vtblEducation = _repoEdu.getEmployeeEducationList(pEmployeeCode);

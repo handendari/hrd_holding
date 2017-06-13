@@ -106,9 +106,9 @@ function f_DeleteEmployeeEducation(pEmpCode) {
 $(document).ready(function () {
 
     //#region INIT EDUCATION
-    $("#btnEduNew").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnEduEdit").jqxButton({ theme: vTheme, height: 30, width: 100 });
-    $("#btnEduDelete").jqxButton({ theme: vTheme, height: 30, width: 100 });
+    $("#btnEduNew").jqxButton({theme: vTheme});
+    $("#btnEduEdit").jqxButton({theme: vTheme});
+    $("#btnEduDelete").jqxButton({theme: vTheme});
 
     //#region Table EDUCATION
     function initGridEducation() {
@@ -228,6 +228,7 @@ $(document).ready(function () {
 
     $('#btnEduDelete').on('click', function (event) {
         var rowindex = $('#tblEducation').jqxGrid('getselectedrowindex');
+        vLookUp = "Emp";
 
         if (rowindex >= 0) {
             $("#modYesNo").jqxWindow('open');
