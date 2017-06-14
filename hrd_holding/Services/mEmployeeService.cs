@@ -76,7 +76,7 @@ namespace hrd_holding.Services
         //    return vModel;
         //}
 
-        public ResponseModel GetEmployeeList(int pCompany, int? pPageNum = 0, int? pPageSize = 0, string pWhere = "", string pOrderBy = "")
+        public ResponseModel GetEmployeeList(int pCompany,int pBranchCode, int? pPageNum = 0, int? pPageSize = 0, string pWhere = "", string pOrderBy = "")
         {
             Log.Debug(DateTime.Now + " pPage : " + pPageNum + " pRows : " + pPageSize);
 
@@ -88,7 +88,7 @@ namespace hrd_holding.Services
             var vModel = new ResponseModel();
             try
             {
-                vModel = _repoEmp.getEmployeeList(pCompany, vStart, vRows, pWhere, pOrderBy);
+                vModel = _repoEmp.getEmployeeList(pCompany,pBranchCode, vStart, vRows, pWhere, pOrderBy);
             }
             catch (Exception ex)
             {

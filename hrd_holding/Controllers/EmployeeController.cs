@@ -55,7 +55,7 @@ namespace hrd_holding.Controllers
         }
 
         //[HttpPost]
-        public dynamic GetEmployeeList(int pCompanyCode)
+        public dynamic GetEmployeeList(int pCompanyCode,int pBranchCode)
         {
             //LOG.Debug(DateTime.Now + " ---- PageNum : " + pagenum + " PageSize : " + pagesize);
 
@@ -92,11 +92,11 @@ namespace hrd_holding.Controllers
             var pagenum = _mString.ConstructPageNum(Request["pagenum"]);
             var pagesize = _mString.ConstructPageNum(Request["pagesize"]);
 
-            LOG.Debug(DateTime.Now + " WHERE : " + where);
-            LOG.Debug(DateTime.Now + " ORDER BY : " + orderby);
+            //LOG.Debug(DateTime.Now + " WHERE : " + where);
+            //LOG.Debug(DateTime.Now + " ORDER BY : " + orderby);
 
             // Get Data
-            var vObjRes = _empService.GetEmployeeList(pCompanyCode, pagenum, pagesize, where, orderby);
+            var vObjRes = _empService.GetEmployeeList(pCompanyCode,pBranchCode, pagenum, pagesize, where, orderby);
             var vList = vObjRes.objResult as IEnumerable<mEmployeeModel>;
 
             var totalRecords = vObjRes.total_record;
@@ -117,6 +117,68 @@ namespace hrd_holding.Controllers
                         vItem.division_name,
                         vItem.level_name,
                         vItem.entry_date
+                    }).ToArray()
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        public dynamic GetEmployeeLookUp(int pCompanyCode,int pBranchCode)
+        {
+            //LOG.Debug(DateTime.Now + " ---- PageNum : " + pagenum + " PageSize : " + pagesize);
+
+            String where = "";
+            int filterscount = 0;
+            if (null != Request["filterscount"])
+            {
+                try
+                {
+                    filterscount = int.Parse(Request["filterscount"]);
+                }
+                catch (FormatException nfe) { }
+                {
+                }
+            }
+            if (filterscount > 0)
+            {
+                var filtervalue = new List<string>();
+                var filtercondition = new List<string>(); ;
+                var filterdatafield = new List<string>(); ;
+                var filteroperator = new List<string>(); ;
+
+                for (int i = 0; i < filterscount; i++)
+                {
+                    filtervalue.Add(Request["filtervalue" + i]);
+                    filtercondition.Add(Request["filtercondition" + i]);
+                    filterdatafield.Add(Request["filterdatafield" + i]);
+                    filteroperator.Add(Request["filteroperator" + i]);
+                }
+                where = _mString.ConstructWhere(false, filterscount, filtervalue, filtercondition, filterdatafield, filteroperator);
+            }
+
+            var orderby = _mString.ConstructOrderBy(Request["sortdatafield"], Request["sortorder"]);
+            var pagenum = _mString.ConstructPageNum(Request["pagenum"]);
+            var pagesize = _mString.ConstructPageNum(Request["pagesize"]);
+
+            //LOG.Debug(DateTime.Now + " WHERE : " + where);
+            //LOG.Debug(DateTime.Now + " ORDER BY : " + orderby);
+
+            // Get Data
+            var vObjRes = _empService.GetEmployeeList(pCompanyCode,pBranchCode, pagenum, pagesize, where, orderby);
+            var vList = vObjRes.objResult as IEnumerable<mEmployeeModel>;
+
+            var totalRecords = vObjRes.total_record;
+            var totalPages = (int)Math.Ceiling((float)totalRecords / (float)pagesize);
+
+            return Json(new
+            {
+                TotalRows = totalRecords,
+                Rows = (
+                    from vItem in vList
+                    select new
+                    {
+                        vItem.employee_code,
+                        vItem.nik,
+                        vItem.employee_name,
+                        vItem.department_name
                     }).ToArray()
             }, JsonRequestBehavior.AllowGet);
         }

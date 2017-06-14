@@ -288,7 +288,7 @@ namespace hrd_holding.Repositories
             return vRes;
         }
 
-        public ResponseModel getEmployeeList(int pCompanyCode, int? pStartRow = 0, int? pRows = 0, string pWhere = "", string pOrderBy = "")
+        public ResponseModel getEmployeeList(int pCompanyCode,int pBranchCode, int? pStartRow = 0, int? pRows = 0, string pWhere = "", string pOrderBy = "")
         {
 
             var vLimit = pWhere + pOrderBy + " LIMIT " + pStartRow + "," + pRows;
@@ -303,34 +303,42 @@ namespace hrd_holding.Repositories
                            JOIN m_title mt ON emp.title_code = mt.title_code
                            JOIN m_country mco ON emp.country_code = mco.country_code
                            JOIN m_emp_status mes ON emp.status_code = mes.status_code
-                           WHERE emp.company_code = @pCompanyCode " + pWhere;
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode " + pWhere;
             
-            Log.Debug(DateTime.Now + " strSQLCount : " + strSQLCount);
+            //Log.Debug(DateTime.Now + " strSQLCount : " + strSQLCount);
 
-            var strSQL = @"SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
-                                  emp.company_code,mc.company_name,
-                                  emp.branch_code,mbo.branch_name,
-                                  emp.department_code,md.department_name,
-                                  emp.division_code,
-                                  emp.title_code,mt.title_name,
-                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
-                                  emp.level_code,ml.level_name,
-                                  emp.status_code,mes.status_name,
-                                  emp.flag_shiftable,
-                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
-                                  emp.no_of_children,emp.emp_address,
-                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+            var strSQL = @"SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,0) npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
                                   emp.jstk_registered_date,
-                                  emp.bank_code,mba.bank_name,
-                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
-                                  emp.phone_number,emp.hp_number,emp.email,
-                                  emp.country_code,mco.country_name,
-                                  emp.identity_number,emp.last_education,
-                                  emp.last_employment,emp.description,emp.flag_active,
-                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
-                                  emp.spv_code,
-                                  emp.note1,emp.note2,emp.note3,
-                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
                            FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
                            JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
                            JOIN m_department md ON emp.department_code = md.department_code
@@ -340,9 +348,9 @@ namespace hrd_holding.Repositories
                            LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
                            LEFT JOIN m_level ml ON emp.level_code = ml.level_code
                            LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
-                           WHERE emp.company_code = @pCompanyCode " + vLimit;
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode " + vLimit;
 
-            Log.Debug(DateTime.Now + " strSQL : " + strSQL);
+            //Log.Debug(DateTime.Now + " strSQL : " + strSQL);
 
             try
             {
@@ -353,6 +361,7 @@ namespace hrd_holding.Repositories
                     {
                         cmd.CommandType = CommandType.Text;
                         cmd.Parameters.AddWithValue("@pCompanyCode", pCompanyCode);
+                        cmd.Parameters.AddWithValue("@pBranchCode", pBranchCode);
 
                         using (MySqlDataReader aa = cmd.ExecuteReader())
                         {
@@ -370,6 +379,7 @@ namespace hrd_holding.Repositories
                     {
                         cmd.CommandType = CommandType.Text;
                         cmd.Parameters.AddWithValue("@pCompanyCode", pCompanyCode);
+                        cmd.Parameters.AddWithValue("@pBranchCode", pBranchCode);
 
                         using (MySqlDataReader aa = cmd.ExecuteReader())
                         {
@@ -438,7 +448,7 @@ namespace hrd_holding.Repositories
                                         tgl_mutasi = (aa["tgl_mutasi"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["tgl_mutasi"]),
                                         flag_managerial = aa.GetInt16("flag_managerial"),
                                         spv_code = aa.GetString("spv_code"),
-                                        ////spv_name = aa.GetString("spv_name"),
+                                        spv_name = aa.GetString("spv_name"),
                                         note1 = aa.GetString("note1"),
                                         note2 = aa.GetString("note2"),
                                         note3 = aa.GetString("note3"),
@@ -493,7 +503,8 @@ namespace hrd_holding.Repositories
                                   IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,emp.flag_active,
                                   emp.end_working,IFNULL(emp.reason,'') reason,
                                   '' picture,emp.salary_type,
-                                  emp.tgl_mutasi,emp.flag_managerial,emp.spv_code,
+                                  emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
                                   emp.note1,emp.note2,emp.note3,emp.entry_date,emp.entry_user,emp.edit_date,
                                   IFNULL(emp.edit_user,'') edit_user
                            FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
@@ -591,7 +602,7 @@ namespace hrd_holding.Repositories
                                     vModel.tgl_mutasi = (aa["tgl_mutasi"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["tgl_mutasi"]);
                                     vModel.flag_managerial = aa.GetInt16("flag_managerial");
                                     vModel.spv_code = aa.GetString("spv_code");
-                                    //vModel.spv_name = aa.GetString("spv_name");
+                                    vModel.spv_name = aa.GetString("spv_name");
                                     vModel.note1 = aa.GetString("note1");
                                     vModel.note2 = aa.GetString("note2");
                                     vModel.note3 = aa.GetString("note3");
