@@ -275,9 +275,9 @@ var SrcSupervisorLookUp = {
                  { name: "employee_name" },
                  { name: "department_name" }],
     cache: false,
-    filter: function () { $("#tblCountryLookUp").jqxGrid('updatebounddata', 'filter'); },
-    sort: function () { $("#tblCountryLookUp").jqxGrid('updatebounddata', 'sort'); },
-    beforeprocessing: function (data) { SrcCountryLookUp.totalrecords = data["TotalRows"]; },
+    filter: function () { $("#tblSupervisorLookUp").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblSupervisorLookUp").jqxGrid('updatebounddata', 'sort'); },
+    beforeprocessing: function (data) { SrcSupervisorLookUp.totalrecords = data["TotalRows"]; },
     root: 'Rows'
 }
 
@@ -302,12 +302,161 @@ function initGridSupervisorLookUp() {
               return obj.data;
           },
           columns: [
-              { text: 'Code', dataField: 'employee_code', cellsalign: 'center' },
-              { text: 'NIK', dataField: 'nik', hidden: true },
-              { text: 'Name', dataField: 'employee_name' },
-              { text: 'Departement', dataField: 'department_name' }
+              { text: 'Code', dataField: 'employee_code', hidden: true },
+              { text: 'NIK', dataField: 'nik', cellsalign: 'center', align: 'center', width: 150 },
+              { text: 'Name', dataField: 'employee_name', width: 300 },
+              { text: 'Department', dataField: 'department_name' }
           ]
       });
+}
+
+function f_empty_employee_form() {
+    $("#txtId").val("");
+    $("#txtId").data("employee_code", "");
+    $("#txtSeqNo").val("");
+    $("#txtFullName").val("");
+    $("#txtNickName").val("");
+    $("#txtPob").val("");
+    $("#dtDob").jqxDateTimeInput('setDate', new Date());
+    $("#cmbGender").jqxComboBox({ selectedIndex: 0 });
+    $("#cmbMarital").jqxComboBox({ selectedIndex: 0 });
+    $("#cmbReligion").jqxComboBox({ selectedIndex: 0 });
+    $("#txtChild").val(0);
+    $("#txtAddress").val("");
+    $("#txtKdDepartement").val("");
+    $("#txtKdDepartement").data("dept_code", "");
+    $("#txtNmDepartement").val("");
+    $("#txtKdJobTitle").val("");
+    $("#txtKdJobTitle").data("title_code", "");
+    $("#txtNmJobTitle").val("");
+    $("#txtKdGrade").val("");
+    $("#txtNmGrade").val("");
+    $("#txtKdLevel").val("");
+    $("#txtKdLevel").data("level_code", "");
+    $("#txtNmLevel").val("");
+    $("#dtStartWorking").jqxDateTimeInput('setDate', new Date());
+    $("#dtProbation").jqxDateTimeInput('setDate', new Date());
+    $("#txtWorkingAge").val("0");
+    $("#txtPhone").val("");
+    $("#txtEmail").val("");
+    $("#txtKdCountry").val("");
+    $("#txtKdCountry").data("country_code", "");
+    $("#txtNmCountry").val("");
+    $("#txtNoKtp").val("");
+    $("#txtLastEducation").val("");
+    $("#txtLastEmployment").val("");
+    $("#txtKdBank").val("");
+    $("#txtKdBank").data("bank_code", "");
+    $("#txtNmBank").val("");
+    $("#txtBankAcc").val("");
+    $("#txtBankAccName").val("");
+    $("#txtKdStatus").val("");
+    $("#txtKdStatus").data("status_code", "");
+    $("#txtNmStatus").val("");
+    $("#txtKdAtasan").val("");
+    $("#txtNmAtasan").val("");
+
+    $("#chkManagerial").jqxCheckBox({ checked: false });
+    $("#chkSpecialLate").jqxCheckBox({ checked: false });
+
+    $("#optProbation").jqxRadioButton({ checked: false });
+    $("#optActive").jqxRadioButton({ checked: false });
+    $("#optNonActive").jqxRadioButton({ checked: false });
+
+
+    vDataCompany.length = 0;
+    $("#tblCompany").jqxGrid({ source: new $.jqx.dataAdapter(vSrcCompany) });
+
+    vDataFamily.length = 0;
+    $("#tblFamily").jqxGrid({ source: new $.jqx.dataAdapter(vSrcFamily) });
+
+    vDataEdu.length = 0;
+    $("#tblEducation").jqxGrid({ source: new $.jqx.dataAdapter(vSrcEdu) });
+
+    vDataExp.length = 0;
+    $("#tblExperience").jqxGrid({ source: new $.jqx.dataAdapter(vSrcExp) });
+
+    vDataSkill.length = 0;
+    $("#tblSkill").jqxGrid({ source: new $.jqx.dataAdapter(vSrcSkill) });
+}
+
+function f_InsertEmployee() {
+    var vActive = 0;
+    if ($('#optActive').jqxRadioButton('checked')) {
+        vActive = 1;
+    }
+    if ($('#optNonActive').jqxRadioButton('checked')) {
+        vActive = 0;
+    }
+    if ($('#optProbation').jqxRadioButton('checked')) {
+        vActive = 2;
+    }
+
+    var vModel = JSON.stringify({
+        employee_code: $('#txtId').data("employee_code"),
+        seq_no: $('#txtSeqNo').val(),
+        nik: $('#txtId').val(),
+        nip: "",
+        employee_name: $("#txtFullName").val(),
+        employee_nick_name: $("#txtNickName").val(),
+        company_code: $("#txtIntCompany").data("company_code"),
+        company_name: $("#txtCompany").val(),
+        branch_code: $("#txtIntBranch").data("branch_code"),
+        branch_name: $("#txtBranch").val(),
+        department_code: $("#txtKdDepartement").data("dept_code"),
+        department_name: $("#txtNmDepartement").val(),
+        division_code: 0,
+        title_code: $("#txtKdJobTitle").data("title_code"),
+        title_name: $("#txtNmJobTitle").val(),
+        subtitle_code: $("#txtKdGrade").data("grade_code"),
+        subtitle_name: $("#txtNmGrade"),
+        level_code: $("#txtKdLevel").data("level_code"),
+        level_name: $("#txtNmLevel"),
+        status_code: $("#txtKdStatus").data("status_code"),
+        status_name: $("#txtNmStatus"),
+        flag_shiftable: $("#chkSpecialLate").val() == true ? 1 : 0,
+        //flag_transport = aa.GetInt16("flag_transport"),
+        place_birth: $("#txtPob").val(),
+        date_birth: $("#dtDob").jqxDateTimeInput('getDate'),
+        sex: $("#cmbGender").jqxComboBox('listBox').selectedIndex,
+        religion: $("#cmbReligion").jqxComboBox('listBox').selectedIndex,
+        //marital_status = aa.GetInt16("marital_status"),
+        no_of_children: $("#txtChild").val(),
+        emp_address: $("#txtAddress").val(),
+        //npwp = aa.GetString("npwp"),
+        //kode_pajak = aa.GetString("kode_pajak"),
+        //npwp_method = aa.GetInt16("npwp_method"),
+        //npwp_registered_date = (aa["npwp_registered_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["npwp_registered_date"]),
+        //npwp_address = aa.GetString("npwp_address"),
+        //no_jamsostek = aa.GetString("no_jamsostek"),
+        //jstk_registered_date = (aa["jstk_registered_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["jstk_registered_date"]),
+        bank_code: $("#txtKdBank").data("bank_code"),
+        bank_account: $("#txtBankAcc").val(),
+        bank_acc_name: $("#txtBankAccName").val(),
+        start_working: $("#dtStartWorking").jqxDateTimeInput('getDate'),
+        appointment_date: $("#dtProbation").jqxDateTimeInput('getDate'),
+        phone_number: $("#txtPhone").val(),
+        //hp_number = aa.GetString("hp_number"),
+        email: $("#txtEmail").val(),
+        country_code: $("#txtKdCountry").data("country_code"),
+        country_name: $("#txtNmCountry").val(),
+        identity_number: $("#txtNoKtp").val(),
+        last_education: $("#txtLastEducation").val(),
+        last_employment: $("#txtLastEmployment").val(),
+        //description = aa.GetString("description"),
+        flag_active: vActive,
+        //end_working = (aa["end_working"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["end_working"]),
+        //reason = aa.GetString("reason"),
+        //picture = aa.GetString("picture"),
+        salary_type: 0,
+        //tgl_mutasi = (aa["tgl_mutasi"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["tgl_mutasi"]),
+        flag_managerial: $("#chkManagerial").val() == true ? 1 : 0,
+        spv_code: $("#txtKdAtasan").val(),
+        spv_name: $("#txtNmAtasan").val()
+        //note1 = aa.GetString("note1"),
+        //note2 = aa.GetString("note2"),
+        //note3 = aa.GetString("note3")
+    });
 }
 
 function Form_Load(pEmployeeCode, pSeqNo) {
@@ -333,7 +482,7 @@ function Form_Load(pEmployeeCode, pSeqNo) {
             $("#txtId").val(dt.empModel.nik);
             $("#txtId").data("employee_code", dt.empModel.employee_code);
 
-            //alert($("#txtId").data("employee_code"));
+            $("#txtSeqNo").val(dt.empModel.seq_no);
 
             $("#txtFullName").val(dt.empModel.employee_name);
             $("#txtNickName").val(dt.empModel.employee_nick_name);
@@ -346,6 +495,9 @@ function Form_Load(pEmployeeCode, pSeqNo) {
 
             var vGender = dt.empModel.sex;
             $("#cmbGender").jqxComboBox({ selectedIndex: vGender });
+
+            var vMarital = dt.empModel.marital_status;
+            $("#cmbMarital").jqxComboBox({ selectedIndex: vMarital });
 
             var vReligion = dt.empModel.religion;
             $("#cmbReligion").jqxComboBox({ selectedIndex: vReligion });
@@ -528,7 +680,6 @@ function Form_Load(pEmployeeCode, pSeqNo) {
     });
 }
 
-
 $(document).ready(function () {
     //#region INIT COMPONENT
     $("#txtIntBranch").jqxInput({ theme: vTheme, disabled: true, width: 50 });
@@ -537,13 +688,22 @@ $(document).ready(function () {
     $("#txtCompany").jqxInput({ theme: vTheme, disabled: true, width: 200 });
     $("#btnChangeComp").jqxButton({ theme: vTheme, height: 20 });
     $("#txtId").jqxInput({ theme: vTheme });
+    $("#txtSeqNo").jqxInput({ theme: vTheme, width: 30, disabled: true });
     $("#txtFullName").jqxInput({ theme: vTheme, width: 250 });
     $("#txtNickName").jqxInput({ theme: vTheme });
     $("#txtPob").jqxInput({ theme: vTheme });
     $("#dtDob").jqxDateTimeInput({ theme: vTheme, width: 150 });
-    $("#cmbGender").jqxComboBox({ theme: vTheme, source: vCmbGender, selectedIndex: 0 });
-    $("#cmbReligion").jqxComboBox({ theme: vTheme, source: vCmbReligion, selectedIndex: 0 });    
-    $("#txtChild").jqxNumberInput({ theme: vTheme,width:70,decimalDigits:0,digits:2,min:0, spinButtons: true });
+
+    $("#cmbGender").jqxComboBox({ theme: vTheme, width: 150, source: vCmbGender, selectedIndex: 0 });
+    $("#cmbGender input").attr('disabled', true);
+
+    $("#cmbMarital").jqxComboBox({ theme: vTheme, width: 150, source: vCmbMarital, selectedIndex: 0 });
+    $("#cmbMarital input").attr('disabled', true);
+
+    $("#cmbReligion").jqxComboBox({ theme: vTheme, width: 150, source: vCmbReligion, selectedIndex: 0 });
+    $("#cmbReligion input").attr('disabled', true);
+
+    $("#txtChild").jqxNumberInput({ theme: vTheme, width: 70, decimalDigits: 0, digits: 2, min: 0, spinButtons: true });
     $("#txtAddress").jqxInput({ theme: vTheme, width: 300 });
     $("#txtKdDepartement").jqxInput({ theme: vTheme, disabled: true });
     $("#btnKdDepartement").jqxButton({ theme: vTheme });
@@ -648,6 +808,13 @@ $(document).ready(function () {
         resizable: false
     });
 
+    $("#modSupervisorLookUp").jqxWindow({
+        height: 500, width: 730,
+        theme: vTheme, isModal: true,
+        autoOpen: false,
+        resizable: false
+    });
+
     $("#EmpToolBar").jqxToolBar({
         theme: vTheme,
         width: '100%', height: 35, tools: 'button | button', rtl: true,
@@ -674,7 +841,7 @@ $(document).ready(function () {
                                    "</div>");
                     tool.append(button);
                     tool.on("click", function () {
-                        f_MessageBoxShow("NEW Data...");
+                        f_empty_employee_form();
                     });
                     break;
             }
@@ -908,6 +1075,49 @@ $(document).ready(function () {
         }
     });
 
+    $("#SupervisorLookUpToolBar").jqxToolBar({
+        theme: vTheme,
+        width: '100%', height: 40, tools: 'button | button',
+        initTools: function (type, index, tool, menuToolIninitialization) {
+            if (type == "button") {
+                tool.height("30px");
+            }
+            switch (index) {
+                case 0:
+                    var button = $("<div>" +
+                                        "<img style='vertical-align:middle' src='../content/images/Checked Checkbox_24_grey.png'/>" +
+                                        "<span style='margin-left:5px'>SELECT DATA</span> " +
+                                   "</div>");
+                    tool.append(button);
+                    tool.width("130px");
+                    tool.on("click", function () {
+                        var rowindex = $('#tblSupervisorLookUp').jqxGrid('getselectedrowindex');
+                        if (rowindex >= 0) {
+                            var rd = $('#tblSupervisorLookUp').jqxGrid('getrowdata', rowindex);
+                            $("#txtKdAtasan").val(rd.employee_code);
+
+                            $("#txtNmAtasan").val(rd.employee_name);
+                            $("#modSupervisorLookUp").jqxWindow('close');
+                        } else {
+                            f_MessageBoxShow("Please Select Data...");
+                        }
+                    });
+                    break;
+                case 1:
+                    var button = $("<div>" +
+                                        "<img style='vertical-align:middle' src='../content/images/Close Pane_24_grey.png'/>" +
+                                        "<span style='margin-left:5px'>CANCEL</span> " +
+                                   "</div>");
+                    tool.append(button);
+                    tool.width("110px");
+                    tool.on("click", function () {
+                        $("#modSupervisorLookUp").jqxWindow('close')
+                    });
+                    break;
+            }
+        }
+    });
+
     //#region UNTUK CENTER MODAL DIALOG
     function f_PosisiModalDialog() {
         $('#modFamily').jqxWindow({ position: { x: f_PosX($('#modFamily')), y: f_PosY($('#modFamily')) } });
@@ -924,6 +1134,7 @@ $(document).ready(function () {
         $('#modStatusLookUp').jqxWindow({ position: { x: f_PosX($('#modStatusLookUp')), y: f_PosY($('#modStatusLookUp')) } });
         $('#modCompanyList').jqxWindow({ position: { x: f_PosX($('#modCompanyList')), y: f_PosY($('#modCompanyList')) } });
         $('#modCompany').jqxWindow({ position: { x: f_PosX($('#modCompany')), y: f_PosY($('#modCompany')) } });
+        $('#modSupervisorLookUp').jqxWindow({ position: { x: f_PosX($('#modSupervisorLookUp')), y: f_PosY($('#modSupervisorLookUp')) } });
     }
 
     //KEEP CENTERED WHEN SCROLLING
@@ -986,6 +1197,7 @@ $(document).ready(function () {
     initGridLvlLookUp();
     initGridBankLookUp();
     initGridStatusLookUp();
+    initGridSupervisorLookUp();
 
     $("#btnYes").jqxButton({ theme: vTheme, height: 30, width: 60 });
     $("#btnNo").jqxButton({ theme: vTheme, height: 30, width: 60 });
@@ -1130,4 +1342,24 @@ $(document).ready(function () {
     $('#btnChangeComp').on('click', function (event) {
         $("#modCompanyList").jqxWindow('open');
     });
+
+    $('#btnkdAtasan').on('click', function (event) {
+        var vCompanyCode = $("#txtIntCompany").data("company_code");
+        var vBranchCode = $("#txtIntBranch").data("branch_code");
+
+        vLookUp = "Emp";
+        SrcSupervisorLookUp.url = base_url + "/Employee/GetEmployeeLookUp?pCompanyCode=" + vCompanyCode + "&pBranchCode=" + vBranchCode;
+        var vAdapter = new $.jqx.dataAdapter(SrcSupervisorLookUp, {
+            downloadComplete: function (data, status, xhr) {
+                if (!SrcSupervisorLookUp.TotalRows) {
+                    SrcSupervisorLookUp.TotalRows = data.length;
+                }
+            }
+        });
+
+        $('#tblSupervisorLookUp').jqxGrid({ source: vAdapter })
+        $('#tblSupervisorLookUp').jqxGrid('gotopage', 0);
+        $("#modSupervisorLookUp").jqxWindow('open');
+    });
+
 });

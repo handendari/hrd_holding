@@ -23105,3 +23105,1587 @@ ERROR 2017-06-13 15:48:44,199 837353ms EmployeeCompanyRepo    mployeeCompanyList
 ERROR 2017-06-13 15:48:44,205 837359ms EmployeeCompanyRepo    mployeeCompanyList - 6/13/2017 3:48:44 PM MASUK LOOPING ADD DATA..... 
 ERROR 2017-06-13 15:48:44,206 837360ms EmployeeCompanyRepo    mployeeCompanyList - 6/13/2017 3:48:44 PM GetEmployeeCompanyList JmlData : 1
 DEBUG 2017-06-13 15:51:03,320 976474ms mStatusService         GetStatusList      - 6/13/2017 3:51:03 PM vRows : 15 vStart : 0
+DEBUG 2017-06-14 08:24:22,559  8514ms EmployeeService        GetEmployeeInfo    - 6/14/2017 8:24:22 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 08:24:22,727  8682ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 8:24:22 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 08:24:22,756  8710ms EmployeeContractRepo   ployeeContractList - 6/14/2017 8:24:22 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 08:24:22,797  8751ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 8:24:22 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 08:24:22,810  8764ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 8:24:22 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 08:24:22,822  8776ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 8:24:22 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 08:24:22,832  8786ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 8:24:22 AM JML Employee Training List: 0
+ERROR 2017-06-14 08:24:22,835  8789ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 8:24:22 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 08:24:22,846  8800ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 8:24:22 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 08:24:22,848  8802ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 8:24:22 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 08:52:03,844  3870ms EmployeeController     GetEmployeeList    - 6/14/2017 8:52:03 AM WHERE : 
+DEBUG 2017-06-14 08:52:03,864  3890ms EmployeeController     GetEmployeeList    - 6/14/2017 8:52:03 AM ORDER BY : 
+DEBUG 2017-06-14 08:52:03,865  3891ms EmployeeService        GetEmployeeList    - 6/14/2017 8:52:03 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 08:52:03,865  3891ms EmployeeService        GetEmployeeList    - 6/14/2017 8:52:03 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 08:52:03,897  3923ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:52:03 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode 
+DEBUG 2017-06-14 08:52:03,914  3940ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:52:03 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode  LIMIT 0,15
+DEBUG 2017-06-14 08:52:04,242  4268ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:52:04 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 08:54:19,274 74706ms EmployeeService        GetEmployeeList    - 6/14/2017 8:54:19 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 08:54:19,322 74754ms EmployeeService        GetEmployeeList    - 6/14/2017 8:54:19 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 08:54:19,330 74762ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:54:19 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 08:54:19,332 74764ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:54:19 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+DEBUG 2017-06-14 08:54:19,423 74855ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:54:19 AM Jumlah Data Employee : 8
+DEBUG 2017-06-14 08:55:19,167 134599ms EmployeeService        GetEmployeeList    - 6/14/2017 8:55:19 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 08:55:19,167 134599ms EmployeeService        GetEmployeeList    - 6/14/2017 8:55:19 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 08:55:19,168 134600ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:55:19 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 08:55:19,169 134601ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:55:19 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+DEBUG 2017-06-14 08:55:19,192 134624ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:55:19 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 08:57:49,456 284888ms EmployeeService        GetEmployeeList    - 6/14/2017 8:57:49 AM pPage : 0 pRows : 0
+DEBUG 2017-06-14 08:57:49,457 284889ms EmployeeService        GetEmployeeList    - 6/14/2017 8:57:49 AM vRows : 10 vStart : 0
+DEBUG 2017-06-14 08:57:49,458 284890ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:57:49 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 08:57:49,458 284890ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:57:49 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,10
+DEBUG 2017-06-14 08:57:49,479 284910ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:57:49 AM Jumlah Data Employee : 10
+DEBUG 2017-06-14 08:58:34,238 329669ms EmployeeService        GetEmployeeInfo    - 6/14/2017 8:58:34 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 08:58:34,247 329678ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 8:58:34 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 08:58:34,267 329698ms EmployeeContractRepo   ployeeContractList - 6/14/2017 8:58:34 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 08:58:34,277 329708ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 8:58:34 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 08:58:34,290 329721ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 8:58:34 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 08:58:34,298 329729ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 8:58:34 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 08:58:34,307 329738ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 8:58:34 AM JML Employee Training List: 0
+ERROR 2017-06-14 08:58:34,310 329741ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 8:58:34 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 08:58:34,318 329749ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 8:58:34 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 08:58:34,321 329752ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 8:58:34 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 08:59:11,480 366911ms EmployeeService        GetEmployeeInfo    - 6/14/2017 8:59:11 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 08:59:11,487 366918ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 8:59:11 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 08:59:11,494 366925ms EmployeeContractRepo   ployeeContractList - 6/14/2017 8:59:11 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 08:59:11,501 366932ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 8:59:11 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 08:59:11,510 366941ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 8:59:11 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 08:59:11,515 366946ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 8:59:11 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 08:59:11,521 366952ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 8:59:11 AM JML Employee Training List: 0
+ERROR 2017-06-14 08:59:11,522 366953ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 8:59:11 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 08:59:11,529 366960ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 8:59:11 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 08:59:11,530 366961ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 8:59:11 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 08:59:14,842 370273ms EmployeeService        GetEmployeeList    - 6/14/2017 8:59:14 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 08:59:14,843 370274ms EmployeeService        GetEmployeeList    - 6/14/2017 8:59:14 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 08:59:14,843 370274ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:59:14 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 08:59:14,844 370275ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:59:14 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+ERROR 2017-06-14 08:59:14,934 370366ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:59:14 AM GetEmployeeList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeList(Int32 pCompanyCode, Int32 pBranchCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 382
+DEBUG 2017-06-14 08:59:25,442 380873ms EmployeeService        GetEmployeeList    - 6/14/2017 8:59:25 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 08:59:25,442 380873ms EmployeeService        GetEmployeeList    - 6/14/2017 8:59:25 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 08:59:25,443 380874ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:59:25 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 08:59:25,443 380874ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:59:25 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+ERROR 2017-06-14 08:59:26,049 381481ms EmployeeRepo           getEmployeeList    - 6/14/2017 8:59:26 AM GetEmployeeList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeList(Int32 pCompanyCode, Int32 pBranchCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 382
+DEBUG 2017-06-14 09:07:17,079    55ms EmployeeService        GetEmployeeList    - 6/14/2017 9:07:17 AM pPage : 0 pRows : 0
+DEBUG 2017-06-14 09:07:17,099    74ms EmployeeService        GetEmployeeList    - 6/14/2017 9:07:17 AM vRows : 10 vStart : 0
+DEBUG 2017-06-14 09:07:17,109    84ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:07:17 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:07:17,110    85ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:07:17 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,emp.nip,emp.employee_name,emp.employee_nick_name,
+                                  emp.company_code,mc.company_name,
+                                  emp.branch_code,mbo.branch_name,
+                                  emp.department_code,md.department_name,
+                                  emp.division_code,
+                                  emp.title_code,mt.title_name,
+                                  emp.subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  emp.level_code,ml.level_name,
+                                  emp.status_code,mes.status_name,
+                                  emp.flag_shiftable,
+                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,emp.emp_address,
+                                  emp.npwp,emp.kode_pajak,emp.npwp_method,emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  emp.bank_code,mba.bank_name,
+                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
+                                  emp.phone_number,emp.hp_number,emp.email,
+                                  emp.country_code,mco.country_name,
+                                  emp.identity_number,emp.last_education,
+                                  emp.last_employment,emp.description,emp.flag_active,
+                                  emp.end_working,emp.reason,emp.picture,emp.salary_type,emp.tgl_mutasi,emp.flag_managerial,
+                                  emp.spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  emp.note1,emp.note2,emp.note3,
+                                  emp.entry_date,emp.entry_user,emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,10
+DEBUG 2017-06-14 09:07:17,306   282ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:07:17 AM Jumlah Data Employee : 10
+DEBUG 2017-06-14 09:35:15,669    67ms EmployeeService        GetEmployeeList    - 6/14/2017 9:35:15 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:35:15,697    94ms EmployeeService        GetEmployeeList    - 6/14/2017 9:35:15 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:35:15,703   100ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:35:15 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:35:15,704   101ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:35:15 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+ERROR 2017-06-14 09:35:16,173   570ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:35:16 AM GetEmployeeList FAILED... 
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int16.Parse(String s, NumberStyles style, NumberFormatInfo info)
+   at System.String.System.IConvertible.ToInt16(IFormatProvider provider)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at MySql.Data.MySqlClient.MySqlDataReader.ChangeType(IMySqlValue value, Int32 fieldIndex, Type newType)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt16(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt16(String column)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeList(Int32 pCompanyCode, Int32 pBranchCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 390
+DEBUG 2017-06-14 09:36:21,358   165ms EmployeeService        GetEmployeeList    - 6/14/2017 9:36:21 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:36:21,379   186ms EmployeeService        GetEmployeeList    - 6/14/2017 9:36:21 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:36:21,390   196ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:36:21 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:36:21,391   197ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:36:21 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+DEBUG 2017-06-14 09:36:21,857   663ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:36:21 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:36:55,626   135ms EmployeeService        GetEmployeeList    - 6/14/2017 9:36:55 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:36:55,646   154ms EmployeeService        GetEmployeeList    - 6/14/2017 9:36:55 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:36:55,655   163ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:36:55 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:36:55,656   164ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:36:55 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+DEBUG 2017-06-14 09:36:55,816   325ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:36:55 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:38:04,932 69440ms EmployeeService        GetEmployeeList    - 6/14/2017 9:38:04 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:38:04,933 69441ms EmployeeService        GetEmployeeList    - 6/14/2017 9:38:04 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:38:04,933 69441ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:38:04 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:38:04,934 69442ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:38:04 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+DEBUG 2017-06-14 09:38:05,163 69671ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:38:05 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:38:20,970 85478ms EmployeeService        GetEmployeeInfo    - 6/14/2017 9:38:20 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 09:38:21,002 85510ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 9:38:21 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 09:38:21,022 85530ms EmployeeContractRepo   ployeeContractList - 6/14/2017 9:38:21 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 09:38:21,032 85540ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 9:38:21 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 09:38:21,043 85551ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 9:38:21 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 09:38:21,050 85558ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 9:38:21 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 09:38:21,059 85567ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 9:38:21 AM JML Employee Training List: 0
+ERROR 2017-06-14 09:38:21,061 85569ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:38:21 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 09:38:21,069 85577ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:38:21 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 09:38:21,071 85579ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:38:21 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 09:39:42,507 167015ms EmployeeService        GetEmployeeInfo    - 6/14/2017 9:39:42 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 09:39:42,526 167034ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 9:39:42 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 09:39:42,560 167068ms EmployeeContractRepo   ployeeContractList - 6/14/2017 9:39:42 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 09:39:42,572 167080ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 9:39:42 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 09:39:42,579 167087ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 9:39:42 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 09:39:42,591 167099ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 9:39:42 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 09:39:42,599 167108ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 9:39:42 AM JML Employee Training List: 0
+ERROR 2017-06-14 09:39:42,600 167109ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:39:42 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 09:39:42,619 167128ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:39:42 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 09:39:42,620 167129ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:39:42 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 09:39:45,613 170121ms EmployeeService        GetEmployeeList    - 6/14/2017 9:39:45 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:39:45,613 170121ms EmployeeService        GetEmployeeList    - 6/14/2017 9:39:45 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:39:45,614 170122ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:39:45 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:39:45,614 170122ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:39:45 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+DEBUG 2017-06-14 09:39:45,687 170195ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:39:45 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:40:34,696 219204ms EmployeeService        GetEmployeeInfo    - 6/14/2017 9:40:34 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 09:40:34,704 219212ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 9:40:34 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 09:40:34,711 219219ms EmployeeContractRepo   ployeeContractList - 6/14/2017 9:40:34 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 09:40:34,718 219226ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 9:40:34 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 09:40:34,737 219245ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 9:40:34 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 09:40:34,743 219251ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 9:40:34 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 09:40:34,750 219258ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 9:40:34 AM JML Employee Training List: 0
+ERROR 2017-06-14 09:40:34,750 219258ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:40:34 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 09:40:34,757 219265ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:40:34 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 09:40:34,758 219266ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:40:34 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 09:40:37,692 222200ms EmployeeService        GetEmployeeList    - 6/14/2017 9:40:37 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:40:37,693 222201ms EmployeeService        GetEmployeeList    - 6/14/2017 9:40:37 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:40:37,693 222201ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:40:37 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:40:37,694 222202ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:40:37 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+DEBUG 2017-06-14 09:40:37,756 222264ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:40:37 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:42:13,532 318040ms EmployeeService        GetEmployeeInfo    - 6/14/2017 9:42:13 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 09:42:13,548 318056ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 9:42:13 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 09:42:13,555 318063ms EmployeeContractRepo   ployeeContractList - 6/14/2017 9:42:13 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 09:42:13,563 318071ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 9:42:13 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 09:42:13,571 318079ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 9:42:13 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 09:42:13,579 318087ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 9:42:13 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 09:42:13,586 318094ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 9:42:13 AM JML Employee Training List: 0
+ERROR 2017-06-14 09:42:13,587 318095ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:42:13 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 09:42:13,594 318102ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:42:13 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 09:42:13,595 318103ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:42:13 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 09:42:18,319 322828ms EmployeeService        GetEmployeeList    - 6/14/2017 9:42:18 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:42:18,320 322829ms EmployeeService        GetEmployeeList    - 6/14/2017 9:42:18 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:42:18,321 322830ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:42:18 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:42:18,321 322830ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:42:18 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+DEBUG 2017-06-14 09:42:18,416 322924ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:42:18 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:43:08,690 373198ms EmployeeService        GetEmployeeInfo    - 6/14/2017 9:43:08 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 09:43:08,699 373207ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 9:43:08 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 09:43:08,723 373231ms EmployeeContractRepo   ployeeContractList - 6/14/2017 9:43:08 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 09:43:08,744 373252ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 9:43:08 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 09:43:08,755 373263ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 9:43:08 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 09:43:08,763 373271ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 9:43:08 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 09:43:08,776 373284ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 9:43:08 AM JML Employee Training List: 0
+ERROR 2017-06-14 09:43:08,776 373284ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:43:08 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 09:43:08,814 373322ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:43:08 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 09:43:08,815 373323ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:43:08 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 09:43:11,522 376030ms EmployeeService        GetEmployeeList    - 6/14/2017 9:43:11 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:43:11,522 376030ms EmployeeService        GetEmployeeList    - 6/14/2017 9:43:11 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:43:11,523 376031ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:43:11 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:43:11,523 376031ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:43:11 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+DEBUG 2017-06-14 09:43:11,645 376154ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:43:11 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:43:36,525 401033ms EmployeeService        GetEmployeeInfo    - 6/14/2017 9:43:36 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 09:43:36,531 401039ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 9:43:36 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 09:43:36,538 401046ms EmployeeContractRepo   ployeeContractList - 6/14/2017 9:43:36 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 09:43:36,544 401052ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 9:43:36 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 09:43:36,552 401060ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 9:43:36 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 09:43:36,558 401066ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 9:43:36 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 09:43:36,566 401074ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 9:43:36 AM JML Employee Training List: 0
+ERROR 2017-06-14 09:43:36,566 401074ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:43:36 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 09:43:36,573 401081ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:43:36 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 09:43:36,574 401082ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:43:36 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 09:43:39,626 404134ms EmployeeService        GetEmployeeList    - 6/14/2017 9:43:39 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:43:39,627 404135ms EmployeeService        GetEmployeeList    - 6/14/2017 9:43:39 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:43:39,627 404135ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:43:39 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:43:39,628 404136ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:43:39 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+DEBUG 2017-06-14 09:43:39,737 404245ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:43:39 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:44:12,453 436962ms EmployeeService        GetEmployeeInfo    - 6/14/2017 9:44:12 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 09:44:12,503 437011ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 9:44:12 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 09:44:12,515 437023ms EmployeeContractRepo   ployeeContractList - 6/14/2017 9:44:12 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 09:44:12,532 437040ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 9:44:12 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 09:44:12,552 437060ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 9:44:12 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 09:44:12,615 437123ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 9:44:12 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 09:44:12,625 437133ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 9:44:12 AM JML Employee Training List: 0
+ERROR 2017-06-14 09:44:12,626 437134ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:44:12 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 09:44:12,671 437179ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:44:12 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 09:44:12,672 437180ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:44:12 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 09:44:15,466 439974ms EmployeeService        GetEmployeeList    - 6/14/2017 9:44:15 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:44:15,466 439974ms EmployeeService        GetEmployeeList    - 6/14/2017 9:44:15 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:44:15,467 439975ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:44:15 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:44:15,467 439975ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:44:15 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+DEBUG 2017-06-14 09:44:16,095 440603ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:44:16 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:44:29,953 454461ms EmployeeService        GetEmployeeInfo    - 6/14/2017 9:44:29 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 09:44:29,960 454468ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 9:44:29 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 09:44:29,965 454473ms EmployeeContractRepo   ployeeContractList - 6/14/2017 9:44:29 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 09:44:29,973 454481ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 9:44:29 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 09:44:29,979 454487ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 9:44:29 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 09:44:29,985 454493ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 9:44:29 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 09:44:29,991 454499ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 9:44:29 AM JML Employee Training List: 0
+ERROR 2017-06-14 09:44:29,992 454500ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:44:29 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 09:44:29,998 454506ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:44:29 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 09:44:29,999 454507ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 9:44:29 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 09:44:33,062 457570ms EmployeeService        GetEmployeeList    - 6/14/2017 9:44:33 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:44:33,063 457571ms EmployeeService        GetEmployeeList    - 6/14/2017 9:44:33 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:44:33,063 457571ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:44:33 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:44:33,064 457572ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:44:33 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,15
+DEBUG 2017-06-14 09:44:33,197 457705ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:44:33 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:44:47,745 472253ms EmployeeService        GetEmployeeList    - 6/14/2017 9:44:47 AM pPage : 0 pRows : 0
+DEBUG 2017-06-14 09:44:47,746 472254ms EmployeeService        GetEmployeeList    - 6/14/2017 9:44:47 AM vRows : 10 vStart : 0
+DEBUG 2017-06-14 09:44:47,747 472255ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:44:47 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:44:47,747 472255ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:44:47 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,10
+DEBUG 2017-06-14 09:44:47,868 472377ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:44:47 AM Jumlah Data Employee : 10
+DEBUG 2017-06-14 09:46:10,167    55ms EmployeeService        GetEmployeeList    - 6/14/2017 9:46:10 AM pPage : 0 pRows : 0
+DEBUG 2017-06-14 09:46:10,188    75ms EmployeeService        GetEmployeeList    - 6/14/2017 9:46:10 AM vRows : 10 vStart : 0
+DEBUG 2017-06-14 09:46:10,196    83ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:46:10 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:46:10,197    84ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:46:10 AM strSQL : SELECT emp.employee_code,emp.seq_no,emp.nik,
+                                  IFNULL(emp.nip,'') nip,
+                                  IFNULL(emp.employee_name,'') employee_name,
+                                  IFNULL(emp.employee_nick_name,'') employee_nick_name,
+                                  IFNULL(emp.company_code,0) company_code,IFNULL(mc.company_name,'') company_name,
+                                  IFNULL(emp.branch_code,0) branch_code,IFNULL(mbo.branch_name,'') branch_name,
+                                  IFNULL(emp.department_code,0) department_code,IFNULL(md.department_name,'') department_name,
+                                  IFNULL(emp.division_code,0) division_code,
+                                  IFNULL(emp.title_code,0) title_code,IFNULL(mt.title_name,'') title_name,
+                                  IFNULL(emp.subtitle_code,0) subtitle_code,IFNULL(ms.subtitle_name,'') subtitle_name,
+                                  IFNULL(emp.level_code,0) level_code,IFNULL(ml.level_name,'') level_name,
+                                  IFNULL(emp.status_code,0) status_code,IFNULL(mes.status_name,'') status_name,
+                                  IFNULL(emp.flag_shiftable,0) flag_shiftable,IFNULL(emp.flag_transport,0) flag_transport,
+                                  IFNULL(emp.place_birth,'') place_birth,emp.date_birth,
+                                  IFNULL(emp.sex,0) sex,IFNULL(emp.religion,0) religion,IFNULL(emp.marital_status,0) marital_status,
+                                  IFNULL(emp.no_of_children,0) no_of_children,IFNULL(emp.emp_address,'') emp_address,
+                                  IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,'') npwp_method,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
+                                  emp.jstk_registered_date,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.country_name,'') country_name,
+                                  IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
+                                  IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,IFNULL(emp.flag_active,0) flag_active,
+                                  emp.end_working,IFNULL(emp.reason,'') reason,emp.picture,
+                                  IFNULL(emp.salary_type,0) salary_type,emp.tgl_mutasi,IFNULL(emp.flag_managerial,0) flag_managerial,
+                                  IFNULL(emp.spv_code,'') spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,
+                                  emp.edit_date,IFNULL(emp.edit_user,'') edit_user
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           LEFT JOIN m_subtitle ms ON emp.subtitle_code = ms.subtitle_code
+                           LEFT JOIN m_level ml ON emp.level_code = ml.level_code
+                           LEFT JOIN m_bank mba ON emp.bank_code = mba.bank_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode  LIMIT 0,10
+DEBUG 2017-06-14 09:46:10,367   254ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:46:10 AM Jumlah Data Employee : 10
+DEBUG 2017-06-14 09:47:35,861   144ms EmployeeService        GetEmployeeList    - 6/14/2017 9:47:35 AM pPage : 0 pRows : 0
+DEBUG 2017-06-14 09:47:35,884   167ms EmployeeService        GetEmployeeList    - 6/14/2017 9:47:35 AM vRows : 10 vStart : 0
+DEBUG 2017-06-14 09:47:35,892   175ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:47:35 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:47:36,046   328ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:47:36 AM Jumlah Data Employee : 10
+DEBUG 2017-06-14 09:47:51,711   140ms EmployeeService        GetEmployeeList    - 6/14/2017 9:47:51 AM pPage : 0 pRows : 0
+DEBUG 2017-06-14 09:47:51,732   161ms EmployeeService        GetEmployeeList    - 6/14/2017 9:47:51 AM vRows : 10 vStart : 0
+DEBUG 2017-06-14 09:47:51,739   168ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:47:51 AM strSQLCount : SELECT COUNT(emp.employee_code) jml_record
+                           FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
+                           JOIN m_department md ON emp.department_code = md.department_code
+                           JOIN m_title mt ON emp.title_code = mt.title_code
+                           JOIN m_country mco ON emp.country_code = mco.country_code
+                           JOIN m_emp_status mes ON emp.status_code = mes.status_code
+                           WHERE emp.company_code = @pCompanyCode AND emp.branch_code = @pBranchCode 
+DEBUG 2017-06-14 09:47:51,962   391ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:47:51 AM Jumlah Data Employee : 10
+DEBUG 2017-06-14 09:48:26,406   140ms EmployeeService        GetEmployeeList    - 6/14/2017 9:48:26 AM pPage : 0 pRows : 0
+DEBUG 2017-06-14 09:48:26,425   160ms EmployeeService        GetEmployeeList    - 6/14/2017 9:48:26 AM vRows : 10 vStart : 0
+DEBUG 2017-06-14 09:48:26,559   293ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:48:26 AM Jumlah Data Employee : 10
+DEBUG 2017-06-14 09:48:49,561   140ms EmployeeService        GetEmployeeList    - 6/14/2017 9:48:49 AM pPage : 0 pRows : 0
+DEBUG 2017-06-14 09:48:49,581   160ms EmployeeService        GetEmployeeList    - 6/14/2017 9:48:49 AM vRows : 10 vStart : 0
+DEBUG 2017-06-14 09:48:50,009   588ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:48:50 AM Jumlah Data Employee : 10
+DEBUG 2017-06-14 09:48:58,790  9368ms EmployeeService        GetEmployeeList    - 6/14/2017 9:48:58 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:48:58,790  9368ms EmployeeService        GetEmployeeList    - 6/14/2017 9:48:58 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:48:59,673 10252ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:48:59 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:50:50,006 120585ms EmployeeService        GetEmployeeList    - 6/14/2017 9:50:50 AM pPage : 1 pRows : 15
+DEBUG 2017-06-14 09:50:50,007 120586ms EmployeeService        GetEmployeeList    - 6/14/2017 9:50:50 AM vRows : 15 vStart : 15
+DEBUG 2017-06-14 09:50:50,143 120722ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:50:50 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:50:55,574 126153ms EmployeeService        GetEmployeeList    - 6/14/2017 9:50:55 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:50:55,574 126153ms EmployeeService        GetEmployeeList    - 6/14/2017 9:50:55 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:50:55,644 126223ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:50:55 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:50:57,299 127878ms EmployeeService        GetEmployeeList    - 6/14/2017 9:50:57 AM pPage : 1 pRows : 15
+DEBUG 2017-06-14 09:50:57,300 127879ms EmployeeService        GetEmployeeList    - 6/14/2017 9:50:57 AM vRows : 15 vStart : 15
+DEBUG 2017-06-14 09:50:57,358 127937ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:50:57 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:51:00,692 131271ms EmployeeService        GetEmployeeList    - 6/14/2017 9:51:00 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:51:00,693 131272ms EmployeeService        GetEmployeeList    - 6/14/2017 9:51:00 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:51:00,757 131336ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:51:00 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:51:03,083 133661ms EmployeeService        GetEmployeeList    - 6/14/2017 9:51:03 AM pPage : 1 pRows : 15
+DEBUG 2017-06-14 09:51:03,084 133662ms EmployeeService        GetEmployeeList    - 6/14/2017 9:51:03 AM vRows : 15 vStart : 15
+DEBUG 2017-06-14 09:51:03,130 133708ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:51:03 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 09:51:03,940 134519ms EmployeeService        GetEmployeeList    - 6/14/2017 9:51:03 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 09:51:03,940 134519ms EmployeeService        GetEmployeeList    - 6/14/2017 9:51:03 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 09:51:04,009 134588ms EmployeeRepo           getEmployeeList    - 6/14/2017 9:51:04 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:14:08,045 10426ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:14:08 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:14:08,084 10465ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:14:08 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:14:08,116 10497ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:14:08 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:14:08,133 10514ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:14:08 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:14:08,147 10528ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:14:08 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:14:08,159 10540ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:14:08 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:14:08,176 10557ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:14:08 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:14:08,178 10559ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:14:08 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:14:08,187 10568ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:14:08 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:14:08,189 10570ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:14:08 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:14:11,907 14288ms EmployeeService        GetEmployeeList    - 6/14/2017 10:14:11 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:14:11,908 14289ms EmployeeService        GetEmployeeList    - 6/14/2017 10:14:11 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:14:12,011 14392ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:14:12 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:16:00,631 123012ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:16:00 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:16:00,639 123020ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:16:00 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:16:00,658 123039ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:16:00 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:16:00,665 123046ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:16:00 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:16:00,672 123053ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:16:00 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:16:00,678 123059ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:16:00 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:16:00,684 123065ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:16:00 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:16:00,685 123066ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:16:00 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:16:00,691 123072ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:16:00 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:16:00,692 123073ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:16:00 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:16:04,157 126538ms EmployeeService        GetEmployeeList    - 6/14/2017 10:16:04 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:16:04,158 126539ms EmployeeService        GetEmployeeList    - 6/14/2017 10:16:04 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:16:04,268 126649ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:16:04 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:16:26,829 149209ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:16:26 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:16:26,846 149226ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:16:26 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:16:26,860 149240ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:16:26 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:16:26,868 149248ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:16:26 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:16:26,880 149260ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:16:26 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:16:26,887 149267ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:16:26 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:16:26,894 149275ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:16:26 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:16:26,895 149276ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:16:26 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:16:26,910 149291ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:16:26 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:16:26,911 149292ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:16:26 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:16:29,836 152217ms EmployeeService        GetEmployeeList    - 6/14/2017 10:16:29 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:16:29,837 152218ms EmployeeService        GetEmployeeList    - 6/14/2017 10:16:29 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:16:29,921 152302ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:16:29 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:17:25,764 208145ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:17:25 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:17:25,791 208172ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:17:25 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:17:25,807 208188ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:17:25 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:17:25,822 208203ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:17:25 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:17:25,831 208212ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:17:25 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:17:25,848 208229ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:17:25 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:17:25,855 208236ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:17:25 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:17:25,856 208237ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:17:25 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:17:25,868 208249ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:17:25 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:17:25,869 208250ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:17:25 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:17:28,412 210793ms EmployeeService        GetEmployeeList    - 6/14/2017 10:17:28 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:17:28,412 210793ms EmployeeService        GetEmployeeList    - 6/14/2017 10:17:28 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:17:28,498 210879ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:17:28 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:17:50,077 232458ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:17:50 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:17:50,084 232465ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:17:50 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:17:50,090 232471ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:17:50 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:17:50,100 232481ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:17:50 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:17:50,120 232501ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:17:50 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:17:50,126 232507ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:17:50 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:17:50,133 232514ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:17:50 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:17:50,134 232515ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:17:50 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:17:50,142 232523ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:17:50 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:17:50,143 232524ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:17:50 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:17:55,458 237839ms EmployeeService        GetEmployeeList    - 6/14/2017 10:17:55 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:17:55,459 237840ms EmployeeService        GetEmployeeList    - 6/14/2017 10:17:55 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:17:55,531 237912ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:17:55 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:18:46,388 288769ms EmployeeService        GetEmployeeList    - 6/14/2017 10:18:46 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:18:46,389 288770ms EmployeeService        GetEmployeeList    - 6/14/2017 10:18:46 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:18:46,496 288877ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:18:46 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:20:04,587 366968ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:20:04 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:20:04,596 366977ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:20:04 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:20:04,604 366985ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:20:04 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:20:04,610 366991ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:20:04 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:20:04,617 366998ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:20:04 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:20:04,624 367005ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:20:04 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:20:04,631 367012ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:20:04 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:20:04,631 367012ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:20:04 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:20:04,639 367020ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:20:04 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:20:04,640 367021ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:20:04 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:20:10,170 372551ms EmployeeService        GetEmployeeList    - 6/14/2017 10:20:10 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:20:10,171 372552ms EmployeeService        GetEmployeeList    - 6/14/2017 10:20:10 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:20:10,389 372770ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:20:10 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:21:18,662 441043ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:21:18 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:21:18,669 441050ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:21:18 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:21:18,677 441058ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:21:18 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:21:18,686 441067ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:21:18 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:21:18,693 441074ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:21:18 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:21:18,750 441131ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:21:18 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:21:18,759 441140ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:21:18 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:21:18,759 441140ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:21:18 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:21:18,766 441147ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:21:18 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:21:18,767 441148ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:21:18 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:21:21,475 443856ms EmployeeService        GetEmployeeList    - 6/14/2017 10:21:21 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:21:21,475 443856ms EmployeeService        GetEmployeeList    - 6/14/2017 10:21:21 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:21:21,598 443979ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:21:21 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:22:07,802 490183ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:22:07 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:22:07,810 490191ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:22:07 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:22:07,817 490198ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:22:07 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:22:07,824 490205ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:22:07 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:22:07,830 490211ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:22:07 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:22:07,837 490218ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:22:07 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:22:07,852 490232ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:22:07 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:22:07,853 490233ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:22:07 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:22:07,861 490241ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:22:07 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:22:07,862 490242ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:22:07 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:22:10,659 493040ms EmployeeService        GetEmployeeList    - 6/14/2017 10:22:10 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:22:10,659 493040ms EmployeeService        GetEmployeeList    - 6/14/2017 10:22:10 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:22:10,742 493123ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:22:10 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:48:08,915  7442ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:48:08 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:48:08,995  7522ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:48:08 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:48:09,015  7542ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:48:09 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:48:09,037  7564ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:48:09 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:48:09,051  7578ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:48:09 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:48:09,142  7669ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:48:09 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:48:09,165  7692ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:48:09 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:48:09,169  7696ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:48:09 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:48:09,179  7706ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:48:09 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:48:09,181  7708ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:48:09 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:48:11,313  9840ms EmployeeService        GetEmployeeList    - 6/14/2017 10:48:11 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:48:11,314  9841ms EmployeeService        GetEmployeeList    - 6/14/2017 10:48:11 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:48:11,470  9996ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:48:11 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:49:59,125 117652ms EmployeeService        GetEmployeeList    - 6/14/2017 10:49:59 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:49:59,127 117653ms EmployeeService        GetEmployeeList    - 6/14/2017 10:49:59 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:50:00,619 119146ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:50:00 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:50:01,233 119759ms EmployeeService        GetEmployeeList    - 6/14/2017 10:50:01 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:50:01,233 119759ms EmployeeService        GetEmployeeList    - 6/14/2017 10:50:01 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:50:01,329 119855ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:50:01 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:50:03,314 121840ms EmployeeService        GetEmployeeList    - 6/14/2017 10:50:03 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:50:03,315 121841ms EmployeeService        GetEmployeeList    - 6/14/2017 10:50:03 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:50:03,398 121925ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:50:03 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:50:14,949 133476ms EmployeeService        GetEmployeeList    - 6/14/2017 10:50:14 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:50:14,950 133477ms EmployeeService        GetEmployeeList    - 6/14/2017 10:50:14 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:50:15,006 133533ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:50:15 AM Jumlah Data Employee : 7
+DEBUG 2017-06-14 10:50:18,033 136559ms EmployeeService        GetEmployeeList    - 6/14/2017 10:50:18 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:50:18,034 136560ms EmployeeService        GetEmployeeList    - 6/14/2017 10:50:18 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:50:18,075 136601ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:50:18 AM Jumlah Data Employee : 7
+DEBUG 2017-06-14 10:50:23,642 142168ms EmployeeService        GetEmployeeList    - 6/14/2017 10:50:23 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:50:23,643 142169ms EmployeeService        GetEmployeeList    - 6/14/2017 10:50:23 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:50:23,752 142278ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:50:23 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:52:37,188 275714ms EmployeeService        GetEmployeeList    - 6/14/2017 10:52:37 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:52:37,189 275715ms EmployeeService        GetEmployeeList    - 6/14/2017 10:52:37 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:52:37,277 275803ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:52:37 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:52:51,683 290209ms EmployeeService        GetEmployeeList    - 6/14/2017 10:52:51 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:52:51,684 290210ms EmployeeService        GetEmployeeList    - 6/14/2017 10:52:51 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:52:52,121 290647ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:52:52 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:52:54,984 293511ms EmployeeService        GetEmployeeList    - 6/14/2017 10:52:54 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:52:54,985 293512ms EmployeeService        GetEmployeeList    - 6/14/2017 10:52:54 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:52:55,198 293724ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:52:55 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:53:04,503 303030ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:04 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:53:04,504 303031ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:04 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:53:04,603 303130ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:53:04 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:53:06,383 304910ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:06 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:53:06,383 304910ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:06 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:53:06,475 305002ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:53:06 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:53:08,696 307223ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:08 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:53:08,697 307224ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:08 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:53:08,841 307368ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:53:08 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:53:09,499 308025ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:09 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:53:09,500 308026ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:09 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:53:09,593 308120ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:53:09 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:53:14,889 313415ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:14 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:53:14,889 313415ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:14 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:53:15,036 313563ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:53:15 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:53:18,944 317470ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:18 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:53:18,944 317470ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:18 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:53:19,068 317595ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:53:19 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:53:22,200 320727ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:22 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:53:22,201 320728ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:22 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:53:22,295 320821ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:53:22 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:53:24,799 323326ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:24 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:53:24,800 323327ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:24 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:53:24,926 323453ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:53:24 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:53:44,154 342681ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:44 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:53:44,155 342682ms EmployeeService        GetEmployeeList    - 6/14/2017 10:53:44 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:53:44,250 342777ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:53:44 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:56:59,927 538454ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:56:59 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:56:59,945 538472ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:56:59 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:56:59,959 538486ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:56:59 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:56:59,987 538514ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:56:59 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:56:59,995 538522ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:56:59 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:57:00,006 538533ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:57:00 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:57:00,014 538541ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:57:00 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:57:00,014 538541ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:57:00 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:57:00,027 538554ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:57:00 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:57:00,028 538555ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:57:00 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:57:14,873 553399ms EmployeeService        GetEmployeeList    - 6/14/2017 10:57:14 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:57:14,874 553400ms EmployeeService        GetEmployeeList    - 6/14/2017 10:57:14 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:57:14,977 553503ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:57:14 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:57:43,747 582274ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:57:43 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:57:43,756 582283ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:57:43 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:57:43,764 582291ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:57:43 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:57:43,770 582297ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:57:43 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:57:43,777 582304ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:57:43 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:57:43,783 582310ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:57:43 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:57:43,793 582320ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:57:43 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:57:43,794 582321ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:57:43 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:57:43,806 582333ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:57:43 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:57:43,807 582334ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:57:43 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:57:47,058 585585ms EmployeeService        GetEmployeeList    - 6/14/2017 10:57:47 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:57:47,059 585586ms EmployeeService        GetEmployeeList    - 6/14/2017 10:57:47 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:57:47,172 585698ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:57:47 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:58:11,011 609538ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:58:11 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:58:11,021 609548ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:58:11 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:58:11,033 609560ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:58:11 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:58:11,053 609580ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:58:11 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:58:11,061 609588ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:58:11 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:58:11,071 609598ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:58:11 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:58:11,078 609605ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:58:11 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:58:11,078 609605ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:58:11 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:58:11,088 609615ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:58:11 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:58:11,089 609616ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:58:11 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:58:14,732 613258ms EmployeeService        GetEmployeeList    - 6/14/2017 10:58:14 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:58:14,733 613259ms EmployeeService        GetEmployeeList    - 6/14/2017 10:58:14 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:58:14,833 613359ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:58:14 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:59:19,177 677703ms EmployeeService        GetEmployeeInfo    - 6/14/2017 10:59:19 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 10:59:19,189 677715ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 10:59:19 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 10:59:19,200 677726ms EmployeeContractRepo   ployeeContractList - 6/14/2017 10:59:19 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 10:59:19,211 677737ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 10:59:19 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 10:59:19,219 677745ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 10:59:19 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 10:59:19,246 677772ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 10:59:19 AM JML Employee SKILL List: 1
+DEBUG 2017-06-14 10:59:19,255 677781ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 10:59:19 AM JML Employee Training List: 0
+ERROR 2017-06-14 10:59:19,256 677782ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:59:19 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 10:59:19,266 677792ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:59:19 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 10:59:19,267 677793ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 10:59:19 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 10:59:22,620 681146ms EmployeeService        GetEmployeeList    - 6/14/2017 10:59:22 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:59:22,621 681147ms EmployeeService        GetEmployeeList    - 6/14/2017 10:59:22 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:59:22,753 681279ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:59:22 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 10:59:52,496 711023ms EmployeeService        GetEmployeeList    - 6/14/2017 10:59:52 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 10:59:52,497 711024ms EmployeeService        GetEmployeeList    - 6/14/2017 10:59:52 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 10:59:52,565 711092ms EmployeeRepo           getEmployeeList    - 6/14/2017 10:59:52 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 11:00:01,015 719542ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:01 AM pPage : 1 pRows : 15
+DEBUG 2017-06-14 11:00:01,016 719543ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:01 AM vRows : 15 vStart : 15
+DEBUG 2017-06-14 11:00:01,188 719715ms EmployeeRepo           getEmployeeList    - 6/14/2017 11:00:01 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 11:00:05,135 723662ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:05 AM pPage : 1 pRows : 15
+DEBUG 2017-06-14 11:00:05,136 723663ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:05 AM vRows : 15 vStart : 15
+DEBUG 2017-06-14 11:00:05,197 723724ms EmployeeRepo           getEmployeeList    - 6/14/2017 11:00:05 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 11:00:27,149 745676ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:27 AM pPage : 1 pRows : 15
+DEBUG 2017-06-14 11:00:27,150 745677ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:27 AM vRows : 15 vStart : 15
+DEBUG 2017-06-14 11:00:27,256 745783ms EmployeeRepo           getEmployeeList    - 6/14/2017 11:00:27 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 11:00:31,752 750279ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:31 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 11:00:31,752 750279ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:31 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 11:00:31,832 750359ms EmployeeRepo           getEmployeeList    - 6/14/2017 11:00:31 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 11:00:35,695 754222ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:35 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 11:00:35,696 754223ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:35 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 11:00:35,782 754309ms EmployeeRepo           getEmployeeList    - 6/14/2017 11:00:35 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 11:00:37,417 755944ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:37 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 11:00:37,418 755945ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:37 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 11:00:37,516 756043ms EmployeeRepo           getEmployeeList    - 6/14/2017 11:00:37 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 11:00:44,262 762789ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:44 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 11:00:44,263 762790ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:44 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 11:00:44,432 762958ms EmployeeRepo           getEmployeeList    - 6/14/2017 11:00:44 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 11:00:49,893 768419ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:49 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 11:00:49,894 768420ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:49 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 11:00:50,010 768536ms EmployeeRepo           getEmployeeList    - 6/14/2017 11:00:50 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 11:00:51,556 770083ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:51 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 11:00:51,557 770084ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:51 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 11:00:51,759 770286ms EmployeeRepo           getEmployeeList    - 6/14/2017 11:00:51 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 11:00:52,917 771443ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:52 AM pPage : 0 pRows : 15
+DEBUG 2017-06-14 11:00:52,918 771444ms EmployeeService        GetEmployeeList    - 6/14/2017 11:00:52 AM vRows : 15 vStart : 0
+DEBUG 2017-06-14 11:00:53,086 771613ms EmployeeRepo           getEmployeeList    - 6/14/2017 11:00:53 AM Jumlah Data Employee : 15
+DEBUG 2017-06-14 13:12:09,540  7800ms EmployeeService        GetEmployeeInfo    - 6/14/2017 1:12:09 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 13:12:09,596  7856ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 1:12:09 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 13:12:09,610  7870ms EmployeeContractRepo   ployeeContractList - 6/14/2017 1:12:09 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 13:12:09,618  7878ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 1:12:09 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 13:12:09,633  7893ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 1:12:09 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 13:12:09,642  7902ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 1:12:09 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 13:12:09,653  7913ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 1:12:09 PM JML Employee Training List: 0
+ERROR 2017-06-14 13:12:09,654  7914ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:12:09 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 13:12:09,668  7928ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:12:09 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 13:12:09,669  7929ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:12:09 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 13:14:13,182 131442ms EmployeeService        GetEmployeeInfo    - 6/14/2017 1:14:13 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 13:14:13,189 131449ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 1:14:13 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 13:14:13,196 131456ms EmployeeContractRepo   ployeeContractList - 6/14/2017 1:14:13 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 13:14:13,203 131463ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 1:14:13 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 13:14:13,211 131471ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 1:14:13 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 13:14:13,218 131478ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 1:14:13 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 13:14:13,234 131494ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 1:14:13 PM JML Employee Training List: 0
+ERROR 2017-06-14 13:14:13,235 131495ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:14:13 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 13:14:13,242 131502ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:14:13 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 13:14:13,243 131503ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:14:13 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 13:14:44,678 162938ms EmployeeService        GetEmployeeInfo    - 6/14/2017 1:14:44 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 13:14:44,688 162948ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 1:14:44 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 13:14:44,695 162955ms EmployeeContractRepo   ployeeContractList - 6/14/2017 1:14:44 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 13:14:44,705 162965ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 1:14:44 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 13:14:44,715 162975ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 1:14:44 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 13:14:44,722 162982ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 1:14:44 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 13:14:44,728 162988ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 1:14:44 PM JML Employee Training List: 0
+ERROR 2017-06-14 13:14:44,729 162989ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:14:44 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 13:14:44,748 163008ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:14:44 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 13:14:44,749 163009ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:14:44 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 13:52:48,799   444ms EmployeeService        GetEmployeeInfo    - 6/14/2017 1:52:48 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 13:52:48,845   490ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 1:52:48 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 13:52:48,854   498ms EmployeeContractRepo   ployeeContractList - 6/14/2017 1:52:48 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 13:52:48,872   517ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 1:52:48 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 13:52:49,195   840ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 1:52:49 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 13:52:49,215   860ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 1:52:49 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 13:52:49,226   871ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 1:52:49 PM JML Employee Training List: 0
+ERROR 2017-06-14 13:52:49,230   875ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:52:49 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 13:52:49,242   887ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:52:49 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 13:52:49,246   891ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:52:49 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 13:55:08,934 140579ms EmployeeService        GetEmployeeInfo    - 6/14/2017 1:55:08 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 13:55:08,950 140595ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 1:55:08 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 13:55:08,960 140605ms EmployeeContractRepo   ployeeContractList - 6/14/2017 1:55:08 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 13:55:08,971 140616ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 1:55:08 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 13:55:08,986 140631ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 1:55:08 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 13:55:08,995 140640ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 1:55:08 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 13:55:09,024 140669ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 1:55:09 PM JML Employee Training List: 0
+ERROR 2017-06-14 13:55:09,025 140670ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:55:09 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 13:55:09,036 140681ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:55:09 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 13:55:09,037 140682ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:55:09 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 13:55:31,221 162866ms EmployeeService        GetEmployeeInfo    - 6/14/2017 1:55:31 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 13:55:31,250 162895ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 1:55:31 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 13:55:31,410 163054ms EmployeeContractRepo   ployeeContractList - 6/14/2017 1:55:31 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 13:55:31,450 163095ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 1:55:31 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 13:55:31,466 163111ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 1:55:31 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 13:55:31,474 163119ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 1:55:31 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 13:55:31,495 163140ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 1:55:31 PM JML Employee Training List: 0
+ERROR 2017-06-14 13:55:31,496 163141ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:55:31 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 13:55:31,736 163381ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:55:31 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 13:55:31,736 163381ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:55:31 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 13:55:51,191 182835ms EmployeeService        GetEmployeeInfo    - 6/14/2017 1:55:51 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 13:55:51,206 182850ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 1:55:51 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 13:55:51,213 182857ms EmployeeContractRepo   ployeeContractList - 6/14/2017 1:55:51 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 13:55:51,223 182867ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 1:55:51 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 13:55:51,243 182887ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 1:55:51 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 13:55:51,275 182919ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 1:55:51 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 13:55:51,283 182927ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 1:55:51 PM JML Employee Training List: 0
+ERROR 2017-06-14 13:55:51,283 182927ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:55:51 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 13:55:51,294 182938ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:55:51 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 13:55:51,295 182940ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:55:51 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 13:56:39,875 231520ms EmployeeService        GetEmployeeInfo    - 6/14/2017 1:56:39 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 13:56:39,882 231527ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 1:56:39 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 13:56:39,889 231534ms EmployeeContractRepo   ployeeContractList - 6/14/2017 1:56:39 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 13:56:39,895 231540ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 1:56:39 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 13:56:39,912 231557ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 1:56:39 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 13:56:39,917 231562ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 1:56:39 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 13:56:39,924 231569ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 1:56:39 PM JML Employee Training List: 0
+ERROR 2017-06-14 13:56:39,925 231570ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:56:39 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 13:56:39,933 231578ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:56:39 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 13:56:39,934 231579ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 1:56:39 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 15:20:36,460  8139ms EmployeeService        GetEmployeeInfo    - 6/14/2017 3:20:36 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 15:20:36,497  8176ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 3:20:36 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 15:20:36,516  8195ms EmployeeContractRepo   ployeeContractList - 6/14/2017 3:20:36 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 15:20:36,545  8224ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 3:20:36 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 15:20:36,560  8239ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 3:20:36 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 15:20:36,573  8252ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 3:20:36 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 15:20:36,588  8267ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 3:20:36 PM JML Employee Training List: 0
+ERROR 2017-06-14 15:20:36,592  8271ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:20:36 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 15:20:36,615  8294ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:20:36 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 15:20:36,617  8296ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:20:36 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 15:20:55,022 26700ms EmployeeService        GetEmployeeInfo    - 6/14/2017 3:20:55 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 15:20:55,041 26719ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 3:20:55 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 15:20:55,048 26726ms EmployeeContractRepo   ployeeContractList - 6/14/2017 3:20:55 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 15:20:55,055 26733ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 3:20:55 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 15:20:55,061 26739ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 3:20:55 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 15:20:55,067 26745ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 3:20:55 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 15:20:55,086 26764ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 3:20:55 PM JML Employee Training List: 0
+ERROR 2017-06-14 15:20:55,087 26765ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:20:55 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 15:20:55,107 26785ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:20:55 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 15:20:55,107 26785ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:20:55 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 15:21:17,185 48863ms EmployeeService        GetEmployeeInfo    - 6/14/2017 3:21:17 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 15:21:17,200 48878ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 3:21:17 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 15:21:17,214 48892ms EmployeeContractRepo   ployeeContractList - 6/14/2017 3:21:17 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 15:21:17,237 48916ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 3:21:17 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 15:21:17,245 48924ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 3:21:17 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 15:21:17,260 48939ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 3:21:17 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 15:21:17,266 48945ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 3:21:17 PM JML Employee Training List: 0
+ERROR 2017-06-14 15:21:17,266 48945ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:21:17 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 15:21:17,277 48956ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:21:17 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 15:21:17,278 48957ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:21:17 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 15:24:11,048 222726ms EmployeeService        GetEmployeeInfo    - 6/14/2017 3:24:11 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 15:24:11,057 222735ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 3:24:11 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 15:24:11,077 222755ms EmployeeContractRepo   ployeeContractList - 6/14/2017 3:24:11 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 15:24:11,087 222765ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 3:24:11 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 15:24:11,095 222773ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 3:24:11 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 15:24:11,116 222794ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 3:24:11 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 15:24:11,124 222802ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 3:24:11 PM JML Employee Training List: 0
+ERROR 2017-06-14 15:24:11,124 222802ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:24:11 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 15:24:11,135 222813ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:24:11 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 15:24:11,136 222814ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:24:11 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 15:25:03,635 275314ms EmployeeService        GetEmployeeInfo    - 6/14/2017 3:25:03 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 15:25:03,642 275321ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 3:25:03 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 15:25:03,649 275328ms EmployeeContractRepo   ployeeContractList - 6/14/2017 3:25:03 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 15:25:03,656 275335ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 3:25:03 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 15:25:03,662 275341ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 3:25:03 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 15:25:03,675 275354ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 3:25:03 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 15:25:03,692 275371ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 3:25:03 PM JML Employee Training List: 0
+ERROR 2017-06-14 15:25:03,692 275371ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:25:03 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 15:25:03,707 275386ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:25:03 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 15:25:03,708 275387ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:25:03 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-14 15:49:18,275 108201ms EmployeeService        GetEmployeeInfo    - 6/14/2017 3:49:18 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-14 15:49:18,309 108235ms EmployeeFamilyRepo     EmployeeFamilyList - 6/14/2017 3:49:18 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-14 15:49:18,318 108244ms EmployeeContractRepo   ployeeContractList - 6/14/2017 3:49:18 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-14 15:49:18,329 108255ms EmployeeEducationRepo  loyeeEducationList - 6/14/2017 3:49:18 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-14 15:49:18,341 108267ms EmployeeExperienceRepo oyeeExperienceList - 6/14/2017 3:49:18 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-14 15:49:18,350 108276ms EmployeeSkillRepo      tEmployeeSkillList - 6/14/2017 3:49:18 PM JML Employee SKILL List: 1
+DEBUG 2017-06-14 15:49:18,360 108286ms EmployeeTrainingRepo   ployeeTrainingList - 6/14/2017 3:49:18 PM JML Employee Training List: 0
+ERROR 2017-06-14 15:49:18,362 108288ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:49:18 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-14 15:49:18,372 108298ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:49:18 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-14 15:49:18,374 108300ms EmployeeCompanyRepo    mployeeCompanyList - 6/14/2017 3:49:18 PM GetEmployeeCompanyList JmlData : 1
