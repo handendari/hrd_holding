@@ -12,8 +12,9 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("EmployeeRepo");
 
-        public void InsertEmployee(mEmployeeModel pModel)
+        public ResponseModel InsertEmployee(mEmployeeModel pModel)
         {
+            var vResp = new ResponseModel();
             string SqlString = @"INSERT INTO `m_employee`
                                         (`employee_code`,`seq_no`,`nik`,`nip`,`employee_name`,`employee_nick_name`,`company_code`,`branch_code`,
                                          `department_code`,`division_code`,`title_code`,`subtitle_code`,`level_code`,`status_code`,`flag_shiftable`,
@@ -101,6 +102,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " INSERT EMPLOYEE SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " INSERT EMPLOYEE SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -108,9 +111,13 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT EMPLOYEE FAILED........";
+
                 Log.Error(DateTime.Now + " INSERT EMPLOYEE FAILED", ex);
             }
 
+            return vResp;
         }
 
         public ResponseModel getEmployeeList_Lama(int pCompanyCode, int? pStartRow=0, int? pRows=0, string pSortField = "", string pSortDir = "", string pWhere = "")
@@ -623,8 +630,10 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateEmployee(mEmployeeModel pModel)
+        public ResponseModel UpdateEmployee(mEmployeeModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"UPDATE `m_employee`
                                      SET `nik` = @pNik,
                                         `nip` = @pNip,
@@ -749,6 +758,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " UPDATE EMPLOYEE SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " UPDATE EMPLOYEE SUCCESS ====>>>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -756,13 +767,19 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " UPDATE EMPLOYEE FAILED.......";
+
                 Log.Error(DateTime.Now + " UPDATE EMPLOYEE FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public void DeleteEmployee(mEmployeeModel pModel)
+        public ResponseModel DeleteEmployee(mEmployeeModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"UPDATE m_employee 
                                     SET `flag_active` = @pFlagActive,
                                         `end_working` = @pEndWorking,
@@ -790,6 +807,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " DELETE EMPLOYEE SUCCESS, Employee Code : " + pModel.employee_code + " Employee Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " DELETE EMPLOYEE SUCCESS ====>>>>>> Employee Code : " + pModel.employee_code + " Employee Name : " + pModel.employee_name);
 
                     }
@@ -797,9 +816,13 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " DELETE EMPLOYEE FAILED......";
+
                 Log.Error(DateTime.Now + " DELETE EMPLOYEE FAILED", ex);
             }
 
+            return vResp;
         }
 
         public int getEmployeeSeqNo(string pEmployeeCode,string pCompanyCode)
