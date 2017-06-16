@@ -486,6 +486,8 @@ namespace hrd_holding.Repositories
 
         public mEmployeeModel getEmployeeInfo(string pEmployeeCode, int pSeqNo)
         {
+            Log.Debug(DateTime.Now + "====>>>> Emp Code : " + pEmployeeCode + " segno : " + pSeqNo);
+
             var vModel = new mEmployeeModel();
             var strSQL = @"SELECT emp.employee_code,emp.seq_no,IFNULL(emp.nik,'') nik,IFNULL(emp.nip,'') nip,emp.employee_name,emp.employee_nick_name,
                                   emp.company_code,mc.int_company,mc.company_name,
@@ -497,22 +499,24 @@ namespace hrd_holding.Repositories
                                   emp.level_code,ml.int_level,ml.level_name,
                                   emp.status_code,mes.int_status,mes.status_name,
                                   emp.flag_shiftable,
-                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
-                                  emp.no_of_children,emp.emp_address,
+                                  emp.flag_transport,IFNULL(emp.place_birth,'') place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,IFNULL(emp.emp_address,'') emp_address,
                                   IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,0) npwp_method,
-                                  emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
                                   emp.jstk_registered_date,
-                                  emp.bank_code,mba.bank_name,
-                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
-                                  emp.phone_number,emp.hp_number,emp.email,
-                                  emp.country_code,mco.int_country,mco.country_name,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.int_country,'') int_country,IFNULL(mco.country_name,'') country_name,
                                   IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
                                   IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,emp.flag_active,
                                   emp.end_working,IFNULL(emp.reason,'') reason,
                                   '' picture,emp.salary_type,
                                   emp.tgl_mutasi,emp.flag_managerial,
                                   emp.spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
-                                  emp.note1,emp.note2,emp.note3,emp.entry_date,emp.entry_user,emp.edit_date,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,emp.edit_date,
                                   IFNULL(emp.edit_user,'') edit_user
                            FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
                            JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
@@ -539,6 +543,8 @@ namespace hrd_holding.Repositories
                         {
                             if (aa.HasRows)
                             {
+                                Log.Debug(DateTime.Now + "====>>>> EMPLOYEE INFO ADA DATA....");
+
                                 while (aa.Read())
                                 {
                                     vModel.employee_code = aa.GetString("employee_code");
@@ -670,7 +676,7 @@ namespace hrd_holding.Repositories
                                         `appointment_date` = @pAppointmentDate,
                                         `phone_number` = @pPhoneNumber,
                                         `hp_number` = @pHpNumber,
-                                         `email` = @pEmail,
+                                        `email` = @pEmail,
                                         `country_code` = @pCountryCode,
                                         `identity_number` = @pIdentityNumber,
                                         `last_education` = @pLastEducation,

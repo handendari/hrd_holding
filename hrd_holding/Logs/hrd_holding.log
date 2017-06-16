@@ -25006,3 +25006,230 @@ DEBUG 2017-06-15 15:46:33,072 1018551ms EmployeeTrainingRepo   ployeeTrainingLis
 ERROR 2017-06-15 15:46:33,073 1018552ms EmployeeCompanyRepo    mployeeCompanyList - 6/15/2017 3:46:33 PM EMPLOYEE CODE : 35151269069300041
 ERROR 2017-06-15 15:46:33,080 1018559ms EmployeeCompanyRepo    mployeeCompanyList - 6/15/2017 3:46:33 PM MASUK LOOPING ADD DATA..... 
 ERROR 2017-06-15 15:46:33,081 1018560ms EmployeeCompanyRepo    mployeeCompanyList - 6/15/2017 3:46:33 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-16 14:32:13,738  6614ms EmployeeService        GetEmployeeInfo    - 6/16/2017 2:32:13 PM SERVICE EMP CODE : 
+DEBUG 2017-06-16 14:32:13,842  6719ms EmployeeFamilyRepo     EmployeeFamilyList - 6/16/2017 2:32:13 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-16 14:32:13,855  6732ms EmployeeContractRepo   ployeeContractList - 6/16/2017 2:32:13 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-16 14:32:13,882  6759ms EmployeeEducationRepo  loyeeEducationList - 6/16/2017 2:32:13 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-16 14:32:13,890  6767ms EmployeeExperienceRepo oyeeExperienceList - 6/16/2017 2:32:13 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-16 14:32:13,897  6774ms EmployeeSkillRepo      tEmployeeSkillList - 6/16/2017 2:32:13 PM JML Employee SKILL List: 1
+DEBUG 2017-06-16 14:32:13,905  6782ms EmployeeTrainingRepo   ployeeTrainingList - 6/16/2017 2:32:13 PM JML Employee Training List: 0
+ERROR 2017-06-16 14:32:13,906  6783ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 2:32:13 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-16 14:32:13,925  6802ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 2:32:13 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-16 14:32:13,925  6802ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 2:32:13 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-16 14:45:44,267  8744ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 2:45:44 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-16 14:45:44,400  8878ms EmployeeService        GetEmployeeInfo    - 6/16/2017 2:45:44 PM SERVICE EMP CODE : 
+DEBUG 2017-06-16 14:45:44,409  8887ms EmployeeFamilyRepo     EmployeeFamilyList - 6/16/2017 2:45:44 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-16 14:45:44,417  8895ms EmployeeContractRepo   ployeeContractList - 6/16/2017 2:45:44 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-16 14:45:44,426  8904ms EmployeeEducationRepo  loyeeEducationList - 6/16/2017 2:45:44 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-16 14:45:44,434  8912ms EmployeeExperienceRepo oyeeExperienceList - 6/16/2017 2:45:44 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-16 14:45:44,443  8921ms EmployeeSkillRepo      tEmployeeSkillList - 6/16/2017 2:45:44 PM JML Employee SKILL List: 1
+DEBUG 2017-06-16 14:45:44,451  8929ms EmployeeTrainingRepo   ployeeTrainingList - 6/16/2017 2:45:44 PM JML Employee Training List: 0
+ERROR 2017-06-16 14:45:44,454  8932ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 2:45:44 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-16 14:45:44,468  8946ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 2:45:44 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-16 14:45:44,471  8949ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 2:45:44 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-16 14:55:51,585  7620ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 2:55:51 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-16 14:55:51,696  7731ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 2:55:51 PM====>>>> EMPLOYEE INFO ADA DATA....
+ERROR 2017-06-16 14:55:51,701  7736ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 2:55:51 PM GetEmployeeInfo Failed
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 589
+DEBUG 2017-06-16 14:55:51,705  7740ms EmployeeService        GetEmployeeInfo    - 6/16/2017 2:55:51 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-16 14:55:51,723  7758ms EmployeeFamilyRepo     EmployeeFamilyList - 6/16/2017 2:55:51 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-16 14:55:51,731  7766ms EmployeeContractRepo   ployeeContractList - 6/16/2017 2:55:51 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-16 14:55:51,742  7777ms EmployeeEducationRepo  loyeeEducationList - 6/16/2017 2:55:51 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-16 14:55:51,752  7787ms EmployeeExperienceRepo oyeeExperienceList - 6/16/2017 2:55:51 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-16 14:55:51,762  7797ms EmployeeSkillRepo      tEmployeeSkillList - 6/16/2017 2:55:51 PM JML Employee SKILL List: 1
+DEBUG 2017-06-16 14:55:51,770  7805ms EmployeeTrainingRepo   ployeeTrainingList - 6/16/2017 2:55:51 PM JML Employee Training List: 0
+ERROR 2017-06-16 14:55:51,773  7808ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 2:55:51 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-16 14:55:51,781  7816ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 2:55:51 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-16 14:55:51,784  7819ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 2:55:51 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-16 14:56:51,474 67509ms CountryController      GetCountryList     - 6/16/2017 2:56:51 PM WHERE : 
+DEBUG 2017-06-16 14:56:51,475 67510ms CountryController      GetCountryList     - 6/16/2017 2:56:51 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-16 14:56:51,476 67511ms mCountryService        GetCountryList     - 6/16/2017 2:56:51 PM vRows : 15 vStart : 0
+DEBUG 2017-06-16 14:56:51,479 67514ms CountryRepo            getCountryList     - 6/16/2017 2:56:51 PM pWHERE : 
+DEBUG 2017-06-16 14:56:59,183 75218ms CountryController      GetCountryList     - 6/16/2017 2:56:59 PM WHERE :  WHERE ( int_country LIKE '%indon%')
+DEBUG 2017-06-16 14:56:59,184 75219ms CountryController      GetCountryList     - 6/16/2017 2:56:59 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-16 14:56:59,185 75220ms mCountryService        GetCountryList     - 6/16/2017 2:56:59 PM vRows : 15 vStart : 0
+DEBUG 2017-06-16 14:56:59,186 75221ms CountryRepo            getCountryList     - 6/16/2017 2:56:59 PM pWHERE :  WHERE ( int_country LIKE '%indon%')
+DEBUG 2017-06-16 14:57:06,721 82756ms CountryController      GetCountryList     - 6/16/2017 2:57:06 PM WHERE : 
+DEBUG 2017-06-16 14:57:06,722 82757ms CountryController      GetCountryList     - 6/16/2017 2:57:06 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-16 14:57:06,723 82758ms mCountryService        GetCountryList     - 6/16/2017 2:57:06 PM vRows : 15 vStart : 0
+DEBUG 2017-06-16 14:57:06,724 82759ms CountryRepo            getCountryList     - 6/16/2017 2:57:06 PM pWHERE : 
+DEBUG 2017-06-16 14:57:11,858 87894ms CountryController      GetCountryList     - 6/16/2017 2:57:11 PM WHERE :  WHERE ( country_name LIKE '%indo%')
+DEBUG 2017-06-16 14:57:11,859 87895ms CountryController      GetCountryList     - 6/16/2017 2:57:11 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-16 14:57:11,859 87895ms mCountryService        GetCountryList     - 6/16/2017 2:57:11 PM vRows : 15 vStart : 0
+DEBUG 2017-06-16 14:57:11,859 87895ms CountryRepo            getCountryList     - 6/16/2017 2:57:11 PM pWHERE :  WHERE ( country_name LIKE '%indo%')
+DEBUG 2017-06-16 14:59:40,663 236698ms EmployeeService        GetEmployeeList    - 6/16/2017 2:59:40 PM pPage : 0 pRows : 15
+DEBUG 2017-06-16 14:59:40,663 236698ms EmployeeService        GetEmployeeList    - 6/16/2017 2:59:40 PM vRows : 15 vStart : 0
+DEBUG 2017-06-16 14:59:40,774 236809ms EmployeeRepo           getEmployeeList    - 6/16/2017 2:59:40 PM Jumlah Data Employee : 15
+DEBUG 2017-06-16 15:05:59,296 615331ms BankController         GetBankList        - 6/16/2017 3:05:59 PM WHERE : 
+DEBUG 2017-06-16 15:05:59,297 615332ms BankController         GetBankList        - 6/16/2017 3:05:59 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-16 15:05:59,298 615333ms mBankService           GetBankList        - 6/16/2017 3:05:59 PM vRows : 15 vStart : 0
+DEBUG 2017-06-16 15:10:34,432 890467ms EmployeeController     UpdateEmployee     - 6/16/2017 3:10:34 PM Masuk Controller Emp Code : 35151269069300041, employee_name : VIVI YUNITA QUARTERINA
+DEBUG 2017-06-16 15:10:34,485 890520ms EmployeeRepo           UpdateEmployee     - 6/16/2017 3:10:34 PM UPDATE EMPLOYEE SUCCESS ====>>>>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA
+DEBUG 2017-06-16 15:10:36,174 892209ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:10:36 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-16 15:10:36,184 892219ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:10:36 PM====>>>> EMPLOYEE INFO ADA DATA....
+ERROR 2017-06-16 15:10:36,185 892220ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:10:36 PM GetEmployeeInfo Failed
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 589
+DEBUG 2017-06-16 15:10:36,186 892221ms EmployeeService        GetEmployeeInfo    - 6/16/2017 3:10:36 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-16 15:10:36,193 892228ms EmployeeFamilyRepo     EmployeeFamilyList - 6/16/2017 3:10:36 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-16 15:10:36,199 892234ms EmployeeContractRepo   ployeeContractList - 6/16/2017 3:10:36 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-16 15:10:36,206 892241ms EmployeeEducationRepo  loyeeEducationList - 6/16/2017 3:10:36 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-16 15:10:36,228 892263ms EmployeeExperienceRepo oyeeExperienceList - 6/16/2017 3:10:36 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-16 15:10:36,234 892269ms EmployeeSkillRepo      tEmployeeSkillList - 6/16/2017 3:10:36 PM JML Employee SKILL List: 1
+DEBUG 2017-06-16 15:10:36,264 892299ms EmployeeTrainingRepo   ployeeTrainingList - 6/16/2017 3:10:36 PM JML Employee Training List: 0
+ERROR 2017-06-16 15:10:36,265 892300ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:10:36 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-16 15:10:36,286 892321ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:10:36 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-16 15:10:36,287 892322ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:10:36 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-16 15:10:54,484 910520ms BankController         GetBankList        - 6/16/2017 3:10:54 PM WHERE : 
+DEBUG 2017-06-16 15:10:54,485 910521ms BankController         GetBankList        - 6/16/2017 3:10:54 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-16 15:10:54,485 910521ms mBankService           GetBankList        - 6/16/2017 3:10:54 PM vRows : 15 vStart : 0
+DEBUG 2017-06-16 15:11:01,657 917693ms EmployeeService        GetEmployeeList    - 6/16/2017 3:11:01 PM pPage : 0 pRows : 15
+DEBUG 2017-06-16 15:11:01,658 917694ms EmployeeService        GetEmployeeList    - 6/16/2017 3:11:01 PM vRows : 15 vStart : 0
+DEBUG 2017-06-16 15:11:01,737 917772ms EmployeeRepo           getEmployeeList    - 6/16/2017 3:11:01 PM Jumlah Data Employee : 15
+DEBUG 2017-06-16 15:12:42,714 1018750ms EmployeeController     UpdateEmployee     - 6/16/2017 3:12:42 PM Masuk Controller Emp Code : 35151269069300041, employee_name : VIVI YUNITA QUARTERINA
+DEBUG 2017-06-16 15:12:42,742 1018778ms EmployeeRepo           UpdateEmployee     - 6/16/2017 3:12:42 PM UPDATE EMPLOYEE SUCCESS ====>>>>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA
+DEBUG 2017-06-16 15:12:45,255 1021290ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:12:45 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-16 15:12:45,265 1021300ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:12:45 PM====>>>> EMPLOYEE INFO ADA DATA....
+ERROR 2017-06-16 15:12:45,266 1021301ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:12:45 PM GetEmployeeInfo Failed
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 589
+DEBUG 2017-06-16 15:12:45,267 1021302ms EmployeeService        GetEmployeeInfo    - 6/16/2017 3:12:45 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-16 15:12:45,279 1021314ms EmployeeFamilyRepo     EmployeeFamilyList - 6/16/2017 3:12:45 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-16 15:12:45,286 1021321ms EmployeeContractRepo   ployeeContractList - 6/16/2017 3:12:45 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-16 15:12:45,294 1021329ms EmployeeEducationRepo  loyeeEducationList - 6/16/2017 3:12:45 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-16 15:12:45,302 1021337ms EmployeeExperienceRepo oyeeExperienceList - 6/16/2017 3:12:45 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-16 15:12:45,313 1021348ms EmployeeSkillRepo      tEmployeeSkillList - 6/16/2017 3:12:45 PM JML Employee SKILL List: 1
+DEBUG 2017-06-16 15:12:45,321 1021356ms EmployeeTrainingRepo   ployeeTrainingList - 6/16/2017 3:12:45 PM JML Employee Training List: 0
+ERROR 2017-06-16 15:12:45,322 1021357ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:12:45 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-16 15:12:45,330 1021365ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:12:45 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-16 15:12:45,331 1021366ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:12:45 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-16 15:12:49,389 1025424ms CountryController      GetCountryList     - 6/16/2017 3:12:49 PM WHERE : 
+DEBUG 2017-06-16 15:12:49,390 1025425ms CountryController      GetCountryList     - 6/16/2017 3:12:49 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-16 15:12:49,390 1025425ms mCountryService        GetCountryList     - 6/16/2017 3:12:49 PM vRows : 15 vStart : 0
+DEBUG 2017-06-16 15:12:49,390 1025425ms CountryRepo            getCountryList     - 6/16/2017 3:12:49 PM pWHERE : 
+DEBUG 2017-06-16 15:13:12,158 1048194ms BankController         GetBankList        - 6/16/2017 3:13:12 PM WHERE : 
+DEBUG 2017-06-16 15:13:12,159 1048195ms BankController         GetBankList        - 6/16/2017 3:13:12 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-16 15:13:12,159 1048195ms mBankService           GetBankList        - 6/16/2017 3:13:12 PM vRows : 15 vStart : 0
+DEBUG 2017-06-16 15:13:26,370 1062405ms EmployeeService        GetEmployeeList    - 6/16/2017 3:13:26 PM pPage : 0 pRows : 15
+DEBUG 2017-06-16 15:13:26,371 1062406ms EmployeeService        GetEmployeeList    - 6/16/2017 3:13:26 PM vRows : 15 vStart : 0
+DEBUG 2017-06-16 15:13:26,449 1062484ms EmployeeRepo           getEmployeeList    - 6/16/2017 3:13:26 PM Jumlah Data Employee : 15
+DEBUG 2017-06-16 15:15:48,110 1204145ms EmployeeController     UpdateEmployee     - 6/16/2017 3:15:48 PM Masuk Controller Emp Code : 35151269069300041, employee_name : VIVI YUNITA QUARTERINA
+DEBUG 2017-06-16 15:15:48,150 1204185ms EmployeeRepo           UpdateEmployee     - 6/16/2017 3:15:48 PM UPDATE EMPLOYEE SUCCESS ====>>>>>> Code : 35151269069300041 Name : VIVI YUNITA QUARTERINA
+DEBUG 2017-06-16 15:15:48,156 1204191ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:15:48 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-16 15:15:48,167 1204202ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:15:48 PM====>>>> EMPLOYEE INFO ADA DATA....
+ERROR 2017-06-16 15:15:48,168 1204203ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:15:48 PM GetEmployeeInfo Failed
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 589
+DEBUG 2017-06-16 15:15:48,168 1204203ms EmployeeService        GetEmployeeInfo    - 6/16/2017 3:15:48 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-16 15:15:48,175 1204210ms EmployeeFamilyRepo     EmployeeFamilyList - 6/16/2017 3:15:48 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-16 15:15:48,182 1204218ms EmployeeContractRepo   ployeeContractList - 6/16/2017 3:15:48 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-16 15:15:48,190 1204226ms EmployeeEducationRepo  loyeeEducationList - 6/16/2017 3:15:48 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-16 15:15:48,198 1204234ms EmployeeExperienceRepo oyeeExperienceList - 6/16/2017 3:15:48 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-16 15:15:48,206 1204241ms EmployeeSkillRepo      tEmployeeSkillList - 6/16/2017 3:15:48 PM JML Employee SKILL List: 1
+DEBUG 2017-06-16 15:15:48,212 1204248ms EmployeeTrainingRepo   ployeeTrainingList - 6/16/2017 3:15:48 PM JML Employee Training List: 0
+ERROR 2017-06-16 15:15:48,212 1204248ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:15:48 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-16 15:15:48,225 1204260ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:15:48 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-16 15:15:48,226 1204261ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:15:48 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-16 15:16:04,357 1220393ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:16:04 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-16 15:16:04,374 1220410ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:16:04 PM====>>>> EMPLOYEE INFO ADA DATA....
+ERROR 2017-06-16 15:16:04,375 1220411ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:16:04 PM GetEmployeeInfo Failed
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 589
+DEBUG 2017-06-16 15:16:04,376 1220412ms EmployeeService        GetEmployeeInfo    - 6/16/2017 3:16:04 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-16 15:16:04,387 1220423ms EmployeeFamilyRepo     EmployeeFamilyList - 6/16/2017 3:16:04 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-16 15:16:04,393 1220429ms EmployeeContractRepo   ployeeContractList - 6/16/2017 3:16:04 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-16 15:16:04,418 1220454ms EmployeeEducationRepo  loyeeEducationList - 6/16/2017 3:16:04 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-16 15:16:04,430 1220466ms EmployeeExperienceRepo oyeeExperienceList - 6/16/2017 3:16:04 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-16 15:16:04,435 1220471ms EmployeeSkillRepo      tEmployeeSkillList - 6/16/2017 3:16:04 PM JML Employee SKILL List: 1
+DEBUG 2017-06-16 15:16:04,443 1220479ms EmployeeTrainingRepo   ployeeTrainingList - 6/16/2017 3:16:04 PM JML Employee Training List: 0
+ERROR 2017-06-16 15:16:04,444 1220480ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:16:04 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-16 15:16:04,457 1220493ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:16:04 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-16 15:16:04,458 1220494ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:16:04 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-16 15:16:11,588 1227624ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:16:11 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-16 15:16:11,600 1227636ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:16:11 PM====>>>> EMPLOYEE INFO ADA DATA....
+ERROR 2017-06-16 15:16:11,601 1227637ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:16:11 PM GetEmployeeInfo Failed
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 589
+DEBUG 2017-06-16 15:16:11,602 1227638ms EmployeeService        GetEmployeeInfo    - 6/16/2017 3:16:11 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-16 15:16:11,609 1227645ms EmployeeFamilyRepo     EmployeeFamilyList - 6/16/2017 3:16:11 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-16 15:16:11,615 1227651ms EmployeeContractRepo   ployeeContractList - 6/16/2017 3:16:11 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-16 15:16:11,623 1227659ms EmployeeEducationRepo  loyeeEducationList - 6/16/2017 3:16:11 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-16 15:16:11,630 1227666ms EmployeeExperienceRepo oyeeExperienceList - 6/16/2017 3:16:11 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-16 15:16:11,636 1227672ms EmployeeSkillRepo      tEmployeeSkillList - 6/16/2017 3:16:11 PM JML Employee SKILL List: 1
+DEBUG 2017-06-16 15:16:11,644 1227680ms EmployeeTrainingRepo   ployeeTrainingList - 6/16/2017 3:16:11 PM JML Employee Training List: 0
+ERROR 2017-06-16 15:16:11,644 1227680ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:16:11 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-16 15:16:11,663 1227698ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:16:11 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-16 15:16:11,664 1227699ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:16:11 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-16 15:22:50,024  8705ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:22:50 PM====>>>> Emp Code : 35151269069300041 segno : 1
+ERROR 2017-06-16 15:22:50,381  9062ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:22:50 PM GetEmployeeInfo Failed
+MySql.Data.MySqlClient.MySqlException (0x80004005): FUNCTION db_fegroup_web.IFULL does not exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 542
+DEBUG 2017-06-16 15:22:50,405  9086ms EmployeeService        GetEmployeeInfo    - 6/16/2017 3:22:50 PM SERVICE EMP CODE : 
+DEBUG 2017-06-16 15:22:50,469  9150ms EmployeeFamilyRepo     EmployeeFamilyList - 6/16/2017 3:22:50 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-16 15:22:50,482  9163ms EmployeeContractRepo   ployeeContractList - 6/16/2017 3:22:50 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-16 15:22:50,492  9173ms EmployeeEducationRepo  loyeeEducationList - 6/16/2017 3:22:50 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-16 15:22:50,504  9185ms EmployeeExperienceRepo oyeeExperienceList - 6/16/2017 3:22:50 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-16 15:22:50,549  9230ms EmployeeSkillRepo      tEmployeeSkillList - 6/16/2017 3:22:50 PM JML Employee SKILL List: 1
+DEBUG 2017-06-16 15:22:50,558  9239ms EmployeeTrainingRepo   ployeeTrainingList - 6/16/2017 3:22:50 PM JML Employee Training List: 0
+ERROR 2017-06-16 15:22:50,560  9241ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:22:50 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-16 15:22:50,567  9248ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:22:50 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-16 15:22:50,570  9251ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:22:50 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-16 15:24:01,908 80589ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:24:01 PM====>>>> Emp Code : 35151269069300041 segno : 1
+ERROR 2017-06-16 15:24:01,987 80668ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:24:01 PM GetEmployeeInfo Failed
+MySql.Data.MySqlClient.MySqlException (0x80004005): FUNCTION db_fegroup_web.IFULL does not exist
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 542
+DEBUG 2017-06-16 15:24:01,988 80669ms EmployeeService        GetEmployeeInfo    - 6/16/2017 3:24:01 PM SERVICE EMP CODE : 
+DEBUG 2017-06-16 15:24:02,002 80683ms EmployeeFamilyRepo     EmployeeFamilyList - 6/16/2017 3:24:02 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-16 15:24:02,013 80694ms EmployeeContractRepo   ployeeContractList - 6/16/2017 3:24:02 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-16 15:24:02,020 80701ms EmployeeEducationRepo  loyeeEducationList - 6/16/2017 3:24:02 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-16 15:24:02,026 80707ms EmployeeExperienceRepo oyeeExperienceList - 6/16/2017 3:24:02 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-16 15:24:02,031 80712ms EmployeeSkillRepo      tEmployeeSkillList - 6/16/2017 3:24:02 PM JML Employee SKILL List: 1
+DEBUG 2017-06-16 15:24:02,056 80737ms EmployeeTrainingRepo   ployeeTrainingList - 6/16/2017 3:24:02 PM JML Employee Training List: 0
+ERROR 2017-06-16 15:24:02,057 80738ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:24:02 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-16 15:24:02,118 80799ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:24:02 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-16 15:24:02,119 80800ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:24:02 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-16 15:26:24,230  8118ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:26:24 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-16 15:26:24,347  8236ms EmployeeRepo           getEmployeeInfo    - 6/16/2017 3:26:24 PM====>>>> EMPLOYEE INFO ADA DATA....
+DEBUG 2017-06-16 15:26:24,351  8240ms EmployeeService        GetEmployeeInfo    - 6/16/2017 3:26:24 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-16 15:26:24,725  8614ms EmployeeFamilyRepo     EmployeeFamilyList - 6/16/2017 3:26:24 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-16 15:26:24,775  8664ms EmployeeContractRepo   ployeeContractList - 6/16/2017 3:26:24 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-16 15:26:24,788  8676ms EmployeeEducationRepo  loyeeEducationList - 6/16/2017 3:26:24 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-16 15:26:24,796  8684ms EmployeeExperienceRepo oyeeExperienceList - 6/16/2017 3:26:24 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-16 15:26:24,804  8692ms EmployeeSkillRepo      tEmployeeSkillList - 6/16/2017 3:26:24 PM JML Employee SKILL List: 1
+DEBUG 2017-06-16 15:26:24,817  8705ms EmployeeTrainingRepo   ployeeTrainingList - 6/16/2017 3:26:24 PM JML Employee Training List: 0
+ERROR 2017-06-16 15:26:24,819  8707ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:26:24 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-16 15:26:24,829  8717ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:26:24 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-16 15:26:24,832  8720ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:26:24 PM GetEmployeeCompanyList JmlData : 1

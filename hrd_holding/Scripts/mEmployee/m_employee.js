@@ -925,7 +925,7 @@ $(document).ready(function () {
                                 $("#txtEduCountryName").val(rd.country_name);
                             } else {
                                 $("#txtKdCountry").val(rd.int_country);
-                                $("#txtKdCountry").data("emp_country_code", rd.country_code);
+                                $("#txtKdCountry").data("country_code", rd.country_code);
 
                                 $("#txtNmCountry").val(rd.country_name);
                             }
