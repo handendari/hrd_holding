@@ -65,22 +65,16 @@
                 <td>
                     <div id='cmbGender'></div>
                 </td>
-                <td style="padding-left: 30px">Religion *</td>
+                <td style="padding-left: 30px">Marital Status *</td>
                 <td>
                     <div id='cmbMarital'></div>
-                </td>
-                <td style="padding-left: 30px">Religion *</td>
-                <td>
-                    <div id='cmbReligion'></div>
                 </td>
             </tr>
             <tr>
                 <td>Children Nr *</td>
-                <td>
-                    <input type="text" id="txtChild" /></td>
-                <td style="padding-left: 30px">Employee Address *</td>
-                <td>
-                    <input type="text" id="txtAddress" /></td>
+                <td><input type="text" id="txtChild" /></td>
+                <td style="padding-left: 30px">Religion *</td>
+                <td><div id='cmbReligion'></div></td>
             </tr>
             <tr>
                 <td>Departement *</td>
@@ -88,6 +82,16 @@
                     <input type="text" style="width: 60px" id="txtKdDepartement" />
                     <input type="button" id="btnKdDepartement" value="..." />
                     <input type="text" id="txtNmDepartement" />
+                </td>
+                <td style="padding-left: 30px">Employee Address *</td>
+                <td><input type="text" id="txtAddress" /></td>
+            </tr>
+            <tr>
+                <td>Grade</td>
+                <td>
+                    <input type="text" style="width: 60px" id="txtKdGrade" />
+                    <input type="button" id="btnKdGrade" value="..." />
+                    <input type="text" id="txtNmGrade" />
                 </td>
                 <td style="padding-left: 30px">Job Title *</td>
                 <td>
@@ -97,37 +101,25 @@
                 </td>
             </tr>
             <tr>
-                <td>Grade</td>
-                <td>
-                    <input type="text" style="width: 60px" id="txtKdGrade" />
-                    <input type="button" id="btnKdGrade" value="..." />
-                    <input type="text" id="txtNmGrade" />
-                </td>
-                <td style="padding-left: 30px">Level *</td>
+                <td>Start Working</td>
+                <td><input type="text" id="dtStartWorking" /></td>
+
+                <td style="padding-left: 30px">Probation Date</td>
+                <td><input type="text" id="dtProbation" /></td>
+                <td >Working Age (Y)</td>
+                <td><input type="text" id="txtWorkingAge" /></td>
+            </tr>
+            <tr>
+                <td>Level *</td>
                 <td>
                     <input type="text" style="width: 60px" id="txtKdLevel" />
                     <input type="button" id="btnKdLevel" value="..." />
                     <input type="text" id="txtNmLevel" />
                 </td>
-            </tr>
-            <tr>
-                <td>Start Working</td>
-                <td>
-                    <input type="text" id="dtStartWorking" /></td>
-                <td style="padding-left: 30px">Probation Date</td>
-                <td>
-                    <input type="text" id="dtProbation" /></td>
-                <td style="padding-left: 30px">Working Age (Y)</td>
-                <td>
-                    <input type="text" id="txtWorkingAge" /></td>
-            </tr>
-            <tr>
-                <td>Phone Number</td>
-                <td>
-                    <input type="text" id="txtPhone" /></td>
-                <td style="padding-left: 30px">Email</td>
-                <td>
-                    <input type="text" id="txtEmail" /></td>
+
+                <td style="padding-left: 30px">Phone Number</td>
+                <td><input type="text" id="txtPhone" /></td>
+                <td>Email</td><td><input type="text" id="txtEmail" /></td>
             </tr>
             <tr>
                 <td>Country *</td>
@@ -155,9 +147,8 @@
                     <input type="button" id="btnKdBank" value="..." />
                     <input type="text" id="txtNmBank" /></td>
                 <td style="padding-left: 30px">Bank Account</td>
-                <td>
-                    <input type="text" id="txtBankAcc" /></td>
-                <td style="padding-left: 30px">Bank Acc. Name</td>
+                <td><input type="text" id="txtBankAcc" /></td>
+                <td >Bank Acc. Name</td>
                 <td>
                     <input type="text" id="txtBankAccName" /></td>
             </tr>
@@ -177,11 +168,19 @@
 
             </tr>
             <tr>
+                <td>Description</td>
+                <td rowspan="2">
+                    <textarea id="txtDescription"></textarea>
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
                 <td colspan="2" style="padding-left: 50px; padding-top: 10px">
                     <div id='chkManagerial'>Managerial (No Att. Needed)</div>
                 </td>
                 <td rowspan="2" colspan="2" style="padding-left: 50px; padding-top: 10px">
-                    <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717; background-color: #eeece1;">
+                    <fieldset id="fieldset_status" style="border-radius: 5px; padding: 5px; 
+                                                          border: 1px solid #6b1717; background-color: #eeece1;">
                         <legend>Working Status Employment</legend>
                         <table>
                             <tr>

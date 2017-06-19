@@ -12,8 +12,9 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("EmployeeRepo");
 
-        public void InsertEmployee(mEmployeeModel pModel)
+        public ResponseModel InsertEmployee(mEmployeeModel pModel)
         {
+            var vResp = new ResponseModel();
             string SqlString = @"INSERT INTO `m_employee`
                                         (`employee_code`,`seq_no`,`nik`,`nip`,`employee_name`,`employee_nick_name`,`company_code`,`branch_code`,
                                          `department_code`,`division_code`,`title_code`,`subtitle_code`,`level_code`,`status_code`,`flag_shiftable`,
@@ -101,6 +102,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " INSERT EMPLOYEE SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " INSERT EMPLOYEE SUCCESS ====>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -108,9 +111,13 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT EMPLOYEE FAILED........";
+
                 Log.Error(DateTime.Now + " INSERT EMPLOYEE FAILED", ex);
             }
 
+            return vResp;
         }
 
         public ResponseModel getEmployeeList_Lama(int pCompanyCode, int? pStartRow=0, int? pRows=0, string pSortField = "", string pSortDir = "", string pWhere = "")
@@ -479,6 +486,8 @@ namespace hrd_holding.Repositories
 
         public mEmployeeModel getEmployeeInfo(string pEmployeeCode, int pSeqNo)
         {
+            Log.Debug(DateTime.Now + "====>>>> Emp Code : " + pEmployeeCode + " segno : " + pSeqNo);
+
             var vModel = new mEmployeeModel();
             var strSQL = @"SELECT emp.employee_code,emp.seq_no,IFNULL(emp.nik,'') nik,IFNULL(emp.nip,'') nip,emp.employee_name,emp.employee_nick_name,
                                   emp.company_code,mc.int_company,mc.company_name,
@@ -490,22 +499,24 @@ namespace hrd_holding.Repositories
                                   emp.level_code,ml.int_level,ml.level_name,
                                   emp.status_code,mes.int_status,mes.status_name,
                                   emp.flag_shiftable,
-                                  emp.flag_transport,emp.place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
-                                  emp.no_of_children,emp.emp_address,
+                                  emp.flag_transport,IFNULL(emp.place_birth,'') place_birth,emp.date_birth,emp.sex,emp.religion,emp.marital_status,
+                                  emp.no_of_children,IFNULL(emp.emp_address,'') emp_address,
                                   IFNULL(emp.npwp,'') npwp,IFNULL(emp.kode_pajak,'') kode_pajak,IFNULL(emp.npwp_method,0) npwp_method,
-                                  emp.npwp_registered_date,emp.npwp_address,emp.no_jamsostek,
+                                  emp.npwp_registered_date,IFNULL(emp.npwp_address,'') npwp_address,IFNULL(emp.no_jamsostek,'') no_jamsostek,
                                   emp.jstk_registered_date,
-                                  emp.bank_code,mba.bank_name,
-                                  emp.bank_account,emp.bank_acc_name,emp.start_working,emp.appointment_date,
-                                  emp.phone_number,emp.hp_number,emp.email,
-                                  emp.country_code,mco.int_country,mco.country_name,
+                                  IFNULL(emp.bank_code,'') bank_code,IFNULL(mba.bank_name,'') bank_name,
+                                  IFNULL(emp.bank_account,'') bank_account,IFNULL(emp.bank_acc_name,'') bank_acc_name,
+                                  emp.start_working,emp.appointment_date,
+                                  IFNULL(emp.phone_number,'') phone_number,IFNULL(emp.hp_number,'') hp_number,IFNULL(emp.email,'') email,
+                                  IFNULL(emp.country_code,0) country_code,IFNULL(mco.int_country,'') int_country,IFNULL(mco.country_name,'') country_name,
                                   IFNULL(emp.identity_number,'') identity_number,IFNULL(emp.last_education,'') last_education,
                                   IFNULL(emp.last_employment,'') last_employment,IFNULL(emp.description,'') description,emp.flag_active,
                                   emp.end_working,IFNULL(emp.reason,'') reason,
                                   '' picture,emp.salary_type,
                                   emp.tgl_mutasi,emp.flag_managerial,
                                   emp.spv_code,IFNULL((SELECT employee_name FROM m_employee x WHERE employee_code = emp.spv_code),'') spv_name,
-                                  emp.note1,emp.note2,emp.note3,emp.entry_date,emp.entry_user,emp.edit_date,
+                                  IFNULL(emp.note1,'') note1,IFNULL(emp.note2,'') note2,IFNULL(emp.note3,'') note3,
+                                  emp.entry_date,IFNULL(emp.entry_user,'') entry_user,emp.edit_date,
                                   IFNULL(emp.edit_user,'') edit_user
                            FROM m_employee emp JOIN m_company mc ON emp.company_code = mc.company_code
                            JOIN m_branch_office mbo ON emp.branch_code = mbo.branch_code
@@ -532,6 +543,8 @@ namespace hrd_holding.Repositories
                         {
                             if (aa.HasRows)
                             {
+                                Log.Debug(DateTime.Now + "====>>>> EMPLOYEE INFO ADA DATA....");
+
                                 while (aa.Read())
                                 {
                                     vModel.employee_code = aa.GetString("employee_code");
@@ -623,8 +636,10 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateEmployee(mEmployeeModel pModel)
+        public ResponseModel UpdateEmployee(mEmployeeModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"UPDATE `m_employee`
                                      SET `nik` = @pNik,
                                         `nip` = @pNip,
@@ -661,7 +676,7 @@ namespace hrd_holding.Repositories
                                         `appointment_date` = @pAppointmentDate,
                                         `phone_number` = @pPhoneNumber,
                                         `hp_number` = @pHpNumber,
-                                         `email` = @pEmail,
+                                        `email` = @pEmail,
                                         `country_code` = @pCountryCode,
                                         `identity_number` = @pIdentityNumber,
                                         `last_education` = @pLastEducation,
@@ -749,6 +764,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " UPDATE EMPLOYEE SUCCESS, Code : " + pModel.employee_code + " Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " UPDATE EMPLOYEE SUCCESS ====>>>>>> Code : " + pModel.employee_code + " Name : " + pModel.employee_name);
 
                     }
@@ -756,13 +773,19 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " UPDATE EMPLOYEE FAILED.......";
+
                 Log.Error(DateTime.Now + " UPDATE EMPLOYEE FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public void DeleteEmployee(mEmployeeModel pModel)
+        public ResponseModel DeleteEmployee(mEmployeeModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"UPDATE m_employee 
                                     SET `flag_active` = @pFlagActive,
                                         `end_working` = @pEndWorking,
@@ -790,6 +813,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " DELETE EMPLOYEE SUCCESS, Employee Code : " + pModel.employee_code + " Employee Name : " + pModel.employee_name;
                         Log.Debug(DateTime.Now + " DELETE EMPLOYEE SUCCESS ====>>>>>> Employee Code : " + pModel.employee_code + " Employee Name : " + pModel.employee_name);
 
                     }
@@ -797,9 +822,13 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " DELETE EMPLOYEE FAILED......";
+
                 Log.Error(DateTime.Now + " DELETE EMPLOYEE FAILED", ex);
             }
 
+            return vResp;
         }
 
         public int getEmployeeSeqNo(string pEmployeeCode,string pCompanyCode)

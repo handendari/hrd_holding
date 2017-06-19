@@ -182,5 +182,40 @@ namespace hrd_holding.Controllers
                     }).ToArray()
             }, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public dynamic InsertEmployee(mEmployeeModel pModel)
+        {
+            LOG.Debug(DateTime.Now + "Emp Code : " + pModel.employee_code + ", employee_name : " + pModel.employee_name);
+
+            var vResp = _empService.InsertEmployee(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public dynamic UpdateEmployee(mEmployeeModel pModel)
+        {
+            LOG.Debug(DateTime.Now + " Masuk Controller Emp Code : " + pModel.employee_code + ", employee_name : " + pModel.employee_name);
+
+            var vResp = new ResponseModel();
+            vResp = _empService.UpdateEmployee(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public dynamic DeleteEmployeeEducation(mEmployeeModel pModel)
+        {
+            LOG.Debug(DateTime.Now + "MASUK DELETE Emp Code : " + pModel.employee_code + ", Seq No : " + pModel.seq_no);
+
+            var vResp = _empService.DeleteEmployee(pModel);
+
+
+            return Json(new { vResp });
+        }
+
     }
 }

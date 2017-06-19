@@ -403,17 +403,17 @@ function f_InsertEmployee() {
         company_name: $("#txtCompany").val(),
         branch_code: $("#txtIntBranch").data("branch_code"),
         branch_name: $("#txtBranch").val(),
-        department_code: $("#txtKdDepartement").data("dept_code"),
+        department_code: $("#txtKdDepartement").data("department_code"),
         department_name: $("#txtNmDepartement").val(),
         division_code: 0,
         title_code: $("#txtKdJobTitle").data("title_code"),
         title_name: $("#txtNmJobTitle").val(),
         subtitle_code: $("#txtKdGrade").data("grade_code"),
-        subtitle_name: $("#txtNmGrade"),
+        subtitle_name: $("#txtNmGrade").val(),
         level_code: $("#txtKdLevel").data("level_code"),
-        level_name: $("#txtNmLevel"),
+        level_name: $("#txtNmLevel").val(),
         status_code: $("#txtKdStatus").data("status_code"),
-        status_name: $("#txtNmStatus"),
+        status_name: $("#txtNmStatus").val(),
         flag_shiftable: $("#chkSpecialLate").val() == true ? 1 : 0,
         //flag_transport = aa.GetInt16("flag_transport"),
         place_birth: $("#txtPob").val(),
@@ -430,7 +430,7 @@ function f_InsertEmployee() {
         //npwp_address = aa.GetString("npwp_address"),
         //no_jamsostek = aa.GetString("no_jamsostek"),
         //jstk_registered_date = (aa["jstk_registered_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["jstk_registered_date"]),
-        bank_code: $("#txtKdBank").data("bank_code"),
+        bank_code: $("#txtKdBank").val(),
         bank_account: $("#txtBankAcc").val(),
         bank_acc_name: $("#txtBankAccName").val(),
         start_working: $("#dtStartWorking").jqxDateTimeInput('getDate'),
@@ -443,7 +443,7 @@ function f_InsertEmployee() {
         identity_number: $("#txtNoKtp").val(),
         last_education: $("#txtLastEducation").val(),
         last_employment: $("#txtLastEmployment").val(),
-        //description = aa.GetString("description"),
+        description: $("#txtDescription").val(),
         flag_active: vActive,
         //end_working = (aa["end_working"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["end_working"]),
         //reason = aa.GetString("reason"),
@@ -457,6 +457,49 @@ function f_InsertEmployee() {
         //note2 = aa.GetString("note2"),
         //note3 = aa.GetString("note3")
     });
+
+    var vEmployeeCode = $("#txtId").data("employee_code");
+    var vSeqNo = $("#txtSeqNo").val();
+
+    if (vEmployeeCode != "") {
+
+        $.ajax({
+            url: base_url + "Employee/UpdateEmployee",
+            type: "POST",
+            contentType: "application/json",
+            data: vModel,
+            success: function (d) {
+                var isOke = d.vResp['isValid'];
+
+                if (isOke) {
+                    Form_Load(vEmployeeCode, vSeqNo);
+                } else {
+                    f_MessageBoxShow(d.vResp['message']);
+                }
+                //$('#btnExpSave').jqxButton({ disabled: false });
+                f_HideLoaderModal();
+            }
+        });
+    } else {
+        $.ajax({
+            url: base_url + "Employee/InsertEmployee",
+            type: "POST",
+            contentType: "application/json",
+            data: vModel,
+            success: function (d) {
+                var isOke = d.vResp['isValid'];
+
+                if (isOke) {
+                    Form_Load(vEmployeeCode, vSeqNo);
+                } else {
+                    f_MessageBoxShow(d.vResp['message']);
+                }
+                //$('#btnExpave').jqxButton({ disabled: false });
+                f_HideLoaderModal();
+            }
+        });
+    }
+
 }
 
 function Form_Load(pEmployeeCode, pSeqNo) {
@@ -739,6 +782,11 @@ $(document).ready(function () {
     $("#txtKdAtasan").jqxInput({ theme: vTheme, width: 150, disabled: true });
     $("#btnkdAtasan").jqxButton({ theme: vTheme });
     $("#txtNmAtasan").jqxInput({ theme: vTheme, width: 300, disabled: true });
+    $('#txtDescription').jqxTextArea({
+        theme: vTheme, placeHolder: 'Description Master Employee',
+        height: 50, width: 300, minLength: 1
+    });
+
 
     $("#btnContractNew").jqxButton({ theme: vTheme });
     $("#btnContractEdit").jqxButton({ theme: vTheme });
@@ -747,9 +795,9 @@ $(document).ready(function () {
     $("#chkManagerial").jqxCheckBox({ theme: vTheme });
     $("#chkSpecialLate").jqxCheckBox({ theme: vTheme });
 
-    $("#optProbation").jqxRadioButton({ theme: vTheme, groupName: "status" });
-    $("#optActive").jqxRadioButton({ theme: vTheme, groupName: "status" });
-    $("#optNonActive").jqxRadioButton({ theme: vTheme, groupName: "status" });
+    $("#optProbation").jqxRadioButton({ theme: vTheme, groupName: "status", disabled: true });
+    $("#optActive").jqxRadioButton({ theme: vTheme, groupName: "status", disabled: true });
+    $("#optNonActive").jqxRadioButton({ theme: vTheme, groupName: "status", disabled: true });
 
     $('#jqxTabs').jqxTabs({
         width: '100%', height: 300, theme: vTheme,
@@ -817,7 +865,7 @@ $(document).ready(function () {
 
     $("#EmpToolBar").jqxToolBar({
         theme: vTheme,
-        width: '100%', height: 35, tools: 'button | button', rtl: true,
+        width: '100%', height: 35, tools: 'button | button | button', rtl: true,
         initTools: function (type, index, tool, menuToolIninitialization) {
             if (type == "button") {
                 tool.height("25px");
@@ -826,15 +874,25 @@ $(document).ready(function () {
             switch (index) {
                 case 0:
                     var button = $("<div>" +
+                                        "<img style='vertical-align:middle' src='../content/images/Submit Resume_24_grey.png'/>" +
+                                        "<span>ACTIVATE</span> " +
+                                   "</div>");
+                    tool.append(button);
+                    tool.on("click", function () {
+                        f_MessageBoxShow("Karyawan di aktifkan...");
+                    });
+                    break;
+                case 1:
+                    var button = $("<div>" +
                                         "<img style='vertical-align:middle' src='../content/images/Save as_24_grey.png'/>" +
                                         "<span>SAVE DATA</span> " +
                                    "</div>");
                     tool.append(button);
                     tool.on("click", function () {
-                        f_MessageBoxShow("Simpan Data...");
+                        f_InsertEmployee();
                     });
                     break;
-                case 1:
+                case 2:
                     var button = $("<div>" +
                                         "<img style='vertical-align:middle' src='../content/images/add property_24_grey.png'/>" +
                                         "<span>NEW DATA</span> " +
@@ -844,6 +902,7 @@ $(document).ready(function () {
                         f_empty_employee_form();
                     });
                     break;
+
             }
         }
     });
@@ -866,7 +925,7 @@ $(document).ready(function () {
                                 $("#txtEduCountryName").val(rd.country_name);
                             } else {
                                 $("#txtKdCountry").val(rd.int_country);
-                                $("#txtKdCountry").data("emp_country_code", rd.country_code);
+                                $("#txtKdCountry").data("country_code", rd.country_code);
 
                                 $("#txtNmCountry").val(rd.country_name);
                             }
