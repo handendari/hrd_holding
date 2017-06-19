@@ -799,6 +799,16 @@ $(document).ready(function () {
     $("#optActive").jqxRadioButton({ theme: vTheme, groupName: "status", disabled: true });
     $("#optNonActive").jqxRadioButton({ theme: vTheme, groupName: "status", disabled: true });
 
+    var vEmployeeCode = $.urlParam('pEmployeeCode')
+    var vSeqNo = $.urlParam('pSeqNo')
+
+    if (vEmployeeCode == "") {
+        f_HideLoaderModal();
+    }else{
+        Form_Load(vEmployeeCode, vSeqNo);
+    }
+
+
     $('#jqxTabs').jqxTabs({
         width: '100%', height: 300, theme: vTheme,
         position: 'top', selectionTracker: 1, animationType: 'fade'
@@ -1260,8 +1270,6 @@ $(document).ready(function () {
 
     $("#btnYes").jqxButton({ theme: vTheme, height: 30, width: 60 });
     $("#btnNo").jqxButton({ theme: vTheme, height: 30, width: 60 });
-
-    Form_Load("35151269069300041", 1);
 
     $('#btnYes').on('click', function (event) {
         var vEmpCode = $("#txtId").data("employee_code");

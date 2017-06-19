@@ -450,7 +450,7 @@ namespace hrd_holding.Repositories
                                         flag_active = aa.GetInt16("flag_active"),
                                         end_working = (aa["end_working"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["end_working"]),
                                         reason = aa.GetString("reason"),
-                                        picture = aa.GetString("picture"),
+                                        //picture = aa.GetString("picture"),
                                         salary_type = aa.GetInt16("salary_type"),
                                         tgl_mutasi = (aa["tgl_mutasi"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["tgl_mutasi"]),
                                         flag_managerial = aa.GetInt16("flag_managerial"),
@@ -463,6 +463,7 @@ namespace hrd_holding.Repositories
                                         entry_user = aa.GetString("entry_user"),
                                         edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),
                                         edit_user = aa.GetString("edit_user")
+                                      
                                     };
                                     vList.Add(m);
                                 }

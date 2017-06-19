@@ -110,6 +110,7 @@ namespace hrd_holding.Controllers
                     select new
                     {
                         vItem.employee_code,
+                        vItem.seq_no,
                         vItem.employee_name,
                         vItem.emp_address,
                         vItem.company_name,

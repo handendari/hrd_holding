@@ -79,8 +79,9 @@ namespace hrd_holding.Repositories
             var vList = new List<mCompanyModel>();
             var strSQL = @"SELECT mco.company_code,mco.int_company,
                                 mco.country_code,mcu.country_name,mcu.int_country,
-                                mco.company_name,mco.address,mco.postal_code,
-                                mco.city_name,mco.state,mco.phone_number,mco.fax_number,mco.web_address,
+                                mco.company_name,IFNULL(mco.address,'') address,IFNULL(mco.postal_code,'') postal_code,
+                                IFNULL(mco.city_name,'') city_name,IFNULL(mco.state,'') state,
+                                IFNULL(mco.phone_number,'') phone_number,IFNULL(mco.fax_number,'') fax_number,IFNULL(mco.web_address,'') web_address,
                                 IFNULL(mco.email_address,'') email_address,IFNULL(mco.npwp,'') npwp,IFNULL(mco.pimpinan,'') pimpinan,IFNULL(mco.pimpinan_npwp,'') pimpinan_npwp,
                                 IFNULL(mco.npp,'') npp,IFNULL(mco.jhk,0) jhk,mco.entry_date,IFNULL(mco.entry_user,'') entry_user,mco.edit_date,IFNULL(mco.edit_user,'') edit_user
                             FROM m_company mco JOIN m_country mcu ON mco.country_code = mcu.country_code " +

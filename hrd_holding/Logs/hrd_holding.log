@@ -25233,3 +25233,593 @@ DEBUG 2017-06-16 15:26:24,817  8705ms EmployeeTrainingRepo   ployeeTrainingList 
 ERROR 2017-06-16 15:26:24,819  8707ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:26:24 PM EMPLOYEE CODE : 35151269069300041
 ERROR 2017-06-16 15:26:24,829  8717ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:26:24 PM MASUK LOOPING ADD DATA..... 
 ERROR 2017-06-16 15:26:24,832  8720ms EmployeeCompanyRepo    mployeeCompanyList - 6/16/2017 3:26:24 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-19 08:50:27,264 14304ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 8:50:27 AM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-19 08:50:35,019 22059ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 8:50:35 AM====>>>> EMPLOYEE INFO ADA DATA....
+DEBUG 2017-06-19 08:50:35,051 22091ms EmployeeService        GetEmployeeInfo    - 6/19/2017 8:50:35 AM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-19 08:50:35,079 22119ms EmployeeFamilyRepo     EmployeeFamilyList - 6/19/2017 8:50:35 AM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-19 08:50:35,107 22147ms EmployeeContractRepo   ployeeContractList - 6/19/2017 8:50:35 AM JML Employee CONTRACT List: 0
+DEBUG 2017-06-19 08:50:35,135 22175ms EmployeeEducationRepo  loyeeEducationList - 6/19/2017 8:50:35 AM JML Employee EDUCATION List: 1
+DEBUG 2017-06-19 08:50:35,163 22203ms EmployeeExperienceRepo oyeeExperienceList - 6/19/2017 8:50:35 AM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-19 08:50:35,199 22239ms EmployeeSkillRepo      tEmployeeSkillList - 6/19/2017 8:50:35 AM JML Employee SKILL List: 1
+DEBUG 2017-06-19 08:50:35,223 22263ms EmployeeTrainingRepo   ployeeTrainingList - 6/19/2017 8:50:35 AM JML Employee Training List: 0
+ERROR 2017-06-19 08:50:35,235 22275ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 8:50:35 AM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-19 08:50:35,275 22315ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 8:50:35 AM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-19 08:50:35,283 22323ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 8:50:35 AM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-19 08:51:00,360 47401ms EmployeeService        GetEmployeeList    - 6/19/2017 8:51:00 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 08:51:00,364 47405ms EmployeeService        GetEmployeeList    - 6/19/2017 8:51:00 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 08:51:00,504 47545ms EmployeeRepo           getEmployeeList    - 6/19/2017 8:51:00 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 09:12:24,769 173043ms EmployeeService        GetEmployeeList    - 6/19/2017 9:12:24 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 09:12:24,841 173115ms EmployeeService        GetEmployeeList    - 6/19/2017 9:12:24 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 09:12:26,727 175001ms EmployeeRepo           getEmployeeList    - 6/19/2017 9:12:26 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 09:13:00,210 208484ms EmployeeService        GetEmployeeList    - 6/19/2017 9:13:00 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 09:13:00,210 208484ms EmployeeService        GetEmployeeList    - 6/19/2017 9:13:00 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 09:13:00,270 208544ms EmployeeRepo           getEmployeeList    - 6/19/2017 9:13:00 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 09:13:08,768 217042ms EmployeeService        GetEmployeeList    - 6/19/2017 9:13:08 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 09:13:08,772 217046ms EmployeeService        GetEmployeeList    - 6/19/2017 9:13:08 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 09:13:08,844 217118ms EmployeeRepo           getEmployeeList    - 6/19/2017 9:13:08 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 09:13:20,029 228303ms EmployeeService        GetEmployeeList    - 6/19/2017 9:13:20 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 09:13:20,029 228303ms EmployeeService        GetEmployeeList    - 6/19/2017 9:13:20 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 09:13:20,085 228359ms EmployeeRepo           getEmployeeList    - 6/19/2017 9:13:20 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 09:13:41,803 250077ms EmployeeService        GetEmployeeList    - 6/19/2017 9:13:41 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 09:13:41,807 250081ms EmployeeService        GetEmployeeList    - 6/19/2017 9:13:41 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 09:13:42,095 250369ms EmployeeRepo           getEmployeeList    - 6/19/2017 9:13:42 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 09:18:27,039 535313ms EmployeeService        GetEmployeeList    - 6/19/2017 9:18:27 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 09:18:27,041 535315ms EmployeeService        GetEmployeeList    - 6/19/2017 9:18:27 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 09:18:27,136 535410ms EmployeeRepo           getEmployeeList    - 6/19/2017 9:18:27 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 09:20:07,100 635374ms EmployeeService        GetEmployeeList    - 6/19/2017 9:20:07 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 09:20:07,102 635376ms EmployeeService        GetEmployeeList    - 6/19/2017 9:20:07 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 09:20:07,144 635418ms EmployeeRepo           getEmployeeList    - 6/19/2017 9:20:07 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 09:20:25,825 654099ms EmployeeService        GetEmployeeList    - 6/19/2017 9:20:25 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 09:20:25,826 654100ms EmployeeService        GetEmployeeList    - 6/19/2017 9:20:25 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 09:20:25,867 654141ms EmployeeRepo           getEmployeeList    - 6/19/2017 9:20:25 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 09:58:38,974  4776ms EmployeeService        GetEmployeeList    - 6/19/2017 9:58:38 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 09:58:39,004  4806ms EmployeeService        GetEmployeeList    - 6/19/2017 9:58:39 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 09:58:39,383  5185ms EmployeeRepo           getEmployeeList    - 6/19/2017 9:58:39 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 10:01:32,349 178152ms EmployeeService        GetEmployeeList    - 6/19/2017 10:01:32 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 10:01:32,350 178153ms EmployeeService        GetEmployeeList    - 6/19/2017 10:01:32 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 10:01:32,432 178235ms EmployeeRepo           getEmployeeList    - 6/19/2017 10:01:32 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 10:01:59,625 205428ms EmployeeService        GetEmployeeList    - 6/19/2017 10:01:59 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 10:01:59,626 205428ms EmployeeService        GetEmployeeList    - 6/19/2017 10:01:59 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 10:01:59,697 205499ms EmployeeRepo           getEmployeeList    - 6/19/2017 10:01:59 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 10:02:25,430 231232ms EmployeeService        GetEmployeeList    - 6/19/2017 10:02:25 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 10:02:25,431 231234ms EmployeeService        GetEmployeeList    - 6/19/2017 10:02:25 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 10:02:25,485 231287ms EmployeeRepo           getEmployeeList    - 6/19/2017 10:02:25 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 10:04:55,328 381130ms EmployeeService        GetEmployeeList    - 6/19/2017 10:04:55 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 10:04:55,329 381131ms EmployeeService        GetEmployeeList    - 6/19/2017 10:04:55 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 10:04:55,502 381305ms EmployeeRepo           getEmployeeList    - 6/19/2017 10:04:55 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 10:05:36,391 422193ms EmployeeService        GetEmployeeList    - 6/19/2017 10:05:36 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 10:05:36,391 422194ms EmployeeService        GetEmployeeList    - 6/19/2017 10:05:36 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 10:05:36,446 422249ms EmployeeRepo           getEmployeeList    - 6/19/2017 10:05:36 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 10:06:48,533 494335ms EmployeeService        GetEmployeeList    - 6/19/2017 10:06:48 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 10:06:48,534 494336ms EmployeeService        GetEmployeeList    - 6/19/2017 10:06:48 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 10:06:48,567 494369ms EmployeeRepo           getEmployeeList    - 6/19/2017 10:06:48 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 10:08:01,068 566871ms EmployeeService        GetEmployeeList    - 6/19/2017 10:08:01 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 10:08:01,069 566872ms EmployeeService        GetEmployeeList    - 6/19/2017 10:08:01 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 10:08:01,132 566934ms EmployeeRepo           getEmployeeList    - 6/19/2017 10:08:01 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 10:08:08,706 574508ms EmployeeService        GetEmployeeList    - 6/19/2017 10:08:08 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 10:08:08,706 574509ms EmployeeService        GetEmployeeList    - 6/19/2017 10:08:08 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 10:08:08,744 574547ms EmployeeRepo           getEmployeeList    - 6/19/2017 10:08:08 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 10:10:04,955 690758ms EmployeeService        GetEmployeeList    - 6/19/2017 10:10:04 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 10:10:04,956 690759ms EmployeeService        GetEmployeeList    - 6/19/2017 10:10:04 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 10:10:05,013 690816ms EmployeeRepo           getEmployeeList    - 6/19/2017 10:10:05 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 10:10:18,392 704194ms EmployeeService        GetEmployeeList    - 6/19/2017 10:10:18 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 10:10:18,392 704195ms EmployeeService        GetEmployeeList    - 6/19/2017 10:10:18 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 10:10:18,426 704229ms EmployeeRepo           getEmployeeList    - 6/19/2017 10:10:18 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 11:07:31,447  6262ms EmployeeService        GetEmployeeList    - 6/19/2017 11:07:31 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 11:07:31,483  6299ms EmployeeService        GetEmployeeList    - 6/19/2017 11:07:31 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 11:07:31,977  6792ms EmployeeRepo           getEmployeeList    - 6/19/2017 11:07:31 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 11:07:34,550  9365ms CompanyController      GetCompanyLookUp   - 6/19/2017 11:07:34 AM WHERE : 
+DEBUG 2017-06-19 11:07:34,559  9374ms CompanyController      GetCompanyLookUp   - 6/19/2017 11:07:34 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 11:07:34,560  9376ms mCompanyService        GetCompanyList     - 6/19/2017 11:07:34 AM vRows : 15 vStart : 0
+ERROR 2017-06-19 11:07:34,674  9489ms CompanyRepo            getCompanyList     - 6/19/2017 11:07:34 AM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 11:07:47,768 22584ms BranchOfficeService    etBranchOfficeList - 6/19/2017 11:07:47 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 11:08:18,061 52877ms EmployeeService        GetEmployeeList    - 6/19/2017 11:08:18 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 11:08:18,062 52878ms EmployeeService        GetEmployeeList    - 6/19/2017 11:08:18 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 11:08:18,139 52955ms EmployeeRepo           getEmployeeList    - 6/19/2017 11:08:18 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 11:08:20,498 55314ms CompanyController      GetCompanyLookUp   - 6/19/2017 11:08:20 AM WHERE : 
+DEBUG 2017-06-19 11:08:20,499 55314ms CompanyController      GetCompanyLookUp   - 6/19/2017 11:08:20 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 11:08:20,499 55315ms mCompanyService        GetCompanyList     - 6/19/2017 11:08:20 AM vRows : 15 vStart : 0
+ERROR 2017-06-19 11:08:20,546 55361ms CompanyRepo            getCompanyList     - 6/19/2017 11:08:20 AM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 11:08:23,952 58767ms BranchOfficeService    etBranchOfficeList - 6/19/2017 11:08:23 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 11:21:02,074 816890ms EmployeeService        GetEmployeeList    - 6/19/2017 11:21:02 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 11:21:02,075 816891ms EmployeeService        GetEmployeeList    - 6/19/2017 11:21:02 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 11:21:02,269 817085ms EmployeeRepo           getEmployeeList    - 6/19/2017 11:21:02 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 11:21:51,514 866330ms EmployeeService        GetEmployeeList    - 6/19/2017 11:21:51 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 11:21:51,515 866331ms EmployeeService        GetEmployeeList    - 6/19/2017 11:21:51 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 11:21:51,574 866390ms EmployeeRepo           getEmployeeList    - 6/19/2017 11:21:51 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 11:22:11,659 886474ms EmployeeService        GetEmployeeList    - 6/19/2017 11:22:11 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 11:22:11,660 886475ms EmployeeService        GetEmployeeList    - 6/19/2017 11:22:11 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 11:22:11,725 886540ms EmployeeRepo           getEmployeeList    - 6/19/2017 11:22:11 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 11:23:24,600 959416ms EmployeeService        GetEmployeeList    - 6/19/2017 11:23:24 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 11:23:24,601 959417ms EmployeeService        GetEmployeeList    - 6/19/2017 11:23:24 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 11:23:24,651 959467ms EmployeeRepo           getEmployeeList    - 6/19/2017 11:23:24 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 11:23:45,345 980160ms EmployeeService        GetEmployeeList    - 6/19/2017 11:23:45 AM pPage : 0 pRows : 15
+DEBUG 2017-06-19 11:23:45,345 980160ms EmployeeService        GetEmployeeList    - 6/19/2017 11:23:45 AM vRows : 15 vStart : 0
+DEBUG 2017-06-19 11:23:45,417 980232ms EmployeeRepo           getEmployeeList    - 6/19/2017 11:23:45 AM Jumlah Data Employee : 15
+DEBUG 2017-06-19 12:56:16,805    71ms CompanyController      GetCompanyLookUp   - 6/19/2017 12:56:16 PM WHERE : 
+DEBUG 2017-06-19 12:56:16,831    96ms CompanyController      GetCompanyLookUp   - 6/19/2017 12:56:16 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 12:56:16,832    98ms mCompanyService        GetCompanyList     - 6/19/2017 12:56:16 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 12:56:24,213  7478ms CompanyRepo            getCompanyList     - 6/19/2017 12:56:24 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 13:56:15,159 31520ms EmployeeService        GetEmployeeList    - 6/19/2017 1:56:15 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 13:56:15,486 31847ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 1:56:15 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-19 13:56:15,620 31981ms EmployeeService        GetEmployeeList    - 6/19/2017 1:56:15 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 13:56:33,103 49464ms EmployeeRepo           getEmployeeList    - 6/19/2017 1:56:33 PM GetEmployeeList FAILED... 
+System.TimeoutException: Timeout in IO operation
+   at MySql.Data.MySqlClient.TimedStream.StopTimer()
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeList(Int32 pCompanyCode, Int32 pBranchCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 366
+ERROR 2017-06-19 13:56:33,103 49464ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 1:56:33 PM GetEmployeeInfo Failed
+System.TimeoutException: Timeout in IO operation
+   at MySql.Data.MySqlClient.TimedStream.StopTimer()
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeInfo(String pEmployeeCode, Int32 pSeqNo) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 535
+DEBUG 2017-06-19 13:56:33,143 49504ms EmployeeService        GetEmployeeInfo    - 6/19/2017 1:56:33 PM SERVICE EMP CODE : 
+ERROR 2017-06-19 13:56:49,215 65576ms EmployeeFamilyRepo     EmployeeFamilyList - 6/19/2017 1:56:49 PM GetEmployeeFamilyList FAILED... 
+System.TimeoutException: Timeout in IO operation
+   at MySql.Data.MySqlClient.TimedStream.StopTimer()
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeFamilyRepo.getEmployeeFamilyList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeFamilyRepo.cs:line 108
+DEBUG 2017-06-19 13:56:49,284 65646ms EmployeeFamilyRepo     EmployeeFamilyList - 6/19/2017 1:56:49 PM=======>>>> Jml DATA EMPLOYEE LIST : 0
+DEBUG 2017-06-19 13:56:55,137 71498ms CompanyController      GetCompanyLookUp   - 6/19/2017 1:56:55 PM WHERE : 
+DEBUG 2017-06-19 13:56:55,154 71515ms CompanyController      GetCompanyLookUp   - 6/19/2017 1:56:55 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 13:56:55,154 71515ms mCompanyService        GetCompanyList     - 6/19/2017 1:56:55 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 13:57:06,305 82666ms EmployeeContractRepo   ployeeContractList - 6/19/2017 1:57:06 PM GetEmployeeContractList FAILED... 
+System.TimeoutException: Timeout in IO operation
+   at MySql.Data.MySqlClient.TimedStream.StopTimer()
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeContractRepo.getEmployeeContractList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeContractRepo.cs:line 74
+DEBUG 2017-06-19 13:57:06,321 82682ms EmployeeContractRepo   ployeeContractList - 6/19/2017 1:57:06 PM JML Employee CONTRACT List: 0
+ERROR 2017-06-19 13:57:08,085 84446ms CompanyRepo            getCompanyList     - 6/19/2017 1:57:08 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 13:57:20,565 96926ms BranchOfficeService    etBranchOfficeList - 6/19/2017 1:57:20 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 13:57:23,031 99392ms EmployeeEducationRepo  loyeeEducationList - 6/19/2017 1:57:23 PM GetEmployeeEducationList FAILED... 
+System.TimeoutException: Timeout in IO operation
+   at MySql.Data.MySqlClient.TimedStream.StopTimer()
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mEmployeeEducationRepo.getEmployeeEducationList(String pEmployeeCode) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeEducationRepo.cs:line 86
+DEBUG 2017-06-19 13:57:23,084 99445ms EmployeeEducationRepo  loyeeEducationList - 6/19/2017 1:57:23 PM JML Employee EDUCATION List: 0
+DEBUG 2017-06-19 13:57:23,391 99753ms EmployeeExperienceRepo oyeeExperienceList - 6/19/2017 1:57:23 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-19 13:57:23,641 100003ms EmployeeSkillRepo      tEmployeeSkillList - 6/19/2017 1:57:23 PM JML Employee SKILL List: 1
+DEBUG 2017-06-19 13:57:23,920 100281ms EmployeeTrainingRepo   ployeeTrainingList - 6/19/2017 1:57:23 PM JML Employee Training List: 0
+ERROR 2017-06-19 13:57:23,951 100312ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 1:57:23 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-19 13:57:24,658 101019ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 1:57:24 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-19 13:57:24,658 101019ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 1:57:24 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-19 14:09:47,418 55476ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:09:47 PM WHERE : 
+DEBUG 2017-06-19 14:09:47,481 55539ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:09:47 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 14:09:47,482 55540ms mCompanyService        GetCompanyList     - 6/19/2017 2:09:47 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 14:10:04,532 72590ms CompanyRepo            getCompanyList     - 6/19/2017 2:10:04 PM GetCompanyList FAILED... 
+System.TimeoutException: Timeout in IO operation
+   at MySql.Data.MySqlClient.TimedStream.StopTimer()
+   at MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   at MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.Open()
+   at MySql.Data.MySqlClient.Driver.Open()
+   at MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   at MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 92
+DEBUG 2017-06-19 14:13:36,438 284495ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:13:36 PM WHERE : 
+DEBUG 2017-06-19 14:13:36,439 284496ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:13:36 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 14:13:36,439 284496ms mCompanyService        GetCompanyList     - 6/19/2017 2:13:36 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 14:13:36,674 284731ms CompanyRepo            getCompanyList     - 6/19/2017 2:13:36 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 14:13:42,722 290779ms BranchOfficeService    etBranchOfficeList - 6/19/2017 2:13:42 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 14:14:21,057 329115ms EmployeeService        GetEmployeeList    - 6/19/2017 2:14:21 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 14:14:21,059 329117ms EmployeeService        GetEmployeeList    - 6/19/2017 2:14:21 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 14:14:21,345 329402ms EmployeeRepo           getEmployeeList    - 6/19/2017 2:14:21 PM Jumlah Data Employee : 0
+DEBUG 2017-06-19 14:15:06,937 374994ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:15:06 PM WHERE : 
+DEBUG 2017-06-19 14:15:06,937 374994ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:15:06 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 14:15:06,938 374995ms mCompanyService        GetCompanyList     - 6/19/2017 2:15:06 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 14:15:06,970 375027ms CompanyRepo            getCompanyList     - 6/19/2017 2:15:06 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 14:15:10,131 378188ms BranchOfficeService    etBranchOfficeList - 6/19/2017 2:15:10 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 14:15:17,052 385109ms EmployeeService        GetEmployeeList    - 6/19/2017 2:15:17 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 14:15:17,053 385110ms EmployeeService        GetEmployeeList    - 6/19/2017 2:15:17 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 14:15:17,088 385145ms EmployeeRepo           getEmployeeList    - 6/19/2017 2:15:17 PM Jumlah Data Employee : 0
+DEBUG 2017-06-19 14:15:38,094 406151ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:15:38 PM WHERE : 
+DEBUG 2017-06-19 14:15:38,094 406151ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:15:38 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 14:15:38,094 406151ms mCompanyService        GetCompanyList     - 6/19/2017 2:15:38 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 14:15:38,240 406297ms CompanyRepo            getCompanyList     - 6/19/2017 2:15:38 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 14:15:41,867 409924ms BranchOfficeService    etBranchOfficeList - 6/19/2017 2:15:41 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 14:15:56,963 425020ms EmployeeService        GetEmployeeList    - 6/19/2017 2:15:56 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 14:15:56,964 425021ms EmployeeService        GetEmployeeList    - 6/19/2017 2:15:56 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 14:15:57,199 425257ms EmployeeRepo           getEmployeeList    - 6/19/2017 2:15:57 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 14:38:54,143  8190ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:38:54 PM WHERE : 
+DEBUG 2017-06-19 14:38:54,180  8227ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:38:54 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 14:38:54,181  8228ms mCompanyService        GetCompanyList     - 6/19/2017 2:38:54 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 14:38:54,671  8718ms CompanyRepo            getCompanyList     - 6/19/2017 2:38:54 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 14:38:59,006 13052ms BranchOfficeService    etBranchOfficeList - 6/19/2017 2:38:59 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 14:39:03,499 17546ms EmployeeService        GetEmployeeList    - 6/19/2017 2:39:03 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 14:39:03,500 17547ms EmployeeService        GetEmployeeList    - 6/19/2017 2:39:03 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 14:39:04,045 18092ms EmployeeRepo           getEmployeeList    - 6/19/2017 2:39:04 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 14:39:45,342 59389ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 2:39:45 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-19 14:39:45,439 59486ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 2:39:45 PM====>>>> EMPLOYEE INFO ADA DATA....
+DEBUG 2017-06-19 14:39:45,442 59489ms EmployeeService        GetEmployeeInfo    - 6/19/2017 2:39:45 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-19 14:39:45,518 59565ms EmployeeFamilyRepo     EmployeeFamilyList - 6/19/2017 2:39:45 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-19 14:39:45,558 59605ms EmployeeContractRepo   ployeeContractList - 6/19/2017 2:39:45 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-19 14:39:45,666 59713ms EmployeeEducationRepo  loyeeEducationList - 6/19/2017 2:39:45 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-19 14:39:45,686 59733ms EmployeeExperienceRepo oyeeExperienceList - 6/19/2017 2:39:45 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-19 14:39:45,760 59807ms EmployeeSkillRepo      tEmployeeSkillList - 6/19/2017 2:39:45 PM JML Employee SKILL List: 1
+DEBUG 2017-06-19 14:39:45,788 59835ms EmployeeTrainingRepo   ployeeTrainingList - 6/19/2017 2:39:45 PM JML Employee Training List: 0
+ERROR 2017-06-19 14:39:45,792 59839ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 2:39:45 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-19 14:39:46,021 60068ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 2:39:46 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-19 14:39:46,024 60071ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 2:39:46 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-19 14:41:09,328 143375ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:41:09 PM WHERE : 
+DEBUG 2017-06-19 14:41:09,329 143375ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:41:09 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 14:41:09,329 143376ms mCompanyService        GetCompanyList     - 6/19/2017 2:41:09 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 14:41:09,373 143419ms CompanyRepo            getCompanyList     - 6/19/2017 2:41:09 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 14:41:12,137 146184ms BranchOfficeService    etBranchOfficeList - 6/19/2017 2:41:12 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 14:41:19,241 153288ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 2:41:19 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-19 14:41:19,274 153321ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 2:41:19 PM====>>>> EMPLOYEE INFO ADA DATA....
+DEBUG 2017-06-19 14:41:19,275 153322ms EmployeeService        GetEmployeeInfo    - 6/19/2017 2:41:19 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-19 14:41:19,324 153370ms EmployeeFamilyRepo     EmployeeFamilyList - 6/19/2017 2:41:19 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-19 14:41:19,364 153410ms EmployeeContractRepo   ployeeContractList - 6/19/2017 2:41:19 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-19 14:41:19,389 153436ms EmployeeEducationRepo  loyeeEducationList - 6/19/2017 2:41:19 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-19 14:41:19,416 153463ms EmployeeExperienceRepo oyeeExperienceList - 6/19/2017 2:41:19 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-19 14:41:19,452 153499ms EmployeeSkillRepo      tEmployeeSkillList - 6/19/2017 2:41:19 PM JML Employee SKILL List: 1
+DEBUG 2017-06-19 14:41:19,479 153525ms EmployeeTrainingRepo   ployeeTrainingList - 6/19/2017 2:41:19 PM JML Employee Training List: 0
+ERROR 2017-06-19 14:41:19,480 153526ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 2:41:19 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-19 14:41:19,519 153565ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 2:41:19 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-19 14:41:19,520 153566ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 2:41:19 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-19 14:42:05,980 200027ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 2:42:05 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-19 14:42:06,018 200065ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 2:42:06 PM====>>>> EMPLOYEE INFO ADA DATA....
+DEBUG 2017-06-19 14:42:06,019 200066ms EmployeeService        GetEmployeeInfo    - 6/19/2017 2:42:06 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-19 14:42:06,036 200083ms EmployeeFamilyRepo     EmployeeFamilyList - 6/19/2017 2:42:06 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-19 14:42:06,055 200102ms EmployeeContractRepo   ployeeContractList - 6/19/2017 2:42:06 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-19 14:42:06,319 200366ms EmployeeEducationRepo  loyeeEducationList - 6/19/2017 2:42:06 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-19 14:42:06,367 200414ms EmployeeExperienceRepo oyeeExperienceList - 6/19/2017 2:42:06 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-19 14:42:06,424 200471ms EmployeeSkillRepo      tEmployeeSkillList - 6/19/2017 2:42:06 PM JML Employee SKILL List: 1
+DEBUG 2017-06-19 14:42:06,450 200497ms EmployeeTrainingRepo   ployeeTrainingList - 6/19/2017 2:42:06 PM JML Employee Training List: 0
+ERROR 2017-06-19 14:42:06,450 200497ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 2:42:06 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-19 14:42:06,469 200516ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 2:42:06 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-19 14:42:06,469 200516ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 2:42:06 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-19 14:50:01,872 675919ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:50:01 PM WHERE : 
+DEBUG 2017-06-19 14:50:01,873 675920ms CompanyController      GetCompanyLookUp   - 6/19/2017 2:50:01 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 14:50:01,873 675920ms mCompanyService        GetCompanyList     - 6/19/2017 2:50:01 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 14:50:02,007 676054ms CompanyRepo            getCompanyList     - 6/19/2017 2:50:02 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 14:50:04,771 678818ms BranchOfficeService    etBranchOfficeList - 6/19/2017 2:50:04 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 14:50:08,459 682505ms EmployeeService        GetEmployeeList    - 6/19/2017 2:50:08 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 14:50:08,460 682506ms EmployeeService        GetEmployeeList    - 6/19/2017 2:50:08 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 14:50:08,565 682612ms EmployeeRepo           getEmployeeList    - 6/19/2017 2:50:08 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 14:50:15,189 689236ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 2:50:15 PM====>>>> Emp Code : 35151269069300041 segno : 1
+DEBUG 2017-06-19 14:50:15,266 689313ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 2:50:15 PM====>>>> EMPLOYEE INFO ADA DATA....
+DEBUG 2017-06-19 14:50:15,266 689313ms EmployeeService        GetEmployeeInfo    - 6/19/2017 2:50:15 PM SERVICE EMP CODE : 35151269069300041
+DEBUG 2017-06-19 14:50:15,295 689342ms EmployeeFamilyRepo     EmployeeFamilyList - 6/19/2017 2:50:15 PM=======>>>> Jml DATA EMPLOYEE LIST : 5
+DEBUG 2017-06-19 14:50:15,313 689360ms EmployeeContractRepo   ployeeContractList - 6/19/2017 2:50:15 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-19 14:50:15,327 689374ms EmployeeEducationRepo  loyeeEducationList - 6/19/2017 2:50:15 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-19 14:50:15,347 689394ms EmployeeExperienceRepo oyeeExperienceList - 6/19/2017 2:50:15 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-19 14:50:15,361 689408ms EmployeeSkillRepo      tEmployeeSkillList - 6/19/2017 2:50:15 PM JML Employee SKILL List: 1
+DEBUG 2017-06-19 14:50:15,373 689420ms EmployeeTrainingRepo   ployeeTrainingList - 6/19/2017 2:50:15 PM JML Employee Training List: 0
+ERROR 2017-06-19 14:50:15,374 689421ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 2:50:15 PM EMPLOYEE CODE : 35151269069300041
+ERROR 2017-06-19 14:50:15,386 689433ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 2:50:15 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-19 14:50:15,387 689434ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 2:50:15 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-19 15:04:52,265 1566312ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 3:04:52 PM====>>>> Emp Code : 0000351 segno : 1
+DEBUG 2017-06-19 15:04:52,486 1566533ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 3:04:52 PM====>>>> EMPLOYEE INFO ADA DATA....
+DEBUG 2017-06-19 15:04:52,487 1566534ms EmployeeService        GetEmployeeInfo    - 6/19/2017 3:04:52 PM SERVICE EMP CODE : 0000351
+DEBUG 2017-06-19 15:04:52,521 1566568ms EmployeeFamilyRepo     EmployeeFamilyList - 6/19/2017 3:04:52 PM=======>>>> Jml DATA EMPLOYEE LIST : 0
+DEBUG 2017-06-19 15:04:52,553 1566600ms EmployeeContractRepo   ployeeContractList - 6/19/2017 3:04:52 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-19 15:04:52,590 1566637ms EmployeeEducationRepo  loyeeEducationList - 6/19/2017 3:04:52 PM JML Employee EDUCATION List: 0
+DEBUG 2017-06-19 15:04:52,652 1566699ms EmployeeExperienceRepo oyeeExperienceList - 6/19/2017 3:04:52 PM JML Employee EXPERIENCE List: 0
+DEBUG 2017-06-19 15:04:53,019 1567066ms EmployeeSkillRepo      tEmployeeSkillList - 6/19/2017 3:04:53 PM JML Employee SKILL List: 0
+DEBUG 2017-06-19 15:04:53,040 1567087ms EmployeeTrainingRepo   ployeeTrainingList - 6/19/2017 3:04:53 PM JML Employee Training List: 0
+ERROR 2017-06-19 15:04:53,040 1567087ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 3:04:53 PM EMPLOYEE CODE : 0000351
+ERROR 2017-06-19 15:04:53,068 1567115ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 3:04:53 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-19 15:04:53,068 1567115ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 3:04:53 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-19 15:05:45,266 1619313ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 3:05:45 PM====>>>> Emp Code : 0000381 segno : 1
+DEBUG 2017-06-19 15:05:45,299 1619346ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 3:05:45 PM====>>>> EMPLOYEE INFO ADA DATA....
+DEBUG 2017-06-19 15:05:45,300 1619347ms EmployeeService        GetEmployeeInfo    - 6/19/2017 3:05:45 PM SERVICE EMP CODE : 0000381
+DEBUG 2017-06-19 15:05:45,315 1619362ms EmployeeFamilyRepo     EmployeeFamilyList - 6/19/2017 3:05:45 PM=======>>>> Jml DATA EMPLOYEE LIST : 0
+DEBUG 2017-06-19 15:05:45,345 1619392ms EmployeeContractRepo   ployeeContractList - 6/19/2017 3:05:45 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-19 15:05:45,361 1619408ms EmployeeEducationRepo  loyeeEducationList - 6/19/2017 3:05:45 PM JML Employee EDUCATION List: 0
+DEBUG 2017-06-19 15:05:45,373 1619420ms EmployeeExperienceRepo oyeeExperienceList - 6/19/2017 3:05:45 PM JML Employee EXPERIENCE List: 0
+DEBUG 2017-06-19 15:05:45,395 1619442ms EmployeeSkillRepo      tEmployeeSkillList - 6/19/2017 3:05:45 PM JML Employee SKILL List: 0
+DEBUG 2017-06-19 15:05:45,407 1619454ms EmployeeTrainingRepo   ployeeTrainingList - 6/19/2017 3:05:45 PM JML Employee Training List: 0
+ERROR 2017-06-19 15:05:45,408 1619455ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 3:05:45 PM EMPLOYEE CODE : 0000381
+ERROR 2017-06-19 15:05:45,434 1619481ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 3:05:45 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-19 15:05:45,434 1619481ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 3:05:45 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-19 15:11:35,901 72496ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:11:35 PM WHERE : 
+DEBUG 2017-06-19 15:11:35,932 72527ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:11:35 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 15:11:35,934 72529ms mCompanyService        GetCompanyList     - 6/19/2017 3:11:35 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 15:11:36,248 72843ms CompanyRepo            getCompanyList     - 6/19/2017 3:11:36 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 15:11:39,452 76047ms BranchOfficeService    etBranchOfficeList - 6/19/2017 3:11:39 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:11:42,161 78756ms EmployeeService        GetEmployeeList    - 6/19/2017 3:11:42 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:11:42,162 78757ms EmployeeService        GetEmployeeList    - 6/19/2017 3:11:42 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:11:42,214 78809ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:11:42 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:11:52,822 89417ms EmployeeService        GetEmployeeList    - 6/19/2017 3:11:52 PM pPage : 1 pRows : 15
+DEBUG 2017-06-19 15:11:52,822 89417ms EmployeeService        GetEmployeeList    - 6/19/2017 3:11:52 PM vRows : 15 vStart : 15
+DEBUG 2017-06-19 15:11:53,142 89737ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:11:53 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:12:01,680 98275ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 3:12:01 PM====>>>> Emp Code : 00112008060200071 segno : 1
+DEBUG 2017-06-19 15:12:01,727 98322ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 3:12:01 PM====>>>> EMPLOYEE INFO ADA DATA....
+DEBUG 2017-06-19 15:12:01,730 98325ms EmployeeService        GetEmployeeInfo    - 6/19/2017 3:12:01 PM SERVICE EMP CODE : 00112008060200071
+DEBUG 2017-06-19 15:12:01,746 98341ms EmployeeFamilyRepo     EmployeeFamilyList - 6/19/2017 3:12:01 PM=======>>>> Jml DATA EMPLOYEE LIST : 1
+DEBUG 2017-06-19 15:12:01,773 98368ms EmployeeContractRepo   ployeeContractList - 6/19/2017 3:12:01 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-19 15:12:01,788 98383ms EmployeeEducationRepo  loyeeEducationList - 6/19/2017 3:12:01 PM JML Employee EDUCATION List: 1
+DEBUG 2017-06-19 15:12:01,808 98403ms EmployeeExperienceRepo oyeeExperienceList - 6/19/2017 3:12:01 PM JML Employee EXPERIENCE List: 1
+DEBUG 2017-06-19 15:12:01,823 98418ms EmployeeSkillRepo      tEmployeeSkillList - 6/19/2017 3:12:01 PM JML Employee SKILL List: 1
+DEBUG 2017-06-19 15:12:01,842 98437ms EmployeeTrainingRepo   ployeeTrainingList - 6/19/2017 3:12:01 PM JML Employee Training List: 1
+ERROR 2017-06-19 15:12:01,846 98441ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 3:12:01 PM EMPLOYEE CODE : 00112008060200071
+ERROR 2017-06-19 15:12:01,862 98457ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 3:12:01 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-19 15:12:01,865 98460ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 3:12:01 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-19 15:14:20,815 237410ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:14:20 PM WHERE : 
+DEBUG 2017-06-19 15:14:20,816 237411ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:14:20 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 15:14:20,817 237412ms mCompanyService        GetCompanyList     - 6/19/2017 3:14:20 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 15:14:20,863 237458ms CompanyRepo            getCompanyList     - 6/19/2017 3:14:20 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 15:14:23,986 240581ms BranchOfficeService    etBranchOfficeList - 6/19/2017 3:14:23 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:14:28,348 244943ms EmployeeService        GetEmployeeList    - 6/19/2017 3:14:28 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:14:28,349 244944ms EmployeeService        GetEmployeeList    - 6/19/2017 3:14:28 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:14:28,396 244991ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:14:28 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:14:31,708 248303ms EmployeeService        GetEmployeeList    - 6/19/2017 3:14:31 PM pPage : 1 pRows : 15
+DEBUG 2017-06-19 15:14:31,709 248304ms EmployeeService        GetEmployeeList    - 6/19/2017 3:14:31 PM vRows : 15 vStart : 15
+DEBUG 2017-06-19 15:14:31,799 248394ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:14:31 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:15:55,750 332345ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:15:55 PM WHERE : 
+DEBUG 2017-06-19 15:15:55,751 332346ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:15:55 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 15:15:55,751 332346ms mCompanyService        GetCompanyList     - 6/19/2017 3:15:55 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 15:15:55,768 332363ms CompanyRepo            getCompanyList     - 6/19/2017 3:15:55 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 15:15:58,529 335124ms BranchOfficeService    etBranchOfficeList - 6/19/2017 3:15:58 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:16:02,480 339075ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:16:02 PM WHERE : 
+DEBUG 2017-06-19 15:16:02,480 339075ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:16:02 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 15:16:02,481 339076ms mCompanyService        GetCompanyList     - 6/19/2017 3:16:02 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 15:16:02,499 339094ms CompanyRepo            getCompanyList     - 6/19/2017 3:16:02 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 15:16:07,040 343634ms BranchOfficeService    etBranchOfficeList - 6/19/2017 3:16:07 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:16:10,234 346829ms EmployeeService        GetEmployeeList    - 6/19/2017 3:16:10 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:16:10,234 346829ms EmployeeService        GetEmployeeList    - 6/19/2017 3:16:10 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:16:10,297 346892ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:16:10 PM Jumlah Data Employee : 0
+DEBUG 2017-06-19 15:16:13,256 349851ms BranchOfficeService    etBranchOfficeList - 6/19/2017 3:16:13 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:16:16,448 353043ms EmployeeService        GetEmployeeList    - 6/19/2017 3:16:16 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:16:16,449 353044ms EmployeeService        GetEmployeeList    - 6/19/2017 3:16:16 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 15:16:16,510 353104ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:16:16 PM GetEmployeeList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeList(Int32 pCompanyCode, Int32 pBranchCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 397
+DEBUG 2017-06-19 15:16:17,975 354570ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:16:17 PM WHERE : 
+DEBUG 2017-06-19 15:16:17,976 354571ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:16:17 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 15:16:17,976 354571ms mCompanyService        GetCompanyList     - 6/19/2017 3:16:17 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 15:16:18,008 354603ms CompanyRepo            getCompanyList     - 6/19/2017 3:16:18 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 15:16:22,785 359380ms BranchOfficeService    etBranchOfficeList - 6/19/2017 3:16:22 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:16:25,825 362420ms EmployeeService        GetEmployeeList    - 6/19/2017 3:16:25 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:16:25,825 362420ms EmployeeService        GetEmployeeList    - 6/19/2017 3:16:25 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:16:25,852 362447ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:16:25 PM Jumlah Data Employee : 0
+DEBUG 2017-06-19 15:16:29,551 366146ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:16:29 PM WHERE : 
+DEBUG 2017-06-19 15:16:29,551 366146ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:16:29 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 15:16:29,552 366147ms mCompanyService        GetCompanyList     - 6/19/2017 3:16:29 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 15:16:29,596 366191ms CompanyRepo            getCompanyList     - 6/19/2017 3:16:29 PM GetCompanyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mCompanyRepo.getCompanyList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mCompanyRepo.cs:line 118
+DEBUG 2017-06-19 15:16:40,287 376882ms BranchOfficeService    etBranchOfficeList - 6/19/2017 3:16:40 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:16:44,112 380707ms EmployeeService        GetEmployeeList    - 6/19/2017 3:16:44 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:16:44,113 380708ms EmployeeService        GetEmployeeList    - 6/19/2017 3:16:44 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 15:16:44,196 380790ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:16:44 PM GetEmployeeList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeList(Int32 pCompanyCode, Int32 pBranchCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 397
+DEBUG 2017-06-19 15:23:50,070 10645ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:23:50 PM WHERE : 
+DEBUG 2017-06-19 15:23:50,128 10703ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:23:50 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 15:23:50,130 10705ms mCompanyService        GetCompanyList     - 6/19/2017 3:23:50 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:23:56,894 17469ms BranchOfficeService    etBranchOfficeList - 6/19/2017 3:23:56 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:24:21,321 41896ms EmployeeService        GetEmployeeList    - 6/19/2017 3:24:21 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:24:21,322 41897ms EmployeeService        GetEmployeeList    - 6/19/2017 3:24:21 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 15:24:21,391 41965ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:24:21 PM GetEmployeeList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeList(Int32 pCompanyCode, Int32 pBranchCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 397
+DEBUG 2017-06-19 15:31:12,021   245ms EmployeeService        GetEmployeeList    - 6/19/2017 3:31:12 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:31:12,071   295ms EmployeeService        GetEmployeeList    - 6/19/2017 3:31:12 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:31:12,383   607ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:31:12 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:31:33,410   251ms EmployeeService        GetEmployeeList    - 6/19/2017 3:31:33 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:31:33,448   289ms EmployeeService        GetEmployeeList    - 6/19/2017 3:31:33 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:31:33,881   722ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:31:33 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:31:51,147   256ms EmployeeService        GetEmployeeList    - 6/19/2017 3:31:51 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:31:51,199   308ms EmployeeService        GetEmployeeList    - 6/19/2017 3:31:51 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:31:51,584   693ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:31:51 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:32:33,987   346ms EmployeeService        GetEmployeeList    - 6/19/2017 3:32:33 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:32:34,045   405ms EmployeeService        GetEmployeeList    - 6/19/2017 3:32:34 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:32:34,356   716ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:32:34 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:32:58,352   226ms EmployeeService        GetEmployeeList    - 6/19/2017 3:32:58 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:32:58,382   256ms EmployeeService        GetEmployeeList    - 6/19/2017 3:32:58 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:32:58,937   811ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:32:58 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:33:26,499   229ms EmployeeService        GetEmployeeList    - 6/19/2017 3:33:26 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:33:26,591   320ms EmployeeService        GetEmployeeList    - 6/19/2017 3:33:26 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:33:26,958   688ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:33:26 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:33:45,690   249ms EmployeeService        GetEmployeeList    - 6/19/2017 3:33:45 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:33:45,724   283ms EmployeeService        GetEmployeeList    - 6/19/2017 3:33:45 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:33:46,062   621ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:33:46 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:34:05,159   227ms EmployeeService        GetEmployeeList    - 6/19/2017 3:34:05 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:34:05,190   258ms EmployeeService        GetEmployeeList    - 6/19/2017 3:34:05 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 15:34:05,585   654ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:34:05 PM GetEmployeeList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeList(Int32 pCompanyCode, Int32 pBranchCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 397
+DEBUG 2017-06-19 15:34:20,165   253ms EmployeeService        GetEmployeeList    - 6/19/2017 3:34:20 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:34:20,211   300ms EmployeeService        GetEmployeeList    - 6/19/2017 3:34:20 PM vRows : 15 vStart : 0
+ERROR 2017-06-19 15:34:21,023  1111ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:34:21 PM GetEmployeeList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at hrd_holding.Repositories.mEmployeeRepo.getEmployeeList(Int32 pCompanyCode, Int32 pBranchCode, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\KANTOR\hrd_holding\hrd_holding\Repositories\mEmployeeRepo.cs:line 397
+DEBUG 2017-06-19 15:34:35,835   241ms EmployeeService        GetEmployeeList    - 6/19/2017 3:34:35 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:34:35,890   296ms EmployeeService        GetEmployeeList    - 6/19/2017 3:34:35 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:34:36,392   798ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:34:36 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:35:17,149   236ms EmployeeService        GetEmployeeList    - 6/19/2017 3:35:17 PM pPage : 0 pRows : 15
+DEBUG 2017-06-19 15:35:17,190   277ms EmployeeService        GetEmployeeList    - 6/19/2017 3:35:17 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:35:17,731   817ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:35:17 PM Jumlah Data Employee : 15
+DEBUG 2017-06-19 15:36:25,788 68874ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:36:25 PM WHERE : 
+DEBUG 2017-06-19 15:36:25,790 68876ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:36:25 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 15:36:25,791 68877ms mCompanyService        GetCompanyList     - 6/19/2017 3:36:25 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:36:30,240 73326ms BranchOfficeService    etBranchOfficeList - 6/19/2017 3:36:30 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:36:34,452 77538ms EmployeeService        GetEmployeeList    - 6/19/2017 3:36:34 PM pPage : 0 pRows : 20
+DEBUG 2017-06-19 15:36:34,453 77539ms EmployeeService        GetEmployeeList    - 6/19/2017 3:36:34 PM vRows : 20 vStart : 0
+DEBUG 2017-06-19 15:36:34,501 77587ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:36:34 PM Jumlah Data Employee : 20
+DEBUG 2017-06-19 15:37:05,074 108161ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:37:05 PM WHERE : 
+DEBUG 2017-06-19 15:37:05,075 108162ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:37:05 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 15:37:05,075 108162ms mCompanyService        GetCompanyList     - 6/19/2017 3:37:05 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:37:10,610 113696ms BranchOfficeService    etBranchOfficeList - 6/19/2017 3:37:10 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:37:13,459 116545ms EmployeeService        GetEmployeeList    - 6/19/2017 3:37:13 PM pPage : 0 pRows : 20
+DEBUG 2017-06-19 15:37:13,460 116546ms EmployeeService        GetEmployeeList    - 6/19/2017 3:37:13 PM vRows : 20 vStart : 0
+DEBUG 2017-06-19 15:37:13,545 116631ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:37:13 PM Jumlah Data Employee : 20
+DEBUG 2017-06-19 15:37:27,215 130301ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:37:27 PM WHERE : 
+DEBUG 2017-06-19 15:37:27,215 130301ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:37:27 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 15:37:27,216 130302ms mCompanyService        GetCompanyList     - 6/19/2017 3:37:27 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:37:30,971 134057ms BranchOfficeService    etBranchOfficeList - 6/19/2017 3:37:30 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:37:33,507 136593ms EmployeeService        GetEmployeeList    - 6/19/2017 3:37:33 PM pPage : 0 pRows : 20
+DEBUG 2017-06-19 15:37:33,508 136594ms EmployeeService        GetEmployeeList    - 6/19/2017 3:37:33 PM vRows : 20 vStart : 0
+DEBUG 2017-06-19 15:37:33,573 136659ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:37:33 PM Jumlah Data Employee : 20
+DEBUG 2017-06-19 15:37:45,286 148372ms EmployeeService        GetEmployeeList    - 6/19/2017 3:37:45 PM pPage : 0 pRows : 30
+DEBUG 2017-06-19 15:37:45,288 148374ms EmployeeService        GetEmployeeList    - 6/19/2017 3:37:45 PM vRows : 30 vStart : 0
+DEBUG 2017-06-19 15:37:45,346 148432ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:37:45 PM Jumlah Data Employee : 30
+DEBUG 2017-06-19 15:37:51,131 154218ms EmployeeService        GetEmployeeList    - 6/19/2017 3:37:51 PM pPage : 0 pRows : 20
+DEBUG 2017-06-19 15:37:51,131 154218ms EmployeeService        GetEmployeeList    - 6/19/2017 3:37:51 PM vRows : 20 vStart : 0
+DEBUG 2017-06-19 15:37:51,173 154260ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:37:51 PM Jumlah Data Employee : 20
+DEBUG 2017-06-19 15:38:08,748 171834ms EmployeeService        GetEmployeeList    - 6/19/2017 3:38:08 PM pPage : 1 pRows : 20
+DEBUG 2017-06-19 15:38:08,748 171834ms EmployeeService        GetEmployeeList    - 6/19/2017 3:38:08 PM vRows : 20 vStart : 20
+DEBUG 2017-06-19 15:38:08,805 171891ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:38:08 PM Jumlah Data Employee : 12
+DEBUG 2017-06-19 15:38:12,163 175249ms EmployeeService        GetEmployeeList    - 6/19/2017 3:38:12 PM pPage : 0 pRows : 20
+DEBUG 2017-06-19 15:38:12,164 175250ms EmployeeService        GetEmployeeList    - 6/19/2017 3:38:12 PM vRows : 20 vStart : 0
+DEBUG 2017-06-19 15:38:12,205 175291ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:38:12 PM Jumlah Data Employee : 20
+DEBUG 2017-06-19 15:38:18,158 181244ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 3:38:18 PM====>>>> Emp Code : 35780605106900031 segno : 1
+DEBUG 2017-06-19 15:38:18,178 181264ms EmployeeRepo           getEmployeeInfo    - 6/19/2017 3:38:18 PM====>>>> EMPLOYEE INFO ADA DATA....
+DEBUG 2017-06-19 15:38:18,182 181268ms EmployeeService        GetEmployeeInfo    - 6/19/2017 3:38:18 PM SERVICE EMP CODE : 35780605106900031
+DEBUG 2017-06-19 15:38:18,197 181283ms EmployeeFamilyRepo     EmployeeFamilyList - 6/19/2017 3:38:18 PM=======>>>> Jml DATA EMPLOYEE LIST : 0
+DEBUG 2017-06-19 15:38:18,212 181298ms EmployeeContractRepo   ployeeContractList - 6/19/2017 3:38:18 PM JML Employee CONTRACT List: 0
+DEBUG 2017-06-19 15:38:18,238 181324ms EmployeeEducationRepo  loyeeEducationList - 6/19/2017 3:38:18 PM JML Employee EDUCATION List: 0
+DEBUG 2017-06-19 15:38:18,264 181350ms EmployeeExperienceRepo oyeeExperienceList - 6/19/2017 3:38:18 PM JML Employee EXPERIENCE List: 0
+DEBUG 2017-06-19 15:38:18,281 181367ms EmployeeSkillRepo      tEmployeeSkillList - 6/19/2017 3:38:18 PM JML Employee SKILL List: 0
+DEBUG 2017-06-19 15:38:18,299 181385ms EmployeeTrainingRepo   ployeeTrainingList - 6/19/2017 3:38:18 PM JML Employee Training List: 0
+ERROR 2017-06-19 15:38:18,306 181392ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 3:38:18 PM EMPLOYEE CODE : 35780605106900031
+ERROR 2017-06-19 15:38:18,323 181409ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 3:38:18 PM MASUK LOOPING ADD DATA..... 
+ERROR 2017-06-19 15:38:18,326 181412ms EmployeeCompanyRepo    mployeeCompanyList - 6/19/2017 3:38:18 PM GetEmployeeCompanyList JmlData : 1
+DEBUG 2017-06-19 15:40:31,165 314252ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:40:31 PM WHERE : 
+DEBUG 2017-06-19 15:40:31,166 314253ms CompanyController      GetCompanyLookUp   - 6/19/2017 3:40:31 PM Page Num : 0 Page Size : 15
+DEBUG 2017-06-19 15:40:31,166 314253ms mCompanyService        GetCompanyList     - 6/19/2017 3:40:31 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:40:35,633 318719ms BranchOfficeService    etBranchOfficeList - 6/19/2017 3:40:35 PM vRows : 15 vStart : 0
+DEBUG 2017-06-19 15:40:38,258 321344ms EmployeeService        GetEmployeeList    - 6/19/2017 3:40:38 PM pPage : 0 pRows : 20
+DEBUG 2017-06-19 15:40:38,259 321345ms EmployeeService        GetEmployeeList    - 6/19/2017 3:40:38 PM vRows : 20 vStart : 0
+DEBUG 2017-06-19 15:40:38,306 321392ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:40:38 PM Jumlah Data Employee : 20

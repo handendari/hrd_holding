@@ -4,105 +4,51 @@
 }
 
 
-
 <header>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            // prepare the data
-
-            var theme = vTheme;
-
-            $("#jqxToolBar").jqxToolBar({
-                width: 800, height: 35, tools: 'custom | custom | custom',
-                initTools: function (type, index, tool, menuToolIninitialization) {
-                    if (type == "toggleButton") {
-                        var icon = $("<div class='jqx-editor-toolbar-icon jqx-editor-toolbar-icon-" + theme + " buttonIcon'></div>");
-                    }
-                    switch (index) {
-                        case 0:
-                            var button = $("<div>" + "<img src='../../images/administrator.png' title='Custom tool' />" + "</div>");
-                            tool.append(button);
-                            button.jqxButton({ height: 15 });
-                            break;
-                    }
-                }
-            });
-
-            var source =
-              {
-                  url: base_url + "/Employee/GetEmployeeList?pCompanyCode=1&pBranchCode=1",
-                  datatype: "json",
-                  type: "Post",
-                  datafields: [{ name: "employee_code", type: "string" },
-                               { name: "employee_name" },
-                               { name: "emp_address" },
-                               { name: "company_name" },
-                               { name: "departement_name" },
-                               { name: "division_name" },
-                               { name: "level_name" },
-                               { name: "entry_date", type: "date" }],
-                  cache: false,
-                  filter: function () {
-                      // update the grid and send a request to the server.
-                      $("#jqxgrid").jqxGrid('updatebounddata', 'filter');
-                  },
-                  sort: function () {
-                      // update the grid and send a request to the server.
-                      $("#jqxgrid").jqxGrid('updatebounddata', 'sort');
-                  },
-                  beforeprocessing: function (data) {
-                      //alert(JSON.stringify(data['TotalRows']));
-                      source.totalrecords = data["TotalRows"];
-                  },
-                  root: 'Rows'
-              }
-
-            var filterChanged = false;
-            var dataAdapter = new $.jqx.dataAdapter(source, {
-                downloadComplete: function (data, status, xhr) {
-                    if (!source.TotalRows) {
-                        source.TotalRows = data.length;
-                    }
-                },
-                loadError: function (xhr, status, error) {
-                    throw new Error(error);
-                }
-            });
-
-            $("#jqxgrid").jqxGrid(
-              {
-                  theme: vTheme,
-                  source: dataAdapter,
-                  width: '100%',
-                  filterable: true,
-                  sortable: true,
-                  pageable: true,
-                  pagesize: 15,
-                  pagesizeoptions: ['15', '20', '30'],
-                  autoheight: true,
-                  rowsheight: 20,
-                  autorowheight: true,
-                  columnsresize: true,
-                  virtualmode: true,
-                  autoshowfiltericon: true,
-                  rendergridrows: function (obj) {
-                      return obj.data;
-                  },
-                  columns: [
-                    { text: 'emp. code', dataField: 'employee_code', width: 100, cellsalign: 'center' },
-                    { text: 'employee name', dataField: 'employee_name', width: 200 },
-                    { text: 'address', dataField: 'emp_address', width: 450 },
-                    { text: 'company name', dataField: 'company_name', width: 150, cellsalign: 'right', hidden: 'true' },
-                    { text: 'division name', dataField: 'division_name', width: 90, cellsalign: 'right', hidden: 'true' },
-                    { text: 'level name', dataField: 'level_name', minwidth: 200 },
-                    { text: 'entry date', dataField: 'entry_date', filtertype: 'date', cellsalign: 'center', width: 100, cellsformat: 'dd-MMM-yy' }
-                  ]
-              });
-        });
-    </script>
+    <script src="~/scripts/mEmployee/m_employee_list.js"></script>
 </header>
-<div style="background-color: #F5F5F5">
-    <div id="jqxToolBar"></div>
-    <div id="jqxgrid"></div>
+
+<div>
+    <table style="width: 100%">
+        <tr>
+            <td style="width: 100px">Company</td>
+            <td>
+                <input type="text" style="width: 50px" id="txtIntCompany" />
+                <input type="button" id="btnKdCompany" value="..." />
+                <input type="text" style="width: 250px" id="txtCompany" />
+            </td>
+        </tr>
+        <tr>
+            <td>Branch</td>
+            <td>
+                <input type="text" style="width: 50px" id="txtIntBranch" />
+                <input type="button" id="btnKdBranch" value="..." />
+                <input type="text" style="width: 350px" id="txtBranch" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <div style="margin-bottom: 2px" id="jqxToolBar"></div>
+                <div id="jqxgrid"></div>
+            </td>
+        </tr>
+    </table>
 </div>
+
+<div id="modBranchLookUp">
+    <div><span>Human Resource Development</span></div>
+    <div>
+        <div id="BranchLookUpToolBar" style="margin-bottom: 1px"></div>
+        <div id="tblBranchLookUp"></div>
+    </div>
+</div>
+
+<div id="modCompanyLookUp">
+    <div><span>Human Resource Development</span></div>
+    <div>
+        <div id="CompanyLookUpToolBar" style="margin-bottom: 1px"></div>
+        <div id="tblCompanyLookUp"></div>
+    </div>
+</div>
+
 
