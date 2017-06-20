@@ -743,6 +743,7 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\loader_modal\jquery.loadingModal.min.js" />
+    <Content Include="Scripts\mCompany\m_company.js" />
     <Content Include="Scripts\mega_menu\jqueryMegaMenu.js" />
     <Content Include="Scripts\mega_menu\mainMegaMenu.js" />
     <Content Include="Scripts\mega_menu\source-sans-pro.js" />
@@ -773,6 +774,7 @@
     <Content Include="Views\Shared\_header.cshtml" />
     <Content Include="Views\Shared\Copy of _header.cshtml" />
     <Content Include="Views\Employee\EmployeeDetail.cshtml" />
+    <Content Include="Views\Company\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

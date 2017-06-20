@@ -803,6 +803,7 @@ $(document).ready(function () {
     var vSeqNo = $.urlParam('pSeqNo')
 
     if (vEmployeeCode == "") {
+        f_empty_employee_form();
         f_HideLoaderModal();
     }else{
         Form_Load(vEmployeeCode, vSeqNo);

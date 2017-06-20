@@ -120,7 +120,6 @@ namespace hrd_holding.Repositories
                                     {
                                         company_code = aa.GetInt16("company_code"),
                                         int_company = aa.GetString("int_company"),
-                                        country_code = aa.GetString("country_code"),
                                         company_name = aa.GetString("company_name"),
                                         address = aa.GetString("address"),
                                         postal_code = aa.GetString("postal_code"),
@@ -136,6 +135,9 @@ namespace hrd_holding.Repositories
                                         pimpinan_npwp = aa.GetString("pimpinan_npwp"),
                                         npp = aa.GetString("npp"),
                                         jhk = aa.GetDecimal("jhk"),
+                                        country_code = aa.GetString("country_code"),
+                                        int_country = aa.GetString("int_country"),
+                                        country_name = aa.GetString("country_name"),
                                         entry_date = (aa["entry_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["entry_date"]),
                                         entry_user = aa.GetString("entry_user"),
                                         edit_date = (aa["edit_date"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["edit_date"]),

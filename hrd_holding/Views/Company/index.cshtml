@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Company";
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+<header>
+    <script src="~/scripts/mCompany/m_company.js"></script>
+</header>
+
+<div>
+    <div style="margin-bottom: 2px" id="toolBarCompany"></div>
+    <div id="tblCompany"></div>
+</div>
+
+<!--#region MODAL COMPANY-->
+<div id='modCompany'>
+    <div>
+        <span>COMPANY DETAIL</span>
+    </div>
+    <div>
+        <div id="notifContainer" style="height: 40px"></div>
+        <div id="notifCompany">
+            <div id="notifContent"></div>
+        </div>
+        <div style="margin-left: 10px">
+            <table>
+                <tr>
+                    <td>Code *</td>
+                    <td>
+                        <input type="text" id="txtCompCode" /></td>
+                </tr>
+                <tr>
+                    <td>Name *</td>
+                    <td>
+                        <input type="text" id="txtCompName" /></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top">Address</td>
+                    <td>
+                        <textarea id="txtCompAddress"></textarea></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>
+                        <input type="text" id="txtCompCity" /></td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td>
+                        <input type="text" id="txtCompState" /></td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>
+                        <input style="width: 60px" type="text" id="txtCompIntCountry" />
+                        <button id="btnCompCountry">...</button>
+                        <input type="text" id="txtCompCountryName" />
+                    </td>
+                    <td style="padding-left: 30px">Email</td>
+                    <td>
+                        <input type="text" id="txtCompEmail" /></td>
+                </tr>
+                <tr>
+                    <td>Zip Postal</td>
+                    <td>
+                        <input type="text" id="txtCompZip" /></td>
+                    <td style="padding-left: 30px">WebSite</td>
+                    <td>
+                        <input type="text" id="txtCompWebSite" /></td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td>
+                        <input type="text" id="txtCompPhone" /></td>
+                    <td style="padding-left: 30px">Fax Number</td>
+                    <td>
+                        <input type="text" id="txtCompFax" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="margin-left: 5px; margin-top:15px; width: 100px; height: 30px;" id="btnModCompSave" role="button">
+                            <img style="vertical-align: middle" src="~/content/images/Save as_24_grey.png">
+                            <span style="position: relative; top: 3px;">SAVE</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="margin-left: 5px; margin-top:15px; width: 100px; height: 30px;" id="btnModCompCancel" role="button">
+                            <img style="vertical-align: middle" src="~/content/images/Close Pane_24_grey.png">
+                            <span style="position: relative; top: 3px;">CANCEL</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+
+<div id="modCountryLookUp">
+    <div><span>Human Resource Development</span></div>
+    <div>
+        <div id="CountryLookUpToolBar" style="margin-bottom: 1px"></div>
+        <div id="tblCountryLookUp"></div>
+    </div>
+</div>
+

@@ -208,7 +208,7 @@ $(document).ready(function () {
           theme: vTheme,
           //source: dataAdapter,
           width: '100%',
-          height: '480px',
+          height: 500,
           filterable: true,
           sortable: true,
           pageable: true,

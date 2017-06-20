@@ -10,6 +10,7 @@ namespace hrd_holding.Models
        public int company_code {get;set;}
        public string int_company { get; set; }
        public string country_code { get; set; }
+       public string int_country { get; set; }
        public string country_name { get; set; }
        public string company_name { get; set; }
        public string address { get; set; }

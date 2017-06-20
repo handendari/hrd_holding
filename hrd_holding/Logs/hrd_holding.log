@@ -25823,3 +25823,182 @@ DEBUG 2017-06-19 15:40:35,633 318719ms BranchOfficeService    etBranchOfficeList
 DEBUG 2017-06-19 15:40:38,258 321344ms EmployeeService        GetEmployeeList    - 6/19/2017 3:40:38 PM pPage : 0 pRows : 20
 DEBUG 2017-06-19 15:40:38,259 321345ms EmployeeService        GetEmployeeList    - 6/19/2017 3:40:38 PM vRows : 20 vStart : 0
 DEBUG 2017-06-19 15:40:38,306 321392ms EmployeeRepo           getEmployeeList    - 6/19/2017 3:40:38 PM Jumlah Data Employee : 20
+DEBUG 2017-06-20 08:40:43,412 409424ms CompanyController      GetCompanyLookUp   - 6/20/2017 8:40:43 AM WHERE : 
+DEBUG 2017-06-20 08:40:43,496 409509ms CompanyController      GetCompanyLookUp   - 6/20/2017 8:40:43 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-20 08:40:43,497 409510ms mCompanyService        GetCompanyList     - 6/20/2017 8:40:43 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 08:40:49,777 415789ms BranchOfficeService    etBranchOfficeList - 6/20/2017 8:40:49 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 08:40:53,900 419913ms EmployeeService        GetEmployeeList    - 6/20/2017 8:40:53 AM pPage : 0 pRows : 20
+DEBUG 2017-06-20 08:40:53,902 419915ms EmployeeService        GetEmployeeList    - 6/20/2017 8:40:53 AM vRows : 20 vStart : 0
+DEBUG 2017-06-20 08:40:53,966 419978ms EmployeeRepo           getEmployeeList    - 6/20/2017 8:40:53 AM Jumlah Data Employee : 20
+DEBUG 2017-06-20 08:59:32,101 1538113ms CompanyController      GetCompanyLookUp   - 6/20/2017 8:59:32 AM WHERE : 
+DEBUG 2017-06-20 08:59:32,102 1538114ms CompanyController      GetCompanyLookUp   - 6/20/2017 8:59:32 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-20 08:59:32,102 1538114ms mCompanyService        GetCompanyList     - 6/20/2017 8:59:32 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 08:59:34,872 1540884ms BranchOfficeService    etBranchOfficeList - 6/20/2017 8:59:34 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 08:59:37,656 1543668ms EmployeeService        GetEmployeeList    - 6/20/2017 8:59:37 AM pPage : 0 pRows : 20
+DEBUG 2017-06-20 08:59:37,657 1543669ms EmployeeService        GetEmployeeList    - 6/20/2017 8:59:37 AM vRows : 20 vStart : 0
+DEBUG 2017-06-20 08:59:37,687 1543699ms EmployeeRepo           getEmployeeList    - 6/20/2017 8:59:37 AM Jumlah Data Employee : 20
+DEBUG 2017-06-20 09:08:38,160 2084172ms CompanyController      GetCompanyLookUp   - 6/20/2017 9:08:38 AM WHERE : 
+DEBUG 2017-06-20 09:08:38,161 2084173ms CompanyController      GetCompanyLookUp   - 6/20/2017 9:08:38 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-20 09:08:38,161 2084173ms mCompanyService        GetCompanyList     - 6/20/2017 9:08:38 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 09:08:40,939 2086951ms BranchOfficeService    etBranchOfficeList - 6/20/2017 9:08:40 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 09:08:43,460 2089472ms EmployeeService        GetEmployeeList    - 6/20/2017 9:08:43 AM pPage : 0 pRows : 20
+DEBUG 2017-06-20 09:08:43,461 2089473ms EmployeeService        GetEmployeeList    - 6/20/2017 9:08:43 AM vRows : 20 vStart : 0
+DEBUG 2017-06-20 09:08:43,484 2089496ms EmployeeRepo           getEmployeeList    - 6/20/2017 9:08:43 AM Jumlah Data Employee : 20
+DEBUG 2017-06-20 09:09:06,647 2112660ms CompanyController      GetCompanyLookUp   - 6/20/2017 9:09:06 AM WHERE : 
+DEBUG 2017-06-20 09:09:06,647 2112660ms CompanyController      GetCompanyLookUp   - 6/20/2017 9:09:06 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-20 09:09:06,648 2112661ms mCompanyService        GetCompanyList     - 6/20/2017 9:09:06 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 09:09:09,194 2115206ms BranchOfficeService    etBranchOfficeList - 6/20/2017 9:09:09 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 09:09:11,658 2117670ms EmployeeService        GetEmployeeList    - 6/20/2017 9:09:11 AM pPage : 0 pRows : 20
+DEBUG 2017-06-20 09:09:11,659 2117671ms EmployeeService        GetEmployeeList    - 6/20/2017 9:09:11 AM vRows : 20 vStart : 0
+DEBUG 2017-06-20 09:09:11,730 2117742ms EmployeeRepo           getEmployeeList    - 6/20/2017 9:09:11 AM Jumlah Data Employee : 20
+DEBUG 2017-06-20 09:09:29,296 2135308ms CompanyController      GetCompanyLookUp   - 6/20/2017 9:09:29 AM WHERE : 
+DEBUG 2017-06-20 09:09:29,296 2135308ms CompanyController      GetCompanyLookUp   - 6/20/2017 9:09:29 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-20 09:09:29,297 2135309ms mCompanyService        GetCompanyList     - 6/20/2017 9:09:29 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 09:09:31,698 2137710ms BranchOfficeService    etBranchOfficeList - 6/20/2017 9:09:31 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 09:09:33,770 2139783ms EmployeeService        GetEmployeeList    - 6/20/2017 9:09:33 AM pPage : 0 pRows : 20
+DEBUG 2017-06-20 09:09:33,770 2139783ms EmployeeService        GetEmployeeList    - 6/20/2017 9:09:33 AM vRows : 20 vStart : 0
+DEBUG 2017-06-20 09:09:33,827 2139840ms EmployeeRepo           getEmployeeList    - 6/20/2017 9:09:33 AM Jumlah Data Employee : 20
+DEBUG 2017-06-20 09:10:59,375 2225387ms CompanyController      GetCompanyLookUp   - 6/20/2017 9:10:59 AM WHERE : 
+DEBUG 2017-06-20 09:10:59,375 2225387ms CompanyController      GetCompanyLookUp   - 6/20/2017 9:10:59 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-20 09:10:59,376 2225388ms mCompanyService        GetCompanyList     - 6/20/2017 9:10:59 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 09:11:01,848 2227861ms BranchOfficeService    etBranchOfficeList - 6/20/2017 9:11:01 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 09:11:04,257 2230270ms EmployeeService        GetEmployeeList    - 6/20/2017 9:11:04 AM pPage : 0 pRows : 20
+DEBUG 2017-06-20 09:11:04,258 2230271ms EmployeeService        GetEmployeeList    - 6/20/2017 9:11:04 AM vRows : 20 vStart : 0
+DEBUG 2017-06-20 09:11:04,318 2230330ms EmployeeRepo           getEmployeeList    - 6/20/2017 9:11:04 AM Jumlah Data Employee : 20
+DEBUG 2017-06-20 09:11:13,452 2239464ms EmployeeService        GetEmployeeList    - 6/20/2017 9:11:13 AM pPage : 1 pRows : 20
+DEBUG 2017-06-20 09:11:13,452 2239464ms EmployeeService        GetEmployeeList    - 6/20/2017 9:11:13 AM vRows : 20 vStart : 20
+DEBUG 2017-06-20 09:11:13,476 2239488ms EmployeeRepo           getEmployeeList    - 6/20/2017 9:11:13 AM Jumlah Data Employee : 15
+DEBUG 2017-06-20 09:11:14,794 2240806ms EmployeeService        GetEmployeeList    - 6/20/2017 9:11:14 AM pPage : 0 pRows : 20
+DEBUG 2017-06-20 09:11:14,794 2240806ms EmployeeService        GetEmployeeList    - 6/20/2017 9:11:14 AM vRows : 20 vStart : 0
+DEBUG 2017-06-20 09:11:14,868 2240880ms EmployeeRepo           getEmployeeList    - 6/20/2017 9:11:14 AM Jumlah Data Employee : 20
+DEBUG 2017-06-20 09:12:01,998 2288010ms CompanyController      GetCompanyLookUp   - 6/20/2017 9:12:01 AM WHERE : 
+DEBUG 2017-06-20 09:12:01,999 2288011ms CompanyController      GetCompanyLookUp   - 6/20/2017 9:12:01 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-20 09:12:01,999 2288011ms mCompanyService        GetCompanyList     - 6/20/2017 9:12:01 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 09:12:04,665 2290677ms BranchOfficeService    etBranchOfficeList - 6/20/2017 9:12:04 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 09:12:07,376 2293388ms EmployeeService        GetEmployeeList    - 6/20/2017 9:12:07 AM pPage : 0 pRows : 20
+DEBUG 2017-06-20 09:12:07,377 2293389ms EmployeeService        GetEmployeeList    - 6/20/2017 9:12:07 AM vRows : 20 vStart : 0
+DEBUG 2017-06-20 09:12:07,408 2293420ms EmployeeRepo           getEmployeeList    - 6/20/2017 9:12:07 AM Jumlah Data Employee : 20
+DEBUG 2017-06-20 09:12:10,139 2296151ms EmployeeService        GetEmployeeList    - 6/20/2017 9:12:10 AM pPage : 1 pRows : 20
+DEBUG 2017-06-20 09:12:10,139 2296151ms EmployeeService        GetEmployeeList    - 6/20/2017 9:12:10 AM vRows : 20 vStart : 20
+DEBUG 2017-06-20 09:12:10,160 2296172ms EmployeeRepo           getEmployeeList    - 6/20/2017 9:12:10 AM Jumlah Data Employee : 15
+DEBUG 2017-06-20 09:12:10,833 2296845ms EmployeeService        GetEmployeeList    - 6/20/2017 9:12:10 AM pPage : 0 pRows : 20
+DEBUG 2017-06-20 09:12:10,834 2296846ms EmployeeService        GetEmployeeList    - 6/20/2017 9:12:10 AM vRows : 20 vStart : 0
+DEBUG 2017-06-20 09:12:10,891 2296903ms EmployeeRepo           getEmployeeList    - 6/20/2017 9:12:10 AM Jumlah Data Employee : 20
+DEBUG 2017-06-20 10:02:01,217 54880ms CompanyController      GetCompanyLookUp   - 6/20/2017 10:02:01 AM WHERE : 
+DEBUG 2017-06-20 10:02:01,240 54903ms CompanyController      GetCompanyLookUp   - 6/20/2017 10:02:01 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-20 10:02:01,241 54904ms mCompanyService        GetCompanyList     - 6/20/2017 10:02:01 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 10:02:04,151 57815ms BranchOfficeService    etBranchOfficeList - 6/20/2017 10:02:04 AM vRows : 15 vStart : 0
+DEBUG 2017-06-20 10:02:06,546 60210ms EmployeeService        GetEmployeeList    - 6/20/2017 10:02:06 AM pPage : 0 pRows : 20
+DEBUG 2017-06-20 10:02:06,547 60211ms EmployeeService        GetEmployeeList    - 6/20/2017 10:02:06 AM vRows : 20 vStart : 0
+DEBUG 2017-06-20 10:02:06,628 60291ms EmployeeRepo           getEmployeeList    - 6/20/2017 10:02:06 AM Jumlah Data Employee : 20
+DEBUG 2017-06-20 10:02:10,577 64241ms EmployeeService        GetEmployeeList    - 6/20/2017 10:02:10 AM pPage : 1 pRows : 20
+DEBUG 2017-06-20 10:02:10,578 64242ms EmployeeService        GetEmployeeList    - 6/20/2017 10:02:10 AM vRows : 20 vStart : 20
+DEBUG 2017-06-20 10:02:10,629 64293ms EmployeeRepo           getEmployeeList    - 6/20/2017 10:02:10 AM Jumlah Data Employee : 15
+DEBUG 2017-06-20 10:02:11,831 65495ms EmployeeService        GetEmployeeList    - 6/20/2017 10:02:11 AM pPage : 0 pRows : 20
+DEBUG 2017-06-20 10:02:11,832 65496ms EmployeeService        GetEmployeeList    - 6/20/2017 10:02:11 AM vRows : 20 vStart : 0
+DEBUG 2017-06-20 10:02:11,861 65525ms EmployeeRepo           getEmployeeList    - 6/20/2017 10:02:11 AM Jumlah Data Employee : 20
+DEBUG 2017-06-20 10:02:20,159 73823ms EmployeeService        GetEmployeeList    - 6/20/2017 10:02:20 AM pPage : 1 pRows : 20
+DEBUG 2017-06-20 10:02:20,160 73824ms EmployeeService        GetEmployeeList    - 6/20/2017 10:02:20 AM vRows : 20 vStart : 20
+DEBUG 2017-06-20 10:02:20,179 73843ms EmployeeRepo           getEmployeeList    - 6/20/2017 10:02:20 AM Jumlah Data Employee : 15
+DEBUG 2017-06-20 10:02:22,297 75961ms EmployeeService        GetEmployeeList    - 6/20/2017 10:02:22 AM pPage : 0 pRows : 20
+DEBUG 2017-06-20 10:02:22,298 75962ms EmployeeService        GetEmployeeList    - 6/20/2017 10:02:22 AM vRows : 20 vStart : 0
+DEBUG 2017-06-20 10:02:22,321 75985ms EmployeeRepo           getEmployeeList    - 6/20/2017 10:02:22 AM Jumlah Data Employee : 20
+DEBUG 2017-06-20 14:36:51,846 804273ms CompanyController      GetCompanyList     - 6/20/2017 2:36:51 PM WHERE : 
+DEBUG 2017-06-20 14:36:51,919 804346ms CompanyController      GetCompanyList     - 6/20/2017 2:36:51 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 14:36:51,921 804348ms mCompanyService        GetCompanyList     - 6/20/2017 2:36:51 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 14:38:35,982 908408ms CompanyController      GetCompanyList     - 6/20/2017 2:38:35 PM WHERE : 
+DEBUG 2017-06-20 14:38:35,983 908409ms CompanyController      GetCompanyList     - 6/20/2017 2:38:35 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 14:38:35,983 908409ms mCompanyService        GetCompanyList     - 6/20/2017 2:38:35 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 14:42:42,501 1154927ms CompanyController      GetCompanyList     - 6/20/2017 2:42:42 PM WHERE : 
+DEBUG 2017-06-20 14:42:42,502 1154928ms CompanyController      GetCompanyList     - 6/20/2017 2:42:42 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 14:42:42,502 1154928ms mCompanyService        GetCompanyList     - 6/20/2017 2:42:42 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 14:42:54,259 1166685ms CompanyController      GetCompanyList     - 6/20/2017 2:42:54 PM WHERE : 
+DEBUG 2017-06-20 14:42:54,260 1166686ms CompanyController      GetCompanyList     - 6/20/2017 2:42:54 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 14:42:54,260 1166686ms mCompanyService        GetCompanyList     - 6/20/2017 2:42:54 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 14:44:28,982 1261408ms CompanyController      GetCompanyList     - 6/20/2017 2:44:28 PM WHERE : 
+DEBUG 2017-06-20 14:44:28,982 1261408ms CompanyController      GetCompanyList     - 6/20/2017 2:44:28 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 14:44:28,982 1261408ms mCompanyService        GetCompanyList     - 6/20/2017 2:44:28 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 14:45:03,980 1296406ms CompanyController      GetCompanyList     - 6/20/2017 2:45:03 PM WHERE : 
+DEBUG 2017-06-20 14:45:03,981 1296407ms CompanyController      GetCompanyList     - 6/20/2017 2:45:03 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 14:45:03,981 1296407ms mCompanyService        GetCompanyList     - 6/20/2017 2:45:03 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 14:45:36,265 1328691ms CompanyController      GetCompanyList     - 6/20/2017 2:45:36 PM WHERE : 
+DEBUG 2017-06-20 14:45:36,265 1328691ms CompanyController      GetCompanyList     - 6/20/2017 2:45:36 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 14:45:36,266 1328692ms mCompanyService        GetCompanyList     - 6/20/2017 2:45:36 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 14:46:21,510 1373936ms CompanyController      GetCompanyList     - 6/20/2017 2:46:21 PM WHERE : 
+DEBUG 2017-06-20 14:46:21,511 1373937ms CompanyController      GetCompanyList     - 6/20/2017 2:46:21 PM Page Num : 1 Page Size : 20
+DEBUG 2017-06-20 14:46:21,511 1373937ms mCompanyService        GetCompanyList     - 6/20/2017 2:46:21 PM vRows : 20 vStart : 20
+DEBUG 2017-06-20 14:46:25,556 1377982ms CompanyController      GetCompanyList     - 6/20/2017 2:46:25 PM WHERE : 
+DEBUG 2017-06-20 14:46:25,557 1377983ms CompanyController      GetCompanyList     - 6/20/2017 2:46:25 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 14:46:25,558 1377984ms mCompanyService        GetCompanyList     - 6/20/2017 2:46:25 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:00:50,044 2242470ms CompanyController      GetCompanyList     - 6/20/2017 3:00:50 PM WHERE : 
+DEBUG 2017-06-20 15:00:50,045 2242471ms CompanyController      GetCompanyList     - 6/20/2017 3:00:50 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:00:50,045 2242471ms mCompanyService        GetCompanyList     - 6/20/2017 3:00:50 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:01:54,790 2307216ms CompanyController      GetCompanyList     - 6/20/2017 3:01:54 PM WHERE : 
+DEBUG 2017-06-20 15:01:54,791 2307217ms CompanyController      GetCompanyList     - 6/20/2017 3:01:54 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:01:54,791 2307217ms mCompanyService        GetCompanyList     - 6/20/2017 3:01:54 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:02:04,014 2316440ms CompanyController      GetCompanyList     - 6/20/2017 3:02:04 PM WHERE : 
+DEBUG 2017-06-20 15:02:04,015 2316441ms CompanyController      GetCompanyList     - 6/20/2017 3:02:04 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:02:04,015 2316441ms mCompanyService        GetCompanyList     - 6/20/2017 3:02:04 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:07:58,428 2670854ms CompanyController      GetCompanyList     - 6/20/2017 3:07:58 PM WHERE : 
+DEBUG 2017-06-20 15:07:58,428 2670854ms CompanyController      GetCompanyList     - 6/20/2017 3:07:58 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:07:58,429 2670855ms mCompanyService        GetCompanyList     - 6/20/2017 3:07:58 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:08:26,714 2699140ms CompanyController      GetCompanyList     - 6/20/2017 3:08:26 PM WHERE : 
+DEBUG 2017-06-20 15:08:26,715 2699141ms CompanyController      GetCompanyList     - 6/20/2017 3:08:26 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:08:26,716 2699142ms mCompanyService        GetCompanyList     - 6/20/2017 3:08:26 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:08:42,101 2714527ms CompanyController      GetCompanyList     - 6/20/2017 3:08:42 PM WHERE : 
+DEBUG 2017-06-20 15:08:42,102 2714528ms CompanyController      GetCompanyList     - 6/20/2017 3:08:42 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:08:42,103 2714529ms mCompanyService        GetCompanyList     - 6/20/2017 3:08:42 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:08:52,592 2725018ms CompanyController      GetCompanyList     - 6/20/2017 3:08:52 PM WHERE : 
+DEBUG 2017-06-20 15:08:52,593 2725019ms CompanyController      GetCompanyList     - 6/20/2017 3:08:52 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:08:52,593 2725019ms mCompanyService        GetCompanyList     - 6/20/2017 3:08:52 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:10:12,393 2804819ms CompanyController      GetCompanyList     - 6/20/2017 3:10:12 PM WHERE : 
+DEBUG 2017-06-20 15:10:12,394 2804820ms CompanyController      GetCompanyList     - 6/20/2017 3:10:12 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:10:12,395 2804821ms mCompanyService        GetCompanyList     - 6/20/2017 3:10:12 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:10:56,122 2848548ms CompanyController      GetCompanyList     - 6/20/2017 3:10:56 PM WHERE : 
+DEBUG 2017-06-20 15:10:56,123 2848549ms CompanyController      GetCompanyList     - 6/20/2017 3:10:56 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:10:56,124 2848550ms mCompanyService        GetCompanyList     - 6/20/2017 3:10:56 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:13:42,813 3015239ms CompanyController      GetCompanyList     - 6/20/2017 3:13:42 PM WHERE : 
+DEBUG 2017-06-20 15:13:42,814 3015240ms CompanyController      GetCompanyList     - 6/20/2017 3:13:42 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:13:42,814 3015240ms mCompanyService        GetCompanyList     - 6/20/2017 3:13:42 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:14:07,711 3040137ms CompanyController      GetCompanyList     - 6/20/2017 3:14:07 PM WHERE : 
+DEBUG 2017-06-20 15:14:07,711 3040137ms CompanyController      GetCompanyList     - 6/20/2017 3:14:07 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:14:07,711 3040137ms mCompanyService        GetCompanyList     - 6/20/2017 3:14:07 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:14:58,474 3090900ms CompanyController      GetCompanyList     - 6/20/2017 3:14:58 PM WHERE : 
+DEBUG 2017-06-20 15:14:58,475 3090901ms CompanyController      GetCompanyList     - 6/20/2017 3:14:58 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:14:58,475 3090901ms mCompanyService        GetCompanyList     - 6/20/2017 3:14:58 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:15:09,440 3101866ms CompanyController      GetCompanyList     - 6/20/2017 3:15:09 PM WHERE : 
+DEBUG 2017-06-20 15:15:09,441 3101867ms CompanyController      GetCompanyList     - 6/20/2017 3:15:09 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:15:09,442 3101868ms mCompanyService        GetCompanyList     - 6/20/2017 3:15:09 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:15:41,512 3133938ms CompanyController      GetCompanyList     - 6/20/2017 3:15:41 PM WHERE : 
+DEBUG 2017-06-20 15:15:41,513 3133939ms CompanyController      GetCompanyList     - 6/20/2017 3:15:41 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:15:41,514 3133940ms mCompanyService        GetCompanyList     - 6/20/2017 3:15:41 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:16:56,261 3208687ms CompanyController      GetCompanyList     - 6/20/2017 3:16:56 PM WHERE : 
+DEBUG 2017-06-20 15:16:56,262 3208688ms CompanyController      GetCompanyList     - 6/20/2017 3:16:56 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:16:56,262 3208688ms mCompanyService        GetCompanyList     - 6/20/2017 3:16:56 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:17:11,740 3224166ms CompanyController      GetCompanyList     - 6/20/2017 3:17:11 PM WHERE : 
+DEBUG 2017-06-20 15:17:11,741 3224167ms CompanyController      GetCompanyList     - 6/20/2017 3:17:11 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:17:11,741 3224167ms mCompanyService        GetCompanyList     - 6/20/2017 3:17:11 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:19:31,032 3363458ms CompanyController      GetCompanyList     - 6/20/2017 3:19:31 PM WHERE : 
+DEBUG 2017-06-20 15:19:31,032 3363458ms CompanyController      GetCompanyList     - 6/20/2017 3:19:31 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:19:31,033 3363459ms mCompanyService        GetCompanyList     - 6/20/2017 3:19:31 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:24:28,060 3660486ms CompanyController      GetCompanyList     - 6/20/2017 3:24:28 PM WHERE : 
+DEBUG 2017-06-20 15:24:28,060 3660486ms CompanyController      GetCompanyList     - 6/20/2017 3:24:28 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:24:28,061 3660487ms mCompanyService        GetCompanyList     - 6/20/2017 3:24:28 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:26:00,701 3753127ms CompanyController      GetCompanyList     - 6/20/2017 3:26:00 PM WHERE : 
+DEBUG 2017-06-20 15:26:00,702 3753128ms CompanyController      GetCompanyList     - 6/20/2017 3:26:00 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:26:00,704 3753130ms mCompanyService        GetCompanyList     - 6/20/2017 3:26:00 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:28:42,934 3915360ms CompanyController      GetCompanyList     - 6/20/2017 3:28:42 PM WHERE : 
+DEBUG 2017-06-20 15:28:42,935 3915361ms CompanyController      GetCompanyList     - 6/20/2017 3:28:42 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:28:42,936 3915362ms mCompanyService        GetCompanyList     - 6/20/2017 3:28:42 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:29:25,642 3958068ms CompanyController      GetCompanyList     - 6/20/2017 3:29:25 PM WHERE : 
+DEBUG 2017-06-20 15:29:25,643 3958069ms CompanyController      GetCompanyList     - 6/20/2017 3:29:25 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:29:25,643 3958069ms mCompanyService        GetCompanyList     - 6/20/2017 3:29:25 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:29:44,863 3977289ms CompanyController      GetCompanyList     - 6/20/2017 3:29:44 PM WHERE : 
+DEBUG 2017-06-20 15:29:44,864 3977290ms CompanyController      GetCompanyList     - 6/20/2017 3:29:44 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:29:44,864 3977290ms mCompanyService        GetCompanyList     - 6/20/2017 3:29:44 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:30:54,633 4047060ms CompanyController      GetCompanyList     - 6/20/2017 3:30:54 PM WHERE : 
+DEBUG 2017-06-20 15:30:54,634 4047061ms CompanyController      GetCompanyList     - 6/20/2017 3:30:54 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:30:54,634 4047061ms mCompanyService        GetCompanyList     - 6/20/2017 3:30:54 PM vRows : 20 vStart : 0
+DEBUG 2017-06-20 15:32:04,472  5150ms CompanyController      GetCompanyList     - 6/20/2017 3:32:04 PM WHERE : 
+DEBUG 2017-06-20 15:32:04,492  5170ms CompanyController      GetCompanyList     - 6/20/2017 3:32:04 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-20 15:32:04,493  5171ms mCompanyService        GetCompanyList     - 6/20/2017 3:32:04 PM vRows : 20 vStart : 0
