@@ -44,30 +44,31 @@ namespace hrd_holding.Services
             return vModel;
         }
 
-        /*
-        public ResponseModel UpdateEmployeeEducation(mEmployeeEducationModel pModel)
+        
+        public ResponseModel UpdateCompany(mCompanyModel pModel)
         {
             pModel.edit_user = "it";
             pModel.edit_date = DateTime.Now;
 
-            var vModel = _repoEdu.UpdateEmployeeEducation(pModel);
+            var vModel = _repoCompany.UpdateCompany(pModel);
             return vModel;
         }
 
-        public ResponseModel InsertEmployeeEducation(mEmployeeEducationModel pModel)
+        public ResponseModel InsertCompany(mCompanyModel pModel)
         {
             pModel.entry_user = "it";
             pModel.entry_date = DateTime.Now;
+            pModel.company_code = _repoCompany.getCompanySeqNo() + 1;
 
-            var vModel = _repoEdu.InsertEmployeeEducation(pModel);
+            var vModel = _repoCompany.InsertCompany(pModel);
             return vModel;
         }
 
-        public ResponseModel DeleteEmployeeEducation(string pEmployeeCode, int pSeqNo)
+        public ResponseModel DeleteCompany(int pCompanyCode)
         {
-            var vModel = _repoEdu.DeleteEmployeeEducation(pEmployeeCode, pSeqNo);
+            var vModel = _repoCompany.DeleteCompany(pCompanyCode);
             return vModel;
         }
-        */
+        
     }
 }

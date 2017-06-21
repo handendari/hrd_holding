@@ -26,7 +26,7 @@ namespace hrd_holding.Controllers
             return View();
         }
 
-        //[HttpPost]
+        [HttpPost]
         public dynamic GetBranchOfficeLookUp(int pCompanyCode)
         {
             //LOG.Debug(DateTime.Now + " ---- PageNum : " + pagenum + " PageSize : " + pagesize);
@@ -91,7 +91,8 @@ namespace hrd_holding.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
-        public dynamic GetBranchOfficeList(int pCompanyCode, int pBranchCode)
+        [HttpPost]
+        public dynamic GetBranchOfficeList(int pCompanyCode)
         {
             //LOG.Debug(DateTime.Now + " ---- PageNum : " + pagenum + " PageSize : " + pagesize);
 
@@ -148,12 +149,14 @@ namespace hrd_holding.Controllers
                     select new
                     {
                         vItem.branch_code,
-                        vItem.company_code,
-                        vItem.company_name,
                         vItem.int_branch,
-                        vItem.country_code,
-                        vItem.country_name,
                         vItem.branch_name,
+                        vItem.company_code,
+                        vItem.int_company,
+                        vItem.company_name,
+                        vItem.country_code,
+                        vItem.int_country,
+                        vItem.country_name,
                         vItem.address,
                         vItem.postal_code,
                         vItem.city_name,
@@ -165,10 +168,36 @@ namespace hrd_holding.Controllers
                         vItem.npwp,
                         vItem.pimpinan,
                         vItem.pimpinan_npwp,
-                        vItem.npp
+                        vItem.npp,
+                        vItem.entry_date,
+                        vItem.entry_user,
+                        vItem.edit_date,
+                        vItem.edit_user
                     }).ToArray()
             }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public dynamic InsertBranchOffice(mBranchOfficeModel pModel)
+        {
+            //LOG.Debug(DateTime.Now + "BranchOffice Code : " + pModel.branch_code + ", Branch_name : " + pModel.branch_name);
+
+            var vResp = _branchService.InsertBranchOffice(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public dynamic UpdateBranchOffice(mBranchOfficeModel pModel)
+        {
+            //LOG.Debug(DateTime.Now + " Masuk Controller BranchOffice Code : " + pModel.branch_code + ", BranchOffice_name : " + pModel.branch_name);
+
+            var vResp = new ResponseModel();
+            vResp = _branchService.UpdateBranchOffice(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

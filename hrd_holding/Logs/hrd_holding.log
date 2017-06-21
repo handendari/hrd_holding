@@ -26002,3 +26002,271 @@ DEBUG 2017-06-20 15:30:54,634 4047061ms mCompanyService        GetCompanyList   
 DEBUG 2017-06-20 15:32:04,472  5150ms CompanyController      GetCompanyList     - 6/20/2017 3:32:04 PM WHERE : 
 DEBUG 2017-06-20 15:32:04,492  5170ms CompanyController      GetCompanyList     - 6/20/2017 3:32:04 PM Page Num : 0 Page Size : 20
 DEBUG 2017-06-20 15:32:04,493  5171ms mCompanyService        GetCompanyList     - 6/20/2017 3:32:04 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 08:35:49,434  5734ms CompanyController      GetCompanyList     - 6/21/2017 8:35:49 AM WHERE : 
+DEBUG 2017-06-21 08:35:49,570  5870ms CompanyController      GetCompanyList     - 6/21/2017 8:35:49 AM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 08:35:49,571  5871ms mCompanyService        GetCompanyList     - 6/21/2017 8:35:49 AM vRows : 20 vStart : 0
+DEBUG 2017-06-21 08:36:54,347 70647ms CompanyController      GetCompanyList     - 6/21/2017 8:36:54 AM WHERE : 
+DEBUG 2017-06-21 08:36:54,349 70649ms CompanyController      GetCompanyList     - 6/21/2017 8:36:54 AM Page Num : 1 Page Size : 20
+DEBUG 2017-06-21 08:36:54,349 70649ms mCompanyService        GetCompanyList     - 6/21/2017 8:36:54 AM vRows : 20 vStart : 20
+DEBUG 2017-06-21 08:36:55,669 71969ms CompanyController      GetCompanyList     - 6/21/2017 8:36:55 AM WHERE : 
+DEBUG 2017-06-21 08:36:55,670 71970ms CompanyController      GetCompanyList     - 6/21/2017 8:36:55 AM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 08:36:55,671 71971ms mCompanyService        GetCompanyList     - 6/21/2017 8:36:55 AM vRows : 20 vStart : 0
+DEBUG 2017-06-21 08:39:42,791 239091ms CompanyController      GetCompanyList     - 6/21/2017 8:39:42 AM WHERE : 
+DEBUG 2017-06-21 08:39:42,792 239092ms CompanyController      GetCompanyList     - 6/21/2017 8:39:42 AM Page Num : 1 Page Size : 20
+DEBUG 2017-06-21 08:39:42,793 239093ms mCompanyService        GetCompanyList     - 6/21/2017 8:39:42 AM vRows : 20 vStart : 20
+DEBUG 2017-06-21 08:39:44,363 240664ms CompanyController      GetCompanyList     - 6/21/2017 8:39:44 AM WHERE : 
+DEBUG 2017-06-21 08:39:44,364 240665ms CompanyController      GetCompanyList     - 6/21/2017 8:39:44 AM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 08:39:44,365 240666ms mCompanyService        GetCompanyList     - 6/21/2017 8:39:44 AM vRows : 20 vStart : 0
+DEBUG 2017-06-21 08:48:09,902   102ms CountryController      GetCountryLookUp   - 6/21/2017 8:48:09 AM WHERE : 
+DEBUG 2017-06-21 08:48:09,993   193ms CountryController      GetCountryLookUp   - 6/21/2017 8:48:09 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-21 08:48:09,994   194ms mCountryService        GetCountryList     - 6/21/2017 8:48:09 AM vRows : 15 vStart : 0
+DEBUG 2017-06-21 08:48:09,998   198ms CountryRepo            getCountryList     - 6/21/2017 8:48:09 AM pWHERE : 
+DEBUG 2017-06-21 08:50:26,310 136510ms CountryController      GetCountryLookUp   - 6/21/2017 8:50:26 AM WHERE : 
+DEBUG 2017-06-21 08:50:26,311 136511ms CountryController      GetCountryLookUp   - 6/21/2017 8:50:26 AM Page Num : 0 Page Size : 0
+DEBUG 2017-06-21 08:50:26,311 136511ms mCountryService        GetCountryList     - 6/21/2017 8:50:26 AM vRows : 10 vStart : 0
+DEBUG 2017-06-21 08:50:26,312 136512ms CountryRepo            getCountryList     - 6/21/2017 8:50:26 AM pWHERE : 
+DEBUG 2017-06-21 08:51:05,971 176171ms CompanyController      GetCompanyList     - 6/21/2017 8:51:05 AM WHERE : 
+DEBUG 2017-06-21 08:51:05,972 176172ms CompanyController      GetCompanyList     - 6/21/2017 8:51:05 AM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 08:51:05,973 176173ms mCompanyService        GetCompanyList     - 6/21/2017 8:51:05 AM vRows : 20 vStart : 0
+DEBUG 2017-06-21 08:51:10,717 180917ms CountryController      GetCountryLookUp   - 6/21/2017 8:51:10 AM WHERE : 
+DEBUG 2017-06-21 08:51:10,718 180918ms CountryController      GetCountryLookUp   - 6/21/2017 8:51:10 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-21 08:51:10,718 180918ms mCountryService        GetCountryList     - 6/21/2017 8:51:10 AM vRows : 15 vStart : 0
+DEBUG 2017-06-21 08:51:10,719 180919ms CountryRepo            getCountryList     - 6/21/2017 8:51:10 AM pWHERE : 
+DEBUG 2017-06-21 08:53:16,290 306489ms CompanyController      GetCompanyList     - 6/21/2017 8:53:16 AM WHERE : 
+DEBUG 2017-06-21 08:53:16,290 306489ms CompanyController      GetCompanyList     - 6/21/2017 8:53:16 AM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 08:53:16,291 306490ms mCompanyService        GetCompanyList     - 6/21/2017 8:53:16 AM vRows : 20 vStart : 0
+DEBUG 2017-06-21 08:53:20,500 310700ms CountryController      GetCountryLookUp   - 6/21/2017 8:53:20 AM WHERE : 
+DEBUG 2017-06-21 08:53:20,500 310700ms CountryController      GetCountryLookUp   - 6/21/2017 8:53:20 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-21 08:53:20,500 310700ms mCountryService        GetCountryList     - 6/21/2017 8:53:20 AM vRows : 15 vStart : 0
+DEBUG 2017-06-21 08:53:20,501 310701ms CountryRepo            getCountryList     - 6/21/2017 8:53:20 AM pWHERE : 
+DEBUG 2017-06-21 08:53:31,092 321291ms CompanyController      GetCompanyList     - 6/21/2017 8:53:31 AM WHERE : 
+DEBUG 2017-06-21 08:53:31,093 321292ms CompanyController      GetCompanyList     - 6/21/2017 8:53:31 AM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 08:53:31,094 321293ms mCompanyService        GetCompanyList     - 6/21/2017 8:53:31 AM vRows : 20 vStart : 0
+DEBUG 2017-06-21 08:53:36,588 326787ms CountryController      GetCountryLookUp   - 6/21/2017 8:53:36 AM WHERE : 
+DEBUG 2017-06-21 08:53:36,589 326788ms CountryController      GetCountryLookUp   - 6/21/2017 8:53:36 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-21 08:53:36,589 326788ms mCountryService        GetCountryList     - 6/21/2017 8:53:36 AM vRows : 15 vStart : 0
+DEBUG 2017-06-21 08:53:36,590 326789ms CountryRepo            getCountryList     - 6/21/2017 8:53:36 AM pWHERE : 
+DEBUG 2017-06-21 08:53:45,926 336125ms CompanyController      GetCompanyList     - 6/21/2017 8:53:45 AM WHERE : 
+DEBUG 2017-06-21 08:53:45,927 336126ms CompanyController      GetCompanyList     - 6/21/2017 8:53:45 AM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 08:53:45,927 336126ms mCompanyService        GetCompanyList     - 6/21/2017 8:53:45 AM vRows : 20 vStart : 0
+DEBUG 2017-06-21 08:53:50,763 340963ms CountryController      GetCountryLookUp   - 6/21/2017 8:53:50 AM WHERE : 
+DEBUG 2017-06-21 08:53:50,764 340964ms CountryController      GetCountryLookUp   - 6/21/2017 8:53:50 AM Page Num : 0 Page Size : 15
+DEBUG 2017-06-21 08:53:50,764 340964ms mCountryService        GetCountryList     - 6/21/2017 8:53:50 AM vRows : 15 vStart : 0
+DEBUG 2017-06-21 08:53:50,765 340965ms CountryRepo            getCountryList     - 6/21/2017 8:53:50 AM pWHERE : 
+DEBUG 2017-06-21 08:53:56,580 346779ms CountryController      GetCountryLookUp   - 6/21/2017 8:53:56 AM WHERE : 
+DEBUG 2017-06-21 08:53:56,581 346780ms CountryController      GetCountryLookUp   - 6/21/2017 8:53:56 AM Page Num : 1 Page Size : 15
+DEBUG 2017-06-21 08:53:56,582 346781ms mCountryService        GetCountryList     - 6/21/2017 8:53:56 AM vRows : 15 vStart : 15
+DEBUG 2017-06-21 08:53:56,582 346781ms CountryRepo            getCountryList     - 6/21/2017 8:53:56 AM pWHERE : 
+DEBUG 2017-06-21 08:53:57,684 347883ms CountryController      GetCountryLookUp   - 6/21/2017 8:53:57 AM WHERE : 
+DEBUG 2017-06-21 08:53:57,685 347884ms CountryController      GetCountryLookUp   - 6/21/2017 8:53:57 AM Page Num : 2 Page Size : 15
+DEBUG 2017-06-21 08:53:57,685 347884ms mCountryService        GetCountryList     - 6/21/2017 8:53:57 AM vRows : 15 vStart : 30
+DEBUG 2017-06-21 08:53:57,686 347885ms CountryRepo            getCountryList     - 6/21/2017 8:53:57 AM pWHERE : 
+DEBUG 2017-06-21 08:53:59,612 349811ms CountryController      GetCountryLookUp   - 6/21/2017 8:53:59 AM WHERE : 
+DEBUG 2017-06-21 08:53:59,613 349812ms CountryController      GetCountryLookUp   - 6/21/2017 8:53:59 AM Page Num : 3 Page Size : 15
+DEBUG 2017-06-21 08:53:59,614 349813ms mCountryService        GetCountryList     - 6/21/2017 8:53:59 AM vRows : 15 vStart : 45
+DEBUG 2017-06-21 08:53:59,614 349813ms CountryRepo            getCountryList     - 6/21/2017 8:53:59 AM pWHERE : 
+DEBUG 2017-06-21 08:54:00,540 350740ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:00 AM WHERE : 
+DEBUG 2017-06-21 08:54:00,541 350741ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:00 AM Page Num : 4 Page Size : 15
+DEBUG 2017-06-21 08:54:00,541 350741ms mCountryService        GetCountryList     - 6/21/2017 8:54:00 AM vRows : 15 vStart : 60
+DEBUG 2017-06-21 08:54:00,542 350742ms CountryRepo            getCountryList     - 6/21/2017 8:54:00 AM pWHERE : 
+DEBUG 2017-06-21 08:54:01,275 351475ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:01 AM WHERE : 
+DEBUG 2017-06-21 08:54:01,276 351476ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:01 AM Page Num : 5 Page Size : 15
+DEBUG 2017-06-21 08:54:01,276 351476ms mCountryService        GetCountryList     - 6/21/2017 8:54:01 AM vRows : 15 vStart : 75
+DEBUG 2017-06-21 08:54:01,277 351477ms CountryRepo            getCountryList     - 6/21/2017 8:54:01 AM pWHERE : 
+DEBUG 2017-06-21 08:54:01,828 352027ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:01 AM WHERE : 
+DEBUG 2017-06-21 08:54:01,829 352028ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:01 AM Page Num : 6 Page Size : 15
+DEBUG 2017-06-21 08:54:01,829 352028ms mCountryService        GetCountryList     - 6/21/2017 8:54:01 AM vRows : 15 vStart : 90
+DEBUG 2017-06-21 08:54:01,829 352028ms CountryRepo            getCountryList     - 6/21/2017 8:54:01 AM pWHERE : 
+DEBUG 2017-06-21 08:54:02,388 352587ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:02 AM WHERE : 
+DEBUG 2017-06-21 08:54:02,389 352588ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:02 AM Page Num : 7 Page Size : 15
+DEBUG 2017-06-21 08:54:02,389 352588ms mCountryService        GetCountryList     - 6/21/2017 8:54:02 AM vRows : 15 vStart : 105
+DEBUG 2017-06-21 08:54:02,389 352588ms CountryRepo            getCountryList     - 6/21/2017 8:54:02 AM pWHERE : 
+DEBUG 2017-06-21 08:54:02,988 353187ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:02 AM WHERE : 
+DEBUG 2017-06-21 08:54:02,988 353187ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:02 AM Page Num : 8 Page Size : 15
+DEBUG 2017-06-21 08:54:02,989 353188ms mCountryService        GetCountryList     - 6/21/2017 8:54:02 AM vRows : 15 vStart : 120
+DEBUG 2017-06-21 08:54:02,989 353188ms CountryRepo            getCountryList     - 6/21/2017 8:54:02 AM pWHERE : 
+DEBUG 2017-06-21 08:54:03,875 354074ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:03 AM WHERE : 
+DEBUG 2017-06-21 08:54:03,876 354075ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:03 AM Page Num : 9 Page Size : 15
+DEBUG 2017-06-21 08:54:03,876 354075ms mCountryService        GetCountryList     - 6/21/2017 8:54:03 AM vRows : 15 vStart : 135
+DEBUG 2017-06-21 08:54:03,877 354076ms CountryRepo            getCountryList     - 6/21/2017 8:54:03 AM pWHERE : 
+DEBUG 2017-06-21 08:54:04,710 354909ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:04 AM WHERE : 
+DEBUG 2017-06-21 08:54:04,710 354909ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:04 AM Page Num : 8 Page Size : 15
+DEBUG 2017-06-21 08:54:04,711 354910ms mCountryService        GetCountryList     - 6/21/2017 8:54:04 AM vRows : 15 vStart : 120
+DEBUG 2017-06-21 08:54:04,711 354910ms CountryRepo            getCountryList     - 6/21/2017 8:54:04 AM pWHERE : 
+DEBUG 2017-06-21 08:54:05,266 355466ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:05 AM WHERE : 
+DEBUG 2017-06-21 08:54:05,267 355467ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:05 AM Page Num : 7 Page Size : 15
+DEBUG 2017-06-21 08:54:05,267 355467ms mCountryService        GetCountryList     - 6/21/2017 8:54:05 AM vRows : 15 vStart : 105
+DEBUG 2017-06-21 08:54:05,268 355468ms CountryRepo            getCountryList     - 6/21/2017 8:54:05 AM pWHERE : 
+DEBUG 2017-06-21 08:54:05,915 356115ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:05 AM WHERE : 
+DEBUG 2017-06-21 08:54:05,916 356116ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:05 AM Page Num : 6 Page Size : 15
+DEBUG 2017-06-21 08:54:05,917 356117ms mCountryService        GetCountryList     - 6/21/2017 8:54:05 AM vRows : 15 vStart : 90
+DEBUG 2017-06-21 08:54:05,917 356117ms CountryRepo            getCountryList     - 6/21/2017 8:54:05 AM pWHERE : 
+DEBUG 2017-06-21 08:54:06,426 356626ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:06 AM WHERE : 
+DEBUG 2017-06-21 08:54:06,427 356627ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:06 AM Page Num : 5 Page Size : 15
+DEBUG 2017-06-21 08:54:06,427 356627ms mCountryService        GetCountryList     - 6/21/2017 8:54:06 AM vRows : 15 vStart : 75
+DEBUG 2017-06-21 08:54:06,428 356628ms CountryRepo            getCountryList     - 6/21/2017 8:54:06 AM pWHERE : 
+DEBUG 2017-06-21 08:54:07,483 357683ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:07 AM WHERE : 
+DEBUG 2017-06-21 08:54:07,484 357684ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:07 AM Page Num : 4 Page Size : 15
+DEBUG 2017-06-21 08:54:07,484 357684ms mCountryService        GetCountryList     - 6/21/2017 8:54:07 AM vRows : 15 vStart : 60
+DEBUG 2017-06-21 08:54:07,485 357685ms CountryRepo            getCountryList     - 6/21/2017 8:54:07 AM pWHERE : 
+DEBUG 2017-06-21 08:54:12,343 362543ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:12 AM WHERE : 
+DEBUG 2017-06-21 08:54:12,343 362543ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:12 AM Page Num : 3 Page Size : 20
+DEBUG 2017-06-21 08:54:12,344 362544ms mCountryService        GetCountryList     - 6/21/2017 8:54:12 AM vRows : 20 vStart : 60
+DEBUG 2017-06-21 08:54:12,345 362545ms CountryRepo            getCountryList     - 6/21/2017 8:54:12 AM pWHERE : 
+DEBUG 2017-06-21 08:54:17,211 367410ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:17 AM WHERE : 
+DEBUG 2017-06-21 08:54:17,212 367411ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:17 AM Page Num : 4 Page Size : 20
+DEBUG 2017-06-21 08:54:17,212 367411ms mCountryService        GetCountryList     - 6/21/2017 8:54:17 AM vRows : 20 vStart : 80
+DEBUG 2017-06-21 08:54:17,213 367412ms CountryRepo            getCountryList     - 6/21/2017 8:54:17 AM pWHERE : 
+DEBUG 2017-06-21 08:54:18,586 368786ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:18 AM WHERE : 
+DEBUG 2017-06-21 08:54:18,587 368787ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:18 AM Page Num : 5 Page Size : 20
+DEBUG 2017-06-21 08:54:18,587 368787ms mCountryService        GetCountryList     - 6/21/2017 8:54:18 AM vRows : 20 vStart : 100
+DEBUG 2017-06-21 08:54:18,588 368788ms CountryRepo            getCountryList     - 6/21/2017 8:54:18 AM pWHERE : 
+DEBUG 2017-06-21 08:54:20,284 370483ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:20 AM WHERE : 
+DEBUG 2017-06-21 08:54:20,284 370483ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:20 AM Page Num : 6 Page Size : 20
+DEBUG 2017-06-21 08:54:20,285 370484ms mCountryService        GetCountryList     - 6/21/2017 8:54:20 AM vRows : 20 vStart : 120
+DEBUG 2017-06-21 08:54:20,285 370484ms CountryRepo            getCountryList     - 6/21/2017 8:54:20 AM pWHERE : 
+DEBUG 2017-06-21 08:54:21,498 371698ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:21 AM WHERE : 
+DEBUG 2017-06-21 08:54:21,499 371699ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:21 AM Page Num : 7 Page Size : 20
+DEBUG 2017-06-21 08:54:21,499 371699ms mCountryService        GetCountryList     - 6/21/2017 8:54:21 AM vRows : 20 vStart : 140
+DEBUG 2017-06-21 08:54:21,499 371699ms CountryRepo            getCountryList     - 6/21/2017 8:54:21 AM pWHERE : 
+DEBUG 2017-06-21 08:54:22,171 372371ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:22 AM WHERE : 
+DEBUG 2017-06-21 08:54:22,172 372372ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:22 AM Page Num : 8 Page Size : 20
+DEBUG 2017-06-21 08:54:22,173 372373ms mCountryService        GetCountryList     - 6/21/2017 8:54:22 AM vRows : 20 vStart : 160
+DEBUG 2017-06-21 08:54:22,173 372373ms CountryRepo            getCountryList     - 6/21/2017 8:54:22 AM pWHERE : 
+DEBUG 2017-06-21 08:54:22,850 373049ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:22 AM WHERE : 
+DEBUG 2017-06-21 08:54:22,851 373050ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:22 AM Page Num : 9 Page Size : 20
+DEBUG 2017-06-21 08:54:22,852 373051ms mCountryService        GetCountryList     - 6/21/2017 8:54:22 AM vRows : 20 vStart : 180
+DEBUG 2017-06-21 08:54:22,852 373051ms CountryRepo            getCountryList     - 6/21/2017 8:54:22 AM pWHERE : 
+DEBUG 2017-06-21 08:54:23,491 373690ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:23 AM WHERE : 
+DEBUG 2017-06-21 08:54:23,491 373690ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:23 AM Page Num : 10 Page Size : 20
+DEBUG 2017-06-21 08:54:23,492 373691ms mCountryService        GetCountryList     - 6/21/2017 8:54:23 AM vRows : 20 vStart : 200
+DEBUG 2017-06-21 08:54:23,492 373691ms CountryRepo            getCountryList     - 6/21/2017 8:54:23 AM pWHERE : 
+DEBUG 2017-06-21 08:54:24,059 374258ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:24 AM WHERE : 
+DEBUG 2017-06-21 08:54:24,060 374259ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:24 AM Page Num : 11 Page Size : 20
+DEBUG 2017-06-21 08:54:24,060 374259ms mCountryService        GetCountryList     - 6/21/2017 8:54:24 AM vRows : 20 vStart : 220
+DEBUG 2017-06-21 08:54:24,060 374259ms CountryRepo            getCountryList     - 6/21/2017 8:54:24 AM pWHERE : 
+DEBUG 2017-06-21 08:54:28,050 378249ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:28 AM WHERE : 
+DEBUG 2017-06-21 08:54:28,051 378250ms CountryController      GetCountryLookUp   - 6/21/2017 8:54:28 AM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 08:54:28,051 378250ms mCountryService        GetCountryList     - 6/21/2017 8:54:28 AM vRows : 20 vStart : 0
+DEBUG 2017-06-21 08:54:28,052 378251ms CountryRepo            getCountryList     - 6/21/2017 8:54:28 AM pWHERE : 
+DEBUG 2017-06-21 13:14:43,892  6409ms CompanyController      GetCompanyList     - 6/21/2017 1:14:43 PM WHERE : 
+DEBUG 2017-06-21 13:14:43,923  6440ms CompanyController      GetCompanyList     - 6/21/2017 1:14:43 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 13:14:43,924  6441ms mCompanyService        GetCompanyList     - 6/21/2017 1:14:43 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 13:18:03,611 206127ms CompanyController      GetCompanyList     - 6/21/2017 1:18:03 PM WHERE : 
+DEBUG 2017-06-21 13:18:03,612 206128ms CompanyController      GetCompanyList     - 6/21/2017 1:18:03 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 13:18:03,612 206128ms mCompanyService        GetCompanyList     - 6/21/2017 1:18:03 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 13:18:17,341 219857ms CompanyController      UpdateCompany      - 6/21/2017 1:18:17 PM Masuk Controller Comp Code : 0, company_name : PT FREIGHT EXPRESS JAKARTA
+DEBUG 2017-06-21 13:18:17,394 219910ms CompanyRepo            UpdateCompany      - 6/21/2017 1:18:17 PM UPDATE COMPANY SUCCESS ====>>>>>> Code : 0 Name : PT FREIGHT EXPRESS JAKARTA
+DEBUG 2017-06-21 13:18:17,424 219940ms CompanyController      GetCompanyList     - 6/21/2017 1:18:17 PM WHERE : 
+DEBUG 2017-06-21 13:18:17,425 219941ms CompanyController      GetCompanyList     - 6/21/2017 1:18:17 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 13:18:17,426 219942ms mCompanyService        GetCompanyList     - 6/21/2017 1:18:17 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 13:19:54,744 317260ms CompanyController      UpdateCompany      - 6/21/2017 1:19:54 PM Masuk Controller Comp Code : 0, company_name : PT OTS LOGISTIK INDONESIA
+DEBUG 2017-06-21 13:19:54,762 317278ms CompanyRepo            UpdateCompany      - 6/21/2017 1:19:54 PM UPDATE COMPANY SUCCESS ====>>>>>> Code : 0 Name : PT OTS LOGISTIK INDONESIA
+DEBUG 2017-06-21 13:19:56,042 318558ms CompanyController      GetCompanyList     - 6/21/2017 1:19:56 PM WHERE : 
+DEBUG 2017-06-21 13:19:56,042 318558ms CompanyController      GetCompanyList     - 6/21/2017 1:19:56 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 13:19:56,043 318559ms mCompanyService        GetCompanyList     - 6/21/2017 1:19:56 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 13:36:47,958 1330474ms CompanyController      UpdateCompany      - 6/21/2017 1:36:47 PM Masuk Controller Comp Code : 1, company_name : PT FREIGHT EXPRESS GROUP
+DEBUG 2017-06-21 13:36:48,132 1330648ms CompanyRepo            UpdateCompany      - 6/21/2017 1:36:48 PM UPDATE COMPANY SUCCESS ====>>>>>> Code : 1 Name : PT FREIGHT EXPRESS GROUP
+DEBUG 2017-06-21 13:36:48,173 1330689ms CompanyController      GetCompanyList     - 6/21/2017 1:36:48 PM WHERE : 
+DEBUG 2017-06-21 13:36:48,173 1330689ms CompanyController      GetCompanyList     - 6/21/2017 1:36:48 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 13:36:48,174 1330690ms mCompanyService        GetCompanyList     - 6/21/2017 1:36:48 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 13:46:14,377  7655ms CompanyController      GetCompanyList     - 6/21/2017 1:46:14 PM WHERE : 
+DEBUG 2017-06-21 13:46:14,403  7681ms CompanyController      GetCompanyList     - 6/21/2017 1:46:14 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 13:46:14,405  7683ms mCompanyService        GetCompanyList     - 6/21/2017 1:46:14 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 13:49:36,899 210177ms CountryController      GetCountryLookUp   - 6/21/2017 1:49:36 PM WHERE : 
+DEBUG 2017-06-21 13:49:36,900 210178ms CountryController      GetCountryLookUp   - 6/21/2017 1:49:36 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 13:49:36,901 210179ms mCountryService        GetCountryList     - 6/21/2017 1:49:36 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 13:49:36,903 210181ms CountryRepo            getCountryList     - 6/21/2017 1:49:36 PM pWHERE : 
+DEBUG 2017-06-21 13:49:43,832 217110ms CountryController      GetCountryLookUp   - 6/21/2017 1:49:43 PM WHERE :  WHERE ( country_name LIKE '%indo%')
+DEBUG 2017-06-21 13:49:43,833 217111ms CountryController      GetCountryLookUp   - 6/21/2017 1:49:43 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 13:49:43,834 217112ms mCountryService        GetCountryList     - 6/21/2017 1:49:43 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 13:49:43,834 217112ms CountryRepo            getCountryList     - 6/21/2017 1:49:43 PM pWHERE :  WHERE ( country_name LIKE '%indo%')
+DEBUG 2017-06-21 13:50:16,218 249496ms CompanyController      InsertCompany      - 6/21/2017 1:50:16 PMCOMPANY Code : 0, company_name : PT ABC SURGA NEGARA
+DEBUG 2017-06-21 13:50:16,359 249636ms CompanyRepo            InsertCompany      - 6/21/2017 1:50:16 PM INSERT COMPANY SUCCESS ====>>>> Code : 23 Name : PT ABC SURGA NEGARA
+DEBUG 2017-06-21 13:50:16,395 249673ms CompanyController      GetCompanyList     - 6/21/2017 1:50:16 PM WHERE : 
+DEBUG 2017-06-21 13:50:16,397 249675ms CompanyController      GetCompanyList     - 6/21/2017 1:50:16 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 13:50:16,398 249676ms mCompanyService        GetCompanyList     - 6/21/2017 1:50:16 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 13:50:28,099 261376ms CompanyController      GetCompanyList     - 6/21/2017 1:50:28 PM WHERE : 
+DEBUG 2017-06-21 13:50:28,100 261377ms CompanyController      GetCompanyList     - 6/21/2017 1:50:28 PM Page Num : 1 Page Size : 20
+DEBUG 2017-06-21 13:50:28,100 261377ms mCompanyService        GetCompanyList     - 6/21/2017 1:50:28 PM vRows : 20 vStart : 20
+DEBUG 2017-06-21 13:51:39,290 332567ms CompanyController      GetCompanyList     - 6/21/2017 1:51:39 PM WHERE : 
+DEBUG 2017-06-21 13:51:39,291 332568ms CompanyController      GetCompanyList     - 6/21/2017 1:51:39 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 13:51:39,291 332568ms mCompanyService        GetCompanyList     - 6/21/2017 1:51:39 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 13:51:42,791 336069ms CompanyController      GetCompanyList     - 6/21/2017 1:51:42 PM WHERE : 
+DEBUG 2017-06-21 13:51:42,792 336070ms CompanyController      GetCompanyList     - 6/21/2017 1:51:42 PM Page Num : 1 Page Size : 20
+DEBUG 2017-06-21 13:51:42,793 336071ms mCompanyService        GetCompanyList     - 6/21/2017 1:51:42 PM vRows : 20 vStart : 20
+DEBUG 2017-06-21 13:51:48,108 341385ms CountryController      GetCountryLookUp   - 6/21/2017 1:51:48 PM WHERE : 
+DEBUG 2017-06-21 13:51:48,109 341386ms CountryController      GetCountryLookUp   - 6/21/2017 1:51:48 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 13:51:48,110 341387ms mCountryService        GetCountryList     - 6/21/2017 1:51:48 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 13:51:48,110 341387ms CountryRepo            getCountryList     - 6/21/2017 1:51:48 PM pWHERE : 
+DEBUG 2017-06-21 13:51:54,914 348191ms CompanyController      UpdateCompany      - 6/21/2017 1:51:54 PM Masuk Controller Comp Code : 23, company_name : PT ABC SURGA NEGARA
+DEBUG 2017-06-21 13:51:55,055 348332ms CompanyRepo            UpdateCompany      - 6/21/2017 1:51:55 PM UPDATE COMPANY SUCCESS ====>>>>>> Code : 23 Name : PT ABC SURGA NEGARA
+DEBUG 2017-06-21 13:51:55,077 348355ms CompanyController      GetCompanyList     - 6/21/2017 1:51:55 PM WHERE : 
+DEBUG 2017-06-21 13:51:55,077 348355ms CompanyController      GetCompanyList     - 6/21/2017 1:51:55 PM Page Num : 1 Page Size : 20
+DEBUG 2017-06-21 13:51:55,078 348356ms mCompanyService        GetCompanyList     - 6/21/2017 1:51:55 PM vRows : 20 vStart : 20
+DEBUG 2017-06-21 13:51:55,084 348362ms CompanyController      GetCompanyList     - 6/21/2017 1:51:55 PM WHERE : 
+DEBUG 2017-06-21 13:51:55,085 348363ms CompanyController      GetCompanyList     - 6/21/2017 1:51:55 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 13:51:55,086 348364ms mCompanyService        GetCompanyList     - 6/21/2017 1:51:55 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 13:51:57,767 351044ms CompanyController      GetCompanyList     - 6/21/2017 1:51:57 PM WHERE : 
+DEBUG 2017-06-21 13:51:57,768 351045ms CompanyController      GetCompanyList     - 6/21/2017 1:51:57 PM Page Num : 1 Page Size : 20
+DEBUG 2017-06-21 13:51:57,769 351046ms mCompanyService        GetCompanyList     - 6/21/2017 1:51:57 PM vRows : 20 vStart : 20
+DEBUG 2017-06-21 15:13:10,091 150974ms CompanyController      GetCompanyList     - 6/21/2017 3:13:10 PM WHERE : 
+DEBUG 2017-06-21 15:13:10,119 151002ms CompanyController      GetCompanyList     - 6/21/2017 3:13:10 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:13:10,120 151003ms mCompanyService        GetCompanyList     - 6/21/2017 3:13:10 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:26:08,733  6725ms CompanyController      GetCompanyList     - 6/21/2017 3:26:08 PM WHERE : 
+DEBUG 2017-06-21 15:26:08,763  6755ms CompanyController      GetCompanyList     - 6/21/2017 3:26:08 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:26:08,764  6756ms mCompanyService        GetCompanyList     - 6/21/2017 3:26:08 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:26:26,069 24061ms CompanyController      GetCompanyList     - 6/21/2017 3:26:26 PM WHERE : 
+DEBUG 2017-06-21 15:26:26,070 24062ms CompanyController      GetCompanyList     - 6/21/2017 3:26:26 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:26:26,071 24063ms mCompanyService        GetCompanyList     - 6/21/2017 3:26:26 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:27:40,327 98319ms CompanyController      GetCompanyList     - 6/21/2017 3:27:40 PM WHERE : 
+DEBUG 2017-06-21 15:27:40,328 98320ms CompanyController      GetCompanyList     - 6/21/2017 3:27:40 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:27:40,328 98320ms mCompanyService        GetCompanyList     - 6/21/2017 3:27:40 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:28:05,934 123926ms CompanyController      GetCompanyList     - 6/21/2017 3:28:05 PM WHERE : 
+DEBUG 2017-06-21 15:28:05,934 123926ms CompanyController      GetCompanyList     - 6/21/2017 3:28:05 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:28:05,935 123927ms mCompanyService        GetCompanyList     - 6/21/2017 3:28:05 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:28:37,509 155501ms CompanyController      GetCompanyList     - 6/21/2017 3:28:37 PM WHERE : 
+DEBUG 2017-06-21 15:28:37,510 155502ms CompanyController      GetCompanyList     - 6/21/2017 3:28:37 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:28:37,511 155503ms mCompanyService        GetCompanyList     - 6/21/2017 3:28:37 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:30:04,030 242022ms CompanyController      GetCompanyList     - 6/21/2017 3:30:04 PM WHERE : 
+DEBUG 2017-06-21 15:30:04,031 242023ms CompanyController      GetCompanyList     - 6/21/2017 3:30:04 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:30:04,032 242024ms mCompanyService        GetCompanyList     - 6/21/2017 3:30:04 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:30:21,053 259045ms CompanyController      GetCompanyList     - 6/21/2017 3:30:21 PM WHERE : 
+DEBUG 2017-06-21 15:30:21,053 259045ms CompanyController      GetCompanyList     - 6/21/2017 3:30:21 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:30:21,054 259046ms mCompanyService        GetCompanyList     - 6/21/2017 3:30:21 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:30:29,808 267800ms CompanyController      GetCompanyList     - 6/21/2017 3:30:29 PM WHERE : 
+DEBUG 2017-06-21 15:30:29,809 267801ms CompanyController      GetCompanyList     - 6/21/2017 3:30:29 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:30:29,809 267801ms mCompanyService        GetCompanyList     - 6/21/2017 3:30:29 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:30:46,767 284759ms CompanyController      GetCompanyList     - 6/21/2017 3:30:46 PM WHERE : 
+DEBUG 2017-06-21 15:30:46,768 284760ms CompanyController      GetCompanyList     - 6/21/2017 3:30:46 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:30:46,768 284760ms mCompanyService        GetCompanyList     - 6/21/2017 3:30:46 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:31:13,321 311313ms CompanyController      GetCompanyList     - 6/21/2017 3:31:13 PM WHERE : 
+DEBUG 2017-06-21 15:31:13,322 311314ms CompanyController      GetCompanyList     - 6/21/2017 3:31:13 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:31:13,323 311315ms mCompanyService        GetCompanyList     - 6/21/2017 3:31:13 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:36:41,679 639671ms CompanyController      GetCompanyList     - 6/21/2017 3:36:41 PM WHERE : 
+DEBUG 2017-06-21 15:36:41,680 639672ms CompanyController      GetCompanyList     - 6/21/2017 3:36:41 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:36:41,681 639673ms mCompanyService        GetCompanyList     - 6/21/2017 3:36:41 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:49:00,540 30760ms CompanyController      GetCompanyLookUp   - 6/21/2017 3:49:00 PM WHERE : 
+DEBUG 2017-06-21 15:49:00,567 30787ms CompanyController      GetCompanyLookUp   - 6/21/2017 3:49:00 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:49:00,569 30789ms mCompanyService        GetCompanyList     - 6/21/2017 3:49:00 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:49:41,984 72204ms CompanyController      GetCompanyLookUp   - 6/21/2017 3:49:41 PM WHERE : 
+DEBUG 2017-06-21 15:49:41,985 72205ms CompanyController      GetCompanyLookUp   - 6/21/2017 3:49:41 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:49:41,985 72205ms mCompanyService        GetCompanyList     - 6/21/2017 3:49:41 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:51:03,007 153227ms CompanyController      GetCompanyLookUp   - 6/21/2017 3:51:03 PM WHERE : 
+DEBUG 2017-06-21 15:51:03,007 153227ms CompanyController      GetCompanyLookUp   - 6/21/2017 3:51:03 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:51:03,008 153228ms mCompanyService        GetCompanyList     - 6/21/2017 3:51:03 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:51:06,156 156376ms BranchOfficeService    etBranchOfficeList - 6/21/2017 3:51:06 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 15:58:30,602 600822ms CompanyController      GetCompanyLookUp   - 6/21/2017 3:58:30 PM WHERE : 
+DEBUG 2017-06-21 15:58:30,603 600823ms CompanyController      GetCompanyLookUp   - 6/21/2017 3:58:30 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 15:58:30,603 600823ms mCompanyService        GetCompanyList     - 6/21/2017 3:58:30 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 16:00:29,449 719669ms CompanyController      GetCompanyLookUp   - 6/21/2017 4:00:29 PM WHERE : 
+DEBUG 2017-06-21 16:00:29,450 719670ms CompanyController      GetCompanyLookUp   - 6/21/2017 4:00:29 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 16:00:29,451 719671ms mCompanyService        GetCompanyList     - 6/21/2017 4:00:29 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 16:00:56,983 747203ms CompanyController      GetCompanyLookUp   - 6/21/2017 4:00:56 PM WHERE : 
+DEBUG 2017-06-21 16:00:56,984 747204ms CompanyController      GetCompanyLookUp   - 6/21/2017 4:00:56 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 16:00:56,984 747204ms mCompanyService        GetCompanyList     - 6/21/2017 4:00:56 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 16:01:01,061 751281ms BranchOfficeService    etBranchOfficeList - 6/21/2017 4:01:01 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 16:01:02,987 753207ms CompanyController      GetCompanyLookUp   - 6/21/2017 4:01:02 PM WHERE : 
+DEBUG 2017-06-21 16:01:02,988 753208ms CompanyController      GetCompanyLookUp   - 6/21/2017 4:01:02 PM Page Num : 0 Page Size : 20
+DEBUG 2017-06-21 16:01:02,989 753209ms mCompanyService        GetCompanyList     - 6/21/2017 4:01:02 PM vRows : 20 vStart : 0
+DEBUG 2017-06-21 16:01:07,134 757354ms BranchOfficeService    etBranchOfficeList - 6/21/2017 4:01:07 PM vRows : 20 vStart : 0

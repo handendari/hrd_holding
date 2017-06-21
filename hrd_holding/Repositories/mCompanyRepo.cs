@@ -12,8 +12,10 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("CompanyRepo");
 
-        public void InsertCompany(mCompanyModel pModel)
+        public ResponseModel InsertCompany(mCompanyModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"INSERT INTO m_company (company_code,int_company,country_code,company_name,address,postal_code,
                                                         city_name,state,phone_number,fax_number,web_address,email_address,picture,
                                                         npwp,pimpinan,pimpinan_npwp,npp,jhk,entry_date,entry_user,edit_date,edit_user)
@@ -55,6 +57,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " INSERT COMPANY SUCCESS, Code : " + pModel.company_code + " Name : " + pModel.company_name;
                         Log.Debug(DateTime.Now + " INSERT COMPANY SUCCESS ====>>>> Code : " + pModel.company_code + " Name : " + pModel.company_name);
 
                     }
@@ -62,9 +66,12 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT COMPANY FAILED......";
                 Log.Error(DateTime.Now + " INSERT COMPANY FAILED", ex);
             }
 
+            return vResp;
         }
 
         public ResponseModel getCompanyList(int? pStartRow = 0, int? pRows = 0, string pWhere = "", string pOrderBy = "")
@@ -221,8 +228,10 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateCompany(mCompanyModel pModel)
+        public ResponseModel UpdateCompany(mCompanyModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"UPDATE m_company 
                                         SET `int_company` = @pIntCompany,
                                             `country_code` = @pCountryCode,
@@ -280,6 +289,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " UPDATE COMPANY SUCCESS, Code : " + pModel.company_code + " Name : " + pModel.company_name;
                         Log.Debug(DateTime.Now + " UPDATE COMPANY SUCCESS ====>>>>>> Code : " + pModel.company_code + " Name : " + pModel.company_name);
 
                     }
@@ -287,13 +298,18 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT COMPANY FAILED......";
                 Log.Error(DateTime.Now + " INSERT COMPANY FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public void DeleteCompany(string pCompanyCode)
+        public ResponseModel DeleteCompany(int pCompanyCode)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"DELETE m_company WHERE company_code = @pCompanyCode";
 
             try
@@ -307,6 +323,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pCompanyCode", pCompanyCode);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " DELETE COMPANY SUCCESS, Code : " + pCompanyCode;
                         Log.Debug(DateTime.Now + " DELETE COMPANY SUCCESS ====>>>>>> Code : " + pCompanyCode);
 
                     }
@@ -314,9 +332,46 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " DELETE COMPANY FAILED......";
                 Log.Error(DateTime.Now + " DELETE COMPANY FAILED", ex);
             }
+
+            return vResp;
         }
 
+        public int getCompanySeqNo()
+        {
+            var vSeqNo = 0;
+            var strSQL = @"SELECT IFNULL(MAX(company_code),0) seq_no
+                           FROM m_company";
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vSeqNo = aa.GetInt16("seq_no");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(DateTime.Now + " GetCompanySeqNo Failed", ex);
+            }
+            return vSeqNo;
+        }
     }
 }

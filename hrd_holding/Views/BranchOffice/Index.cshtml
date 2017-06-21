@@ -1,0 +1,143 @@
+﻿@{
+    ViewBag.Title = "Branch Office";
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+<header>
+    <script src="~/scripts/mBranchOffice/m_branch_office.js"></script>
+</header>
+
+<div>
+    <table  style="width: 100%">
+        <tr>
+            <td style="width:80px;font-size:medium">Company</td>
+            <td>
+                <input style="width: 60px" type="text" id="txtBranchIntCompany" />
+                <button id="btnBranchCompany">...</button>
+                <input type="text" id="txtBranchCompanyName" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <div style="margin-top:10px; margin-bottom: 2px" id="toolBarBranch"></div>
+                <div id="tblBranch"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!--#region MODAL COMPANY-->
+<div id='modBranch'>
+    <div>
+        <span>BRANCH OFFICE DETAIL</span>
+    </div>
+    <div>
+        <div id="notifContainer" style="height: 40px"></div>
+        <div id="notifBranch">
+            <div id="notifContent"></div>
+        </div>
+        <div style="margin-left: 10px">
+            <table>
+                <tr>
+                    <td>Code *</td>
+                    <td>
+                        <input type="text" id="txtBranchCode" /></td>
+                </tr>
+                <tr>
+                    <td>Name *</td>
+                    <td>
+                        <input type="text" id="txtBranchName" /></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top">Address</td>
+                    <td>
+                        <textarea id="txtBranchAddress"></textarea></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>
+                        <input type="text" id="txtBranchCity" /></td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td>
+                        <input type="text" id="txtBranchState" /></td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>
+                        <input style="width: 60px" type="text" id="txtBranchIntCountry" />
+                        <button id="btnBranchCountry">...</button>
+                        <input type="text" id="txtBranchCountryName" />
+                    </td>
+                    <td style="padding-left: 30px">Email</td>
+                    <td>
+                        <input type="text" id="txtBranchEmail" /></td>
+                </tr>
+                <tr>
+                    <td>Zip Postal</td>
+                    <td>
+                        <input type="text" id="txtBranchZip" /></td>
+                    <td style="padding-left: 30px">WebSite</td>
+                    <td>
+                        <input type="text" id="txtBranchWebSite" /></td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td>
+                        <input type="text" id="txtBranchPhone" /></td>
+                    <td style="padding-left: 30px">Fax Number</td>
+                    <td>
+                        <input type="text" id="txtBranchFax" /></td>
+                </tr>
+                <tr>
+                    <td>NPWP</td>
+                    <td>
+                        <input type="text" id="txtBranchNpwp" /></td>
+                    <td style="padding-left: 30px">NPP</td>
+                    <td>
+                        <input type="text" id="txtBranchNpp" /></td>
+                </tr>
+                <tr>
+                    <td>With Holding Tax</td>
+                    <td>
+                        <input type="text" id="txtBranchWhTax" /></td>
+                    <td style="padding-left: 30px">With Holding Tax NPWP</td>
+                    <td>
+                        <input type="text" id="txtBranchWhNpwp" /></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div style="margin-left: 5px; margin-top: 15px; width: 100px; height: 30px;" id="btnModBranchSave" role="button">
+                            <img style="vertical-align: middle" src="~/content/images/Save as_24_grey.png">
+                            <span style="position: relative; top: 3px;">SAVE</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="margin-left: 5px; margin-top: 15px; width: 100px; height: 30px;" id="btnModBranchCancel" role="button">
+                            <img style="vertical-align: middle" src="~/content/images/Close Pane_24_grey.png">
+                            <span style="position: relative; top: 3px;">CANCEL</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+
+<div id="modCountryLookUp">
+    <div><span>Human Resource Development</span></div>
+    <div>
+        <div id="CountryLookUpToolBar" style="margin-bottom: 1px"></div>
+        <div id="tblCountryLookUp"></div>
+    </div>
+</div>
+
+<div id="modCompanyLookUp">
+    <div><span>Human Resource Development</span></div>
+    <div>
+        <div id="CompanyLookUpToolBar" style="margin-bottom: 1px"></div>
+        <div id="tblCompanyLookUp"></div>
+    </div>
+</div>

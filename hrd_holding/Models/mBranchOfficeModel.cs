@@ -8,12 +8,14 @@ namespace hrd_holding.Models
     public class mBranchOfficeModel
     {
         public int branch_code {get;set;}
-        public int company_code { get; set; }
-        public string company_name { get; set; }
         public string int_branch { get; set; }
-        public string country_code { get; set; }
-        public string country_name { get; set; }
         public string branch_name { get; set; }
+        public int company_code { get; set; }
+        public string int_company { get; set; }
+        public string company_name { get; set; }
+        public string country_code { get; set; }
+        public string int_country { get; set; }
+        public string country_name { get; set; }
         public string address { get; set; }
         public string postal_code { get; set; }
         public string city_name { get; set; }

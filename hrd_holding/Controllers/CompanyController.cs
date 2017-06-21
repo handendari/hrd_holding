@@ -171,5 +171,29 @@ namespace hrd_holding.Controllers
                     }).ToArray()
             }, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public dynamic InsertCompany(mCompanyModel pModel)
+        {
+            LOG.Debug(DateTime.Now + "COMPANY Code : " + pModel.company_code + ", company_name : " + pModel.company_name);
+
+            var vResp = _compService.InsertCompany(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public dynamic UpdateCompany(mCompanyModel pModel)
+        {
+            LOG.Debug(DateTime.Now + " Masuk Controller Comp Code : " + pModel.company_code + ", company_name : " + pModel.company_name);
+
+            var vResp = new ResponseModel();
+            vResp = _compService.UpdateCompany(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

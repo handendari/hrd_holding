@@ -90,8 +90,8 @@ namespace hrd_holding.Repositories
                                 FROM m_branch_office 
                                 WHERE company_code = @pCompanyCode " + pWhere;
 
-            var strSQL = @"SELECT mbo.branch_code,mbo.company_code,mco.company_name,
-                                  mbo.int_branch,mbo.country_code,mcu.country_name,mbo.branch_name,mbo.address,
+            var strSQL = @"SELECT mbo.branch_code,mbo.company_code,mco.int_company,mco.company_name,
+                                  mbo.int_branch,mbo.country_code,mcu.int_country,mcu.country_name,mbo.branch_name,mbo.address,
                                 mbo.postal_code,mbo.city_name,mbo.state,mbo.phone_number,mbo.fax_number,mbo.web_address,
                                 mbo.email_address,mbo.picture,mbo.npwp,mbo.pimpinan,mbo.pimpinan_npwp,mbo.npp,IFNULL(mbo.jhk,0) jhk,
                                 mbo.entry_date,mbo.entry_user,mbo.edit_date,IFNULL(mbo.edit_user,'') edit_user
@@ -134,12 +134,14 @@ namespace hrd_holding.Repositories
                                     var m = new mBranchOfficeModel
                                     {
                                         branch_code = aa.GetInt16("branch_code"),
-                                        company_code = aa.GetInt16("company_code"),
-                                        company_name = aa.GetString("company_name"),
                                         int_branch = aa.GetString("int_branch"),
-                                        country_code = aa.GetString("country_code"),
-                                        country_name = aa.GetString("country_name"),
                                         branch_name = aa.GetString("branch_name"),
+                                        company_code = aa.GetInt16("company_code"),
+                                        int_company = aa.GetString("int_company"),
+                                        company_name = aa.GetString("company_name"),
+                                        country_code = aa.GetString("country_code"),
+                                        int_country = aa.GetString("int_country"),
+                                        country_name = aa.GetString("country_name"),
                                         address = aa.GetString("address"),
                                         postal_code = aa.GetString("postal_code"),
                                         city_name = aa.GetString("city_name"),
