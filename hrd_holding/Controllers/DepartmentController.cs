@@ -85,8 +85,10 @@ namespace hrd_holding.Controllers
                     {
                         vItem.department_code,
                         vItem.company_code,
+                        vItem.int_company,
                         vItem.company_name,
                         vItem.branch_code,
+                        vItem.int_branch,
                         vItem.branch_name,
                         vItem.int_department,
                         vItem.department_name,

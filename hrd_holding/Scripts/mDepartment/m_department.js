@@ -42,22 +42,22 @@ function initGridCompanyLookUp() {
       });
 }
 
-var SrcCountryLookUp = {
+var SrcBranchLookUp = {
     datatype: "json",
     type: "Post",
-    datafields: [{ name: "country_code" },
-                 { name: "int_country" },
-                 { name: "country_name" }],
+    datafields: [{ name: "branch_code" },
+                 { name: "int_branch" },
+                 { name: "branch_name" }],
     cache: false,
-    filter: function () { $("#tblCountryLookUp").jqxGrid('updatebounddata', 'filter'); },
-    sort: function () { $("#tblCountryLookUp").jqxGrid('updatebounddata', 'sort'); },
-    beforeprocessing: function (data) { SrcCountryLookUp.totalrecords = data["TotalRows"]; },
+    filter: function () { $("#tblBranchLookUp").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblBranchLookUp").jqxGrid('updatebounddata', 'sort'); },
+    beforeprocessing: function (data) { SrcBranchLookUp.totalrecords = data["TotalRows"]; },
     sortcolumn: "country_code",
     root: 'Rows'
 }
 
-function initGridCountryLookUp() {
-    $("#tblCountryLookUp").jqxGrid(
+function initGridBranchLookUp() {
+    $("#tblBranchLookUp").jqxGrid(
       {
           theme: vTheme,
           //source: dataAdapter,
@@ -77,9 +77,9 @@ function initGridCountryLookUp() {
               return obj.data;
           },
           columns: [
-              { text: 'Code', dataField: 'country_code', hidden: true },
-              { text: 'Int Code', dataField: 'int_country', width: 100, cellsalign: 'center', align: 'center' },
-              { text: 'Name', dataField: 'country_name', width: 300 }
+              { text: 'Code', dataField: 'branch_code', hidden: true },
+              { text: 'Int Code', dataField: 'int_branch', width: 100, cellsalign: 'center', align: 'center' },
+              { text: 'Name', dataField: 'branch_name', width: 300 }
           ]
       });
 }
@@ -88,48 +88,30 @@ var vSrcList = {
     //url: base_url + "/Company/GetCompanyList",
     datatype: "json",
     type: "Post",
-    datafields: [{ name: "branch_code" },
+    datafields: [{ name: "department_code" },
+                 { name: "int_department" },
+                 { name: "department_name" },
+                 { name: "branch_code" },
                  { name: "int_branch" },
                  { name: "branch_name" },
                  { name: "company_code" },
                  { name: "int_company" },
                  { name: "company_name" },
-                 { name: "address" },
-                 { name: "postal_code" },
-                 { name: "city_name" },
-                 { name: "state" },
-                 { name: "phone_number" },
-                 { name: "fax_number" },
-                 { name: "web_address" },
-                 { name: "email_address" },
-                 { name: "country_code" },
-                 { name: "int_country" },
-                 { name: "country_name" },
-                 { name: "npwp" },
-                 { name: "pimpinan" },
-                 { name: "pimpinan_npwp" },
-                 { name: "npp" },
+                 { name: "description" },
                  { name: "entry_date" },
                  { name: "entry_user" },
                  { name: "edit_date" },
                  { name: "edit_user" }],
     cache: false,
-    filter: function () { $("#tblCompany").jqxGrid('updatebounddata', 'filter'); },
-    sort: function () { $("#tblCompany").jqxGrid('updatebounddata', 'sort'); },
+    filter: function () { $("#tblDepartment").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblDepartment").jqxGrid('updatebounddata', 'sort'); },
     beforeprocessing: function (data) { vSrcList.totalrecords = data["TotalRows"]; },
     root: 'Rows'
 }
 
-function initTblBranch() {
-    //var vAdapter = new $.jqx.dataAdapter(vSrcList, {
-    //    downloadComplete: function (data, status, xhr) {
-    //        if (!vSrcList.TotalRows) {
-    //            vSrcList.TotalRows = data.length;
-    //        }
-    //    }
-    //});
+function initTblDepartment() {
 
-    $("#tblBranch").jqxGrid(
+    $("#tblDepartment").jqxGrid(
       {
           theme: vTheme,
           //source: vAdapter,
@@ -148,27 +130,16 @@ function initTblBranch() {
           rendergridrows: function (obj) {
               return obj.data;
           },
-          columns: [{ text: "Branch Code", dataField: "branch_code", hidden: true, },
-                    { text: "Code", dataField: "int_branch", width: 90, cellsalign: 'center', align: 'center' },
-                    { text: "Name", dataField: "branch_name", width: 270, align: 'center' },
+          columns: [{ text: "dept code", dataField: "department_code", hidden: true },
+                    { text: "Code", dataField: "int_department", width: 90, cellsalign: 'center', align: 'center' },
+                    { text: "Dept. Name", dataField: "department_name", align: 'center' },
+                    { text: "Branch Code", dataField: "branch_code", hidden: true, },
+                    { text: "int branch", dataField: "int_branch", hidden:true},
+                    { text: "Branch Name", dataField: "branch_name", width: 270, align: 'center' },
                     { text: "Company Code", dataField: "company_code", hidden: true, },
-                    { text: "intCode", dataField: "int_company", hidden: true, },
+                    { text: "int company", dataField: "int_company", hidden: true, },
                     { text: "Company Name", dataField: "company_name", width: 270, align: 'center' },
-                    { text: "Address", dataField: "address", width: 300, align: 'center' },
-                    { text: "Postal Code", dataField: "postal_code", hidden: true },
-                    { text: "City", dataField: "city_name", align: 'center' },
-                    { text: "State", dataField: "state", align: 'center' },
-                    { text: "Phone", dataField: "phone_number", align: 'center', hidden: true },
-                    { text: "Fax", dataField: "fax_number", align: 'center', hidden: true },
-                    { text: "Web", dataField: "web_address", hidden: true },
-                    { text: "Email", dataField: "email_address", align: 'center', hidden: true },
-                    { text: "country_code", dataField: "country_code", hidden: true },
-                    { text: "int_country", dataField: "int_country", hidden: true },
-                    { text: "country_name", dataField: "country_name", hidden: true },
-                    { text: "npwp", dataField: "npwp", hidden: true },
-                    { text: "pimpinan", dataField: "pimpinan", hidden: true },
-                    { text: "pimpinan_npwp", dataField: "pimpinan_npwp", hidden: true },
-                    { text: "npp", dataField: "npp", hidden: true },
+                    { text: "Description", dataField: "address", width: 300, align: 'center' },
                     { text: "entry_date", dataField: "entry_date", hidden: true },
                     { text: "entry_user", dataField: "entry_user", hidden: true },
                     { text: "edit_date", dataField: "edit_date", hidden: true },
@@ -179,39 +150,26 @@ function initTblBranch() {
 
 
 function f_EmptyForm() {
-    $("#txtBranchCode").val("");
-    $("#txtBranchCode").data("branch_code", "");
-    $("#txtBranchName").val("");
-    $("#txtBranchAddress").val("");
-    $("#txtBranchCity").val("");
-    $("#txtBranchState").val("");
-    $("#txtBranchIntCountry").val("");
-    $("#txtBranchCountryName").val("");
-    $("#txtBranchEmail").val("");
-    $("#txtBranchZip").val("");
-    $("#txtBranchWebSite").val("");
-    $("#txtBranchPhone").val("");
-    $("#txtBranchFax").val("");
-    $("#txtBranchNpwp").val("");
-    $("#txtBranchNpp").val("");
-    $("#txtBranchWhTax").val("");
-    $("#txtBranchWhNpwp").val("");
+    $("#txtDeptCode").val("");
+    $("#txtDeptCode").data("dept_code", "");
+    $("#txtDeptName").val("");
+    $("#txtDeptDesc").val("");
 }
 
-function f_DeleteBranchOffice(pBranchCode) {
+function f_DeleteDepartment(pDeptCode) {
     $("#modYesNo").jqxWindow('close');
     f_ShowLoaderModal();
 
-    var selectedRowIndex = $("#tblBranch").jqxGrid('selectedrowindex');
-    var vBranchCode = $('#tblBranch').jqxGrid('getcellvalue', selectedRowIndex, "branch_code");
+    var selectedRowIndex = $("#tblDepartment").jqxGrid('selectedrowindex');
+    var vDeptCode = $('#tblDepartment').jqxGrid('getcellvalue', selectedRowIndex, "branch_code");
 
 
     if (vSeqNo > 0) {
         $.ajax({
-            url: base_url + "BranchOffice/DeleteBranchOffice",
+            url: base_url + "Department/DeleteDepartment",
             type: "POST",
             contentType: "application/json",
-            data: JSON.stringify({ pBranchCode: vBranchCode }),
+            data: JSON.stringify({ pDepartmentCode: vDeptCode }),
             success: function (d) {
                 var isOke = d.vResp['isValid'];
 
@@ -229,9 +187,10 @@ function f_DeleteBranchOffice(pBranchCode) {
 }
 
 function f_ReloadData() {
-    var vCompanyCode = $("#txtBranchIntCompany").data("company_code");
+    var vCompanyCode = $("#txtIntCompany").data("company_code");
+    var vBranchCode = $("#txtIntBranch").data("branch_code");
 
-    vSrcList.url = base_url + "/BranchOffice/GetBranchOfficeList?pCompanyCode=" + vCompanyCode;
+    vSrcList.url = base_url + "/Department/GetDepartmentList?pCompanyCode=" + vCompanyCode + "&pBranchCode=" + vBranchCode;
 
     var vAdapter = new $.jqx.dataAdapter(vSrcList, {
         downloadComplete: function (data, status, xhr) {
@@ -240,47 +199,39 @@ function f_ReloadData() {
             }
         }
     });
-    $('#tblBranch').jqxGrid({ source: vAdapter })
-    $('#tblBranch').jqxGrid('gotopage', 0);
+    $('#tblDepartment').jqxGrid({ source: vAdapter })
+    $('#tblDepartment').jqxGrid('gotopage', 0);
 }
 
 $(document).ready(function () {
     // prepare the data
-    $("#txtBranchIntCompany").jqxInput({ theme: vTheme, width: 70, disabled: true });
-    $("#btnBranchCompany").jqxButton({ theme: vTheme });
-    $("#txtBranchCompanyName").jqxInput({ theme: vTheme, width: 300, disabled: true });
+    $("#txtIntCompany").jqxInput({ theme: vTheme, width: 70, disabled: true });
+    $("#btnCompany").jqxButton({ theme: vTheme });
+    $("#txtCompanyName").jqxInput({ theme: vTheme, width: 300, disabled: true });
 
-    $("#txtBranchCode").jqxInput({ theme: vTheme, width: 70 });
-    $("#txtBranchName").jqxInput({ theme: vTheme, width: 300 });
-    $('#txtBranchAddress').jqxTextArea({
-        theme: vTheme, placeHolder: 'Masukkan Alamat',
+    $("#txtIntBranch").jqxInput({ theme: vTheme, width: 70, disabled: true });
+    $("#btnBranch").jqxButton({ theme: vTheme });
+    $("#txtBranchName").jqxInput({ theme: vTheme, width: 300, disabled: true });
+
+    $("#txtBranchCode_Detail").jqxInput({ theme: vTheme, width: 70, disabled: true });
+    $("#txtBranchName_Detail").jqxInput({ theme: vTheme, width: 300,disabled:true });
+    $("#txtDeptCode").jqxInput({ theme: vTheme });
+    $("#txtDeptName").jqxInput({ theme: vTheme });
+    $('#txtDeptDesc').jqxTextArea({
+        theme: vTheme, placeHolder: 'Masukkan Keterangan',
         height: 50, width: 300, minLength: 1
     });
-    $("#txtBranchCity").jqxInput({ theme: vTheme });
-    $("#txtBranchState").jqxInput({ theme: vTheme });
-    $("#txtBranchIntCountry").jqxInput({ theme: vTheme, disabled: true });
-    $("#btnBranchCountry").jqxButton({ theme: vTheme });
-    $("#txtBranchCountryName").jqxInput({ theme: vTheme, width: 200, disabled: true });
-    $("#txtBranchEmail").jqxInput({ theme: vTheme, width: 200 });
-    $("#txtBranchZip").jqxInput({ theme: vTheme });
-    $("#txtBranchWebSite").jqxInput({ theme: vTheme, width: 200 });
-    $("#txtBranchPhone").jqxInput({ theme: vTheme });
-    $("#txtBranchFax").jqxInput({ theme: vTheme });
-    $("#txtBranchNpwp").jqxInput({ theme: vTheme });
-    $("#txtBranchNpp").jqxInput({ theme: vTheme });
-    $("#txtBranchWhTax").jqxInput({ theme: vTheme });
-    $("#txtBranchWhNpwp").jqxInput({ theme: vTheme });
 
-    $("#btnModBranchSave").jqxButton({ theme: vTheme });
-    $("#btnModBranchCancel").jqxButton({ theme: vTheme });
+    $("#btnModDeptSave").jqxButton({ theme: vTheme });
+    $("#btnModDeptCancel").jqxButton({ theme: vTheme });
 
-    $("#notifBranch").jqxNotification({
+    $("#notifDept").jqxNotification({
         width: "100%", height: "40px", theme: vTheme,
         appendContainer: "#notifContainer",
         opacity: 0.9, autoClose: true, template: "error"
     });
 
-    $("#toolBarBranch").jqxToolBar({
+    $("#toolBarDepartment").jqxToolBar({
         theme: vTheme,
         width: '100%', height: 35, tools: 'button | button | button',
         initTools: function (type, index, tool, menuToolIninitialization) {
@@ -296,7 +247,7 @@ $(document).ready(function () {
                                    "</div>");
                     tool.append(button);
                     tool.on("click", function () {
-                        var vCompanyCode = $("#txtBranchIntCompany").data("company_code") == undefined ? "" : $("#txtBranchIntCompany").data("company_code");
+                        var vCompanyCode = $("#txtIntCompany").data("company_code") == undefined ? "" : $("#txtIntCompany").data("company_code");
                         if (vCompanyCode == "") {
                             f_MessageBoxShow("Please Select Company...");
                         } else {
@@ -313,32 +264,21 @@ $(document).ready(function () {
                     tool.on("click", function () {
                         f_EmptyForm();
 
-                        var rowindex = $('#tblBranch').jqxGrid('getselectedrowindex');
+                        var rowindex = $('#tblDepartment').jqxGrid('getselectedrowindex');
 
                         if (rowindex >= 0) {
-                            var rd = $('#tblBranch').jqxGrid('getrowdata', rowindex);
+                            var rd = $('#tblDepartment').jqxGrid('getrowdata', rowindex);
 
                             //$("#txtCompCode").jqxInput({ disabled:true });
-                            $("#txtBranchCode").val(rd.int_branch);
-                            $("#txtBranchCode").data("branch_code", rd.branch_code);
-                            $("#txtBranchName").val(rd.branch_name);
-                            $("#txtBranchAddress").val(rd.address);
-                            $("#txtBranchCity").val(rd.city_name);
-                            $("#txtBranchState").val(rd.state);
-                            $("#txtBranchIntCountry").val(rd.int_country);
-                            $("#txtBranchIntCountry").data("country_code", rd.country_code);
-                            $("#txtBranchCountryName").val(rd.country_name);
-                            $("#txtBranchEmail").val(rd.email_address);
-                            $("#txtBranchZip").val(rd.postal_code);
-                            $("#txtBranchWebSite").val(rd.web_address);
-                            $("#txtBranchPhone").val(rd.phone_number);
-                            $("#txtBranchFax").val(rd.fax_number);
-                            $("#txtBranchNpwp").val(rd.npwp);
-                            $("#txtBranchNpp").val(rd.npp);
-                            $("#txtBranchWhTax").val(rd.pimpinan);
-                            $("#txtBranchWhNpwp").val(rd.pimpinan_npwp);
+                            $("#txtBranchCode_Detail").val(rd.int_branch);
+                            $("#txtBranchCode_Detail").data("branch_code", rd.branch_code);
+                            $("#txtBranchName_Detail").val(rd.branch_name);
+                            $("#txtDeptCode").val(rd.int_department);
+                            $("#txtDeptCode").data("dept_code", rd.department_code);
+                            $("#txtDeptName").val(rd.department_name);
+                            $("#txtDeptDesc").val(rd.description);
 
-                            $("#modBranch").jqxWindow('open');
+                            $("#modDepartment").jqxWindow('open');
                         } else {
                             f_MessageBoxShow("Please Select Data...");
                         }
@@ -352,7 +292,7 @@ $(document).ready(function () {
                     tool.append(button);
                     tool.on("click", function () {
                         f_EmptyForm()
-                        $("#modBranch").jqxWindow('open');
+                        $("#modDepartment").jqxWindow('open');
 
                     });
                     break;
@@ -362,11 +302,11 @@ $(document).ready(function () {
     });
 
 
-    initGridCountryLookUp();
+    initGridBranchLookUp();
     initGridCompanyLookUp();
-    initTblBranch();
+    initTblDepartment();
 
-    $("#CountryLookUpToolBar").jqxToolBar({
+    $("#BranchLookUpToolBar").jqxToolBar({
         theme: vTheme,
         width: '100%', height: 35, tools: 'button | button',
         initTools: function (type, index, tool, menuToolIninitialization) {
@@ -382,14 +322,14 @@ $(document).ready(function () {
                     tool.append(button);
                     tool.width("100px");
                     tool.on("click", function () {
-                        var rowindex = $('#tblCountryLookUp').jqxGrid('getselectedrowindex');
+                        var rowindex = $('#tblBranchLookUp').jqxGrid('getselectedrowindex');
                         if (rowindex >= 0) {
-                            var rd = $('#tblCountryLookUp').jqxGrid('getrowdata', rowindex);
-                            $("#txtBranchIntCountry").val(rd.int_country);
-                            $("#txtBranchIntCountry").data("country_code", rd.country_code);
+                            var rd = $('#tblBranchLookUp').jqxGrid('getrowdata', rowindex);
+                            $("#txtIntBranch").val(rd.int_branch);
+                            $("#txtIntBranch").data("branch_code", rd.branch_code);
 
-                            $("#txtBranchCountryName").val(rd.country_name);
-                            $("#modCountryLookUp").jqxWindow('close');
+                            $("#txtBranchName").val(rd.branch_name);
+                            $("#modBranchLookUp").jqxWindow('close');
                         } else {
                             f_MessageBoxShow("Please Select Data...");
                         }
@@ -403,30 +343,36 @@ $(document).ready(function () {
                     tool.append(button);
                     tool.width("80px");
                     tool.on("click", function () {
-                        $("#modCountryLookUp").jqxWindow('close');
+                        $("#modBranchLookUp").jqxWindow('close');
                     });
                     break;
             }
         }
     });
 
-    $('#btnBranchCountry').on('click', function (event) {
-        SrcCountryLookUp.url = base_url + "/Country/GetCountryLookUp";
-        var vAdapter = new $.jqx.dataAdapter(SrcCountryLookUp, {
-            downloadComplete: function (data, status, xhr) {
-                if (!SrcCountryLookUp.TotalRows) {
-                    SrcCountryLookUp.TotalRows = data.length;
+    $('#btnBranch').on('click', function (event) {
+        var vCompanyCode = $('#txtIntCompany').data("company_code") == undefined ? "" : $('#txtIntCompany').data("company_code");
+
+        if (vCompanyCode == "") {
+            f_MessageBoxShow("Please Select Company Data...");
+
+        } else {
+            SrcBranchLookUp.url = base_url + "/BranchOffice/GetBranchOfficeLookUp?pCompanyCode=" + vCompanyCode;
+            var vAdapter = new $.jqx.dataAdapter(SrcBranchLookUp, {
+                downloadComplete: function (data, status, xhr) {
+                    if (!SrcBranchLookUp.TotalRows) {
+                        SrcBranchLookUp.TotalRows = data.length;
+                    }
                 }
-            }
-        });
+            });
 
-        $('#tblCountryLookUp').jqxGrid({ source: vAdapter })
-        $('#tblCountryLookUp').jqxGrid('gotopage', 0);
-        $("#modCountryLookUp").jqxWindow('open');
-
+            $('#tblBranchLookUp').jqxGrid({ source: vAdapter })
+            $('#tblBranchLookUp').jqxGrid('gotopage', 0);
+            $("#modBranchLookUp").jqxWindow('open');
+        }
     });
 
-    $("#modCountryLookUp").jqxWindow({
+    $("#modBranchLookUp").jqxWindow({
         height: 500, width: 430,
         theme: vTheme, isModal: true,
         autoOpen: false,
@@ -453,10 +399,10 @@ $(document).ready(function () {
                         var rowindex = $('#tblCompanyLookUp').jqxGrid('getselectedrowindex');
                         if (rowindex >= 0) {
                             var rd = $('#tblCompanyLookUp').jqxGrid('getrowdata', rowindex);
-                            $("#txtBranchIntCompany").val(rd.int_company);
-                            $("#txtBranchIntCompany").data("company_code", rd.company_code);
+                            $("#txtIntCompany").val(rd.int_company);
+                            $("#txtIntCompany").data("company_code", rd.company_code);
 
-                            $("#txtBranchCompanyName").val(rd.company_name);
+                            $("#txtCompanyName").val(rd.company_name);
                             $("#modCompanyLookUp").jqxWindow('close');
                         } else {
                             f_MessageBoxShow("Please Select Data...");
@@ -478,7 +424,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#btnBranchCompany').on('click', function (event) {
+    $('#btnCompany').on('click', function (event) {
         SrcCompanyLookUp.url = base_url + "/Company/GetCompanyLookUp";
         var vAdapter = new $.jqx.dataAdapter(SrcCompanyLookUp, {
             downloadComplete: function (data, status, xhr) {
@@ -501,14 +447,14 @@ $(document).ready(function () {
         resizable: false
     });
 
-    $("#modBranch").jqxWindow({
-        height: 400, width: 1000,
+    $("#modDepartment").jqxWindow({
+        height: 300, width: 800,
         theme: vTheme, isModal: true,
         autoOpen: false,
         resizable: false
     });
 
-    $('#btnModBranchSave').on('click', function (event) {
+    $('#btnModDeptSave').on('click', function (event) {
 
         var vBranchCode = $('#txtBranchCode').data("branch_code") == undefined ? "" : $('#txtBranchCode').data("branch_code");
 
@@ -580,14 +526,14 @@ $(document).ready(function () {
         }
     });
 
-    $('#btnModBranchCancel').on('click', function (event) {
-        $("#modBranch").jqxWindow('close');
+    $('#btnModDeptCancel').on('click', function (event) {
+        $("#modDepartment").jqxWindow('close');
     });
 
     function f_PosisiModalDialog() {
-        $('#modCountryLookUp').jqxWindow({ position: { x: f_PosX($('#modCountryLookUp')), y: f_PosY($('#modCountryLookUp')) } });
+        $('#modBranchLookUp').jqxWindow({ position: { x: f_PosX($('#modBranchLookUp')), y: f_PosY($('#modBranchLookUp')) } });
         $('#modCompanyLookUp').jqxWindow({ position: { x: f_PosX($('#modCompanyLookUp')), y: f_PosY($('#modCompanyLookUp')) } });
-        $('#modBranch').jqxWindow({ position: { x: f_PosX($('#modBranch')), y: f_PosY($('#modBranch')) } });
+        $('#modDepartment').jqxWindow({ position: { x: f_PosX($('#modDepartment')), y: f_PosY($('#modDepartment')) } });
     }
 
     //KEEP CENTERED WHEN SCROLLING

@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Branch Office";
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+<header>
+    <script src="~/scripts/mDepartment/m_department.js"></script>
+</header>
+
+<div>
+    <table  style="width: 100%">
+        <tr>
+            <td style="width:80px;font-size:medium">Company *</td>
+            <td>
+                <input style="width: 60px" type="text" id="txtIntCompany" />
+                <button id="btnCompany">...</button>
+                <input type="text" id="txtCompanyName" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:120px;font-size:medium">Branch Office</td>
+            <td>
+                <input style="width: 60px" type="text" id="txtIntBranch" />
+                <button id="btnBranch">...</button>
+                <input type="text" id="txtBranchName" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <div style="margin-top:10px; margin-bottom: 2px" id="toolBarDepartment"></div>
+                <div id="tblDepartment"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!--#region MODAL Department-->
+<div id='modDepartment'>
+    <div>
+        <span>DEPARTMENT DETAIL</span>
+    </div>
+    <div>
+        <div id="notifContainer" style="height: 40px"></div>
+        <div id="notifDept">
+            <div id="notifContent"></div>
+        </div>
+        <div style="margin-left: 10px">
+            <table>
+                <tr>
+                    <td>Branch Code *</td>
+                    <td>
+                        <input type="text" id="txtBranchCode_Detail" />
+                        <input type="text" id="txtBranchName_Detail" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Code *</td>
+                    <td>
+                        <input type="text" id="txtDeptCode" /></td>
+                </tr>
+                <tr>
+                    <td>Name *</td>
+                    <td>
+                        <input type="text" id="txtDeptName" /></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top">Address</td>
+                    <td>
+                        <textarea id="txtDeptDesc"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div style="margin-left: 5px; margin-top: 15px; width: 100px; height: 30px;" id="btnModDeptSave" role="button">
+                            <img style="vertical-align: middle" src="~/content/images/Save as_24_grey.png">
+                            <span style="position: relative; top: 3px;">SAVE</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="margin-left: 5px; margin-top: 15px; width: 100px; height: 30px;" id="btnModDeptCancel" role="button">
+                            <img style="vertical-align: middle" src="~/content/images/Close Pane_24_grey.png">
+                            <span style="position: relative; top: 3px;">CANCEL</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+
+<div id="modBranchLookUp">
+    <div><span>Human Resource Development</span></div>
+    <div>
+        <div id="BranchLookUpToolBar" style="margin-bottom: 1px"></div>
+        <div id="tblBranchLookUp"></div>
+    </div>
+</div>
+
+<div id="modCompanyLookUp">
+    <div><span>Human Resource Development</span></div>
+    <div>
+        <div id="CompanyLookUpToolBar" style="margin-bottom: 1px"></div>
+        <div id="tblCompanyLookUp"></div>
+    </div>
+</div>

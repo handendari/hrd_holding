@@ -72,8 +72,8 @@ namespace hrd_holding.Repositories
                                 FROM m_department 
                                 WHERE company_code = @pCompanyCode AND branch_code = @pBranchCode " + pWhere;
 
-            var strSQL = @"SELECT md.department_code,md.company_code,mc.company_name,
-                                  md.branch_code,mbo.branch_name, md.int_department,md.department_name,
+            var strSQL = @"SELECT md.department_code,md.company_code,mc.int_company,mc.company_name,
+                                  md.branch_code,mbo.int_branch,mbo.branch_name, md.int_department,md.department_name,
                                   md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
                                   md.edit_date,IFNULL(md.edit_user,'') edit_user
                            FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
@@ -122,8 +122,10 @@ namespace hrd_holding.Repositories
                                     {
                                         department_code = aa.GetInt16("department_code"),
                                         company_code = aa.GetInt16("company_code"),
+                                        int_company = aa.GetString("int_company"),
                                         company_name = aa.GetString("company_name"),
                                         branch_code = aa.GetInt16("branch_code"),
+                                        int_branch = aa.GetString("int_branch"),
                                         branch_name = aa.GetString("branch_name"),
                                         int_department = aa.GetString("int_department"),
                                         department_name = aa.GetString("department_name"),

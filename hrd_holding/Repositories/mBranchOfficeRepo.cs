@@ -94,7 +94,7 @@ namespace hrd_holding.Repositories
                                   mbo.int_branch,mbo.country_code,mcu.int_country,mcu.country_name,mbo.branch_name,mbo.address,
                                 mbo.postal_code,mbo.city_name,mbo.state,mbo.phone_number,mbo.fax_number,mbo.web_address,
                                 mbo.email_address,mbo.picture,mbo.npwp,mbo.pimpinan,mbo.pimpinan_npwp,mbo.npp,IFNULL(mbo.jhk,0) jhk,
-                                mbo.entry_date,mbo.entry_user,mbo.edit_date,IFNULL(mbo.edit_user,'') edit_user
+                                mbo.entry_date,IFNULL(mbo.entry_user,'') entry_user,mbo.edit_date,IFNULL(mbo.edit_user,'') edit_user
                             FROM m_branch_office mbo JOIN m_Company mco ON mbo.company_code = mco.company_code
                             JOIN m_country mcu ON mbo.country_code = mcu.country_code
                             WHERE mbo.company_code = @pCompanyCode " + pWhere + " " + vLimit;
@@ -150,7 +150,7 @@ namespace hrd_holding.Repositories
                                         fax_number = aa.GetString("fax_number"),
                                         web_address = aa.GetString("web_address"),
                                         email_address = aa.GetString("email_address"),
-                                        picture = aa.GetString("picture"),
+                                        //picture = aa.GetString("picture"),
                                         npwp = aa.GetString("npwp"),
                                         pimpinan = aa.GetString("pimpinan"),
                                         pimpinan_npwp = aa.GetString("pimpinan_npwp"),
@@ -264,8 +264,6 @@ namespace hrd_holding.Repositories
                                     pimpinan_npwp = @ppimpinan_npwp,
                                     npp = @pnpp,
                                     jhk = @pjhk,
-                                    entry_date = @pentry_date,
-                                    entry_user = @pentry_user,
                                     edit_date = @pedit_date,
                                     edit_user = @pedit_user
                                 WHERE branch_code = @pbranch_code";
@@ -298,8 +296,6 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@ppimpinan_npwp", pModel.pimpinan_npwp);
                         cmd.Parameters.AddWithValue("@pnpp", pModel.npp);
                         cmd.Parameters.AddWithValue("@pjhk", pModel.jhk);
-                        cmd.Parameters.AddWithValue("@pentry_date", pModel.entry_date);
-                        cmd.Parameters.AddWithValue("@pentry_user", pModel.entry_user);
                         cmd.Parameters.AddWithValue("@pedit_date", pModel.edit_date);
                         cmd.Parameters.AddWithValue("@pedit_user", pModel.edit_user);
 

@@ -182,8 +182,6 @@ function f_ReloadData() {
     });
     $('#tblCompany').jqxGrid({ source: vAdapter })
     $('#tblCompany').jqxGrid('gotopage', 0);
-    $("#tblCompany").jqxWindow('open');
-
 }
 
 $(document).ready(function () {
