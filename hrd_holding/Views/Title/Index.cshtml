@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Job Title";
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+<header>
+    <script src="~/scripts/mTitle/m_title.js"></script>
+</header>
+
+<div>
+    <table  style="width: 100%">
+        <tr>
+            <td colspan="4">
+                <div style="margin-top:10px; margin-bottom: 2px" id="toolBarTitle"></div>
+                <div id="tblTitle"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!--#region MODAL Title-->
+<div id='modTitle'>
+    <div>
+        <span>JOB TITLE DETAIL</span>
+    </div>
+    <div>
+        <div id="notifContainer" style="height: 40px"></div>
+        <div id="notifTitle">
+            <div id="notifContent"></div>
+        </div>
+        <div style="margin-left: 10px">
+            <table>
+                <tr>
+                    <td>Code *</td>
+                    <td>
+                        <input type="text" id="txtTitleCode" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name *</td>
+                    <td>
+                        <input type="text" id="txtTitleName" /></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top">Description</td>
+                    <td>
+                        <textarea id="txtTitleDesc"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div style="margin-left: 5px; margin-top: 15px; width: 100px; height: 30px;" id="btnModTitleSave" role="button">
+                            <img style="vertical-align: middle" src="~/content/images/Save as_24_grey.png">
+                            <span style="position: relative; top: 3px;">SAVE</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="margin-left: 5px; margin-top: 15px; width: 100px; height: 30px;" id="btnModTitleCancel" role="button">
+                            <img style="vertical-align: middle" src="~/content/images/Close Pane_24_grey.png">
+                            <span style="position: relative; top: 3px;">CANCEL</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!--#endregion-->

@@ -57,6 +57,7 @@ namespace hrd_holding.Services
         {
             pModel.user_entry = "it";
             pModel.date_entry = DateTime.Now;
+            pModel.level_code = _repoLevel.getLevelSeqNo() + 1;
 
             var vModel = _repoLevel.InsertLevel(pModel);
             return vModel;

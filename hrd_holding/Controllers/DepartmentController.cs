@@ -165,5 +165,30 @@ namespace hrd_holding.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public dynamic InsertDepartment(mDepartmentModel pModel)
+        {
+            LOG.Debug(DateTime.Now + "Department Code : " + pModel.department_code + ", Department_name : " + pModel.department_name);
+
+            var vResp = _deptService.InsertDepartment(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public dynamic UpdateDepartment(mDepartmentModel pModel)
+        {
+            LOG.Debug(DateTime.Now + " Masuk Controller Department Code : " + pModel.department_code +
+                                     ", Department_name : " + pModel.department_name  +
+                                     ", Description : " + pModel.description);
+
+            var vResp = new ResponseModel();
+            vResp = _deptService.UpdateDepartment(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

@@ -26499,3 +26499,353 @@ DEBUG 2017-06-22 16:00:45,499 274225ms DepartmentRepo         getDepartmentList 
                            FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
                            JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
                            WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,20
+DEBUG 2017-07-03 08:34:49,872    72ms CountryController      GetCountryList     - 7/3/2017 8:34:49 AM WHERE : 
+DEBUG 2017-07-03 08:34:50,717   917ms CountryController      GetCountryList     - 7/3/2017 8:34:50 AM Page Num : 0 Page Size : 0
+DEBUG 2017-07-03 08:34:50,721   921ms mCountryService        GetCountryList     - 7/3/2017 8:34:50 AM vRows : 10 vStart : 0
+DEBUG 2017-07-03 08:34:51,212  1412ms CountryRepo            getCountryList     - 7/3/2017 8:34:51 AM pWHERE : 
+DEBUG 2017-07-03 08:35:55,743 65943ms CompanyController      GetCompanyList     - 7/3/2017 8:35:55 AM WHERE : 
+DEBUG 2017-07-03 08:35:55,758 65958ms CompanyController      GetCompanyList     - 7/3/2017 8:35:55 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 08:35:55,759 65959ms mCompanyService        GetCompanyList     - 7/3/2017 8:35:55 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 08:39:18,285 268485ms CompanyController      GetCompanyLookUp   - 7/3/2017 8:39:18 AM WHERE : 
+DEBUG 2017-07-03 08:39:18,286 268486ms CompanyController      GetCompanyLookUp   - 7/3/2017 8:39:18 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 08:39:18,287 268487ms mCompanyService        GetCompanyList     - 7/3/2017 8:39:18 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 08:39:23,362 273562ms BranchOfficeService    etBranchOfficeList - 7/3/2017 8:39:23 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 08:39:27,117 277317ms DepartmentService      GetDepartmentList  - 7/3/2017 8:39:27 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 08:39:27,172 277372ms DepartmentRepo         getDepartmentList  - 7/3/2017 8:39:27 AM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.int_company,mc.company_name,
+                                  md.branch_code,mbo.int_branch,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,20
+DEBUG 2017-07-03 08:39:37,796 287996ms CompanyController      GetCompanyLookUp   - 7/3/2017 8:39:37 AM WHERE : 
+DEBUG 2017-07-03 08:39:37,797 287997ms CompanyController      GetCompanyLookUp   - 7/3/2017 8:39:37 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 08:39:37,797 287997ms mCompanyService        GetCompanyList     - 7/3/2017 8:39:37 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 08:39:40,443 290643ms BranchOfficeService    etBranchOfficeList - 7/3/2017 8:39:40 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 10:21:59,955 318985ms LevelController        GetLevelList       - 7/3/2017 10:21:59 AM WHERE : 
+DEBUG 2017-07-03 10:22:00,020 319050ms LevelController        GetLevelList       - 7/3/2017 10:22:00 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 10:22:00,021 319051ms mLevelService          GetLevelList       - 7/3/2017 10:22:00 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 10:22:07,854 326884ms LevelController        GetLevelList       - 7/3/2017 10:22:07 AM WHERE : 
+DEBUG 2017-07-03 10:22:07,854 326884ms LevelController        GetLevelList       - 7/3/2017 10:22:07 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 10:22:07,855 326885ms mLevelService          GetLevelList       - 7/3/2017 10:22:07 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 10:23:02,527 381557ms LevelController        GetLevelList       - 7/3/2017 10:23:02 AM WHERE : 
+DEBUG 2017-07-03 10:23:02,527 381557ms LevelController        GetLevelList       - 7/3/2017 10:23:02 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 10:23:02,528 381558ms mLevelService          GetLevelList       - 7/3/2017 10:23:02 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 10:29:39,224 778254ms LevelController        GetLevelList       - 7/3/2017 10:29:39 AM WHERE : 
+DEBUG 2017-07-03 10:29:39,225 778255ms LevelController        GetLevelList       - 7/3/2017 10:29:39 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 10:29:39,225 778255ms mLevelService          GetLevelList       - 7/3/2017 10:29:39 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 10:36:39,853   234ms LevelController        UpdateLevel        - 7/3/2017 10:36:39 AM Masuk Controller Level Code : 6, Level_name : NON STAFF
+DEBUG 2017-07-03 10:36:39,994   375ms LevelRepo              UpdateLevel        - 7/3/2017 10:36:39 AM UPDATE LEVEL SUCCESS ====>>>>>> Code : 6 Name : NON STAFF
+DEBUG 2017-07-03 10:36:40,032   413ms LevelController        GetLevelList       - 7/3/2017 10:36:40 AM WHERE : 
+DEBUG 2017-07-03 10:36:40,033   414ms LevelController        GetLevelList       - 7/3/2017 10:36:40 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 10:36:40,035   416ms mLevelService          GetLevelList       - 7/3/2017 10:36:40 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 10:37:36,005 56385ms LevelController        GetLevelList       - 7/3/2017 10:37:36 AM WHERE : 
+DEBUG 2017-07-03 10:37:36,007 56387ms LevelController        GetLevelList       - 7/3/2017 10:37:36 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 10:37:36,007 56387ms mLevelService          GetLevelList       - 7/3/2017 10:37:36 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 10:40:07,499 207880ms LevelController        GetLevelList       - 7/3/2017 10:40:07 AM WHERE : 
+DEBUG 2017-07-03 10:40:07,500 207881ms LevelController        GetLevelList       - 7/3/2017 10:40:07 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 10:40:07,500 207881ms mLevelService          GetLevelList       - 7/3/2017 10:40:07 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 10:40:20,396 220777ms LevelController        UpdateLevel        - 7/3/2017 10:40:20 AM Masuk Controller Level Code : 6, Level_name : NON STAFF
+DEBUG 2017-07-03 10:40:20,404 220785ms LevelRepo              UpdateLevel        - 7/3/2017 10:40:20 AM UPDATE LEVEL SUCCESS ====>>>>>> Code : 6 Name : NON STAFF
+DEBUG 2017-07-03 10:40:20,420 220801ms LevelController        GetLevelList       - 7/3/2017 10:40:20 AM WHERE : 
+DEBUG 2017-07-03 10:40:20,420 220801ms LevelController        GetLevelList       - 7/3/2017 10:40:20 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 10:40:20,421 220802ms mLevelService          GetLevelList       - 7/3/2017 10:40:20 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 10:48:03,392 683773ms LevelController        UpdateLevel        - 7/3/2017 10:48:03 AM Masuk Controller Level Code : 6, Level_name : NON STAFF
+DEBUG 2017-07-03 10:48:03,495 683875ms LevelRepo              UpdateLevel        - 7/3/2017 10:48:03 AM UPDATE LEVEL SUCCESS ====>>>>>> Code : 6 Name : NON STAFF
+DEBUG 2017-07-03 10:48:03,518 683899ms LevelController        GetLevelList       - 7/3/2017 10:48:03 AM WHERE : 
+DEBUG 2017-07-03 10:48:03,520 683901ms LevelController        GetLevelList       - 7/3/2017 10:48:03 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 10:48:03,520 683901ms mLevelService          GetLevelList       - 7/3/2017 10:48:03 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 10:50:50,983 851364ms LevelController        GetLevelList       - 7/3/2017 10:50:50 AM WHERE : 
+DEBUG 2017-07-03 10:50:50,984 851365ms LevelController        GetLevelList       - 7/3/2017 10:50:50 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 10:50:50,984 851365ms mLevelService          GetLevelList       - 7/3/2017 10:50:50 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 10:51:49,456 909836ms LevelController        InsertLevel        - 7/3/2017 10:51:49 AMLevel Code : 0, Level_name : pecobaann
+DEBUG 2017-07-03 10:51:49,468 909848ms LevelRepo              InsertLevel        - 7/3/2017 10:51:49 AM INSERT LEVEL ====>>>> Code : 0 Name : pecobaann
+DEBUG 2017-07-03 10:51:49,478 909858ms LevelController        GetLevelList       - 7/3/2017 10:51:49 AM WHERE : 
+DEBUG 2017-07-03 10:51:49,479 909859ms LevelController        GetLevelList       - 7/3/2017 10:51:49 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 10:51:49,479 909859ms mLevelService          GetLevelList       - 7/3/2017 10:51:49 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 10:52:04,021 924401ms LevelController        UpdateLevel        - 7/3/2017 10:52:04 AM Masuk Controller Level Code : 7, Level_name : pecobaann
+DEBUG 2017-07-03 10:52:04,030 924410ms LevelRepo              UpdateLevel        - 7/3/2017 10:52:04 AM UPDATE LEVEL SUCCESS ====>>>>>> Code : 7 Name : pecobaann
+DEBUG 2017-07-03 10:52:04,036 924416ms LevelController        GetLevelList       - 7/3/2017 10:52:04 AM WHERE : 
+DEBUG 2017-07-03 10:52:04,037 924417ms LevelController        GetLevelList       - 7/3/2017 10:52:04 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 10:52:04,038 924418ms mLevelService          GetLevelList       - 7/3/2017 10:52:04 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 11:31:57,323 40115ms mTitleService          GetTitleList       - 7/3/2017 11:31:57 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 11:32:07,766 50557ms mTitleService          GetTitleList       - 7/3/2017 11:32:07 AM vRows : 20 vStart : 20
+DEBUG 2017-07-03 11:32:10,694 53486ms mTitleService          GetTitleList       - 7/3/2017 11:32:10 AM vRows : 20 vStart : 40
+DEBUG 2017-07-03 11:32:11,651 54443ms mTitleService          GetTitleList       - 7/3/2017 11:32:11 AM vRows : 20 vStart : 60
+DEBUG 2017-07-03 11:32:12,419 55211ms mTitleService          GetTitleList       - 7/3/2017 11:32:12 AM vRows : 20 vStart : 80
+DEBUG 2017-07-03 11:32:13,059 55851ms mTitleService          GetTitleList       - 7/3/2017 11:32:13 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 11:32:13,661 56453ms mTitleService          GetTitleList       - 7/3/2017 11:32:13 AM vRows : 20 vStart : 20
+DEBUG 2017-07-03 11:32:14,188 56980ms mTitleService          GetTitleList       - 7/3/2017 11:32:14 AM vRows : 20 vStart : 40
+DEBUG 2017-07-03 11:32:14,474 57266ms mTitleService          GetTitleList       - 7/3/2017 11:32:14 AM vRows : 20 vStart : 60
+DEBUG 2017-07-03 11:32:14,715 57507ms mTitleService          GetTitleList       - 7/3/2017 11:32:14 AM vRows : 20 vStart : 80
+DEBUG 2017-07-03 11:32:14,923 57715ms mTitleService          GetTitleList       - 7/3/2017 11:32:14 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 11:32:15,114 57906ms mTitleService          GetTitleList       - 7/3/2017 11:32:15 AM vRows : 20 vStart : 20
+DEBUG 2017-07-03 11:32:15,324 58115ms mTitleService          GetTitleList       - 7/3/2017 11:32:15 AM vRows : 20 vStart : 40
+DEBUG 2017-07-03 11:32:16,075 58866ms mTitleService          GetTitleList       - 7/3/2017 11:32:16 AM vRows : 20 vStart : 60
+DEBUG 2017-07-03 11:32:16,275 59067ms mTitleService          GetTitleList       - 7/3/2017 11:32:16 AM vRows : 20 vStart : 80
+DEBUG 2017-07-03 11:32:16,467 59259ms mTitleService          GetTitleList       - 7/3/2017 11:32:16 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 11:32:16,654 59445ms mTitleService          GetTitleList       - 7/3/2017 11:32:16 AM vRows : 20 vStart : 20
+DEBUG 2017-07-03 11:32:16,826 59618ms mTitleService          GetTitleList       - 7/3/2017 11:32:16 AM vRows : 20 vStart : 40
+DEBUG 2017-07-03 11:32:17,218 60010ms mTitleService          GetTitleList       - 7/3/2017 11:32:17 AM vRows : 20 vStart : 60
+DEBUG 2017-07-03 11:32:17,418 60210ms mTitleService          GetTitleList       - 7/3/2017 11:32:17 AM vRows : 20 vStart : 80
+DEBUG 2017-07-03 11:32:17,634 60426ms mTitleService          GetTitleList       - 7/3/2017 11:32:17 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 11:32:55,975 98766ms mTitleService          GetTitleList       - 7/3/2017 11:32:55 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 11:33:13,097 115889ms mTitleService          GetTitleList       - 7/3/2017 11:33:13 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 11:41:58,286  8564ms mTitleService          GetTitleList       - 7/3/2017 11:41:58 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 11:42:18,402 28680ms TitleController        UpdateTitle        - 7/3/2017 11:42:18 AM Masuk Controller Title Code : 1, Title_name : ADMINISTRATOR
+DEBUG 2017-07-03 11:42:18,449 28727ms TitleRepo              UpdateTitle        - 7/3/2017 11:42:18 AM UPDATE TITLE SUCCESS ====>>>>>> Code : 1 Name : ADMINISTRATOR
+DEBUG 2017-07-03 11:42:18,462 28740ms mTitleService          GetTitleList       - 7/3/2017 11:42:18 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 11:43:15,572    78ms TitleController        InsertTitle        - 7/3/2017 11:43:15 AMTitle Code : 0, Title_name : percobaan
+DEBUG 2017-07-03 11:43:16,885  1390ms TitleRepo              InsertTitle        - 7/3/2017 11:43:16 AM INSERT TITLE ====>>>> Code : 100 Name : percobaan
+DEBUG 2017-07-03 11:43:16,932  1438ms mTitleService          GetTitleList       - 7/3/2017 11:43:16 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 11:43:22,877  7383ms mTitleService          GetTitleList       - 7/3/2017 11:43:22 AM vRows : 20 vStart : 80
+DEBUG 2017-07-03 11:46:58,897 223403ms mTitleService          GetTitleList       - 7/3/2017 11:46:58 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 11:48:01,748 286253ms mTitleService          GetTitleList       - 7/3/2017 11:48:01 AM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:01:46,682  6672ms CountryController      GetCountryList     - 7/3/2017 2:01:46 PM WHERE : 
+DEBUG 2017-07-03 14:01:46,742  6732ms CountryController      GetCountryList     - 7/3/2017 2:01:46 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:01:46,743  6733ms mCountryService        GetCountryList     - 7/3/2017 2:01:46 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:01:46,747  6737ms CountryRepo            getCountryList     - 7/3/2017 2:01:46 PM pWHERE : 
+DEBUG 2017-07-03 14:02:58,765 78755ms CountryController      GetCountryList     - 7/3/2017 2:02:58 PM WHERE : 
+DEBUG 2017-07-03 14:02:58,765 78755ms CountryController      GetCountryList     - 7/3/2017 2:02:58 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:02:58,766 78756ms mCountryService        GetCountryList     - 7/3/2017 2:02:58 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:02:58,766 78756ms CountryRepo            getCountryList     - 7/3/2017 2:02:58 PM pWHERE : 
+DEBUG 2017-07-03 14:03:43,040 123030ms CountryController      GetCountryList     - 7/3/2017 2:03:43 PM WHERE : 
+DEBUG 2017-07-03 14:03:43,041 123031ms CountryController      GetCountryList     - 7/3/2017 2:03:43 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:03:43,041 123031ms mCountryService        GetCountryList     - 7/3/2017 2:03:43 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:03:43,042 123032ms CountryRepo            getCountryList     - 7/3/2017 2:03:43 PM pWHERE : 
+DEBUG 2017-07-03 14:03:48,458 128448ms CountryController      GetCountryList     - 7/3/2017 2:03:48 PM WHERE : 
+DEBUG 2017-07-03 14:03:48,459 128449ms CountryController      GetCountryList     - 7/3/2017 2:03:48 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:03:48,459 128449ms mCountryService        GetCountryList     - 7/3/2017 2:03:48 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:03:48,459 128449ms CountryRepo            getCountryList     - 7/3/2017 2:03:48 PM pWHERE : 
+DEBUG 2017-07-03 14:03:51,551 131541ms CountryController      GetCountryList     - 7/3/2017 2:03:51 PM WHERE : 
+DEBUG 2017-07-03 14:03:51,552 131542ms CountryController      GetCountryList     - 7/3/2017 2:03:51 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:03:51,553 131543ms mCountryService        GetCountryList     - 7/3/2017 2:03:51 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:03:51,554 131544ms CountryRepo            getCountryList     - 7/3/2017 2:03:51 PM pWHERE : 
+DEBUG 2017-07-03 14:04:04,911 144901ms CountryController      GetCountryList     - 7/3/2017 2:04:04 PM WHERE : 
+DEBUG 2017-07-03 14:04:04,912 144902ms CountryController      GetCountryList     - 7/3/2017 2:04:04 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:04:04,913 144903ms mCountryService        GetCountryList     - 7/3/2017 2:04:04 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:04:04,913 144903ms CountryRepo            getCountryList     - 7/3/2017 2:04:04 PM pWHERE : 
+DEBUG 2017-07-03 14:04:10,225 150215ms CountryController      GetCountryList     - 7/3/2017 2:04:10 PM WHERE : 
+DEBUG 2017-07-03 14:04:10,226 150216ms CountryController      GetCountryList     - 7/3/2017 2:04:10 PM Page Num : 1 Page Size : 20
+DEBUG 2017-07-03 14:04:10,226 150216ms mCountryService        GetCountryList     - 7/3/2017 2:04:10 PM vRows : 20 vStart : 20
+DEBUG 2017-07-03 14:04:10,227 150217ms CountryRepo            getCountryList     - 7/3/2017 2:04:10 PM pWHERE : 
+DEBUG 2017-07-03 14:04:11,961 151951ms CountryController      GetCountryList     - 7/3/2017 2:04:11 PM WHERE : 
+DEBUG 2017-07-03 14:04:11,962 151952ms CountryController      GetCountryList     - 7/3/2017 2:04:11 PM Page Num : 2 Page Size : 20
+DEBUG 2017-07-03 14:04:11,962 151952ms mCountryService        GetCountryList     - 7/3/2017 2:04:11 PM vRows : 20 vStart : 40
+DEBUG 2017-07-03 14:04:11,962 151952ms CountryRepo            getCountryList     - 7/3/2017 2:04:11 PM pWHERE : 
+DEBUG 2017-07-03 14:04:12,708 152698ms CountryController      GetCountryList     - 7/3/2017 2:04:12 PM WHERE : 
+DEBUG 2017-07-03 14:04:12,709 152699ms CountryController      GetCountryList     - 7/3/2017 2:04:12 PM Page Num : 3 Page Size : 20
+DEBUG 2017-07-03 14:04:12,711 152701ms mCountryService        GetCountryList     - 7/3/2017 2:04:12 PM vRows : 20 vStart : 60
+DEBUG 2017-07-03 14:04:12,712 152702ms CountryRepo            getCountryList     - 7/3/2017 2:04:12 PM pWHERE : 
+DEBUG 2017-07-03 14:04:13,384 153374ms CountryController      GetCountryList     - 7/3/2017 2:04:13 PM WHERE : 
+DEBUG 2017-07-03 14:04:13,385 153375ms CountryController      GetCountryList     - 7/3/2017 2:04:13 PM Page Num : 4 Page Size : 20
+DEBUG 2017-07-03 14:04:13,385 153375ms mCountryService        GetCountryList     - 7/3/2017 2:04:13 PM vRows : 20 vStart : 80
+DEBUG 2017-07-03 14:04:13,385 153375ms CountryRepo            getCountryList     - 7/3/2017 2:04:13 PM pWHERE : 
+DEBUG 2017-07-03 14:07:11,100 331090ms CountryController      GetCountryList     - 7/3/2017 2:07:11 PM WHERE : 
+DEBUG 2017-07-03 14:07:11,101 331091ms CountryController      GetCountryList     - 7/3/2017 2:07:11 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:07:11,101 331091ms mCountryService        GetCountryList     - 7/3/2017 2:07:11 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:07:11,102 331092ms CountryRepo            getCountryList     - 7/3/2017 2:07:11 PM pWHERE : 
+DEBUG 2017-07-03 14:11:10,915 570905ms CountryController      GetCountryList     - 7/3/2017 2:11:10 PM WHERE : 
+DEBUG 2017-07-03 14:11:10,915 570905ms CountryController      GetCountryList     - 7/3/2017 2:11:10 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:11:10,916 570906ms mCountryService        GetCountryList     - 7/3/2017 2:11:10 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:11:10,916 570906ms CountryRepo            getCountryList     - 7/3/2017 2:11:10 PM pWHERE : 
+DEBUG 2017-07-03 14:26:04,332  8635ms CountryController      GetCountryList     - 7/3/2017 2:26:04 PM WHERE : 
+DEBUG 2017-07-03 14:26:04,355  8658ms CountryController      GetCountryList     - 7/3/2017 2:26:04 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:26:04,356  8659ms mCountryService        GetCountryList     - 7/3/2017 2:26:04 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:26:04,364  8667ms CountryRepo            getCountryList     - 7/3/2017 2:26:04 PM pWHERE : 
+DEBUG 2017-07-03 14:26:24,408 28712ms CountryController      UpdateCountry      - 7/3/2017 2:26:24 PM Masuk Controller Country Code : 233, Country_name : West Bank
+DEBUG 2017-07-03 14:26:24,431 28734ms CountryRepo            UpdateCountry      - 7/3/2017 2:26:24 PM UPDATE COUNTRY SUCCESS ====>>>>>> Code : 238 Name : West Bank
+DEBUG 2017-07-03 14:26:24,440 28743ms CountryController      GetCountryList     - 7/3/2017 2:26:24 PM WHERE : 
+DEBUG 2017-07-03 14:26:24,441 28744ms CountryController      GetCountryList     - 7/3/2017 2:26:24 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:26:24,441 28744ms mCountryService        GetCountryList     - 7/3/2017 2:26:24 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:26:24,442 28745ms CountryRepo            getCountryList     - 7/3/2017 2:26:24 PM pWHERE : 
+DEBUG 2017-07-03 14:26:47,998 52302ms CountryController      GetCountryList     - 7/3/2017 2:26:47 PM WHERE : 
+DEBUG 2017-07-03 14:26:47,999 52303ms CountryController      GetCountryList     - 7/3/2017 2:26:47 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:26:48,000 52304ms mCountryService        GetCountryList     - 7/3/2017 2:26:48 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:26:48,000 52304ms CountryRepo            getCountryList     - 7/3/2017 2:26:48 PM pWHERE : 
+DEBUG 2017-07-03 14:28:31,206 155510ms CountryController      UpdateCountry      - 7/3/2017 2:28:31 PM Masuk Controller Country Code : 233, Country_name : West Bank
+DEBUG 2017-07-03 14:28:31,229 155533ms CountryRepo            UpdateCountry      - 7/3/2017 2:28:31 PM UPDATE COUNTRY SUCCESS ====>>>>>> Code : 238 Name : West Bank
+DEBUG 2017-07-03 14:28:31,241 155545ms CountryController      GetCountryList     - 7/3/2017 2:28:31 PM WHERE : 
+DEBUG 2017-07-03 14:28:31,242 155546ms CountryController      GetCountryList     - 7/3/2017 2:28:31 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:28:31,243 155547ms mCountryService        GetCountryList     - 7/3/2017 2:28:31 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:28:31,243 155547ms CountryRepo            getCountryList     - 7/3/2017 2:28:31 PM pWHERE : 
+DEBUG 2017-07-03 14:28:33,725 158029ms CountryController      GetCountryList     - 7/3/2017 2:28:33 PM WHERE : 
+DEBUG 2017-07-03 14:28:33,726 158030ms CountryController      GetCountryList     - 7/3/2017 2:28:33 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:28:33,726 158030ms mCountryService        GetCountryList     - 7/3/2017 2:28:33 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:28:33,726 158030ms CountryRepo            getCountryList     - 7/3/2017 2:28:33 PM pWHERE : 
+DEBUG 2017-07-03 14:41:08,852    73ms CountryController      UpdateCountry      - 7/3/2017 2:41:08 PM Masuk Controller Country Code : 233, Country_name : West Bank, Int Country : WBK, int Code : 970, Description : percobaan lagi
+DEBUG 2017-07-03 14:41:09,460   680ms CountryRepo            UpdateCountry      - 7/3/2017 2:41:09 PM UPDATE COUNTRY SUCCESS ====>>>>>> Code : 233 Name : West Bank
+DEBUG 2017-07-03 14:41:09,478   699ms CountryController      GetCountryList     - 7/3/2017 2:41:09 PM WHERE : 
+DEBUG 2017-07-03 14:41:09,479   700ms CountryController      GetCountryList     - 7/3/2017 2:41:09 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:41:09,481   702ms mCountryService        GetCountryList     - 7/3/2017 2:41:09 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:41:09,484   705ms CountryRepo            getCountryList     - 7/3/2017 2:41:09 PM pWHERE : 
+DEBUG 2017-07-03 14:41:16,547  7768ms CountryController      GetCountryList     - 7/3/2017 2:41:16 PM WHERE : 
+DEBUG 2017-07-03 14:41:16,548  7769ms CountryController      GetCountryList     - 7/3/2017 2:41:16 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:41:16,548  7769ms mCountryService        GetCountryList     - 7/3/2017 2:41:16 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:41:16,549  7770ms CountryRepo            getCountryList     - 7/3/2017 2:41:16 PM pWHERE : 
+DEBUG 2017-07-03 14:41:33,392 24613ms CountryController      UpdateCountry      - 7/3/2017 2:41:33 PM Masuk Controller Country Code : 233, Country_name : West Bank, Int Country : WBK, int Code : 970, Description : percobaan aaaa
+DEBUG 2017-07-03 14:41:33,818 25039ms CountryRepo            UpdateCountry      - 7/3/2017 2:41:33 PM UPDATE COUNTRY SUCCESS ====>>>>>> Code : 233 Name : West Bank
+DEBUG 2017-07-03 14:41:33,858 25079ms CountryController      GetCountryList     - 7/3/2017 2:41:33 PM WHERE : 
+DEBUG 2017-07-03 14:41:33,859 25080ms CountryController      GetCountryList     - 7/3/2017 2:41:33 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:41:33,859 25080ms mCountryService        GetCountryList     - 7/3/2017 2:41:33 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:41:33,860 25081ms CountryRepo            getCountryList     - 7/3/2017 2:41:33 PM pWHERE : 
+DEBUG 2017-07-03 14:42:11,265 62486ms CountryController      InsertCountry      - 7/3/2017 2:42:11 PMCountry Code : 0, Country_name : KLANGKABOT
+DEBUG 2017-07-03 14:42:14,156 65377ms CountryRepo            InsertCountry      - 7/3/2017 2:42:14 PM INSERT COUNTRY SUCCESS ====>>>> Code : 238 Name : KLANGKABOT
+DEBUG 2017-07-03 14:42:14,173 65394ms CountryController      GetCountryList     - 7/3/2017 2:42:14 PM WHERE : 
+DEBUG 2017-07-03 14:42:14,174 65395ms CountryController      GetCountryList     - 7/3/2017 2:42:14 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:42:14,175 65396ms mCountryService        GetCountryList     - 7/3/2017 2:42:14 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:42:14,177 65398ms CountryRepo            getCountryList     - 7/3/2017 2:42:14 PM pWHERE : 
+DEBUG 2017-07-03 14:44:09,967 181188ms CountryController      UpdateCountry      - 7/3/2017 2:44:09 PM Masuk Controller Country Code : 233, Country_name : West Bank, Int Country : WBK, int Code : 970, Description : percobaan bbbb
+DEBUG 2017-07-03 14:44:10,317 181538ms CountryRepo            UpdateCountry      - 7/3/2017 2:44:10 PM UPDATE COUNTRY SUCCESS ====>>>>>> Code : 233 Name : West Bank
+DEBUG 2017-07-03 14:44:10,334 181555ms CountryController      GetCountryList     - 7/3/2017 2:44:10 PM WHERE : 
+DEBUG 2017-07-03 14:44:10,336 181557ms CountryController      GetCountryList     - 7/3/2017 2:44:10 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:44:10,338 181559ms mCountryService        GetCountryList     - 7/3/2017 2:44:10 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:44:10,339 181560ms CountryRepo            getCountryList     - 7/3/2017 2:44:10 PM pWHERE : 
+DEBUG 2017-07-03 14:44:41,159 212380ms CountryController      GetCountryList     - 7/3/2017 2:44:41 PM WHERE : 
+DEBUG 2017-07-03 14:44:41,159 212380ms CountryController      GetCountryList     - 7/3/2017 2:44:41 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:44:41,160 212381ms mCountryService        GetCountryList     - 7/3/2017 2:44:41 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:44:41,160 212381ms CountryRepo            getCountryList     - 7/3/2017 2:44:41 PM pWHERE : 
+DEBUG 2017-07-03 14:44:52,026 223247ms CountryController      GetCountryList     - 7/3/2017 2:44:52 PM WHERE : 
+DEBUG 2017-07-03 14:44:52,027 223248ms CountryController      GetCountryList     - 7/3/2017 2:44:52 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:44:52,028 223249ms mCountryService        GetCountryList     - 7/3/2017 2:44:52 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:44:52,029 223250ms CountryRepo            getCountryList     - 7/3/2017 2:44:52 PM pWHERE : 
+DEBUG 2017-07-03 14:45:00,647 231868ms CountryController      UpdateCountry      - 7/3/2017 2:45:00 PM Masuk Controller Country Code : 233, Country_name : West Bank, Int Country : WBK, int Code : 970, Description : percobaan
+DEBUG 2017-07-03 14:45:01,546 232767ms CountryRepo            UpdateCountry      - 7/3/2017 2:45:01 PM UPDATE COUNTRY SUCCESS ====>>>>>> Code : 233 Name : West Bank
+DEBUG 2017-07-03 14:45:01,563 232784ms CountryController      GetCountryList     - 7/3/2017 2:45:01 PM WHERE : 
+DEBUG 2017-07-03 14:45:01,564 232785ms CountryController      GetCountryList     - 7/3/2017 2:45:01 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:45:01,565 232786ms mCountryService        GetCountryList     - 7/3/2017 2:45:01 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:45:01,566 232787ms CountryRepo            getCountryList     - 7/3/2017 2:45:01 PM pWHERE : 
+DEBUG 2017-07-03 14:45:27,077 258298ms CountryController      GetCountryList     - 7/3/2017 2:45:27 PM WHERE : 
+DEBUG 2017-07-03 14:45:27,077 258298ms CountryController      GetCountryList     - 7/3/2017 2:45:27 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:45:27,078 258299ms mCountryService        GetCountryList     - 7/3/2017 2:45:27 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:45:27,078 258299ms CountryRepo            getCountryList     - 7/3/2017 2:45:27 PM pWHERE : 
+DEBUG 2017-07-03 14:45:36,752 267973ms CountryController      UpdateCountry      - 7/3/2017 2:45:36 PM Masuk Controller Country Code : 233, Country_name : West Bank, Int Country : WBK, int Code : 970, Description : percobaan BBBBB
+DEBUG 2017-07-03 14:45:36,781 268002ms CountryRepo            UpdateCountry      - 7/3/2017 2:45:36 PM UPDATE COUNTRY SUCCESS ====>>>>>> Code : 233 Name : West Bank
+DEBUG 2017-07-03 14:45:36,795 268016ms CountryController      GetCountryList     - 7/3/2017 2:45:36 PM WHERE : 
+DEBUG 2017-07-03 14:45:36,796 268017ms CountryController      GetCountryList     - 7/3/2017 2:45:36 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:45:36,796 268017ms mCountryService        GetCountryList     - 7/3/2017 2:45:36 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:45:36,796 268017ms CountryRepo            getCountryList     - 7/3/2017 2:45:36 PM pWHERE : 
+DEBUG 2017-07-03 14:45:46,950 278171ms CountryController      UpdateCountry      - 7/3/2017 2:45:46 PM Masuk Controller Country Code : 238, Country_name : KLANGKABOT, Int Country : AAA, int Code : 555, Description : APA INI AAASDSD
+DEBUG 2017-07-03 14:45:46,975 278196ms CountryRepo            UpdateCountry      - 7/3/2017 2:45:46 PM UPDATE COUNTRY SUCCESS ====>>>>>> Code : 238 Name : KLANGKABOT
+DEBUG 2017-07-03 14:45:46,985 278206ms CountryController      GetCountryList     - 7/3/2017 2:45:46 PM WHERE : 
+DEBUG 2017-07-03 14:45:46,986 278207ms CountryController      GetCountryList     - 7/3/2017 2:45:46 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:45:46,986 278207ms mCountryService        GetCountryList     - 7/3/2017 2:45:46 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:45:46,987 278208ms CountryRepo            getCountryList     - 7/3/2017 2:45:46 PM pWHERE : 
+DEBUG 2017-07-03 14:47:08,551 359772ms CompanyController      GetCompanyLookUp   - 7/3/2017 2:47:08 PM WHERE : 
+DEBUG 2017-07-03 14:47:08,552 359773ms CompanyController      GetCompanyLookUp   - 7/3/2017 2:47:08 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 14:47:08,554 359775ms mCompanyService        GetCompanyList     - 7/3/2017 2:47:08 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:47:12,114 363335ms BranchOfficeService    etBranchOfficeList - 7/3/2017 2:47:12 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:47:16,008 367229ms DepartmentService      GetDepartmentList  - 7/3/2017 2:47:16 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:47:16,012 367233ms DepartmentRepo         getDepartmentList  - 7/3/2017 2:47:16 PM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.int_company,mc.company_name,
+                                  md.branch_code,mbo.int_branch,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,20
+DEBUG 2017-07-03 14:47:26,376 377596ms BranchOfficeRepo       InsertBranchOffice - 7/3/2017 2:47:26 PM INSERT BRANCH OFFICE SUCCESS ====>>>> Code : 48 Name : PT FREIGHT EXPRESS INDONESIA HOLDING
+DEBUG 2017-07-03 14:47:26,391 377612ms DepartmentService      GetDepartmentList  - 7/3/2017 2:47:26 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:47:26,391 377612ms DepartmentRepo         getDepartmentList  - 7/3/2017 2:47:26 PM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.int_company,mc.company_name,
+                                  md.branch_code,mbo.int_branch,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,20
+DEBUG 2017-07-03 14:47:26,642 377863ms BranchOfficeRepo       InsertBranchOffice - 7/3/2017 2:47:26 PM INSERT BRANCH OFFICE SUCCESS ====>>>> Code : 49 Name : PT FREIGHT EXPRESS INDONESIA HOLDING
+DEBUG 2017-07-03 14:47:26,648 377869ms DepartmentService      GetDepartmentList  - 7/3/2017 2:47:26 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:47:26,649 377870ms DepartmentRepo         getDepartmentList  - 7/3/2017 2:47:26 PM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.int_company,mc.company_name,
+                                  md.branch_code,mbo.int_branch,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,20
+DEBUG 2017-07-03 14:47:26,786 378007ms BranchOfficeRepo       InsertBranchOffice - 7/3/2017 2:47:26 PM INSERT BRANCH OFFICE SUCCESS ====>>>> Code : 50 Name : PT FREIGHT EXPRESS INDONESIA HOLDING
+DEBUG 2017-07-03 14:47:26,797 378018ms DepartmentService      GetDepartmentList  - 7/3/2017 2:47:26 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:47:26,798 378019ms DepartmentRepo         getDepartmentList  - 7/3/2017 2:47:26 PM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.int_company,mc.company_name,
+                                  md.branch_code,mbo.int_branch,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,20
+DEBUG 2017-07-03 14:47:31,201 382422ms BranchOfficeRepo       InsertBranchOffice - 7/3/2017 2:47:31 PM INSERT BRANCH OFFICE SUCCESS ====>>>> Code : 51 Name : PT FREIGHT EXPRESS INDONESIA HOLDING
+DEBUG 2017-07-03 14:47:31,218 382439ms DepartmentService      GetDepartmentList  - 7/3/2017 2:47:31 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 14:47:31,219 382440ms DepartmentRepo         getDepartmentList  - 7/3/2017 2:47:31 PM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.int_company,mc.company_name,
+                                  md.branch_code,mbo.int_branch,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,20
+DEBUG 2017-07-03 15:05:26,790 23365ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:05:26 PM WHERE : 
+DEBUG 2017-07-03 15:05:26,839 23414ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:05:26 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 15:05:26,840 23415ms mCompanyService        GetCompanyList     - 7/3/2017 3:05:26 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:07:29,365 145940ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:07:29 PM WHERE : 
+DEBUG 2017-07-03 15:07:29,366 145941ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:07:29 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 15:07:29,367 145942ms mCompanyService        GetCompanyList     - 7/3/2017 3:07:29 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:07:35,939 152514ms BranchOfficeService    etBranchOfficeList - 7/3/2017 3:07:35 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:07:39,456 156031ms DepartmentService      GetDepartmentList  - 7/3/2017 3:07:39 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:07:39,458 156033ms DepartmentRepo         getDepartmentList  - 7/3/2017 3:07:39 PM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.int_company,mc.company_name,
+                                  md.branch_code,mbo.int_branch,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,20
+DEBUG 2017-07-03 15:08:28,296 204871ms DepartmentController   UpdateDepartment   - 7/3/2017 3:08:28 PM Masuk Controller Department Code : 1, Department_name : IT, Description : assaaa
+DEBUG 2017-07-03 15:08:28,310 204886ms DepartmentRepo         UpdateDepartment   - 7/3/2017 3:08:28 PM UPDATE DEPARTMENT SUCCESS ====>>>>>> Code : 1 Name : PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-03 15:08:28,325 204901ms DepartmentService      GetDepartmentList  - 7/3/2017 3:08:28 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:08:28,325 204901ms DepartmentRepo         getDepartmentList  - 7/3/2017 3:08:28 PM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.int_company,mc.company_name,
+                                  md.branch_code,mbo.int_branch,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,20
+DEBUG 2017-07-03 15:08:44,203 220778ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:08:44 PM WHERE : 
+DEBUG 2017-07-03 15:08:44,203 220778ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:08:44 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 15:08:44,204 220779ms mCompanyService        GetCompanyList     - 7/3/2017 3:08:44 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:08:50,693 227268ms BranchOfficeService    etBranchOfficeList - 7/3/2017 3:08:50 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:08:54,332 230907ms DepartmentService      GetDepartmentList  - 7/3/2017 3:08:54 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:08:54,333 230908ms DepartmentRepo         getDepartmentList  - 7/3/2017 3:08:54 PM+======>>>> strSQL : SELECT md.department_code,md.company_code,mc.int_company,mc.company_name,
+                                  md.branch_code,mbo.int_branch,mbo.branch_name, md.int_department,md.department_name,
+                                  md.description,md.entry_date,IFNULL(md.entry_user,'') entry_user,
+                                  md.edit_date,IFNULL(md.edit_user,'') edit_user
+                           FROM m_department md JOIN m_company mc ON md.company_code = mc.company_code
+                           JOIN m_branch_office mbo ON md.branch_code = mbo.branch_code
+                           WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode   LIMIT 0,20
+DEBUG 2017-07-03 15:11:17,460  9050ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:11:17 PM WHERE : 
+DEBUG 2017-07-03 15:11:17,489  9079ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:11:17 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 15:11:17,494  9084ms mCompanyService        GetCompanyList     - 7/3/2017 3:11:17 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:11:20,425 12015ms BranchOfficeService    etBranchOfficeList - 7/3/2017 3:11:20 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:11:22,862 14452ms DepartmentService      GetDepartmentList  - 7/3/2017 3:11:22 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:12:03,352 54942ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:12:03 PM WHERE : 
+DEBUG 2017-07-03 15:12:03,352 54942ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:12:03 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 15:12:03,353 54943ms mCompanyService        GetCompanyList     - 7/3/2017 3:12:03 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:12:05,626 57216ms BranchOfficeService    etBranchOfficeList - 7/3/2017 3:12:05 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:12:07,995 59585ms DepartmentService      GetDepartmentList  - 7/3/2017 3:12:07 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:13:33,205 144794ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:13:33 PM WHERE : 
+DEBUG 2017-07-03 15:13:33,206 144795ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:13:33 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 15:13:33,207 144796ms mCompanyService        GetCompanyList     - 7/3/2017 3:13:33 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:13:35,922 147512ms BranchOfficeService    etBranchOfficeList - 7/3/2017 3:13:35 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:13:38,811 150400ms DepartmentService      GetDepartmentList  - 7/3/2017 3:13:38 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:13:57,366 168956ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:13:57 PM WHERE : 
+DEBUG 2017-07-03 15:13:57,366 168956ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:13:57 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 15:13:57,367 168957ms mCompanyService        GetCompanyList     - 7/3/2017 3:13:57 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:14:00,153 171743ms BranchOfficeService    etBranchOfficeList - 7/3/2017 3:14:00 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:14:02,931 174521ms DepartmentService      GetDepartmentList  - 7/3/2017 3:14:02 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:15:16,194 247783ms DepartmentController   UpdateDepartment   - 7/3/2017 3:15:16 PM Masuk Controller Department Code : 1, Department_name : IT surabaya, Description : assaaa
+DEBUG 2017-07-03 15:15:16,209 247798ms DepartmentRepo         UpdateDepartment   - 7/3/2017 3:15:16 PM UPDATE DEPARTMENT SUCCESS ====>>>>>> Code : 1 Name : PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-03 15:15:16,226 247815ms DepartmentService      GetDepartmentList  - 7/3/2017 3:15:16 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:15:45,371 276961ms DepartmentController   InsertDepartment   - 7/3/2017 3:15:45 PMDepartment Code : 0, Department_name : HAHAHAHAHAAHA
+DEBUG 2017-07-03 15:15:45,395 276985ms DepartmentRepo         InsertDepartment   - 7/3/2017 3:15:45 PM INSERT DEPARTMENT SUCCESS ====>>>> Code : 271 Name : HAHAHAHAHAAHA
+DEBUG 2017-07-03 15:15:45,405 276995ms DepartmentService      GetDepartmentList  - 7/3/2017 3:15:45 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:31:28,559 1220149ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:31:28 PM WHERE : 
+DEBUG 2017-07-03 15:31:28,560 1220150ms CompanyController      GetCompanyLookUp   - 7/3/2017 3:31:28 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-03 15:31:28,561 1220151ms mCompanyService        GetCompanyList     - 7/3/2017 3:31:28 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:31:32,874 1224464ms BranchOfficeService    etBranchOfficeList - 7/3/2017 3:31:32 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:31:36,291 1227881ms DepartmentService      GetDepartmentList  - 7/3/2017 3:31:36 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:31:53,131 1244721ms DepartmentService      GetDepartmentList  - 7/3/2017 3:31:53 PM vRows : 20 vStart : 0
+DEBUG 2017-07-03 15:31:54,498 1246088ms DepartmentService      GetDepartmentList  - 7/3/2017 3:31:54 PM vRows : 20 vStart : 0

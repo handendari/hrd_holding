@@ -619,6 +619,9 @@
     <Content Include="Content\jqwidgets\images\sunny\Thumbs.db" />
     <Content Include="Content\jqwidgets\images\Thumbs.db" />
     <Content Include="Content\jqwidgets\Thumbs.db" />
+    <Content Include="Scripts\mCountry\m_country.js" />
+    <Content Include="Scripts\mTitle\m_title.js" />
+    <Content Include="Scripts\mLevel\m_level.js" />
     <Content Include="Scripts\mDepartment\m_department.js" />
     <Content Include="Scripts\mBranchOffice\m_branch_office.js" />
     <Content Include="Scripts\jquery\jquery-3.1.1.min.map" />
@@ -779,6 +782,9 @@
     <Content Include="Views\Company\index.cshtml" />
     <Content Include="Views\BranchOffice\Index.cshtml" />
     <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\Level\Index.cshtml" />
+    <Content Include="Views\Title\Index.cshtml" />
+    <Content Include="Views\Country\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

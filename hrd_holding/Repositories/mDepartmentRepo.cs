@@ -17,9 +17,9 @@ namespace hrd_holding.Repositories
             var vResp = new ResponseModel();
             string SqlString = @"INSERT INTO `m_department` 
                                             (`department_code`,`company_code`,`branch_code`,`int_department`,`department_name`,
-                                             `description`,`entry_date`,`entry_user`,`edit_date`,`edit_user`)
+                                             `description`,`entry_date`,`entry_user`)
                                  VALUES (@pDepartmentCode,@pCompanyCode,@pBranchCode,@pIntDepartment,@pDepartmentName,
-                                         @pDescription,@pEntryDate,@pEntryUser,@pEditDate,@pEditUser)";
+                                         @pDescription,@pEntryDate,@pEntryUser)";
 
             try
             {
@@ -39,8 +39,6 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pDescription", pModel.description);
                         cmd.Parameters.AddWithValue("@pEntryDate", pModel.entry_date);
                         cmd.Parameters.AddWithValue("@pEntryUser", pModel.entry_user);
-                        cmd.Parameters.AddWithValue("@pEditDate", pModel.edit_date);
-                        cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 
                         var status = cmd.ExecuteNonQuery();
                         vResp.isValid = true;
@@ -81,7 +79,7 @@ namespace hrd_holding.Repositories
                            WHERE md.company_code = @pCompanyCode AND md.branch_code = @pBranchCode " +
                            pWhere + " " + vLimit;
 
-            Log.Debug(DateTime.Now + "+======>>>> strSQL : " + strSQL);
+            //Log.Debug(DateTime.Now + "+======>>>> strSQL : " + strSQL);
 
             try
             {
@@ -214,8 +212,6 @@ namespace hrd_holding.Repositories
                                             `int_department` = @pIntDepartment,
                                             `department_name` = @pDepartmentName,
                                             `description` = @pDescription,
-                                            `entry_date` = @pEntryDate,
-                                            `entry_user` = @pEntryUser,
                                             `edit_date` = @pEditDate,
                                             `edit_user` = @pEditUser
                                 WHERE `department_code` = @pCompanyCode";
@@ -235,8 +231,6 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pIntDepartment", pModel.int_department);
                         cmd.Parameters.AddWithValue("@pDepartmentName", pModel.department_name);
                         cmd.Parameters.AddWithValue("@pDescription", pModel.description);
-                        cmd.Parameters.AddWithValue("@pEntryDate", pModel.entry_date);
-                        cmd.Parameters.AddWithValue("@pEntryUser", pModel.entry_user);
                         cmd.Parameters.AddWithValue("@pEditDate", pModel.edit_date);
                         cmd.Parameters.AddWithValue("@pEditUser", pModel.edit_user);
 

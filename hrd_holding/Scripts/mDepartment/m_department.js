@@ -103,6 +103,8 @@ var vSrcList = {
                  { name: "edit_date" },
                  { name: "edit_user" }],
     cache: false,
+    sortcolumn: 'department_code',
+    sortdirection: 'desc',
     filter: function () { $("#tblDepartment").jqxGrid('updatebounddata', 'filter'); },
     sort: function () { $("#tblDepartment").jqxGrid('updatebounddata', 'sort'); },
     beforeprocessing: function (data) { vSrcList.totalrecords = data["TotalRows"]; },
@@ -116,7 +118,7 @@ function initTblDepartment() {
           theme: vTheme,
           //source: vAdapter,
           width: '100%',
-          height: 500,
+          height: 450,
           filterable: true,
           sortable: true,
           pageable: true,
@@ -132,14 +134,14 @@ function initTblDepartment() {
           },
           columns: [{ text: "dept code", dataField: "department_code", hidden: true },
                     { text: "Code", dataField: "int_department", width: 90, cellsalign: 'center', align: 'center' },
-                    { text: "Dept. Name", dataField: "department_name", align: 'center' },
+                    { text: "Dept. Name", dataField: "department_name", width: 300, align: 'center' },
                     { text: "Branch Code", dataField: "branch_code", hidden: true, },
                     { text: "int branch", dataField: "int_branch", hidden:true},
-                    { text: "Branch Name", dataField: "branch_name", width: 270, align: 'center' },
+                    { text: "Branch Name", dataField: "branch_name", width: 300, align: 'center' },
                     { text: "Company Code", dataField: "company_code", hidden: true, },
                     { text: "int company", dataField: "int_company", hidden: true, },
-                    { text: "Company Name", dataField: "company_name", width: 270, align: 'center' },
-                    { text: "Description", dataField: "address", width: 300, align: 'center' },
+                    { text: "Company Name", dataField: "company_name",align: 'center' },
+                    { text: "Description", dataField: "description",align: 'center' },
                     { text: "entry_date", dataField: "entry_date", hidden: true },
                     { text: "entry_user", dataField: "entry_user", hidden: true },
                     { text: "edit_date", dataField: "edit_date", hidden: true },
@@ -456,38 +458,30 @@ $(document).ready(function () {
 
     $('#btnModDeptSave').on('click', function (event) {
 
-        var vBranchCode = $('#txtBranchCode').data("branch_code") == undefined ? "" : $('#txtBranchCode').data("branch_code");
+        $("#modDepartment").jqxWindow('close');
+
+        var vCompanyCode = $("#txtIntCompany").data("company_code");
+        var vBranchCode = $("#txtIntBranch").data("branch_code");
+
+        var vDepartmentCode = $('#txtDeptCode').data("dept_code") == undefined ? "" : $('#txtDeptCode').data("dept_code");
 
         var vModel = JSON.stringify({
+            department_code : vDepartmentCode,
+            company_code: vCompanyCode,
+            int_company: $('#txtIntCompany').val(),
+            company_name: $('#txtCompanyName').val(),
             branch_code: vBranchCode,
-            int_branch: $('#txtBranchCode').val(),
+            int_branch: $('#txtIntBranch').val(),
             branch_name: $('#txtBranchName').val(),
-            company_code: $('#txtBranchIntCompany').data("company_code"),
-            int_company: $('#txtBranchIntCompany').val(),
-            company_name: $('#txtBranchName').val(),
-            country_code: $('#txtBranchIntCountry').data("country_code"),
-            int_country: $('#txtBranchIntCountry').val(),
-            country_name: $('#txtBranchCountryName').val(),
-            address: $('#txtBranchAddress').val(),
-            postal_code: $('#txtBranchZip').val(),
-            city_name: $('#txtBranchCity').val(),
-            state: $('#txtBranchState').val(),
-            phone_number: $('#txtBranchPhone').val(),
-            fax_number: $('#txtBranchFax').val(),
-            web_address: $('#txtBranchWebSite').val(),
-            email_address: $('#txtBranchEmail').val(),
-            //picture { get; set; }
-            npwp: $('#txtBranchNpwp').val(),
-            pimpinan: $('#txtBranchWhTax').val(),
-            pimpinan_npwp: $('#txtBranchWhNpwp').val(),
-            npp: $('#txtBranchNpp').val()
-            //jhk { get; set; }
+            int_department : $('#txtDeptCode').val(),
+            department_name : $('#txtDeptName').val(),
+            description: $('#txtDeptDesc').val()
         });
 
-        if (vBranchCode != "") {
+        if (vDepartmentCode != "") {
 
             $.ajax({
-                url: base_url + "BranchOffice/UpdateBranchOffice",
+                url: base_url + "Department/UpdateDepartment",
                 type: "POST",
                 contentType: "application/json",
                 data: vModel,
@@ -496,7 +490,6 @@ $(document).ready(function () {
 
                     if (isOke) {
                         f_ReloadData();
-                        $("#modBranch").jqxWindow('close');
                     } else {
                         f_MessageBoxShow(d.vResp['message']);
                     }
@@ -506,7 +499,7 @@ $(document).ready(function () {
             });
         } else {
             $.ajax({
-                url: base_url + "BranchOffice/InsertBranchOffice",
+                url: base_url + "Department/InsertDepartment",
                 type: "POST",
                 contentType: "application/json",
                 data: vModel,
@@ -515,7 +508,6 @@ $(document).ready(function () {
 
                     if (isOke) {
                         f_ReloadData();
-                        $("#modBranch").jqxWindow('close');
                     } else {
                         f_MessageBoxShow(d.vResp['message']);
                     }

@@ -155,5 +155,33 @@ namespace hrd_holding.Controllers
                     }).ToArray()
             }, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public dynamic InsertCountry(mCountryModel pModel)
+        {
+            LOG.Debug(DateTime.Now + "Country Code : " + pModel.country_code + ", Country_name : " + pModel.country_name);
+
+            var vResp = _countryService.InsertCountry(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public dynamic UpdateCountry(mCountryModel pModel)
+        {
+            LOG.Debug(DateTime.Now + " Masuk Controller Country Code : " + pModel.country_code + 
+                                     ", Country_name : " + pModel.country_name +
+                                     ", Int Country : " + pModel.int_country +
+                                     ", int Code : " + pModel.int_code +
+                                     ", Description : " + pModel.description);
+
+            var vResp = new ResponseModel();
+            vResp = _countryService.UpdateCountry(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

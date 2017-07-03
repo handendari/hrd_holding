@@ -260,5 +260,38 @@ namespace hrd_holding.Repositories
 
             return vResp;
         }
+
+        public int getLevelSeqNo()
+        {
+            var vSeqNo = 0;
+            var strSQL = @"SELECT IFNULL(MAX(level_code),0) seq_no FROM m_level";
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+
+                        using (MySqlDataReader aa = cmd.ExecuteReader())
+                        {
+                            if (aa.HasRows)
+                            {
+                                while (aa.Read())
+                                {
+                                    vSeqNo = aa.GetInt16("seq_no");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(DateTime.Now + " GetEmployeeSeqNo Failed", ex);
+            }
+            return vSeqNo;
+        }
     }
 }

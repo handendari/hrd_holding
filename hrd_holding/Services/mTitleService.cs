@@ -53,6 +53,8 @@ namespace hrd_holding.Services
 
         public ResponseModel InsertTitle(mTitleModel pModel)
         {
+            pModel.title_code = _repoTitle.getTitleSeqNo() + 1;
+
             var vModel = _repoTitle.InsertTitle(pModel);
             return vModel;
         }

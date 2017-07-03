@@ -66,7 +66,7 @@ namespace hrd_holding.Services
             return vModel;
         }
 
-        public ResponseModel DeleteEmployeeSkill(int pDepartmentCode)
+        public ResponseModel DeleteDepartment(int pDepartmentCode)
         {
             var vModel = _repoDept.DeleteDepartment(pDepartmentCode);
             return vModel;

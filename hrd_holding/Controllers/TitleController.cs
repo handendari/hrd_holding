@@ -91,5 +91,28 @@ namespace hrd_holding.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public dynamic InsertTitle(mTitleModel pModel)
+        {
+            LOG.Debug(DateTime.Now + "Title Code : " + pModel.title_code + ", Title_name : " + pModel.title_name);
+
+            var vResp = _titleService.InsertTitle(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public dynamic UpdateTitle(mTitleModel pModel)
+        {
+            LOG.Debug(DateTime.Now + " Masuk Controller Title Code : " + pModel.title_code + ", Title_name : " + pModel.title_name);
+
+            var vResp = new ResponseModel();
+            vResp = _titleService.UpdateTitle(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
