@@ -183,6 +183,5 @@ namespace hrd_holding.Controllers
             return Json(new { vResp }, JsonRequestBehavior.AllowGet);
         }
 
-
     }
 }

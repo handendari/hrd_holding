@@ -12,6 +12,7 @@ namespace hrd_holding.Models
         public string status_name { get; set; }
         public int flag_period { get; set; }
         public string kode_pajak { get; set; }
+        public string nama_pajak { get; set; }
         public string description { get; set; }
     }
 }

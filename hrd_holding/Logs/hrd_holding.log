@@ -26849,3 +26849,78 @@ DEBUG 2017-07-03 15:31:32,874 1224464ms BranchOfficeService    etBranchOfficeLis
 DEBUG 2017-07-03 15:31:36,291 1227881ms DepartmentService      GetDepartmentList  - 7/3/2017 3:31:36 PM vRows : 20 vStart : 0
 DEBUG 2017-07-03 15:31:53,131 1244721ms DepartmentService      GetDepartmentList  - 7/3/2017 3:31:53 PM vRows : 20 vStart : 0
 DEBUG 2017-07-03 15:31:54,498 1246088ms DepartmentService      GetDepartmentList  - 7/3/2017 3:31:54 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 14:16:12,373 1273060ms CompanyController      GetCompanyLookUp   - 7/4/2017 2:16:12 PM WHERE : 
+DEBUG 2017-07-04 14:16:12,508 1273195ms CompanyController      GetCompanyLookUp   - 7/4/2017 2:16:12 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-04 14:16:12,516 1273203ms mCompanyService        GetCompanyList     - 7/4/2017 2:16:12 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 14:16:16,308 1276995ms BranchOfficeService    etBranchOfficeList - 7/4/2017 2:16:16 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:41:18,488  5753ms mStatusService         GetStatusList      - 7/4/2017 3:41:18 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:42:17,684 64949ms mStatusService         GetStatusList      - 7/4/2017 3:42:17 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:43:19,317 126582ms mStatusService         GetStatusList      - 7/4/2017 3:43:19 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:43:41,592 148857ms mStatusService         GetStatusList      - 7/4/2017 3:43:41 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:44:01,892 169157ms mStatusService         GetStatusList      - 7/4/2017 3:44:01 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:44:23,725 190990ms mStatusService         GetStatusList      - 7/4/2017 3:44:23 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:44:43,555 210820ms mStatusService         GetStatusList      - 7/4/2017 3:44:43 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:46:29,839 317104ms mStatusService         GetStatusList      - 7/4/2017 3:46:29 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:48:06,428 413693ms mStatusService         GetStatusList      - 7/4/2017 3:48:06 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:50:14,814  7609ms mStatusService         GetStatusList      - 7/4/2017 3:50:14 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:50:59,423 52219ms mStatusService         GetStatusList      - 7/4/2017 3:50:59 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:51:21,252 74047ms mStatusService         GetStatusList      - 7/4/2017 3:51:21 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:52:00,992 113787ms mStatusService         GetStatusList      - 7/4/2017 3:52:00 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 15:52:12,262 125057ms mStatusService         GetStatusList      - 7/4/2017 3:52:12 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:02:50,133  6682ms mStatusService         GetStatusList      - 7/4/2017 4:02:50 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:02:58,487 15036ms EmployeeStatusRepo     dateEmployeeStatus - 7/4/2017 4:02:58 PM UPDATE EMPLOYEE STATUS SUCCESS ====>>>>>> Code : 1 Name : TETAP
+DEBUG 2017-07-04 16:02:58,497 15046ms mStatusService         GetStatusList      - 7/4/2017 4:02:58 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:04:42,456 119005ms mStatusService         GetStatusList      - 7/4/2017 4:04:42 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:32:39,512  7579ms mStatusService         GetStatusList      - 7/4/2017 4:32:39 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:32:53,924 21991ms mKodePajakService      GetKodePajakList   - 7/4/2017 4:32:53 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:33:40,405 68472ms mStatusService         GetStatusList      - 7/4/2017 4:33:40 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:33:45,597 73664ms mKodePajakService      GetKodePajakList   - 7/4/2017 4:33:45 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:33:56,243 84310ms mStatusService         GetStatusList      - 7/4/2017 4:33:56 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:33:59,766 87834ms mKodePajakService      GetKodePajakList   - 7/4/2017 4:33:59 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:34:21,732 109799ms mStatusService         GetStatusList      - 7/4/2017 4:34:21 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:34:25,567 113634ms mKodePajakService      GetKodePajakList   - 7/4/2017 4:34:25 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:35:47,500 195567ms mStatusService         GetStatusList      - 7/4/2017 4:35:47 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:35:50,678 198745ms mKodePajakService      GetKodePajakList   - 7/4/2017 4:35:50 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:36:22,507 230574ms EmployeeStatusRepo     sertEmployeeStatus - 7/4/2017 4:36:22 PM INSERT EMPLOYEE STATUS ====>>>> Code : 6 Name : percobaan
+DEBUG 2017-07-04 16:36:22,517 230584ms mStatusService         GetStatusList      - 7/4/2017 4:36:22 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:39:37,848 425915ms mStatusService         GetStatusList      - 7/4/2017 4:39:37 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:45:17,791 765858ms EmployeeStatusRepo     sertEmployeeStatus - 7/4/2017 4:45:17 PM INSERT EMPLOYEE STATUS ====>>>> Code : 7 Name : 
+DEBUG 2017-07-04 16:45:17,804 765871ms mStatusService         GetStatusList      - 7/4/2017 4:45:17 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:46:38,595 846662ms mStatusService         GetStatusList      - 7/4/2017 4:46:38 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:49:48,978 1037046ms mKodePajakService      GetKodePajakList   - 7/4/2017 4:49:48 PM vRows : 20 vStart : 0
+DEBUG 2017-07-04 16:50:09,312 1057379ms EmployeeStatusRepo     sertEmployeeStatus - 7/4/2017 4:50:09 PM INSERT EMPLOYEE STATUS ====>>>> Code : 8 Name : sdfdsfdafadsf
+DEBUG 2017-07-04 16:50:09,322 1057389ms mStatusService         GetStatusList      - 7/4/2017 4:50:09 PM vRows : 20 vStart : 0
+ERROR 2017-07-04 16:50:09,355 1057422ms EmployeeStatusRepo     EmployeeStatusList - 7/4/2017 4:50:09 PM GetEmployeeStatusList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeStatusRepo.getEmployeeStatusList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeStatusRepo.cs:line 101
+DEBUG 2017-07-04 16:50:16,105 1064172ms mStatusService         GetStatusList      - 7/4/2017 4:50:16 PM vRows : 20 vStart : 0
+ERROR 2017-07-04 16:50:16,125 1064192ms EmployeeStatusRepo     EmployeeStatusList - 7/4/2017 4:50:16 PM GetEmployeeStatusList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeStatusRepo.getEmployeeStatusList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeStatusRepo.cs:line 101
+DEBUG 2017-07-04 16:51:15,263 1123330ms mStatusService         GetStatusList      - 7/4/2017 4:51:15 PM vRows : 20 vStart : 0
+ERROR 2017-07-04 16:51:15,278 1123345ms EmployeeStatusRepo     EmployeeStatusList - 7/4/2017 4:51:15 PM GetEmployeeStatusList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeStatusRepo.getEmployeeStatusList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeStatusRepo.cs:line 101
+DEBUG 2017-07-04 16:53:12,330  7473ms mStatusService         GetStatusList      - 7/4/2017 4:53:12 PM vRows : 20 vStart : 0
+ERROR 2017-07-04 16:53:12,450  7593ms EmployeeStatusRepo     EmployeeStatusList - 7/4/2017 4:53:12 PM GetEmployeeStatusList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeStatusRepo.getEmployeeStatusList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeStatusRepo.cs:line 101
+DEBUG 2017-07-04 16:56:02,064 177207ms mStatusService         GetStatusList      - 7/4/2017 4:56:02 PM vRows : 20 vStart : 0
+ERROR 2017-07-04 16:56:02,072 177215ms EmployeeStatusRepo     EmployeeStatusList - 7/4/2017 4:56:02 PM GetEmployeeStatusList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeStatusRepo.getEmployeeStatusList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeStatusRepo.cs:line 101

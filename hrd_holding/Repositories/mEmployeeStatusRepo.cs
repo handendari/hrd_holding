@@ -65,8 +65,9 @@ namespace hrd_holding.Repositories
             var strSQLCount = @"SELECT COUNT(status_code) jml_record
                                 FROM m_emp_status " + pWhere;
 
-            var strSQL = @"SELECT `status_code`,`int_status`,`status_name`,`flag_period`,`kode_pajak`,`description`
-                           FROM m_emp_status " + pWhere + " " + vLimit;
+            var strSQL = @"SELECT ms.status_code,ms.int_status,ms.status_name,ms.flag_period,
+                                  ms.kode_pajak,mkp.description nama_pajak,ms.description
+                           FROM m_emp_status ms JOIN m_kode_pajak mkp ON ms.kode_pajak = mkp.kode_pajak " + pWhere + " " + vLimit;
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
@@ -104,6 +105,7 @@ namespace hrd_holding.Repositories
                                         status_name = aa.GetString("status_name"),
                                         flag_period = aa.GetInt16("flag_period"),
                                         kode_pajak = aa.GetString("kode_pajak"),
+                                        nama_pajak = aa.GetString("nama_pajak"),
                                         description = aa.GetString("description")
                                     };
                                     vList.Add(m);

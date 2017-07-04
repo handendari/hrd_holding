@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Employee Status";
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+<header>
+    <script src="~/scripts/mStatus/m_status.js"></script>
+</header>
+
+<div>
+    <table  style="width: 100%">
+        <tr>
+            <td colspan="4">
+                <div style="margin-top:10px; margin-bottom: 2px" id="toolBarStatus"></div>
+                <div id="tblStatus"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!--#region MODAL STATUS-->
+<div id='modStatus'>
+    <div>
+        <span>WORKING STATUS DETAIL</span>
+    </div>
+    <div>
+        <div id="notifContainer" style="height: 40px"></div>
+        <div id="notifStatus">
+            <div id="notifContent"></div>
+        </div>
+        <div style="margin-left: 10px">
+            <table>
+                <tr>
+                    <td>Code *</td>
+                    <td>
+                        <input type="text" id="txtStatusCode" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name *</td>
+                    <td>
+                        <input type="text" id="txtStatusName" /></td>
+                </tr>
+                <tr>
+                    <td>Periode Status *</td>
+                    <td>
+                        <div id="cmbStatusPeriod" ></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Kode Pajak *</td>
+                    <td>
+                        <input type="text" id="txtStatusPjkCode" />
+                        <button id="btnStatusPjk">...</button>
+                        <input type="text" id="txtStatusPjkName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top">Description</td>
+                    <td>
+                        <textarea id="txtStatusDesc"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div style="margin-left: 5px; margin-top: 15px; width: 100px; height: 30px;" id="btnModStatusSave" role="button">
+                            <img style="vertical-align: middle" src="~/content/images/Save as_24_grey.png">
+                            <span style="position: relative; top: 3px;">SAVE</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="margin-left: 5px; margin-top: 15px; width: 100px; height: 30px;" id="btnModStatusCancel" role="button">
+                            <img style="vertical-align: middle" src="~/content/images/Close Pane_24_grey.png">
+                            <span style="position: relative; top: 3px;">CANCEL</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+
+<div id="modPajakLookUp">
+    <div><span>Human Resource Development</span></div>
+    <div>
+        <div id="PajakLookUpToolBar" style="margin-bottom: 1px"></div>
+        <div id="tblPajakLookUp"></div>
+    </div>
+</div>
