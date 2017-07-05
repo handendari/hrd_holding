@@ -12,8 +12,10 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("SubtitleRepo");
 
-        public void InsertLevel(mSubtitleModel pModel)
+        public ResponseModel InsertLevel(mSubtitleModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"INSERT INTO `m_subtitle`
                                             (`subtitle_code`,`title_code`,`int_subtitle`,`subtitle_name`,`description`)
                                 VALUES (@pSubtitleCode,@pTitleCode,@pIntSubtitle,@pSubtitleName,@pDescription)";
@@ -35,6 +37,9 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pDescription", pModel.description);
 
                         var status = cmd.ExecuteNonQuery();
+
+                        vResp.isValid = true;
+                        vResp.message = " INSERT SUBTITLE, Code : " + pModel.subtitle_code + " Name : " + pModel.subtitle_name;
                         Log.Debug(DateTime.Now + " INSERT SUBTITLE ====>>>> Code : " + pModel.subtitle_code + " Name : " + pModel.subtitle_name);
 
                     }
@@ -42,9 +47,12 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " INSERT SUBTITLE, Code : " + pModel.subtitle_code + " Name : " + pModel.subtitle_name;
                 Log.Error(DateTime.Now + " INSERT SUBTITLE FAILED", ex);
             }
 
+            return vResp;
         }
 
         public List<mSubtitleModel> getSubtitleList(int pTitleCode)
@@ -133,8 +141,10 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public void UpdateSubtitle(mSubtitleModel pModel)
+        public ResponseModel UpdateSubtitle(mSubtitleModel pModel)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"UPDATE `m_subtitle`
                                       SET `title_code` = @pTitleCode,
                                           `int_subtitle` = @pIntSubtitle,
@@ -158,6 +168,8 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pDescription", pModel.description);
 
                         var status = cmd.ExecuteNonQuery();
+                        vResp.isValid = true;
+                        vResp.message = " UPDATE SUBTITLE SUCCESS, Code : " + pModel.subtitle_code + " Name : " + pModel.subtitle_name;
                         Log.Debug(DateTime.Now + " UPDATE SUBTITLE SUCCESS ====>>>>>> Code : " + pModel.subtitle_code + " Name : " + pModel.subtitle_name);
 
                     }
@@ -165,13 +177,18 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " UPDATE SUBTITLE FAILED.....";
                 Log.Error(DateTime.Now + " UPDATE SUBTITLE FAILED", ex);
             }
 
+            return vResp;
         }
 
-        public void DeleteSubtitle(string pCode)
+        public ResponseModel DeleteSubtitle(string pCode)
         {
+            var vResp = new ResponseModel();
+
             string SqlString = @"DELETE m_subtitle WHERE subtitle_code = @pCode";
 
             try
@@ -186,6 +203,9 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pCode", pCode);
 
                         var status = cmd.ExecuteNonQuery();
+
+                        vResp.isValid = true;
+                        vResp.message = " DELETE SUBTITLE SUCCESS, Code : " + pCode;
                         Log.Debug(DateTime.Now + " DELETE SUBTITLE SUCCESS ====>>>>>> Code : " + pCode);
 
                     }
@@ -193,8 +213,13 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
+                vResp.isValid = false;
+                vResp.message = " DELETE SUBTITLE FAILED......";
+
                 Log.Error(DateTime.Now + " DELETE SUBTITLE FAILED", ex);
             }
+
+            return vResp;
         }
     }
 }

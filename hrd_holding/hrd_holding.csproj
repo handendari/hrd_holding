@@ -623,6 +623,7 @@
     <Content Include="Content\jqwidgets\images\sunny\Thumbs.db" />
     <Content Include="Content\jqwidgets\images\Thumbs.db" />
     <Content Include="Content\jqwidgets\Thumbs.db" />
+    <Content Include="Scripts\mBank\m_bank.js" />
     <Content Include="Scripts\mStatus\m_status.js" />
     <Content Include="Scripts\mCountry\m_country.js" />
     <Content Include="Scripts\mTitle\m_title.js" />
@@ -791,6 +792,7 @@
     <Content Include="Views\Title\Index.cshtml" />
     <Content Include="Views\Country\Index.cshtml" />
     <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\Bank\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

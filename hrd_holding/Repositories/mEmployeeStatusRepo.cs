@@ -65,8 +65,13 @@ namespace hrd_holding.Repositories
             var strSQLCount = @"SELECT COUNT(status_code) jml_record
                                 FROM m_emp_status " + pWhere;
 
-            var strSQL = @"SELECT ms.status_code,ms.int_status,ms.status_name,ms.flag_period,
-                                  ms.kode_pajak,mkp.description nama_pajak,ms.description
+            var strSQL = @"SELECT IFNULL(ms.status_code,0) status_code,
+                                  IFNULL(ms.int_status,'') int_status,
+                                  IFNULL(ms.status_name,'') status_name,
+                                  IFNULL(ms.flag_period,0) flag_period,
+                                  IFNULL(ms.kode_pajak,'') kode_pajak,
+                                  IFNULL(mkp.description,'') nama_pajak,
+                                  IFNULL(ms.description,'') description
                            FROM m_emp_status ms JOIN m_kode_pajak mkp ON ms.kode_pajak = mkp.kode_pajak " + pWhere + " " + vLimit;
             try
             {

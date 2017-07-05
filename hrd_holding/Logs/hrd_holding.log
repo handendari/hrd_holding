@@ -26924,3 +26924,56 @@ System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or propert
    at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
    at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
    at hrd_holding.Repositories.mEmployeeStatusRepo.getEmployeeStatusList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeStatusRepo.cs:line 101
+DEBUG 2017-07-05 09:10:27,449  6157ms mStatusService         GetStatusList      - 7/5/2017 9:10:27 AM vRows : 20 vStart : 0
+ERROR 2017-07-05 09:10:27,832  6540ms EmployeeStatusRepo     EmployeeStatusList - 7/5/2017 9:10:27 AM GetEmployeeStatusList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeStatusRepo.getEmployeeStatusList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeStatusRepo.cs:line 101
+DEBUG 2017-07-05 09:20:14,570  6602ms mStatusService         GetStatusList      - 7/5/2017 9:20:14 AM vRows : 20 vStart : 0
+ERROR 2017-07-05 09:20:14,804  6836ms EmployeeStatusRepo     EmployeeStatusList - 7/5/2017 9:20:14 AM GetEmployeeStatusList FAILED... 
+System.IndexOutOfRangeException: Could not find specified column in results: kode_pajak
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.mEmployeeStatusRepo.getEmployeeStatusList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mEmployeeStatusRepo.cs:line 106
+DEBUG 2017-07-05 09:20:54,749  6149ms mStatusService         GetStatusList      - 7/5/2017 9:20:54 AM vRows : 20 vStart : 0
+DEBUG 2017-07-05 09:21:20,649 32049ms mKodePajakService      GetKodePajakList   - 7/5/2017 9:21:20 AM vRows : 20 vStart : 0
+DEBUG 2017-07-05 09:21:26,233 37633ms EmployeeStatusRepo     dateEmployeeStatus - 7/5/2017 9:21:26 AM UPDATE EMPLOYEE STATUS SUCCESS ====>>>>>> Code : 8 Name : sdfdsfdafadsf
+DEBUG 2017-07-05 09:21:26,243 37643ms mStatusService         GetStatusList      - 7/5/2017 9:21:26 AM vRows : 20 vStart : 0
+DEBUG 2017-07-05 09:37:02,928 974328ms mKodePajakService      GetKodePajakList   - 7/5/2017 9:37:02 AM vRows : 20 vStart : 0
+DEBUG 2017-07-05 11:55:56,290 342183ms BankController         GetBankList        - 7/5/2017 11:55:56 AM WHERE : 
+DEBUG 2017-07-05 11:55:56,320 342213ms BankController         GetBankList        - 7/5/2017 11:55:56 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-05 11:55:56,321 342214ms mBankService           GetBankList        - 7/5/2017 11:55:56 AM vRows : 20 vStart : 0
+DEBUG 2017-07-05 13:18:11,149    86ms BankController         UpdateBank         - 7/5/2017 1:18:11 PM Masuk Controller Bank Code : BCA, Bank name : BANK CENTRAL ASIA
+DEBUG 2017-07-05 13:18:11,460   397ms BankRepo               UpdateBank         - 7/5/2017 1:18:11 PM UPDATE BANK SUCCESS ====>>>>>> Code : BCA Name : BANK CENTRAL ASIA
+DEBUG 2017-07-05 13:18:11,483   420ms BankController         GetBankList        - 7/5/2017 1:18:11 PM WHERE : 
+DEBUG 2017-07-05 13:18:11,484   421ms BankController         GetBankList        - 7/5/2017 1:18:11 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-05 13:18:11,486   423ms mBankService           GetBankList        - 7/5/2017 1:18:11 PM vRows : 20 vStart : 0
+DEBUG 2017-07-05 13:22:25,399 254336ms BankController         GetBankList        - 7/5/2017 1:22:25 PM WHERE : 
+DEBUG 2017-07-05 13:22:25,400 254337ms BankController         GetBankList        - 7/5/2017 1:22:25 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-05 13:22:25,401 254338ms mBankService           GetBankList        - 7/5/2017 1:22:25 PM vRows : 20 vStart : 0
+DEBUG 2017-07-05 13:23:22,842 311779ms BankController         UpdateBank         - 7/5/2017 1:23:22 PM Masuk Controller Bank Code : BCA, Bank name : BANK CENTRAL ASIA
+DEBUG 2017-07-05 13:23:22,946 311883ms BankRepo               UpdateBank         - 7/5/2017 1:23:22 PM UPDATE BANK SUCCESS ====>>>>>> Code : BCA Name : BANK CENTRAL ASIA
+DEBUG 2017-07-05 13:23:22,985 311922ms BankController         GetBankList        - 7/5/2017 1:23:22 PM WHERE : 
+DEBUG 2017-07-05 13:23:22,988 311925ms BankController         GetBankList        - 7/5/2017 1:23:22 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-05 13:23:22,989 311926ms mBankService           GetBankList        - 7/5/2017 1:23:22 PM vRows : 20 vStart : 0
+DEBUG 2017-07-05 13:42:33,927 1462864ms BankController         UpdateBank         - 7/5/2017 1:42:33 PM Masuk Controller Bank Code : BRI, Bank name : BANK RAKYAT INDONESIA
+DEBUG 2017-07-05 13:42:34,077 1463014ms BankRepo               UpdateBank         - 7/5/2017 1:42:34 PM UPDATE BANK SUCCESS ====>>>>>> Code : BRI Name : BANK RAKYAT INDONESIA
+DEBUG 2017-07-05 13:42:34,109 1463046ms BankController         GetBankList        - 7/5/2017 1:42:34 PM WHERE : 
+DEBUG 2017-07-05 13:42:34,110 1463047ms BankController         GetBankList        - 7/5/2017 1:42:34 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-05 13:42:34,111 1463048ms mBankService           GetBankList        - 7/5/2017 1:42:34 PM vRows : 20 vStart : 0
+DEBUG 2017-07-05 13:42:39,882 1468819ms BankController         GetBankList        - 7/5/2017 1:42:39 PM WHERE : 
+DEBUG 2017-07-05 13:42:39,883 1468820ms BankController         GetBankList        - 7/5/2017 1:42:39 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-05 13:42:39,884 1468821ms mBankService           GetBankList        - 7/5/2017 1:42:39 PM vRows : 20 vStart : 0
+DEBUG 2017-07-05 13:52:02,104 2031041ms BankController         UpdateBank         - 7/5/2017 1:52:02 PM Masuk Controller Bank Code : bri, Bank name : BAJDKFASF
+DEBUG 2017-07-05 13:52:02,258 2031195ms BankRepo               UpdateBank         - 7/5/2017 1:52:02 PM UPDATE BANK SUCCESS ====>>>>>> Code : bri Name : BAJDKFASF
+DEBUG 2017-07-05 13:52:03,090 2032027ms BankController         GetBankList        - 7/5/2017 1:52:03 PM WHERE : 
+DEBUG 2017-07-05 13:52:03,091 2032028ms BankController         GetBankList        - 7/5/2017 1:52:03 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-05 13:52:03,091 2032028ms mBankService           GetBankList        - 7/5/2017 1:52:03 PM vRows : 20 vStart : 0
+DEBUG 2017-07-05 13:58:35,113 2424050ms BankController         InsertBank         - 7/5/2017 1:58:35 PMBank Code : BRI, Bank name : bank rakyat indonesia
+DEBUG 2017-07-05 13:58:35,238 2424175ms BankRepo               InsertBank         - 7/5/2017 1:58:35 PM INSERT BANK ====>>>> Code : BRI Name : bank rakyat indonesia
+DEBUG 2017-07-05 13:58:35,268 2424205ms BankController         GetBankList        - 7/5/2017 1:58:35 PM WHERE : 
+DEBUG 2017-07-05 13:58:35,271 2424208ms BankController         GetBankList        - 7/5/2017 1:58:35 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-05 13:58:35,271 2424208ms mBankService           GetBankList        - 7/5/2017 1:58:35 PM vRows : 20 vStart : 0

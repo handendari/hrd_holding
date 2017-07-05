@@ -90,5 +90,28 @@ namespace hrd_holding.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public dynamic InsertBank(mBankModel pModel)
+        {
+            LOG.Debug(DateTime.Now + "Bank Code : " + pModel.bank_code + ", Bank name : " + pModel.bank_name);
+
+            var vResp = _bankService.InsertBank(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public dynamic UpdateBank(mBankModel pModel)
+        {
+            LOG.Debug(DateTime.Now + " Masuk Controller Bank Code : " + pModel.bank_code + ", Bank name : " + pModel.bank_name);
+
+            var vResp = new ResponseModel();
+            vResp = _bankService.UpdateBank(pModel);
+
+
+            return Json(new { vResp }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
