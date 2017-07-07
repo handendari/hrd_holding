@@ -26977,3 +26977,256 @@ DEBUG 2017-07-05 13:58:35,238 2424175ms BankRepo               InsertBank       
 DEBUG 2017-07-05 13:58:35,268 2424205ms BankController         GetBankList        - 7/5/2017 1:58:35 PM WHERE : 
 DEBUG 2017-07-05 13:58:35,271 2424208ms BankController         GetBankList        - 7/5/2017 1:58:35 PM Page Num : 0 Page Size : 20
 DEBUG 2017-07-05 13:58:35,271 2424208ms mBankService           GetBankList        - 7/5/2017 1:58:35 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:05:49,654  7723ms SubTitleController     GetSubTitleList    - 7/6/2017 4:05:49 PM WHERE : 
+DEBUG 2017-07-06 16:05:49,780  7849ms SubTitleController     GetSubTitleList    - 7/6/2017 4:05:49 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:05:49,781  7850ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:05:49 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:05:50,277  8346ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:05:50 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:06:02,300 20369ms SubTitleController     GetSubTitleList    - 7/6/2017 4:06:02 PM WHERE : 
+DEBUG 2017-07-06 16:06:02,301 20370ms SubTitleController     GetSubTitleList    - 7/6/2017 4:06:02 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:06:02,301 20370ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:06:02 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:06:02,364 20433ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:06:02 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:06:39,067 57136ms SubTitleController     GetSubTitleList    - 7/6/2017 4:06:39 PM WHERE : 
+DEBUG 2017-07-06 16:06:39,068 57137ms SubTitleController     GetSubTitleList    - 7/6/2017 4:06:39 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:06:39,068 57137ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:06:39 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:06:39,139 57208ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:06:39 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:06:42,187 60256ms mTitleService          GetTitleList       - 7/6/2017 4:06:42 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:10:52,691 310760ms SubTitleController     UpdateSubTitle     - 7/6/2017 4:10:52 PM Masuk Controller SubTitle Code : 0, SubTitle name : PERCOBAAN
+DEBUG 2017-07-06 16:10:52,731 310800ms SubtitleRepo           UpdateSubtitle     - 7/6/2017 4:10:52 PM UPDATE SUBTITLE SUCCESS ====>>>>>> Code : 0 Name : PERCOBAAN
+DEBUG 2017-07-06 16:10:52,740 310809ms SubTitleController     GetSubTitleList    - 7/6/2017 4:10:52 PM WHERE : 
+DEBUG 2017-07-06 16:10:52,740 310809ms SubTitleController     GetSubTitleList    - 7/6/2017 4:10:52 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:10:52,741 310810ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:10:52 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:10:52,761 310830ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:10:52 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:12:08,927 386996ms mTitleService          GetTitleList       - 7/6/2017 4:12:08 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:14:30,242 528311ms SubTitleController     UpdateSubTitle     - 7/6/2017 4:14:30 PM Masuk Controller SubTitle Code : 0, SubTitle name : PERCOBAAN
+DEBUG 2017-07-06 16:14:30,437 528507ms SubtitleRepo           UpdateSubtitle     - 7/6/2017 4:14:30 PM UPDATE SUBTITLE SUCCESS ====>>>>>> Code : 0 Name : PERCOBAAN
+DEBUG 2017-07-06 16:14:31,627 529696ms SubTitleController     GetSubTitleList    - 7/6/2017 4:14:31 PM WHERE : 
+DEBUG 2017-07-06 16:14:31,627 529696ms SubTitleController     GetSubTitleList    - 7/6/2017 4:14:31 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:14:31,628 529697ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:14:31 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:14:31,641 529710ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:14:31 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:14:34,420 532489ms mTitleService          GetTitleList       - 7/6/2017 4:14:34 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:14:56,169 554238ms SubTitleController     UpdateSubTitle     - 7/6/2017 4:14:56 PM Masuk Controller SubTitle Code : 0, SubTitle name : sadsad
+DEBUG 2017-07-06 16:14:56,176 554245ms SubtitleRepo           UpdateSubtitle     - 7/6/2017 4:14:56 PM UPDATE SUBTITLE SUCCESS ====>>>>>> Code : 0 Name : sadsad
+DEBUG 2017-07-06 16:14:57,382 555451ms SubTitleController     GetSubTitleList    - 7/6/2017 4:14:57 PM WHERE : 
+DEBUG 2017-07-06 16:14:57,383 555452ms SubTitleController     GetSubTitleList    - 7/6/2017 4:14:57 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:14:57,383 555452ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:14:57 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:14:57,396 555465ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:14:57 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:15:00,195 558264ms mTitleService          GetTitleList       - 7/6/2017 4:15:00 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:16:24,740 642809ms SubTitleController     UpdateSubTitle     - 7/6/2017 4:16:24 PM Masuk Controller SubTitle Code : 0, SubTitle name : sdfasdf
+DEBUG 2017-07-06 16:16:24,762 642831ms SubtitleRepo           UpdateSubtitle     - 7/6/2017 4:16:24 PM UPDATE SUBTITLE SUCCESS ====>>>>>> Code : 0 Name : sdfasdf
+DEBUG 2017-07-06 16:16:26,210 644279ms SubTitleController     GetSubTitleList    - 7/6/2017 4:16:26 PM WHERE : 
+DEBUG 2017-07-06 16:16:26,210 644279ms SubTitleController     GetSubTitleList    - 7/6/2017 4:16:26 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:16:26,211 644280ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:16:26 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:16:26,584 644654ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:16:26 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:16:32,595 650664ms mTitleService          GetTitleList       - 7/6/2017 4:16:32 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:17:11,700 689770ms SubTitleController     UpdateSubTitle     - 7/6/2017 4:17:11 PM Masuk Controller SubTitle Code : 0, SubTitle name : asdasd
+DEBUG 2017-07-06 16:17:11,708 689778ms SubtitleRepo           UpdateSubtitle     - 7/6/2017 4:17:11 PM UPDATE SUBTITLE SUCCESS ====>>>>>> Code : 0 Name : asdasd
+DEBUG 2017-07-06 16:17:11,744 689814ms SubTitleController     GetSubTitleList    - 7/6/2017 4:17:11 PM WHERE : 
+DEBUG 2017-07-06 16:17:11,745 689815ms SubTitleController     GetSubTitleList    - 7/6/2017 4:17:11 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:17:11,746 689816ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:17:11 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:17:11,765 689835ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:17:11 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:17:12,997 691066ms SubTitleController     GetSubTitleList    - 7/6/2017 4:17:12 PM WHERE : 
+DEBUG 2017-07-06 16:17:12,997 691066ms SubTitleController     GetSubTitleList    - 7/6/2017 4:17:12 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:17:12,998 691067ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:17:12 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:17:13,035 691105ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:17:13 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:17:16,842 694912ms mTitleService          GetTitleList       - 7/6/2017 4:17:16 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:18:44,398  7563ms SubTitleController     GetSubTitleList    - 7/6/2017 4:18:44 PM WHERE : 
+DEBUG 2017-07-06 16:18:44,424  7589ms SubTitleController     GetSubTitleList    - 7/6/2017 4:18:44 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:18:44,426  7591ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:18:44 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:18:44,539  7704ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:18:44 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:18:47,358 10524ms mTitleService          GetTitleList       - 7/6/2017 4:18:47 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:19:22,838 46003ms SubTitleController     GetSubTitleList    - 7/6/2017 4:19:22 PM WHERE : 
+DEBUG 2017-07-06 16:19:22,839 46004ms SubTitleController     GetSubTitleList    - 7/6/2017 4:19:22 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:19:22,840 46005ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:19:22 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:19:22,848 46013ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:19:22 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:19:26,298 49463ms mTitleService          GetTitleList       - 7/6/2017 4:19:26 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:19:41,550 64716ms SubTitleController     InsertSubTitle     - 7/6/2017 4:19:41 PMSubTitle Code : 0, SubTitle_name : sdfafasdfaf
+DEBUG 2017-07-06 16:19:41,562 64728ms SubtitleRepo           InsertSubtitle     - 7/6/2017 4:19:41 PM INSERT SUBTITLE ====>>>> Code : 0 Name : sdfafasdfaf
+DEBUG 2017-07-06 16:19:41,573 64739ms SubTitleController     GetSubTitleList    - 7/6/2017 4:19:41 PM WHERE : 
+DEBUG 2017-07-06 16:19:41,574 64740ms SubTitleController     GetSubTitleList    - 7/6/2017 4:19:41 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:19:41,575 64741ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:19:41 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:19:41,582 64748ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:19:41 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:19:55,012 78177ms SubTitleController     GetSubTitleList    - 7/6/2017 4:19:55 PM WHERE : 
+DEBUG 2017-07-06 16:19:55,012 78177ms SubTitleController     GetSubTitleList    - 7/6/2017 4:19:55 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:19:55,013 78178ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:19:55 PM vRows : 20 vStart : 0
+ERROR 2017-07-06 16:19:55,021 78186ms SubtitleRepo           getSubtitleList    - 7/6/2017 4:19:55 PM GetSubtitleList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'ms.title_name' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.mSubtitleRepo.getSubtitleList(Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\mSubtitleRepo.cs:line 93
+DEBUG 2017-07-06 16:22:39,184  6879ms SubTitleController     GetSubTitleList    - 7/6/2017 4:22:39 PM WHERE : 
+DEBUG 2017-07-06 16:22:39,213  6908ms SubTitleController     GetSubTitleList    - 7/6/2017 4:22:39 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:22:39,213  6908ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:22:39 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:27:06,672  7567ms SubTitleController     GetSubTitleList    - 7/6/2017 4:27:06 PM WHERE : 
+DEBUG 2017-07-06 16:27:06,699  7594ms SubTitleController     GetSubTitleList    - 7/6/2017 4:27:06 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:27:06,701  7596ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:27:06 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:27:18,210 19105ms mTitleService          GetTitleList       - 7/6/2017 4:27:18 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:27:26,844 27739ms mTitleService          GetTitleList       - 7/6/2017 4:27:26 PM vRows : 20 vStart : 0
+DEBUG 2017-07-06 16:27:38,781 39675ms SubTitleController     UpdateSubTitle     - 7/6/2017 4:27:38 PM Masuk Controller SubTitle Code : 1, SubTitle name : sdfafasdfaf
+DEBUG 2017-07-06 16:27:38,794 39688ms SubtitleRepo           UpdateSubtitle     - 7/6/2017 4:27:38 PM UPDATE SUBTITLE SUCCESS ====>>>>>> Code : 1 Name : sdfafasdfaf
+DEBUG 2017-07-06 16:27:38,804 39698ms SubTitleController     GetSubTitleList    - 7/6/2017 4:27:38 PM WHERE : 
+DEBUG 2017-07-06 16:27:38,805 39699ms SubTitleController     GetSubTitleList    - 7/6/2017 4:27:38 PM Page Num : 0 Page Size : 20
+DEBUG 2017-07-06 16:27:38,806 39700ms mSubTitleService       GetSubTitleList    - 7/6/2017 4:27:38 PM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:32:46,324  7303ms LevelController        GetLevelList       - 7/7/2017 9:32:46 AM WHERE : 
+DEBUG 2017-07-07 09:32:46,414  7393ms LevelController        GetLevelList       - 7/7/2017 9:32:46 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-07 09:32:46,415  7394ms mLevelService          GetLevelList       - 7/7/2017 9:32:46 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:41:27,222 528201ms LevelController        GetLevelList       - 7/7/2017 9:41:27 AM WHERE : 
+DEBUG 2017-07-07 09:41:27,223 528202ms LevelController        GetLevelList       - 7/7/2017 9:41:27 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-07 09:41:27,223 528202ms mLevelService          GetLevelList       - 7/7/2017 9:41:27 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:46:07,186 808165ms LevelController        GetLevelList       - 7/7/2017 9:46:07 AM WHERE : 
+DEBUG 2017-07-07 09:46:07,186 808165ms LevelController        GetLevelList       - 7/7/2017 9:46:07 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-07 09:46:07,187 808166ms mLevelService          GetLevelList       - 7/7/2017 9:46:07 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:47:57,610 918589ms LevelController        GetLevelList       - 7/7/2017 9:47:57 AM WHERE : 
+DEBUG 2017-07-07 09:47:57,610 918589ms LevelController        GetLevelList       - 7/7/2017 9:47:57 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-07 09:47:57,611 918590ms mLevelService          GetLevelList       - 7/7/2017 9:47:57 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:48:05,998 926977ms LevelController        GetLevelList       - 7/7/2017 9:48:05 AM WHERE : 
+DEBUG 2017-07-07 09:48:05,999 926978ms LevelController        GetLevelList       - 7/7/2017 9:48:05 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-07 09:48:05,999 926978ms mLevelService          GetLevelList       - 7/7/2017 9:48:05 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:48:45,154 966133ms LevelController        GetLevelList       - 7/7/2017 9:48:45 AM WHERE : 
+DEBUG 2017-07-07 09:48:45,155 966134ms LevelController        GetLevelList       - 7/7/2017 9:48:45 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-07 09:48:45,156 966135ms mLevelService          GetLevelList       - 7/7/2017 9:48:45 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:49:00,195 981174ms LevelController        GetLevelList       - 7/7/2017 9:49:00 AM WHERE : 
+DEBUG 2017-07-07 09:49:00,196 981175ms LevelController        GetLevelList       - 7/7/2017 9:49:00 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-07 09:49:00,196 981175ms mLevelService          GetLevelList       - 7/7/2017 9:49:00 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:49:08,753 989732ms LevelController        GetLevelList       - 7/7/2017 9:49:08 AM WHERE : 
+DEBUG 2017-07-07 09:49:08,754 989733ms LevelController        GetLevelList       - 7/7/2017 9:49:08 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-07 09:49:08,754 989733ms mLevelService          GetLevelList       - 7/7/2017 9:49:08 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:51:15,052 1116031ms LevelController        GetLevelList       - 7/7/2017 9:51:15 AM WHERE : 
+DEBUG 2017-07-07 09:51:15,053 1116032ms LevelController        GetLevelList       - 7/7/2017 9:51:15 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-07 09:51:15,053 1116032ms mLevelService          GetLevelList       - 7/7/2017 9:51:15 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:51:17,763 1118742ms LevelController        GetLevelList       - 7/7/2017 9:51:17 AM WHERE : 
+DEBUG 2017-07-07 09:51:17,764 1118743ms LevelController        GetLevelList       - 7/7/2017 9:51:17 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-07 09:51:17,764 1118743ms mLevelService          GetLevelList       - 7/7/2017 9:51:17 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:51:22,052 1123030ms mTitleService          GetTitleList       - 7/7/2017 9:51:22 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:51:34,867 1135845ms mTitleService          GetTitleList       - 7/7/2017 9:51:34 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:54:27,868 1308847ms mTitleService          GetTitleList       - 7/7/2017 9:54:27 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:54:48,732 1329710ms CompanyController      GetCompanyLookUp   - 7/7/2017 9:54:48 AM WHERE : 
+DEBUG 2017-07-07 09:54:48,781 1329759ms CompanyController      GetCompanyLookUp   - 7/7/2017 9:54:48 AM Page Num : 0 Page Size : 15
+DEBUG 2017-07-07 09:54:48,783 1329761ms mCompanyService        GetCompanyList     - 7/7/2017 9:54:48 AM vRows : 15 vStart : 0
+DEBUG 2017-07-07 09:54:52,373 1333352ms BranchOfficeService    etBranchOfficeList - 7/7/2017 9:54:52 AM vRows : 15 vStart : 0
+DEBUG 2017-07-07 09:54:57,231 1338209ms EmployeeService        GetEmployeeList    - 7/7/2017 9:54:57 AM pPage : 0 pRows : 20
+DEBUG 2017-07-07 09:54:57,282 1338261ms EmployeeService        GetEmployeeList    - 7/7/2017 9:54:57 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 09:54:57,334 1338312ms EmployeeRepo           getEmployeeList    - 7/7/2017 9:54:57 AM Jumlah Data Employee : 20
+DEBUG 2017-07-07 10:25:08,393  6779ms mTitleService          GetTitleList       - 7/7/2017 10:25:08 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 10:28:59,041 237427ms mTitleService          GetTitleList       - 7/7/2017 10:28:59 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 10:29:45,390 283776ms mTitleService          GetTitleList       - 7/7/2017 10:29:45 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 11:02:58,162 878787ms CompanyController      GetCompanyLookUp   - 7/7/2017 11:02:58 AM WHERE : 
+DEBUG 2017-07-07 11:02:58,191 878816ms CompanyController      GetCompanyLookUp   - 7/7/2017 11:02:58 AM Page Num : 0 Page Size : 15
+DEBUG 2017-07-07 11:02:58,193 878818ms mCompanyService        GetCompanyList     - 7/7/2017 11:02:58 AM vRows : 15 vStart : 0
+DEBUG 2017-07-07 11:09:27,407 1268032ms CompanyController      GetCompanyLookUp   - 7/7/2017 11:09:27 AM WHERE : 
+DEBUG 2017-07-07 11:09:27,408 1268033ms CompanyController      GetCompanyLookUp   - 7/7/2017 11:09:27 AM Page Num : 0 Page Size : 20
+DEBUG 2017-07-07 11:09:27,408 1268033ms mCompanyService        GetCompanyList     - 7/7/2017 11:09:27 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 11:09:32,571 1273197ms BranchOfficeService    etBranchOfficeList - 7/7/2017 11:09:32 AM vRows : 20 vStart : 0
+DEBUG 2017-07-07 11:09:35,365 1275991ms DepartmentService      GetDepartmentList  - 7/7/2017 11:09:35 AM vRows : 20 vStart : 0

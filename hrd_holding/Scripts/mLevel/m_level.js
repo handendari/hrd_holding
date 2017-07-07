@@ -141,7 +141,7 @@ $(document).ready(function () {
             switch (index) {
                 case 0:
                     var button = $("<div>" +
-                                        "<img style='vertical-align:middle' src='../content/images/Refresh_24_grey.png'/>" +
+                                        "<img style='vertical-align:middle' src='"+base_url+"/content/images/Refresh_24_grey.png'/>" +
                                         "<span style='margin-left:5px'>RELOAD</span> " +
                                    "</div>");
                     tool.append(button);
@@ -151,7 +151,7 @@ $(document).ready(function () {
                     break;
                 case 1:
                     var button = $("<div>" +
-                                        "<img style='vertical-align:middle' src='../content/images/edit property_24_grey.png'/>" +
+                                        "<img style='vertical-align:middle' src='"+base_url+"/content/images/edit property_24_grey.png'/>" +
                                         "<span style='margin-left:5px'>EDIT</span> " +
                                    "</div>");
                     tool.append(button);
@@ -177,7 +177,7 @@ $(document).ready(function () {
                     break;
                 case 2:
                     var button = $("<div>" +
-                                        "<img style='vertical-align:middle' src='../content/images/add property_24_grey.png'/>" +
+                                        "<img style='vertical-align:middle' src='"+base_url+"/content/images/add property_24_grey.png'/>" +
                                         "<span style='margin-left:5px'>NEW</span> " +
                                    "</div>");
                     tool.append(button);

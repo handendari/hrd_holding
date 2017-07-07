@@ -35,151 +35,11 @@ limitations under the License.
     <script src="~/scripts/mega_menu/jqueryMegaMenu.js"></script>
     <script src="~/scripts/mega_menu/mainMegaMenu.js"></script>
     <script src="~/scripts/loader_modal/jquery.loadingModal.min.js"></script>
+    <script src="~/scripts/shared/header.js"></script>
 
     <script type="text/javascript">
-
         var base_url = '@String.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~/"))';
-        var vTheme = 'custom_merah';
 
-        var winHeight = 0;
-        var winWidth = 0;
-
-        var vCmbReligion = [
-                "ISLAM",
-                "KRISTEN",
-                "KATOLIK",
-                "HINDU",
-                "BUDHA",
-                "OTHERS"
-        ];
-
-        var vCmbRelation = [
-                "SUAMI",
-                "ISTRI",
-                "ANAK",
-                "ORANG TUA",
-                "SAUDARA"
-        ];
-
-        var vCmbGender = [
-                "LAKI LAKI",
-                "PEREMPUAN"
-        ];
-
-        var vCmbEducation = [
-                "PRA TK",
-                "TK",
-                "SD",
-                "SLTP",
-                "SLTA",
-                "D1",
-                "D2",
-                "D3",
-                "D4",
-                "S1",
-                "S2",
-                "S3"
-        ];
-
-        var vCmbSkillLevel = [
-                "EXCELLENT",
-                "GOOD",
-                "AVERAGE",
-                "POOR",
-                "NO"
-        ];
-
-        var vCmbMarital = [
-                "SINGLE",
-                "MARRIED"
-        ];
-
-        function f_PosX(pLebar) {
-            winWidth = $(window).width();
-            var posX = (winWidth / 2) - ((pLebar).width() / 2) + $(window).scrollLeft();
-            return posX;
-        }
-
-        function f_PosY(pTinggi) {
-            winHeight = $(window).height();
-            var posY = (winHeight / 2) - ((pTinggi).height() / 2) + $(window).scrollTop();
-            return posY;
-        }
-
-        function f_MessageBoxShow(pText) {
-            $("#modInfoText").html(pText);
-            $("#modInfo").jqxWindow("open");
-
-        }
-
-        function f_NotificationShow(pJxNotif,pNotifContent,pText) {
-            (pNotifContent).html(pText);
-            (pJxNotif).jqxNotification("open");
-        }
-
-        function f_ShowLoaderModal() {
-            $('body').loadingModal({ text: 'Loading Data, Please Wait...' });
-            $('body').loadingModal('animation', 'rotatingPlane').loadingModal('backgroundColor', 'red');
-
-
-            //delay(time)
-            //        .then(function() { $('body').loadingModal('animation', 'rotatingPlane').loadingModal('backgroundColor', 'red'); return delay(time);})
-            //        .then(function() { $('body').loadingModal('animation', 'wave'); return delay(time);})
-            //        .then(function() { $('body').loadingModal('animation', 'wanderingCubes').loadingModal('backgroundColor', 'green'); return delay(time);})
-            //        .then(function() { $('body').loadingModal('animation', 'spinner'); return delay(time);})
-            //        .then(function() { $('body').loadingModal('animation', 'chasingDots').loadingModal('backgroundColor', 'blue'); return delay(time);})
-            //        .then(function() { $('body').loadingModal('animation', 'threeBounce'); return delay(time);})
-            //        .then(function() { $('body').loadingModal('animation', 'circle').loadingModal('backgroundColor', 'black'); return delay(time);})
-            //        .then(function() { $('body').loadingModal('animation', 'cubeGrid'); return delay(time);})
-            //        .then(function() { $('body').loadingModal('animation', 'fadingCircle').loadingModal('backgroundColor', 'gray'); return delay(time);})
-            //        .then(function() { $('body').loadingModal('animation', 'foldingCube'); return delay(time); } )
-            //        .then(function() { $('body').loadingModal('color', 'black').loadingModal('text', 'Done :-)').loadingModal('backgroundColor', 'yellow');  return delay(time); } )
-            //        .then(function() { $('body').loadingModal('hide'); return delay(time); } )
-            //        .then(function() { $('body').loadingModal('destroy') ;} );
-        }
-
-        function f_HideLoaderModal() {
-            $('body').loadingModal('hide');
-        }
-
-        $.urlParam = function (name) {
-            var results = new RegExp('[\?&]' + name + '=([^&#]*)')
-                              .exec(window.location.href);
-
-            if (results != null) {
-                return results[1] || 0;
-            } else { return "" }
-        }
-
-        $(document).ready(function () {
-            winHeight = $(window).height();
-            winWidth = $(window).width();
-
-            //KEEP CENTERED WHEN SCROLLING
-            $(window).scroll(function () {
-                $('#modInfo').jqxWindow({ position: { x: f_PosX($('#modInfo')), y: f_PosY($('#modInfo')) } });
-            });
-
-            //KEEP CENTERED EVEN WHEN RESIZING
-            $(window).resize(function () {
-                $('#modInfo').jqxWindow({ position: { x: f_PosX($('#modInfo')), y: f_PosY($('#modInfo')) } });
-            });
-
-            $("#jqxLoader").jqxLoader({ isModal: true, width: 100, height: 60, imagePosition: 'top' });
-            $("#btnInfoOke").jqxButton({ theme: vTheme, height: 30, width: 100 });
-
-            $("#modInfo").jqxWindow({
-                height: 150, width: 300,
-                theme: vTheme, isModal: true,
-                autoOpen: false,
-                resizable: false
-            });
-
-            $('#btnInfoOke').on('click', function (event) {
-                $("#modInfo").jqxWindow('close');
-            });
-
-        });
     </script>
 </head>
 
@@ -206,17 +66,16 @@ limitations under the License.
                                 <h3><a href="#">1.1 MASTER DATA</a></h3>
                                 <p>Administrasi Untuk Management Document Data Master</p>
                                 <ol>
-                                    <li><a href="#">1.1.1 Employee</a></li>
-                                    <li><a href="#">1.1.2 Departement</a></li>
-                                    <li><a href="#">1.1.3 Branch Office</a></li>
-                                    <li><a href="#">1.1.4 City</a></li>
-                                    <li><a href="#">1.1.5 Bank</a></li>
-                                    <li><a href="#">1.1.6 Company</a></li>
-                                    <li><a href="#">1.1.7 Country</a></li>
-                                    <li><a href="#">1.1.8 City</a></li>
-                                    <li><a href="#">1.1.9 Level</a></li>
-                                    <li><a href="#">1.1.10 Subtitle</a></li>
-                                    <li><a href="#">1.1.11 Title</a></li>
+                                    <li><a href="@Url.Action("Index", "Employee")">1.1.1 Employee</a></li>
+                                    <li><a href="@Url.Action("Index", "Department")">1.1.2 Departement</a></li>
+                                    <li><a href="@Url.Action("Index", "branchoffice")">1.1.3 Branch Office</a></li>
+                                    <li><a href="@Url.Action("Index", "city")">1.1.4 City</a></li>
+                                    <li><a href="@Url.Action("Index", "bank")">1.1.5 Bank</a></li>
+                                    <li><a href="@Url.Action("Index", "Company")">1.1.6 Company</a></li>
+                                    <li><a href="@Url.Action("Index", "Country")">1.1.7 Country</a></li>
+                                    <li><a href="@Url.Action("Index", "Level")">1.1.8 Level</a></li>
+                                    <li><a href="@Url.Action("Index", "SubTitle")">1.1.9 Subtitle</a></li>
+                                    <li><a href="@Url.Action("Index", "Title")">1.1.10 Title</a></li>
                                 </ol>
                             </li>
                             <li class="accessible-megamenu-panel-group">

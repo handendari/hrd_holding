@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "SubTitle";
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+<header>
+    <script src="~/scripts/mSubTitle/m_subtitle.js"></script>
+</header>
+
+<div>
+    <table  style="width: 100%">
+        <tr>
+            <td colspan="4">
+                <div style="margin-top:10px; margin-bottom: 2px" id="toolBarSubTitle"></div>
+                <div id="tblSubTitle"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!--#region MODAL SubTitle -->
+<div id='modSubTitle'>
+    <div>
+        <span>SUB TITLE DETAIL</span>
+    </div>
+    <div>
+        <div id="notifContainer" style="height: 40px"></div>
+        <div id="notifSubTitle">
+            <div id="notifContent"></div>
+        </div>
+        <div style="margin-left: 10px">
+            <table>
+                <tr>
+                    <td>Job Title *</td>
+                    <td>
+                        <input type="text" id="txtJobTitleCode" />
+                        <button id="btnJobTitle">...</button>
+                        <input type="text" id="txtJobTitleName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Code *</td>
+                    <td>
+                        <input type="text" id="txtSubTitleCode" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name *</td>
+                    <td>
+                        <input type="text" id="txtSubTitleName" /></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top">Description</td>
+                    <td>
+                        <textarea id="txtSubTitleDesc"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div style="margin-left: 5px; margin-top: 15px; width: 100px; height: 30px;" id="btnModSubTitleSave" role="button">
+                            <img style="vertical-align: middle" src="~/content/images/Save as_24_grey.png">
+                            <span style="position: relative; top: 3px;">SAVE</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="margin-left: 5px; margin-top: 15px; width: 100px; height: 30px;" id="btnModSubTitleCancel" role="button">
+                            <img style="vertical-align: middle" src="~/content/images/Close Pane_24_grey.png">
+                            <span style="position: relative; top: 3px;">CANCEL</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!--#endregion-->
+
+<div id="modJobTitleLookUp">
+    <div><span>Human Resource Development</span></div>
+    <div>
+        <div id="JobTitleLookUpToolBar" style="margin-bottom: 1px"></div>
+        <div id="tblJobTitleLookUp"></div>
+    </div>
+</div>

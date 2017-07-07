@@ -1,25 +1,22 @@
 ﻿f_ShowLoaderModal();
 
-var vSrcPriodStatus = [
-    "NON PERIOD",
-    "PERIOD"
-];
 
-var SrcPajakLookUp = {
+var SrcJobTitleLookUp = {
     datatype: "json",
     type: "Post",
-    datafields: [{ name: "kode_pajak" },
-                 { name: "description" }],
+    datafields: [{ name: "title_code" },
+                 { name: "int_title" },
+                 { name: "title_name" }],
     cache: false,
-    filter: function () { $("#tblPajakLookUp").jqxGrid('updatebounddata', 'filter'); },
-    sort: function () { $("#tblPajakLookUp").jqxGrid('updatebounddata', 'sort'); },
-    beforeprocessing: function (data) { SrcPajakLookUp.totalrecords = data["TotalRows"]; },
-    sortcolumn: "kode_pajak",
+    filter: function () { $("#tblJobTitleLookUp").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblJobTitleLookUp").jqxGrid('updatebounddata', 'sort'); },
+    beforeprocessing: function (data) { SrcJobTitleLookUp.totalrecords = data["TotalRows"]; },
+    sortcolumn: "job_code",
     root: 'Rows'
 }
 
-function initGridPajakLookUp() {
-    $("#tblPajakLookUp").jqxGrid(
+function initGridJobTitleLookUp() {
+    $("#tblJobTitleLookUp").jqxGrid(
       {
           theme: vTheme,
           //source: dataAdapter,
@@ -39,31 +36,32 @@ function initGridPajakLookUp() {
               return obj.data;
           },
           columns: [
-              { text: 'Code', dataField: 'kode_pajak', width: 80 },
-              { text: 'Name', dataField: 'description'}
+              { text: 'title code', dataField: 'title_code', hidden:true },
+              { text: 'Code', dataField: 'int_title', width: 90 },
+              { text: 'Name', dataField: 'title_name'}
           ]
       });
 }
 
 var vSrcList = {
-    url: base_url + "/Status/GetStatusList",
+    url: base_url + "/SubTitle/GetSubTitleList",
     datatype: "json",
     type: "Post",
-    datafields: [{ name: "status_code" },
-                 { name: "int_status" },
-                 { name: "status_name" },
-                 { name: "flag_period" },
-                 { name: "kode_pajak" },
-                 { name: "nama_pajak" },
+    datafields: [{ name: "subtitle_code" },
+                 { name: "int_subtitle" },
+                 { name: "subtitle_name" },
+                 { name: "title_code" },
+                 { name: "int_title" },
+                 { name: "title_name" },
                  { name: "description" }],
     cache: false,
-    filter: function () { $("#tblStatus").jqxGrid('updatebounddata', 'filter'); },
-    sort: function () { $("#tblStatus").jqxGrid('updatebounddata', 'sort'); },
+    filter: function () { $("#tblSubTitle").jqxGrid('updatebounddata', 'filter'); },
+    sort: function () { $("#tblSubTitle").jqxGrid('updatebounddata', 'sort'); },
     beforeprocessing: function (data) { vSrcList.totalrecords = data["TotalRows"]; },
     root: 'Rows'
 }
 
-function initTblStatus() {
+function initTblSubTitle() {
     var vAdapter = new $.jqx.dataAdapter(vSrcList, {
         downloadComplete: function (data, status, xhr) {
             if (!vSrcList.TotalRows) {
@@ -72,7 +70,7 @@ function initTblStatus() {
         }
     });
 
-    $("#tblStatus").jqxGrid(
+    $("#tblSubTitle").jqxGrid(
       {
           theme: vTheme,
           source: vAdapter,
@@ -91,40 +89,41 @@ function initTblStatus() {
           rendergridrows: function (obj) {
               return obj.data;
           },
-          columns: [{ text: "status Code", dataField: "status_code", hidden: true, },
-                    { text: "Code", dataField: "int_status", width: 90, cellsalign: 'center', align: 'center' },
-                    { text: "Name", dataField: "status_name", width: 270, align: 'center' },
-                    { text: "Flag Period", dataField: "flag_period", hidden: true, },
-                    { text: "Kode Pajak", dataField: "kode_pajak", hidden: true, },
-                    { text: "Pajak Desc.", dataField: "nama_pajak", width: 300, align: 'center' },
+          columns: [{ text: "SubTitle Code", dataField: "subtitle_code", hidden: true, },
+                    { text: "Code", dataField: "int_subtitle", width: 90, cellsalign: 'center', align: 'center' },
+                    { text: "Name", dataField: "subtitle_name", width: 270, align: 'center' },
+                    { text: "title code", dataField: "title_code", hidden: true, },
+                    { text: "Int Title", dataField: "int_title", hidden: true, },
+                    { text: "Title Name", dataField: "title_name", width: 300, align: 'center' },
                     { text: "Description", dataField: "description", align: 'center' }]
       });
 }
 
 
 function f_EmptyForm() {
-    $("#txtStatusCode").val("");
-    $("#txtStatusCode").data("status_code", "");
-    $("#txtStatusName").val("");
-    $("#txtStatusPjkCode").val("");
-    $("#txtStatusPjkName").val("");
-    $("#txtStatusPeriod").val("");
+    $("#txtSubTitleCode").val("");
+    $("#txtSubTitleCode").data("subtitle_code","");
+    $("#txtSubTitleName").val("");
+    $("#txtJobTitleCode").data("title_code", "");
+    $("#txtJobTitleCode").val("");
+    $("#txtJobTitleName").val("");
+    $("#txtSubTitleDesc").val("");
 }
 
-function f_DeleteStatus(pStatusCode) {
+function f_DeleteSubTitle(pCode) {
     $("#modYesNo").jqxWindow('close');
     f_ShowLoaderModal();
 
-    var selectedRowIndex = $("#tblStatus").jqxGrid('selectedrowindex');
-    var vStatusCode = $('#tblStatus').jqxGrid('getcellvalue', selectedRowIndex, "status_code");
+    var selectedRowIndex = $("#tblSubTitle").jqxGrid('selectedrowindex');
+    var vSubTitleCode = $('#tblSubTitle').jqxGrid('getcellvalue', selectedRowIndex, "subtitle_code");
 
 
-    if (vStatusCode > 0) {
+    if (vSubTitleCode > 0) {
         $.ajax({
-            url: base_url + "Status/DeleteStatus",
+            url: base_url + "SubTitle/DeleteSubTitle",
             type: "POST",
             contentType: "application/json",
-            data: JSON.stringify({ pStatusCode: vStatusCode }),
+            data: JSON.stringify({ pSubTitleCode: vSubTitleCode }),
             success: function (d) {
                 var isOke = d.vResp['isValid'];
 
@@ -142,7 +141,7 @@ function f_DeleteStatus(pStatusCode) {
 }
 
 function f_ReloadData() {
-    vSrcList.url = base_url + "/Status/GetStatusList";
+    vSrcList.url = base_url + "/SubTitle/GetSubTitleList";
 
     var vAdapter = new $.jqx.dataAdapter(vSrcList, {
         downloadComplete: function (data, status, xhr) {
@@ -151,39 +150,34 @@ function f_ReloadData() {
             }
         }
     });
-    $('#tblStatus').jqxGrid({ source: vAdapter })
-    $('#tblStatus').jqxGrid('gotopage', 0);
+    $('#tblSubTitle').jqxGrid({ source: vAdapter })
+    $('#tblSubTitle').jqxGrid('gotopage', 0);
 }
 
 $(document).ready(function () {
     // prepare the data
 
-    $("#txtStatusCode").jqxInput({ theme: vTheme, width: 70 });
-    $("#txtStatusName").jqxInput({ theme: vTheme, width: 300 });
-    $("#cmbStatusPeriod").jqxComboBox({
-        source: vSrcPriodStatus,
-        width: '200px',
-        theme: vTheme
-    });
+    $("#txtSubTitleCode").jqxInput({ theme: vTheme, width: 70 });
+    $("#txtSubTitleName").jqxInput({ theme: vTheme, width: 300 });
 
-    $("#txtStatusPjkCode").jqxInput({ theme: vTheme, width: 70,disabled:true });
-    $("#btnStatusPjk").jqxButton({ theme: vTheme });
-    $("#txtStatusPjkName").jqxInput({ theme: vTheme, width: 300 });
-    $('#txtStatusDesc').jqxTextArea({
+    $("#txtJobTitleCode").jqxInput({ theme: vTheme, width: 70,disabled:true });
+    $("#btnJobTitle").jqxButton({ theme: vTheme });
+    $("#txtJobTitleName").jqxInput({ theme: vTheme, width: 300 });
+    $('#txtSubTitleDesc').jqxTextArea({
         theme: vTheme, placeHolder: 'Masukkan Keterangan',
         height: 50, width: 300, minLength: 1
     });
 
-    $("#btnModStatusSave").jqxButton({ theme: vTheme });
-    $("#btnModStatusCancel").jqxButton({ theme: vTheme });
+    $("#btnModSubTitleSave").jqxButton({ theme: vTheme });
+    $("#btnModSubTitleCancel").jqxButton({ theme: vTheme });
 
-    $("#notifStatus").jqxNotification({
+    $("#notifSubTitle").jqxNotification({
         width: "100%", height: "40px", theme: vTheme,
         appendContainer: "#notifContainer",
         opacity: 0.9, autoClose: true, template: "error"
     });
 
-    $("#toolBarStatus").jqxToolBar({
+    $("#toolBarSubTitle").jqxToolBar({
         theme: vTheme,
         width: '100%', height: 35, tools: 'button | button | button',
         initTools: function (type, index, tool, menuToolIninitialization) {
@@ -211,21 +205,22 @@ $(document).ready(function () {
                     tool.on("click", function () {
                         f_EmptyForm();
 
-                        var rowindex = $('#tblStatus').jqxGrid('getselectedrowindex');
+                        var rowindex = $('#tblSubTitle').jqxGrid('getselectedrowindex');
 
                         if (rowindex >= 0) {
-                            var rd = $('#tblStatus').jqxGrid('getrowdata', rowindex);
+                            var rd = $('#tblSubTitle').jqxGrid('getrowdata', rowindex);
 
-                            $("#txtStatusCode").val(rd.int_status);
-                            $("#txtStatusCode").data("status_code", rd.status_code);
-                            $("#txtStatusName").val(rd.status_name);
-                            var vFlagStatus = rd.flag_period;
-                            $("#cmbStatusPeriod").jqxComboBox({ selectedIndex: vFlagStatus });
-                            $("#txtStatusPjkCode").val(rd.kode_pajak);
-                            $("#txtStatusPjkName").val(rd.nama_pajak);
-                            $("#txtStatusDesc").val(rd.description);
+                            $("#txtSubTitleCode").val(rd.int_subtitle);
+                            $("#txtSubTitleCode").data("subtitle_code", rd.subtitle_code);
+                            $("#txtSubTitleName").val(rd.subtitle_name);
 
-                            $("#modStatus").jqxWindow('open');
+                            $("#txtJobTitleCode").val(rd.int_title);
+                            $("#txtJobTitleCode").data("title_code",rd.title_code);
+                            $("#txtJobTitleName").val(rd.title_name);
+
+                            $("#txtSubTitleDesc").val(rd.description);
+
+                            $("#modSubTitle").jqxWindow('open');
                         } else {
                             f_MessageBoxShow("Please Select Data...");
                         }
@@ -239,7 +234,7 @@ $(document).ready(function () {
                     tool.append(button);
                     tool.on("click", function () {
                         f_EmptyForm()
-                        $("#modStatus").jqxWindow('open');
+                        $("#modSubTitle").jqxWindow('open');
 
                     });
                     break;
@@ -249,10 +244,10 @@ $(document).ready(function () {
     });
 
 
-    initGridPajakLookUp();
-    initTblStatus();
+    initGridJobTitleLookUp();
+    initTblSubTitle();
 
-    $("#PajakLookUpToolBar").jqxToolBar({
+    $("#JobTitleLookUpToolBar").jqxToolBar({
         theme: vTheme,
         width: '100%', height: 35, tools: 'button | button',
         initTools: function (type, index, tool, menuToolIninitialization) {
@@ -268,13 +263,14 @@ $(document).ready(function () {
                     tool.append(button);
                     tool.width("100px");
                     tool.on("click", function () {
-                        var rowindex = $('#tblPajakLookUp').jqxGrid('getselectedrowindex');
+                        var rowindex = $('#tblJobTitleLookUp').jqxGrid('getselectedrowindex');
                         if (rowindex >= 0) {
-                            var rd = $('#tblPajakLookUp').jqxGrid('getrowdata', rowindex);
-                            $("#txtStatusPjkCode").val(rd.kode_pajak);
+                            var rd = $('#tblJobTitleLookUp').jqxGrid('getrowdata', rowindex);
+                            $("#txtJobTitleCode").val(rd.int_title);
+                            $("#txtJobTitleCode").data("title_code",rd.title_code);
+                            $("#txtJobTitleName").val(rd.title_name);
 
-                            $("#txtStatusPjkName").val(rd.description);
-                            $("#modPajakLookUp").jqxWindow('close');
+                            $("#modJobTitleLookUp").jqxWindow('close');
                         } else {
                             f_MessageBoxShow("Please Select Data...");
                         }
@@ -288,31 +284,31 @@ $(document).ready(function () {
                     tool.append(button);
                     tool.width("80px");
                     tool.on("click", function () {
-                        $("#modPajakLookUp").jqxWindow('close');
+                        $("#modJobTitleLookUp").jqxWindow('close');
                     });
                     break;
             }
         }
     });
 
-    $('#btnStatusPjk').on('click', function (event) {
-        SrcPajakLookUp.url = base_url + "/KodePajak/GetKodePajakList";
+    $('#btnJobTitle').on('click', function (event) {
+        SrcJobTitleLookUp.url = base_url + "/Title/GetTitleList";
 
-        var vAdapter = new $.jqx.dataAdapter(SrcPajakLookUp, {
+        var vAdapter = new $.jqx.dataAdapter(SrcJobTitleLookUp, {
             downloadComplete: function (data, status, xhr) {
-                if (!SrcPajakLookUp.TotalRows) {
-                    SrcPajakLookUp.TotalRows = data.length;
+                if (!SrcJobTitleLookUp.TotalRows) {
+                    SrcJobTitleLookUp.TotalRows = data.length;
                 }
             }
         });
 
-        $('#tblPajakLookUp').jqxGrid({ source: vAdapter })
-        $('#tblPajakLookUp').jqxGrid('gotopage', 0);
-        $("#modPajakLookUp").jqxWindow('open');
+        $('#tblJobTitleLookUp').jqxGrid({ source: vAdapter })
+        $('#tblJobTitleLookUp').jqxGrid('gotopage', 0);
+        $("#modJobTitleLookUp").jqxWindow('open');
 
     });
 
-    $("#modPajakLookUp").jqxWindow({
+    $("#modJobTitleLookUp").jqxWindow({
         height: 500, width: 430,
         theme: vTheme, isModal: true,
         autoOpen: false,
@@ -320,46 +316,41 @@ $(document).ready(function () {
     });
 
 
-    $("#modStatus").jqxWindow({
+    $("#modSubTitle").jqxWindow({
         height: 300, width: 600,
         theme: vTheme, isModal: true,
         autoOpen: false,
         resizable: false
     });
 
-    $('#btnModStatusSave').on('click', function (event) {
-        if ($('#cmbStatusPeriod').jqxComboBox('selectedIndex') < 0) {
-            f_MessageBoxShow("Please Select Period Status...");
+    $('#btnModSubTitleSave').on('click', function (event) {
+
+        if ($('#txtJobTitleCode').val() == "") {
+            f_MessageBoxShow("Please Select Title...");
             return;
         }
 
-        if ($('#txtStatusPjkCode').val() == "") {
-            f_MessageBoxShow("Please Select Kode Pajak...");
-            return;
-        }
-
-        if ($('#txtStatusCode').val() == "" || $('#txtStatusName').val() == "") {
+        if ($('#txtSubTitleCode').val() == "" || $('#txtSubTitleName').val() == "") {
             f_MessageBoxShow("Please Insert Status Code And Status Name...");
             return;
         }
 
-        $("#modStatus").jqxWindow('close');
+        $("#modSubTitle").jqxWindow('close');
 
-        var vStatusCode = $('#txtStatusCode').data("status_code") == undefined ? "" : $('#txtStatusCode').data("status_code");
-
+        var vSubTitleCode = $('#txtSubTitleCode').data("subtitle_code") == undefined ? "" : $('#txtSubTitleCode').data("subtitle_code");
+        
         var vModel = JSON.stringify({
-            status_code: vStatusCode,
-            int_status: $('#txtStatusCode').val(),
-            status_name: $('#txtStatusName').val(),
-            flag_period: $('#cmbStatusPeriod').jqxComboBox('selectedIndex'),
-            kode_pajak: $('#txtStatusPjkCode').val(),
-            description: $('#txtStatusDesc').val()
+            subtitle_code: vSubTitleCode,
+            int_subtitle: $('#txtSubTitleCode').val(),
+            subtitle_name: $('#txtSubTitleName').val(),
+            title_code: $('#txtJobTitleCode').data("title_code"),
+            description: $('#txtSubTitleDesc').val()
         });
 
-        if (vStatusCode != "") {
+        if (vSubTitleCode != "") {
 
             $.ajax({
-                url: base_url + "Status/UpdateStatus",
+                url: base_url + "SubTitle/UpdateSubTitle",
                 type: "POST",
                 contentType: "application/json",
                 data: vModel,
@@ -377,7 +368,7 @@ $(document).ready(function () {
             });
         } else {
             $.ajax({
-                url: base_url + "Status/InsertStatus",
+                url: base_url + "SubTitle/InsertSubTitle",
                 type: "POST",
                 contentType: "application/json",
                 data: vModel,
@@ -396,13 +387,13 @@ $(document).ready(function () {
         }
     });
 
-    $('#btnModStatusCancel').on('click', function (event) {
-        $("#modStatus").jqxWindow('close');
+    $('#btnModSubTitleCancel').on('click', function (event) {
+        $("#modSubTitle").jqxWindow('close');
     });
 
     function f_PosisiModalDialog() {
-        $('#modPajakLookUp').jqxWindow({ position: { x: f_PosX($('#modPajakLookUp')), y: f_PosY($('#modPajakLookUp')) } });
-        $('#modStatus').jqxWindow({ position: { x: f_PosX($('#modStatus')), y: f_PosY($('#modStatus')) } });
+        $('#modJobTitleLookUp').jqxWindow({ position: { x: f_PosX($('#modJobTitleLookUp')), y: f_PosY($('#modJobTitleLookUp')) } });
+        $('#modSubTitle').jqxWindow({ position: { x: f_PosX($('#modSubTitle')), y: f_PosY($('#modSubTitle')) } });
     }
 
     //KEEP CENTERED WHEN SCROLLING

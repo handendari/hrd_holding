@@ -8,17 +8,25 @@ using System.Web;
 
 namespace hrd_holding.Repositories
 {
-    public class mSubtitleRepo
+    public class hrdReqReqruitmentRepo
     {
-        private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("SubtitleRepo");
+        private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("hrdReqReqruitmentRepo");
 
-        public ResponseModel InsertSubtitle(mSubtitleModel pModel)
+        public ResponseModel InsertSubtitle(hrdReqReqruitmentModel pModel)
         {
             var vResp = new ResponseModel();
 
-            string SqlString = @"INSERT INTO `m_subtitle`
-                                            (`subtitle_code`,`title_code`,`int_subtitle`,`subtitle_name`,`description`)
-                                VALUES (@pSubtitleCode,@pTitleCode,@pIntSubtitle,@pSubtitleName,@pDescription)";
+            string SqlString = @"INSERT INTO hrd_req_recruitment
+                                        (id,company_code,branch_code,date_req,no_req,position_need,reason,sex,age_min,
+                                         education,job_experience,english_skill,certificate,marital_status,job_title,
+                                         job_purpose,responsibility,count_staff,authority,job_relationship,job_self,
+                                         source_employee,work_plan,note,count_needed,request_by,flag_status,flag_approval,
+                                         user_approval,entry_date,entry_user,edit_date,edit_user)
+                                VALUES (@pId,@pCompanyCode,@pBranchCode,@pDateReq,@pNoReq,@pPositionNeed,@pReason,@pSex,@pAgeMin,
+                                        @pEducation,@pJobExperience,@pEnglishSkill,@pCertificate,@pMaritalStatus,@pJobTitle,
+                                        @pJobPurpose,@pResponsibility,@pCountStaff,@pAuthority,@pJobRelationship,@pJobSelf,
+                                        @pSourceEmployee,@pWorkPlan,@pNote,@pCountNeeded,@pRequestBy,@pFlagStatus,@pFlagApproval,
+                                        @pUserApproval,@pEntryDate,@pEntryUser)";
 
             try
             {
@@ -30,11 +38,37 @@ namespace hrd_holding.Repositories
 
                         cmd.CommandType = CommandType.Text;
 
-                        cmd.Parameters.AddWithValue("@pSubtitleCode", pModel.subtitle_code);
-                        cmd.Parameters.AddWithValue("@pTitleCode", pModel.title_code);
-                        cmd.Parameters.AddWithValue("@pIntSubtitle", pModel.int_subtitle);
-                        cmd.Parameters.AddWithValue("@pSubtitleName", pModel.subtitle_name);
-                        cmd.Parameters.AddWithValue("@pDescription", pModel.description);
+                        cmd.Parameters.AddWithValue("@pId", pModel.id);
+                        cmd.Parameters.AddWithValue("@pCompanyCode", pModel.company_code);
+                        cmd.Parameters.AddWithValue("@pBranchCode",, pModel.branch_code);
+                        cmd.Parameters.AddWithValue("@pDateReq", pModel.date_req);
+                        cmd.Parameters.AddWithValue("@pNoReq", pModel.no_req);
+                        cmd.Parameters.AddWithValue("@pPositionNeed", pModel.position_need);
+                        cmd.Parameters.AddWithValue("@pReason", pModel.reason);
+                        cmd.Parameters.AddWithValue("@pSex", pModel.sex);
+                        cmd.Parameters.AddWithValue("@pAgeMin", pModel.age_min);
+                        cmd.Parameters.AddWithValue("@pEducation", pModel.education);
+                        cmd.Parameters.AddWithValue("@pJobExperience", pModel.job_experience);
+                        cmd.Parameters.AddWithValue("@pEnglishSkill", pModel.english_skill);
+                        cmd.Parameters.AddWithValue("@pCertificate", pModel.certificate);
+                        cmd.Parameters.AddWithValue("@pMaritalStatus", pModel.marital_status);
+                        cmd.Parameters.AddWithValue("@pJobTitle", pModel.job_title);
+                        cmd.Parameters.AddWithValue("@pJobPurpose", pModel.job_purpose);
+                        cmd.Parameters.AddWithValue("@pResponsibility", pModel.responsibility);
+                        cmd.Parameters.AddWithValue("@pCountStaff", pModel.count_staff);
+                        cmd.Parameters.AddWithValue("@pAuthority", pModel.authority);
+                        cmd.Parameters.AddWithValue("@pJobRelationship", pModel.job_relationship);
+                        cmd.Parameters.AddWithValue("@pJobSelf", pModel.job_self);
+                        cmd.Parameters.AddWithValue("@pSourceEmployee", pModel.source_employee);
+                        cmd.Parameters.AddWithValue("@pWorkPlan", pModel.work_plan);
+                        cmd.Parameters.AddWithValue("@pNote", pModel.note);
+                        cmd.Parameters.AddWithValue("@pCountNeeded", pModel.count_needed);
+                        cmd.Parameters.AddWithValue("@pRequestBy", pModel.request_by);
+                        cmd.Parameters.AddWithValue("@pFlagStatus", pModel.flag_status);
+                        cmd.Parameters.AddWithValue("@pFlagApproval", pModel.flag_approval);
+                        cmd.Parameters.AddWithValue("@pUserApproval", pModel.user_approval);
+                        cmd.Parameters.AddWithValue("@pEntryDate", pModel.entry_date);
+                        cmd.Parameters.AddWithValue("@pEntryUser", pModel.entry_user)
 
                         var status = cmd.ExecuteNonQuery();
 

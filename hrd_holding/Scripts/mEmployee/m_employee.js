@@ -885,7 +885,7 @@ $(document).ready(function () {
             switch (index) {
                 case 0:
                     var button = $("<div>" +
-                                        "<img style='vertical-align:middle' src='../content/images/Submit Resume_24_grey.png'/>" +
+                                        "<img style='vertical-align:middle' src='" + base_url + "/content/images/Submit Resume_24_grey.png'/>" +
                                         "<span>ACTIVATE</span> " +
                                    "</div>");
                     tool.append(button);
@@ -895,7 +895,7 @@ $(document).ready(function () {
                     break;
                 case 1:
                     var button = $("<div>" +
-                                        "<img style='vertical-align:middle' src='../content/images/Save as_24_grey.png'/>" +
+                                        "<img style='vertical-align:middle' src='" + base_url + "/content/images/Save as_24_grey.png'/>" +
                                         "<span>SAVE DATA</span> " +
                                    "</div>");
                     tool.append(button);
@@ -905,7 +905,7 @@ $(document).ready(function () {
                     break;
                 case 2:
                     var button = $("<div>" +
-                                        "<img style='vertical-align:middle' src='../content/images/add property_24_grey.png'/>" +
+                                        "<img style='vertical-align:middle' src='" + base_url + "/content/images/add property_24_grey.png'/>" +
                                         "<span>NEW DATA</span> " +
                                    "</div>");
                     tool.append(button);
@@ -1155,7 +1155,7 @@ $(document).ready(function () {
             switch (index) {
                 case 0:
                     var button = $("<div>" +
-                                        "<img style='vertical-align:middle' src='../content/images/Checked Checkbox_24_grey.png'/>" +
+                                        "<img style='vertical-align:middle' src='" + base_url + "/content/images/Checked Checkbox_24_grey.png'/>" +
                                         "<span style='margin-left:5px'>SELECT DATA</span> " +
                                    "</div>");
                     tool.append(button);
@@ -1175,7 +1175,7 @@ $(document).ready(function () {
                     break;
                 case 1:
                     var button = $("<div>" +
-                                        "<img style='vertical-align:middle' src='../content/images/Close Pane_24_grey.png'/>" +
+                                        "<img style='vertical-align:middle' src='" + base_url + "/content/images/Close Pane_24_grey.png'/>" +
                                         "<span style='margin-left:5px'>CANCEL</span> " +
                                    "</div>");
                     tool.append(button);
