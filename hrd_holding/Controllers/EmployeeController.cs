@@ -208,7 +208,7 @@ namespace hrd_holding.Controllers
         }
 
         [HttpPost]
-        public dynamic DeleteEmployeeEducation(mEmployeeModel pModel)
+        public dynamic DeleteEmployee(mEmployeeModel pModel)
         {
             LOG.Debug(DateTime.Now + "MASUK DELETE Emp Code : " + pModel.employee_code + ", Seq No : " + pModel.seq_no);
 

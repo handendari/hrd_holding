@@ -137,6 +137,7 @@
     <Compile Include="Controllers\BankController.cs" />
     <Compile Include="Controllers\BranchOfficeController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\ReqRecruitmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SubTitleController.cs" />
     <Compile Include="Controllers\KodePajakController.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Repositories\mLevelRepo.cs" />
     <Compile Include="Repositories\mSubtitleRepo.cs" />
     <Compile Include="Repositories\mTitleRepo.cs" />
+    <Compile Include="Services\hrdReqRecruitmentService.cs" />
     <Compile Include="Services\mSubTitleService.cs" />
     <Compile Include="Services\mKodePajakService.cs" />
     <Compile Include="Services\mCompanyService.cs" />
@@ -773,6 +775,7 @@
     <Content Include="Scripts\mEmployee\m_employee.js" />
     <Content Include="Scripts\mEmployee\m_employee_family.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\ReqRecruitment\RequestDetail.js" />
     <Content Include="Scripts\shared\header.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -802,6 +805,7 @@
     <Content Include="Views\Bank\Index.cshtml" />
     <Content Include="Views\SubTitle\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\ReqRecruitment\RequestDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

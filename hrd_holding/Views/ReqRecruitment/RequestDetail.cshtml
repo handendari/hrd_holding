@@ -1,0 +1,145 @@
+﻿@{
+    ViewBag.Title = "RequestDetail";
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+<header>
+    <script src="~/scripts/ReqRecruitment/RequestDetail.js"></script>
+</header>
+<div>
+    <table>
+        <tr>
+            <td>Tanggal *</td>
+            <td>
+                <input type="text" id="dtTglReq" /></td>
+        </tr>
+        <tr>
+            <td>No. Req *</td>
+            <td>
+                <input type="text" id="txtNoReq" /></td>
+        </tr>
+        <tr>
+            <td>Bagian Yang Membutuhkan</td>
+            <td>
+                <input type="text" id="txtBagian" /></td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top">Alasan Pengajuan Karyawan *</td>
+            <td>
+                <textarea id="txtAlasan"> </textarea>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <fieldset>
+        <legend>Persyaratan Yang Harus DiPenuhi...</legend>
+        <table>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>
+                    <div id="cmbKelamin"></div>
+                </td>
+                <td>Usia Minimal (Thn)</td>
+                <td><input type="text" id="txtMinUsia" /></td>
+            </tr>
+            <tr>
+                <td>Tingkat Pendidikan</td>
+                <td>
+                    <input type="text" id="txtPendidikan" />
+                </td>
+                <td>Pengalaman Min</td>
+                <td>
+                    <input type="text" id="txtPengalaman" />
+                </td>
+            </tr>
+            <tr>
+                <td>Kemampuan B. Inggris</td>
+                <td>
+                    <input type="text" id="txtBInggris" />
+                </td>
+                <td>Sertifikasi/Keahlian</td>
+                <td>
+                    <input type="text" id="txtSertifikasi" />
+                </td>
+            </tr>
+            <tr>
+                <td>Status Perkawinan</td>
+                <td>
+                    <div id="cmbStatusKawin"></div>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</div>
+
+<div>
+    <fieldset>
+        <legend>Uraian Tugas Pekerjaan Calon Yang Bersangkutan...</legend>
+        <table>
+            <tr>
+                <td>Nama Jabatan</td>
+                <td>
+                    <input type="text" id="txtNamaJabatan" />
+                </td>
+                <td>Tujuan Jabatan</td>
+                <td>
+                    <input type="text" id="txtTujuanJabatan" />
+                </td>
+            </tr>
+            <tr>
+                <td>Bertanggung Jawab Kepada</td>
+                <td>
+                    <input type="text" id="txtBertanggungJawab" />
+                </td>
+                <td>Jumlah Bawahan</td>
+                <td>
+                    <input type="text" id="txtJmlBawahan" />
+                </td>
+            </tr>
+            <tr>
+                <td>Wewenang Jabatan</td>
+                <td>
+                    <input type="text" id="txtWewenang" />
+                </td>
+                <td>Hubungan Kerja</td>
+                <td>
+                    <input type="text" id="txtHubungan" />
+                </td>
+            </tr>
+            <tr>
+                <td>Pekerjaan Yang Harus Dilakukan Sendiri</td>
+                <td>
+                    <input type="text" id="txtKerjaSendiri" />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>Sumber Calon Pegawai</td>
+            <td>
+                <div id="cmbSumber"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Jumlah Yang DiButuhkan (Orang)</td>
+            <td>
+                <input type="text" id="txtJmlButuh" /></td>
+        </tr>
+        <tr>
+            <td>Rencana Masuk Kerja</td>
+            <td>
+                <input type="text" id="dtWorkPlan" /></td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top">Catatan Lain</td>
+            <td>
+                <textarea id="txtCatatan"> </textarea>
+            </td>
+        </tr>
+    </table>
+</div>
