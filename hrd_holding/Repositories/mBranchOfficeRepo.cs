@@ -183,11 +183,14 @@ namespace hrd_holding.Repositories
         public mBranchOfficeModel getBranchOfficeInfo(int pBranchCode)
         {
             var vModel = new mBranchOfficeModel();
-            var strSQL = @"SELECT branch_code,company_code,company_name,int_branch,country_code,country_name,branch_name,address,
-                                postal_code,city_name,state,phone_number,fax_number,web_address,
-                                email_address,picture,npwp,pimpinan,pimpinan_npwp,npp,jhk,
-                                entry_date,entry_user,edit_date,edit_user
-                            FROM m_branch_office WHERE branch_code = @pBranchCode";
+            var strSQL = @"SELECT mbo.branch_code,mbo.company_code,mco.int_company,mco.company_name,
+                                  mbo.int_branch,mbo.country_code,mcu.int_country,mcu.country_name,mbo.branch_name,mbo.address,
+                                mbo.postal_code,mbo.city_name,mbo.state,mbo.phone_number,mbo.fax_number,mbo.web_address,
+                                mbo.email_address,mbo.picture,mbo.npwp,mbo.pimpinan,mbo.pimpinan_npwp,mbo.npp,IFNULL(mbo.jhk,0) jhk,
+                                mbo.entry_date,IFNULL(mbo.entry_user,'') entry_user,mbo.edit_date,IFNULL(mbo.edit_user,'') edit_user
+                            FROM m_branch_office mbo JOIN m_Company mco ON mbo.company_code = mco.company_code
+                            JOIN m_country mcu ON mbo.country_code = mcu.country_code
+                            WHERE branch_code = @pBranchCode";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
@@ -205,12 +208,13 @@ namespace hrd_holding.Repositories
                                 while (aa.Read())
                                 {
                                     vModel.branch_code = aa.GetInt16("branch_code");
-                                    vModel.company_code = aa.GetInt16("company_code");
-                                    vModel.company_name = aa.GetString("company_name");
                                     vModel.int_branch = aa.GetString("int_branch");
+                                    vModel.branch_name = aa.GetString("branch_name");
+                                    vModel.company_code = aa.GetInt16("company_code");
+                                    vModel.int_company = aa.GetString("int_company");
+                                    vModel.company_name = aa.GetString("company_name");
                                     vModel.country_code = aa.GetString("country_code");
                                     vModel.country_name = aa.GetString("country_name");
-                                    vModel.branch_name = aa.GetString("branch_name");
                                     vModel.address = aa.GetString("address");
                                     vModel.postal_code = aa.GetString("postal_code");
                                     vModel.city_name = aa.GetString("city_name");
@@ -219,7 +223,7 @@ namespace hrd_holding.Repositories
                                     vModel.fax_number = aa.GetString("fax_number");
                                     vModel.web_address = aa.GetString("web_address");
                                     vModel.email_address = aa.GetString("email_address");
-                                    vModel.picture = aa.GetString("picture");
+                                    //vModel.picture = aa.GetString("picture");
                                     vModel.npwp = aa.GetString("npwp");
                                     vModel.pimpinan = aa.GetString("pimpinan");
                                     vModel.pimpinan_npwp = aa.GetString("pimpinan_npwp");
@@ -237,7 +241,7 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
-                Log.Error(DateTime.Now + " GetCountryList Failed", ex);
+                Log.Error(DateTime.Now + " GetBranchOfficeRepo Failed", ex);
             }
             return vModel;
         }

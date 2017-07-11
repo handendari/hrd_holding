@@ -211,12 +211,20 @@ namespace hrd_holding.Repositories
             var vModel = new hrdReqReqruitmentModel();
             var strSQL = @"SELECT hr.id,hr.company_code,mco.int_company,mco.company_name,
 	                              hr.branch_code,mbo.int_branch,mbo.branch_name,
-	                              hr.date_req,hr.no_req,hr.position_need,hr.reason,hr.sex,hr.age_min,hr.education,
-                                  hr.job_experience,hr.english_skill,hr.certificate,hr.marital_status,
-                                  hr.job_title,hr.job_purpose,hr.responsibility,hr.count_staff,hr.authority,
-                                  hr.job_relationship,hr.job_self,hr.source_employee,hr.work_plan,hr.note,
-                                  hr.count_needed,hr.request_by,hr.flag_status,hr.flag_approval,hr.user_approval,
-	                              hr.entry_date,hr.entry_user
+	                              hr.date_req,hr.no_req,hr.position_need,hr.reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,0) education,
+                                  IFNULL(hr.job_experience,'') job_experience,
+                                  IFNULL(hr.english_skill,'') english_skill,IFNULL(hr.certificate,'') certificate,
+                                  IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,
+                                  IFNULL(hr.responsibility,'') responsibility,IFNULL(hr.count_staff,0) count_staff,
+                                  IFNULL(hr.authority,'') authority,IFNULL(hr.job_relationship,'') job_relationship,
+                                  IFNULL(hr.job_self,'') job_self,IFNULL(hr.source_employee,0) source_employee,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,
+                                  IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
                            FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
                            JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
                            WHERE hr.id = @pReqId";
@@ -228,7 +236,7 @@ namespace hrd_holding.Repositories
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("@pSubtitleCode", pReqCode);
+                        cmd.Parameters.AddWithValue("@pReqId", pReqCode);
 
                         using (MySqlDataReader aa = cmd.ExecuteReader())
                         {
@@ -364,7 +372,7 @@ namespace hrd_holding.Repositories
 
                         var status = cmd.ExecuteNonQuery();
                         vResp.isValid = true;
-                        vResp.message = " UPDATE REQUEST SUCCESS, Code : " + pModel.id + " No Req : " + pModel.no_req;
+                        vResp.message = " UPDATE REQUEST SUCCESS...<br/> Code : " + pModel.id + ", No Req : " + pModel.no_req;
                         Log.Debug(DateTime.Now + " UPDATE REQUEST SUCCESS ====>>>>>> Code : " + pModel.id + " No Req : " + pModel.no_req);
 
                     }

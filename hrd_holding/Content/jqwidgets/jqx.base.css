@@ -5402,11 +5402,11 @@ ol li .jqx-listmenu-item-label:before
 }
 .jqx-toolbar-tool-separator-ltr
 {
-    margin-right: 6px !important;
+    margin-right: 6px;
 }
 .jqx-toolbar-tool-separator-rtl
 {
-    margin-left: 6px !important;
+    margin-left: 6px;
 }
 .jqx-toolbar-tool-inner-button
 {

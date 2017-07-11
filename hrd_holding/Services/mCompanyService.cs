@@ -39,8 +39,7 @@ namespace hrd_holding.Services
 
         public mCompanyModel GetCompanyInfo(string pCompanyCode)
         {
-            var vModel = new mCompanyModel();
-            vModel = _repoCompany.getCompanyInfo(pCompanyCode);
+            var vModel = _repoCompany.getCompanyInfo(pCompanyCode);
             return vModel;
         }
 

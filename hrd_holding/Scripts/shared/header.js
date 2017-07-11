@@ -30,7 +30,7 @@ var vCmbEducation = [
         "TK",
         "SD",
         "SLTP",
-        "SLTA",
+        "SLTA/SMK",
         "D1",
         "D2",
         "D3",

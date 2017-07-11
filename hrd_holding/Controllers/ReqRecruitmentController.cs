@@ -13,11 +13,15 @@ namespace hrd_holding.Controllers
     {
         private readonly static log4net.ILog LOG = log4net.LogManager.GetLogger("ReqRecruitmentController");
         private hrdReqRecruitmentService _reqService;
+        private mCompanyService _mCompService;
+        private mBranchOfficeService _mBranchService;
         private ManageString _mString;
 
         public ReqRecruitmentController()
         {
             _reqService = new hrdReqRecruitmentService();
+            _mCompService = new mCompanyService();
+            _mBranchService = new mBranchOfficeService();
             _mString = new ManageString();
         }
 
@@ -32,13 +36,34 @@ namespace hrd_holding.Controllers
         }
 
         //[HttpPost]
-        public dynamic GetRequestInfo()
+        public dynamic GetRequestInfo(string pBranchCode, string pIdCode)
         {
             var vModel = new hrdReqReqruitmentModel();
+            var vIdCode = pIdCode == "" ? 0 : int.Parse(pIdCode);
 
-            var vIdCode = int.Parse(Request["pIdCode"].ToString());
+            if (pIdCode == "")
+            {
+                //var vCompany = _mCompService.GetCompanyInfo(pCompanyCode);
+                var vBranch = _mBranchService.GetBranchOfficeInfo(int.Parse(pBranchCode));
 
-            vModel = _reqService.GetRequestInfo(vIdCode);
+                vModel.company_code = vBranch.company_code;
+                vModel.int_company = vBranch.int_company;
+                vModel.company_name = vBranch.company_name;
+
+                vModel.branch_code = vBranch.branch_code;
+                vModel.int_branch = vBranch.int_branch;
+                vModel.branch_name = vBranch.branch_name;
+
+                vModel.sex = 0;
+                vModel.marital_status = 0;
+                vModel.source_employee = 0;
+                vModel.work_plan = DateTime.Now;
+                vModel.date_req = DateTime.Now;
+            }
+            else
+            {
+                vModel = _reqService.GetRequestInfo(vIdCode);
+            }
 
             return Json(new
             {
@@ -81,7 +106,7 @@ namespace hrd_holding.Controllers
         }
 
         //[HttpPost]
-        public dynamic GetRequestList(int pCompanyCode, int pBranchCode,int pFlagStatus)
+        public dynamic GetRequestList(int pCompanyCode, int pBranchCode, int pFlagStatus)
         {
             //LOG.Debug(DateTime.Now + " ---- PageNum : " + pagenum + " PageSize : " + pagesize);
 
@@ -119,7 +144,7 @@ namespace hrd_holding.Controllers
             var pagesize = _mString.ConstructPageNum(Request["pagesize"]);
 
             // Get Data
-            var vObjRes = _reqService.GetRequestList(pCompanyCode, pBranchCode,pFlagStatus, pagenum, pagesize, where, orderby);
+            var vObjRes = _reqService.GetRequestList(pCompanyCode, pBranchCode, pFlagStatus, pagenum, pagesize, where, orderby);
             var vList = vObjRes.objResult as IEnumerable<hrdReqReqruitmentModel>;
 
             var totalRecords = vObjRes.total_record;

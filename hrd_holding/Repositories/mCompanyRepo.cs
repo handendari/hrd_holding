@@ -172,11 +172,15 @@ namespace hrd_holding.Repositories
         public mCompanyModel getCompanyInfo(string pCompanyCode)
         {
             var vModel = new mCompanyModel();
-            var strSQL = @"SELECT company_code,int_company,country_code,company_name,address,postal_code,
-                                city_name,state,phone_number,fax_number,web_address,email_address,picture,
-                                npwp,pimpinan,pimpinan_npwp,npp,jhk,entry_date,entry_user,edit_date,edit_user
-                           FROM m_company
-                           WHERE company_code = @pCompanyCode";
+            var strSQL = @"SELECT mco.company_code,mco.int_company,
+                                mco.country_code,mcu.country_name,mcu.int_country,
+                                mco.company_name,IFNULL(mco.address,'') address,IFNULL(mco.postal_code,'') postal_code,
+                                IFNULL(mco.city_name,'') city_name,IFNULL(mco.state,'') state,
+                                IFNULL(mco.phone_number,'') phone_number,IFNULL(mco.fax_number,'') fax_number,IFNULL(mco.web_address,'') web_address,
+                                IFNULL(mco.email_address,'') email_address,IFNULL(mco.npwp,'') npwp,IFNULL(mco.pimpinan,'') pimpinan,IFNULL(mco.pimpinan_npwp,'') pimpinan_npwp,
+                                IFNULL(mco.npp,'') npp,IFNULL(mco.jhk,0) jhk,mco.entry_date,IFNULL(mco.entry_user,'') entry_user,mco.edit_date,IFNULL(mco.edit_user,'') edit_user
+                           FROM m_company mco JOIN m_country mcu ON mco.country_code = mcu.country_code
+                           WHERE mco.company_code = @pCompanyCode";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
@@ -195,8 +199,9 @@ namespace hrd_holding.Repositories
                                 {
                                     vModel.company_code = aa.GetInt16("company_code");
                                     vModel.int_company = aa.GetString("int_company");
+                                    vModel.company_name = aa.GetString("company_name");
                                     vModel.country_code = aa.GetString("country_code");
-                                    vModel.company_name = aa.GetString("country_name");
+                                    vModel.country_name = aa.GetString("country_name");
                                     vModel.address = aa.GetString("address");
                                     vModel.postal_code = aa.GetString("postal_code");
                                     vModel.city_name = aa.GetString("city_name");
@@ -205,7 +210,7 @@ namespace hrd_holding.Repositories
                                     vModel.fax_number = aa.GetString("fax_number");
                                     vModel.web_address = aa.GetString("web_address");
                                     vModel.email_address = aa.GetString("email_address");
-                                    vModel.picture = aa.GetString("picture");
+                                    //vModel.picture = aa.GetString("picture");
                                     vModel.npwp = aa.GetString("npwp");
                                     vModel.pimpinan = aa.GetString("pimpinan");
                                     vModel.pimpinan_npwp = aa.GetString("pimpinan_npwp");
@@ -223,7 +228,7 @@ namespace hrd_holding.Repositories
             }
             catch (Exception ex)
             {
-                Log.Error(DateTime.Now + " GetCompanyList Failed", ex);
+                Log.Error(DateTime.Now + " GetCompanyINFO Failed", ex);
             }
             return vModel;
         }

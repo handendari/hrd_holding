@@ -6,11 +6,27 @@
     <script src="~/scripts/ReqRecruitment/RequestDetail.js"></script>
 </header>
 <div>
-    <table>
+    <table style="width: 100%">
+        <tr>
+            <td>Company</td>
+            <td>
+                <input type="text" id="txtIntCompany" />
+                <input type="text" id="txtCompanyName" />
+            </td>
+            <td rowspan="2">
+                <div id="ReqToolBar" style="margin-bottom: 1px; padding-right: 20px"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Branch Office</td>
+            <td>
+                <input type="text" id="txtIntBranch" />
+                <input type="text" id="txtBranchName" />
+            </td>
+        </tr>
         <tr>
             <td>Tanggal *</td>
-            <td>
-                <input type="text" id="dtTglReq" /></td>
+            <td><input type="text" id="dtTglReq" /></td>
         </tr>
         <tr>
             <td>No. Req *</td>
@@ -32,7 +48,7 @@
 </div>
 
 <div>
-    <fieldset>
+    <fieldset style="border: 1px solid red; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;">
         <legend>Persyaratan Yang Harus DiPenuhi...</legend>
         <table>
             <tr>
@@ -40,15 +56,16 @@
                 <td>
                     <div id="cmbKelamin"></div>
                 </td>
-                <td>Usia Minimal (Thn)</td>
-                <td><input type="text" id="txtMinUsia" /></td>
+                <td style="padding-left: 30px">Usia Minimal (Thn)</td>
+                <td>
+                    <input type="text" id="txtMinUsia" /></td>
             </tr>
             <tr>
                 <td>Tingkat Pendidikan</td>
                 <td>
-                    <input type="text" id="txtPendidikan" />
+                    <div id="cmbPendidikan" ></div>
                 </td>
-                <td>Pengalaman Min</td>
+                <td style="padding-left: 30px">Pengalaman Min</td>
                 <td>
                     <input type="text" id="txtPengalaman" />
                 </td>
@@ -58,7 +75,7 @@
                 <td>
                     <input type="text" id="txtBInggris" />
                 </td>
-                <td>Sertifikasi/Keahlian</td>
+                <td style="padding-left: 30px">Sertifikasi/Keahlian</td>
                 <td>
                     <input type="text" id="txtSertifikasi" />
                 </td>
@@ -74,7 +91,7 @@
 </div>
 
 <div>
-    <fieldset>
+    <fieldset style="border: 1px solid red; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;">
         <legend>Uraian Tugas Pekerjaan Calon Yang Bersangkutan...</legend>
         <table>
             <tr>
@@ -82,7 +99,7 @@
                 <td>
                     <input type="text" id="txtNamaJabatan" />
                 </td>
-                <td>Tujuan Jabatan</td>
+                <td style="padding-left: 30px">Tujuan Jabatan</td>
                 <td>
                     <input type="text" id="txtTujuanJabatan" />
                 </td>
@@ -92,7 +109,7 @@
                 <td>
                     <input type="text" id="txtBertanggungJawab" />
                 </td>
-                <td>Jumlah Bawahan</td>
+                <td style="padding-left: 30px">Jumlah Bawahan</td>
                 <td>
                     <input type="text" id="txtJmlBawahan" />
                 </td>
@@ -102,7 +119,7 @@
                 <td>
                     <input type="text" id="txtWewenang" />
                 </td>
-                <td>Hubungan Kerja</td>
+                <td style="padding-left: 30px">Hubungan Kerja</td>
                 <td>
                     <input type="text" id="txtHubungan" />
                 </td>
