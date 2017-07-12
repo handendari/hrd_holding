@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Request Reqruitment";
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+
+
+<header>
+    <script src="~/scripts/ReqRecruitment/request_list.js"></script>
+</header>
+
+<div>
+    <table style="width: 100%">
+        <tr>
+            <td style="width: 100px">Company</td>
+            <td>
+                <input type="text" style="width: 50px" id="txtIntCompany" />
+                <input type="button" id="btnKdCompany" value="..." />
+                <input type="text" style="width: 250px" id="txtCompany" />
+            </td>
+            <td rowspan="2">
+                <fieldset id="fieldset_status" style="border-radius: 5px; 
+                          padding: 5px; border: 1px solid #6b1717; 
+                          background-color: #eeece1;
+                          width:250px">
+                    <legend>Working Status Employment</legend>
+                    <table>
+                        <tr>
+                            <td style="padding-left: 20px">
+                                <div id='optProgress'>On Progress</div>
+                            </td>
+                            <td style="padding-left: 20px">
+                                <div id='optDone'>Done</div>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td>Branch</td>
+            <td>
+                <input type="text" style="width: 50px" id="txtIntBranch" />
+                <input type="button" id="btnKdBranch" value="..." />
+                <input type="text" style="width: 350px" id="txtBranch" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <div style="margin-bottom: 2px" id="jqxToolBar"></div>
+                <div id="jqxgrid"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="modBranchLookUp">
+    <div><span>Human Resource Development</span></div>
+    <div>
+        <div id="BranchLookUpToolBar" style="margin-bottom: 1px"></div>
+        <div id="tblBranchLookUp"></div>
+    </div>
+</div>
+
+<div id="modCompanyLookUp">
+    <div><span>Human Resource Development</span></div>
+    <div>
+        <div id="CompanyLookUpToolBar" style="margin-bottom: 1px"></div>
+        <div id="tblCompanyLookUp"></div>
+    </div>
+</div>
+
+

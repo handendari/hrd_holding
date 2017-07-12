@@ -27420,3 +27420,431 @@ DEBUG 2017-07-11 17:01:01,639 52485ms qRecruitmentController UpdateRequest      
 DEBUG 2017-07-11 17:01:01,677 52523ms hrdReqReqruitmentRepo  UpdateRequest      - 7/11/2017 5:01:01 PM UPDATE REQUEST SUCCESS ====>>>>>> Code : 1 No Req : 0114201704100001
 DEBUG 2017-07-11 17:01:25,809 76656ms qRecruitmentController UpdateRequest      - 7/11/2017 5:01:25 PM Masuk ControllerNo Req : 0114201704100001
 DEBUG 2017-07-11 17:01:25,860 76707ms hrdReqReqruitmentRepo  UpdateRequest      - 7/11/2017 5:01:25 PM UPDATE REQUEST SUCCESS ====>>>>>> Code : 1 No Req : 0114201704100001
+DEBUG 2017-07-12 09:41:18,568 60069415ms qRecruitmentController UpdateRequest      - 7/12/2017 9:41:18 AM Masuk ControllerNo Req : 0114201704100001
+DEBUG 2017-07-12 09:41:18,625 60069472ms hrdReqReqruitmentRepo  UpdateRequest      - 7/12/2017 9:41:18 AM UPDATE REQUEST SUCCESS ====>>>>>> Code : 1 No Req : 0114201704100001
+DEBUG 2017-07-12 11:25:23,220 1401039ms CompanyController      GetCompanyLookUp   - 7/12/2017 11:25:23 AM WHERE : 
+DEBUG 2017-07-12 11:25:23,334 1401153ms CompanyController      GetCompanyLookUp   - 7/12/2017 11:25:23 AM Page Num : 0 Page Size : 15
+DEBUG 2017-07-12 11:25:23,335 1401154ms mCompanyService        GetCompanyList     - 7/12/2017 11:25:23 AM vRows : 15 vStart : 0
+DEBUG 2017-07-12 11:25:29,722 1407541ms BranchOfficeService    etBranchOfficeList - 7/12/2017 11:25:29 AM vRows : 15 vStart : 0
+DEBUG 2017-07-12 11:39:17,926 2235745ms CompanyController      GetCompanyLookUp   - 7/12/2017 11:39:17 AM WHERE : 
+DEBUG 2017-07-12 11:39:17,927 2235746ms CompanyController      GetCompanyLookUp   - 7/12/2017 11:39:17 AM Page Num : 0 Page Size : 15
+DEBUG 2017-07-12 11:39:17,927 2235746ms mCompanyService        GetCompanyList     - 7/12/2017 11:39:17 AM vRows : 15 vStart : 0
+DEBUG 2017-07-12 11:39:24,474 2242292ms BranchOfficeService    etBranchOfficeList - 7/12/2017 11:39:24 AM vRows : 15 vStart : 0
+DEBUG 2017-07-12 11:39:28,558 2246377ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:39:28 AM pPage : 0 pRows : 20
+DEBUG 2017-07-12 11:39:28,559 2246378ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:39:28 AM vRows : 20 vStart : 0
+DEBUG 2017-07-12 11:40:29,896 2307715ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:40:29 AM pPage : 0 pRows : 0
+DEBUG 2017-07-12 11:40:29,897 2307716ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:40:29 AM vRows : 10 vStart : 0
+DEBUG 2017-07-12 11:43:05,854 2463672ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:43:05 AM pPage : 0 pRows : 0
+DEBUG 2017-07-12 11:43:05,855 2463673ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:43:05 AM vRows : 10 vStart : 0
+DEBUG 2017-07-12 11:43:10,089 2467907ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:43:10 AM pPage : 0 pRows : 0
+DEBUG 2017-07-12 11:43:10,090 2467908ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:43:10 AM vRows : 10 vStart : 0
+DEBUG 2017-07-12 11:45:18,059   146ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:45:18 AM vRows : 10 vStart : 0
+DEBUG 2017-07-12 11:45:18,091   177ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:45:18 AM====>>>> strSQL : SELECT hr.id,hr.company_code,mco.int_company,mco.company_name,
+	                              hr.branch_code,mbo.int_branch,mbo.branch_name,
+	                              hr.date_req,hr.no_req,hr.position_need,hr.reason,hr.sex,hr.age_min,hr.education,
+                                  hr.job_experience,hr.english_skill,hr.certificate,hr.marital_status,
+                                  hr.job_title,hr.job_purpose,hr.responsibility,hr.count_staff,hr.authority,
+                                  hr.job_relationship,hr.job_self,hr.source_employee,hr.work_plan,hr.note,
+                                  hr.count_needed,hr.request_by,hr.flag_status,hr.flag_approval,hr.user_approval,
+	                              hr.entry_date,hr.entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND hr.flag_status = @pFlagStatus   LIMIT 0,10
+DEBUG 2017-07-12 11:49:37,266   138ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:49:37 AM vRows : 10 vStart : 0
+DEBUG 2017-07-12 11:49:37,294   166ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:49:37 AM====>>>> strSQL : SELECT hr.id,hr.company_code,mco.int_company,mco.company_name,
+	                              hr.branch_code,mbo.int_branch,mbo.branch_name,
+	                              hr.date_req,hr.no_req,hr.position_need,hr.reason,hr.sex,hr.age_min,hr.education,
+                                  hr.job_experience,hr.english_skill,hr.certificate,hr.marital_status,
+                                  hr.job_title,hr.job_purpose,hr.responsibility,hr.count_staff,hr.authority,
+                                  hr.job_relationship,hr.job_self,hr.source_employee,hr.work_plan,hr.note,
+                                  hr.count_needed,hr.request_by,hr.flag_status,hr.flag_approval,hr.user_approval,
+	                              hr.entry_date,hr.entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND hr.flag_status = @pFlagStatus    LIMIT 0,10
+DEBUG 2017-07-12 11:49:55,375 18247ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:49:55 AM vRows : 10 vStart : 0
+DEBUG 2017-07-12 11:49:55,376 18248ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:49:55 AM====>>>> strSQL : SELECT hr.id,hr.company_code,mco.int_company,mco.company_name,
+	                              hr.branch_code,mbo.int_branch,mbo.branch_name,
+	                              hr.date_req,hr.no_req,hr.position_need,hr.reason,hr.sex,hr.age_min,hr.education,
+                                  hr.job_experience,hr.english_skill,hr.certificate,hr.marital_status,
+                                  hr.job_title,hr.job_purpose,hr.responsibility,hr.count_staff,hr.authority,
+                                  hr.job_relationship,hr.job_self,hr.source_employee,hr.work_plan,hr.note,
+                                  hr.count_needed,hr.request_by,hr.flag_status,hr.flag_approval,hr.user_approval,
+	                              hr.entry_date,hr.entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND hr.flag_status = @pFlagStatus    LIMIT 0,10
+DEBUG 2017-07-12 11:52:47,522   141ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:52:47 AM vRows : 10 vStart : 0
+DEBUG 2017-07-12 11:52:47,724   343ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:52:47 AM====>>>> JUMLAH : 0
+DEBUG 2017-07-12 11:56:00,714   143ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:56:00 AM vRows : 10 vStart : 0
+DEBUG 2017-07-12 11:56:01,146   575ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:56:01 AM====>>>> aa MASUK HASROWS <<<<=====
+DEBUG 2017-07-12 11:56:01,159   588ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:56:01 AM====>>>> vJmlRecord : 0 JUMLAH DATA: 0
+DEBUG 2017-07-12 11:57:06,365   145ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:57:06 AM vRows : 10 vStart : 0
+DEBUG 2017-07-12 11:57:06,535   315ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:57:06 AM====>>>> aa MASUK HASROWS <<<<=====
+DEBUG 2017-07-12 11:57:06,536   316ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:57:06 AM====>>>> aa MASUK READ <<<<=====
+DEBUG 2017-07-12 11:57:06,540   320ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:57:06 AM====>>>> vJmlRecord : 0 JUMLAH DATA: 0
+DEBUG 2017-07-12 11:58:10,075    59ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:58:10 AM vRows : 10 vStart : 0
+DEBUG 2017-07-12 11:58:10,203   187ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:58:10 AM====>>>> aa MASUK HASROWS <<<<=====
+DEBUG 2017-07-12 11:58:10,204   188ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:58:10 AM====>>>> aa MASUK READ (0)<<<<=====
+DEBUG 2017-07-12 11:58:10,207   191ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:58:10 AM====>>>> vJmlRecord : 0 JUMLAH DATA: 0
+DEBUG 2017-07-12 11:59:41,016   142ms dReqRecruitmentService GetRequestList     - 7/12/2017 11:59:41 AM vRows : 10 vStart : 0
+DEBUG 2017-07-12 11:59:41,314   440ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:59:41 AM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 11:59:41,319   445ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:59:41 AM====>>>> aa MASUK READ (0)<<<<=====
+DEBUG 2017-07-12 11:59:41,329   455ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 11:59:41 AM====>>>> vJmlRecord : 0 JUMLAH DATA: 0
+DEBUG 2017-07-12 13:27:08,155   141ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:27:08 PM vRows : 10 vStart : 0
+DEBUG 2017-07-12 13:27:08,187   173ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:27:08 PM====>>>> strSQL : SELECT hr.id,hr.company_code,mco.int_company,mco.company_name,
+	                              hr.branch_code,mbo.int_branch,mbo.branch_name,
+	                              hr.date_req,hr.no_req,hr.position_need,hr.reason,hr.sex,hr.age_min,hr.education,
+                                  hr.job_experience,hr.english_skill,hr.certificate,hr.marital_status,
+                                  hr.job_title,hr.job_purpose,hr.responsibility,hr.count_staff,hr.authority,
+                                  hr.job_relationship,hr.job_self,hr.source_employee,hr.work_plan,hr.note,
+                                  hr.count_needed,hr.request_by,hr.flag_status,hr.flag_approval,hr.user_approval,
+	                              hr.entry_date,hr.entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND hr.flag_status = @pFlagStatus    LIMIT 0,10
+DEBUG 2017-07-12 13:27:08,331   316ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:27:08 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 13:27:08,331   316ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:27:08 PM====>>>> aa MASUK READ (0)<<<<=====
+DEBUG 2017-07-12 13:27:08,338   323ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:27:08 PM====>>>> vJmlRecord : 0 JUMLAH DATA: 0
+DEBUG 2017-07-12 13:27:32,268   137ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:27:32 PM vRows : 10 vStart : 0
+DEBUG 2017-07-12 13:27:32,297   166ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:27:32 PM====>>>> strSQLCount : SELECT COUNT(id) jml_record
+                                FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                                JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                                WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode 
+                                AND hr.flag_status = @pFlagStatus 
+DEBUG 2017-07-12 13:27:32,436   305ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:27:32 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 13:27:32,437   306ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:27:32 PM====>>>> aa MASUK READ (0)<<<<=====
+DEBUG 2017-07-12 13:27:32,444   313ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:27:32 PM====>>>> vJmlRecord : 0 JUMLAH DATA: 0
+DEBUG 2017-07-12 13:30:16,683 164551ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:30:16 PM vRows : 10 vStart : 0
+DEBUG 2017-07-12 13:30:16,684 164552ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:16 PM====>>>> strSQLCount : SELECT COUNT(id) jml_record
+                                FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                                JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                                WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode 
+                                AND hr.flag_status = @pFlagStatus 
+DEBUG 2017-07-12 13:30:16,803 164672ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:16 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 13:30:16,803 164672ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:16 PM====>>>> aa MASUK READ (1)<<<<=====
+ERROR 2017-07-12 13:30:16,810 164678ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:16 PM GetRequestList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.hrdReqReqruitmentRepo.getRequestList(Int32 pCompanyCode, Nullable`1 pBranchCode, Int32 pFlagStatus, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\hrdReqReqruitmentRepo.cs:line 160
+DEBUG 2017-07-12 13:30:16,814 164682ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:16 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 0
+DEBUG 2017-07-12 13:30:22,216 170084ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:30:22 PM vRows : 10 vStart : 0
+DEBUG 2017-07-12 13:30:22,217 170085ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:22 PM====>>>> strSQLCount : SELECT COUNT(id) jml_record
+                                FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                                JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                                WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode 
+                                AND hr.flag_status = @pFlagStatus 
+DEBUG 2017-07-12 13:30:22,230 170099ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:22 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 13:30:22,230 170099ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:22 PM====>>>> aa MASUK READ (1)<<<<=====
+ERROR 2017-07-12 13:30:22,249 170118ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:22 PM GetRequestList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.hrdReqReqruitmentRepo.getRequestList(Int32 pCompanyCode, Nullable`1 pBranchCode, Int32 pFlagStatus, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\hrdReqReqruitmentRepo.cs:line 160
+DEBUG 2017-07-12 13:30:22,250 170119ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:22 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 0
+DEBUG 2017-07-12 13:30:23,037 170906ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:30:23 PM vRows : 10 vStart : 0
+DEBUG 2017-07-12 13:30:23,037 170906ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:23 PM====>>>> strSQLCount : SELECT COUNT(id) jml_record
+                                FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                                JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                                WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode 
+                                AND hr.flag_status = @pFlagStatus 
+DEBUG 2017-07-12 13:30:23,050 170919ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:23 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 13:30:23,050 170919ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:23 PM====>>>> aa MASUK READ (1)<<<<=====
+ERROR 2017-07-12 13:30:23,062 170930ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:23 PM GetRequestList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.hrdReqReqruitmentRepo.getRequestList(Int32 pCompanyCode, Nullable`1 pBranchCode, Int32 pFlagStatus, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\hrdReqReqruitmentRepo.cs:line 160
+DEBUG 2017-07-12 13:30:23,063 170931ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:23 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 0
+DEBUG 2017-07-12 13:30:23,597 171466ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:30:23 PM vRows : 10 vStart : 0
+DEBUG 2017-07-12 13:30:23,597 171466ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:23 PM====>>>> strSQLCount : SELECT COUNT(id) jml_record
+                                FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                                JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                                WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode 
+                                AND hr.flag_status = @pFlagStatus 
+DEBUG 2017-07-12 13:30:23,606 171474ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:23 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 13:30:23,606 171474ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:23 PM====>>>> aa MASUK READ (1)<<<<=====
+ERROR 2017-07-12 13:30:23,612 171481ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:23 PM GetRequestList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.hrdReqReqruitmentRepo.getRequestList(Int32 pCompanyCode, Nullable`1 pBranchCode, Int32 pFlagStatus, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\hrdReqReqruitmentRepo.cs:line 160
+DEBUG 2017-07-12 13:30:23,613 171482ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:23 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 0
+DEBUG 2017-07-12 13:30:24,061 171929ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:30:24 PM vRows : 10 vStart : 0
+DEBUG 2017-07-12 13:30:24,061 171929ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:24 PM====>>>> strSQLCount : SELECT COUNT(id) jml_record
+                                FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                                JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                                WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode 
+                                AND hr.flag_status = @pFlagStatus 
+DEBUG 2017-07-12 13:30:24,151 172020ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:24 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 13:30:24,152 172021ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:24 PM====>>>> aa MASUK READ (1)<<<<=====
+ERROR 2017-07-12 13:30:24,178 172047ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:24 PM GetRequestList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.hrdReqReqruitmentRepo.getRequestList(Int32 pCompanyCode, Nullable`1 pBranchCode, Int32 pFlagStatus, Nullable`1 pStartRow, Nullable`1 pRows, String pWhere, String pOrderBy) in d:\hrd_holding\hrd_holding\Repositories\hrdReqReqruitmentRepo.cs:line 160
+DEBUG 2017-07-12 13:30:24,179 172048ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:30:24 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 0
+DEBUG 2017-07-12 13:43:53,170   140ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:43:53 PM vRows : 10 vStart : 0
+DEBUG 2017-07-12 13:43:53,200   170ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:43:53 PM====>>>> strSQLCount : SELECT COUNT(id) jml_record
+                                FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                                JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                                WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode 
+                                AND hr.flag_status = @pFlagStatus 
+DEBUG 2017-07-12 13:43:53,326   295ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:43:53 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 13:43:53,327   296ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:43:53 PM====>>>> aa MASUK READ (1)<<<<=====
+DEBUG 2017-07-12 13:43:53,335   304ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:43:53 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 1
+DEBUG 2017-07-12 13:44:24,139   129ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:44:24 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 13:44:24,411   401ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:44:24 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 1<<<<=====
+DEBUG 2017-07-12 13:44:24,413   403ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:44:24 PM====>>>> aa MASUK READ (0)<<<<=====
+DEBUG 2017-07-12 13:44:24,442   431ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:44:24 PM====>>>> vJmlRecord : 0 JUMLAH DATA: 0
+DEBUG 2017-07-12 13:44:34,793 10783ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:44:34 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 13:44:34,823 10813ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:44:34 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 1<<<<=====
+DEBUG 2017-07-12 13:44:34,824 10814ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:44:34 PM====>>>> aa MASUK READ (0)<<<<=====
+DEBUG 2017-07-12 13:44:34,837 10827ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:44:34 PM====>>>> vJmlRecord : 0 JUMLAH DATA: 0
+DEBUG 2017-07-12 13:45:05,616 41606ms CompanyController      GetCompanyLookUp   - 7/12/2017 1:45:05 PM WHERE : 
+DEBUG 2017-07-12 13:45:05,618 41608ms CompanyController      GetCompanyLookUp   - 7/12/2017 1:45:05 PM Page Num : 0 Page Size : 15
+DEBUG 2017-07-12 13:45:05,618 41608ms mCompanyService        GetCompanyList     - 7/12/2017 1:45:05 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 13:45:09,437 45427ms BranchOfficeService    etBranchOfficeList - 7/12/2017 1:45:09 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 13:45:11,842 47832ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:45:11 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 13:45:11,918 47908ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:45:11 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 13:45:11,918 47908ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:45:11 PM====>>>> aa MASUK READ (1)<<<<=====
+DEBUG 2017-07-12 13:45:12,097 48087ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:45:12 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 1
+DEBUG 2017-07-12 13:59:07,918    57ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:59:07 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 13:59:08,077   216ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:59:08 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 13:59:08,077   216ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:59:08 PM====>>>> aa MASUK READ (1)<<<<=====
+DEBUG 2017-07-12 13:59:08,105   244ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:59:08 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 1
+DEBUG 2017-07-12 13:59:16,995  9134ms dReqRecruitmentService GetRequestList     - 7/12/2017 1:59:16 PM vRows : 10 vStart : 0
+DEBUG 2017-07-12 13:59:17,002  9141ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:59:17 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 13:59:17,002  9141ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:59:17 PM====>>>> aa MASUK READ (1)<<<<=====
+DEBUG 2017-07-12 13:59:17,008  9147ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 1:59:17 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 1
+DEBUG 2017-07-12 14:00:03,850 55989ms CompanyController      GetCompanyLookUp   - 7/12/2017 2:00:03 PM WHERE : 
+DEBUG 2017-07-12 14:00:03,851 55990ms CompanyController      GetCompanyLookUp   - 7/12/2017 2:00:03 PM Page Num : 0 Page Size : 15
+DEBUG 2017-07-12 14:00:03,852 55991ms mCompanyService        GetCompanyList     - 7/12/2017 2:00:03 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 14:00:08,212 60351ms BranchOfficeService    etBranchOfficeList - 7/12/2017 2:00:08 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 14:00:10,610 62749ms dReqRecruitmentService GetRequestList     - 7/12/2017 2:00:10 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 14:00:10,673 62812ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:00:10 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 14:00:10,673 62812ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:00:10 PM====>>>> aa MASUK READ (1)<<<<=====
+DEBUG 2017-07-12 14:00:10,678 62816ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:00:10 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 1
+DEBUG 2017-07-12 14:00:41,861 94000ms CompanyController      GetCompanyLookUp   - 7/12/2017 2:00:41 PM WHERE : 
+DEBUG 2017-07-12 14:00:41,862 94001ms CompanyController      GetCompanyLookUp   - 7/12/2017 2:00:41 PM Page Num : 0 Page Size : 15
+DEBUG 2017-07-12 14:00:41,862 94001ms mCompanyService        GetCompanyList     - 7/12/2017 2:00:41 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 14:00:44,659 96798ms BranchOfficeService    etBranchOfficeList - 7/12/2017 2:00:44 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 14:00:47,193 99332ms dReqRecruitmentService GetRequestList     - 7/12/2017 2:00:47 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 14:00:47,198 99337ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:00:47 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 14:00:47,199 99338ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:00:47 PM====>>>> aa MASUK READ (1)<<<<=====
+DEBUG 2017-07-12 14:00:47,207 99346ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:00:47 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 1
+DEBUG 2017-07-12 14:41:54,019 2566158ms CompanyController      GetCompanyLookUp   - 7/12/2017 2:41:54 PM WHERE : 
+DEBUG 2017-07-12 14:41:54,020 2566159ms CompanyController      GetCompanyLookUp   - 7/12/2017 2:41:54 PM Page Num : 0 Page Size : 15
+DEBUG 2017-07-12 14:41:54,020 2566159ms mCompanyService        GetCompanyList     - 7/12/2017 2:41:54 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 14:41:58,959 2571098ms BranchOfficeService    etBranchOfficeList - 7/12/2017 2:41:58 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 14:42:02,093 2574232ms dReqRecruitmentService GetRequestList     - 7/12/2017 2:42:02 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 14:42:02,113 2574252ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:42:02 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 14:42:02,114 2574253ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:42:02 PM====>>>> aa MASUK READ (1)<<<<=====
+DEBUG 2017-07-12 14:42:02,136 2574275ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:42:02 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 1
+DEBUG 2017-07-12 14:46:00,394 2812533ms CompanyController      GetCompanyLookUp   - 7/12/2017 2:46:00 PM WHERE : 
+DEBUG 2017-07-12 14:46:00,395 2812534ms CompanyController      GetCompanyLookUp   - 7/12/2017 2:46:00 PM Page Num : 0 Page Size : 15
+DEBUG 2017-07-12 14:46:00,395 2812534ms mCompanyService        GetCompanyList     - 7/12/2017 2:46:00 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 14:46:04,453 2816592ms BranchOfficeService    etBranchOfficeList - 7/12/2017 2:46:04 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 14:46:14,661 2826800ms BranchOfficeService    etBranchOfficeList - 7/12/2017 2:46:14 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 14:46:41,397 2853536ms BranchOfficeService    etBranchOfficeList - 7/12/2017 2:46:41 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 14:46:47,772 2859911ms dReqRecruitmentService GetRequestList     - 7/12/2017 2:46:47 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 14:46:48,090 2860229ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:46:48 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 14:46:48,091 2860230ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:46:48 PM====>>>> aa MASUK READ (1)<<<<=====
+DEBUG 2017-07-12 14:46:48,217 2860356ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:46:48 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 1
+DEBUG 2017-07-12 14:50:51,392 3103531ms CompanyController      GetCompanyLookUp   - 7/12/2017 2:50:51 PM WHERE : 
+DEBUG 2017-07-12 14:50:51,392 3103531ms CompanyController      GetCompanyLookUp   - 7/12/2017 2:50:51 PM Page Num : 0 Page Size : 15
+DEBUG 2017-07-12 14:50:51,393 3103532ms mCompanyService        GetCompanyList     - 7/12/2017 2:50:51 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 14:50:55,620 3107759ms BranchOfficeService    etBranchOfficeList - 7/12/2017 2:50:55 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 14:50:58,067 3110206ms dReqRecruitmentService GetRequestList     - 7/12/2017 2:50:58 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 14:50:58,099 3110238ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:50:58 PM====>>>> aa MASUK HASROWS, Company : 7, Branch : 14, FlagStatus : 0<<<<=====
+DEBUG 2017-07-12 14:50:58,100 3110239ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:50:58 PM====>>>> aa MASUK READ (1)<<<<=====
+DEBUG 2017-07-12 14:50:58,112 3110251ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 2:50:58 PM====>>>> vJmlRecord : 1 JUMLAH DATA: 1
+DEBUG 2017-07-12 14:53:02,340 3234479ms qRecruitmentController InsertRequest      - 7/12/2017 2:53:02 PMNo Req : adsffd
+ERROR 2017-07-12 14:53:02,379 3234518ms hrdReqReqruitmentRepo  InsertRequest      - 7/12/2017 2:53:02 PM INSERT REQUEST FAILED...
+MySql.Data.MySqlClient.MySqlException (0x80004005): Column count doesn't match value count at row 1
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at hrd_holding.Repositories.hrdReqReqruitmentRepo.InsertRequest(hrdReqReqruitmentModel pModel) in d:\hrd_holding\hrd_holding\Repositories\hrdReqReqruitmentRepo.cs:line 73
+DEBUG 2017-07-12 14:57:21,310   187ms qRecruitmentController InsertRequest      - 7/12/2017 2:57:21 PMNo Req : adsffd
+DEBUG 2017-07-12 14:57:21,467   343ms hrdReqReqruitmentRepo  InsertRequest      - 7/12/2017 2:57:21 PM INSERT REQUEST ====>>>> Code : adsffd
+DEBUG 2017-07-12 14:59:09,901 108778ms dReqRecruitmentService GetRequestList     - 7/12/2017 2:59:09 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 14:59:10,863 109739ms dReqRecruitmentService GetRequestList     - 7/12/2017 2:59:10 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 14:59:11,390 110267ms dReqRecruitmentService GetRequestList     - 7/12/2017 2:59:11 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 14:59:11,824 110701ms dReqRecruitmentService GetRequestList     - 7/12/2017 2:59:11 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 14:59:12,367 111244ms dReqRecruitmentService GetRequestList     - 7/12/2017 2:59:12 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 14:59:13,086 111963ms dReqRecruitmentService GetRequestList     - 7/12/2017 2:59:13 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 15:06:36,828   140ms dReqRecruitmentService GetRequestList     - 7/12/2017 3:06:36 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 15:07:58,849   120ms dReqRecruitmentService GetRequestList     - 7/12/2017 3:07:58 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 15:09:01,262 62533ms dReqRecruitmentService GetRequestList     - 7/12/2017 3:09:01 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 15:10:39,991   144ms dReqRecruitmentService GetRequestList     - 7/12/2017 3:10:39 PM vRows : 10 vStart : 0
+DEBUG 2017-07-12 15:10:40,020   173ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 3:10:40 PM====>>>> strSQLCount : SELECT COUNT(id) jml_record
+                                FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                                JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                                WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode 
+                                AND hr.flag_status = @pFlagStatus 
+DEBUG 2017-07-12 15:12:27,366   140ms dReqRecruitmentService GetRequestList     - 7/12/2017 3:12:27 PM vRows : 10 vStart : 0
+DEBUG 2017-07-12 15:12:27,394   168ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 3:12:27 PM====>>>> strSQLCount : SELECT COUNT(id) jml_record
+                                FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                                JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                                WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode 
+                                AND IFNULL(hr.flag_status,0) = @pFlagStatus 
+DEBUG 2017-07-12 15:13:12,886   146ms dReqRecruitmentService GetRequestList     - 7/12/2017 3:13:12 PM vRows : 10 vStart : 0
+DEBUG 2017-07-12 15:13:12,916   176ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 3:13:12 PM====>>>> strSQLCount : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,10
+DEBUG 2017-07-12 15:14:57,401   132ms dReqRecruitmentService GetRequestList     - 7/12/2017 3:14:57 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 15:14:57,440   171ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 3:14:57 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,20
+DEBUG 2017-07-12 16:27:35,002 4357733ms CompanyController      GetCompanyLookUp   - 7/12/2017 4:27:35 PM WHERE : 
+DEBUG 2017-07-12 16:27:35,003 4357734ms CompanyController      GetCompanyLookUp   - 7/12/2017 4:27:35 PM Page Num : 0 Page Size : 15
+DEBUG 2017-07-12 16:27:35,004 4357735ms mCompanyService        GetCompanyList     - 7/12/2017 4:27:35 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 16:27:40,492 4363223ms BranchOfficeService    etBranchOfficeList - 7/12/2017 4:27:40 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 16:27:47,334 4370065ms BranchOfficeService    etBranchOfficeList - 7/12/2017 4:27:47 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 16:27:50,982 4373713ms dReqRecruitmentService GetRequestList     - 7/12/2017 4:27:50 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 16:27:50,983 4373714ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 4:27:50 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,20
+DEBUG 2017-07-12 16:27:56,375 4379106ms dReqRecruitmentService GetRequestList     - 7/12/2017 4:27:56 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 16:27:56,375 4379106ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 4:27:56 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,20
+DEBUG 2017-07-12 16:41:49,261 5211992ms CompanyController      GetCompanyLookUp   - 7/12/2017 4:41:49 PM WHERE : 
+DEBUG 2017-07-12 16:41:49,261 5211992ms CompanyController      GetCompanyLookUp   - 7/12/2017 4:41:49 PM Page Num : 0 Page Size : 15
+DEBUG 2017-07-12 16:41:49,262 5211993ms mCompanyService        GetCompanyList     - 7/12/2017 4:41:49 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 16:41:53,385 5216116ms BranchOfficeService    etBranchOfficeList - 7/12/2017 4:41:53 PM vRows : 15 vStart : 0
+DEBUG 2017-07-12 16:41:56,507 5219238ms dReqRecruitmentService GetRequestList     - 7/12/2017 4:41:56 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 16:41:56,508 5219239ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 4:41:56 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,20
+DEBUG 2017-07-12 16:42:03,913 5226644ms dReqRecruitmentService GetRequestList     - 7/12/2017 4:42:03 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 16:42:03,914 5226645ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 4:42:03 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,20
+DEBUG 2017-07-12 16:42:07,281 5230011ms dReqRecruitmentService GetRequestList     - 7/12/2017 4:42:07 PM vRows : 20 vStart : 0
+DEBUG 2017-07-12 16:42:07,282 5230012ms hrdReqReqruitmentRepo  getRequestList     - 7/12/2017 4:42:07 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,20

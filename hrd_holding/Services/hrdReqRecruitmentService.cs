@@ -19,10 +19,10 @@ namespace hrd_holding.Services
         }
 
 
-        public ResponseModel GetRequestList(int pCompany,int pBranchCode,int pFlagStatus, 
+        public ResponseModel GetRequestList(int pCompany, int pBranchCode, int pFlagStatus,
             int? pPageNum = 0, int? pPageSize = 0, string pWhere = "", string pOrderBy = "")
         {
-            Log.Debug(DateTime.Now + " pPage : " + pPageNum + " pRows : " + pPageSize);
+            //Log.Debug(DateTime.Now + " pPage : " + pPageNum + " pRows : " + pPageSize);
 
             var vRows = pPageSize == 0 ? 10 : pPageSize;
             var vStart = (pPageNum) * vRows;
@@ -32,7 +32,8 @@ namespace hrd_holding.Services
             var vModel = new ResponseModel();
             try
             {
-                vModel = _repoReq.getRequestList(pCompany,pBranchCode,pFlagStatus, vStart, vRows, pWhere, pOrderBy);
+                vModel = _repoReq.getRequestList(pCompany, pBranchCode, pFlagStatus, vStart, vRows, pWhere, pOrderBy);
+
             }
             catch (Exception ex)
             {
@@ -53,10 +54,14 @@ namespace hrd_holding.Services
 
         public ResponseModel InsertRequest(hrdReqReqruitmentModel pModel)
         {
-            pModel.id = _repoReq.getRequestSeqNo();
-            
+            pModel.id = _repoReq.getRequestSeqNo() + 1;
+
             pModel.entry_date = DateTime.Now;
-            pModel.entry_user = ""; //aa.GetString("entry_user"),
+            pModel.entry_user = "it";
+            pModel.user_approval = "it";
+            pModel.request_by = "it";
+            pModel.flag_status = 0;
+            pModel.flag_approval = 0;
 
             var vResp = _repoReq.InsertRequest(pModel);
 

@@ -775,6 +775,7 @@
     <Content Include="Scripts\mEmployee\m_employee.js" />
     <Content Include="Scripts\mEmployee\m_employee_family.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\ReqRecruitment\request_list.js" />
     <Content Include="Scripts\ReqRecruitment\RequestDetail.js" />
     <Content Include="Scripts\shared\header.js" />
     <Content Include="Scripts\_references.js" />
@@ -806,6 +807,7 @@
     <Content Include="Views\SubTitle\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ReqRecruitment\RequestDetail.cshtml" />
+    <Content Include="Views\ReqRecruitment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

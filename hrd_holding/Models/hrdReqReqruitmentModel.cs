@@ -33,6 +33,7 @@ namespace hrd_holding.Models
         public string job_relationship {get;set;}
         public string job_self {get;set;}
         public int? source_employee {get;set;}
+        public string source_employee2 { get; set; }
         public DateTime? work_plan {get;set;}
         public string note {get;set;}
         public int? count_needed {get;set;}

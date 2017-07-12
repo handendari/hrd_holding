@@ -21,7 +21,7 @@ namespace hrd_holding.Repositories
                                          education,job_experience,english_skill,certificate,marital_status,job_title,
                                          job_purpose,responsibility,count_staff,authority,job_relationship,job_self,
                                          source_employee,work_plan,note,count_needed,request_by,flag_status,flag_approval,
-                                         user_approval,entry_date,entry_user,edit_date,edit_user)
+                                         user_approval,entry_date,entry_user)
                                 VALUES (@pId,@pCompanyCode,@pBranchCode,@pDateReq,@pNoReq,@pPositionNeed,@pReason,@pSex,@pAgeMin,
                                         @pEducation,@pJobExperience,@pEnglishSkill,@pCertificate,@pMaritalStatus,@pJobTitle,
                                         @pJobPurpose,@pResponsibility,@pCountStaff,@pAuthority,@pJobRelationship,@pJobSelf,
@@ -73,8 +73,8 @@ namespace hrd_holding.Repositories
                         var status = cmd.ExecuteNonQuery();
 
                         vResp.isValid = true;
-                        vResp.message = " INSERT REQUEST, Code : " + pModel.no_req ;
-                        Log.Debug(DateTime.Now + " INSERT REQUEST ====>>>> Code : " + pModel.no_req);
+                        vResp.message = " INSERT REQUEST SUCCESS....<br/> No Req : " + pModel.no_req ;
+                        Log.Debug(DateTime.Now + " INSERT REQUEST SUCCESS ====>>>> Code : " + pModel.no_req);
 
                     }
                 }
@@ -82,7 +82,7 @@ namespace hrd_holding.Repositories
             catch (Exception ex)
             {
                 vResp.isValid = false;
-                vResp.message = " INSERT REQUEST, Code : " + pModel.no_req;
+                vResp.message = " INSERT REQUEST FAILED... <br/> No Req : " + pModel.no_req;
                 Log.Error(DateTime.Now + " INSERT REQUEST FAILED...", ex);
             }
 
@@ -92,25 +92,37 @@ namespace hrd_holding.Repositories
         public ResponseModel getRequestList(int pCompanyCode,int? pBranchCode,int pFlagStatus, int? pStartRow = 0, int? pRows = 0, string pWhere = "", string pOrderBy = "")
         {
             var vList = new List<hrdReqReqruitmentModel>();
-            var vLimit = pOrderBy + " LIMIT " + pStartRow + "," + pRows;
+            var vLimit = " LIMIT " + pStartRow + "," + pRows;
             var vJmlRecord = 0;
 
             var strSQLCount = @"SELECT COUNT(id) jml_record
                                 FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
                                 JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
-                                WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND hr.flag_status = @pFlagStatus " + pWhere;
+                                WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode 
+                                AND IFNULL(hr.flag_status,0) = @pFlagStatus " + pWhere;
 
-            var strSQL = @"SELECT hr.id,hr.company_code,mco.int_company,mco.company_name,
-	                              hr.branch_code,mbo.int_branch,mbo.branch_name,
-	                              hr.date_req,hr.no_req,hr.position_need,hr.reason,hr.sex,hr.age_min,hr.education,
-                                  hr.job_experience,hr.english_skill,hr.certificate,hr.marital_status,
-                                  hr.job_title,hr.job_purpose,hr.responsibility,hr.count_staff,hr.authority,
-                                  hr.job_relationship,hr.job_self,hr.source_employee,hr.work_plan,hr.note,
-                                  hr.count_needed,hr.request_by,hr.flag_status,hr.flag_approval,hr.user_approval,
-	                              hr.entry_date,hr.entry_user
+            var strSQL = @"SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
                            FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
                            JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
-                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND hr.flag_status = @pFlagStatus " + pWhere + " " + vLimit;
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus " + 
+                           pWhere + " " + pOrderBy + " " + vLimit;
+
+            Log.Debug(DateTime.Now + "====>>>> strSQL : " + strSQL);
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
@@ -127,9 +139,14 @@ namespace hrd_holding.Repositories
                         {
                             if (aa.HasRows)
                             {
+                                //Log.Debug(DateTime.Now + "====>>>> aa MASUK HASROWS, Company : " + pCompanyCode + 
+                                //    ", Branch : " + pBranchCode + ", FlagStatus : " + pFlagStatus +"<<<<=====");
+
                                 while (aa.Read())
                                 {
                                     vJmlRecord = aa.GetInt32("jml_record");
+
+                                    //Log.Debug(DateTime.Now + "====>>>> aa MASUK READ (" + vJmlRecord + ")<<<<=====");
                                 }
                             }
                         }
@@ -175,7 +192,7 @@ namespace hrd_holding.Repositories
                                         authority = aa.GetString("authority"),
                                         job_relationship = aa.GetString("job_relationship"),
                                         job_self = aa.GetString("job_self"),
-                                        source_employee = aa.GetInt16("source_employee"),
+                                        source_employee2 = aa.GetString("source_employee2"),
                                         work_plan = (aa["work_plan"] == DBNull.Value) ? (DateTime?)null : ((DateTime)aa["work_plan"]),
                                         note = aa.GetString("note"),
                                         count_needed = aa.GetInt16("count_needed"),
@@ -197,6 +214,8 @@ namespace hrd_holding.Repositories
             {
                 Log.Error(DateTime.Now + " GetRequestList FAILED... ", ex);
             }
+
+            //Log.Debug(DateTime.Now + "====>>>> vJmlRecord : " + vJmlRecord + " JUMLAH DATA: " + vList.Count);
 
             var vResp = new ResponseModel();
             vResp.total_record = vJmlRecord;

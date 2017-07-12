@@ -163,7 +163,7 @@ namespace hrd_holding.Controllers
                         vItem.position_need,
                         vItem.reason,
                         vItem.company_name,
-                        vItem.source_employee,
+                        vItem.source_employee2,
                         vItem.work_plan,
                         vItem.note,
                         vItem.flag_approval

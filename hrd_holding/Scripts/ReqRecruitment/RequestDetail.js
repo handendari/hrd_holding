@@ -85,12 +85,17 @@ function f_InsertRequest() {
             type: "POST",
             contentType: "application/json",
             data: vModel,
+            beforeSend: function () {
+                f_ShowLoaderModal();
+            },
+            complete: function () {
+                f_HideLoaderModal();
+            },
             success: function (d) {
                 var isOke = d.vResp['isValid'];
 
                 if (isOke) {
                     Form_Load(vBranch, vIdReq);
-                    f_HideLoaderModal();
                 }
                 f_MessageBoxShow(d.vResp['message']);
             }
@@ -275,9 +280,7 @@ $(document).ready(function () {
                                    "</div>");
                     tool.append(button);
                     tool.on("click", function () {
-                        // set timeout
-                        f_ShowLoaderModal();
-                        setTimeout(f_InsertRequest(), 600000);
+                        f_InsertRequest()
                     });
                     break;
                 case 3:
@@ -295,5 +298,5 @@ $(document).ready(function () {
         }
     });
 
-    //f_HideLoaderModal();
+    f_HideLoaderModal();
 });
