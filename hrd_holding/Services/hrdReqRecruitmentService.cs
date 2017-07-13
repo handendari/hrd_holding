@@ -43,7 +43,7 @@ namespace hrd_holding.Services
             return vModel;
         }
 
-        public hrdReqReqruitmentModel GetRequestInfo(int pIdNo)
+        public hrdReqRecruitmentModel GetRequestInfo(int pIdNo)
         {
             var vModel = _repoReq.getRequestInfo(pIdNo);
 
@@ -52,7 +52,7 @@ namespace hrd_holding.Services
             return vModel;
         }
 
-        public ResponseModel InsertRequest(hrdReqReqruitmentModel pModel)
+        public ResponseModel InsertRequest(hrdReqRecruitmentModel pModel)
         {
             pModel.id = _repoReq.getRequestSeqNo() + 1;
 
@@ -75,7 +75,7 @@ namespace hrd_holding.Services
             return vResp;
         }
 
-        public ResponseModel UpdateRequest(hrdReqReqruitmentModel pModel)
+        public ResponseModel UpdateRequest(hrdReqRecruitmentModel pModel)
         {
             pModel.edit_date = DateTime.Now;
             pModel.edit_user = "it";

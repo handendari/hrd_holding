@@ -38,7 +38,7 @@ namespace hrd_holding.Controllers
         //[HttpPost]
         public dynamic GetRequestInfo(string pBranchCode, string pIdCode)
         {
-            var vModel = new hrdReqReqruitmentModel();
+            var vModel = new hrdReqRecruitmentModel();
             var vIdCode = pIdCode == "" ? 0 : int.Parse(pIdCode);
 
             if (pIdCode == "")
@@ -145,7 +145,7 @@ namespace hrd_holding.Controllers
 
             // Get Data
             var vObjRes = _reqService.GetRequestList(pCompanyCode, pBranchCode, pFlagStatus, pagenum, pagesize, where, orderby);
-            var vList = vObjRes.objResult as IEnumerable<hrdReqReqruitmentModel>;
+            var vList = vObjRes.objResult as IEnumerable<hrdReqRecruitmentModel>;
 
             var totalRecords = vObjRes.total_record;
             var totalPages = (int)Math.Ceiling((float)totalRecords / (float)pagesize);
@@ -234,7 +234,7 @@ namespace hrd_holding.Controllers
         //}
 
         [HttpPost]
-        public dynamic InsertRequest(hrdReqReqruitmentModel pModel)
+        public dynamic InsertRequest(hrdReqRecruitmentModel pModel)
         {
             LOG.Debug(DateTime.Now + "No Req : " + pModel.no_req);
 
@@ -245,7 +245,7 @@ namespace hrd_holding.Controllers
         }
 
         [HttpPost]
-        public dynamic UpdateRequest(hrdReqReqruitmentModel pModel)
+        public dynamic UpdateRequest(hrdReqRecruitmentModel pModel)
         {
             LOG.Debug(DateTime.Now + " Masuk ControllerNo Req : " + pModel.no_req);
 

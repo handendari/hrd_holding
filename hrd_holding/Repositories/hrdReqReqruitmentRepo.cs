@@ -12,7 +12,7 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("hrdReqReqruitmentRepo");
 
-        public ResponseModel InsertRequest(hrdReqReqruitmentModel pModel)
+        public ResponseModel InsertRequest(hrdReqRecruitmentModel pModel)
         {
             var vResp = new ResponseModel();
 
@@ -91,7 +91,7 @@ namespace hrd_holding.Repositories
 
         public ResponseModel getRequestList(int pCompanyCode,int? pBranchCode,int pFlagStatus, int? pStartRow = 0, int? pRows = 0, string pWhere = "", string pOrderBy = "")
         {
-            var vList = new List<hrdReqReqruitmentModel>();
+            var vList = new List<hrdReqRecruitmentModel>();
             var vLimit = " LIMIT " + pStartRow + "," + pRows;
             var vJmlRecord = 0;
 
@@ -165,7 +165,7 @@ namespace hrd_holding.Repositories
                             {
                                 while (aa.Read())
                                 {
-                                    var m = new hrdReqReqruitmentModel
+                                    var m = new hrdReqRecruitmentModel
                                     {
                                         id = aa.GetInt16("id"),
                                         company_code = aa.GetInt16("company_code"),
@@ -225,9 +225,9 @@ namespace hrd_holding.Repositories
 
         }
 
-        public hrdReqReqruitmentModel getRequestInfo(int pReqCode)
+        public hrdReqRecruitmentModel getRequestInfo(int pReqCode)
         {
-            var vModel = new hrdReqReqruitmentModel();
+            var vModel = new hrdReqRecruitmentModel();
             var strSQL = @"SELECT hr.id,hr.company_code,mco.int_company,mco.company_name,
 	                              hr.branch_code,mbo.int_branch,mbo.branch_name,
 	                              hr.date_req,hr.no_req,hr.position_need,hr.reason,
@@ -311,7 +311,7 @@ namespace hrd_holding.Repositories
             return vModel;
         }
 
-        public ResponseModel UpdateRequest(hrdReqReqruitmentModel pModel)
+        public ResponseModel UpdateRequest(hrdReqRecruitmentModel pModel)
         {
             var vResp = new ResponseModel();
 

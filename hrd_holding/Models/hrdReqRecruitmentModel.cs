@@ -5,7 +5,7 @@ using System.Web;
 
 namespace hrd_holding.Models
 {
-    public class hrdReqReqruitmentModel
+    public class hrdReqRecruitmentModel
     {
         public int id {get;set;}
         public int company_code {get;set;}
