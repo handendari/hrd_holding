@@ -191,6 +191,7 @@
     <Compile Include="Models\mTitleModel.cs" />
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\hrdRecruitmentRepo.cs" />
     <Compile Include="Repositories\hrdRecruitmentSkillRepo.cs" />
     <Compile Include="Repositories\hrdRecruitmentRefRepo.cs" />
     <Compile Include="Repositories\hrdRecruitmentMemberRepo.cs" />
@@ -220,6 +221,12 @@
     <Compile Include="Repositories\mLevelRepo.cs" />
     <Compile Include="Repositories\mSubtitleRepo.cs" />
     <Compile Include="Repositories\mTitleRepo.cs" />
+    <Compile Include="Services\hrdRecruitmentSkillService.cs" />
+    <Compile Include="Services\hrdRecruitmentRefService.cs" />
+    <Compile Include="Services\hrdRecruitmentMemService.cs" />
+    <Compile Include="Services\hrdRecruitmentFamService.cs" />
+    <Compile Include="Services\hrdRecruitmentExpService.cs" />
+    <Compile Include="Services\hrdRecruitmentEduService.cs" />
     <Compile Include="Services\hrdReqRecruitmentService.cs" />
     <Compile Include="Services\mSubTitleService.cs" />
     <Compile Include="Services\mKodePajakService.cs" />

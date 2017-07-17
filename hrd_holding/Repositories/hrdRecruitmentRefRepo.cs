@@ -12,7 +12,7 @@ namespace hrd_holding.Repositories
     {
         private readonly static log4net.ILog Log = log4net.LogManager.GetLogger("hrdRecruitmentRefRepo");
 
-        public ResponseModel InsertRecruitmentEdu(hrdRecruitmentRefModel pModel)
+        public ResponseModel InsertRecruitmentRef(hrdRecruitmentRefModel pModel)
         {
             var objHasil = new ResponseModel();
             var vStatus = 0;
@@ -61,7 +61,7 @@ namespace hrd_holding.Repositories
             return objHasil;
         }
 
-        public List<hrdRecruitmentRefModel> getRecruitmentRefList(string pRecruitmentId)
+        public List<hrdRecruitmentRefModel> getRecruitmentRefList(int pRecruitmentId)
         {
             //Log.Debug(DateTime.Now + "=======>>>> MASUK REPO EMPLOYEE LIST, Emp Code : " + pEmployeeCode);
 
@@ -118,7 +118,7 @@ namespace hrd_holding.Repositories
             return vList;
         }
 
-        public hrdRecruitmentRefModel getRecruitmentrefInfo(int pId)
+        public hrdRecruitmentRefModel getRecruitmentRefInfo(int pId)
         {
             var vModel = new hrdRecruitmentRefModel();
 

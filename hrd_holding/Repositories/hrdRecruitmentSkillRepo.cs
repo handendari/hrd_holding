@@ -60,7 +60,7 @@ namespace hrd_holding.Repositories
             return objHasil;
         }
 
-        public List<hrdRecruitmentSkillModel> getRecruitmentSkillList(string pRecruitmentId)
+        public List<hrdRecruitmentSkillModel> getRecruitmentSkillList(int pRecruitmentId)
         {
             //Log.Debug(DateTime.Now + "=======>>>> MASUK REPO EMPLOYEE LIST, Emp Code : " + pEmployeeCode);
 
@@ -247,7 +247,7 @@ namespace hrd_holding.Repositories
             return objHasil;
         }
 
-        public int getRecruitmentSkillSeqNo(string pRecruitmentId)
+        public int getRecruitmentSkillSeqNo(int pRecruitmentId)
         {
             //Log.Debug(DateTime.Now + "=======>>>> MASUK REPO EMPLOYEE LIST, Emp Code : " + pEmployeeCode);
 

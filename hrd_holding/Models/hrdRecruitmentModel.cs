@@ -16,18 +16,34 @@ namespace hrd_holding.Models
         public string address { get; set; }
         public string phone_number { get; set; }
         public string hp_number { get; set; }
-        public Boolean flag_gender { get; set; }
-        public Boolean flag_marital_status { get; set; }
+        public int flag_gender { get; set; }
+        public int flag_marital_status { get; set; }
+        
         public int? company_code { get; set; }
+        public string int_company { get; set; }
+        public string company_name { get; set; }
+
         public int? branch_code { get; set; }
+        public string int_branch { get; set; }
+        public string branch_name { get; set; }
+
         public int? department_code { get; set; }
+        public string int_department { get; set; }
+        public string department_name { get; set; }
+
         public int? title_code { get; set; }
+        public string int_title { get; set; }
+        public string title_name { get; set; }
+
         public int status_code { get; set; }
+        public string int_status { get; set; }
+        public string status_name { get; set; }
+
         //`picture` blob,
         public string dialect_group { get; set; }
-        public Boolean flag_religion { get; set; }
-        public Boolean flag_driving_license { get; set; }
-        public Boolean flag_driving_class { get; set; }
+        public int flag_religion { get; set; }
+        public int flag_driving_license { get; set; }
+        public int flag_driving_class { get; set; }
         public string physical_disability { get; set; }
         public string name_employer { get; set; }
         public DateTime? date_started { get; set; }
@@ -42,7 +58,7 @@ namespace hrd_holding.Models
         public string notice_required { get; set; }
         public DateTime? earliest_date { get; set; }
         public string brieft_description { get; set; }
-        public Boolean flag_contact { get; set; }
+        public int flag_contact { get; set; }
         public decimal expected_salary { get; set; }
         public string sports { get; set; }
         public string hobbies { get; set; }

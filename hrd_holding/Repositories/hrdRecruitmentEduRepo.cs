@@ -63,7 +63,7 @@ namespace hrd_holding.Repositories
             return objHasil;
         }
 
-        public List<hrdRecruitmentEduModel> getRecruitmentEduList(string pRecruitmentId)
+        public List<hrdRecruitmentEduModel> getRecruitmentEduList(int pRecruitmentId)
         {
             //Log.Debug(DateTime.Now + "=======>>>> MASUK REPO EMPLOYEE LIST, Emp Code : " + pEmployeeCode);
 
