@@ -42,6 +42,7 @@ namespace hrd_holding.Services
         {
             pModel.entry_user = "it";
             pModel.entry_date = DateTime.Now;
+            pModel.seq_no = _repoRecFam.getRecruitmentFamilySeqNo(pModel.recruitment_id);
 
             var vModel = _repoRecFam.InsertRecruitmentFamily(pModel);
             return vModel;

@@ -82,4 +82,15 @@ namespace hrd_holding.Models
         public string entry_user { get; set; }
 
     }
+
+    public class RecruitmentModel_All
+    {
+        public hrdRecruitmentModel recModel { get; set; }
+        public List<hrdRecruitmentEduModel> listEdu { get; set; }
+        public List<hrdRecruitmentExpModel> listExp { get; set; }
+        public List<hrdRecruitmentFamModel> listFams { get; set; }
+        public List<hrdRecruitmentMemberModel> listMem { get; set; }
+        public List<hrdRecruitmentRefModel> listRef { get; set; }
+        public List<hrdRecruitmentSkillModel> listSkill { get; set; }
+    }
 }

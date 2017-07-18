@@ -248,7 +248,7 @@ namespace hrd_holding.Repositories
             return objHasil;
         }
 
-        public int getRecruitmentMemberSeqNo(string pRecruitmentId)
+        public int getRecruitmentMemberSeqNo(int pRecruitmentId)
         {
             //Log.Debug(DateTime.Now + "=======>>>> MASUK REPO EMPLOYEE LIST, Emp Code : " + pEmployeeCode);
 

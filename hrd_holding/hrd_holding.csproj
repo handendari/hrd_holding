@@ -137,6 +137,13 @@
     <Compile Include="Controllers\BankController.cs" />
     <Compile Include="Controllers\BranchOfficeController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\hrdRecruitmentController.cs" />
+    <Compile Include="Controllers\hrdRecruitmentSkillController.cs" />
+    <Compile Include="Controllers\hrdRecruitmentRefController.cs" />
+    <Compile Include="Controllers\hrdRecruitmentMemController.cs" />
+    <Compile Include="Controllers\hrdRecruitmentFamController.cs" />
+    <Compile Include="Controllers\hrdRecruitmentExpController.cs" />
+    <Compile Include="Controllers\hrdRecruitmentEduController.cs" />
     <Compile Include="Controllers\ReqRecruitmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SubTitleController.cs" />
@@ -221,6 +228,7 @@
     <Compile Include="Repositories\mLevelRepo.cs" />
     <Compile Include="Repositories\mSubtitleRepo.cs" />
     <Compile Include="Repositories\mTitleRepo.cs" />
+    <Compile Include="Services\hrdRecruitmentService.cs" />
     <Compile Include="Services\hrdRecruitmentSkillService.cs" />
     <Compile Include="Services\hrdRecruitmentRefService.cs" />
     <Compile Include="Services\hrdRecruitmentMemService.cs" />
