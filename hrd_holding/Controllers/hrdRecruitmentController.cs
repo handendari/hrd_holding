@@ -110,7 +110,7 @@ namespace hrd_holding.Controllers
                     {
                         vItem.id,
                         vItem.req_id,
-                        vItem.date_started
+                        vItem.date_started,
                         vItem.nik,
                         vItem.name,
                         vItem.name_employer,
@@ -179,7 +179,7 @@ namespace hrd_holding.Controllers
                     {
                         vItem.id,
                         vItem.req_id,
-                        vItem.date_started
+                        vItem.date_started,
                         vItem.nik,
                         vItem.name,
                         vItem.name_employer,

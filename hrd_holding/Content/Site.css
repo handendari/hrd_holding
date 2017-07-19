@@ -4,9 +4,11 @@
     color: #232323;
     background-color: #fff;
 }
+
 table {
-    font-size: 12px;
+    font-size: 14px;
 }
+
 header, footer, nav, section {
     display: block;
 }
@@ -26,9 +28,9 @@ legend {
     font-weight: bold;
 }
 
-textarea {
+/*textarea {
     min-height: 75px;
-}
+}*/
 
 .editor-label {
     margin: 1em 0 0 0;

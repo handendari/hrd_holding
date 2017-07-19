@@ -659,6 +659,7 @@
     <Content Include="Content\jqwidgets\images\sunny\Thumbs.db" />
     <Content Include="Content\jqwidgets\images\Thumbs.db" />
     <Content Include="Content\jqwidgets\Thumbs.db" />
+    <Content Include="Scripts\hrdRecruitment\hrd_recruitment.js" />
     <Content Include="Scripts\mSubTitle\m_subtitle.js" />
     <Content Include="Scripts\mBank\m_bank.js" />
     <Content Include="Scripts\mStatus\m_status.js" />
@@ -837,6 +838,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\ReqRecruitment\RequestDetail.cshtml" />
     <Content Include="Views\ReqRecruitment\Index.cshtml" />
+    <Content Include="Views\hrdRecruitment\RecruitmentDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

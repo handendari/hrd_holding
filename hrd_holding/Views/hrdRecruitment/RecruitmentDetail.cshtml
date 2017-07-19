@@ -1,0 +1,1055 @@
+﻿@model hrd_holding.Models.mEmployeeModel
+
+@{
+    ViewBag.Title = "RecruitmentDetail";
+    Layout = "~/Views/Shared/_header.cshtml";
+}
+
+<header>
+    <script src="~/scripts/hrdRecruitment/hrd_recruitment.js"></script>
+    @*<script src="~/scripts/mEmployee/m_employee_company.js"></script>
+    <script src="~/scripts/mEmployee/m_employee_family.js"></script>
+    <script src="~/scripts/mEmployee/m_employee_education.js"></script>
+    <script src="~/scripts/mEmployee/m_employee_skill.js"></script>
+    <script src="~/scripts/mEmployee/m_employee_experience.js"></script>
+    <script src="~/scripts/mEmployee/m_employee_training.js"></script>*@
+</header>
+
+<div>
+    <!--#region DETAIL RECRUITMENT -->
+    <div>
+        <table style="width: 100%">
+            <tr>
+                <td>Company</td>
+                <td>
+                    <input type="text" id="txtIntCompany" />
+                    <input type="text" id="txtCompany" />
+                </td>
+                <td></td>
+                <td rowspan="2" colspan="3">
+                    <div id="EmpToolBar" style="margin-bottom: 1px; padding-right: 20px"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Branch</td>
+                <td colspan="3">
+                    <input type="text" id="txtIntBranch" />
+                    <input type="text" id="txtBranch" /></td>
+            </tr>
+            <tr>
+                <td>No. Request *</td>
+                <td>
+                    <input type="text" id="txtNoReq" />
+                    <input type="button" id="btnRequest" value="..." />
+                </td>
+            </tr>
+            <tr>
+                <td>NIK (ID CARD) *</td>
+                <td>
+                    <input type="text" id="txtIdCard" /></td>
+                <td style="text-align: right; padding-right: 20px">Full Name *</td>
+                <td>
+                    <input type="text" id="txtFullName" /></td>
+                <td>
+                    <div style="width: 200px" id="picGambar"></div>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Place Of Birth *</td>
+                <td>
+                    <input type="text" id="txtPob" /></td>
+                <td style="text-align: right; padding-right: 20px">Date Of Birth *</td>
+                <td>
+                    <input type="text" id="dtDob" />
+                </td>
+            </tr>
+            <tr>
+                <td>Gender *</td>
+                <td>
+                    <div id='cmbGender'></div>
+                </td>
+                <td style="text-align: right; padding-right: 20px">Marital Status *</td>
+                <td>
+                    <div id='cmbMarital'></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Religion *</td>
+                <td>
+                    <div id='cmbReligion'></div>
+                </td>
+                <td style="text-align: right; padding-right: 20px">No. Telepon *</td>
+                <td>
+                    <input type="text" id='txtTelepon' />
+                </td>
+            </tr>
+            <tr>
+                <td>Dialect Group</td>
+                <td>
+                    <input type="text" id="txtDialect" /></td>
+                <td>
+                    <div id="chkDLicense">Driving License</div>
+                </td>
+                <td>
+                    <div id="txtLicClass"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div>
+                        <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717;">
+                            <legend style="margin-left: 20px; background-color: #6b1717; padding-left: 10px; padding-top: 5px; padding-right: 100px; padding-bottom: 5px; color: white; border-radius: 8px; border: 2px solid #eeece1; font-size: 13px;">
+                                <b>Post Applied For... </b>
+                            </legend>
+                            <table>
+                                <tr>
+                                    <td>Departement *</td>
+                                    <td>
+                                        <input type="text" style="width: 60px" id="txtKdDepartement" />
+                                        <input type="button" id="btnKdDepartement" value="..." />
+                                        <input type="text" id="txtNmDepartement" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Job Title *</td>
+                                    <td>
+                                        <input type="text" style="width: 60px" id="txtKdJobTitle" />
+                                        <input type="button" id="btnKdJobTitle" value="..." />
+                                        <input type="text" id="txtNmJobTitle" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>
+                                        <input type="text" style="width: 60px" id="txtKdStatus" />
+                                        <input type="button" id="btnKdStatus" value="..." />
+                                        <input type="text" id="txtNmStatus" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </div>
+                </td>
+                <td style="vertical-align: top; text-align: right; padding-right: 20px">Address</td>
+                <td style="vertical-align: top">
+                    <textarea style="width: 350px; height: 100px" id="txtAddress"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717;">
+            <legend style="margin-left: 20px; background-color: #6b1717; padding-left: 10px; padding-top: 5px; padding-right: 100px; padding-bottom: 5px; color: white; border-radius: 8px; border: 2px solid #eeece1; font-size: 13px;">
+                <b>Physical Disability... </b>
+            </legend>
+            Give details of any physical impairment, desease or illness that you suffer
+            From now or have been afflicted previously.
+            <textarea style="width: 100%; height: 50px" id="txtDisability"></textarea>
+        </fieldset>
+    </div>
+
+    <div>
+        <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717;">
+            <legend style="margin-left: 20px; background-color: #6b1717; padding-left: 10px; padding-top: 5px; padding-right: 100px; padding-bottom: 5px; color: white; border-radius: 8px; border: 2px solid #eeece1; font-size: 13px;">
+                <b>Present Empoyment History / Last Employment... </b>
+            </legend>
+            Give details of any physical impairment, desease or illness that you suffer
+            from now or have been afflicted previously.
+            <div>
+                <table>
+                    <tr>
+                        <td>Name Of Employer</td>
+                        <td>
+                            <input type="text" id="txtEmployerName" /></td>
+                    </tr>
+                    <tr>
+                        <td>Date Started</td>
+                        <td>
+                            <input type="text" id="dtStarted" /></td>
+                        <td style="padding-left: 20px">Initial Salary</td>
+                        <td>
+                            <input type="text" id="txtInitialSalary" /></td>
+
+                        <td style="padding-left: 30px">Date Leave</td>
+                        <td>
+                            <input type="text" id="dtLeft" /></td>
+                        <td style="padding-left: 20px">Last Drawn Salary</td>
+                        <td>
+                            <input type="text" id="txtLastSalary" /></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td colspan="7">
+                            <textarea style="height: 40px; width: 100%" id="txtLastEmployerAddress"> </textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Type Of Business</td>
+                        <td>
+                            <input type="text" id="txtBusinessType" /></td>
+                        <td style="padding-left: 30px">Reason for Leave</td>
+                        <td>
+                            <input type="text" id="txtReasonLeave" /></td>
+                    </tr>
+                    <tr>
+                        <td>No Of Employees</td>
+                        <td>
+                            <input type="text" id="txtEmployeesNo" /></td>
+                        <td style="padding-left: 30px">Notice Required</td>
+                        <td>
+                            <input type="text" id="txtRequiredNotice" /></td>
+                    </tr>
+                    <tr>
+                        <td>Position Held</td>
+                        <td>
+                            <input type="text" id="txtHeldPosition" /></td>
+                        <td style="padding-left: 30px">Earliest Date Avaliable</td>
+                        <td>
+                            <input type="text" id="dtAvaliable" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Brieft Description Of Your Duties</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">
+                            <textarea style="height: 40px; width: 100%" id="txtDutyDesc"> </textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">May we make contact with your present or past employer?</td>
+                        <td>
+                            <div id="cmbContactLastEmployer"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><span style="margin-right: 10px">Expected monthly salary (Rp.)</span><input type="text" id="txtExpectedSalary" /></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+            </div>
+        </fieldset>
+    </div>
+
+    <div>
+        <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717;">
+            <legend style="margin-left: 20px; background-color: #6b1717; padding-left: 10px; padding-top: 5px; padding-right: 100px; padding-bottom: 5px; color: white; border-radius: 8px; border: 2px solid #eeece1; font-size: 13px;">
+                <b>Recreation Activities... </b>
+            </legend>
+            <div>
+                <table>
+                    <tr>
+                        <td>Sport / Games</td>
+                        <td>
+                            <input type="text" id="txtSportGame" /></td>
+                    </tr>
+                    <tr>
+                        <td>Hobbies</td>
+                        <td>
+                            <input type="text" id="txtHobbies" /></td>
+                    </tr>
+                    <tr>
+                        <td>Membership Of Club</td>
+                        <td>
+                            <input type="text" id="txtMemberClub" /></td>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+    </div>
+
+    <div>
+        <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717;">
+            <legend style="margin-left: 20px; background-color: #6b1717; padding-left: 10px; 
+                           padding-top: 5px; padding-right: 100px; padding-bottom: 5px; color: white; 
+                           border-radius: 8px; border: 2px solid #eeece1; font-size: 13px;">
+                <b>Further Information... </b>
+            </legend>
+            <div>
+                <table>
+                    <tr>
+                        <td>Have your ever conficted for a crime</td>
+                        <td>
+                            <div id="cmbConfictedForCrime"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="margin-right:10px">If yes,give nature of offence and conviction dates</span>
+                            <input type="text" style="width:500px" id="txtYesCrime" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Do you have any friends/relatives employed at PT. Freight Express Indonesia?</td>
+                        <td>
+                            <div id="cmbHaveRelatives"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <span style="margin-right:10px">If Yes,please give name</span>
+                            <input type="text" style="width:500px" id="txtRelativeName" />
+                            <span style="margin-left:30px;margin-right:10px">Telp. No</span>
+                            <input type="text" id="txtRelativePhone" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Have you ever applied to or worked for this company before?</td>
+                        <td>
+                            <div id="cmbEverApplied"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="margin-right:10px">If yes, please state, date</span>
+                            <input type="text" style="width:500px" id="txtDateApplied" />
+                            <span style="margin-left:30px;margin-right:10px">Department</span>
+                            <input type="text" id="txtAppliedDepartment" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><b> CASE OF EMERGANCY NOTIFY :</b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <span style="margin-right:10px">Name</span>
+                            <input type="text" style="width:500px" id="txtEmergencyName" />
+
+                            <span style="margin-left:30px;margin-right:10px">Telp. No</span>
+                            <input type="text" id="txtEmergencyPhone" />
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </fieldset>
+    </div>
+
+    <!--#endregion -->
+
+    <!--#region TABS FAMILY, SKILL, EXP DLL -->
+    <!--
+    <div style="margin-top: 10px">
+        <fieldset style="border-radius: 5px; padding: 5px; border: 1px solid #6b1717; background-color: #eeece1;">
+            <legend style="margin-left: 20px; background-color: #6b1717; padding-left: 10px; padding-top: 5px; padding-right: 100px; padding-bottom: 5px; color: white; border-radius: 8px; border: 2px solid #eeece1; font-size: 13px;">
+                <b>Employee Detail </b>
+            </legend>
+            <div id='jqxTabs'>
+                <ul>
+                    <li>FAMILY</li>
+                    <li>EDUCATION</li>
+                    <li>SKILL</li>
+                    <li>EXPERIENCE</li>
+                    <li>TRAINING</li>
+                    <li>CONTRACT</li>
+                </ul>
+                <div id="pnlFamily" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
+                    <div id="tblFamily"></div>
+                    <div style="margin-top: 10px; margin-left: 20px">
+                        <table>
+                            <tr>
+                                <td>
+                                    @*<button id="btnFamilyNew">NEW DATA</button>*@
+                                    <div style="width: 100px; height: 30px;" id="btnFamilyNew" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/add property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">ADD NEW</span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    @*<button id="btnFamilyEdit">EDIT</button>*@
+                                    <div style="margin-left: 5px; width: 100px; height: 30px;" id="btnFamilyEdit" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/edit property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">EDIT</span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    @*<button style="margin-left: 50px" id="btnFamilyDelete">DELETE</button>*@
+                                    <div style="margin-left: 50px; width: 100px; height: 30px;" id="btnFamilyDelete" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/delete property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">DELETE</span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="pnlEducation" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
+                    <div id="tblEducation"></div>
+                    <div style="margin-top: 10px; margin-left: 20px">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div style="width: 100px; height: 30px;" id="btnEduNew" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/add property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">ADD NEW</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="margin-left: 5px; width: 100px; height: 30px;" id="btnEduEdit" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/edit property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">EDIT</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="margin-left: 50px; width: 100px; height: 30px;" id="btnEduDelete" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/delete property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">DELETE</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="pnlSkill" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
+                    <div id="tblSkill"></div>
+                    <div style="margin-top: 10px; margin-left: 20px">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div style="width: 100px; height: 30px;" id="btnSkillNew" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/add property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">ADD NEW</span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div style="margin-left: 5px; width: 100px; height: 30px;" id="btnSkillEdit" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/edit property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">EDIT</span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div style="margin-left: 50px; width: 100px; height: 30px;" id="btnSkillDelete" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/delete property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">DELETE</span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="pnlExperience" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
+                    <div id="tblExperience"></div>
+                    <div style="margin-top: 10px; margin-left: 20px">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div style="width: 100px; height: 30px;" id="btnExpNew" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/add property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">ADD NEW</span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div style="margin-left: 5px; width: 100px; height: 30px;" id="btnExpEdit" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/edit property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">EDIT</span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div style="margin-left: 50px; width: 100px; height: 30px;" id="btnExpDelete" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/delete property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">DELETE</span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="pnlTraining" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
+                    <div id="tblTraining"></div>
+                    <div style="margin-top: 10px; margin-left: 20px">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div style="width: 100px; height: 30px;" id="btnTrainingNew" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/add property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">ADD NEW</span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div style="margin-left: 5px; width: 100px; height: 30px;" id="btnTrainingEdit" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/edit property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">EDIT</span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div style="margin-left: 50px; width: 100px; height: 30px;" id="btnTrainingDelete" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/delete property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">DELETE</span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="pnlContract" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
+                    <div id="tblContract"></div>
+                    <div style="margin-top: 10px; margin-left: 20px">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div style="width: 100px; height: 30px;" id="btnContractNew" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/add property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">ADD NEW</span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div style="margin-left: 5px; width: 100px; height: 30px;" id="btnContractEdit" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/edit property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">EDIT</span>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div style="margin-left: 50px; width: 100px; height: 30px;" id="btnContractDelete" role="button">
+                                        <img style="vertical-align: middle" src="~/content/images/delete property_24_grey.png">
+                                        <span style="position: relative; top: 3px;">DELETE</span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+-->
+    <!--#endregion -->
+
+    <!--#region MODAL FAMILY-->
+    <!--
+    <div id='modFamily'>
+        <div>
+            <span>FAMILY DETAIL</span>
+        </div>
+        <div>
+            <div id="container" style="height: 40px"></div>
+            <div id="jqxNotification">
+                <div id="notificationContent"></div>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>NAME *</td>
+                        <td>
+                            <input type="text" id="txtFamName" /></td>
+                    </tr>
+                    <tr>
+                        <td>Relationship *</td>
+                        <td>
+                            <div id="cmbFamRelation"></div>
+                        </td>
+                        <td style="padding-left: 30px">Date Of Birth</td>
+                        <td>
+                            <input type="text" id="txtFamDob" /></td>
+                    </tr>
+                    <tr>
+                        <td>Gender *</td>
+                        <td>
+                            <div id="cmbFamGender"></div>
+                        </td>
+                        <td style="padding-left: 30px">Education</td>
+                        <td>
+                            <input type="text" id="txtFamEducation" /></td>
+                    </tr>
+                    <tr>
+                        <td>Employment</td>
+                        <td>
+                            <input type="text" id="txtFamEmployment" /></td>
+                        <td style="padding-left: 30px">Address</td>
+                        <td rowspan="2">
+                            <textarea id="txtFamAddress"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" id="chkFamAddress" />
+                            Same As Employee's
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 15px; margin-left: 20px">
+                    <button id="btnModFamSave">SAVE</button>
+                    <button id="btnModFamCancel">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <!--#endregion-->
+
+    <!--#region MODAL EDUCATION-->
+    <!--
+    <div id="modEducation">
+        <div>
+            <span>EDUCATION DETAIL</span>
+        </div>
+        <div>
+            <div id="psnEduContainer" style="height: 40px"></div>
+            <div id="psnEducation">
+                <div id="psnEduIsi"></div>
+            </div>
+            <div style="margin-left: 20px">
+                <table>
+                    <tr>
+                        <td>Emp. Code *</td>
+                        <td>
+                            <input type="text" id="txtEduCode" /></td>
+                    </tr>
+                    <tr>
+                        <td>Start Year *</td>
+                        <td>
+                            <div id="dtEduStartYear"></div>
+                        </td>
+                        <td style="padding-left: 30px">End Year *</td>
+                        <td>
+                            <div id="dtEduEndYear"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Level *</td>
+                        <td>
+                            <div id="cmbEduLevel"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Majors</td>
+                        <td>
+                            <input type="text" id="txtEduMajors" /></td>
+                        <td style="padding-left: 30px">School / University *</td>
+                        <td>
+                            <input type="text" id="txtEduSchool" /></td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>
+                            <input type="text" id="txtEduCity" /></td>
+                        <td style="padding-left: 30px">Country</td>
+                        <td>
+                            <input type="text" id="txtEduCountryCode" style="width: 40px" />
+                            <input type="button" id="btnEduCountry" value="..." />
+                            <input type="text" id="txtEduCountryName" />
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 20px; margin-left: 20px">
+                    <button id="btnEduSave">SAVE</button>
+                    <button id="btnEduCancel">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <!--#endregion-->
+
+    <!--#region MODAL SKILL-->
+    <!--
+    <div id="modSkill">
+        <div>
+            <span>SKILL DETAIL</span>
+        </div>
+        <div>
+            <div id="psnSkillContainer" style="height: 40px"></div>
+            <div id="psnSkill">
+                <div id="psnSkillIsi"></div>
+            </div>
+            <div style="margin-left: 20px">
+                <table>
+                    <tr>
+                        <td>Emp. Code *</td>
+                        <td>
+                            <input type="text" id="txtSkillCode" /></td>
+                    </tr>
+                    <tr>
+                        <td>Skill Name *</td>
+                        <td>
+                            <input type="text" id="txtSkillName" /></td>
+                    </tr>
+                    <tr>
+                        <td>Level *</td>
+                        <td>
+                            <div id="cmbSkillLevel"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td rowspan="2">
+                            <textarea id="txtSkillDesc"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 20px; margin-left: 20px">
+                    <button id="btnSkillSave">SAVE</button>
+                    <button id="btnSkillCancel">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <!--#endregion-->
+
+    <!--#region MODAL EXPERIENCE-->
+    <!--
+    <div id='modExperience'>
+        <div>
+            <span>EXPERIENCE DETAIL</span>
+        </div>
+        <div>
+            <div id="psnExpCont" style="height: 40px"></div>
+            <div id="psnExp">
+                <div id="psnExpContent"></div>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>Emp. Code *</td>
+                        <td>
+                            <input type="text" id="txtExpCode" /></td>
+                    </tr>
+                    <tr>
+                        <td>Start Working *</td>
+                        <td>
+                            <div id="dtExpStart"></div>
+                        </td>
+                        <td style="padding-left: 30px">End Working *</td>
+                        <td>
+                            <div id="dtExpEnd"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CompanyName *</td>
+                        <td>
+                            <input type="text" id="txtExpCompanyName" />
+                        </td>
+                        <td style="padding-left: 30px">Line Of Bussiness</td>
+                        <td>
+                            <input type="text" id="txtExpBussiness" /></td>
+                    </tr>
+                    <tr>
+                        <td>Department</td>
+                        <td>
+                            <input type="text" id="txtExpDepartment" /></td>
+                        <td style="padding-left: 30px">Last Job Title</td>
+                        <td>
+                            <input type="text" id="txtExpLastTitle" /></td>
+                    </tr>
+                    <tr>
+                        <td>Last Salary</td>
+                        <td>
+                            <div id="txtExpSalary"></div>
+                        </td>
+                        <td style="padding-left: 30px">End Working Reason</td>
+                        <td>
+                            <input type="text" id="txtExpReason" /></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top">Description</td>
+                        <td colspan="2">
+                            <textarea id="txtExpDesc"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 15px; margin-left: 20px">
+                    <button id="btnExpSave">SAVE</button>
+                    <button id="btnExpCancel">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <!--#endregion-->
+
+    <!--#region MODAL TRAINING-->
+    <!--
+    <div id='modTraining'>
+        <div>
+            <span>TRAINING DETAIL</span>
+        </div>
+        <div>
+            <div id="psnTrnCont" style="height: 40px"></div>
+            <div id="psnTrn">
+                <div id="psnTrnContent"></div>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>Emp. Code *</td>
+                        <td>
+                            <input type="text" id="txtTrnCode" /></td>
+                    </tr>
+                    <tr>
+                        <td>Start Date *</td>
+                        <td>
+                            <div id="dtTrnStart"></div>
+                        </td>
+                        <td style="padding-left: 30px">End Date *</td>
+                        <td>
+                            <div id="dtTrnEnd"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Training Subject *</td>
+                        <td>
+                            <input type="text" id="txtTrnSubject" />
+                        </td>
+                        <td style="padding-left: 30px">Organizer By *</td>
+                        <td>
+                            <input type="text" id="txtTrnOrganizer" /></td>
+                    </tr>
+                    <tr>
+                        <td>Training Place *</td>
+                        <td>
+                            <input type="text" id="txtTrnPlace" /></td>
+                        <td style="padding-left: 30px">Company</td>
+                        <td>
+                            <input type="text" id="txtTrnCompany" /></td>
+                    </tr>
+                    <tr>
+                        <td>Value</td>
+                        <td>
+                            <input type="text" id="txtTrnValue" /></td>
+                        <td></td>
+                        <td>
+                            <input type="checkbox" id="chkTrnCompany" />
+                            Same As Employee's
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 15px; margin-left: 20px">
+                    <button id="btnTrnSave">SAVE</button>
+                    <button id="btnTrnCancel">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <!--#endregion-->
+    <!--
+    <div id='modYesNo'>
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div style="margin-top: 10px; margin-left: 10px">
+                Are You Sure To Delete Selected data ?
+            </div>
+            <div style="margin-top: 40px; margin-left: 20px">
+                <button id="btnYes">YES</button>
+                <button id="btnNo">NO</button>
+            </div>
+        </div>
+    </div>
+    <div id="modCountryLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="CountryLookUpToolBar" style="margin-bottom: 1px"></div>
+            <div id="tblCountryLookUp"></div>
+        </div>
+    </div>
+
+    <div id="modDeptLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="DeptLookUpToolBar" style="margin-bottom: 1px"></div>
+            <div id="tblDeptLookUp"></div>
+        </div>
+    </div>
+
+    <div id="modTitleLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="TitleLookUpToolBar" style="margin-bottom: 1px"></div>
+            <div id="tblTitleLookUp"></div>
+        </div>
+    </div>
+
+    <div id="modLvlLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="LvlLookUpToolBar" style="margin-bottom: 1px"></div>
+            <div id="tblLvlLookUp"></div>
+        </div>
+    </div>
+
+    <div id="modBankLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="BankLookUpToolBar" style="margin-bottom: 1px"></div>
+            <div id="tblBankLookUp"></div>
+        </div>
+    </div>
+
+    <div id="modStatusLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="StatusLookUpToolBar" style="margin-bottom: 1px"></div>
+            <div id="tblStatusLookUp"></div>
+        </div>
+    </div>
+
+    <div id="modCompanyList">
+        <div><span>COMPANY DETAIL</span></div>
+        <div>
+            <div id="tblCompany"></div>
+            <div style="margin-top: 10px; margin-left: 20px">
+                @*<table>
+                    <tr>
+                        <td>
+                            <button id="btnNew_Company">NEW DATA</button>
+                        </td>
+                        <td>
+                            <button id="btnEdit_Company">EDIT</button>
+                        </td>
+                        <td>
+                            <button style="margin-left: 50px" id="btnDelete_Company">DELETE</button>
+                        </td>
+                        <td>
+                            <button id="btnClose_Company">CANCEL</button>
+                        </td>
+                    </tr>
+                </table>*@
+                <table>
+                    <tr>
+                        <td>
+                            <div style="width: 100px; height: 30px;" id="btnNew_Company" role="button">
+                                <img style="vertical-align: middle" src="~/content/images/add property_24_grey.png">
+                                <span style="position: relative; top: 3px;">ADD NEW</span>
+                            </div>
+
+                        </td>
+                        <td>
+                            <div style="margin-left: 5px; width: 100px; height: 30px;" id="btnEdit_Company" role="button">
+                                <img style="vertical-align: middle" src="~/content/images/edit property_24_grey.png">
+                                <span style="position: relative; top: 3px;">EDIT</span>
+                            </div>
+
+                        </td>
+                        <td>
+                            <div style="margin-left: 50px; width: 100px; height: 30px;" id="btnDelete_Company" role="button">
+                                <img style="vertical-align: middle" src="~/content/images/delete property_24_grey.png">
+                                <span style="position: relative; top: 3px;">DELETE</span>
+                            </div>
+
+                        </td>
+                        <td>
+                            <div style="margin-left: 5px; width: 100px; height: 30px;" id="btnClose_Company" role="button">
+                                <img style="vertical-align: middle" src="~/content/images/close pane_24_grey.png">
+                                <span style="position: relative; top: 3px;">CLOSE</span>
+                            </div>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="modCompany">
+        <div>
+            <span>COMPANY DETAIL</span>
+        </div>
+        <div>
+            <div id="psnCompCont" style="height: 40px"></div>
+            <div id="psnComp">
+                <div id="psnCompContent"></div>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>Emp. Code *</td>
+                        <td>
+                            <input type="text" id="txtCompCode" /></td>
+                    </tr>
+                    <tr>
+                        <td>Date *</td>
+                        <td>
+                            <div id="dtTgl_Company"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Company *</td>
+                        <td>
+                            <input type="text" id="txtCompanyCode_Company" />
+                            <input type="button" id="btnCompanyCode_Company" value="..." />
+                            <input type="text" id="txtCompanyName_Company" />
+                        </td>
+                        <td style="padding-left: 30px">Branch Office *</td>
+                        <td>
+                            <input type="text" id="txtBranchCode_Company" />
+                            <input type="button" id="btnBranchCode_Company" value="..." />
+                            <input type="text" id="txtBranchName_Company" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Department</td>
+                        <td>
+                            <input type="text" id="txtDeptCode_Company" />
+                            <input type="button" id="btnDeptCode_Company" value="..." />
+                            <input type="text" id="txtDeptName_Company" />
+                        </td>
+                        <td style="padding-left: 30px">Job Title</td>
+                        <td>
+                            <input type="text" id="txtTitleCode_Company" />
+                            <input type="button" id="btnTitleCode_Company" value="..." />
+                            <input type="text" id="txtTitleName_Company" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Grade</td>
+                        <td>
+                            <input type="text" id="txtGradeCode_Company" />
+                            <input type="button" id="btnGradeCode_Company" value="..." />
+                            <input type="text" id="txtGradeName_Company" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top">Description</td>
+                        <td colspan="2">
+                            <textarea id="txtDesc_Company"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin-top: 15px; margin-left: 20px">
+                    <button id="btnSave_Company">SAVE</button>
+                    <button id="btnCancel_Company">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modBranchLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="BranchLookUpToolBar" style="margin-bottom: 1px"></div>
+            <div id="tblBranchLookUp"></div>
+        </div>
+    </div>
+
+    <div id="modCompanyLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="CompanyLookUpToolBar" style="margin-bottom: 1px"></div>
+            <div id="tblCompanyLookUp"></div>
+        </div>
+    </div>
+
+    <div id="modSupervisorLookUp">
+        <div><span>Human Resource Development</span></div>
+        <div>
+            <div id="SupervisorLookUpToolBar" style="margin-bottom: 1px"></div>
+            <div id="tblSupervisorLookUp"></div>
+        </div>
+    </div>
+-->
+
+</div>
