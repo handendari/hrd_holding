@@ -19,11 +19,11 @@ namespace hrd_holding.Models
         public int flag_gender { get; set; }
         public int flag_marital_status { get; set; }
         
-        public int? company_code { get; set; }
+        public int company_code { get; set; }
         public string int_company { get; set; }
         public string company_name { get; set; }
 
-        public int? branch_code { get; set; }
+        public int branch_code { get; set; }
         public string int_branch { get; set; }
         public string branch_name { get; set; }
 

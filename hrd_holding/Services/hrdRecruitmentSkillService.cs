@@ -42,7 +42,7 @@ namespace hrd_holding.Services
         {
             pModel.entry_user = "it";
             pModel.entry_date = DateTime.Now;
-            pModel.seq_no = _repoRecSkill.getRecruitmentSkillSeqNo(pModel.recruitment_id);
+            pModel.seq_no = _repoRecSkill.getRecruitmentSkillSeqNo(pModel.request_id)+1;
 
             var vModel = _repoRecSkill.InsertRecruitmentSkill(pModel);
             return vModel;

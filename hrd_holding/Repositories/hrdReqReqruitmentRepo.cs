@@ -122,7 +122,7 @@ namespace hrd_holding.Repositories
                            WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus " + 
                            pWhere + " " + pOrderBy + " " + vLimit;
 
-            Log.Debug(DateTime.Now + "====>>>> strSQL : " + strSQL);
+            //Log.Debug(DateTime.Now + "====>>>> strSQL : " + strSQL);
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))

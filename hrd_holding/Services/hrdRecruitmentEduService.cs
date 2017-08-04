@@ -17,9 +17,9 @@ namespace hrd_holding.Services
             _repoRecEdu = new hrdRecruitmentEduRepo();
         }
 
-        public List<hrdRecruitmentEduModel> GetRecruitmentEduList(int pRecruitmentId)
+        public List<hrdRecruitmentEduModel> GetRecruitmentEduList(int pRequestId)
         {
-            var  vList = _repoRecEdu.getRecruitmentEduList(pRecruitmentId);
+            var  vList = _repoRecEdu.getRecruitmentEduList(pRequestId);
             return vList;
         }
 
@@ -42,7 +42,9 @@ namespace hrd_holding.Services
         {
             pModel.entry_user = "it";
             pModel.entry_date = DateTime.Now;
-            pModel.seq_no = _repoRecEdu.getRecruitmentEduSeqNo(pModel.recruitment_id);
+            pModel.seq_no = _repoRecEdu.getRecruitmentEduSeqNo(pModel.request_id) + 1;
+
+            //Log.Debug(DateTime.Now + " JUMLAH NO URUT : " + pModel.seq_no);
 
             var vModel = _repoRecEdu.InsertRecruitmentEdu(pModel);
             return vModel;

@@ -47,18 +47,18 @@ namespace hrd_holding.Controllers
         }
 
 
-        [HttpPost]
-        public dynamic GetRecruitmentEduList(int pRecId)
+        //[HttpPost]
+        public dynamic GetRecruitmentEduList(int pRequestId)
         {
 
             //var vEmployeeCode = Request["employeecode"].ToString();
             //var vSeqNo = int.Parse(Request["seqno"]);
 
-            //LOG.Debug(DateTime.Now + " Emp FAMS Code : " + pEmployeeCode);
+            LOG.Debug(DateTime.Now + " Request ID : " + pRequestId);
 
-            var listRec = _recEduService.GetRecruitmentEduList(pRecId);
+            var listEdu = _recEduService.GetRecruitmentEduList(pRequestId);
 
-            return Json(new { listRec },JsonRequestBehavior.AllowGet);
+            return Json(new { listEdu },JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

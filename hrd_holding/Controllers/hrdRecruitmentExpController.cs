@@ -48,7 +48,7 @@ namespace hrd_holding.Controllers
 
 
         [HttpPost]
-        public dynamic GetRecruitmentExpList(int pRecId)
+        public dynamic GetRecruitmentExpList(int pRequestId)
         {
 
             //var vEmployeeCode = Request["employeecode"].ToString();
@@ -56,9 +56,9 @@ namespace hrd_holding.Controllers
 
             //LOG.Debug(DateTime.Now + " Emp FAMS Code : " + pEmployeeCode);
 
-            var listRec = _recExpService.GetRecruitmentExpList(pRecId);
+            var listExp = _recExpService.GetRecruitmentExpList(pRequestId);
 
-            return Json(new { listRec },JsonRequestBehavior.AllowGet);
+            return Json(new { listExp },JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

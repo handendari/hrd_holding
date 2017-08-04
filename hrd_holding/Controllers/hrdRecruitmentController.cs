@@ -13,11 +13,13 @@ namespace hrd_holding.Controllers
     {
         private readonly static log4net.ILog LOG = log4net.LogManager.GetLogger("hrdRecruitmentController");
         private hrdRecruitmentService _recService;
+        private mBranchOfficeService _mBranchService;
         private ManageString _mString;
 
         public hrdRecruitmentController()
         {
             _recService = new hrdRecruitmentService();
+            _mBranchService = new mBranchOfficeService();
             _mString = new ManageString();
         }
 
@@ -32,14 +34,42 @@ namespace hrd_holding.Controllers
         }
 
         //[HttpPost]
-        public dynamic GetRecruitmentInfoAll(int pRecId)
+        public dynamic GetRecruitmentInfoAll(int pBranchId,int pRecId)
         {
             var vModel = new RecruitmentModel_All();
+            LOG.Debug(DateTime.Now + "BranchCode = " + pBranchId + " RecId = " + pRecId);
 
-            //var vEmployeeCode = Request["employeecode"].ToString();
-            //var vSeqNo = int.Parse(Request["seqno"]);
+            if (pRecId == 0)
+            {
+                var vRecModel = new hrdRecruitmentModel();
+                var vBranch = _mBranchService.GetBranchOfficeInfo(pBranchId);
 
-            vModel = _recService.GetRecuitmentInfo(pRecId);
+                LOG.Debug(DateTime.Now + " Comp. Code = " + vBranch.company_code + " Comp Name = " + vBranch.company_name);
+
+                vRecModel.id = 0;
+                vRecModel.company_code = vBranch.company_code;
+                vRecModel.int_company = vBranch.int_company;
+                vRecModel.company_name = vBranch.company_name;
+
+                vRecModel.branch_code = vBranch.branch_code;
+                vRecModel.int_branch = vBranch.int_branch;
+                vRecModel.branch_name = vBranch.branch_name;
+
+                vRecModel.flag_gender = 0;
+                vRecModel.flag_marital_status = 0;
+                vRecModel.flag_religion = 0;
+                vRecModel.date_birth = DateTime.Now;
+                vRecModel.flag_driving_license = 0;
+
+                vModel.recModel = vRecModel;
+            }
+            else
+            {
+                //var vEmployeeCode = Request["employeecode"].ToString();
+                //var vSeqNo = int.Parse(Request["seqno"]);
+
+                vModel = _recService.GetRecuitmentInfo(pRecId);
+            }
 
             return Json(new
             {

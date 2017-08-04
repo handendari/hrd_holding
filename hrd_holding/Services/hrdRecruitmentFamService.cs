@@ -17,9 +17,9 @@ namespace hrd_holding.Services
             _repoRecFam = new hrdRecruitmentFamRepo();
         }
 
-        public List<hrdRecruitmentFamModel> GetRecruitmentFamList(int pRecruitmentId)
+        public List<hrdRecruitmentFamModel> GetRecruitmentFamList(int pRequestId)
         {
-            var vList = _repoRecFam.getRecruitmentFamilyList(pRecruitmentId);
+            var vList = _repoRecFam.getRecruitmentFamilyList(pRequestId);
             return vList;
         }
 
@@ -42,7 +42,7 @@ namespace hrd_holding.Services
         {
             pModel.entry_user = "it";
             pModel.entry_date = DateTime.Now;
-            pModel.seq_no = _repoRecFam.getRecruitmentFamilySeqNo(pModel.recruitment_id);
+            pModel.seq_no = _repoRecFam.getRecruitmentFamilySeqNo(pModel.request_id) + 1;
 
             var vModel = _repoRecFam.InsertRecruitmentFamily(pModel);
             return vModel;

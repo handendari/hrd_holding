@@ -47,8 +47,8 @@ namespace hrd_holding.Controllers
         }
 
 
-        [HttpPost]
-        public dynamic GetRecruitmentSkillList(int pRecId)
+        //[HttpPost]
+        public dynamic GetRecruitmentSkillList(int pRequestId)
         {
 
             //var vEmployeeCode = Request["employeecode"].ToString();
@@ -56,9 +56,9 @@ namespace hrd_holding.Controllers
 
             //LOG.Debug(DateTime.Now + " Emp FAMS Code : " + pEmployeeCode);
 
-            var listRec = _recSkillService.GetRecruitmentSkillList(pRecId);
+            var listSkill = _recSkillService.GetRecruitmentSkillList(pRequestId);
 
-            return Json(new { listRec },JsonRequestBehavior.AllowGet);
+            return Json(new { listSkill },JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

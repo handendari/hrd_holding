@@ -23,10 +23,10 @@ namespace hrd_holding.Repositories
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
                 {
                     conn.Open();
-                    string SqlString = @"INSERT INTO hrd_recruitment_edu
-                                                (recruitment_id,seq_no,name_employer,business,start_date,end_date,
+                    string SqlString = @"INSERT INTO hrd_recruitment_exp
+                                                (request_id,recruitment_id,seq_no,name_employer,business,start_date,end_date,
                                                  position_held,last_salary,reason_leave,entry_date,entry_user)
-                                        VALUES (@precruitment_id,@pseq_no,@pname_employer,@pbusiness,@pstart_date,@pend_date,
+                                        VALUES (@prequest_id,@precruitment_id,@pseq_no,@pname_employer,@pbusiness,@pstart_date,@pend_date,
                                                  @pposition_held,@plast_salary,@preason_leave,@pentry_date,@pentry_user)";
 
                     using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
@@ -34,6 +34,7 @@ namespace hrd_holding.Repositories
 
                         cmd.CommandType = CommandType.Text;
 
+                        cmd.Parameters.AddWithValue("@prequest_id", pModel.request_id);
                         cmd.Parameters.AddWithValue("@precruitment_id", pModel.recruitment_id);
                         cmd.Parameters.AddWithValue("@pseq_no", pModel.seq_no);
                         cmd.Parameters.AddWithValue("@pname_employer", pModel.name_employer);
@@ -47,17 +48,17 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pentry_user", pModel.entry_user);
 
                         vStatus = cmd.ExecuteNonQuery();
-                        Log.Debug(DateTime.Now + " INSERT RECRUITMENT EXPERIENCE SUCCESS....<br/> REQUEST ID : " + pModel.req_id + " Name : " + pModel.name_employer);
+                        Log.Debug(DateTime.Now + " INSERT RECRUITMENT EXPERIENCE SUCCESS....<br/> REQUEST ID : " + pModel.request_id + " Name : " + pModel.name_employer);
 
                         objHasil.isValid = Convert.ToBoolean(vStatus);
-                        objHasil.message = " INSERT RECRUITMENT EXPERIENCE SUCCESS ====>>>> REQUEST ID : " + pModel.req_id + " Name : " + pModel.name_employer;
+                        objHasil.message = " INSERT RECRUITMENT EXPERIENCE SUCCESS ====>>>> REQUEST ID : " + pModel.request_id + " Name : " + pModel.name_employer;
                     }
                 }
             }
             catch (Exception ex)
             {
                 objHasil.isValid = false;
-                objHasil.message = " INSERT RECRUITMENT EXPERIENCE FAILED, REQUEST ID : " + pModel.req_id + " Name : " + pModel.name_employer;
+                objHasil.message = " INSERT RECRUITMENT EXPERIENCE FAILED, REQUEST ID : " + pModel.request_id + " Name : " + pModel.name_employer;
 
                 Log.Error(DateTime.Now + " INSERT RECRUITMENT EXPERIENCE FAILED", ex);
             }
@@ -65,15 +66,15 @@ namespace hrd_holding.Repositories
             return objHasil;
         }
 
-        public List<hrdRecruitmentExpModel> getRecruitmentExpList(int pRecruitmentId)
+        public List<hrdRecruitmentExpModel> getRecruitmentExpList(int pRequestId)
         {
             //Log.Debug(DateTime.Now + "=======>>>> MASUK REPO EMPLOYEE LIST, Emp Code : " + pEmployeeCode);
 
             var vList = new List<hrdRecruitmentExpModel>();
-            var strSQL = @"SELECT req_id,recruitment_id,seq_no,name_employer,business,start_date,end_date,
+            var strSQL = @"SELECT id,request_id,recruitment_id,seq_no,name_employer,business,start_date,end_date,
                                   position_held,last_salary,reason_leave,entry_date,entry_user
                            FROM hrd_recruitment_exp  hre
-                           WHERE hre.recruitment_id = @pRecruitmentId";
+                           WHERE hre.request_id = @pRequestId";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
@@ -82,7 +83,7 @@ namespace hrd_holding.Repositories
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("@pRecruitmentId", pRecruitmentId);
+                        cmd.Parameters.AddWithValue("@pRequestId", pRequestId);
 
                         using (MySqlDataReader aa = cmd.ExecuteReader())
                         {
@@ -96,7 +97,8 @@ namespace hrd_holding.Repositories
 
                                     var m = new hrdRecruitmentExpModel
                                     {
-                                        req_id = aa.GetInt16("req_id"),
+                                        id = aa.GetInt16("id"),
+                                        request_id = aa.GetInt16("request_id"),
                                         recruitment_id = aa.GetInt16("recruitment_id"),
                                         seq_no = aa.GetInt16("seq_no"),
                                         name_employer = aa.GetString("name_employer"),
@@ -128,10 +130,10 @@ namespace hrd_holding.Repositories
         public hrdRecruitmentExpModel getRecruitmentExpInfo(int pId)
         {
             var vModel = new hrdRecruitmentExpModel();
-            var strSQL = @"SELECT req_id,recruitment_id,seq_no,name_employer,business,start_date,end_date,
+            var strSQL = @"SELECT id,request_id,recruitment_id,seq_no,name_employer,business,start_date,end_date,
                                   position_held,last_salary,reason_leave,entry_date,entry_user
                            FROM hrd_recruitment_exp hre
-                           WHERE hre.req_id = @pReqId";
+                           WHERE hre.id = @pId";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
@@ -140,7 +142,7 @@ namespace hrd_holding.Repositories
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("@pReqId", pId);
+                        cmd.Parameters.AddWithValue("@pId", pId);
 
                         using (MySqlDataReader aa = cmd.ExecuteReader())
                         {
@@ -148,7 +150,8 @@ namespace hrd_holding.Repositories
                             {
                                 while (aa.Read())
                                 {
-                                    vModel.req_id = aa.GetInt16("req_id");
+                                    vModel.id = aa.GetInt16("id");
+                                    vModel.request_id = aa.GetInt16("request_id");
                                     vModel.recruitment_id = aa.GetInt16("recruitment_id");
                                     vModel.seq_no = aa.GetInt16("seq_no");
                                     vModel.name_employer = aa.GetString("name_employer");
@@ -184,14 +187,15 @@ namespace hrd_holding.Repositories
             var objHasil = new ResponseModel();
 
             string SqlString = @"UPDATE hrd_recruitment_exp
-                                    SET name_employer = @pname_employer,
+                                    SET recruitment_id = @precruitment_id,
+                                        name_employer = @pname_employer,
                                         business = @pbusiness,
                                         start_date = @pstart_date,
                                         end_date = @pend_date,
                                         position_held = @pposition_held,
                                         last_salary = @plast_salary,
                                         reason_leave = @preason_leave
-                                WHERE req_id = @pReqId ";
+                                WHERE id = @pId ";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
@@ -202,7 +206,8 @@ namespace hrd_holding.Repositories
 
                         cmd.CommandType = CommandType.Text;
 
-                        cmd.Parameters.AddWithValue("@pReqId", pModel.req_id);
+                        cmd.Parameters.AddWithValue("@pId", pModel.id);
+                        cmd.Parameters.AddWithValue("@precruitment_id", pModel.recruitment_id);
                         cmd.Parameters.AddWithValue("@pname_employer", pModel.name_employer);
                         cmd.Parameters.AddWithValue("@pbusiness", pModel.business);
                         cmd.Parameters.AddWithValue("@pstart_date", pModel.start_date);
@@ -212,29 +217,29 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@preason_leave", pModel.reason_leave);
 
                         vStatus = cmd.ExecuteNonQuery();
-                        Log.Debug(DateTime.Now + " UPDATE Recruitment EXPERIENCE SUCCESS....<br/> Code : " + pModel.req_id + " Name : " + pModel.name_employer);
+                        Log.Debug(DateTime.Now + " UPDATE Recruitment EXPERIENCE SUCCESS....<br/> Code : " + pModel.request_id + " Name : " + pModel.name_employer);
 
                         objHasil.isValid = Convert.ToBoolean(vStatus);
-                        objHasil.message = " UPDATE Recruitment EXPERIENCE SUCCESS, Code : " + pModel.req_id + " Name : " + pModel.name_employer;
+                        objHasil.message = " UPDATE Recruitment EXPERIENCE SUCCESS, Code : " + pModel.request_id + " Name : " + pModel.name_employer;
                     }
                 }
             }
             catch (Exception ex)
             {
                 objHasil.isValid = false;
-                objHasil.message = " UPDATE RECRUITMENT EXPERIENCE FAILED.....<br/> Code : " + pModel.req_id + " Name : " + pModel.name_employer;
+                objHasil.message = " UPDATE RECRUITMENT EXPERIENCE FAILED.....<br/> Code : " + pModel.request_id + " Name : " + pModel.name_employer;
 
-                Log.Error(DateTime.Now + " UPDATE RECRUITMENT EXPERIENCE FAILED, Code : " + pModel.req_id + " Name : " + pModel.name_employer, ex);
+                Log.Error(DateTime.Now + " UPDATE RECRUITMENT EXPERIENCE FAILED, Code : " + pModel.request_id + " Name : " + pModel.name_employer, ex);
             }
 
             return objHasil;
         }
 
-        public ResponseModel DeleteRecruitmentExp(int pReqId)
+        public ResponseModel DeleteRecruitmentExp(int pId)
         {
             var objHasil = new ResponseModel();
 
-            var SqlString = @"DELETE FROM hrd_recruitment_exp WHERE req_id = @pReqId";
+            var SqlString = @"DELETE FROM hrd_recruitment_exp WHERE id = @pId";
 
             try
             {
@@ -245,20 +250,20 @@ namespace hrd_holding.Repositories
                     {
 
                         cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("@pReqId", pReqId);
+                        cmd.Parameters.AddWithValue("@pId", pId);
 
                         var status = cmd.ExecuteNonQuery();
-                        Log.Debug(DateTime.Now + " DELETE RECRUITMENT EXPERIENCE SUCCESS.....<br/> Req Id : " + pReqId);
+                        Log.Debug(DateTime.Now + " DELETE RECRUITMENT EXPERIENCE SUCCESS.....<br/> Req Id : " + pId);
 
                         objHasil.isValid = Convert.ToBoolean(status);
-                        Log.Debug(DateTime.Now + " DELETE RECRUITMENT EXPERIENCE SUCCESS.....<br/> Req Id : " + pReqId);
+                        Log.Debug(DateTime.Now + " DELETE RECRUITMENT EXPERIENCE SUCCESS.....<br/> Req Id : " + pId);
                     }
                 }
             }
             catch (Exception ex)
             {
                 objHasil.isValid = false;
-                Log.Debug(DateTime.Now + " DELETE RECRUITMENT EXPERIENCE FAILED.....<br/> Req Id : " + pReqId);
+                Log.Debug(DateTime.Now + " DELETE RECRUITMENT EXPERIENCE FAILED.....<br/> Req Id : " + pId);
 
                 Log.Error(DateTime.Now + " DELETE RECRUITMENT EXPERIENCE FAILED", ex);
             }
@@ -266,14 +271,14 @@ namespace hrd_holding.Repositories
             return objHasil;
         }
 
-        public int getRecruitmentExpSeqNo(int pRecruitmentId)
+        public int getRecruitmentExpSeqNo(int pRequestId)
         {
             //Log.Debug(DateTime.Now + "=======>>>> MASUK REPO EMPLOYEE LIST, Emp Code : " + pEmployeeCode);
 
             var vNo = 0;
-            var strSQL = @"SELECT max(mef.seq_no) seq_no
+            var strSQL = @"SELECT max(seq_no) seq_no
                            FROM hrd_recruitment_exp
-                           WHERE recruitment_id = @pRecruitmentId";
+                           WHERE request_id = @pRequestId";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
@@ -282,7 +287,7 @@ namespace hrd_holding.Repositories
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("@pRecruitmentId", pRecruitmentId);
+                        cmd.Parameters.AddWithValue("@pRequestId", pRequestId);
 
                         using (MySqlDataReader aa = cmd.ExecuteReader())
                         {

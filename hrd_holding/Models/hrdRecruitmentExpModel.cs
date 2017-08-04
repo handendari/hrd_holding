@@ -7,7 +7,8 @@ namespace hrd_holding.Models
 {
     public class hrdRecruitmentExpModel
     {
-        public int req_id { get; set; }
+        public int id { get; set; }
+        public int request_id { get; set; }
         public int recruitment_id { get; set; }
         public int seq_no { get; set; }
         public string name_employer { get; set; }

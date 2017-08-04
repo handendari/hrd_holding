@@ -27848,3 +27848,1364 @@ DEBUG 2017-07-12 16:42:07,282 5230012ms hrdReqReqruitmentRepo  getRequestList   
                            FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
                            JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
                            WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,20
+DEBUG 2017-07-31 15:26:31,332 971631ms hrdRecruitmentRepo     getRecruitmentInfo - 7/31/2017 3:26:31 PM====>>>> Recruitment Id : 1
+DEBUG 2017-07-31 15:26:32,231 972530ms hrdRecruitmentService  GetRecuitmentInfo  - 7/31/2017 3:26:32 PM SERVICE Rec NIK : 
+DEBUG 2017-07-31 15:26:32,349 972648ms hrdRecruitmentFamRepo  ruitmentFamilyList - 7/31/2017 3:26:32 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 0
+DEBUG 2017-07-31 15:27:31,699 1031998ms hrdRecruitmentRepo     getRecruitmentInfo - 7/31/2017 3:27:31 PM====>>>> Recruitment Id : 1
+DEBUG 2017-07-31 15:27:32,221 1032519ms hrdRecruitmentService  GetRecuitmentInfo  - 7/31/2017 3:27:32 PM SERVICE Rec NIK : 
+DEBUG 2017-07-31 15:27:33,158 1033456ms hrdRecruitmentFamRepo  ruitmentFamilyList - 7/31/2017 3:27:33 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 0
+DEBUG 2017-07-31 15:27:56,885 1057183ms hrdRecruitmentRepo     getRecruitmentInfo - 7/31/2017 3:27:56 PM====>>>> Recruitment Id : 1
+DEBUG 2017-07-31 15:27:56,897 1057195ms hrdRecruitmentService  GetRecuitmentInfo  - 7/31/2017 3:27:56 PM SERVICE Rec NIK : 
+DEBUG 2017-07-31 15:27:56,917 1057215ms hrdRecruitmentFamRepo  ruitmentFamilyList - 7/31/2017 3:27:56 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 0
+DEBUG 2017-07-31 15:28:16,697 1076996ms hrdRecruitmentRepo     getRecruitmentInfo - 7/31/2017 3:28:16 PM====>>>> Recruitment Id : 1
+DEBUG 2017-07-31 15:28:16,709 1077008ms hrdRecruitmentService  GetRecuitmentInfo  - 7/31/2017 3:28:16 PM SERVICE Rec NIK : 
+DEBUG 2017-07-31 15:28:16,748 1077047ms hrdRecruitmentFamRepo  ruitmentFamilyList - 7/31/2017 3:28:16 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 0
+DEBUG 2017-07-31 15:28:58,902 1119200ms hrdRecruitmentRepo     getRecruitmentInfo - 7/31/2017 3:28:58 PM====>>>> Recruitment Id : 1
+DEBUG 2017-07-31 15:28:58,941 1119239ms hrdRecruitmentService  GetRecuitmentInfo  - 7/31/2017 3:28:58 PM SERVICE Rec NIK : 
+DEBUG 2017-07-31 15:28:58,967 1119265ms hrdRecruitmentFamRepo  ruitmentFamilyList - 7/31/2017 3:28:58 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 0
+DEBUG 2017-07-31 15:30:04,532 1184830ms hrdRecruitmentRepo     getRecruitmentInfo - 7/31/2017 3:30:04 PM====>>>> Recruitment Id : 1
+DEBUG 2017-07-31 15:30:04,570 1184868ms hrdRecruitmentService  GetRecuitmentInfo  - 7/31/2017 3:30:04 PM SERVICE Rec NIK : 
+DEBUG 2017-07-31 15:30:05,043 1185341ms hrdRecruitmentFamRepo  ruitmentFamilyList - 7/31/2017 3:30:05 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 0
+DEBUG 2017-07-31 15:52:06,813    90ms hrdRecruitmentRepo     getRecruitmentInfo - 7/31/2017 3:52:06 PM====>>>> Recruitment Id : 1
+DEBUG 2017-07-31 15:52:07,116   393ms hrdRecruitmentService  GetRecuitmentInfo  - 7/31/2017 3:52:07 PM SERVICE Rec NIK : 
+DEBUG 2017-07-31 15:52:07,275   552ms hrdRecruitmentFamRepo  ruitmentFamilyList - 7/31/2017 3:52:07 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 0
+DEBUG 2017-07-31 15:56:23,978   247ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 3:56:23 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 15:59:27,735   137ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 3:59:27 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:03:02,802   144ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:03:02 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:03:02,950   292ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:03:02 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-31 16:05:18,738   138ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:05:18 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:05:18,852   252ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:05:18 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-31 16:06:04,085   139ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:06:04 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:06:04,668   721ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:06:04 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-31 16:12:40,167   137ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:12:40 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:12:40,325   295ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:12:40 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-31 16:13:38,258 58228ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:13:38 PMBranchCode = 1 RecId = 1
+DEBUG 2017-07-31 16:13:38,263 58233ms hrdRecruitmentRepo     getRecruitmentInfo - 7/31/2017 4:13:38 PM====>>>> Recruitment Id : 1
+DEBUG 2017-07-31 16:13:38,410 58380ms hrdRecruitmentService  GetRecuitmentInfo  - 7/31/2017 4:13:38 PM SERVICE Rec NIK : 
+DEBUG 2017-07-31 16:13:38,814 58784ms hrdRecruitmentFamRepo  ruitmentFamilyList - 7/31/2017 4:13:38 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 0
+DEBUG 2017-07-31 16:13:39,940 59910ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:13:39 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:13:39,980 59950ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:13:39 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-31 16:17:16,973 276943ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:17:16 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:17:16,981 276951ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:17:16 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-31 16:18:29,230 349200ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:18:29 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:18:29,247 349217ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:18:29 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-31 16:19:15,224 395193ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:19:15 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:19:15,547 395517ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:19:15 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-31 16:19:22,297 402267ms dReqRecruitmentService GetRequestList     - 7/31/2017 4:19:22 PM vRows : 15 vStart : 0
+DEBUG 2017-07-31 16:19:22,301 402271ms hrdReqReqruitmentRepo  getRequestList     - 7/31/2017 4:19:22 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-07-31 16:20:14,658 454627ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:20:14 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:20:14,678 454647ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:20:14 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-31 16:20:17,622 457592ms dReqRecruitmentService GetRequestList     - 7/31/2017 4:20:17 PM vRows : 15 vStart : 0
+DEBUG 2017-07-31 16:20:17,622 457592ms hrdReqReqruitmentRepo  getRequestList     - 7/31/2017 4:20:17 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-07-31 16:23:18,668 638638ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:23:18 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:23:18,729 638699ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:23:18 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-31 16:23:21,892 641862ms dReqRecruitmentService GetRequestList     - 7/31/2017 4:23:21 PM vRows : 15 vStart : 0
+DEBUG 2017-07-31 16:23:21,893 641863ms hrdReqReqruitmentRepo  getRequestList     - 7/31/2017 4:23:21 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-07-31 16:26:00,305 800274ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:26:00 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:26:00,339 800308ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:26:00 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-31 16:26:02,355 802325ms dReqRecruitmentService GetRequestList     - 7/31/2017 4:26:02 PM vRows : 15 vStart : 0
+DEBUG 2017-07-31 16:26:02,356 802326ms hrdReqReqruitmentRepo  getRequestList     - 7/31/2017 4:26:02 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-07-31 16:26:26,840 826810ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:26:26 PMBranchCode = 1 RecId = 0
+DEBUG 2017-07-31 16:26:26,901 826871ms dRecruitmentController RecruitmentInfoAll - 7/31/2017 4:26:26 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-07-31 16:26:28,371 828340ms dReqRecruitmentService GetRequestList     - 7/31/2017 4:26:28 PM vRows : 15 vStart : 0
+DEBUG 2017-07-31 16:26:28,371 828340ms hrdReqReqruitmentRepo  getRequestList     - 7/31/2017 4:26:28 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 09:02:29,373 15541ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 9:02:29 AMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 09:02:29,891 16059ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 9:02:29 AM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 11:48:42,764  8815ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 11:48:42 AMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 11:48:43,106  9156ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 11:48:43 AM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 11:48:45,229 11279ms dReqRecruitmentService GetRequestList     - 8/1/2017 11:48:45 AM vRows : 15 vStart : 0
+DEBUG 2017-08-01 11:48:45,233 11283ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 11:48:45 AM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 11:49:48,387 74438ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 11:49:48 AMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 11:49:48,410 74461ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 11:49:48 AM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 11:49:53,192 79242ms dReqRecruitmentService GetRequestList     - 8/1/2017 11:49:53 AM vRows : 15 vStart : 0
+DEBUG 2017-08-01 11:49:53,193 79243ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 11:49:53 AM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 11:51:04,507 150557ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 11:51:04 AMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 11:51:04,523 150573ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 11:51:04 AM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 11:51:08,209 154260ms dReqRecruitmentService GetRequestList     - 8/1/2017 11:51:08 AM vRows : 15 vStart : 0
+DEBUG 2017-08-01 11:51:08,210 154261ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 11:51:08 AM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 11:51:50,452 196502ms cruitmentFamController dateRecruitmentFam - 8/1/2017 11:51:50 AMUpdate Recruitment Fam Seq No : 0, Name : andris handendari
+DEBUG 2017-08-01 11:51:50,472 196522ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 11:51:50 AM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : andris handendari
+DEBUG 2017-08-01 11:55:50,407 436457ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 11:55:50 AMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 11:55:50,487 436537ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 11:55:50 AM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 11:56:06,958 453008ms dReqRecruitmentService GetRequestList     - 8/1/2017 11:56:06 AM vRows : 15 vStart : 0
+DEBUG 2017-08-01 11:56:06,959 453009ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 11:56:06 AM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 11:57:25,529 531580ms cruitmentFamController sertRecruitmentFam - 8/1/2017 11:57:25 AMInsert Recruitment Fam Seq No : 0, Name : handendari
+ERROR 2017-08-01 11:57:25,539 531589ms hrdRecruitmentFamRepo  uitmentFamilySeqNo - 8/1/2017 11:57:25 AM GetRecruitmentEduSeqNo FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'mef.seq_no' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentFamRepo.getRecruitmentFamilySeqNo(Int32 pRecruitmentId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentFamRepo.cs:line 299
+DEBUG 2017-08-01 11:57:25,594 531644ms hrdRecruitmentFamRepo  tRecruitmentFamily - 8/1/2017 11:57:25 AM INSERT RECRUITMENT FAMILY SUCCESS....<br/> REQUEST ID : 2 Name : handendari
+DEBUG 2017-08-01 12:10:50,708  9414ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 12:10:50 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 12:10:50,874  9580ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 12:10:50 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 12:10:52,429 11135ms dReqRecruitmentService GetRequestList     - 8/1/2017 12:10:52 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 12:10:52,434 11140ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 12:10:52 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 12:11:36,438 55144ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 12:11:36 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 12:11:36,459 55165ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 12:11:36 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 12:11:42,271 60977ms dReqRecruitmentService GetRequestList     - 8/1/2017 12:11:42 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 12:11:42,271 60977ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 12:11:42 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 12:12:33,786 112492ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 12:12:33 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 12:12:33,796 112502ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 12:12:33 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 12:12:35,911 114617ms dReqRecruitmentService GetRequestList     - 8/1/2017 12:12:35 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 12:12:35,912 114618ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 12:12:35 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+ERROR 2017-08-01 12:12:37,992 116698ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 12:12:37 PM getRecruitmentFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.hrdRecruitmentFamRepo.getRecruitmentFamilyList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentFamRepo.cs:line 99
+DEBUG 2017-08-01 12:12:37,997 116703ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 12:12:37 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 0
+DEBUG 2017-08-01 13:59:05,933  6446ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 1:59:05 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 13:59:06,783  7295ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 1:59:06 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 13:59:07,976  8489ms dReqRecruitmentService GetRequestList     - 8/1/2017 1:59:07 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 13:59:07,980  8493ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 1:59:07 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+ERROR 2017-08-01 13:59:10,610 11123ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 1:59:10 PM getRecruitmentFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.hrdRecruitmentFamRepo.getRecruitmentFamilyList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentFamRepo.cs:line 99
+DEBUG 2017-08-01 13:59:10,614 11127ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 1:59:10 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 0
+ERROR 2017-08-01 14:24:08,868   626ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 2:24:08 PM getRecruitmentFamilyList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.hrdRecruitmentFamRepo.getRecruitmentFamilyList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentFamRepo.cs:line 99
+DEBUG 2017-08-01 14:24:08,969   728ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 2:24:08 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 0
+DEBUG 2017-08-01 14:27:30,178   252ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 2:27:30 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 14:27:49,077 19152ms dReqRecruitmentService GetRequestList     - 8/1/2017 2:27:49 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 14:27:49,081 19156ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 2:27:49 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 14:27:51,721 21795ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 2:27:51 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 14:31:45,903 255977ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 2:31:45 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 14:31:45,926 256000ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 2:31:45 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 14:31:49,385 259459ms dReqRecruitmentService GetRequestList     - 8/1/2017 2:31:49 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 14:31:49,386 259460ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 2:31:49 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 14:31:51,009 261083ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 2:31:51 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 14:33:28,386 358461ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 2:33:28 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 14:33:28,398 358473ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 2:33:28 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 14:33:30,715 360789ms dReqRecruitmentService GetRequestList     - 8/1/2017 2:33:30 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 14:33:30,716 360790ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 2:33:30 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 14:33:32,647 362721ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 2:33:32 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 14:38:58,469 688544ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 2:38:58 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 14:38:58,598 688673ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 2:38:58 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 14:39:01,136 691211ms dReqRecruitmentService GetRequestList     - 8/1/2017 2:39:01 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 14:39:01,136 691211ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 2:39:01 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 14:39:02,789 692864ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 2:39:02 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 14:56:17,911 1727986ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 2:56:17 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 14:56:18,012 1728087ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 2:56:18 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 14:56:22,176 1732251ms dReqRecruitmentService GetRequestList     - 8/1/2017 2:56:22 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 14:56:22,176 1732251ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 2:56:22 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 14:56:23,722 1733797ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 2:56:23 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 14:57:40,921 1810996ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 2:57:40 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 14:57:40,971 1811046ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 2:57:40 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 14:57:45,824 1815899ms dReqRecruitmentService GetRequestList     - 8/1/2017 2:57:45 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 14:57:45,825 1815900ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 2:57:45 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 14:57:47,379 1817453ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 2:57:47 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 14:58:34,116 1864190ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 2:58:34 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 14:58:34,191 1864265ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 2:58:34 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 14:58:37,520 1867595ms dReqRecruitmentService GetRequestList     - 8/1/2017 2:58:37 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 14:58:37,521 1867596ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 2:58:37 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 14:58:39,266 1869341ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 2:58:39 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 14:59:07,312 1897386ms cruitmentFamController dateRecruitmentFam - 8/1/2017 2:59:07 PMUpdate Recruitment Fam Seq No : 0, Name : handendari
+DEBUG 2017-08-01 14:59:07,331 1897405ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 2:59:07 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : handendari
+DEBUG 2017-08-01 14:59:21,995 1912070ms dReqRecruitmentService GetRequestList     - 8/1/2017 2:59:21 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 14:59:21,996 1912071ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 2:59:21 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 14:59:23,921 1913996ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 2:59:23 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:07:37,676 2407750ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:07:37 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 15:07:37,768 2407842ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:07:37 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 15:07:40,181 2410255ms dReqRecruitmentService GetRequestList     - 8/1/2017 3:07:40 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 15:07:40,181 2410255ms hrdReqReqruitmentRepo  getRequestList     - 8/1/2017 3:07:40 PM====>>>> strSQL : SELECT hr.id,
+                                  IFNULL(hr.company_code,0) company_code,IFNULL(mco.int_company,'') int_company,IFNULL(mco.company_name,'') company_name,
+	                              IFNULL(hr.branch_code,0) branch_code,IFNULL(mbo.int_branch,'') int_branch,IFNULL(mbo.branch_name,'') branch_name,
+	                              hr.date_req,IFNULL(hr.no_req,'') no_req,IFNULL(hr.position_need,'') position_need,IFNULL(hr.reason,'') reason,
+                                  IFNULL(hr.sex,0) sex,IFNULL(hr.age_min,0) age_min,IFNULL(hr.education,'') education,
+                                  IFNULL(hr.job_experience,'') job_experience,IFNULL(hr.english_skill,'') english_skill,
+                                  IFNULL(hr.certificate,'') certificate,IFNULL(hr.marital_status,0) marital_status,
+                                  IFNULL(hr.job_title,'') job_title,IFNULL(hr.job_purpose,'') job_purpose,IFNULL(hr.responsibility,'') responsibility,
+                                  IFNULL(hr.count_staff,0) count_staff,IFNULL(hr.authority,'') authority,
+                                  IFNULL(hr.job_relationship,'') job_relationship,IFNULL(hr.job_self,'') job_self,
+                                  IFNULL(hr.source_employee,0) source_employee,
+                                  CASE WHEN IFNULL(hr.source_employee,0) = 0 THEN 'INTERNAL' ELSE 'EXTERNAL' END source_employee2,
+                                  hr.work_plan,IFNULL(hr.note,'') note,
+                                  IFNULL(hr.count_needed,0) count_needed,IFNULL(hr.request_by,'') request_by,
+                                  IFNULL(hr.flag_status,0) flag_status,IFNULL(hr.flag_approval,0) flag_approval,IFNULL(hr.user_approval,'') user_approval,
+	                              hr.entry_date,IFNULL(hr.entry_user,'') entry_user
+                           FROM hrd_req_recruitment hr JOIN m_company mco ON hr.company_code = mco.company_code
+                           JOIN m_branch_office mbo ON hr.branch_code = mbo.branch_code 
+                           WHERE hr.company_code = @pCompanyCode AND hr.branch_code = @pBranchCode AND IFNULL(hr.flag_status,0) = @pFlagStatus    LIMIT 0,15
+DEBUG 2017-08-01 15:07:41,966 2412040ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:07:41 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:08:08,377 2438451ms cruitmentFamController dateRecruitmentFam - 8/1/2017 3:08:08 PMUpdate Recruitment Fam Seq No : 0, Name : handendari
+DEBUG 2017-08-01 15:08:08,389 2438463ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:08:08 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : handendari
+DEBUG 2017-08-01 15:09:59,650  9053ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:09:59 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 15:09:59,826  9229ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:09:59 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 15:21:45,463   136ms dReqRecruitmentService GetRequestList     - 8/1/2017 3:21:45 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 15:21:47,242  1914ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:21:47 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:22:34,486 49159ms cruitmentFamController dateRecruitmentFam - 8/1/2017 3:22:34 PMUpdate Recruitment Fam Seq No : 0, Name : handendari
+DEBUG 2017-08-01 15:22:34,488 49161ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:22:34 PM UPDATE Recruitment FAMILY ===>>> Code : 0 Name : handendari Name Employer : gudang garam education : sma
+DEBUG 2017-08-01 15:22:34,504 49177ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:22:34 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : handendari
+DEBUG 2017-08-01 15:22:37,870 52542ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:22:37 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:25:54,383   192ms cruitmentFamController dateRecruitmentFam - 8/1/2017 3:25:54 PMUpdate Recruitment Fam Seq No : 0, Name : handendari
+DEBUG 2017-08-01 15:25:54,433   242ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:25:54 PM UPDATE Recruitment FAMILY ===>>> ID : 0 Name : handendari Name Employer : adadasdasdsad education : sma
+DEBUG 2017-08-01 15:25:54,543   352ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:25:54 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : handendari
+DEBUG 2017-08-01 15:25:54,583   392ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:25:54 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:26:57,610 63419ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:26:57 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 15:26:57,626 63435ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:26:57 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 15:30:55,141 300950ms dReqRecruitmentService GetRequestList     - 8/1/2017 3:30:55 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 15:30:56,908 302717ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:30:56 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:31:07,421 313230ms cruitmentFamController dateRecruitmentFam - 8/1/2017 3:31:07 PMUpdate Recruitment Fam Seq No : 0, Name : handendari
+DEBUG 2017-08-01 15:31:07,422 313231ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:31:07 PM UPDATE Recruitment FAMILY ===>>> ID : 0 Name : handendari Name Employer : fasdfasdfasf education : sma
+DEBUG 2017-08-01 15:31:07,434 313243ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:31:07 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : handendari
+DEBUG 2017-08-01 15:31:07,507 313316ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:31:07 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:33:48,734    77ms cruitmentFamController dateRecruitmentFam - 8/1/2017 3:33:48 PMUpdate Recruitment Fam ID : 0, Name : handendari
+DEBUG 2017-08-01 15:33:48,765   108ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:33:48 PM UPDATE Recruitment FAMILY ===>>> ID : 0 Name : handendari Name Employer : fsdfsdfdsfsdf education : sma
+DEBUG 2017-08-01 15:33:49,267   609ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:33:49 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : handendari
+DEBUG 2017-08-01 15:33:49,296   638ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:33:49 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:33:56,514  7856ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:33:56 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 15:33:56,620  7962ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:33:56 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 15:34:01,168 12510ms dReqRecruitmentService GetRequestList     - 8/1/2017 3:34:01 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 15:34:02,700 14042ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:34:02 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:39:37,721   245ms cruitmentFamController dateRecruitmentFam - 8/1/2017 3:39:37 PMUpdate Recruitment Fam ID : 0, Name : handendari
+DEBUG 2017-08-01 15:39:37,804   328ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:39:37 PM UPDATE Recruitment FAMILY ===>>> ID : 0 Name : handendari Name Employer : fdgdfgsdgsdfg education : sma
+DEBUG 2017-08-01 15:39:37,928   452ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:39:37 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : handendari
+DEBUG 2017-08-01 15:39:37,969   493ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:39:37 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:39:45,413  7937ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:39:45 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 15:39:45,424  7948ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:39:45 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 15:39:47,333  9857ms dReqRecruitmentService GetRequestList     - 8/1/2017 3:39:47 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 15:39:48,969 11493ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:39:48 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:41:11,605 94129ms cruitmentFamController dateRecruitmentFam - 8/1/2017 3:41:11 PMUpdate Recruitment Fam ID : 0, Name : handendari
+DEBUG 2017-08-01 15:41:11,607 94131ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:41:11 PM UPDATE Recruitment FAMILY ===>>> ID : 0 Name : handendari Name Employer : sdgsdfgsdfgsdfg education : sma
+DEBUG 2017-08-01 15:41:11,615 94139ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:41:11 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : handendari
+DEBUG 2017-08-01 15:41:13,179 95703ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:41:13 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 15:41:13,187 95711ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:41:13 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 15:41:15,647 98171ms dReqRecruitmentService GetRequestList     - 8/1/2017 3:41:15 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 15:41:16,959 99483ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:41:16 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:43:21,781 224305ms cruitmentFamController dateRecruitmentFam - 8/1/2017 3:43:21 PMUpdate Recruitment Fam ID : 0, Name : handendari
+DEBUG 2017-08-01 15:43:21,783 224307ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:43:21 PM UPDATE Recruitment FAMILY ===>>> ID : 0 Name : handendari Name Employer : dfgsdfgsdfgsg education : sma
+DEBUG 2017-08-01 15:43:21,939 224463ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:43:21 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : handendari
+DEBUG 2017-08-01 15:43:23,493 226017ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:43:23 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 15:43:23,629 226153ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:43:23 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 15:43:46,151 248675ms dReqRecruitmentService GetRequestList     - 8/1/2017 3:43:46 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 15:43:47,736 250260ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:43:47 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:44:41,364 303888ms cruitmentFamController dateRecruitmentFam - 8/1/2017 3:44:41 PMUpdate Recruitment Fam ID : 0, Name : handendari
+DEBUG 2017-08-01 15:44:41,365 303889ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:44:41 PM UPDATE Recruitment FAMILY ===>>> ID : 0 Name : handendari Name Employer : sddsfasdfasf education : sma
+DEBUG 2017-08-01 15:44:41,378 303902ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:44:41 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : handendari
+DEBUG 2017-08-01 15:44:42,905 305429ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:44:42 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 15:44:42,915 305439ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:44:42 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 15:44:45,958 308482ms dReqRecruitmentService GetRequestList     - 8/1/2017 3:44:45 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 15:44:47,416 309940ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:44:47 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:45:30,800 353324ms cruitmentFamController dateRecruitmentFam - 8/1/2017 3:45:30 PMUpdate Recruitment Fam ID : 0, Name : handendari
+DEBUG 2017-08-01 15:45:30,801 353325ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:45:30 PM UPDATE Recruitment FAMILY ===>>> ID : 0 Name : handendari Name Employer : adadasd education : sma
+DEBUG 2017-08-01 15:45:30,829 353353ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:45:30 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 0 Name : handendari
+DEBUG 2017-08-01 15:45:33,865 356389ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:45:33 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 15:45:33,885 356409ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:45:33 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 15:45:35,253 357777ms dReqRecruitmentService GetRequestList     - 8/1/2017 3:45:35 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 15:45:36,626 359150ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:45:36 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:46:33,880 416404ms cruitmentFamController dateRecruitmentFam - 8/1/2017 3:46:33 PMUpdate Recruitment Fam ID : 1, Name : handendari
+DEBUG 2017-08-01 15:46:33,882 416406ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:46:33 PM UPDATE Recruitment FAMILY ===>>> ID : 1 Name : handendari Name Employer : sadasdsad education : sma
+DEBUG 2017-08-01 15:46:33,908 416432ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:46:33 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : handendari
+DEBUG 2017-08-01 15:46:35,432 417956ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:46:35 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 15:46:35,440 417964ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:46:35 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 15:46:37,220 419744ms dReqRecruitmentService GetRequestList     - 8/1/2017 3:46:37 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 15:46:38,837 421361ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:46:38 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:46:59,592 442116ms cruitmentFamController dateRecruitmentFam - 8/1/2017 3:46:59 PMUpdate Recruitment Fam ID : 1, Name : handendari
+DEBUG 2017-08-01 15:46:59,593 442117ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:46:59 PM UPDATE Recruitment FAMILY ===>>> ID : 1 Name : handendari Name Employer : gudang garam education : sma
+DEBUG 2017-08-01 15:46:59,673 442197ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 3:46:59 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : handendari
+DEBUG 2017-08-01 15:46:59,721 442245ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:46:59 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:55:45,614 968138ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:55:45 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 15:55:45,760 968284ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:55:45 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 15:55:47,272 969796ms dReqRecruitmentService GetRequestList     - 8/1/2017 3:55:47 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 15:55:49,619 972143ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:55:49 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:56:45,902 1028426ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:56:45 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 15:56:45,920 1028444ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 3:56:45 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 15:56:48,250 1030774ms dReqRecruitmentService GetRequestList     - 8/1/2017 3:56:48 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 15:56:49,797 1032321ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:56:49 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-01 15:57:41,399 1083923ms cruitmentFamController sertRecruitmentFam - 8/1/2017 3:57:41 PMInsert Recruitment Fam Seq No : 0, Name : Buadi
+ERROR 2017-08-01 15:57:41,418 1083942ms hrdRecruitmentFamRepo  uitmentFamilySeqNo - 8/1/2017 3:57:41 PM GetRecruitmentEduSeqNo FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'mef.seq_no' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentFamRepo.getRecruitmentFamilySeqNo(Int32 pRecruitmentId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentFamRepo.cs:line 300
+DEBUG 2017-08-01 15:57:41,479 1084003ms hrdRecruitmentFamRepo  tRecruitmentFamily - 8/1/2017 3:57:41 PM INSERT RECRUITMENT FAMILY SUCCESS....<br/> REQUEST ID : 2 Name : Buadi
+DEBUG 2017-08-01 15:57:41,496 1084020ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 3:57:41 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 2
+DEBUG 2017-08-01 16:00:01,743  7594ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:00:01 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 16:00:01,871  7722ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:00:01 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 16:00:34,124 39975ms dReqRecruitmentService GetRequestList     - 8/1/2017 4:00:34 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 16:00:35,687 41538ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 4:00:35 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 2
+DEBUG 2017-08-01 16:03:03,901 189752ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:03:03 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 16:03:04,288 190139ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:03:04 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 16:03:06,295 192145ms dReqRecruitmentService GetRequestList     - 8/1/2017 4:03:06 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 16:03:07,901 193751ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 4:03:07 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 2
+DEBUG 2017-08-01 16:05:49,577  7436ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:05:49 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 16:05:50,062  7922ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:05:50 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 16:05:54,004 11864ms dReqRecruitmentService GetRequestList     - 8/1/2017 4:05:54 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 16:05:55,898 13758ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 4:05:55 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 2
+DEBUG 2017-08-01 16:06:16,827 34686ms cruitmentFamController dateRecruitmentFam - 8/1/2017 4:06:16 PMUpdate Recruitment Fam ID : 2, Name : Buadi
+DEBUG 2017-08-01 16:06:16,829 34688ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 4:06:16 PM UPDATE Recruitment FAMILY ===>>> ID : 2 Name : Buadi Name Employer : - education : TK
+DEBUG 2017-08-01 16:06:16,858 34717ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 4:06:16 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : Buadi
+DEBUG 2017-08-01 16:06:16,877 34736ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 4:06:16 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 2
+DEBUG 2017-08-01 16:06:30,266 48126ms cruitmentFamController dateRecruitmentFam - 8/1/2017 4:06:30 PMUpdate Recruitment Fam ID : 2, Name : Buadi
+DEBUG 2017-08-01 16:06:30,266 48126ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 4:06:30 PM UPDATE Recruitment FAMILY ===>>> ID : 2 Name : Buadi Name Employer : - education : TK
+DEBUG 2017-08-01 16:06:30,303 48163ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 4:06:30 PM UPDATE Recruitment FAMILY SUCCESS....<br/> Code : 2 Name : Buadi
+DEBUG 2017-08-01 16:06:30,317 48177ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 4:06:30 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 2
+DEBUG 2017-08-01 16:08:35,940 173799ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:08:35 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 16:08:35,956 173815ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:08:35 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 16:08:41,563 179423ms dReqRecruitmentService GetRequestList     - 8/1/2017 4:08:41 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 16:08:43,176 181036ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 4:08:43 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 2
+DEBUG 2017-08-01 16:09:14,872 212732ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:09:14 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 16:09:18,633 216492ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:09:18 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 16:09:20,017 217876ms dReqRecruitmentService GetRequestList     - 8/1/2017 4:09:20 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 16:09:24,308 222168ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 4:09:24 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 2
+DEBUG 2017-08-01 16:45:31,646  4599ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:45:31 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 16:45:32,015  4968ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:45:32 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 16:45:40,346 13300ms dReqRecruitmentService GetRequestList     - 8/1/2017 4:45:40 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 16:45:41,792 14745ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 4:45:41 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 2
+DEBUG 2017-08-01 16:46:55,703 88657ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:46:55 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-01 16:46:55,747 88701ms dRecruitmentController RecruitmentInfoAll - 8/1/2017 4:46:55 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-01 16:46:57,887 90840ms dReqRecruitmentService GetRequestList     - 8/1/2017 4:46:57 PM vRows : 15 vStart : 0
+DEBUG 2017-08-01 16:46:59,548 92501ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 4:46:59 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 2
+DEBUG 2017-08-01 16:47:05,157 98110ms cruitmentFamController leteRecruitmentFam - 8/1/2017 4:47:05 PMMASUK DELETE Id : 2
+DEBUG 2017-08-01 16:47:05,174 98127ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 4:47:05 PM DELETE RECRUITMENT FAMILY FAILED.....<br/> Req Id : 2
+ERROR 2017-08-01 16:47:05,175 98128ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 4:47:05 PM DELETE RECRUITMENT FAMILY FAILED
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'req_id' in 'where clause'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at hrd_holding.Repositories.hrdRecruitmentFamRepo.DeleteRecruitmentFamily(Int32 pReqId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentFamRepo.cs:line 263
+DEBUG 2017-08-01 16:50:52,457   208ms cruitmentFamController leteRecruitmentFam - 8/1/2017 4:50:52 PMMASUK DELETE Id : 2
+DEBUG 2017-08-01 16:50:52,663   414ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 4:50:52 PM DELETE RECRUITMENT FAMILY SUCCESS.....<br/> FAMILY Id : 2
+DEBUG 2017-08-01 16:50:52,665   416ms hrdRecruitmentFamRepo  eRecruitmentFamily - 8/1/2017 4:50:52 PM DELETE RECRUITMENT FAMILY SUCCESS.....<br/> FAMILY Id : 2
+DEBUG 2017-08-01 16:50:52,701   452ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/1/2017 4:50:52 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 10:48:38,433 139278ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 10:48:38 AMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 10:48:38,851 139696ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 10:48:38 AM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 10:48:40,614 141460ms dReqRecruitmentService GetRequestList     - 8/2/2017 10:48:40 AM vRows : 15 vStart : 0
+DEBUG 2017-08-02 10:48:42,597 143442ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 10:48:42 AM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 15:17:17,710 11110ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:17:17 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 15:17:18,027 11427ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:17:18 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 15:31:59,110  7739ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:31:59 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 15:31:59,300  7930ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:31:59 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 15:32:25,192 33822ms dReqRecruitmentService GetRequestList     - 8/2/2017 3:32:25 PM vRows : 15 vStart : 0
+DEBUG 2017-08-02 15:32:27,096 35725ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 3:32:27 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 15:33:42,145 110774ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:33:42 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 15:33:42,414 111044ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:33:42 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 15:33:44,282 112912ms dReqRecruitmentService GetRequestList     - 8/2/2017 3:33:44 PM vRows : 15 vStart : 0
+DEBUG 2017-08-02 15:33:46,456 115085ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 3:33:46 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 15:34:22,638 151268ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:34:22 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 15:34:22,655 151285ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:34:22 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 15:34:26,122 154751ms dReqRecruitmentService GetRequestList     - 8/2/2017 3:34:26 PM vRows : 15 vStart : 0
+DEBUG 2017-08-02 15:34:27,772 156401ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 3:34:27 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 15:34:51,264 179894ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:34:51 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 15:34:51,281 179911ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:34:51 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 15:34:53,450 182079ms dReqRecruitmentService GetRequestList     - 8/2/2017 3:34:53 PM vRows : 15 vStart : 0
+DEBUG 2017-08-02 15:34:55,072 183702ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 3:34:55 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 15:36:04,063 252693ms cruitmentEduController sertRecruitmentEdu - 8/2/2017 3:36:04 PMInsert Recruitment Edu Seq No : 0, School : UPN VETERAN JATIM
+ERROR 2017-08-02 15:36:04,147 252777ms hrdRecruitmentEduRepo  ecruitmentEduSeqNo - 8/2/2017 3:36:04 PM GetRecruitmentEduSeqNo FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@pRequestId' must be defined.
+   at MySql.Data.MySqlClient.Statement.SerializeParameter(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex)
+   at MySql.Data.MySqlClient.Statement.InternalBindParameters(String sql, MySqlParameterCollection parameters, MySqlPacket packet)
+   at MySql.Data.MySqlClient.Statement.BindParameters()
+   at MySql.Data.MySqlClient.PreparableStatement.Execute()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentEduRepo.getRecruitmentEduSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentEduRepo.cs:line 284
+DEBUG 2017-08-02 15:36:04,247 252877ms hrdRecruitmentEduRepo  sertRecruitmentEdu - 8/2/2017 3:36:04 PM INSERT RECRUITMENT EDU SUCCESS....<br/> REQUEST ID : 0 Name : UPN VETERAN JATIM
+DEBUG 2017-08-02 15:42:54,994   138ms cruitmentEduController RecruitmentEduList - 8/2/2017 3:42:54 PM Request ID : 2
+DEBUG 2017-08-02 15:44:24,025 89169ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:44:24 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 15:44:24,046 89190ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:44:24 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 15:44:48,228 113371ms dReqRecruitmentService GetRequestList     - 8/2/2017 3:44:48 PM vRows : 15 vStart : 0
+DEBUG 2017-08-02 15:44:50,158 115302ms cruitmentEduController RecruitmentEduList - 8/2/2017 3:44:50 PM Request ID : 2
+DEBUG 2017-08-02 15:44:50,403 115547ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 3:44:50 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 15:45:50,799 175942ms cruitmentEduController RecruitmentEduList - 8/2/2017 3:45:50 PM Request ID : 2
+DEBUG 2017-08-02 15:51:43,636 528779ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:51:43 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 15:51:43,747 528890ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:51:43 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 15:51:45,147 530290ms dReqRecruitmentService GetRequestList     - 8/2/2017 3:51:45 PM vRows : 15 vStart : 0
+DEBUG 2017-08-02 15:51:46,783 531926ms cruitmentEduController RecruitmentEduList - 8/2/2017 3:51:46 PM Request ID : 2
+DEBUG 2017-08-02 15:51:46,787 531930ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 3:51:46 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 15:52:29,703 574846ms cruitmentEduController sertRecruitmentEdu - 8/2/2017 3:52:29 PMInsert Recruitment Edu Seq No : 0, School : UMK ASDASDASD
+ERROR 2017-08-02 15:52:29,715 574858ms hrdRecruitmentEduRepo  ecruitmentEduSeqNo - 8/2/2017 3:52:29 PM GetRecruitmentEduSeqNo FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@pRequestId' must be defined.
+   at MySql.Data.MySqlClient.Statement.SerializeParameter(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex)
+   at MySql.Data.MySqlClient.Statement.InternalBindParameters(String sql, MySqlParameterCollection parameters, MySqlPacket packet)
+   at MySql.Data.MySqlClient.Statement.BindParameters()
+   at MySql.Data.MySqlClient.PreparableStatement.Execute()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentEduRepo.getRecruitmentEduSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentEduRepo.cs:line 284
+DEBUG 2017-08-02 15:52:29,804 574947ms hrdRecruitmentEduRepo  sertRecruitmentEdu - 8/2/2017 3:52:29 PM INSERT RECRUITMENT EDU SUCCESS....<br/> REQUEST ID : 2 Name : UMK ASDASDASD
+DEBUG 2017-08-02 15:52:29,814 574957ms cruitmentEduController RecruitmentEduList - 8/2/2017 3:52:29 PM Request ID : 2
+DEBUG 2017-08-02 15:57:12,667 857810ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:57:12 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 15:57:12,684 857827ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 3:57:12 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 15:57:15,474 860617ms dReqRecruitmentService GetRequestList     - 8/2/2017 3:57:15 PM vRows : 15 vStart : 0
+DEBUG 2017-08-02 15:57:16,902 862045ms cruitmentEduController RecruitmentEduList - 8/2/2017 3:57:16 PM Request ID : 2
+DEBUG 2017-08-02 15:57:16,915 862058ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 3:57:16 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 15:58:03,419 908562ms cruitmentEduController RecruitmentEduList - 8/2/2017 3:58:03 PM Request ID : 2
+DEBUG 2017-08-02 16:02:56,572 1201715ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 4:02:56 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 16:02:56,741 1201884ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 4:02:56 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 16:03:05,464 1210608ms dReqRecruitmentService GetRequestList     - 8/2/2017 4:03:05 PM vRows : 15 vStart : 0
+DEBUG 2017-08-02 16:03:07,389 1212532ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:03:07 PM Request ID : 2
+DEBUG 2017-08-02 16:03:07,395 1212538ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 4:03:07 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 16:03:56,727 1261870ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 4:03:56 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 16:03:56,737 1261880ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 4:03:56 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 16:03:59,934 1265077ms dReqRecruitmentService GetRequestList     - 8/2/2017 4:03:59 PM vRows : 15 vStart : 0
+DEBUG 2017-08-02 16:04:01,820 1266963ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:04:01 PM Request ID : 2
+DEBUG 2017-08-02 16:04:01,825 1266968ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 4:04:01 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 16:21:47,034 2332177ms cruitmentEduController dateRecruitmentEdu - 8/2/2017 4:21:47 PMUpdate Recruitment Edu Seq No : 0, School : UMK ASDASDASD
+DEBUG 2017-08-02 16:21:47,197 2332340ms hrdRecruitmentEduRepo  dateRecruitmentEdu - 8/2/2017 4:21:47 PM UPDATE Recruitment EDUCATION SUCCESS....<br/> Code : 2 Name : UMK ASDASDASD
+DEBUG 2017-08-02 16:21:47,207 2332350ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:21:47 PM Request ID : 2
+DEBUG 2017-08-02 16:22:17,147 2362290ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 4:22:17 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 16:22:17,444 2362587ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 4:22:17 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 16:22:21,122 2366265ms dReqRecruitmentService GetRequestList     - 8/2/2017 4:22:21 PM vRows : 15 vStart : 0
+DEBUG 2017-08-02 16:22:22,931 2368074ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:22:22 PM Request ID : 2
+DEBUG 2017-08-02 16:22:22,981 2368124ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 4:22:22 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 16:23:11,256 2416399ms cruitmentEduController sertRecruitmentEdu - 8/2/2017 4:23:11 PMInsert Recruitment Edu Seq No : 0, School : wertegsgsdfgsdfg
+ERROR 2017-08-02 16:23:11,443 2416586ms hrdRecruitmentEduRepo  ecruitmentEduSeqNo - 8/2/2017 4:23:11 PM GetRecruitmentEduSeqNo FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@pRequestId' must be defined.
+   at MySql.Data.MySqlClient.Statement.SerializeParameter(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex)
+   at MySql.Data.MySqlClient.Statement.InternalBindParameters(String sql, MySqlParameterCollection parameters, MySqlPacket packet)
+   at MySql.Data.MySqlClient.Statement.BindParameters()
+   at MySql.Data.MySqlClient.PreparableStatement.Execute()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentEduRepo.getRecruitmentEduSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentEduRepo.cs:line 284
+DEBUG 2017-08-02 16:23:11,482 2416625ms hrdRecruitmentEduRepo  sertRecruitmentEdu - 8/2/2017 4:23:11 PM INSERT RECRUITMENT EDU SUCCESS....<br/> REQUEST ID : 2 Name : wertegsgsdfgsdfg
+DEBUG 2017-08-02 16:23:11,528 2416671ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:23:11 PM Request ID : 2
+DEBUG 2017-08-02 16:31:24,300  8341ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 4:31:24 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 16:31:25,189  9230ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 4:31:25 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 16:31:29,064 13105ms dReqRecruitmentService GetRequestList     - 8/2/2017 4:31:29 PM vRows : 15 vStart : 0
+DEBUG 2017-08-02 16:31:30,694 14735ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:31:30 PM Request ID : 2
+DEBUG 2017-08-02 16:31:30,879 14920ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 4:31:30 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 16:31:41,670 25711ms cruitmentEduController leteRecruitmentEdu - 8/2/2017 4:31:41 PMMASUK DELETE Id : 3
+DEBUG 2017-08-02 16:31:41,714 25755ms hrdRecruitmentEduRepo  leteRecruitmentEdu - 8/2/2017 4:31:41 PM DELETE RECRUITMENT EDUCATION SUCCESS.....<br/> Req Id : 3
+DEBUG 2017-08-02 16:31:41,715 25756ms hrdRecruitmentEduRepo  leteRecruitmentEdu - 8/2/2017 4:31:41 PM DELETE RECRUITMENT EDUCATION SUCCESS.....<br/> Req Id : 3
+DEBUG 2017-08-02 16:31:41,750 25791ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:31:41 PM Request ID : 2
+DEBUG 2017-08-02 16:32:00,862 44903ms cruitmentEduController sertRecruitmentEdu - 8/2/2017 4:32:00 PMInsert Recruitment Edu Seq No : 0, School : fdsgsfdgsfdgsfdgsdfg
+ERROR 2017-08-02 16:32:00,867 44908ms hrdRecruitmentEduRepo  ecruitmentEduSeqNo - 8/2/2017 4:32:00 PM GetRecruitmentEduSeqNo FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@pRequestId' must be defined.
+   at MySql.Data.MySqlClient.Statement.SerializeParameter(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex)
+   at MySql.Data.MySqlClient.Statement.InternalBindParameters(String sql, MySqlParameterCollection parameters, MySqlPacket packet)
+   at MySql.Data.MySqlClient.Statement.BindParameters()
+   at MySql.Data.MySqlClient.PreparableStatement.Execute()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentEduRepo.getRecruitmentEduSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentEduRepo.cs:line 284
+DEBUG 2017-08-02 16:32:01,419 45460ms hrdRecruitmentEduRepo  sertRecruitmentEdu - 8/2/2017 4:32:01 PM INSERT RECRUITMENT EDU SUCCESS....<br/> REQUEST ID : 2 Name : fdsgsfdgsfdgsfdgsdfg
+DEBUG 2017-08-02 16:32:01,432 45473ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:32:01 PM Request ID : 2
+DEBUG 2017-08-02 16:33:25,445   142ms cruitmentEduController leteRecruitmentEdu - 8/2/2017 4:33:25 PMMASUK DELETE Id : 4
+DEBUG 2017-08-02 16:33:26,209   906ms hrdRecruitmentEduRepo  leteRecruitmentEdu - 8/2/2017 4:33:26 PM DELETE RECRUITMENT EDUCATION SUCCESS.....<br/> Req Id : 4
+DEBUG 2017-08-02 16:33:26,212   909ms hrdRecruitmentEduRepo  leteRecruitmentEdu - 8/2/2017 4:33:26 PM DELETE RECRUITMENT EDUCATION SUCCESS.....<br/> Req Id : 4
+DEBUG 2017-08-02 16:33:26,270   967ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:33:26 PM Request ID : 2
+DEBUG 2017-08-02 16:34:17,420 52117ms cruitmentEduController sertRecruitmentEdu - 8/2/2017 4:34:17 PMInsert Recruitment Edu Seq No : 0, School : rtyuuuuyturtyurtu
+ERROR 2017-08-02 16:34:17,426 52123ms hrdRecruitmentEduRepo  ecruitmentEduSeqNo - 8/2/2017 4:34:17 PM GetRecruitmentEduSeqNo FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@pRequestId' must be defined.
+   at MySql.Data.MySqlClient.Statement.SerializeParameter(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex)
+   at MySql.Data.MySqlClient.Statement.InternalBindParameters(String sql, MySqlParameterCollection parameters, MySqlPacket packet)
+   at MySql.Data.MySqlClient.Statement.BindParameters()
+   at MySql.Data.MySqlClient.PreparableStatement.Execute()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentEduRepo.getRecruitmentEduSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentEduRepo.cs:line 284
+DEBUG 2017-08-02 16:34:17,480 52176ms hrdRecruitmentEduRepo  sertRecruitmentEdu - 8/2/2017 4:34:17 PM INSERT RECRUITMENT EDU SUCCESS....<br/> REQUEST ID : 2 Name : rtyuuuuyturtyurtu
+DEBUG 2017-08-02 16:34:17,487 52183ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:34:17 PM Request ID : 2
+DEBUG 2017-08-02 16:37:04,539  8715ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 4:37:04 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-02 16:37:04,727  8902ms dRecruitmentController RecruitmentInfoAll - 8/2/2017 4:37:04 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-02 16:37:41,838 46013ms dReqRecruitmentService GetRequestList     - 8/2/2017 4:37:41 PM vRows : 15 vStart : 0
+DEBUG 2017-08-02 16:37:43,376 47551ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:37:43 PM Request ID : 2
+DEBUG 2017-08-02 16:37:43,451 47626ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/2/2017 4:37:43 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-02 16:37:59,750 63925ms cruitmentEduController sertRecruitmentEdu - 8/2/2017 4:37:59 PMInsert Recruitment Edu Seq No : 0, School : fasfasfasf
+ERROR 2017-08-02 16:37:59,770 63945ms hrdRecruitmentEduRepo  ecruitmentEduSeqNo - 8/2/2017 4:37:59 PM GetRecruitmentEduSeqNo FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@pRequestId' must be defined.
+   at MySql.Data.MySqlClient.Statement.SerializeParameter(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex)
+   at MySql.Data.MySqlClient.Statement.InternalBindParameters(String sql, MySqlParameterCollection parameters, MySqlPacket packet)
+   at MySql.Data.MySqlClient.Statement.BindParameters()
+   at MySql.Data.MySqlClient.PreparableStatement.Execute()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentEduRepo.getRecruitmentEduSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentEduRepo.cs:line 284
+DEBUG 2017-08-02 16:37:59,776 63951ms dRecruitmentEduService sertRecruitmentEdu - 8/2/2017 4:37:59 PM JUMLAH NO URUT : 1
+DEBUG 2017-08-02 16:37:59,838 64013ms hrdRecruitmentEduRepo  sertRecruitmentEdu - 8/2/2017 4:37:59 PM INSERT RECRUITMENT EDU SUCCESS....<br/> REQUEST ID : 2 Name : fasfasfasf
+DEBUG 2017-08-02 16:37:59,847 64022ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:37:59 PM Request ID : 2
+DEBUG 2017-08-02 16:38:48,390    68ms cruitmentEduController sertRecruitmentEdu - 8/2/2017 4:38:48 PMInsert Recruitment Edu Seq No : 0, School : fafasfsfsf
+DEBUG 2017-08-02 16:38:48,515   192ms dRecruitmentEduService sertRecruitmentEdu - 8/2/2017 4:38:48 PM JUMLAH NO URUT : 2
+DEBUG 2017-08-02 16:38:48,551   228ms hrdRecruitmentEduRepo  sertRecruitmentEdu - 8/2/2017 4:38:48 PM INSERT RECRUITMENT EDU SUCCESS....<br/> REQUEST ID : 2 Name : fafasfsfsf
+DEBUG 2017-08-02 16:38:48,566   243ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:38:48 PM Request ID : 2
+DEBUG 2017-08-02 16:38:55,028  6705ms cruitmentEduController leteRecruitmentEdu - 8/2/2017 4:38:55 PMMASUK DELETE Id : 5
+DEBUG 2017-08-02 16:38:55,057  6734ms hrdRecruitmentEduRepo  leteRecruitmentEdu - 8/2/2017 4:38:55 PM DELETE RECRUITMENT EDUCATION SUCCESS.....<br/> Req Id : 5
+DEBUG 2017-08-02 16:38:55,058  6735ms hrdRecruitmentEduRepo  leteRecruitmentEdu - 8/2/2017 4:38:55 PM DELETE RECRUITMENT EDUCATION SUCCESS.....<br/> Req Id : 5
+DEBUG 2017-08-02 16:38:55,066  6743ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:38:55 PM Request ID : 2
+DEBUG 2017-08-02 16:38:59,547 11224ms cruitmentEduController leteRecruitmentEdu - 8/2/2017 4:38:59 PMMASUK DELETE Id : 6
+DEBUG 2017-08-02 16:38:59,598 11276ms hrdRecruitmentEduRepo  leteRecruitmentEdu - 8/2/2017 4:38:59 PM DELETE RECRUITMENT EDUCATION SUCCESS.....<br/> Req Id : 6
+DEBUG 2017-08-02 16:38:59,598 11276ms hrdRecruitmentEduRepo  leteRecruitmentEdu - 8/2/2017 4:38:59 PM DELETE RECRUITMENT EDUCATION SUCCESS.....<br/> Req Id : 6
+DEBUG 2017-08-02 16:38:59,607 11285ms cruitmentEduController RecruitmentEduList - 8/2/2017 4:38:59 PM Request ID : 2
+DEBUG 2017-08-03 09:26:29,965 13792ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 9:26:29 AMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 09:26:31,532 15359ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 9:26:31 AM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 09:26:34,935 18763ms dReqRecruitmentService GetRequestList     - 8/3/2017 9:26:34 AM vRows : 15 vStart : 0
+DEBUG 2017-08-03 09:26:36,610 20437ms cruitmentEduController RecruitmentEduList - 8/3/2017 9:26:36 AM Request ID : 2
+DEBUG 2017-08-03 09:26:36,662 20489ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 9:26:36 AM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 14:57:22,242 228640ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 2:57:22 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 14:57:22,626 229025ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 2:57:22 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 14:57:25,479 231878ms dReqRecruitmentService GetRequestList     - 8/3/2017 2:57:25 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 14:57:27,070 233469ms cruitmentEduController RecruitmentEduList - 8/3/2017 2:57:27 PM Request ID : 2
+DEBUG 2017-08-03 14:57:27,237 233635ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 2:57:27 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 14:58:56,877 323276ms dReqRecruitmentService GetRequestList     - 8/3/2017 2:58:56 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 14:58:59,132 325530ms cruitmentEduController RecruitmentEduList - 8/3/2017 2:58:59 PM Request ID : 2
+DEBUG 2017-08-03 14:58:59,146 325544ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 2:58:59 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 14:59:36,480   125ms dReqRecruitmentService GetRequestList     - 8/3/2017 2:59:36 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 14:59:39,728  3373ms cruitmentEduController RecruitmentEduList - 8/3/2017 2:59:39 PM Request ID : 2
+DEBUG 2017-08-03 14:59:39,770  3415ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 2:59:39 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+ERROR 2017-08-03 15:00:40,365 64010ms rdRecruitmentSkillRepo cruitmentSkillList - 8/3/2017 3:00:40 PM getRecruitmentSkillList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'id' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 84
+ERROR 2017-08-03 15:01:28,802 10203ms rdRecruitmentSkillRepo cruitmentSkillList - 8/3/2017 3:01:28 PM getRecruitmentSkillList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'id' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 84
+DEBUG 2017-08-03 15:01:34,450 15851ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:01:34 PM vRows : 15 vStart : 0
+ERROR 2017-08-03 15:01:36,636 18037ms rdRecruitmentSkillRepo cruitmentSkillList - 8/3/2017 3:01:36 PM getRecruitmentSkillList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'id' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 84
+DEBUG 2017-08-03 15:01:36,697 18098ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:01:36 PM Request ID : 2
+DEBUG 2017-08-03 15:01:36,756 18157ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:01:36 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 15:03:03,491 104892ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:03:03 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:03:03,567 104968ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:03:03 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:03:06,606 108007ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:03:06 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:03:08,081 109482ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:03:08 PM Request ID : 2
+DEBUG 2017-08-03 15:03:08,344 109746ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:03:08 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+ERROR 2017-08-03 15:03:08,730 110131ms rdRecruitmentSkillRepo cruitmentSkillList - 8/3/2017 3:03:08 PM getRecruitmentSkillList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'id' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 84
+DEBUG 2017-08-03 15:03:26,280 127682ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:03:26 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:03:26,751 128152ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:03:26 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:03:29,044 130446ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:03:29 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:03:30,512 131913ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:03:30 PM Request ID : 2
+DEBUG 2017-08-03 15:03:30,534 131935ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:03:30 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+ERROR 2017-08-03 15:03:30,536 131937ms rdRecruitmentSkillRepo cruitmentSkillList - 8/3/2017 3:03:30 PM getRecruitmentSkillList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'id' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 84
+DEBUG 2017-08-03 15:05:22,357 243758ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:05:22 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:05:22,385 243786ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:05:22 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:05:25,429 246830ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:05:25 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:05:27,010 248412ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:05:27 PM Request ID : 2
+DEBUG 2017-08-03 15:05:27,025 248427ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:05:27 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+ERROR 2017-08-03 15:05:27,036 248438ms rdRecruitmentSkillRepo cruitmentSkillList - 8/3/2017 3:05:27 PM getRecruitmentSkillList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'id' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 84
+DEBUG 2017-08-03 15:07:03,624 345025ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:07:03 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:07:03,699 345100ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:07:03 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:07:14,046 355447ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:07:14 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:07:16,305 357706ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:07:16 PM Request ID : 2
+DEBUG 2017-08-03 15:07:16,326 357727ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:07:16 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+ERROR 2017-08-03 15:07:16,326 357727ms rdRecruitmentSkillRepo cruitmentSkillList - 8/3/2017 3:07:16 PM getRecruitmentSkillList FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'id' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 84
+DEBUG 2017-08-03 15:07:34,584 375986ms uitmentSkillController rtRecruitmentSkill - 8/3/2017 3:07:34 PMInsert Recruitment Skill Seq No : 0, Name : afasdfasf
+ERROR 2017-08-03 15:07:34,686 376088ms rdRecruitmentSkillRepo ruitmentSkillSeqNo - 8/3/2017 3:07:34 PM GetRecruitmentSkillSeqNo FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'request_id' in 'where clause'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 277
+ERROR 2017-08-03 15:07:34,712 376114ms rdRecruitmentSkillRepo rtRecruitmentSkill - 8/3/2017 3:07:34 PM INSERT RECRUITMENT SKILL FAILED
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'request_id' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.InsertRecruitmentSkill(hrdRecruitmentSkillModel pModel) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 47
+DEBUG 2017-08-03 15:15:41,807 863208ms uitmentSkillController rtRecruitmentSkill - 8/3/2017 3:15:41 PMInsert Recruitment Skill Seq No : 0, Name : adasfasfasf
+ERROR 2017-08-03 15:15:42,583 863984ms rdRecruitmentSkillRepo ruitmentSkillSeqNo - 8/3/2017 3:15:42 PM GetRecruitmentSkillSeqNo FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(String column)
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 284
+DEBUG 2017-08-03 15:15:42,668 864069ms rdRecruitmentSkillRepo rtRecruitmentSkill - 8/3/2017 3:15:42 PM INSERT RECRUITMENT SKILL SUCCESS....<br/> REQUEST ID : 2 Name : 
+ERROR 2017-08-03 15:15:42,690 864091ms rdRecruitmentSkillRepo cruitmentSkillList - 8/3/2017 3:15:42 PM getRecruitmentSkillList FAILED... 
+System.IndexOutOfRangeException: Could not find specified column in results: req_id
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt16(String column)
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 94
+DEBUG 2017-08-03 15:18:46,062    63ms uitmentSkillController rtRecruitmentSkill - 8/3/2017 3:18:46 PMInsert Recruitment Skill Seq No : 0, Name : dasdfasdf
+DEBUG 2017-08-03 15:18:46,269   270ms rdRecruitmentSkillRepo rtRecruitmentSkill - 8/3/2017 3:18:46 PM INSERT RECRUITMENT SKILL SUCCESS....<br/> REQUEST ID : 2 Name : dasdfasdf
+ERROR 2017-08-03 15:18:46,299   300ms rdRecruitmentSkillRepo cruitmentSkillList - 8/3/2017 3:18:46 PM getRecruitmentSkillList FAILED... 
+System.IndexOutOfRangeException: Could not find specified column in results: req_id
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt16(String column)
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 94
+DEBUG 2017-08-03 15:21:47,882 181882ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:21:47 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:21:49,543 183544ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:21:49 PM Request ID : 2
+DEBUG 2017-08-03 15:21:49,555 183556ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:21:49 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+ERROR 2017-08-03 15:21:49,723 183724ms rdRecruitmentSkillRepo cruitmentSkillList - 8/3/2017 3:21:49 PM getRecruitmentSkillList FAILED... 
+System.IndexOutOfRangeException: Could not find specified column in results: req_id
+   at MySql.Data.MySqlClient.ResultSet.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetOrdinal(String name)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt16(String column)
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 94
+DEBUG 2017-08-03 15:22:51,943  8170ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:22:51 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:22:52,170  8397ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:22:52 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:22:59,090 15317ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:22:59 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:23:01,213 17440ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:23:01 PM Request ID : 2
+DEBUG 2017-08-03 15:23:01,223 17450ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:23:01 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+ERROR 2017-08-03 15:23:01,480 17707ms rdRecruitmentSkillRepo cruitmentSkillList - 8/3/2017 3:23:01 PM getRecruitmentSkillList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 94
+DEBUG 2017-08-03 15:28:22,794 339022ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:28:22 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:28:22,857 339085ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:28:22 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:28:25,056 341283ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:28:25 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:28:26,785 343012ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:28:26 PM Request ID : 2
+DEBUG 2017-08-03 15:28:26,801 343028ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:28:26 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 15:28:38,791 355018ms uitmentSkillController rtRecruitmentSkill - 8/3/2017 3:28:38 PMInsert Recruitment Skill Seq No : 0, Name : office
+ERROR 2017-08-03 15:28:38,810 355037ms rdRecruitmentSkillRepo ruitmentSkillSeqNo - 8/3/2017 3:28:38 PM GetRecruitmentSkillSeqNo FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(String column)
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.getRecruitmentSkillSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 284
+DEBUG 2017-08-03 15:28:38,849 355076ms rdRecruitmentSkillRepo rtRecruitmentSkill - 8/3/2017 3:28:38 PM INSERT RECRUITMENT SKILL SUCCESS....<br/> REQUEST ID : 2 Name : office
+DEBUG 2017-08-03 15:29:13,783 390011ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:29:13 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:29:15,103 391330ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:29:15 PM Request ID : 2
+DEBUG 2017-08-03 15:29:15,111 391338ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:29:15 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 15:32:23,381  7531ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:32:23 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:32:23,627  7777ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:32:23 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:34:23,612 127762ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:34:23 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:34:25,802 129952ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:34:25 PM Request ID : 2
+DEBUG 2017-08-03 15:34:27,295 131445ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:34:27 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 15:35:41,075 205225ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:35:41 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:35:41,279 205429ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:35:41 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:35:45,241 209391ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:35:45 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:35:46,914 211064ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:35:46 PM Request ID : 2
+DEBUG 2017-08-03 15:35:47,021 211171ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:35:47 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 15:36:50,848 274999ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:36:50 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:36:50,860 275011ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:36:50 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:36:52,561 276711ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:36:52 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:36:54,036 278186ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:36:54 PM Request ID : 2
+DEBUG 2017-08-03 15:36:54,074 278224ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:36:54 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 15:39:02,586  8424ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:39:02 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:39:02,769  8607ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:39:02 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:39:04,344 10182ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:39:04 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:39:06,298 12136ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:39:06 PM Request ID : 2
+DEBUG 2017-08-03 15:39:06,338 12176ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:39:06 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 15:40:18,395 84234ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:40:18 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:40:18,730 84568ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:40:18 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:40:23,232 89070ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:40:23 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:40:25,548 91387ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:40:25 PM Request ID : 2
+DEBUG 2017-08-03 15:40:25,704 91542ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:40:25 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 15:41:29,153 154992ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:41:29 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:41:29,168 155007ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:41:29 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:41:32,262 158100ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:41:32 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:41:33,972 159810ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:41:33 PM Request ID : 2
+DEBUG 2017-08-03 15:41:33,989 159827ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:41:33 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 15:42:02,334 188172ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:42:02 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:42:02,370 188208ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:42:02 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:42:06,110 191948ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:42:06 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:42:07,577 193415ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:42:07 PM Request ID : 2
+DEBUG 2017-08-03 15:42:07,661 193499ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:42:07 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 15:42:18,574 204412ms uitmentSkillController teRecruitmentSkill - 8/3/2017 3:42:18 PMUpdate Recruitment Skill Seq No : 0, Name : office
+ERROR 2017-08-03 15:42:18,584 204422ms rdRecruitmentSkillRepo teRecruitmentSkill - 8/3/2017 3:42:18 PM UPDATE RECRUITMENT SKILL FAILED, Code : 2 Name : office
+MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@prequest_id' must be defined.
+   at MySql.Data.MySqlClient.Statement.SerializeParameter(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex)
+   at MySql.Data.MySqlClient.Statement.InternalBindParameters(String sql, MySqlParameterCollection parameters, MySqlPacket packet)
+   at MySql.Data.MySqlClient.Statement.BindParameters()
+   at MySql.Data.MySqlClient.PreparableStatement.Execute()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at hrd_holding.Repositories.hrdRecruitmentSkillRepo.updateRecruitmentSkill(hrdRecruitmentSkillModel pModel) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentSkillRepo.cs:line 204
+DEBUG 2017-08-03 15:44:31,056    84ms uitmentSkillController teRecruitmentSkill - 8/3/2017 3:44:31 PMUpdate Recruitment Skill Seq No : 0, Name : office
+DEBUG 2017-08-03 15:44:31,241   268ms rdRecruitmentSkillRepo teRecruitmentSkill - 8/3/2017 3:44:31 PM UPDATE Recruitment SKILL SUCCESS....<br/> Code : 2 Name : office
+DEBUG 2017-08-03 15:44:57,130 26157ms uitmentSkillController rtRecruitmentSkill - 8/3/2017 3:44:57 PMInsert Recruitment Skill Seq No : 0, Name : AVG
+DEBUG 2017-08-03 15:44:57,179 26206ms rdRecruitmentSkillRepo rtRecruitmentSkill - 8/3/2017 3:44:57 PM INSERT RECRUITMENT SKILL SUCCESS....<br/> REQUEST ID : 2 Name : AVG
+DEBUG 2017-08-03 15:45:52,283 81310ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:45:52 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:45:52,350 81378ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:45:52 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:50:12,488 341515ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:50:12 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:50:14,028 343055ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:50:14 PM Request ID : 2
+DEBUG 2017-08-03 15:50:14,039 343066ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:50:14 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 15:52:39,655 488682ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:52:39 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-03 15:52:39,681 488708ms dRecruitmentController RecruitmentInfoAll - 8/3/2017 3:52:39 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-03 15:52:42,849 491876ms dReqRecruitmentService GetRequestList     - 8/3/2017 3:52:42 PM vRows : 15 vStart : 0
+DEBUG 2017-08-03 15:52:44,262 493289ms cruitmentEduController RecruitmentEduList - 8/3/2017 3:52:44 PM Request ID : 2
+DEBUG 2017-08-03 15:52:44,631 493658ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/3/2017 3:52:44 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-03 15:52:52,195 501222ms uitmentSkillController teRecruitmentSkill - 8/3/2017 3:52:52 PMMASUK DELETE Id : 4
+DEBUG 2017-08-03 15:52:52,256 501283ms rdRecruitmentSkillRepo teRecruitmentSkill - 8/3/2017 3:52:52 PM DELETE RECRUITMENT SKILL SUCCESS.....<br/> Req Id : 4
+DEBUG 2017-08-03 15:52:52,257 501284ms rdRecruitmentSkillRepo teRecruitmentSkill - 8/3/2017 3:52:52 PM DELETE RECRUITMENT SKILL SUCCESS.....<br/> Req Id : 4
+DEBUG 2017-08-04 09:16:19,079  6433ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 9:16:19 AMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 09:16:19,688  7042ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 9:16:19 AM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 11:30:47,455  7716ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 11:30:47 AMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 11:30:47,803  8063ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 11:30:47 AM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 11:32:26,502 106763ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 11:32:26 AMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 11:32:26,534 106795ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 11:32:26 AM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 13:48:23,471  6400ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 1:48:23 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 13:48:23,812  6741ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 1:48:23 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 13:48:29,030 11959ms dReqRecruitmentService GetRequestList     - 8/4/2017 1:48:29 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 13:48:30,856 13785ms cruitmentEduController RecruitmentEduList - 8/4/2017 1:48:30 PM Request ID : 2
+DEBUG 2017-08-04 13:48:30,867 13796ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 1:48:30 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 13:49:11,671 54600ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 1:49:11 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 13:49:11,717 54646ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 1:49:11 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 13:49:14,417 57346ms dReqRecruitmentService GetRequestList     - 8/4/2017 1:49:14 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 13:49:16,332 59261ms cruitmentEduController RecruitmentEduList - 8/4/2017 1:49:16 PM Request ID : 2
+DEBUG 2017-08-04 13:49:16,424 59353ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 1:49:16 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 13:49:49,486 92415ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 1:49:49 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 13:49:50,057 92986ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 1:49:50 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 13:49:52,881 95810ms dReqRecruitmentService GetRequestList     - 8/4/2017 1:49:52 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 13:49:54,651 97580ms cruitmentEduController RecruitmentEduList - 8/4/2017 1:49:54 PM Request ID : 2
+DEBUG 2017-08-04 13:49:54,682 97611ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 1:49:54 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 14:00:14,366 717296ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:00:14 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:00:14,446 717376ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:00:14 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:00:16,484 719413ms dReqRecruitmentService GetRequestList     - 8/4/2017 2:00:16 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 14:00:18,265 721194ms cruitmentEduController RecruitmentEduList - 8/4/2017 2:00:18 PM Request ID : 2
+DEBUG 2017-08-04 14:00:18,299 721228ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 2:00:18 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 14:01:08,725 771654ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:01:08 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:01:08,734 771663ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:01:08 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:01:36,203 799132ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:01:36 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:01:36,238 799167ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:01:36 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:02:10,344 833273ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:02:10 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:02:10,355 833284ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:02:10 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:02:24,413 847342ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:02:24 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:02:24,856 847786ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:02:24 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:02:46,433 869362ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:02:46 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:02:46,444 869373ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:02:46 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:03:04,924 887853ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:03:04 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:03:04,931 887860ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:03:04 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:03:36,006 918935ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:03:36 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:03:36,074 919003ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:03:36 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:04:27,505 970434ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:04:27 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:04:27,598 970527ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:04:27 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:05:46,263 1049192ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:05:46 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:05:46,282 1049212ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:05:46 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:06:19,917 1082846ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:06:19 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:06:19,934 1082863ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:06:19 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:06:44,203 1107132ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:06:44 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:06:44,214 1107143ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:06:44 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:07:10,137 1133066ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:07:10 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:07:10,267 1133196ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:07:10 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:07:23,248 1146177ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:07:23 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:07:23,259 1146188ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:07:23 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:08:27,938 1210867ms dReqRecruitmentService GetRequestList     - 8/4/2017 2:08:27 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 14:08:29,520 1212449ms cruitmentEduController RecruitmentEduList - 8/4/2017 2:08:29 PM Request ID : 2
+DEBUG 2017-08-04 14:08:29,534 1212463ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 2:08:29 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 14:12:33,034 1455963ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:12:33 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:12:33,163 1456092ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:12:33 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:12:46,035 1468964ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:12:46 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:12:46,055 1468984ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:12:46 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:14:31,471 1574400ms dReqRecruitmentService GetRequestList     - 8/4/2017 2:14:31 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 14:14:33,164 1576093ms cruitmentEduController RecruitmentEduList - 8/4/2017 2:14:33 PM Request ID : 2
+DEBUG 2017-08-04 14:14:33,171 1576100ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 2:14:33 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 14:16:09,801 1672730ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:16:09 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:16:09,812 1672741ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:16:09 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:19:05,382 1848311ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:19:05 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:19:05,391 1848320ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:19:05 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:19:08,141 1851070ms dReqRecruitmentService GetRequestList     - 8/4/2017 2:19:08 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 14:19:10,079 1853008ms cruitmentEduController RecruitmentEduList - 8/4/2017 2:19:10 PM Request ID : 2
+DEBUG 2017-08-04 14:19:10,402 1853331ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 2:19:10 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 14:19:28,772 1871701ms cruitmentExpController sertRecruitmentExp - 8/4/2017 2:19:28 PMInsert Recruitment Exp Seq No : 0, Name : 
+ERROR 2017-08-04 14:19:28,799 1871728ms hrdRecruitmentExpRepo  ecruitmentExpSeqNo - 8/4/2017 2:19:28 PM GetRecruitmentExpSeqNo FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'mef.seq_no' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentExpRepo.getRecruitmentExpSeqNo(Int32 pRecruitmentId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentExpRepo.cs:line 287
+ERROR 2017-08-04 14:19:28,823 1871752ms hrdRecruitmentExpRepo  sertRecruitmentExp - 8/4/2017 2:19:28 PM INSERT RECRUITMENT EXPERIENCE FAILED
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'name_employer' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at hrd_holding.Repositories.hrdRecruitmentExpRepo.InsertRecruitmentExp(hrdRecruitmentExpModel pModel) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentExpRepo.cs:line 49
+DEBUG 2017-08-04 14:30:17,279 2520208ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:30:17 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:30:17,385 2520314ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:30:17 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:30:19,305 2522234ms dReqRecruitmentService GetRequestList     - 8/4/2017 2:30:19 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 14:30:20,989 2523918ms cruitmentEduController RecruitmentEduList - 8/4/2017 2:30:20 PM Request ID : 2
+DEBUG 2017-08-04 14:30:21,001 2523930ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 2:30:21 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 14:30:34,961 2537890ms cruitmentExpController sertRecruitmentExp - 8/4/2017 2:30:34 PMInsert Recruitment Exp Seq No : 0, Name : 
+ERROR 2017-08-04 14:30:34,991 2537920ms hrdRecruitmentExpRepo  ecruitmentExpSeqNo - 8/4/2017 2:30:34 PM GetRecruitmentExpSeqNo FAILED... 
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'mef.seq_no' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at hrd_holding.Repositories.hrdRecruitmentExpRepo.getRecruitmentExpSeqNo(Int32 pRecruitmentId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentExpRepo.cs:line 287
+ERROR 2017-08-04 14:30:35,017 2537946ms hrdRecruitmentExpRepo  sertRecruitmentExp - 8/4/2017 2:30:35 PM INSERT RECRUITMENT EXPERIENCE FAILED
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'name_employer' in 'field list'
+   at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   at MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   at MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at hrd_holding.Repositories.hrdRecruitmentExpRepo.InsertRecruitmentExp(hrdRecruitmentExpModel pModel) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentExpRepo.cs:line 49
+DEBUG 2017-08-04 14:31:40,715  7149ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:31:40 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:31:40,858  7292ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:31:40 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:31:47,877 14311ms dReqRecruitmentService GetRequestList     - 8/4/2017 2:31:47 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 14:31:49,325 15759ms cruitmentEduController RecruitmentEduList - 8/4/2017 2:31:49 PM Request ID : 2
+DEBUG 2017-08-04 14:31:49,384 15818ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 2:31:49 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 14:32:01,115 27549ms cruitmentExpController sertRecruitmentExp - 8/4/2017 2:32:01 PMInsert Recruitment Exp Seq No : 0, Name : 
+ERROR 2017-08-04 14:32:01,214 27648ms hrdRecruitmentExpRepo  ecruitmentExpSeqNo - 8/4/2017 2:32:01 PM GetRecruitmentExpSeqNo FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(String column)
+   at hrd_holding.Repositories.hrdRecruitmentExpRepo.getRecruitmentExpSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentExpRepo.cs:line 298
+DEBUG 2017-08-04 14:32:01,243 27677ms hrdRecruitmentExpRepo  sertRecruitmentExp - 8/4/2017 2:32:01 PM INSERT RECRUITMENT EXPERIENCE SUCCESS....<br/> REQUEST ID : 0 Name : fasdfasf
+DEBUG 2017-08-04 14:34:57,494 203928ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:34:57 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:34:57,506 203940ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:34:57 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:34:59,752 206186ms dReqRecruitmentService GetRequestList     - 8/4/2017 2:34:59 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 14:35:01,291 207725ms cruitmentEduController RecruitmentEduList - 8/4/2017 2:35:01 PM Request ID : 2
+DEBUG 2017-08-04 14:35:01,340 207774ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 2:35:01 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 14:36:35,271 301705ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:36:35 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:36:35,457 301891ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:36:35 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:36:37,816 304249ms dReqRecruitmentService GetRequestList     - 8/4/2017 2:36:37 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 14:36:39,337 305771ms cruitmentEduController RecruitmentEduList - 8/4/2017 2:36:39 PM Request ID : 2
+DEBUG 2017-08-04 14:36:39,342 305776ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 2:36:39 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 14:37:06,642 333076ms dReqRecruitmentService GetRequestList     - 8/4/2017 2:37:06 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 14:37:08,256 334690ms cruitmentEduController RecruitmentEduList - 8/4/2017 2:37:08 PM Request ID : 2
+DEBUG 2017-08-04 14:37:08,310 334744ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 2:37:08 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 14:38:15,448 401882ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:38:15 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:38:18,256 404690ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:38:18 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:38:35,660 422094ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:38:35 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:38:36,113 422547ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:38:36 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:38:42,454 428888ms dReqRecruitmentService GetRequestList     - 8/4/2017 2:38:42 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 14:38:44,305 430739ms cruitmentEduController RecruitmentEduList - 8/4/2017 2:38:44 PM Request ID : 2
+DEBUG 2017-08-04 14:38:44,321 430755ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 2:38:44 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 14:41:24,658 591092ms cruitmentExpController sertRecruitmentExp - 8/4/2017 2:41:24 PMInsert Recruitment Exp Seq No : 0, Name : 
+DEBUG 2017-08-04 14:41:24,768 591202ms hrdRecruitmentExpRepo  sertRecruitmentExp - 8/4/2017 2:41:24 PM INSERT RECRUITMENT EXPERIENCE SUCCESS....<br/> REQUEST ID : 0 Name : sfasfda
+DEBUG 2017-08-04 14:41:26,462 592896ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:41:26 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:41:26,471 592905ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:41:26 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:41:28,589 595023ms dReqRecruitmentService GetRequestList     - 8/4/2017 2:41:28 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 14:41:29,939 596373ms cruitmentEduController RecruitmentEduList - 8/4/2017 2:41:29 PM Request ID : 2
+DEBUG 2017-08-04 14:41:30,099 596533ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 2:41:30 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 14:42:01,951 628385ms cruitmentExpController sertRecruitmentExp - 8/4/2017 2:42:01 PMInsert Recruitment Exp Seq No : 0, Name : 
+DEBUG 2017-08-04 14:42:02,035 628469ms hrdRecruitmentExpRepo  sertRecruitmentExp - 8/4/2017 2:42:02 PM INSERT RECRUITMENT EXPERIENCE SUCCESS....<br/> REQUEST ID : 2 Name : sdfasdfasf
+ERROR 2017-08-04 14:42:02,056 628490ms hrdRecruitmentExpRepo  RecruitmentExpList - 8/4/2017 2:42:02 PM getRecruitmentExpList FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetString(String column)
+   at hrd_holding.Repositories.hrdRecruitmentExpRepo.getRecruitmentExpList(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentExpRepo.cs:line 98
+DEBUG 2017-08-04 14:43:35,629 722063ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:43:35 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 14:43:35,642 722076ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 2:43:35 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 14:43:41,932 728366ms dReqRecruitmentService GetRequestList     - 8/4/2017 2:43:41 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 14:43:43,512 729946ms cruitmentEduController RecruitmentEduList - 8/4/2017 2:43:43 PM Request ID : 2
+DEBUG 2017-08-04 14:43:43,597 730031ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 2:43:43 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 15:01:04,604 1771038ms cruitmentExpController sertRecruitmentExp - 8/4/2017 3:01:04 PMInsert Recruitment Exp Seq No : 0, Name : adsfasdfsaf
+ERROR 2017-08-04 15:01:04,731 1771165ms hrdRecruitmentExpRepo  ecruitmentExpSeqNo - 8/4/2017 3:01:04 PM GetRecruitmentExpSeqNo FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(String column)
+   at hrd_holding.Repositories.hrdRecruitmentExpRepo.getRecruitmentExpSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentExpRepo.cs:line 298
+DEBUG 2017-08-04 15:01:04,772 1771206ms hrdRecruitmentExpRepo  sertRecruitmentExp - 8/4/2017 3:01:04 PM INSERT RECRUITMENT EXPERIENCE SUCCESS....<br/> REQUEST ID : 2 Name : Xasdfasdfasdf
+DEBUG 2017-08-04 15:01:51,497 1817931ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 3:01:51 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 15:01:51,507 1817941ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 3:01:51 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 15:02:56,421 1882855ms dReqRecruitmentService GetRequestList     - 8/4/2017 3:02:56 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 15:02:58,293 1884727ms cruitmentEduController RecruitmentEduList - 8/4/2017 3:02:58 PM Request ID : 2
+DEBUG 2017-08-04 15:02:58,297 1884731ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 3:02:58 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 15:04:48,790 1995224ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 3:04:48 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 15:04:48,963 1995397ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 3:04:48 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 15:04:52,915 1999349ms dReqRecruitmentService GetRequestList     - 8/4/2017 3:04:52 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 15:04:54,640 2001074ms cruitmentEduController RecruitmentEduList - 8/4/2017 3:04:54 PM Request ID : 2
+DEBUG 2017-08-04 15:04:54,646 2001080ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 3:04:54 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 15:05:50,081 2056515ms cruitmentExpController sertRecruitmentExp - 8/4/2017 3:05:50 PMInsert Recruitment Exp Seq No : 0, Name : fasdfasf
+ERROR 2017-08-04 15:05:50,109 2056543ms hrdRecruitmentExpRepo  ecruitmentExpSeqNo - 8/4/2017 3:05:50 PM GetRecruitmentExpSeqNo FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(String column)
+   at hrd_holding.Repositories.hrdRecruitmentExpRepo.getRecruitmentExpSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentExpRepo.cs:line 298
+DEBUG 2017-08-04 15:05:50,241 2056675ms hrdRecruitmentExpRepo  sertRecruitmentExp - 8/4/2017 3:05:50 PM INSERT RECRUITMENT EXPERIENCE SUCCESS....<br/> REQUEST ID : 2 Name : sdfasfa
+DEBUG 2017-08-04 15:11:59,275 2425709ms cruitmentExpController dateRecruitmentExp - 8/4/2017 3:11:59 PMUpdate Recruitment Exp Seq No : 0, name : supervisor
+ERROR 2017-08-04 15:12:01,355 2427789ms hrdRecruitmentExpRepo  dateRecruitmentExp - 8/4/2017 3:12:01 PM UPDATE RECRUITMENT EXPERIENCE FAILED, Code : 2 Name : gudang garam
+MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@pId' must be defined.
+   at MySql.Data.MySqlClient.Statement.SerializeParameter(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex)
+   at MySql.Data.MySqlClient.Statement.InternalBindParameters(String sql, MySqlParameterCollection parameters, MySqlPacket packet)
+   at MySql.Data.MySqlClient.Statement.BindParameters()
+   at MySql.Data.MySqlClient.PreparableStatement.Execute()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at hrd_holding.Repositories.hrdRecruitmentExpRepo.updateRecruitmentExp(hrdRecruitmentExpModel pModel) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentExpRepo.cs:line 218
+DEBUG 2017-08-04 15:13:46,518    71ms cruitmentExpController dateRecruitmentExp - 8/4/2017 3:13:46 PMUpdate Recruitment Exp Seq No : 0, name : supervisor
+DEBUG 2017-08-04 15:13:46,953   506ms hrdRecruitmentExpRepo  dateRecruitmentExp - 8/4/2017 3:13:46 PM UPDATE Recruitment EXPERIENCE SUCCESS....<br/> Code : 2 Name : gudang garam
+DEBUG 2017-08-04 15:18:37,766 291318ms cruitmentExpController sertRecruitmentExp - 8/4/2017 3:18:37 PMInsert Recruitment Exp Seq No : 0, Name : manager
+ERROR 2017-08-04 15:18:38,002 291555ms hrdRecruitmentExpRepo  ecruitmentExpSeqNo - 8/4/2017 3:18:38 PM GetRecruitmentExpSeqNo FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(String column)
+   at hrd_holding.Repositories.hrdRecruitmentExpRepo.getRecruitmentExpSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentExpRepo.cs:line 299
+DEBUG 2017-08-04 15:18:38,091 291644ms hrdRecruitmentExpRepo  sertRecruitmentExp - 8/4/2017 3:18:38 PM INSERT RECRUITMENT EXPERIENCE SUCCESS....<br/> REQUEST ID : 2 Name : mega marine
+DEBUG 2017-08-04 15:19:53,777 367330ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 3:19:53 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-04 15:19:53,790 367343ms dRecruitmentController RecruitmentInfoAll - 8/4/2017 3:19:53 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-04 15:19:57,226 370779ms dReqRecruitmentService GetRequestList     - 8/4/2017 3:19:57 PM vRows : 15 vStart : 0
+DEBUG 2017-08-04 15:19:58,675 372228ms cruitmentEduController RecruitmentEduList - 8/4/2017 3:19:58 PM Request ID : 2
+DEBUG 2017-08-04 15:19:58,687 372240ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/4/2017 3:19:58 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-04 15:20:05,477 379030ms cruitmentExpController leteRecruitmentExp - 8/4/2017 3:20:05 PMMASUK DELETE Id : 6
+DEBUG 2017-08-04 15:20:05,515 379068ms hrdRecruitmentExpRepo  leteRecruitmentExp - 8/4/2017 3:20:05 PM DELETE RECRUITMENT EXPERIENCE SUCCESS.....<br/> Req Id : 6
+DEBUG 2017-08-04 15:20:05,516 379069ms hrdRecruitmentExpRepo  leteRecruitmentExp - 8/4/2017 3:20:05 PM DELETE RECRUITMENT EXPERIENCE SUCCESS.....<br/> Req Id : 6

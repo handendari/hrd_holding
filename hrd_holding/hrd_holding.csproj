@@ -659,7 +659,13 @@
     <Content Include="Content\jqwidgets\images\sunny\Thumbs.db" />
     <Content Include="Content\jqwidgets\images\Thumbs.db" />
     <Content Include="Content\jqwidgets\Thumbs.db" />
+    <Content Include="Scripts\hrdRecruitment\hrd_recruitment_reference.js" />
     <Content Include="Scripts\hrdRecruitment\hrd_recruitment.js" />
+    <Content Include="Scripts\hrdRecruitment\hrd_recruitment_education.js" />
+    <Content Include="Scripts\hrdRecruitment\hrd_recruitment_experience.js" />
+    <Content Include="Scripts\hrdRecruitment\hrd_recruitment_family.js" />
+    <Content Include="Scripts\hrdRecruitment\hrd_recruitment_skill.js" />
+    <Content Include="Scripts\hrdRecruitment\hrd_recruitment_institutions.js" />
     <Content Include="Scripts\mSubTitle\m_subtitle.js" />
     <Content Include="Scripts\mBank\m_bank.js" />
     <Content Include="Scripts\mStatus\m_status.js" />

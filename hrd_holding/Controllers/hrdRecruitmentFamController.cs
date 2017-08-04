@@ -38,7 +38,7 @@ namespace hrd_holding.Controllers
         [HttpPost]
         public dynamic UpdateRecruitmentFam(hrdRecruitmentFamModel pModel)
         {
-            LOG.Debug(DateTime.Now + "Update Recruitment Fam Seq No : " + pModel.seq_no + ", Name : " + pModel.name);
+            LOG.Debug(DateTime.Now + "Update Recruitment Fam ID : " + pModel.fam_id + ", Name : " + pModel.name);
 
             var vResp = _recFamService.UpdateRecruitmentFam(pModel);
 
@@ -47,8 +47,8 @@ namespace hrd_holding.Controllers
         }
 
 
-        [HttpPost]
-        public dynamic GetRecruitmentFamList(int pRecId)
+        //[HttpPost]
+        public dynamic GetRecruitmentFamList(int pRequestId)
         {
 
             //var vEmployeeCode = Request["employeecode"].ToString();
@@ -56,9 +56,9 @@ namespace hrd_holding.Controllers
 
             //LOG.Debug(DateTime.Now + " Emp FAMS Code : " + pEmployeeCode);
 
-            var listRec = _recFamService.GetRecruitmentFamList(pRecId);
+            var listFamily = _recFamService.GetRecruitmentFamList(pRequestId);
 
-            return Json(new { listRec },JsonRequestBehavior.AllowGet);
+            return Json(new { listFamily },JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
