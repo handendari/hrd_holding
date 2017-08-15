@@ -464,26 +464,26 @@
                     </div>
                 </div>
                 <div id="pnlInstitutions" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
-                    <div id="tblInstitutions"></div>
+                    <div id="tblMember"></div>
                     <div style="margin-top: 10px; margin-left: 20px">
                         <table>
                             <tr>
                                 <td>
-                                    <div style="width: 100px; height: 30px;" id="btnInstitutionsNew" role="button">
+                                    <div style="width: 100px; height: 30px;" id="btnMemberNew" role="button">
                                         <img style="vertical-align: middle" src="~/content/images/add property_24_grey.png">
                                         <span style="position: relative; top: 3px;">ADD NEW</span>
                                     </div>
 
                                 </td>
                                 <td>
-                                    <div style="margin-left: 5px; width: 100px; height: 30px;" id="btnInstitutionsEdit" role="button">
+                                    <div style="margin-left: 5px; width: 100px; height: 30px;" id="btnMemberEdit" role="button">
                                         <img style="vertical-align: middle" src="~/content/images/edit property_24_grey.png">
                                         <span style="position: relative; top: 3px;">EDIT</span>
                                     </div>
 
                                 </td>
                                 <td>
-                                    <div style="margin-left: 50px; width: 100px; height: 30px;" id="btnInstitutionsDelete" role="button">
+                                    <div style="margin-left: 50px; width: 100px; height: 30px;" id="btnMemberDelete" role="button">
                                         <img style="vertical-align: middle" src="~/content/images/delete property_24_grey.png">
                                         <span style="position: relative; top: 3px;">DELETE</span>
                                     </div>
@@ -685,7 +685,7 @@
         <div>
             <span>EXPERIENCE DETAIL</span>
         </div>
-        <div style="margin-top:20px;margin-left:10px">
+        <div style="margin-top: 20px; margin-left: 10px">
             <div>
                 <table>
                     <tr>
@@ -705,7 +705,7 @@
                     </tr>
                     <tr>
                         <td>Employer Name *</td>
-                        <td  colspan="3">
+                        <td colspan="3">
                             <input type="text" id="txtExpCompanyName" />
                         </td>
                     </tr>
@@ -740,71 +740,49 @@
     </div>
     <!--#endregion-->
 
-    <!--#region MODAL TRAINING-->
-    <!--
-    <div id='modTraining'>
+    <!--#region MODAL MEMBER-->
+
+    <div id='modMember'>
         <div>
-            <span>TRAINING DETAIL</span>
+            <span>MEMBERSHIP OF MANAGEMENT ASSOCIATION / PUBLIC INSTITUTIONS</span>
         </div>
-        <div>
-            <div id="psnTrnCont" style="height: 40px"></div>
-            <div id="psnTrn">
-                <div id="psnTrnContent"></div>
-            </div>
-            <div>
-                <table>
-                    <tr>
-                        <td>Emp. Code *</td>
-                        <td>
-                            <input type="text" id="txtTrnCode" /></td>
-                    </tr>
-                    <tr>
-                        <td>Start Date *</td>
-                        <td>
-                            <div id="dtTrnStart"></div>
-                        </td>
-                        <td style="padding-left: 30px">End Date *</td>
-                        <td>
-                            <div id="dtTrnEnd"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Training Subject *</td>
-                        <td>
-                            <input type="text" id="txtTrnSubject" />
-                        </td>
-                        <td style="padding-left: 30px">Organizer By *</td>
-                        <td>
-                            <input type="text" id="txtTrnOrganizer" /></td>
-                    </tr>
-                    <tr>
-                        <td>Training Place *</td>
-                        <td>
-                            <input type="text" id="txtTrnPlace" /></td>
-                        <td style="padding-left: 30px">Company</td>
-                        <td>
-                            <input type="text" id="txtTrnCompany" /></td>
-                    </tr>
-                    <tr>
-                        <td>Value</td>
-                        <td>
-                            <input type="text" id="txtTrnValue" /></td>
-                        <td></td>
-                        <td>
-                            <input type="checkbox" id="chkTrnCompany" />
-                            Same As Employee's
-                        </td>
-                    </tr>
-                </table>
-                <div style="margin-top: 15px; margin-left: 20px">
-                    <button id="btnTrnSave">SAVE</button>
-                    <button id="btnTrnCancel">CANCEL</button>
-                </div>
+        <div style="margin-left:20px;margin-top:20px">
+            <table>
+                <tr>
+                    <td>Request No *</td>
+                    <td>
+                        <input type="text" id="txtMemNoReq" /></td>
+                </tr>
+                <tr>
+                    <td>Name *</td>
+                    <td colspan="3">
+                        <input type="text" id="txtMemName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Start Date *</td>
+                    <td>
+                        <div id="dtMemStart"></div>
+                    </td>
+                    <td style="padding-left: 30px">End Date *</td>
+                    <td>
+                        <div id="dtMemEnd"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Level</td>
+                    <td colspan="3">
+                        <input type="text" id="txtMemLevel" /></td>
+                </tr>
+            </table>
+            <div style="margin-top: 15px; margin-left: 20px">
+                <button id="btnMemberSave">SAVE</button>
+                <button id="btnMemberCancel">CANCEL</button>
             </div>
         </div>
     </div>
--->
     <!--#endregion-->
+
     <div id='modYesNo'>
         <div><span>Human Resource Development</span></div>
         <div>

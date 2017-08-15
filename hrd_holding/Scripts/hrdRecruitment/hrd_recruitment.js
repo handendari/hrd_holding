@@ -230,6 +230,7 @@ $(document).ready(function () {
                             f_UpdateTblEducation();
                             f_UpdateTblSkill();
                             f_UpdateTblExperience();
+                            f_PopulateTblMember();
 
                             $("#modRequestLookUp").jqxWindow('close');
                         } else {
@@ -275,7 +276,7 @@ $(document).ready(function () {
                 f_DeleteExp();
                 break;
             case 4:
-                //f_DeleteEmployeeTrn(vEmpCode);
+                f_DeleteMember();
                 break;
         }
     });

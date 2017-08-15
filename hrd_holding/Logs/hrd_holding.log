@@ -29209,3 +29209,127 @@ DEBUG 2017-08-04 15:19:58,687 372240ms hrdRecruitmentFamRepo  ruitmentFamilyList
 DEBUG 2017-08-04 15:20:05,477 379030ms cruitmentExpController leteRecruitmentExp - 8/4/2017 3:20:05 PMMASUK DELETE Id : 6
 DEBUG 2017-08-04 15:20:05,515 379068ms hrdRecruitmentExpRepo  leteRecruitmentExp - 8/4/2017 3:20:05 PM DELETE RECRUITMENT EXPERIENCE SUCCESS.....<br/> Req Id : 6
 DEBUG 2017-08-04 15:20:05,516 379069ms hrdRecruitmentExpRepo  leteRecruitmentExp - 8/4/2017 3:20:05 PM DELETE RECRUITMENT EXPERIENCE SUCCESS.....<br/> Req Id : 6
+DEBUG 2017-08-07 10:31:20,323  7825ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 10:31:20 AMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 10:31:21,373  8875ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 10:31:21 AM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 10:39:04,384 471886ms dReqRecruitmentService GetRequestList     - 8/7/2017 10:39:04 AM vRows : 15 vStart : 0
+DEBUG 2017-08-07 10:39:05,943 473445ms cruitmentEduController RecruitmentEduList - 8/7/2017 10:39:05 AM Request ID : 2
+DEBUG 2017-08-07 10:39:06,078 473580ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 10:39:06 AM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 14:01:23,171  9200ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:01:23 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:01:23,617  9646ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:01:23 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:03:01,276 107305ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:03:01 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:03:01,283 107312ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:03:01 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:03:46,700 152730ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:03:46 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:03:46,709 152739ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:03:46 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:12:21,875 667904ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:12:21 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:12:21,948 667977ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:12:21 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:12:23,888 669918ms dReqRecruitmentService GetRequestList     - 8/7/2017 2:12:23 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 14:12:25,223 671252ms cruitmentEduController RecruitmentEduList - 8/7/2017 2:12:25 PM Request ID : 2
+DEBUG 2017-08-07 14:12:25,233 671262ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 2:12:25 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 14:13:01,355 707385ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:13:01 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:13:01,369 707399ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:13:01 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:13:03,828 709858ms dReqRecruitmentService GetRequestList     - 8/7/2017 2:13:03 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 14:13:05,160 711189ms cruitmentEduController RecruitmentEduList - 8/7/2017 2:13:05 PM Request ID : 2
+DEBUG 2017-08-07 14:13:05,181 711210ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 2:13:05 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 14:13:26,854 732884ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:13:26 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:13:26,868 732898ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:13:26 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:13:28,930 734959ms dReqRecruitmentService GetRequestList     - 8/7/2017 2:13:28 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 14:13:30,239 736268ms cruitmentEduController RecruitmentEduList - 8/7/2017 2:13:30 PM Request ID : 2
+DEBUG 2017-08-07 14:13:30,261 736290ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 2:13:30 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 14:14:02,398 768427ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:14:02 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:14:02,406 768435ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:14:02 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:14:05,756 771786ms dReqRecruitmentService GetRequestList     - 8/7/2017 2:14:05 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 14:14:07,028 773057ms cruitmentEduController RecruitmentEduList - 8/7/2017 2:14:07 PM Request ID : 2
+DEBUG 2017-08-07 14:14:07,052 773081ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 2:14:07 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 14:15:30,087 856116ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:15:30 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:15:30,095 856124ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:15:30 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:15:32,323 858353ms dReqRecruitmentService GetRequestList     - 8/7/2017 2:15:32 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 14:15:33,798 859827ms cruitmentEduController RecruitmentEduList - 8/7/2017 2:15:33 PM Request ID : 2
+DEBUG 2017-08-07 14:15:33,804 859833ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 2:15:33 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 14:16:48,704 934734ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:16:48 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:16:48,717 934747ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:16:48 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:16:51,266 937296ms dReqRecruitmentService GetRequestList     - 8/7/2017 2:16:51 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 14:16:52,605 938635ms cruitmentEduController RecruitmentEduList - 8/7/2017 2:16:52 PM Request ID : 2
+DEBUG 2017-08-07 14:16:52,611 938641ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 2:16:52 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 14:36:19,388  9837ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:36:19 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:36:19,549  9998ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:36:19 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:36:43,910 34359ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:36:43 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:36:43,922 34371ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:36:43 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:36:51,609 42058ms dReqRecruitmentService GetRequestList     - 8/7/2017 2:36:51 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 14:36:53,530 43979ms cruitmentEduController RecruitmentEduList - 8/7/2017 2:36:53 PM Request ID : 2
+DEBUG 2017-08-07 14:36:53,542 43991ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 2:36:53 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 14:37:50,045 100494ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:37:50 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:37:50,065 100514ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:37:50 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:37:52,027 102476ms dReqRecruitmentService GetRequestList     - 8/7/2017 2:37:52 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 14:37:53,990 104439ms cruitmentEduController RecruitmentEduList - 8/7/2017 2:37:53 PM Request ID : 2
+DEBUG 2017-08-07 14:37:53,998 104447ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 2:37:53 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 14:38:23,812 134261ms cruitmentMemController sertRecruitmentMem - 8/7/2017 2:38:23 PMInsert Recruitment Member Seq No : 0, Name : percobaan
+ERROR 2017-08-07 14:38:23,853 134302ms dRecruitmentMemberRepo uitmentMemberSeqNo - 8/7/2017 2:38:23 PM GetRecruitmentMemberSeqNo FAILED... 
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at MySql.Data.MySqlClient.MySqlDataReader.GetFieldValue(Int32 index, Boolean checkNull)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(Int32 i)
+   at MySql.Data.MySqlClient.MySqlDataReader.GetInt32(String column)
+   at hrd_holding.Repositories.hrdRecruitmentMemberRepo.getRecruitmentMemberSeqNo(Int32 pRequestId) in d:\hrd_holding\hrd_holding\Repositories\hrdRecruitmentMemberRepo.cs:line 281
+DEBUG 2017-08-07 14:38:23,905 134354ms dRecruitmentMemberRepo tRecruitmentMember - 8/7/2017 2:38:23 PM INSERT RECRUITMENT MEMBER SUCCESS....<br/> REQUEST ID : 123 Name : percobaan
+DEBUG 2017-08-07 14:47:54,064  8267ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:47:54 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:47:54,212  8415ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:47:54 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:48:36,160 50364ms dReqRecruitmentService GetRequestList     - 8/7/2017 2:48:36 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 14:48:37,740 51943ms cruitmentEduController RecruitmentEduList - 8/7/2017 2:48:37 PM Request ID : 2
+DEBUG 2017-08-07 14:48:37,755 51958ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 2:48:37 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 14:48:48,567 62770ms cruitmentMemController sertRecruitmentMem - 8/7/2017 2:48:48 PMInsert Recruitment Member Seq No : 0, Name : dsgsgsg
+DEBUG 2017-08-07 14:48:48,596 62799ms dRecruitmentMemberRepo tRecruitmentMember - 8/7/2017 2:48:48 PM INSERT RECRUITMENT MEMBER SUCCESS....<br/> REQUEST ID : 2 Name : dsgsgsg
+DEBUG 2017-08-07 14:49:38,757 112960ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:49:38 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:49:38,765 112968ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:49:38 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:49:44,399 118603ms dReqRecruitmentService GetRequestList     - 8/7/2017 2:49:44 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 14:49:46,120 120323ms cruitmentEduController RecruitmentEduList - 8/7/2017 2:49:46 PM Request ID : 2
+DEBUG 2017-08-07 14:49:46,132 120335ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 2:49:46 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 14:50:30,073 164276ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:50:30 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 14:50:30,083 164286ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 2:50:30 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 14:50:37,196 171399ms dReqRecruitmentService GetRequestList     - 8/7/2017 2:50:37 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 14:50:39,121 173324ms cruitmentEduController RecruitmentEduList - 8/7/2017 2:50:39 PM Request ID : 2
+DEBUG 2017-08-07 14:50:39,127 173330ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 2:50:39 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 14:51:08,326 202529ms cruitmentMemController sertRecruitmentMem - 8/7/2017 2:51:08 PMInsert Recruitment Member Seq No : 0, Name : percobaan
+DEBUG 2017-08-07 14:51:08,366 202569ms dRecruitmentMemberRepo tRecruitmentMember - 8/7/2017 2:51:08 PM INSERT RECRUITMENT MEMBER SUCCESS....<br/> REQUEST ID : 2 Name : percobaan
+DEBUG 2017-08-07 14:51:22,089 216292ms dReqRecruitmentService GetRequestList     - 8/7/2017 2:51:22 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 14:51:24,241 218445ms cruitmentEduController RecruitmentEduList - 8/7/2017 2:51:24 PM Request ID : 2
+DEBUG 2017-08-07 14:51:24,246 218450ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 2:51:24 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 15:07:17,357 1171560ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 3:07:17 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 15:07:17,553 1171756ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 3:07:17 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 15:07:22,704 1176907ms dReqRecruitmentService GetRequestList     - 8/7/2017 3:07:22 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 15:07:24,244 1178447ms cruitmentEduController RecruitmentEduList - 8/7/2017 3:07:24 PM Request ID : 2
+DEBUG 2017-08-07 15:07:24,268 1178471ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 3:07:24 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 15:08:34,450 1248653ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 3:08:34 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 15:08:34,460 1248663ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 3:08:34 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 15:08:36,758 1250962ms dReqRecruitmentService GetRequestList     - 8/7/2017 3:08:36 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 15:08:38,418 1252621ms cruitmentEduController RecruitmentEduList - 8/7/2017 3:08:38 PM Request ID : 2
+DEBUG 2017-08-07 15:08:38,423 1252626ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 3:08:38 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 15:08:48,565 1262768ms cruitmentMemController leteRecruitmentMem - 8/7/2017 3:08:48 PMMASUK DELETE Id : 2
+DEBUG 2017-08-07 15:08:48,597 1262800ms dRecruitmentMemberRepo eRecruitmentMember - 8/7/2017 3:08:48 PM DELETE RECRUITMENT MEMBER SUCCESS.....<br/> Req Id : 2
+DEBUG 2017-08-07 15:08:48,599 1262802ms dRecruitmentMemberRepo eRecruitmentMember - 8/7/2017 3:08:48 PM DELETE RECRUITMENT MEMBER SUCCESS.....<br/> Req Id : 2
+DEBUG 2017-08-07 15:10:08,082 1342285ms cruitmentMemController sertRecruitmentMem - 8/7/2017 3:10:08 PMInsert Recruitment Member Seq No : 0, Name : sadasdasd
+DEBUG 2017-08-07 15:10:08,118 1342321ms dRecruitmentMemberRepo tRecruitmentMember - 8/7/2017 3:10:08 PM INSERT RECRUITMENT MEMBER SUCCESS....<br/> REQUEST ID : 2 Name : sadasdasd
+DEBUG 2017-08-07 15:11:06,835 1401039ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 3:11:06 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 15:11:06,852 1401056ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 3:11:06 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 15:18:51,659 1865862ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 3:18:51 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 15:18:51,747 1865950ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 3:18:51 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 15:19:16,284 1890487ms dReqRecruitmentService GetRequestList     - 8/7/2017 3:19:16 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 15:19:18,243 1892446ms cruitmentEduController RecruitmentEduList - 8/7/2017 3:19:18 PM Request ID : 2
+DEBUG 2017-08-07 15:19:18,246 1892449ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 3:19:18 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 15:20:02,918 1937121ms cruitmentMemController dateRecruitmentMem - 8/7/2017 3:20:02 PMUpdate Recruitment Member Seq No : 0, Name : apakah itu
+DEBUG 2017-08-07 15:20:03,252 1937456ms dRecruitmentMemberRepo eRecruitmentMember - 8/7/2017 3:20:03 PM UPDATE Recruitment MEMBER SUCCESS....<br/> Code : 2 Name : apakah itu
+DEBUG 2017-08-07 15:24:40,686 2214889ms cruitmentMemController leteRecruitmentMem - 8/7/2017 3:24:40 PMMASUK DELETE Id : 4
+DEBUG 2017-08-07 15:24:40,808 2215011ms dRecruitmentMemberRepo eRecruitmentMember - 8/7/2017 3:24:40 PM DELETE RECRUITMENT MEMBER SUCCESS.....<br/> Req Id : 4
+DEBUG 2017-08-07 15:24:40,809 2215012ms dRecruitmentMemberRepo eRecruitmentMember - 8/7/2017 3:24:40 PM DELETE RECRUITMENT MEMBER SUCCESS.....<br/> Req Id : 4
+DEBUG 2017-08-07 15:25:24,185 2258389ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 3:25:24 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 15:25:24,194 2258398ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 3:25:24 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP
+DEBUG 2017-08-07 15:25:36,767 2270971ms dReqRecruitmentService GetRequestList     - 8/7/2017 3:25:36 PM vRows : 15 vStart : 0
+DEBUG 2017-08-07 15:25:38,267 2272471ms cruitmentEduController RecruitmentEduList - 8/7/2017 3:25:38 PM Request ID : 2
+DEBUG 2017-08-07 15:25:38,306 2272510ms hrdRecruitmentFamRepo  ruitmentFamilyList - 8/7/2017 3:25:38 PM=======>>>> Jml DATA getRecruitmentFamily LIST : 1
+DEBUG 2017-08-07 15:25:46,471 2280675ms cruitmentMemController sertRecruitmentMem - 8/7/2017 3:25:46 PMInsert Recruitment Member Seq No : 0, Name : fsdfsfsdf
+DEBUG 2017-08-07 15:25:46,521 2280724ms dRecruitmentMemberRepo tRecruitmentMember - 8/7/2017 3:25:46 PM INSERT RECRUITMENT MEMBER SUCCESS....<br/> REQUEST ID : 2 Name : fsdfsfsdf
+DEBUG 2017-08-07 15:26:43,217   163ms cruitmentMemController leteRecruitmentMem - 8/7/2017 3:26:43 PMMASUK DELETE Id : 5
+DEBUG 2017-08-07 15:26:43,348   294ms dRecruitmentMemberRepo eRecruitmentMember - 8/7/2017 3:26:43 PM DELETE RECRUITMENT MEMBER SUCCESS.....<br/> Req Id : 5
+DEBUG 2017-08-07 15:26:43,349   295ms dRecruitmentMemberRepo eRecruitmentMember - 8/7/2017 3:26:43 PM DELETE RECRUITMENT MEMBER SUCCESS.....<br/> Req Id : 5
+DEBUG 2017-08-07 15:26:48,671  5617ms cruitmentMemController sertRecruitmentMem - 8/7/2017 3:26:48 PMInsert Recruitment Member Seq No : 0, Name : sdfsfsf
+DEBUG 2017-08-07 15:26:48,699  5645ms dRecruitmentMemberRepo tRecruitmentMember - 8/7/2017 3:26:48 PM INSERT RECRUITMENT MEMBER SUCCESS....<br/> REQUEST ID : 2 Name : sdfsfsf
+DEBUG 2017-08-07 15:32:32,251 349197ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 3:32:32 PMBranchCode = 1 RecId = 0
+DEBUG 2017-08-07 15:32:32,338 349284ms dRecruitmentController RecruitmentInfoAll - 8/7/2017 3:32:32 PM Comp. Code = 1 Comp Name = PT FREIGHT EXPRESS GROUP

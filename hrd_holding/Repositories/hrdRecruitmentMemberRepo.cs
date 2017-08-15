@@ -24,15 +24,16 @@ namespace hrd_holding.Repositories
                 {
                     conn.Open();
                     string SqlString = @"INSERT INTO hrd_recruitment_membership
-                                                (recruitment_id,seq_no,name,year_from,year_to,level,entry_date,entry_user)
-                                         VALUES (@precruitment_id,@pseq_no,@pname,@pyear_from,@pyear_to,@plevel,@pentry_date,@pentry_user)";
+                                                (request_id,recruitment_id,seq_no,name,year_from,year_to,level,entry_date,entry_user)
+                                         VALUES (@prequest_id,@precruitment_id,@pseq_no,@pname,@pyear_from,@pyear_to,@plevel,
+                                                 @pentry_date,@pentry_user)";
 
                     using (MySqlCommand cmd = new MySqlCommand(SqlString, conn))
                     {
 
                         cmd.CommandType = CommandType.Text;
 
-                        cmd.Parameters.AddWithValue("@preq_id", pModel.req_id);
+                        cmd.Parameters.AddWithValue("@prequest_id", pModel.request_id);
                         cmd.Parameters.AddWithValue("@precruitment_id", pModel.recruitment_id);
                         cmd.Parameters.AddWithValue("@pseq_no", pModel.seq_no);
                         cmd.Parameters.AddWithValue("@pname", pModel.name);
@@ -43,17 +44,17 @@ namespace hrd_holding.Repositories
                         cmd.Parameters.AddWithValue("@pentry_user", pModel.entry_user);
 
                         vStatus = cmd.ExecuteNonQuery();
-                        Log.Debug(DateTime.Now + " INSERT RECRUITMENT MEMBER SUCCESS....<br/> REQUEST ID : " + pModel.req_id + " Name : " + pModel.name);
+                        Log.Debug(DateTime.Now + " INSERT RECRUITMENT MEMBER SUCCESS....<br/> REQUEST ID : " + pModel.request_id + " Name : " + pModel.name);
 
                         objHasil.isValid = Convert.ToBoolean(vStatus);
-                        objHasil.message = " INSERT RECRUITMENT MEMBER SUCCESS ====>>>> REQUEST ID : " + pModel.req_id + " Name : " + pModel.name;
+                        objHasil.message = " INSERT RECRUITMENT MEMBER SUCCESS ====>>>> REQUEST ID : " + pModel.request_id + " Name : " + pModel.name;
                     }
                 }
             }
             catch (Exception ex)
             {
                 objHasil.isValid = false;
-                objHasil.message = " INSERT RECRUITMENT MEMBER FAILED, REQUEST ID : " + pModel.req_id + " Name : " + pModel.name;
+                objHasil.message = " INSERT RECRUITMENT MEMBER FAILED, REQUEST ID : " + pModel.request_id + " Name : " + pModel.name;
 
                 Log.Error(DateTime.Now + " INSERT RECRUITMENT MEMBER FAILED", ex);
             }
@@ -61,14 +62,14 @@ namespace hrd_holding.Repositories
             return objHasil;
         }
 
-        public List<hrdRecruitmentMemberModel> getRecruitmentMemberList(int pRecruitmentId)
+        public List<hrdRecruitmentMemberModel> getRecruitmentMemberList(int pRequestmentId)
         {
             //Log.Debug(DateTime.Now + "=======>>>> MASUK REPO EMPLOYEE LIST, Emp Code : " + pEmployeeCode);
 
             var vList = new List<hrdRecruitmentMemberModel>();
-            var strSQL = @"SELECT req_id,recruitment_id,seq_no,name,year_from,year_to,level,entry_date,entry_user
+            var strSQL = @"SELECT id,request_id,recruitment_id,seq_no,name,year_from,year_to,level,entry_date,entry_user
                            FROM hrd_recruitment_membership
-                           WHERE recruitment_id = @pRecruitmentId";
+                           WHERE request_id = @pRequestId";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
@@ -77,7 +78,7 @@ namespace hrd_holding.Repositories
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("@pRecruitmentId", pRecruitmentId);
+                        cmd.Parameters.AddWithValue("@pRequestId", pRequestmentId);
 
                         using (MySqlDataReader aa = cmd.ExecuteReader())
                         {
@@ -91,7 +92,8 @@ namespace hrd_holding.Repositories
 
                                     var m = new hrdRecruitmentMemberModel
                                     {
-                                        req_id = aa.GetInt16("req_id"),
+                                        id = aa.GetInt16("id"),
+                                        request_id = aa.GetInt16("request_id"),
                                         recruitment_id = aa.GetInt16("recruitment_id"),
                                         seq_no = aa.GetInt16("seq_no"),
                                         name = aa.GetString("name"),
@@ -120,9 +122,9 @@ namespace hrd_holding.Repositories
         public hrdRecruitmentMemberModel getRecruitmentMemberInfo(int pId)
         {
             var vModel = new hrdRecruitmentMemberModel();
-            var strSQL = @"SELECT req_id,recruitment_id,seq_no,name,year_from,year_to,level,entry_date,entry_user
+            var strSQL = @"SELECT id,request_id,recruitment_id,seq_no,name,year_from,year_to,level,entry_date,entry_user
                            FROM hrd_recruitment_membership
-                           WHERE req_id = @pReqId";
+                           WHERE request_id = @pReqId";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
@@ -139,7 +141,8 @@ namespace hrd_holding.Repositories
                             {
                                 while (aa.Read())
                                 {
-                                    vModel.req_id = aa.GetInt16("req_id");
+                                    vModel.id = aa.GetInt16("id");
+                                    vModel.request_id = aa.GetInt16("request_id");
                                     vModel.recruitment_id = aa.GetInt16("recruitment_id");
                                     vModel.seq_no = aa.GetInt16("seq_no");
                                     vModel.name = aa.GetString("name");
@@ -172,11 +175,12 @@ namespace hrd_holding.Repositories
             var objHasil = new ResponseModel();
 
             string SqlString = @"UPDATE hrd_recruitment_membership
-                                    SET name = @pname,
+                                    SET request_id = @prequest_id,
+                                        name = @pname,
                                         year_from = @pyear_from,
                                         year_to = @pyear_to,
                                         level = @plevel
-                                WHERE req_id = @pReqId ";
+                                WHERE id = @pId ";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
@@ -187,36 +191,37 @@ namespace hrd_holding.Repositories
 
                         cmd.CommandType = CommandType.Text;
 
-                        cmd.Parameters.AddWithValue("@pReqId", pModel.req_id);
+                        cmd.Parameters.AddWithValue("@prequest_id", pModel.request_id);
+                        cmd.Parameters.AddWithValue("@pId", pModel.id);
                         cmd.Parameters.AddWithValue("@pname", pModel.name);
                         cmd.Parameters.AddWithValue("@pyear_from", pModel.year_from);
                         cmd.Parameters.AddWithValue("@pyear_to", pModel.year_to);
                         cmd.Parameters.AddWithValue("@plevel", pModel.level);
 
                         vStatus = cmd.ExecuteNonQuery();
-                        Log.Debug(DateTime.Now + " UPDATE Recruitment MEMBER SUCCESS....<br/> Code : " + pModel.req_id + " Name : " + pModel.name);
+                        Log.Debug(DateTime.Now + " UPDATE Recruitment MEMBER SUCCESS....<br/> Code : " + pModel.request_id + " Name : " + pModel.name);
 
                         objHasil.isValid = Convert.ToBoolean(vStatus);
-                        objHasil.message = " UPDATE Recruitment MEMBER SUCCESS, Code : " + pModel.req_id + " Name : " + pModel.name;
+                        objHasil.message = " UPDATE Recruitment MEMBER SUCCESS, Code : " + pModel.request_id + " Name : " + pModel.name;
                     }
                 }
             }
             catch (Exception ex)
             {
                 objHasil.isValid = false;
-                objHasil.message = " UPDATE RECRUITMENT MEMBER FAILED.....<br/> Code : " + pModel.req_id + " Name : " + pModel.name;
+                objHasil.message = " UPDATE RECRUITMENT MEMBER FAILED.....<br/> Code : " + pModel.request_id + " Name : " + pModel.name;
 
-                Log.Error(DateTime.Now + " UPDATE RECRUITMENT MEMBER FAILED, Code : " + pModel.req_id + " Name : " + pModel.name, ex);
+                Log.Error(DateTime.Now + " UPDATE RECRUITMENT MEMBER FAILED, Code : " + pModel.request_id + " Name : " + pModel.name, ex);
             }
 
             return objHasil;
         }
 
-        public ResponseModel DeleteRecruitmentMember(int pReqId)
+        public ResponseModel DeleteRecruitmentMember(int pId)
         {
             var objHasil = new ResponseModel();
 
-            var SqlString = @"DELETE FROM hrd_recruitment_membership WHERE req_id = @pReqId";
+            var SqlString = @"DELETE FROM hrd_recruitment_membership WHERE id = @pId";
 
             try
             {
@@ -227,20 +232,20 @@ namespace hrd_holding.Repositories
                     {
 
                         cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("@pReqId", pReqId);
+                        cmd.Parameters.AddWithValue("@pId", pId);
 
                         var status = cmd.ExecuteNonQuery();
-                        Log.Debug(DateTime.Now + " DELETE RECRUITMENT MEMBER SUCCESS.....<br/> Req Id : " + pReqId);
+                        Log.Debug(DateTime.Now + " DELETE RECRUITMENT MEMBER SUCCESS.....<br/> Req Id : " + pId);
 
                         objHasil.isValid = Convert.ToBoolean(status);
-                        Log.Debug(DateTime.Now + " DELETE RECRUITMENT MEMBER SUCCESS.....<br/> Req Id : " + pReqId);
+                        Log.Debug(DateTime.Now + " DELETE RECRUITMENT MEMBER SUCCESS.....<br/> Req Id : " + pId);
                     }
                 }
             }
             catch (Exception ex)
             {
                 objHasil.isValid = false;
-                Log.Debug(DateTime.Now + " DELETE RECRUITMENT MEMBER FAILED.....<br/> Req Id : " + pReqId);
+                Log.Debug(DateTime.Now + " DELETE RECRUITMENT MEMBER FAILED.....<br/> Req Id : " + pId);
 
                 Log.Error(DateTime.Now + " DELETE RECRUITMENT MEMBER FAILED", ex);
             }
@@ -248,14 +253,14 @@ namespace hrd_holding.Repositories
             return objHasil;
         }
 
-        public int getRecruitmentMemberSeqNo(int pRecruitmentId)
+        public int getRecruitmentMemberSeqNo(int pRequestId)
         {
             //Log.Debug(DateTime.Now + "=======>>>> MASUK REPO EMPLOYEE LIST, Emp Code : " + pEmployeeCode);
 
             var vNo = 0;
-            var strSQL = @"SELECT max(mef.seq_no) seq_no
+            var strSQL = @"SELECT IFNULL(max(seq_no),0) seq_no
                            FROM hrd_recruitment_membership
-                           WHERE recruitment_id = @pRecruitmentId";
+                           WHERE request_id = @pRequestId";
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConfigModel.mConn))
@@ -264,7 +269,7 @@ namespace hrd_holding.Repositories
                     using (MySqlCommand cmd = new MySqlCommand(strSQL, conn))
                     {
                         cmd.CommandType = CommandType.Text;
-                        cmd.Parameters.AddWithValue("@pRecruitmentId", pRecruitmentId);
+                        cmd.Parameters.AddWithValue("@pRequestId", pRequestId);
 
                         using (MySqlDataReader aa = cmd.ExecuteReader())
                         {

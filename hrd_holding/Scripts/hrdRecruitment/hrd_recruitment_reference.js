@@ -6,7 +6,9 @@ var vSrcRef =
     localdata: vDataRef,
     datatype: "json",
     datafields: [
-         { name: 'employee_code' },
+         { name: 'id' },
+         { name: 'request_id' },
+         { name: 'recruitment_id' },
          { name: 'seq_no' },
          { name: 'organizer' },
          { name: 'material' },

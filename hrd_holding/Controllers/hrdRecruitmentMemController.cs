@@ -48,7 +48,7 @@ namespace hrd_holding.Controllers
 
 
         [HttpPost]
-        public dynamic GetRecruitmentMemList(int pRecId)
+        public dynamic GetRecruitmentMemList(int pRequestId)
         {
 
             //var vEmployeeCode = Request["employeecode"].ToString();
@@ -56,9 +56,9 @@ namespace hrd_holding.Controllers
 
             //LOG.Debug(DateTime.Now + " Emp FAMS Code : " + pEmployeeCode);
 
-            var listRec = _recMemService.GetRecruitmentMemList(pRecId);
+            var listMem = _recMemService.GetRecruitmentMemList(pRequestId);
 
-            return Json(new { listRec },JsonRequestBehavior.AllowGet);
+            return Json(new { listMem },JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
